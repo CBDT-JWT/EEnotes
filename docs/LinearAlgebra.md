@@ -47,12 +47,12 @@ $$
 
 2. **应用理解**：变元$x_1,x_2,x_3\cdots x_n$满足方程组
    $$
-   \left\{\begin{aligned}
+   \begin{cases}
    a_{11}x_1+a_{12}x_2+\cdots+a_{1n}x_n&=b_1\\\\
    a_{21}x_1+a_{22}x_2+\cdots+a_{2n}x_n&=b_2\\\\
    \vdots\quad\\\\
    a_{m1}x_1+a_{m2}x_2+\cdots+a_{mn}x_n&=b_m\\\\
-   \end{aligned}\right.
+   \end{cases}
    $$
 
 3. **几何理解**：某组线性变换（下半学期会学到，可以处理成旋转——伸缩——旋转的三部曲等等）将点$\mathbf x$变换到点$\mathbf b$
@@ -139,7 +139,7 @@ $$
 $$
 欧氏空间的性质：*Cauchy*不等式（三角不等式）
 $$
-||\alpha+\beta||\le||\alpha||+||\beta||
+||\alpha+\beta||\le ||\alpha||+||\beta||
 $$
 
 #### 向量及其运算: 线性映射的作用对象
@@ -195,10 +195,10 @@ $$
 
 **线性映射**是指对线性组合满足交换律的映射。即：自变量的线性组合results in因变量的线性组合。写成严谨的数学语言就是：
 $$
-\left\{\begin{aligned}
+\begin{cases}
 f(x_1+x_2) &= f(x_1)+f(x_2)\quad 保加法\\\\
 f(kx) &= kf(x)\quad 保数乘
-\end{aligned}\right.
+\end{cases}
 $$
 也可以概括为：
 $$
@@ -325,15 +325,17 @@ $$
 
 **基础公式**
 $$
+\begin{aligned}
 rank (A)=rank(A^T)=rank(A^TA)\\\\
 rank(kA)=rank(A)\quad,k\ne 0\\\\
-rank(A+B)\le rank(A)+rank(B)\\\\
-rank(AB)\le \min\{rank(A),rank(B)\}\\\\
+rank(A+B)\le  rank(A)+rank(B)\\\\
+rank(AB)\le  \min\{rank(A),rank(B)\}\\\\
 A可逆\Rightarrow rank(AB)=rank(B)=rank(A)\\\\
+\end{aligned}
 $$
 **Sylvester不等式**	设$A\in M_{m\times s}(\mathbb{R}),\quad B\in M_{s\times n}(\mathbb{R}).$则
 $$
-rank(A)+rank(B)-s\lerank(AB)\le\min\{rank(A),
+rank(A)+rank(B)-s\lerank(AB)\le \min\{rank(A),
 rank(B)\}
 $$
 **Frobenius不等式**	设乘积$ABC$有意义，则
@@ -429,12 +431,12 @@ $$
 
 对于一个线性方程组
 $$
-\left\{\begin{aligned}
+\begin{cases}
 a_{11}x_1+a_{12}x_2+\cdots+a_{1n}x_n&=b_1\\\\
 a_{21}x_1+a_{22}x_2+\cdots+a_{2n}x_n&=b_2\\\\
 \vdots\quad\\\\
 a_{m1}x_1+a_{m2}x_2+\cdots+a_{mn}x_n&=b_m\\\\
-\end{aligned}\right.
+\end{cases}
 $$
 我们用矩阵记号将其改写为
 $$
@@ -481,7 +483,7 @@ $$
 \begin{aligned}
 \{x|x=x_0+v,v\in N(A)\},&\quad \exists x_0,Ax_0=b\\\\
 \{x_0\},&\quad \exists x_0,Ax_0=b且N(A)=\{0\}\\\\
-\O ,&\quad \nexists x_0,Ax_0=b\\\\
+\emptyset ,&\quad \nexists x_0,Ax_0=b\\\\
 \end{aligned}
 \right.
 $$
@@ -497,12 +499,12 @@ $$
 
 对于线性方程组
 $$
-\left\{\begin{aligned}
+\begin{cases}
 a_{11}x_1+a_{12}x_2+\cdots+a_{1n}x_n&=b_1\\\\
 a_{21}x_1+a_{22}x_2+\cdots+a_{2n}x_n&=b_2\\\\
 \vdots\quad\\\\
 a_{m1}x_1+a_{m2}x_2+\cdots+a_{mn}x_n&=b_m\\\\
-\end{aligned}\right.
+\end{cases}
 $$
 我们将他写成增广矩阵
 $$
@@ -685,16 +687,14 @@ A\mathbf x = \mathbf b
 $$
 的过程。我们知道，如果求得了$A$的行简化阶梯型矩阵$\tilde A=rref(A)$，那么方程就变成了
 $$
-\left\{
-\begin{aligned}
+\begin{cases}
 x_{m_1}&=\tilde b_1\\\\
 x_{m_2}&=\tilde b_2\\\\
 \vdots\\\\
 x_{m_r}&=\tilde b_r\\\\
 0&=\tilde b_{r+1}\\\\
 \vdots
-\end{aligned}
-\right.
+\end{cases}
 $$
 这是十分好解决的。因此我们希望对线性方程组
 $$
@@ -846,7 +846,7 @@ $$
     x_1^{n-1}&x_2^{n-1}&x_3^{n-1}&\cdots&x_n^{n-1}\\\\
     \end{matrix}
     \right|\\\\
-    =\prod_{1\leq j\textcolor{red}\lt i\le n}(x_i-x_j)
+    =\prod_{1\leq j\textcolor{red}\lt i\le  n}(x_i-x_j)
     $$
 
 抽象行列式的计算方法：
@@ -1226,7 +1226,7 @@ $$
 
 **题7（2023期中）**在如下关于$x_1,x_2,x_3$的线性方程组中，讨论$p$取不同值时方程组是否有解，并求解。
 $$
-\left\{\begin{aligned}
+\begin{cases}
 px_2+x_3&= 1\\\\
 x_1+x_2+x_3&=1\\\\
 x_1+x_2+px_3&=p
@@ -1385,7 +1385,7 @@ $$
 期中$C$为$n$阶对角占优方阵，$B_1$为任意给定$3\times n$矩阵，$B_2$ 为任意给定$n\times 3$ 矩阵.
 
 1. 求$A$的$LU$分解（$5'$）
-2. 求证$A$可逆，再找一个常数$\varepsilon_0>0$(依赖于$C,B_1,B_2$), 使得对$\forall |\varepsilon|\le\epsilon_0$，$X_\varepsilon$可逆。（$\textcolor{red}{5'}$)
+2. 求证$A$可逆，再找一个常数$\varepsilon_0>0$(依赖于$C,B_1,B_2$), 使得对$\forall |\varepsilon|\le \epsilon_0$，$X_\varepsilon$可逆。（$\textcolor{red}{5'}$)
 
 **题3（2022期中）**	考察方阵$A$ ,试证：若$|\mathbf x^TA\mathbf x|<|\mathbf x^T\mathbf x|$ 有解，则$I-A^2$可逆。
 
