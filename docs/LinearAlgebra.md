@@ -1488,7 +1488,7 @@ $$
 1. $\alpha f(z_1)+\beta f(z_2) = f(\alpha z_1+ \beta z_2), \alpha,\beta\in\mathbb{R} $
 2. $f(z_1z_2) = f(z_1)f(z_2)$
 3. 复数域的共轭运算对应$S_C$上的什么矩阵运算？
-4. 写出$z=\rho e^{i\theta}=\rho\cos\theta+\rho i\sin\theta$对应的矩阵。结合旋转变换的表示矩阵$R_\theta$ 的形式，从矩阵分解的角度说明为什么复数乘法可以用旋转-拉伸的形式表示？
+4. 写出$z=\rho e^{-i\theta}=\rho\cos\theta+\rho i\sin\theta$对应的矩阵。结合旋转变换的表示矩阵$R_\theta$ 的形式，从矩阵分解的角度说明为什么复数乘法可以用旋转-拉伸的形式表示？
 
 **注3.1**	这里的映射$f$揭示了$\C$与$M_{2\times2}(\mathbb{R})$ 的一个子集的同构。即：复数和某些矩阵具有“类似的性质”。
 
