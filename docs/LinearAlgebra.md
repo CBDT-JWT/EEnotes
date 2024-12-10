@@ -146,7 +146,7 @@ $$
 
 向量之间可以定义**点积**（内积）、**叉积**（外积）等运算。
 
-**内积**表示投影长度，为$V\times V\to \R$ 的实值运算。**叉积**表示有向面积，为$V\times V\to V$ 的向量值运算。
+**内积**表示投影长度，为$V\times V\to \mathbb{R}$ 的实值运算。**叉积**表示有向面积，为$V\times V\to V$ 的向量值运算。
 
 #### 向量组及其线性组合：向量世界的建构
 
@@ -202,11 +202,11 @@ f(kx) &= kf(x)\quad 保数乘
 $$
 也可以概括为：
 $$
-f(\alpha x_1+\beta x_2)=\alpha f(x_1)+\beta f(x_2), \alpha,\beta \in\R
+f(\alpha x_1+\beta x_2)=\alpha f(x_1)+\beta f(x_2), \alpha,\beta \in\mathbb{R}
 $$
 保加法和保数乘，共同构成*叠加定理*。即，分响应之叠加即为各激励叠加之总响应。
 
-假设$f:\R^n\to\R^m$是线性映射，对于向量组$e_1,e_2,\cdots e_n\in\R^n$,若其各自的像（响应，输出）为$\alpha_1,\alpha_2,\cdots\alpha_m\in\R^m$,对于新的向量$x \in span(e_1\cdots e_n)$总能表示为
+假设$f:\mathbb{R}^n\to\mathbb{R}^m$是线性映射，对于向量组$e_1,e_2,\cdots e_n\in\mathbb{R}^n$,若其各自的像（响应，输出）为$\alpha_1,\alpha_2,\cdots\alpha_m\in\mathbb{R}^m$,对于新的向量$x \in span(e_1\cdots e_n)$总能表示为
 $$
 x=x_1e_1+x_2e_2+\cdots+x_ne_n
 $$
@@ -226,7 +226,7 @@ x_1\\\\x_2\\\\\vdots\\\\x_n
 $$
 这里我们又定义了**矩阵乘向量**的含义：分响应的线性组合为总响应。
 
-为了能够完整地表现$f(\cdot)$的作用效果，我们一般取$e_1,e_2\cdots e_n$为$\R^n$一组基，即令$span(e_1,e_2,\cdots e_n)=\R^n$.因此，可以定义映射$f(\cdot)$在基$e_1\cdots e_n$上的表示矩阵为
+为了能够完整地表现$f(\cdot)$的作用效果，我们一般取$e_1,e_2\cdots e_n$为$\mathbb{R}^n$一组基，即令$span(e_1,e_2,\cdots e_n)=\mathbb{R}^n$.因此，可以定义映射$f(\cdot)$在基$e_1\cdots e_n$上的表示矩阵为
 $$
 A:=\begin{bmatrix}
 f(e_1)&f(e_2)&\cdots&f(e_n)
@@ -239,7 +239,7 @@ $$
 **线性映射的复合与矩阵乘法**	若有线性映射
 $$
 \begin{aligned}
-f:\R^n&\to\R^k\quad g:\R^k\to\R^m\\\\
+f:\mathbb{R}^n&\to\mathbb{R}^k\quad g:\mathbb{R}^k\to\mathbb{R}^m\\\\
 \mathbf x&\mapsto A\mathbf x\quad\quad\mathbf y\mapsto B\mathbf y
 \end{aligned}
 $$
@@ -257,7 +257,7 @@ $$
 
 ![{7B62645A-DBFC-48C9-B944-8E958BD87787}](./assets/{7B62645A-DBFC-48C9-B944-8E958BD87787}.png)
 
-**$\R^n$的自然基**	为了好算，我们一般取
+**$\mathbb{R}^n$的自然基**	为了好算，我们一般取
 $$
 e_1=\begin{bmatrix}
 1\\\\0\\\\\vdots\\\\0
@@ -267,7 +267,7 @@ e_1=\begin{bmatrix}
 0\\\\0\\\\\vdots\\\\n
 \end{bmatrix}
 $$
-作为$\R^n$的基进行表示矩阵的书写与计算。
+作为$\mathbb{R}^n$的基进行表示矩阵的书写与计算。
 
 **初等变换**	初等变换是一类特殊的变换。
 
@@ -314,12 +314,12 @@ rank(A)=rank(\alpha_1,\cdots,\alpha_n)=\dim span(\alpha_1,\alpha_2,\cdots,\alpha
 $$
 由于线性映射$f(\mathbf x)=A\mathbf x$的值域即$A$的列向量全部线性组合$span(\alpha_1,\alpha_2,\cdots,\alpha_n)$,因此矩阵$A$的秩就是映射$f(\cdot)$的值域的维数。
 
-**满秩矩阵**	若$A\in M_{m\times n}(\R)$ ，$rank(A)=m$，则称$A$是**行满秩的**。若$rank(A)=n$，则称$A$是**列满秩的**。表示矩阵行满秩的线性映射，其值域为$\R^m$.
+**满秩矩阵**	若$A\in M_{m\times n}(\mathbb{R})$ ，$rank(A)=m$，则称$A$是**行满秩的**。若$rank(A)=n$，则称$A$是**列满秩的**。表示矩阵行满秩的线性映射，其值域为$\mathbb{R}^m$.
 
-特别对于方阵$A\in M_n(\R)$：
+特别对于方阵$A\in M_n(\mathbb{R})$：
 
-- 矩阵$A$满秩说明映射$f(\mathbf x)=A\mathbf x$ 的像覆盖整个空间$\R^n$,对于每个$\mathbf y\in \R^n$,总能找到$\mathbf x\in \R^n$, $\mathbf y = A\mathbf x$。此时，映射$f$为一一映射（双射、可逆映射）。
-- 矩阵$A$不满秩说明映射$f$的像只能覆盖$\R^n$的一个低维子空间$R(A)$，可以形象理解为映射$f$将$\R^n$*压缩*到了低维空间$R(A)$.压缩过程伴随着一些维度的信息丢失，因此无法通过映射$f$的像复原出$\mathbf x$的值。此时，$f$不可逆。
+- 矩阵$A$满秩说明映射$f(\mathbf x)=A\mathbf x$ 的像覆盖整个空间$\mathbb{R}^n$,对于每个$\mathbf y\in \mathbb{R}^n$,总能找到$\mathbf x\in \mathbb{R}^n$, $\mathbf y = A\mathbf x$。此时，映射$f$为一一映射（双射、可逆映射）。
+- 矩阵$A$不满秩说明映射$f$的像只能覆盖$\mathbb{R}^n$的一个低维子空间$R(A)$，可以形象理解为映射$f$将$\mathbb{R}^n$*压缩*到了低维空间$R(A)$.压缩过程伴随着一些维度的信息丢失，因此无法通过映射$f$的像复原出$\mathbf x$的值。此时，$f$不可逆。
 
 矩阵的秩具有如下性质。这些性质可以用*分块矩阵*的方法证明，之后我们回过头再来看。
 
@@ -331,7 +331,7 @@ rank(A+B)\le rank(A)+rank(B)\\\\
 rank(AB)\le \min\{rank(A),rank(B)\}\\\\
 A可逆\Rightarrow rank(AB)=rank(B)=rank(A)\\\\
 $$
-**Sylvester不等式**	设$A\in M_{m\times s}(\R),\quad B\in M_{s\times n}(\R).$则
+**Sylvester不等式**	设$A\in M_{m\times s}(\mathbb{R}),\quad B\in M_{s\times n}(\mathbb{R}).$则
 $$
 rank(A)+rank(B)-s\lerank(AB)\le\min\{rank(A),
 rank(B)\}
@@ -347,7 +347,7 @@ A & B\\\\
 C & D
 \end{bmatrix}=rank(A)+rank(D-CA^{-1}B)
 $$
-**第二降阶定理**	设$A,D\in M_{r\times s}(\R)$可逆，$B\in M_{r\times s}(\R),\quad C\in M_{s\times r}(\R)$,则：
+**第二降阶定理**	设$A,D\in M_{r\times s}(\mathbb{R})$可逆，$B\in M_{r\times s}(\mathbb{R}),\quad C\in M_{s\times r}(\mathbb{R})$,则：
 $$
 rank(D-CA^{-1}B)=rank(D)-rank(A)+rank(A-BD^{-1}C)
 $$
@@ -801,7 +801,7 @@ $A$及其补可逆、$D$及其补可逆、$M$可逆三者等价。并且我们�
 $$
 \det M=\det A\cdot\det(D-CA^{-1}B)
 $$
-**Sherman-Morrison公式**	对可逆矩阵$A\in M_n(\R)，u,v\in R^n$,则$A+uv^T$可逆当且仅当
+**Sherman-Morrison公式**	对可逆矩阵$A\in M_n(\mathbb{R})，u,v\in R^n$,则$A+uv^T$可逆当且仅当
 $$
 1+v^TA^{-1}u\ne0
 $$
@@ -1190,7 +1190,7 @@ $$
    k_2\begin{bmatrix}
    0\\\\1\\\\1
    \end{bmatrix}\right|
-   k_1,k_2\in\R
+   k_1,k_2\in\mathbb{R}
    \right\}
    $$
    求A的行简化阶梯型
@@ -1206,7 +1206,7 @@ $$
    k_2\begin{bmatrix}
    0\\\\1\\\\1
    \end{bmatrix}\right|
-   k_1,k_2\in\R
+   k_1,k_2\in\mathbb{R}
    \right\}
    $$
    求A.
@@ -1219,7 +1219,7 @@ $$
    k_1\begin{bmatrix}
    1\\\\-1\\\\0
    \end{bmatrix}\right|
-   k_1\in\R
+   k_1\in\mathbb{R}
    \right\}
    $$
    求$A$的行简化阶梯型，并写出一个满足条件的$A$.
@@ -1327,7 +1327,7 @@ $$
 
 1. 可以找到一个7阶方阵，其零空间和列空间相同。
 2. 存在一个$2\times 5$实矩阵，使得$[1\quad2\quad3\quad4\quad5]^T$和$[5\quad4\quad3\quad2\quad1]^T$构成零空间的一组基。
-3. 设$A\in M_{3\times 3}(\R)$, 如果$A$与$A^T$具有相同的零空间和列空间，则$A$是对称矩阵。
+3. 设$A\in M_{3\times 3}(\mathbb{R})$, 如果$A$与$A^T$具有相同的零空间和列空间，则$A$是对称矩阵。
 
 **题2（2020期中）**	考察矩阵
 $$
@@ -1346,7 +1346,7 @@ $$
 5. 在$A$的第二列和第三列之间插入一列$0$得到矩阵$B$，写出$B$的行空间的维数和一组基，以及$B$的零空间的维数和一组基。
 6. 在$A$的第二行和第三行之间插入一行$0$得到矩阵$C$，写出$C$的列空间的维数和一组基，以及$C$的零空间的维数和一组基。
 
-**题3（2021期中）**	给定线性空间$\R^3$的一组基$\mathbf{v_1,v_2,v_3}$。当且仅当$a$为何值，向量组$\mathbf v_1+a\mathbf v_2 + 2a\mathbf v_3$, $\mathbf v_1+2a\mathbf v_2 + \mathbf v_3$,$ \mathbf v_2 + a\mathbf v_3$, 不是$\R^3$的一组基？
+**题3（2021期中）**	给定线性空间$\mathbb{R}^3$的一组基$\mathbf{v_1,v_2,v_3}$。当且仅当$a$为何值，向量组$\mathbf v_1+a\mathbf v_2 + 2a\mathbf v_3$, $\mathbf v_1+2a\mathbf v_2 + \mathbf v_3$,$ \mathbf v_2 + a\mathbf v_3$, 不是$\mathbb{R}^3$的一组基？
 
 **注**	本题引出后面会学到的基变换与过渡矩阵知识。	
 
@@ -1376,7 +1376,7 @@ $$
 X_\varepsilon = \begin{bmatrix}
 A & \varepsilon B_1\\\\
 B_2	& C
-\end{bmatrix},\varepsilon\in\R,A=\begin{bmatrix}
+\end{bmatrix},\varepsilon\in\mathbb{R},A=\begin{bmatrix}
 1 & 2 & 3\\\\
 2 &1 & 3\\\\
 0 & 1 & 4\\\\
@@ -1389,14 +1389,14 @@ $$
 
 **题3（2022期中）**	考察方阵$A$ ,试证：若$|\mathbf x^TA\mathbf x|<|\mathbf x^T\mathbf x|$ 有解，则$I-A^2$可逆。
 
-**题4（2019期中）**	设$A，B\in M_n(\R)$, 且$A^k=0$, 其中$k$是一个正整数。求证：
+**题4（2019期中）**	设$A，B\in M_n(\mathbb{R})$, 且$A^k=0$, 其中$k$是一个正整数。求证：
 
 1. $I_n - A$可逆。
 2. 若$AB+BA = B$, 则$B=O$.
 
 **题5（习题课2，节选）**	**对称阵和反对称阵。**求证下列命题。
 
-1. 若$A,B$是$n$阶实对称矩阵，则$A=B\Leftrightarrow \forall x\in\R^n,x^TAx=x^TBx$
+1. 若$A,B$是$n$阶实对称矩阵，则$A=B\Leftrightarrow \forall x\in\mathbb{R}^n,x^TAx=x^TBx$
 2. $\forall A$为$n$阶反对称阵，求证$I_n-A$可逆
 
 **题6（2022期中，书院）**	若$A,B,A+B$都是可逆矩阵，证明$A^{-1}+B^{-1}$可逆。	
@@ -1427,13 +1427,13 @@ $$
 > $$
 > 则....
 
-**题1（2023期中，节选）**	设$\mathbf a_1,\mathbf a_2,\mathbf a_3,\mathbf a_4$是$m\times n$矩阵$A$的零空间一组基。又设$\R^n$一组基为$\mathbf a_1,\mathbf a_2,\mathbf a_3,\mathbf a_4, \mathbf c_1,\mathbf c_2,\mathbf c_3,\cdots,\mathbf c_{n-4}$。求证：
+**题1（2023期中，节选）**	设$\mathbf a_1,\mathbf a_2,\mathbf a_3,\mathbf a_4$是$m\times n$矩阵$A$的零空间一组基。又设$\mathbb{R}^n$一组基为$\mathbf a_1,\mathbf a_2,\mathbf a_3,\mathbf a_4, \mathbf c_1,\mathbf c_2,\mathbf c_3,\cdots,\mathbf c_{n-4}$。求证：
 $$
 A\mathbf c_1,A\mathbf c_2,A\mathbf c_3,\cdots,A\mathbf c_{n-4}	
 $$
 线性无关。
 
-**题2（2023期中）**	设 $\mathbf {a_1,a_2,a_3},\cdots,\mathbf a_n$为$\R^n$的一组坤。试证：若向量$\mathbf b$可以写成$\mathbf {a_1,a_2,\cdots,a_n}$中任意$n-1$个向量的线性组合，则$\mathbf b=0$.
+**题2（2023期中）**	设 $\mathbf {a_1,a_2,a_3},\cdots,\mathbf a_n$为$\mathbb{R}^n$的一组坤。试证：若向量$\mathbf b$可以写成$\mathbf {a_1,a_2,\cdots,a_n}$中任意$n-1$个向量的线性组合，则$\mathbf b=0$.
 
 **题3（2022期中，书院）**	设$A\in M_n$,若$\exists k\in \N$,使得$A^{k}\mathbf x=0$有解向量$\alpha$,且$A^{k-1}\alpha\ne 0$,求证：向量组$\alpha,A\alpha,\cdots A^{k-1}\alpha$线性无关。
 
@@ -1466,18 +1466,18 @@ $$
 $$
 \begin{aligned}
 f &= f_1\circ f_2 \circ\cdots\circ f_l\\\\
-其中f_i&:\R^{d_{i-1}}\to\R^{d_i}(d_0 = n,d_l=m),\\\\
+其中f_i&:\mathbb{R}^{d_{i-1}}\to\mathbb{R}^{d_i}(d_0 = n,d_l=m),\\\\
 f_i(\mathbf v)&=\varphi(\mathbf W_i\mathbf v+\mathbf b_i)\\\\
 \end{aligned}
 $$
-其中$\mathbf W_i \in M_{d_{i-1}\times d_{i}}(\R)$, $\mathbf b_i \in \R^{d_i}$ ,$\varphi()$为非线性函数，称为**激活函数**。训练神经网络就是以某种算法根据**训练集**优化各个$\mathbf W_i$和$\mathbf b_i$的值，从而使得函数$f$ 能够更好地拟合实际需求（比如，输入图像的像素信息，输出其为各种数字的概率）等。
+其中$\mathbf W_i \in M_{d_{i-1}\times d_{i}}(\mathbb{R})$, $\mathbf b_i \in \mathbb{R}^{d_i}$ ,$\varphi()$为非线性函数，称为**激活函数**。训练神经网络就是以某种算法根据**训练集**优化各个$\mathbf W_i$和$\mathbf b_i$的值，从而使得函数$f$ 能够更好地拟合实际需求（比如，输入图像的像素信息，输出其为各种数字的概率）等。
 
 **注2.2**	本题为一常见面试题。
 
 **问题3**	**复数与二阶矩阵**。考虑双射
 $$
 \begin{aligned}
-f: \C &\to M_{2\times2}(\R)\\\\
+f: \C &\to M_{2\times2}(\mathbb{R})\\\\
 z &\mapsto A\\\\
 其中z&=a+bi\\\\
 A&=\begin{bmatrix}
@@ -1486,14 +1486,14 @@ b&a
 \end{bmatrix}
 \end{aligned}
 $$
-再令集合$S_C:=\{A\in M_{2\times2}(\R)|\exists z \in \C, f(z)=A\}$。求证：
+再令集合$S_C:=\{A\in M_{2\times2}(\mathbb{R})|\exists z \in \C, f(z)=A\}$。求证：
 
-1. $\alpha f(z_1)+\beta f(z_2) = f(\alpha z_1+ \beta z_2), \alpha,\beta\in\R $
+1. $\alpha f(z_1)+\beta f(z_2) = f(\alpha z_1+ \beta z_2), \alpha,\beta\in\mathbb{R} $
 2. $f(z_1z_2) = f(z_1)f(z_2)$
 3. 复数域的共轭运算对应$S_C$上的什么矩阵运算？
 4. 写出$z=\rho e^{i\theta}=\rho\cos\theta+\rho i\sin\theta$对应的矩阵。结合旋转变换的表示矩阵$R_\theta$ 的形式，从矩阵分解的角度说明为什么复数乘法可以用旋转-拉伸的形式表示？
 
-**注3.1**	这里的映射$f$揭示了$\C$与$M_{2\times2}(\R)$ 的一个子集的同构。即：复数和某些矩阵具有“类似的性质”。
+**注3.1**	这里的映射$f$揭示了$\C$与$M_{2\times2}(\mathbb{R})$ 的一个子集的同构。即：复数和某些矩阵具有“类似的性质”。
 
 **注3.2**	在机器人姿态控制中常用的四元数也可以用类似的方法同构到矩阵中，这在具身智能、机器人控制中有着重要的应用，感兴趣的同学可以自行查阅资料。
 
