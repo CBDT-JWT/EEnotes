@@ -1,4 +1,1 @@
-$$
-$$
-
-$$EEnotes
+# EEnotes

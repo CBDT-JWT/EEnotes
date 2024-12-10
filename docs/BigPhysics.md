@@ -22,8 +22,8 @@ $$
 ### 理想气体状态方程
 
 $$
-pV = \nu RT = nkT\\\\
-\nu :摩尔数\\\\n:分子数
+pV = \nu RT = nkT\\
+\nu :摩尔数\\n:分子数
 $$
 
 ### 速率、速度分布
@@ -93,8 +93,8 @@ $$
 $$
 \begin{aligned}
 f(v)dv&=\oiint_{v^2\leq v_x^2+v_y^2+v_z^2\leq (v+dv)^2} F(\left[ v_x,v_y,v_z\right]^T)dv_xdv_ydv_z
-\\\\&=F(\left[v,0,0\right]^T)\textcolor{purple}{dV}
-\\\\&=\textcolor{red}{\left(\frac{m}{2\pi kT}\right)^{3/2}}e^{-\frac{\textcolor{green}{\frac{1}{2}m(v^2)}}{\textcolor{blue}{kT}}}\textcolor{purple}{4\pi v^2dv}
+\\&=F(\left[v,0,0\right]^T)\textcolor{purple}{dV}
+\\&=\textcolor{red}{\left(\frac{m}{2\pi kT}\right)^{3/2}}e^{-\frac{\textcolor{green}{\frac{1}{2}m(v^2)}}{\textcolor{blue}{kT}}}\textcolor{purple}{4\pi v^2dv}
 \end{aligned}
 $$
 **玻尔兹曼分布** ：势场下的密度分布
@@ -117,7 +117,7 @@ $$
 $$
 \begin{aligned}
 dN(\vec v ,\vec r)
-&=  \left[\textcolor{red}{\left(\frac{m}{2\pi kT}\right)^{3/2}}e^{-\frac{\textcolor{green}{\frac{1}{2}m(v^2)}}{\textcolor{blue}{kT}}}\right]\times\left[ \textcolor{red}{n_0}\cdot e^{-\frac{\textcolor{green}{\varepsilon_p(\vec r)}}{\textcolor{blue}{kT}}}dVd\vec v\right]\\\\
+&=  \left[\textcolor{red}{\left(\frac{m}{2\pi kT}\right)^{3/2}}e^{-\frac{\textcolor{green}{\frac{1}{2}m(v^2)}}{\textcolor{blue}{kT}}}\right]\times\left[ \textcolor{red}{n_0}\cdot e^{-\frac{\textcolor{green}{\varepsilon_p(\vec r)}}{\textcolor{blue}{kT}}}dVd\vec v\right]\\
 &= \textcolor{red}{n_0\left(\frac{m}{2\pi kT}\right)^{3/2}}e^{-\frac{\textcolor{green}{\frac{1}{2}m(v^2)+\varepsilon_p(\vec r)}}{\textcolor{blue}{kT}}}dVd\vec v
 \end{aligned}
 $$
@@ -145,10 +145,10 @@ $$
 其中
 $$
 \begin{aligned}
-\bar \lambda &:平均自由程\\\\
-\bar v &:平均速率\\\\
-\bar z &: 平均碰撞频率\\\\
-\bar z &= \textcolor{red}{\sqrt 2 \bar v}\cdot\textcolor{green}{\pi d^2} \cdot n\\\\
+\bar \lambda &:平均自由程\\
+\bar v &:平均速率\\
+\bar z &: 平均碰撞频率\\
+\bar z &= \textcolor{red}{\sqrt 2 \bar v}\cdot\textcolor{green}{\pi d^2} \cdot n\\
 \Rightarrow \bar\lambda &=\frac{1}{\textcolor{red}{\sqrt 2}\textcolor{green}{\pi d^2}n}=\frac{kT}{\sqrt2 \pi d^2p}
 \end{aligned}
 $$
@@ -166,9 +166,9 @@ $$
 其中
 $$
 \begin{aligned}
-a &: 常数\\\\
-b&: 常数\\\\
-V_m&:分子体积\\\\
+a &: 常数\\
+b&: 常数\\
+V_m&:分子体积\\
 \end{aligned}
 $$
 
@@ -177,9 +177,9 @@ $$
 **输运过程**包括：**内摩擦**（输运分子定向动量），**热传导**（输运分子无规则运动能量），**扩散**（输运分子质量），分别服从：
 $$
 \begin{aligned}
-内摩擦&\quad df=-\eta \left(\frac{du}{dz}\right)_{z_0}dS\quad&\eta=\frac{1}{3}mn\bar v\bar \lambda&\quad:粘度\\\\
+内摩擦&\quad df=-\eta \left(\frac{du}{dz}\right)_{z_0}dS\quad&\eta=\frac{1}{3}mn\bar v\bar \lambda&\quad:粘度\\
 热传导&\quad dQ=-\kappa\left(\frac{dT}{dz}\right)_{z_0}
-dSdt\quad&\kappa=\frac{1}{3}mn\bar v\bar\lambda C_V\quad&:热导率\\\\
+dSdt\quad&\kappa=\frac{1}{3}mn\bar v\bar\lambda C_V\quad&:热导率\\
 扩散&\quad dM=-D\left(\frac{d\rho}{dz}\right)_{z0}dSdt\quad&D=\frac{1}{3}\bar v\bar\lambda\quad&:扩散系数
 \end{aligned}
 $$
@@ -191,8 +191,8 @@ $$
 ### 热一律
 
 $$
-\textcolor{blue}{Q}=\textcolor{purple}{\Delta E}+\textcolor{red}A\\\\
-\textcolor{blue}{吸热}=\textcolor{purple}{内能增量}+\textcolor{red}{对外做功}\\\\
+\textcolor{blue}{Q}=\textcolor{purple}{\Delta E}+\textcolor{red}A\\
+\textcolor{blue}{吸热}=\textcolor{purple}{内能增量}+\textcolor{red}{对外做功}\\
 $$
 
 **准静态过程**：进展无限缓慢（远大于*弛豫时间* ）的过程，认为时刻处于平衡状态
@@ -208,8 +208,8 @@ $$
 **内能是状态量**，从而可以选择*等体+等温*过程方便地计算元过程的dE
 $$
 \begin{aligned}
-dE&=dE_V+dE_T\\\\
-&=dE_V\\\\
+dE&=dE_V+dE_T\\
+&=dE_V\\
 &=\nu C_{v,m}dT
 \end{aligned}
 $$
@@ -252,9 +252,9 @@ n称为*多方指数*
 **符号约定**
 $$
 \begin{aligned}
-Q_1\quad &:吸收的热量\\\\
-|Q_2|\quad &: 放出的热量\\\\
-系统对外界作净功A&=Q_1-|Q_2|>0\\\\
+Q_1\quad &:吸收的热量\\
+|Q_2|\quad &: 放出的热量\\
+系统对外界作净功A&=Q_1-|Q_2|>0\\
 &\textcolor{red}{=循环曲线面积}
 \end{aligned}
 $$
@@ -304,7 +304,7 @@ $$
 **熵$S$**
 $$
 \begin{aligned}
-S:&=\int_R\frac{dQ}T\\\\
+S:&=\int_R\frac{dQ}T\\
 dS&=\frac{dQ}{T}\quad(可逆元过程)
 \end{aligned}
 $$
@@ -380,7 +380,7 @@ $$
 回忆：理想气体有
 $$
 \begin{aligned}
-S(T,V)&=\textcolor{red}{\nu C_{V,m}\ln\frac{T}{T_0}}+\textcolor{blue}{\nu R\ln\frac{V}{V_0}}+\textcolor{purple}{S_0}\\\\
+S(T,V)&=\textcolor{red}{\nu C_{V,m}\ln\frac{T}{T_0}}+\textcolor{blue}{\nu R\ln\frac{V}{V_0}}+\textcolor{purple}{S_0}\\
 &=\textcolor{red}{速度熵}+\textcolor{blue}{位形熵}+\textcolor{purple}{S_0}
 \end{aligned}
 $$
