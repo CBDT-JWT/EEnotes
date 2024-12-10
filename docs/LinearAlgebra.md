@@ -1179,21 +1179,21 @@ $$
 
 1. 设方程$Ax=0$的解集为
    $$
-   \left\\{\left.
+   \{
    k_1\begin{bmatrix}
    2\\\\-1\\\\0
    \end{bmatrix}+
    k_2\begin{bmatrix}
    0\\\\1\\\\1
-   \end{bmatrix}\right|
+   \end{bmatrix}|
    k_1,k_2\in\mathbb{R}
-   \right\}
+   \}
    $$
    求A的行简化阶梯型
 
 2. 设方程$Ax=b$的解集为
    $$
-   \left\\{\left.\begin{bmatrix}
+   \{\begin{bmatrix}
    1\\\\0\\\\1
    \end{bmatrix}+
    k_1\begin{bmatrix}
@@ -1201,22 +1201,23 @@ $$
    \end{bmatrix}+
    k_2\begin{bmatrix}
    0\\\\1\\\\1
-   \end{bmatrix}\right|
+   \end{bmatrix}|
    k_1,k_2\in\mathbb{R}
-   \right\}
+   \}
    $$
    求A.
 
 3. 设方程$Ax=b$的解集为
    $$
-   \left\\{\left.\begin{bmatrix}
+ \{
+   begin{bmatrix}
    1\\\\0\\\\1
    \end{bmatrix}+
    k_1\begin{bmatrix}
    1\\\\-1\\\\0
-   \end{bmatrix}\right|
+   \end{bmatrix}|
    k_1\in\mathbb{R}
-   \right\}
+   \}
    $$
    求$A$的行简化阶梯型，并写出一个满足条件的$A$.
 
