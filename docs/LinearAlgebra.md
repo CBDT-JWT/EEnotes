@@ -115,9 +115,9 @@ $$
 \begin{aligned}
 	\alpha+\beta&=\beta+\alpha&\textcolor{purple}{(加法交换律)}\\
 	(\alpha+\beta)+\gamma &=\alpha+(\beta+\gamma)&\textcolor{purple}{(加法结合律)}\\
-	\exist\theta\in V,\forall \alpha\in V,&\alpha+\theta=\alpha&\textcolor{purple}{(加法有幺元)}\\
-	\forall \alpha\in V,\exist-\alpha\in V,&\alpha+(-\alpha)=\theta&\textcolor{purple}{(加法有逆元)}\\
-	\exist 1\in \mathbb F,&1\alpha=\alpha&\textcolor{red}{(数乘有幺元)}\\
+	\exists\theta\in V,\forall \alpha\in V,&\alpha+\theta=\alpha&\textcolor{purple}{(加法有幺元)}\\
+	\forall \alpha\in V,\exists-\alpha\in V,&\alpha+(-\alpha)=\theta&\textcolor{purple}{(加法有逆元)}\\
+	\exists 1\in \mathbb F,&1\alpha=\alpha&\textcolor{red}{(数乘有幺元)}\\
 	\forall k,l\in \mathbb F,&k(l\alpha)=(kl)\alpha&\textcolor{red}{(数乘结合律)}\\
 	k(\alpha+\beta)&=k\alpha+k\beta&\textcolor{green}{(数乘分配律)}\\
 	(k+l)\alpha&=k\alpha+l\alpha&\textcolor{green}{(数乘分配律)}
@@ -172,7 +172,7 @@ $$
 
 **线性相关**	若向量组$\alpha_1,\alpha_2,\cdots\alpha_r$存在一个**非平凡的**线性组合其值为$0$，则称该向量组**线性相关**。否则，若该向量组的**全部非平凡**线性组合值都非0，则称该向量组**线性无关**。
 
-线性相关意味着（等价于）向量组内某个/某几个向量可被其他向量线性表出。一个向量组的元素最多的线性无关的子集称为其**极大线性无关组**（极大：再加一个都会线性相关），一个向量组的**极大线性无关组**的元素个数称为其**秩**，记作$\rank$一个向量组的生成子空间的**维数**定义为其**极大线性无关组**的元素个数，记作$\dim$；这线性无关组称为一组**基**.
+线性相关意味着（等价于）向量组内某个/某几个向量可被其他向量线性表出。一个向量组的元素最多的线性无关的子集称为其**极大线性无关组**（极大：再加一个都会线性相关），一个向量组的**极大线性无关组**的元素个数称为其**秩**，记作$rank$一个向量组的生成子空间的**维数**定义为其**极大线性无关组**的元素个数，记作$\dim$；这线性无关组称为一组**基**.
 
 **矩阵与线性组合**	通过列向量的线性组合，将矩阵定义为“一排列向量”：
 $$
@@ -310,11 +310,11 @@ $$
 
 **矩阵的秩**刻画了线性映射在维度上的表现。矩阵的秩（可以证明，行秩等于列秩）定义为其所有列作为向量构成的向量组的秩（极大线性无关组大小）。即
 $$
-\rank(A)=\rank(\alpha_1,\cdots,\alpha_n)=\dim span(\alpha_1,\alpha_2,\cdots,\alpha_n)=\dim R(A)
+rank(A)=rank(\alpha_1,\cdots,\alpha_n)=\dim span(\alpha_1,\alpha_2,\cdots,\alpha_n)=\dim R(A)
 $$
 由于线性映射$f(\mathbf x)=A\mathbf x$的值域即$A$的列向量全部线性组合$span(\alpha_1,\alpha_2,\cdots,\alpha_n)$,因此矩阵$A$的秩就是映射$f(\cdot)$的值域的维数。
 
-**满秩矩阵**	若$A\in M_{m\times n}(\R)$ ，$\rank(A)=m$，则称$A$是**行满秩的**。若$\rank(A)=n$，则称$A$是**列满秩的**。表示矩阵行满秩的线性映射，其值域为$\R^m$.
+**满秩矩阵**	若$A\in M_{m\times n}(\R)$ ，$rank(A)=m$，则称$A$是**行满秩的**。若$rank(A)=n$，则称$A$是**列满秩的**。表示矩阵行满秩的线性映射，其值域为$\R^m$.
 
 特别对于方阵$A\in M_n(\R)$：
 
@@ -325,31 +325,31 @@ $$
 
 **基础公式**
 $$
-\rank (A)=\rank(A^T)=\rank(A^TA)\\
-\rank(kA)=\rank(A)\quad,k\ne 0\\
-\rank(A+B)\le \rank(A)+\rank(B)\\
-\rank(AB)\le \min\{\rank(A),\rank(B)\}\\
-A可逆\Rightarrow \rank(AB)=\rank(B)=\rank(A)\\
+rank (A)=rank(A^T)=rank(A^TA)\\
+rank(kA)=rank(A)\quad,k\ne 0\\
+rank(A+B)\le rank(A)+rank(B)\\
+rank(AB)\le \min\{rank(A),rank(B)\}\\
+A可逆\Rightarrow rank(AB)=rank(B)=rank(A)\\
 $$
 **Sylvester不等式**	设$A\in M_{m\times s}(\R),\quad B\in M_{s\times n}(\R).$则
 $$
-\rank(A)+\rank(B)-s\le\rank(AB)\le\min\{\rank(A),
+rank(A)+rank(B)-s\lerank(AB)\le\min\{rank(A),
 rank(B)\}
 $$
 **Frobenius不等式**	设乘积$ABC$有意义，则
 $$
-\rank(ABC)\ge \rank(AB)+\rank(BC)-\rank(B)
+rank(ABC)\ge rank(AB)+rank(BC)-rank(B)
 $$
 **第一降阶定理**	设$A$可逆，则
 $$
-\rank\begin{bmatrix}
+rank\begin{bmatrix}
 A & B\\
 C & D
-\end{bmatrix}=\rank(A)+\rank(D-CA^{-1}B)
+\end{bmatrix}=rank(A)+rank(D-CA^{-1}B)
 $$
 **第二降阶定理**	设$A,D\in M_{r\times s}(\R)$可逆，$B\in M_{r\times s}(\R),\quad C\in M_{s\times r}(\R)$,则：
 $$
-\rank(D-CA^{-1}B)=\rank(D)-\rank(A)+\rank(A-BD^{-1}C)
+rank(D-CA^{-1}B)=rank(D)-rank(A)+rank(A-BD^{-1}C)
 $$
 
 ##### 行列式
@@ -533,7 +533,7 @@ $$
 \end{array}
 \right]
 $$
-此时，$\tilde A$ 非零行数目即为$\rank A = r$,做讨论：
+此时，$\tilde A$ 非零行数目即为$rank A = r$,做讨论：
 
 - 若$\exists s \gt r$,$\tilde b_s \ne 0$,则方程组无解。
 - 若$r=m$, 则$\tilde A$行满秩，从而$A$ 行满秩，进而有唯一解。此时的$\tilde b$即为解。
@@ -545,7 +545,7 @@ $$
 $$
 A=LU
 $$
-其中$L$为**单位**下三角矩阵，$U$为上三角矩阵的方式称为$LU$分解。**$LU$分解存在当且仅当$A$的前$\rank A$阶顺序主子阵可逆。**
+其中$L$为**单位**下三角矩阵，$U$为上三角矩阵的方式称为$LU$分解。**$LU$分解存在当且仅当$A$的前$rank A$阶顺序主子阵可逆。**
 
 > [!WARNING]
 >
@@ -671,13 +671,13 @@ O & O\\
 $$
 的矩阵相抵，称为**相抵标准型**。即：
 $$
-\forall A,\exist可逆矩阵P,Q,s.t.\\
+\forall A,\exists可逆矩阵P,Q,s.t.\\
 PAQ=\begin{bmatrix}
 I_r&O\\
 O&O
 \end{bmatrix}
 $$
-其中$r=\rank A$.因此不难知道，$A$可逆等价于$A\simeq I$.
+其中$r=rank A$.因此不难知道，$A$可逆等价于$A\simeq I$.
 
 当然，我们也可以定义**左相抵**和**右相抵**。若矩阵$B=PA$，其中$P$可逆，则称$A,B$**左相抵**。我们也可以定义“**左相抵标准型**”，即行简化阶梯型。由于不能进行列变换，因此行简化阶梯型允许0列提前出现。这里我们重新思考求解线性方程组
 $$
@@ -1411,7 +1411,7 @@ $$
 
  2. 利用1中结论，证明关于$m\times n$矩阵$X$的方程$AXB=C$有解，当且仅当
     $$
-    \rank(A)=\rank([A\quad C])且\rank(B)=\rank(\begin{bmatrix}
+    rank(A)=rank([A\quad C])且rank(B)=rank(\begin{bmatrix}
     B\\C
     \end{bmatrix}
     ).
@@ -1457,8 +1457,8 @@ $$
 
 **问题1**	**矩阵的运算。**考虑集合$S_n，T_n\subset M_{n\times n}(\mathbb R)$.问下面几种情况下，使得$T_n = M_{n\times n}(\mathbb R)$的最小的$S_n$, 即,求$\min(card(S_n))$.
 
-1. $T_n = \{M\in M_{n\times n}(\mathbb R)|\exist \alpha,\beta\in \mathbb{R}, A,B\in S_n,s.t.\alpha A+\beta B = M\}$
-2. $T_n = \{M\in M_{n\times n}(\mathbb R)|\exist \alpha,\beta,\gamma\in \mathbb{R}, A,B\in S_n,s.t.\alpha A+\beta B +\gamma AB= M\}$
+1. $T_n = \{M\in M_{n\times n}(\mathbb R)|\exists \alpha,\beta\in \mathbb{R}, A,B\in S_n,s.t.\alpha A+\beta B = M\}$
+2. $T_n = \{M\in M_{n\times n}(\mathbb R)|\exists \alpha,\beta,\gamma\in \mathbb{R}, A,B\in S_n,s.t.\alpha A+\beta B +\gamma AB= M\}$
 
 **问题2**	**神经网络与激活函数。**从线性代数（线性变换的性质）的角度解释多层神经网络中激活函数的意义。提示：如果没有激活函数，多层的神经网络和什么等效？
 
