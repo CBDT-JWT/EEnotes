@@ -1179,7 +1179,7 @@ $$
 
 1. 设方程$Ax=0$的解集为
    $$
-   \left\{\left.
+   \left\\{\left.
    k_1\begin{bmatrix}
    2\\\\-1\\\\0
    \end{bmatrix}+
@@ -1193,7 +1193,7 @@ $$
 
 2. 设方程$Ax=b$的解集为
    $$
-   \left\{\left.\begin{bmatrix}
+   \left\\{\left.\begin{bmatrix}
    1\\\\0\\\\1
    \end{bmatrix}+
    k_1\begin{bmatrix}
@@ -1209,7 +1209,7 @@ $$
 
 3. 设方程$Ax=b$的解集为
    $$
-   \left\{\left.\begin{bmatrix}
+   \left\\{\left.\begin{bmatrix}
    1\\\\0\\\\1
    \end{bmatrix}+
    k_1\begin{bmatrix}
