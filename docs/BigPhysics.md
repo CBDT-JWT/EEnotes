@@ -226,9 +226,11 @@ $$
 C_{V,m}=\frac{i}{2}R=\left.\frac{dQ}{dT}\right|_{V=V_0}
 $$
 **摩尔定压热容**(麦耶公式)
+
 $$
 C_{p,m}=\frac{i}{2}R+R=\left.\frac{dQ}{dT}\right|_{p=p_0}
 $$
+
 **热容比**
 $$
 \gamma := \frac{C_{p,m}}{C_{V,m}}=\frac{i+2}{i}
