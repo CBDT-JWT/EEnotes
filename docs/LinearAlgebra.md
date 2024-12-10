@@ -335,7 +335,7 @@ A可逆\Rightarrow rank(AB)=rank(B)=rank(A)\\\\
 $$
 **Sylvester不等式**	设$A\in M_{m\times s}(\mathbb{R}),\quad B\in M_{s\times n}(\mathbb{R}).$则
 $$
-rank(A)+rank(B)-s\lerank(AB)\le \min\{rank(A),
+rank(A)+rank(B)-s\le rank(AB)\le \min\{rank(A),
 rank(B)\}
 $$
 **Frobenius不等式**	设乘积$ABC$有意义，则
@@ -852,6 +852,7 @@ $$
 抽象行列式的计算方法：
 
 - 矩阵知识。
+
   $$
   \begin{aligned}
   (1) &|AB|=|A||B|\\\\
@@ -1130,36 +1131,31 @@ $$
 
 **题2**	求解齐次方程组
 $$
-\left\{
-\begin{aligned}
+\begin{cases}
 x_1+x_2+3x_4-x_5 &= 0\\\\
 2x_2 + x_3 + 4x_4 + x_5 &= 0\\\\
 x_1 + 3x_2 + x_3 + 4x_4 + 6x_5 &=0
-\end{aligned}
+\end{cases}
 \right.
 $$
 **题3**	已知方程
 $$
-\left\{
-\begin{aligned}
+\begin{cases}
 (1+a)x_1+x_2+\cdots+x_n &= 0\\\\
 2x_1 +(2+a)x_2+\cdots+2x_n &= 0\\\\
 \vdots\quad&\\\\
 nx_1+nx_2+\cdots+(n+a)x_n&=0
-\end{aligned}
-\right.
+\end{cases}
 $$
 问$a$何值时，该方程组有非零解？
 
 **题4**	求解方程组
 $$
-\left\{
-\begin{aligned}
+\begin{cases}
 x_1-x_2+2x_3+x_4 &= 1\\\\
 2x_1-x_2+x_3+2x_4&=3\\\\
 x_1-x_3+x_4&=2
-\end{aligned}
-\right.
+\end{cases}
 $$
 并给出满足$x_1=-x_2$的所有解。
 
