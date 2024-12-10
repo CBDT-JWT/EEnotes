@@ -48,10 +48,10 @@ $$
 2. **应用理解**：变元$x_1,x_2,x_3\cdots x_n$满足方程组
    $$
    \left\{\begin{aligned}
-   a_{11}x_1+a_{12}x_2+\cdots+a_{1n}x_n&=b_1\\
-   a_{21}x_1+a_{22}x_2+\cdots+a_{2n}x_n&=b_2\\
-   \vdots\quad\\
-   a_{m1}x_1+a_{m2}x_2+\cdots+a_{mn}x_n&=b_m\\
+   a_{11}x_1+a_{12}x_2+\cdots+a_{1n}x_n&=b_1\\\\
+   a_{21}x_1+a_{22}x_2+\cdots+a_{2n}x_n&=b_2\\\\
+   \vdots\quad\\\\
+   a_{m1}x_1+a_{m2}x_2+\cdots+a_{mn}x_n&=b_m\\\\
    \end{aligned}\right.
    $$
 
@@ -78,26 +78,26 @@ $$
 因此倘若求出了三个**单位输入**（$[1\quad 0\quad 0]^T$，$[0\quad 1\quad 0]^T$，$[0\quad 0\quad 1]^T$对应的响应$\mathbf {\alpha_1,\alpha_2,\alpha_3}$，也就是后面*表示矩阵*部分讲到的标准正交基对应的函数值）就可以对任意的$\mathbf x = [V_1\quad V_2\quad V_3]^T$求得总响应为：
 $$
 \mathbf y=\begin{bmatrix}
-I_{l1}\\
-I_{l2}\\
-I_{l3}\\
+I_{l1}\\\\
+I_{l2}\\\\
+I_{l3}\\\\
 \end{bmatrix}=\begin{bmatrix}
 \mathbf \alpha_1&\mathbf \alpha_2 & \mathbf \alpha_3
 \end{bmatrix}\begin{bmatrix}
-V_{1}\\
-V_{2}\\
+V_{1}\\\\
+V_{2}\\\\
 V_3
 \end{bmatrix}
 =\begin{bmatrix}
-a_{11}&a_{12}&a_{13}\\
-a_{21}&a_{22}&a_{23}\\
-a_{31}&a_{32}&a_{33}\\
+a_{11}&a_{12}&a_{13}\\\\
+a_{21}&a_{22}&a_{23}\\\\
+a_{31}&a_{32}&a_{33}\\\\
 \end{bmatrix}\begin{bmatrix}
-V_{1}\\
-V_{2}\\
+V_{1}\\\\
+V_{2}\\\\
 V_3
 \end{bmatrix}= A \mathbf x
-\\
+\\\\
 \mathbf y = A\mathbf x
 $$
 为了和《线性代数》对齐，此处的记号和电子学通用的记号稍有不同。下个学期的**《电子电路与系统基础》**中会详细介绍利用线性代数工具分析电路的各种技巧。这里仅仅作为一个引子，说明线性代数在工科的广泛应用和解释“线性系统”的意义。
@@ -113,13 +113,13 @@ $$
 设$V$为定义了$\cdot$（**数**乘），$+$（加法）两种**封闭**运算的集合，若其满足
 $$
 \begin{aligned}
-	\alpha+\beta&=\beta+\alpha&\textcolor{purple}{(加法交换律)}\\
-	(\alpha+\beta)+\gamma &=\alpha+(\beta+\gamma)&\textcolor{purple}{(加法结合律)}\\
-	\exists\theta\in V,\forall \alpha\in V,&\alpha+\theta=\alpha&\textcolor{purple}{(加法有幺元)}\\
-	\forall \alpha\in V,\exists-\alpha\in V,&\alpha+(-\alpha)=\theta&\textcolor{purple}{(加法有逆元)}\\
-	\exists 1\in \mathbb F,&1\alpha=\alpha&\textcolor{red}{(数乘有幺元)}\\
-	\forall k,l\in \mathbb F,&k(l\alpha)=(kl)\alpha&\textcolor{red}{(数乘结合律)}\\
-	k(\alpha+\beta)&=k\alpha+k\beta&\textcolor{green}{(数乘分配律)}\\
+	\alpha+\beta&=\beta+\alpha&\textcolor{purple}{(加法交换律)}\\\\
+	(\alpha+\beta)+\gamma &=\alpha+(\beta+\gamma)&\textcolor{purple}{(加法结合律)}\\\\
+	\exists\theta\in V,\forall \alpha\in V,&\alpha+\theta=\alpha&\textcolor{purple}{(加法有幺元)}\\\\
+	\forall \alpha\in V,\exists-\alpha\in V,&\alpha+(-\alpha)=\theta&\textcolor{purple}{(加法有逆元)}\\\\
+	\exists 1\in \mathbb F,&1\alpha=\alpha&\textcolor{red}{(数乘有幺元)}\\\\
+	\forall k,l\in \mathbb F,&k(l\alpha)=(kl)\alpha&\textcolor{red}{(数乘结合律)}\\\\
+	k(\alpha+\beta)&=k\alpha+k\beta&\textcolor{green}{(数乘分配律)}\\\\
 	(k+l)\alpha&=k\alpha+l\alpha&\textcolor{green}{(数乘分配律)}
 \end{aligned}
 $$
@@ -128,9 +128,9 @@ $$
 若$V$上定义了内积运算，满足
 $$
 \begin{aligned}
-\alpha \cdot \alpha &\ge 0 &\textcolor{purple}{(正定性)}\\
-\alpha \cdot \beta &= \beta \cdot \alpha &\textcolor{purple}{(交换律)}\\
-(k_1\alpha_1+k_2\alpha_2)\cdot\beta&=k_1\alpha_1\cdot\beta+k_2\alpha_2\cdot\beta & \textcolor{purple}{(线性性)}\\
+\alpha \cdot \alpha &\ge 0 &\textcolor{purple}{(正定性)}\\\\
+\alpha \cdot \beta &= \beta \cdot \alpha &\textcolor{purple}{(交换律)}\\\\
+(k_1\alpha_1+k_2\alpha_2)\cdot\beta&=k_1\alpha_1\cdot\beta+k_2\alpha_2\cdot\beta & \textcolor{purple}{(线性性)}\\\\
 \end{aligned}
 $$
 则称之为**欧氏空间**。可以定义**范数**（俗称模长，长度）：
@@ -178,12 +178,12 @@ $$
 $$
 A:=\begin{bmatrix}
 \mathbf \alpha_1&\mathbf \alpha_2&\mathbf \alpha_3&\cdots&\mathbf \alpha_r
-\end{bmatrix}\\
+\end{bmatrix}\\\\
 =\begin{bmatrix}
-a_{11}&a_{12}&\cdots&a_{1r}\\
-a_{21}&a_{22}&\cdots&a_{2r}\\
-\vdots&\vdots&\ddots&\vdots\\
-a_{m1}&a_{m2}&\cdots&a_{mr}\\
+a_{11}&a_{12}&\cdots&a_{1r}\\\\
+a_{21}&a_{22}&\cdots&a_{2r}\\\\
+\vdots&\vdots&\ddots&\vdots\\\\
+a_{m1}&a_{m2}&\cdots&a_{mr}\\\\
 \end{bmatrix}
 $$
 矩阵右乘向量定义为其列向量的线性组合：
@@ -196,7 +196,7 @@ $$
 **线性映射**是指对线性组合满足交换律的映射。即：自变量的线性组合results in因变量的线性组合。写成严谨的数学语言就是：
 $$
 \left\{\begin{aligned}
-f(x_1+x_2) &= f(x_1)+f(x_2)\quad 保加法\\
+f(x_1+x_2) &= f(x_1)+f(x_2)\quad 保加法\\\\
 f(kx) &= kf(x)\quad 保数乘
 \end{aligned}\right.
 $$
@@ -213,13 +213,13 @@ $$
 这样的形式，且根据叠加定理，有
 $$
 \begin{aligned}
-f(\mathbf x)&=f(x_1e_1+x_2e_2+\cdots+x_ne_n)\\
-&=x_1f(e_1)+x_2f(e_2)+\cdots x_nf(e_n)&叠加原理\\
-&=x_1\alpha_1+x_2\alpha_2+\cdots+x_n\alpha_n&\\
+f(\mathbf x)&=f(x_1e_1+x_2e_2+\cdots+x_ne_n)\\\\
+&=x_1f(e_1)+x_2f(e_2)+\cdots x_nf(e_n)&叠加原理\\\\
+&=x_1\alpha_1+x_2\alpha_2+\cdots+x_n\alpha_n&\\\\
 &=\begin{bmatrix}
 \alpha_1&\alpha_2&\cdots&\cdots\alpha_n
 \end{bmatrix}\begin{bmatrix}
-x_1\\x_2\\\vdots\\x_n
+x_1\\\\x_2\\\\\vdots\\\\x_n
 \end{bmatrix}
 =A\mathbf x
 \end{aligned}
@@ -239,7 +239,7 @@ $$
 **线性映射的复合与矩阵乘法**	若有线性映射
 $$
 \begin{aligned}
-f:\R^n&\to\R^k\quad g:\R^k\to\R^m\\
+f:\R^n&\to\R^k\quad g:\R^k\to\R^m\\\\
 \mathbf x&\mapsto A\mathbf x\quad\quad\mathbf y\mapsto B\mathbf y
 \end{aligned}
 $$
@@ -260,11 +260,11 @@ $$
 **$\R^n$的自然基**	为了好算，我们一般取
 $$
 e_1=\begin{bmatrix}
-1\\0\\\vdots\\0
+1\\\\0\\\\\vdots\\\\0
 \end{bmatrix},e_2=\begin{bmatrix}
-0\\1\\\vdots\\0
+0\\\\1\\\\\vdots\\\\0
 \end{bmatrix},\cdots,e_n=\begin{bmatrix}
-0\\0\\\vdots\\n
+0\\\\0\\\\\vdots\\\\n
 \end{bmatrix}
 $$
 作为$\R^n$的基进行表示矩阵的书写与计算。
@@ -279,26 +279,26 @@ $$
 $$
 \begin{aligned}
 \mathbf P_{ij}& = \begin{bmatrix}
-1 & & & &\\
-& 0 & &1&\\
-& & \ddots &&\\
-& 1&&0&\\
+1 & & & &\\\\
+& 0 & &1&\\\\
+& & \ddots &&\\\\
+& 1&&0&\\\\
 & & & &1
-\end{bmatrix}\quad(\mathbf I_n互换i，j行)\\
+\end{bmatrix}\quad(\mathbf I_n互换i，j行)\\\\
 \mathbf E_i(k)&=\begin{bmatrix}
-1 & & & &\\
-& 1 & &&\\
-& & \ddots &&\\
-& &&k&\\
+1 & & & &\\\\
+& 1 & &&\\\\
+& & \ddots &&\\\\
+& &&k&\\\\
 & & & &1
-\end{bmatrix}\quad(\mathbf I_n第i行1变成k)\\
+\end{bmatrix}\quad(\mathbf I_n第i行1变成k)\\\\
 \mathbf E_{ij}(k)&=\begin{bmatrix}
-1 & & & &\\
-& 1 & &k&\\
-& & \ddots &&\\
-& &&1&\\
+1 & & & &\\\\
+& 1 & &k&\\\\
+& & \ddots &&\\\\
+& &&1&\\\\
 & & & &1
-\end{bmatrix}\quad(\mathbf I_n(j,i)元素0变成k)\\
+\end{bmatrix}\quad(\mathbf I_n(j,i)元素0变成k)\\\\
 \end{aligned}
 $$
 
@@ -325,11 +325,11 @@ $$
 
 **基础公式**
 $$
-rank (A)=rank(A^T)=rank(A^TA)\\
-rank(kA)=rank(A)\quad,k\ne 0\\
-rank(A+B)\le rank(A)+rank(B)\\
-rank(AB)\le \min\{rank(A),rank(B)\}\\
-A可逆\Rightarrow rank(AB)=rank(B)=rank(A)\\
+rank (A)=rank(A^T)=rank(A^TA)\\\\
+rank(kA)=rank(A)\quad,k\ne 0\\\\
+rank(A+B)\le rank(A)+rank(B)\\\\
+rank(AB)\le \min\{rank(A),rank(B)\}\\\\
+A可逆\Rightarrow rank(AB)=rank(B)=rank(A)\\\\
 $$
 **Sylvester不等式**	设$A\in M_{m\times s}(\R),\quad B\in M_{s\times n}(\R).$则
 $$
@@ -343,7 +343,7 @@ $$
 **第一降阶定理**	设$A$可逆，则
 $$
 rank\begin{bmatrix}
-A & B\\
+A & B\\\\
 C & D
 \end{bmatrix}=rank(A)+rank(D-CA^{-1}B)
 $$
@@ -371,7 +371,7 @@ $$
   $$
   \det\begin{bmatrix}
   \cdots&k\alpha_i+k'\alpha_i'&\cdots
-  \end{bmatrix}\\=k\det\begin{bmatrix}
+  \end{bmatrix}\\\\=k\det\begin{bmatrix}
   \cdots&\alpha_i&\cdots
   \end{bmatrix}+k'\det\begin{bmatrix}
   \cdots&\alpha_i'&\cdots
@@ -392,17 +392,17 @@ $$
 对于二三阶矩阵，行列式可以直接计算(主对角-副对角）。
 $$
 \det\begin{bmatrix}
-a_{11} & a_{12}\\
+a_{11} & a_{12}\\\\
 a_{21} & a_{22}
 \end{bmatrix}=a_{11}a_{22}-a_{12}a_{21}
 $$
 
 $$
 \det\begin{bmatrix}
-a_{11} & a_{12} & a_{13}\\
-a_{21} & a_{22} & a_{23}\\
-a_{31} & a_{32} & a_{33}\\
-\end{bmatrix}=a_{11}a_{22}a_{33}+a_{12}a_{23}a_{31}+a_{13}a_{21}a_{32}\\-a_{13}a_{22}a_{31}-a_{12}a_{21}a_{33}-a_{11}a_{23}a_{32}
+a_{11} & a_{12} & a_{13}\\\\
+a_{21} & a_{22} & a_{23}\\\\
+a_{31} & a_{32} & a_{33}\\\\
+\end{bmatrix}=a_{11}a_{22}a_{33}+a_{12}a_{23}a_{31}+a_{13}a_{21}a_{32}\\\\-a_{13}a_{22}a_{31}-a_{12}a_{21}a_{33}-a_{11}a_{23}a_{32}
 $$
 
 以上两式之正确性可以通过带入$\det$函数的性质并结合$\det$ 函数的唯一性证明，留给同学们自行完成。
@@ -430,10 +430,10 @@ $$
 对于一个线性方程组
 $$
 \left\{\begin{aligned}
-a_{11}x_1+a_{12}x_2+\cdots+a_{1n}x_n&=b_1\\
-a_{21}x_1+a_{22}x_2+\cdots+a_{2n}x_n&=b_2\\
-\vdots\quad\\
-a_{m1}x_1+a_{m2}x_2+\cdots+a_{mn}x_n&=b_m\\
+a_{11}x_1+a_{12}x_2+\cdots+a_{1n}x_n&=b_1\\\\
+a_{21}x_1+a_{22}x_2+\cdots+a_{2n}x_n&=b_2\\\\
+\vdots\quad\\\\
+a_{m1}x_1+a_{m2}x_2+\cdots+a_{mn}x_n&=b_m\\\\
 \end{aligned}\right.
 $$
 我们用矩阵记号将其改写为
@@ -470,7 +470,7 @@ A\mathbf x=\mathbf b
 $$
 若找到一个**特解**$x_0$，满足$Ax_0 = b$，那么任何其他的解$x$,都满足
 $$
-A(x-x_0)=b-b=0\\
+A(x-x_0)=b-b=0\\\\
 x-x_0 \in N(A)
 $$
 若找不到，则没有解。
@@ -479,9 +479,9 @@ $$
 $$
 \left\{
 \begin{aligned}
-\{x|x=x_0+v,v\in N(A)\},&\quad \exists x_0,Ax_0=b\\
-\{x_0\},&\quad \exists x_0,Ax_0=b且N(A)=\{0\}\\
-\O ,&\quad \nexists x_0,Ax_0=b\\
+\{x|x=x_0+v,v\in N(A)\},&\quad \exists x_0,Ax_0=b\\\\
+\{x_0\},&\quad \exists x_0,Ax_0=b且N(A)=\{0\}\\\\
+\O ,&\quad \nexists x_0,Ax_0=b\\\\
 \end{aligned}
 \right.
 $$
@@ -498,10 +498,10 @@ $$
 对于线性方程组
 $$
 \left\{\begin{aligned}
-a_{11}x_1+a_{12}x_2+\cdots+a_{1n}x_n&=b_1\\
-a_{21}x_1+a_{22}x_2+\cdots+a_{2n}x_n&=b_2\\
-\vdots\quad\\
-a_{m1}x_1+a_{m2}x_2+\cdots+a_{mn}x_n&=b_m\\
+a_{11}x_1+a_{12}x_2+\cdots+a_{1n}x_n&=b_1\\\\
+a_{21}x_1+a_{22}x_2+\cdots+a_{2n}x_n&=b_2\\\\
+\vdots\quad\\\\
+a_{m1}x_1+a_{m2}x_2+\cdots+a_{mn}x_n&=b_m\\\\
 \end{aligned}\right.
 $$
 我们将他写成增广矩阵
@@ -513,22 +513,22 @@ $$
 \left[
 \begin{array}{c|c}
 \begin{matrix}
-0 &\cdots&0&1&\cdots&0&\cdots&0\\
-0 & &\cdots&0&\cdots&1&\cdots&0\\
-\vdots&&&&&&\vdots\\
-0 & & & \cdots & & 0 & 1&0\\
-0 &&&\cdots&&&0&0\\
-0 &&&\cdots&&&0&0\\
-\vdots&&&&&&\vdots\\
+0 &\cdots&0&1&\cdots&0&\cdots&0\\\\
+0 & &\cdots&0&\cdots&1&\cdots&0\\\\
+\vdots&&&&&&\vdots\\\\
+0 & & & \cdots & & 0 & 1&0\\\\
+0 &&&\cdots&&&0&0\\\\
+0 &&&\cdots&&&0&0\\\\
+\vdots&&&&&&\vdots\\\\
 \end{matrix}&
 \begin{matrix}
-\tilde b_1\\
-\tilde b_2\\
-\vdots\\
-\tilde b_r\\
-\tilde b_{r+1}\\
-\vdots\\
-\vdots\\
+\tilde b_1\\\\
+\tilde b_2\\\\
+\vdots\\\\
+\tilde b_r\\\\
+\tilde b_{r+1}\\\\
+\vdots\\\\
+\vdots\\\\
 \end{matrix}
 \end{array}
 \right]
@@ -554,39 +554,39 @@ $$
 $LU$分解的方法：先U后L。首先进行行倍加变换把$A$变成上三角矩阵$U$,每次倍加记录下一个产生的主列的信息（这里主元标红，将变成$0$的元标紫色）
 $$
 A=\begin{bmatrix}
-\textcolor{red}2 & -4 & -2 & 3 \\
-\textcolor{purple}6 & -9 & -5 & 8\\
-\textcolor{purple}2 & -7 & -3 & 9\\
-\textcolor{purple}4 & -2 & -2 & -1\\
+\textcolor{red}2 & -4 & -2 & 3 \\\\
+\textcolor{purple}6 & -9 & -5 & 8\\\\
+\textcolor{purple}2 & -7 & -3 & 9\\\\
+\textcolor{purple}4 & -2 & -2 & -1\\\\
 \end{bmatrix}\sim\begin{bmatrix}
-2 & -4 & -2 & 3 \\
-0 & \textcolor{red}3 & 1 & -1\\
-0 & \textcolor{purple} {-3} & -1 & 6\\
-0 & \textcolor{purple}6 & 2 & -7\\
-\end{bmatrix}\\\sim\begin{bmatrix}
-2 & -4 & -2 & 3 \\
-0 & 3 & 1 & -1\\
-0 & 0 & 0 & \textcolor{red}5\\
-0 & 0 & 0 & \textcolor{purple}{-5}\\
+2 & -4 & -2 & 3 \\\\
+0 & \textcolor{red}3 & 1 & -1\\\\
+0 & \textcolor{purple} {-3} & -1 & 6\\\\
+0 & \textcolor{purple}6 & 2 & -7\\\\
+\end{bmatrix}\\\\\sim\begin{bmatrix}
+2 & -4 & -2 & 3 \\\\
+0 & 3 & 1 & -1\\\\
+0 & 0 & 0 & \textcolor{red}5\\\\
+0 & 0 & 0 & \textcolor{purple}{-5}\\\\
 \end{bmatrix}\sim\begin{bmatrix}
-2 & -4 & -2 & 3 \\
-0 & 3 & 1 & -1\\
-0 & 0 & 0 & 5\\
-0 & 0 & 0 & 0\\
-\end{bmatrix}=U\\
+2 & -4 & -2 & 3 \\\\
+0 & 3 & 1 & -1\\\\
+0 & 0 & 0 & 5\\\\
+0 & 0 & 0 & 0\\\\
+\end{bmatrix}=U\\\\
 $$
 而后把紫色除以红色构成L的下半部分，对角线全1得到：
 $$
 L = \begin{bmatrix}
-1 &  &  &  \\
-\textcolor{purple}6/\textcolor{red}2 & 1 & &\\
-\textcolor{purple}2/\textcolor{red}2 & \textcolor{purple}{-3}/\textcolor{red}3 &1&\\
-\textcolor{purple}4/\textcolor{red}2 & \textcolor{purple}6/\textcolor{red}3&\textcolor{purple}{-5}/\textcolor{red}5&1\\
+1 &  &  &  \\\\
+\textcolor{purple}6/\textcolor{red}2 & 1 & &\\\\
+\textcolor{purple}2/\textcolor{red}2 & \textcolor{purple}{-3}/\textcolor{red}3 &1&\\\\
+\textcolor{purple}4/\textcolor{red}2 & \textcolor{purple}6/\textcolor{red}3&\textcolor{purple}{-5}/\textcolor{red}5&1\\\\
 \end{bmatrix}= \begin{bmatrix}
-1 &  &  &  \\
-3 & 1 & &\\
-1 & -1 &1&\\
-2 & 2&-1&1\\
+1 &  &  &  \\\\
+3 & 1 & &\\\\
+1 & -1 &1&\\\\
+2 & 2&-1&1\\\\
 \end{bmatrix}
 $$
 
@@ -628,26 +628,26 @@ $$
 $$
 \begin{aligned}
 \mathbf P_{ij}& = \begin{bmatrix}
-1 & & & &\\
-& 0 & &1&\\
-& & \ddots &&\\
-& 1&&0&\\
+1 & & & &\\\\
+& 0 & &1&\\\\
+& & \ddots &&\\\\
+& 1&&0&\\\\
 & & & &1
-\end{bmatrix}\quad(\mathbf I_n互换i，j行)\\
+\end{bmatrix}\quad(\mathbf I_n互换i，j行)\\\\
 \mathbf E_i(k)&=\begin{bmatrix}
-1 & & & &\\
-& 1 & &&\\
-& & \ddots &&\\
-& &&k&\\
+1 & & & &\\\\
+& 1 & &&\\\\
+& & \ddots &&\\\\
+& &&k&\\\\
 & & & &1
-\end{bmatrix}\quad(\mathbf I_n第i行1变成k)\\
+\end{bmatrix}\quad(\mathbf I_n第i行1变成k)\\\\
 \mathbf E_{ij}(k)&=\begin{bmatrix}
-1 & & & &\\
-& 1 & &k&\\
-& & \ddots &&\\
-& &&1&\\
+1 & & & &\\\\
+& 1 & &k&\\\\
+& & \ddots &&\\\\
+& &&1&\\\\
 & & & &1
-\end{bmatrix}\quad(\mathbf I_n(j,i)元素0变成k)\\
+\end{bmatrix}\quad(\mathbf I_n(j,i)元素0变成k)\\\\
 \end{aligned}
 $$
 分别对应三种基本行（列）变换。对一个矩阵进行初等行变换，本质上是依次左乘一系列初等矩阵。
@@ -665,15 +665,15 @@ $$
 不难证明相抵关系是等价关系。因此可以定义相抵等价类，其中最简单的代表就是**相抵标准型**。同样也不难证明，任何一个矩阵$A$都与形如
 $$
 \begin{bmatrix}
-I_r & O\\
-O & O\\
+I_r & O\\\\
+O & O\\\\
 \end{bmatrix}
 $$
 的矩阵相抵，称为**相抵标准型**。即：
 $$
-\forall A,\exists可逆矩阵P,Q,s.t.\\
+\forall A,\exists可逆矩阵P,Q,s.t.\\\\
 PAQ=\begin{bmatrix}
-I_r&O\\
+I_r&O\\\\
 O&O
 \end{bmatrix}
 $$
@@ -687,11 +687,11 @@ $$
 $$
 \left\{
 \begin{aligned}
-x_{m_1}&=\tilde b_1\\
-x_{m_2}&=\tilde b_2\\
-\vdots\\
-x_{m_r}&=\tilde b_r\\
-0&=\tilde b_{r+1}\\
+x_{m_1}&=\tilde b_1\\\\
+x_{m_2}&=\tilde b_2\\\\
+\vdots\\\\
+x_{m_r}&=\tilde b_r\\\\
+0&=\tilde b_{r+1}\\\\
 \vdots
 \end{aligned}
 \right.
@@ -715,10 +715,10 @@ $$
 伴随矩阵定义为
 $$
 A^*=\begin{bmatrix}
-A_{11}&A_{21}&\cdots&A_{n1}\\
-A_{12}&A_{22}&\cdots&A_{n2}\\
-\vdots&\vdots&\ddots&\vdots\\
-A_{1n}&A_{2n}&\cdots&A_{nn}\\
+A_{11}&A_{21}&\cdots&A_{n1}\\\\
+A_{12}&A_{22}&\cdots&A_{n2}\\\\
+\vdots&\vdots&\ddots&\vdots\\\\
+A_{1n}&A_{2n}&\cdots&A_{nn}\\\\
 \end{bmatrix}
 $$
 其中$A_{ij}=(-1)^{i+j}M_{ij}$称为**代数余子式**。余子式$M_{ij}$即为$A$去掉第$i$行和第$j$列剩下的行列式。由此可以得到一个~~快速~~麻烦的求逆公式
@@ -728,11 +728,11 @@ $$
 我们一般不这么求逆。但对于二阶矩阵，使用如下导出公式也挺快的：
 $$
 \begin{bmatrix}
-a & b\\
-c & d\\
+a & b\\\\
+c & d\\\\
 \end{bmatrix}^{-1}=\frac{1}{ad-bc}\begin{bmatrix}
-d&-b\\
--c & a\\
+d&-b\\\\
+-c & a\\\\
 \end{bmatrix}
 $$
 速记：“主对调，副变号”。这个公式在下个学期的《电子电路与系统基础（1）》课程中常用，大家可以记一下。
@@ -745,34 +745,34 @@ $$
 $$
 \begin{aligned}
 &(1) \begin{bmatrix}
-P & 0\\
+P & 0\\\\
 0 & I
 \end{bmatrix} \begin{bmatrix}
-A & B\\
+A & B\\\\
 C & D
 \end{bmatrix}= \begin{bmatrix}
-PA & PB\\
+PA & PB\\\\
 C & D
 \end{bmatrix}
-\\
+\\\\
 &(2)\begin{bmatrix}
-I & 0\\
+I & 0\\\\
 Q & I
 \end{bmatrix} \begin{bmatrix}
-A & B\\
+A & B\\\\
 C & D
 \end{bmatrix}= \begin{bmatrix}
-A & B\\
+A & B\\\\
 QA+C & QB+D
-\end{bmatrix}\\
+\end{bmatrix}\\\\
 &(3)\begin{bmatrix}
-0 & I\\
+0 & I\\\\
 I & 0
 \end{bmatrix} \begin{bmatrix}
-A & B\\
+A & B\\\\
 C & D
 \end{bmatrix}= \begin{bmatrix}
-C & D\\
+C & D\\\\
 A & B
 \end{bmatrix}
 \end{aligned}
@@ -780,8 +780,8 @@ $$
 通过初等变换，可以在分块矩阵中“打”出来很多$O$，从而使矩阵变成好算的形式。比如，打成分块上三角矩阵
 $$
 \begin{bmatrix}
-A & B\\
-O & C\\
+A & B\\\\
+O & C\\\\
 \end{bmatrix}
 $$
 则其行列式就是$\det A\cdot \det C$.由此可以证明一些常见的式子比如
@@ -791,7 +791,7 @@ $$
 对于分块矩阵
 $$
 M=\begin{bmatrix}
-A & B\\
+A & B\\\\
 C & D
 \end{bmatrix}
 $$
@@ -839,13 +839,13 @@ $$
     $$
     D_n(x_1,x_2,\cdots x_n)=\left|
     \begin{matrix}
-    1 & 1 & 1 & \cdots & 1\\
-    x_1&x_2&x_3&\cdots&x_n\\
-    x_1^2&x_2^2&x_3^2&\cdots&x_n^2\\
-    \vdots&\vdots&\vdots&\ddots&\vdots\\
-    x_1^{n-1}&x_2^{n-1}&x_3^{n-1}&\cdots&x_n^{n-1}\\
+    1 & 1 & 1 & \cdots & 1\\\\
+    x_1&x_2&x_3&\cdots&x_n\\\\
+    x_1^2&x_2^2&x_3^2&\cdots&x_n^2\\\\
+    \vdots&\vdots&\vdots&\ddots&\vdots\\\\
+    x_1^{n-1}&x_2^{n-1}&x_3^{n-1}&\cdots&x_n^{n-1}\\\\
     \end{matrix}
-    \right|\\
+    \right|\\\\
     =\prod_{1\leq j\textcolor{red}\lt i\le n}(x_i-x_j)
     $$
 
@@ -854,7 +854,7 @@ $$
 - 矩阵知识。
   $$
   \begin{aligned}
-  (1) &|AB|=|A||B|\\
+  (1) &|AB|=|A||B|\\\\
   (2)&|A^*|=|A|^{n-1},|(A^*)^*|=|A|^{(n-1)^2}
   \end{aligned}
   $$
@@ -865,7 +865,7 @@ $$
 $$
 \left|
  \begin{array}
-  02A & A\\
+  02A & A\\\\
   O & -B
  \end{array}
  \right|
@@ -876,7 +876,7 @@ $$
 $$
 \left |
 \begin{matrix}
-I+A^{-1} & A^{-1}B+I+A\\
+I+A^{-1} & A^{-1}B+I+A\\\\
 B^{-1}&B^{-1}A+I
 \end{matrix}
 \right |
@@ -885,10 +885,10 @@ $$
 $$
 \left|
 \begin{matrix}
-1+x_1y_1&1+x_1y_2&\cdots&1+x_1y_n\\
-1+x_2y_1&1+x_2y_2&\cdots&1+x_2y_n\\
-\vdots&\vdots&\ddots&\vdots\\
-1+x_ny_1&1+x_ny_2&\cdots&1+x_ny_n\\
+1+x_1y_1&1+x_1y_2&\cdots&1+x_1y_n\\\\
+1+x_2y_1&1+x_2y_2&\cdots&1+x_2y_n\\\\
+\vdots&\vdots&\ddots&\vdots\\\\
+1+x_ny_1&1+x_ny_2&\cdots&1+x_ny_n\\\\
 \end{matrix}
 \right|
 $$
@@ -896,10 +896,10 @@ $$
 $$
 \left|
 \begin{matrix}
-2 & 1 & -1 & 1 & -1\\
-0 & 1 & 1 & 1 & 0\\
-2 & 2 & 1 & 3 & -2 \\
-0 & -1 & 0 & 1 & 0\\
+2 & 1 & -1 & 1 & -1\\\\
+0 & 1 & 1 & 1 & 0\\\\
+2 & 2 & 1 & 3 & -2 \\\\
+0 & -1 & 0 & 1 & 0\\\\
 -2 & 0 & 2 & -1 & 1
 \end{matrix}
 \right|
@@ -909,38 +909,38 @@ $$
 $$
 \left|
 \begin{matrix}
-1 & -1 & 1 & x-1\\
-1 & -1 & x+1 & -1\\
-1 & x-1 & 1 & -1\\
-x+1 & -1 & 1 & -1\\
+1 & -1 & 1 & x-1\\\\
+1 & -1 & x+1 & -1\\\\
+1 & x-1 & 1 & -1\\\\
+x+1 & -1 & 1 & -1\\\\
 \end{matrix}
 \right|
 $$
 **题8**	计算$$|2I_4-A|$$,其中
 $$
 A=\begin{bmatrix}
--a & -2 & -2 & -2\\
--2 & a & -2 & -2\\
--2 & -2 & -b & -2\\
--2 & -2 & -2 & b\\
+-a & -2 & -2 & -2\\\\
+-2 & a & -2 & -2\\\\
+-2 & -2 & -b & -2\\\\
+-2 & -2 & -2 & b\\\\
 \end{bmatrix}
 $$
 **题9**	求$f(x)=0$的全部根，其中
 $$
 f(x)=\left|\begin{matrix}
-1 & 1 & 1 & 1\\
-1 & 3 & 9 & 27\\
-1 & -2 & 4 & -8\\
-1 & x & x^2 & x^3\\
+1 & 1 & 1 & 1\\\\
+1 & 3 & 9 & 27\\\\
+1 & -2 & 4 & -8\\\\
+1 & x & x^2 & x^3\\\\
 \end{matrix}\right|
 $$
 **题10**	计算行列式
 $$
 \left|
 \begin{matrix}
-a_1+x_1&a_2&\cdots&a_n\\
-a_1&a_2+x_2&\cdots&a_n\\
-\vdots&\vdots&\ddots&\vdots\\
+a_1+x_1&a_2&\cdots&a_n\\\\
+a_1&a_2+x_2&\cdots&a_n\\\\
+\vdots&\vdots&\ddots&\vdots\\\\
 a_1&a_2&\cdots&a_n+x_n
 \end{matrix}
 \right|
@@ -949,10 +949,10 @@ $$
 $$
 p(x)=\left|
 \begin{matrix}
-a_{11}+x&a_{12}+x&a_{13}+x&a_{14}+x\\
-a_{21}+x&a_{22}+x&a_{23}+x&a_{24}+x\\
-a_{31}+x&a_{32}+x&a_{33}+x&a_{34}+x\\
-a_{41}+x&a_{42}+x&a_{43}+x&a_{44}+x\\
+a_{11}+x&a_{12}+x&a_{13}+x&a_{14}+x\\\\
+a_{21}+x&a_{22}+x&a_{23}+x&a_{24}+x\\\\
+a_{31}+x&a_{32}+x&a_{33}+x&a_{34}+x\\\\
+a_{41}+x&a_{42}+x&a_{43}+x&a_{44}+x\\\\
 \end{matrix}
 \right|
 $$
@@ -962,9 +962,9 @@ $$
   $$
   k_1A_{i1}+k_2A_{i2}+\cdots+k_nA_{in}=\left|
   \begin{matrix}
-  &&*&&\\
-  k_1&k_2&\cdots&k_{n-1}&k_n\\
-  &&*&&\\
+  &&*&&\\\\
+  k_1&k_2&\cdots&k_{n-1}&k_n\\\\
+  &&*&&\\\\
   \end{matrix}
   \right|
   $$
@@ -978,27 +978,27 @@ $$
 **题12**	计算$5A_{11}+2A_{12}+A_{13}$,其中
 $$
 A=\begin{bmatrix}
-20&13&14\\
-1&2&5\\
-34&1&34\\
+20&13&14\\\\
+1&2&5\\\\
+34&1&34\\\\
 \end{bmatrix}
 $$
 **题13**	求$|A|$所有元素的代数余子式之和，其中
 $$
 A=\begin{bmatrix}
-0&0&0&5&6\\
-0&0&0&7&8\\
-1&2&3&0&0\\
-0&1&4&0&0\\
-0&0&1&0&0\\
+0&0&0&5&6\\\\
+0&0&0&7&8\\\\
+1&2&3&0&0\\\\
+0&1&4&0&0\\\\
+0&0&1&0&0\\\\
 \end{bmatrix}
 $$
 **题14**	已知
 $$
 A^*=\begin{bmatrix}
-1 & 1 & 0\\
-0 & 1 & 1\\
-0 & 0 & 1\\
+1 & 1 & 0\\\\
+0 & 1 & 1\\\\
+0 & 0 & 1\\\\
 \end{bmatrix}
 $$
 求$A$.
@@ -1010,41 +1010,41 @@ $$
 **题1**	计算
 $$
 (1) \begin{bmatrix}
-0 & 1 \\
-1 & 0 \\
+0 & 1 \\\\
+1 & 0 \\\\
 \end{bmatrix}
  \begin{bmatrix}
-1 & 2 \\
-3 & 4 \\
-\end{bmatrix}=?\\
+1 & 2 \\\\
+3 & 4 \\\\
+\end{bmatrix}=?\\\\
 (2)\begin{bmatrix}
-1 & 2 \\
-3 & 4 \\
+1 & 2 \\\\
+3 & 4 \\\\
 \end{bmatrix}
  \begin{bmatrix}
-0 & 1 \\
-1 & 0 \\
-\end{bmatrix}=?\\
+0 & 1 \\\\
+1 & 0 \\\\
+\end{bmatrix}=?\\\\
 $$
 **注**	本题揭示了：矩阵的乘法并没有交换律。事实上，有的矩阵之间是可交换的，这当且仅当其中一者可用另一者的多项式表出。
 
 **题2**	计算
 $$
 (1)\begin{bmatrix}
-1 & 2\\
-3 & 6\\
+1 & 2\\\\
+3 & 6\\\\
 \end{bmatrix}
 \begin{bmatrix}
-3 & 4\\
--1 & 2\\
-\end{bmatrix}=?\\
+3 & 4\\\\
+-1 & 2\\\\
+\end{bmatrix}=?\\\\
 (2)\begin{bmatrix}
-1 & 2\\
-3 & 6\\
+1 & 2\\\\
+3 & 6\\\\
 \end{bmatrix}
 \begin{bmatrix}
-1 & 2\\
-0 & 3\\
+1 & 2\\\\
+0 & 3\\\\
 \end{bmatrix}=?
 $$
 **注**	本题揭示了：由$AB=AC\wedge A\ne O$不能推出$B=C$。这是因为并不是所有矩阵都**可逆**。
@@ -1052,16 +1052,16 @@ $$
 **题3**	计算
 $$
 \begin{bmatrix}
-1&1&4\\
--2&-2&-8\\
+1&1&4\\\\
+-2&-2&-8\\\\
 3&3&12
 \end{bmatrix}^{514}=?
 $$
 **题4**	计算
 $$
 \begin{bmatrix}
-1 & 2 & 3\\
-& 1 & 4\\
+1 & 2 & 3\\\\
+& 1 & 4\\\\
 & & 1
 \end{bmatrix}^n
 $$
@@ -1069,38 +1069,38 @@ $$
 **题5**	计算
 $$
 \begin{bmatrix}
-0 & 1 & 3\\
-1 & -1 & 0\\
+0 & 1 & 3\\\\
+1 & -1 & 0\\\\
 -1 & 2 & 1
 \end{bmatrix}^{-1}
 $$
 **题6（2021期中）**	计算
 $$
 \begin{bmatrix}
-1 & 1 & 0\\
-2 & 0 & 1\\
-1 & -1 & 0\\
+1 & 1 & 0\\\\
+2 & 0 & 1\\\\
+1 & -1 & 0\\\\
 \end{bmatrix}^{-1}
 \begin{bmatrix}
-0 & 2 & 3\\
--1 & 0 & 4\\
-5 & -1 & 0\\
+0 & 2 & 3\\\\
+-1 & 0 & 4\\\\
+5 & -1 & 0\\\\
 \end{bmatrix}
 $$
 **题7（2023期中）**	已知
 $$
 \begin{bmatrix}
-1 & &\\
-2 & 1 & \\
-3 & 0 & 1\\
+1 & &\\\\
+2 & 1 & \\\\
+3 & 0 & 1\\\\
 \end{bmatrix}A\begin{bmatrix}
- & 1 &\\
- 1&&\\
- &&1\\
+ & 1 &\\\\
+ 1&&\\\\
+ &&1\\\\
  \end{bmatrix}=\begin{bmatrix}
- 1 & 2 & 3\\
- 4 & 5 & 6\\
- 7 & 8 & 9\\
+ 1 & 2 & 3\\\\
+ 4 & 5 & 6\\\\
+ 7 & 8 & 9\\\\
  \end{bmatrix}
 $$
 求矩阵$A$的值。
@@ -1110,8 +1110,8 @@ $$
 **题9（2022期中，书院）**	计算$A^{2022}$,若
 $$
 A=\begin{bmatrix}
-2&0&1\\
--2&0&-1\\
+2&0&1\\\\
+-2&0&-1\\\\
 4&0&2
 \end{bmatrix}
 $$
@@ -1121,9 +1121,9 @@ $$
 **题1**	已知方程
 $$
 \begin{bmatrix}
-1 & 0 & 3 & 1 & 2\\
-2 & 1 & 7 & 4 & 3\\
--1 & 2 & -1 & 3 & a\\
+1 & 0 & 3 & 1 & 2\\\\
+2 & 1 & 7 & 4 & 3\\\\
+-1 & 2 & -1 & 3 & a\\\\
 \end{bmatrix}x=0
 $$
 的基础解系中有三个解向量，求a的值。
@@ -1132,8 +1132,8 @@ $$
 $$
 \left\{
 \begin{aligned}
-x_1+x_2+3x_4-x_5 &= 0\\
-2x_2 + x_3 + 4x_4 + x_5 &= 0\\
+x_1+x_2+3x_4-x_5 &= 0\\\\
+2x_2 + x_3 + 4x_4 + x_5 &= 0\\\\
 x_1 + 3x_2 + x_3 + 4x_4 + 6x_5 &=0
 \end{aligned}
 \right.
@@ -1142,9 +1142,9 @@ $$
 $$
 \left\{
 \begin{aligned}
-(1+a)x_1+x_2+\cdots+x_n &= 0\\
-2x_1 +(2+a)x_2+\cdots+2x_n &= 0\\
-\vdots\quad&\\
+(1+a)x_1+x_2+\cdots+x_n &= 0\\\\
+2x_1 +(2+a)x_2+\cdots+2x_n &= 0\\\\
+\vdots\quad&\\\\
 nx_1+nx_2+\cdots+(n+a)x_n&=0
 \end{aligned}
 \right.
@@ -1155,8 +1155,8 @@ $$
 $$
 \left\{
 \begin{aligned}
-x_1-x_2+2x_3+x_4 &= 1\\
-2x_1-x_2+x_3+2x_4&=3\\
+x_1-x_2+2x_3+x_4 &= 1\\\\
+2x_1-x_2+x_3+2x_4&=3\\\\
 x_1-x_3+x_4&=2
 \end{aligned}
 \right.
@@ -1166,14 +1166,14 @@ $$
 **题5（2018期中）**	已知方程组
 $$
 \begin{bmatrix}
-1 & 1 & -1\\
-2 & 3 & a\\
+1 & 1 & -1\\\\
+2 & 3 & a\\\\
 1 & a & 3
 \end{bmatrix}\begin{bmatrix}
-x\\y\\z\end{bmatrix}
+x\\\\y\\\\z\end{bmatrix}
 =
 \begin{bmatrix}
-1\\3\\2\end{bmatrix}
+1\\\\3\\\\2\end{bmatrix}
 $$
 
 1. 讨论方程组的解的数目。
@@ -1185,10 +1185,10 @@ $$
    $$
    \left\{\left.
    k_1\begin{bmatrix}
-   2\\-1\\0
+   2\\\\-1\\\\0
    \end{bmatrix}+
    k_2\begin{bmatrix}
-   0\\1\\1
+   0\\\\1\\\\1
    \end{bmatrix}\right|
    k_1,k_2\in\R
    \right\}
@@ -1198,13 +1198,13 @@ $$
 2. 设方程$Ax=b$的解集为
    $$
    \left\{\left.\begin{bmatrix}
-   1\\0\\1
+   1\\\\0\\\\1
    \end{bmatrix}+
    k_1\begin{bmatrix}
-   2\\-1\\0
+   2\\\\-1\\\\0
    \end{bmatrix}+
    k_2\begin{bmatrix}
-   0\\1\\1
+   0\\\\1\\\\1
    \end{bmatrix}\right|
    k_1,k_2\in\R
    \right\}
@@ -1214,10 +1214,10 @@ $$
 3. 设方程$Ax=b$的解集为
    $$
    \left\{\left.\begin{bmatrix}
-   1\\0\\1
+   1\\\\0\\\\1
    \end{bmatrix}+
    k_1\begin{bmatrix}
-   1\\-1\\0
+   1\\\\-1\\\\0
    \end{bmatrix}\right|
    k_1\in\R
    \right\}
@@ -1227,8 +1227,8 @@ $$
 **题7（2023期中）**在如下关于$x_1,x_2,x_3$的线性方程组中，讨论$p$取不同值时方程组是否有解，并求解。
 $$
 \left\{\begin{aligned}
-px_2+x_3&= 1\\
-x_1+x_2+x_3&=1\\
+px_2+x_3&= 1\\\\
+x_1+x_2+x_3&=1\\\\
 x_1+x_2+px_3&=p
 \end{aligned}
 \right.
@@ -1245,16 +1245,16 @@ $$
 **题1（2021期中）**	给定矩阵
 $$
 A = \begin{bmatrix}
-1 & 2 & 3\\
-2 & 5 & 7\\
-1 & 1 & 0\\
+1 & 2 & 3\\\\
+2 & 5 & 7\\\\
+1 & 1 & 0\\\\
 \end{bmatrix},B=\begin{bmatrix}
-0 & 0 & 0 & 1 & 2 & 3 \\
-0 & 0 & 0 & 2 & 5 & 7 \\
-0 & 0 & 0 & 1 & 1 & 0 \\
-0 & 1 & 0 & 0 & 0 & 0 \\
-1 & 0 & 0 & 0 & 0 & 0 \\
-0 & 0 & 1 & 0 & 0 & 0 \\
+0 & 0 & 0 & 1 & 2 & 3 \\\\
+0 & 0 & 0 & 2 & 5 & 7 \\\\
+0 & 0 & 0 & 1 & 1 & 0 \\\\
+0 & 1 & 0 & 0 & 0 & 0 \\\\
+1 & 0 & 0 & 0 & 0 & 0 \\\\
+0 & 0 & 1 & 0 & 0 & 0 \\\\
 \end{bmatrix}
 $$
 
@@ -1264,25 +1264,25 @@ $$
 **题2（2022期中）**	设矩阵
 $$
 A=\begin{bmatrix}
-B & C \\
-O & D\\
+B & C \\\\
+O & D\\\\
 \end{bmatrix}
 $$
 其中
 $$
 B=\begin{bmatrix}
-1&2&0\\
-1&1&1\\
-2&0&-1\\
+1&2&0\\\\
+1&1&1\\\\
+2&0&-1\\\\
 \end{bmatrix},C=\begin{bmatrix}
-1 & 0 & 0 & 0\\
-0 & 1 & 0 & 0\\
-0 & 0 & 1 & 0\\
+1 & 0 & 0 & 0\\\\
+0 & 1 & 0 & 0\\\\
+0 & 0 & 1 & 0\\\\
 \end{bmatrix},D=\begin{bmatrix}
-2 & 0 & 0 & 0\\
-2 & 3 & 0 & 0\\
-0 & 0 & 3 & 0\\
-1 & 0 & 2 & 3\\
+2 & 0 & 0 & 0\\\\
+2 & 3 & 0 & 0\\\\
+0 & 0 & 3 & 0\\\\
+1 & 0 & 2 & 3\\\\
 \end{bmatrix}
 $$
 
@@ -1295,29 +1295,29 @@ $$
 1. 下面矩阵的$LU$分解是否存在？若存在，求；若不存在，证。
    $$
    A=\begin{bmatrix}
-   1 & 0 & 0\\
-   1 & 0 & 1\\
-   4 & 5 & 6\\
+   1 & 0 & 0\\\\
+   1 & 0 & 1\\\\
+   4 & 5 & 6\\\\
    \end{bmatrix},B=\begin{bmatrix}
-   1 & 0 & 0\\
-   1 & 1 & 1\\
-   0 & 1 & 2\\
+   1 & 0 & 0\\\\
+   1 & 1 & 1\\\\
+   0 & 1 & 2\\\\
    \end{bmatrix},C=\begin{bmatrix}
-   3 & 2 & 1\\
-   2 & 2 & 1\\
-   1 & 1 & 1\\
+   3 & 2 & 1\\\\
+   2 & 2 & 1\\\\
+   1 & 1 & 1\\\\
    \end{bmatrix}
    $$
 
 2. 证明如下矩阵存在$LU$分解：(无需给出具体分解。）
    $$
    D=\begin{bmatrix}
-   1 & 0 & 0 & 6 & 7 & 8\\
-   1 & 1 & 1 & 11 & 12 & 13\\
-   0 & 1 & 2 & 20 & 23 & 24\\
-   0 & 0 & 0 & 3 & 2 & 1\\
-   0 & 0 & 0 & 2 & 2 & 1\\
-   0 & 0 & 0 & 1 & 1 & 1\\
+   1 & 0 & 0 & 6 & 7 & 8\\\\
+   1 & 1 & 1 & 11 & 12 & 13\\\\
+   0 & 1 & 2 & 20 & 23 & 24\\\\
+   0 & 0 & 0 & 3 & 2 & 1\\\\
+   0 & 0 & 0 & 2 & 2 & 1\\\\
+   0 & 0 & 0 & 1 & 1 & 1\\\\
    \end{bmatrix}
    $$
 
@@ -1332,10 +1332,10 @@ $$
 **题2（2020期中）**	考察矩阵
 $$
 A=\begin{bmatrix}
-1 & 0 & 8 & 0 & 0 & 0\\
-0 & 1 & 0 & 0 & -200 & -180\\
-0 & 0 & 0 & 1 & 0 & 0 \\
-1 & 0 & 8 & 0 & 1 & 11\\
+1 & 0 & 8 & 0 & 0 & 0\\\\
+0 & 1 & 0 & 0 & -200 & -180\\\\
+0 & 0 & 0 & 1 & 0 & 0 \\\\
+1 & 0 & 8 & 0 & 1 & 11\\\\
 \end{bmatrix}
 $$
 
@@ -1374,12 +1374,12 @@ $$
 **题2（2020期中）**	令
 $$
 X_\varepsilon = \begin{bmatrix}
-A & \varepsilon B_1\\
+A & \varepsilon B_1\\\\
 B_2	& C
 \end{bmatrix},\varepsilon\in\R,A=\begin{bmatrix}
-1 & 2 & 3\\
-2 &1 & 3\\
-0 & 1 & 4\\
+1 & 2 & 3\\\\
+2 &1 & 3\\\\
+0 & 1 & 4\\\\
 \end{bmatrix}.
 $$
 期中$C$为$n$阶对角占优方阵，$B_1$为任意给定$3\times n$矩阵，$B_2$ 为任意给定$n\times 3$ 矩阵.
@@ -1412,7 +1412,7 @@ $$
  2. 利用1中结论，证明关于$m\times n$矩阵$X$的方程$AXB=C$有解，当且仅当
     $$
     rank(A)=rank([A\quad C])且rank(B)=rank(\begin{bmatrix}
-    B\\C
+    B\\\\C
     \end{bmatrix}
     ).
     $$
@@ -1465,9 +1465,9 @@ $$
 **注2.1**	多层神经网络可以简单地如下建模：整个网络视为一多元向量值函数$f: \mathbb R^n \to \mathbb R^m$, 为多个函数嵌套而成：
 $$
 \begin{aligned}
-f &= f_1\circ f_2 \circ\cdots\circ f_l\\
-其中f_i&:\R^{d_{i-1}}\to\R^{d_i}(d_0 = n,d_l=m),\\
-f_i(\mathbf v)&=\varphi(\mathbf W_i\mathbf v+\mathbf b_i)\\
+f &= f_1\circ f_2 \circ\cdots\circ f_l\\\\
+其中f_i&:\R^{d_{i-1}}\to\R^{d_i}(d_0 = n,d_l=m),\\\\
+f_i(\mathbf v)&=\varphi(\mathbf W_i\mathbf v+\mathbf b_i)\\\\
 \end{aligned}
 $$
 其中$\mathbf W_i \in M_{d_{i-1}\times d_{i}}(\R)$, $\mathbf b_i \in \R^{d_i}$ ,$\varphi()$为非线性函数，称为**激活函数**。训练神经网络就是以某种算法根据**训练集**优化各个$\mathbf W_i$和$\mathbf b_i$的值，从而使得函数$f$ 能够更好地拟合实际需求（比如，输入图像的像素信息，输出其为各种数字的概率）等。
@@ -1477,11 +1477,11 @@ $$
 **问题3**	**复数与二阶矩阵**。考虑双射
 $$
 \begin{aligned}
-f: \C &\to M_{2\times2}(\R)\\
-z &\mapsto A\\
-其中z&=a+bi\\
+f: \C &\to M_{2\times2}(\R)\\\\
+z &\mapsto A\\\\
+其中z&=a+bi\\\\
 A&=\begin{bmatrix}
-a&-b\\
+a&-b\\\\
 b&a
 \end{bmatrix}
 \end{aligned}
