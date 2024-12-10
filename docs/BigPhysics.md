@@ -92,7 +92,7 @@ $$
 于是：
 $$
 \begin{aligned}
-f(v)dv&=\oiint_{v^2\leq v_x^2+v_y^2+v_z^2\leq (v+dv)^2} F(\left[ v_x,v_y,v_z\right]^T)dv_xdv_ydv_z
+f(v)dv&=\iint_{v^2\leq v_x^2+v_y^2+v_z^2\leq (v+dv)^2} F(\left[ v_x,v_y,v_z\right]^T)dv_xdv_ydv_z
 \\&=F(\left[v,0,0\right]^T)\textcolor{purple}{dV}
 \\&=\textcolor{red}{\left(\frac{m}{2\pi kT}\right)^{3/2}}e^{-\frac{\textcolor{green}{\frac{1}{2}m(v^2)}}{\textcolor{blue}{kT}}}\textcolor{purple}{4\pi v^2dv}
 \end{aligned}
