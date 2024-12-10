@@ -329,14 +329,14 @@ $$
 rank (A)=rank(A^T)=rank(A^TA)\\\\\\\\
 rank(kA)=rank(A)\quad,k\ne 0\\\\\\\\
 rank(A+B)\le  rank(A)+rank(B)\\\\\\\\
-rank(AB)\le  \min\{rank(A),rank(B)\}\\\\\\\\
+rank(AB)\le  \min\\{rank(A),rank(B)\\}\\\\\\\\
 A可逆\Rightarrow rank(AB)=rank(B)=rank(A)\\\\\\\\
 \end{aligned}
 $$
 **Sylvester不等式**	设$A\in M_{m\times s}(\mathbb{R}),\quad B\in M_{s\times n}(\mathbb{R}).$则
 $$
-rank(A)+rank(B)-s\le rank(AB)\le \min\{rank(A),
-rank(B)\}
+rank(A)+rank(B)-s\le rank(AB)\le \min\\{rank(A),
+rank(B)\\}
 $$
 **Frobenius不等式**	设乘积$ABC$有意义，则
 $$
@@ -458,7 +458,7 @@ A\mathbf x = \mathbf 0
 $$
 型的线性方程组，表示$\mathbf x$的像落在*原点*上。
 
-若齐次线性方程组有非平凡解$x_0\ne 0$，则说明$kx_0$都是其解，类似的若齐次线性方程组有多个非平凡解，则其线性组合都是其解。这些解构成了一个线性子空间，记作$N(A)$.齐次线性方程组有非平凡解，说明$N(A)$非$\{\mathbf 0\}$,从而该映射将高维空间$N(A)$投射到低维空间$\{\mathbf 0\}$,因此$A$为行不满秩矩阵。
+若齐次线性方程组有非平凡解$x_0\ne 0$，则说明$kx_0$都是其解，类似的若齐次线性方程组有多个非平凡解，则其线性组合都是其解。这些解构成了一个线性子空间，记作$N(A)$.齐次线性方程组有非平凡解，说明$N(A)$非$\\{\mathbf 0\\}$,从而该映射将高维空间$N(A)$投射到低维空间$\\{\mathbf 0\\}$,因此$A$为行不满秩矩阵。
 
 若齐次线性方程组只有平凡解$0$,则等价于映射$f(x)=Ax$可逆.
 
@@ -479,10 +479,10 @@ $$
 
 从而非齐次线性方程组的解的形式为：
 $$
-\left\{
+\left\\{
 \begin{aligned}
-\{x|x=x_0+v,v\in N(A)\},&\quad \exists x_0,Ax_0=b\\\\\\\\
-\{x_0\},&\quad \exists x_0,Ax_0=b且N(A)=\{0\}\\\\\\\\
+\\{x|x=x_0+v,v\in N(A)\\},&\quad \exists x_0,Ax_0=b\\\\\\\\
+\\{x_0\\},&\quad \exists x_0,Ax_0=b且N(A)=\\{0\\}\\\\\\\\
 \emptyset ,&\quad \nexists x_0,Ax_0=b\\\\\\\\
 \end{aligned}
 \right.
@@ -1179,7 +1179,7 @@ $$
 
 1. 设方程$Ax=0$的解集为
    $$
-   \{
+   \\{
    k_1\begin{bmatrix}
    2\\\\\\\\-1\\\\\\\\0
    \end{bmatrix}+
@@ -1187,13 +1187,13 @@ $$
    0\\\\\\\\1\\\\\\\\1
    \end{bmatrix}|
    k_1,k_2\in\mathbb{R}
-   \}
+   \\}
    $$
    求A的行简化阶梯型
 
 2. 设方程$Ax=b$的解集为
    $$
-   \{\begin{bmatrix}
+   \\{\begin{bmatrix}
    1\\\\\\\\0\\\\\\\\1
    \end{bmatrix}+
    k_1\begin{bmatrix}
@@ -1203,13 +1203,13 @@ $$
    0\\\\\\\\1\\\\\\\\1
    \end{bmatrix}|
    k_1,k_2\in\mathbb{R}
-   \}
+   \\}
    $$
    求A.
 
 3. 设方程$Ax=b$的解集为
    $$
- \{
+ \\{
    begin{bmatrix}
    1\\\\\\\\0\\\\\\\\1
    \end{bmatrix}+
@@ -1217,7 +1217,7 @@ $$
    1\\\\\\\\-1\\\\\\\\0
    \end{bmatrix}|
    k_1\in\mathbb{R}
-   \}
+   \\}
    $$
    求$A$的行简化阶梯型，并写出一个满足条件的$A$.
 
@@ -1454,8 +1454,8 @@ $$
 
 **问题1**	**矩阵的运算。**考虑集合$S_n，T_n\subset M_{n\times n}(\mathbb R)$.问下面几种情况下，使得$T_n = M_{n\times n}(\mathbb R)$的最小的$S_n$, 即,求$\min(card(S_n))$.
 
-1. $T_n = \{M\in M_{n\times n}(\mathbb R)|\exists \alpha,\beta\in \mathbb{R}, A,B\in S_n,s.t.\alpha A+\beta B = M\}$
-2. $T_n = \{M\in M_{n\times n}(\mathbb R)|\exists \alpha,\beta,\gamma\in \mathbb{R}, A,B\in S_n,s.t.\alpha A+\beta B +\gamma AB= M\}$
+1. $T_n = \\{M\in M_{n\times n}(\mathbb R)|\exists \alpha,\beta\in \mathbb{R}, A,B\in S_n,s.t.\alpha A+\beta B = M\\}$
+2. $T_n = \\{M\in M_{n\times n}(\mathbb R)|\exists \alpha,\beta,\gamma\in \mathbb{R}, A,B\in S_n,s.t.\alpha A+\beta B +\gamma AB= M\\}$
 
 **问题2**	**神经网络与激活函数。**从线性代数（线性变换的性质）的角度解释多层神经网络中激活函数的意义。提示：如果没有激活函数，多层的神经网络和什么等效？
 
@@ -1483,7 +1483,7 @@ b&a
 \end{bmatrix}
 \end{aligned}
 $$
-再令集合$S_C:=\{A\in M_{2\times2}(\mathbb{R})|\exists z \in \C, f(z)=A\}$。求证：
+再令集合$S_C:=\\{A\in M_{2\times2}(\mathbb{R})|\exists z \in \C, f(z)=A\\}$。求证：
 
 1. $\alpha f(z_1)+\beta f(z_2) = f(\alpha z_1+ \beta z_2), \alpha,\beta\in\mathbb{R} $
 2. $f(z_1z_2) = f(z_1)f(z_2)$

@@ -1,32 +1,128 @@
-site_name: CBDT的资料屋
-markdown_extensions:
-  - pymdownx.arithmatex:
-      generic: true
+site_name: CBDT的资料屋$$
+$$
 
-extra_css:
-- themes/css/custom.css
-- themes/css/simpleLightbox.min.css
-- themes/css/pied_piper.css
-- https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css
- 
-extra_javascript:
-- themes/js/custom.js
-- themes/js/simpleLightbox.min.js
-- themes/js/optionalConfig.js
-- themes/js/mermaidloader.js
-- themes/js/umlconvert.js
-- themes/js/mathjax.js
-- themes/js/katex.js
-- https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js
-- https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.17.1/flowchart.min.js
-- https://cdnjs.cloudflare.com/ajax/libs/raphael/2.3.0/raphael.min.js
-- https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.13.6/underscore-min.js
-- https://cdn.jsdelivr.net/npm/@mermaid-js/mermaid-mindmap@9.3.0/dist/diagram-definition.0faef4c2.min.js
-- https://cdn.jsdelivr.net/npm/markdown-it-plantuml@1.4.1/index.min.js
-- https://cdnjs.cloudflare.com/ajax/libs/webfont/1.6.28/webfontloader.js
-- https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js
-- https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-chtml.js
-- https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-chtml-full.js
-- https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-svg-full.js
-- https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js
-- https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js
+$$
+markdown_extensions:$$
+$$
+
+$$
+  - pymdownx.arithmatex:$$
+$$
+
+$$
+      generic: true$$
+$$
+
+$$
+$$
+$$
+
+$$
+extra_css:$$
+$$
+
+$$
+- themes/css/custom.css$$
+$$
+
+$$
+- themes/css/simpleLightbox.min.css$$
+$$
+
+$$
+- themes/css/pied_piper.css$$
+$$
+
+$$
+- https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css$$
+$$
+
+$$
+ $$
+$$
+
+$$
+extra_javascript:$$
+$$
+
+$$
+- themes/js/custom.js$$
+$$
+
+$$
+- themes/js/simpleLightbox.min.js$$
+$$
+
+$$
+- themes/js/optionalConfig.js$$
+$$
+
+$$
+- themes/js/mermaidloader.js$$
+$$
+
+$$
+- themes/js/umlconvert.js$$
+$$
+
+$$
+- themes/js/mathjax.js$$
+$$
+
+$$
+- themes/js/katex.js$$
+$$
+
+$$
+- https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js$$
+$$
+
+$$
+- https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.17.1/flowchart.min.js$$
+$$
+
+$$
+- https://cdnjs.cloudflare.com/ajax/libs/raphael/2.3.0/raphael.min.js$$
+$$
+
+$$
+- https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.13.6/underscore-min.js$$
+$$
+
+$$
+- https://cdn.jsdelivr.net/npm/@mermaid-js/mermaid-mindmap@9.3.0/dist/diagram-definition.0faef4c2.min.js$$
+$$
+
+$$
+- https://cdn.jsdelivr.net/npm/markdown-it-plantuml@1.4.1/index.min.js$$
+$$
+
+$$
+- https://cdnjs.cloudflare.com/ajax/libs/webfont/1.6.28/webfontloader.js$$
+$$
+
+$$
+- https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js$$
+$$
+
+$$
+- https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-chtml.js$$
+$$
+
+$$
+- https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-chtml-full.js$$
+$$
+
+$$
+- https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-svg-full.js$$
+$$
+
+$$
+- https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js$$
+$$
+
+$$
+$$
+$$
+
+$$https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js
