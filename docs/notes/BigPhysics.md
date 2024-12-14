@@ -64,7 +64,7 @@ $$
 - 方均根速率
 
 $$
-v_{rms} = \sqrt{\frac{\textcolor{blue}3kT}{\textcolor{blue}\pi m}}= \sqrt{\frac{3RT}{\pi M}}
+v_{rms} = \sqrt{\frac{\textcolor{blue}3kT}{m}}= \sqrt{\frac{3RT}{\pi M}}
 $$
 
 - 最可几速率
@@ -145,10 +145,10 @@ $$
 其中
 $$
 \begin{aligned}
-\bar \lambda &:平均自由程\\
-\bar v &:平均速率\\
-\bar z &: 平均碰撞频率\\
-\bar z &= \textcolor{red}{\sqrt 2 \bar v}\cdot\textcolor{green}{\pi d^2} \cdot n\\
+\bar \lambda &:平均自由程\\\\
+\bar v &:平均速率\\\\
+\bar z &: 平均碰撞频率\\\\
+\bar z &= \textcolor{red}{\sqrt 2 \bar v}\cdot\textcolor{green}{\pi d^2} \cdot n\\\\
 \Rightarrow \bar\lambda &=\frac{1}{\textcolor{red}{\sqrt 2}\textcolor{green}{\pi d^2}n}=\frac{kT}{\sqrt2 \pi d^2p}
 \end{aligned}
 $$
@@ -166,9 +166,9 @@ $$
 其中
 $$
 \begin{aligned}
-a &: 常数\\
-b&: 常数\\
-V_m&:分子体积\\
+a &: 常数\\\\
+b&: 常数\\\\
+V_m&:分子体积\\\\
 \end{aligned}
 $$
 
@@ -178,9 +178,9 @@ $$
 
 $$
 \begin{aligned}
-内摩擦&\quad df=-\eta \left(\frac{du}{dz}\right)_{z_0}dS\quad&\eta=\frac{1}{3}mn\bar v\bar \lambda&\quad:粘度\\
+内摩擦&\quad df=-\eta \left(\frac{du}{dz}\right)_{z_0}dS\quad&\eta=\frac{1}{3}mn\bar v\bar \lambda&\quad:粘度\\\\
 热传导&\quad dQ=-\kappa\left(\frac{dT}{dz}\right)_{z_0}
-dSdt\quad&\kappa=\frac{1}{3}mn\bar v\bar\lambda C_V\quad&:热导率\\
+dSdt\quad&\kappa=\frac{1}{3}mn\bar v\bar\lambda C_V\quad&:热导率\\\\
 扩散&\quad dM=-D\left(\frac{d\rho}{dz}\right)_{z0}dSdt\quad&D=\frac{1}{3}\bar v\bar\lambda\quad&:扩散系数
 \end{aligned}
 $$
