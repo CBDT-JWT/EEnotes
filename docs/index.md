@@ -1,8 +1,9 @@
 # CBDT的资料屋
 ## 关于作者
-懒得写
+一名普通的华清小学II学院学生罢了。
 ## 关于这个网站
 这是我（建立）的资料网站,目前运行在我宿舍里的一台树莓派上。
 ![服务器](imgs/server.jpg)
+主要想要记录一下自己产生的一些东西吧，可能更多还是因为搞套自己的机器很好玩(
 ## 我要如何帮忙？
-可以向[我的repo](https://github.com/CBDT-JWT/EEnotes)发起PR，也可以邮件联系[这个邮箱](wjiang0415@outlook.com)。感谢您的帮忙和支持！！
+可以向[我的repo](https://github.com/CBDT-JWT/EEnotes)发起PR，也可以邮件联系[这个邮箱](mailto:wjiang0415@outlook.com)。感谢您的帮忙和支持！！
