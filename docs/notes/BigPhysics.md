@@ -76,22 +76,27 @@ v_p = \sqrt{\frac{\textcolor{green}2kT}m}=\sqrt{\frac{2RT}M}
 $$
 
 **归一化分布函数** 每个维度的速度都服从正态分布
+
 $$
 g(v) = \textcolor{red}{\left(\frac{m}{2\pi kT}\right)^{1/2}}e^{-\frac{\textcolor{green}{\frac{1}{2}mv^2}}{\textcolor{blue}{kT}}}
 $$
+
 <u>**背到这里**</u>
 
 ---
 
 从而有**速度分布函数**
+
 $$
 F(\vec v)=g(v_x)\cdot g(v_y)\cdot g(v_z)=\textcolor{red}{\left(\frac{m}{2\pi kT}\right)^{3/2}}e^{-\frac{\textcolor{green}{\frac{1}{2}m(v_x^2+v_y^2+v_z^2)}}{\textcolor{blue}{kT}}}
 $$
+
 不难发现，**速率分布函数即为速度空间中“球皮的质量”**
 
 且**速度分布函数与方向无关**
 
 于是：
+
 $$
 \begin{aligned}
 f(v)dv &=\iint_{v^2\leq v_x^2+v_y^2+v_z^2\leq (v+dv)^2} F(\left[ v_x,v_y,v_z\right]^T)dv_xdv_ydv_z\\\\
@@ -99,19 +104,25 @@ f(v)dv &=\iint_{v^2\leq v_x^2+v_y^2+v_z^2\leq (v+dv)^2} F(\left[ v_x,v_y,v_z\rig
 &=\textcolor{red}{\left(\frac{m}{2\pi kT}\right)^{3/2}}e^{-\frac{\textcolor{green}{\frac{1}{2}m(v^2)}}{\textcolor{blue}{kT}}}\textcolor{purple}{4\pi v^2dv}
 \end{aligned}
 $$
+
 **玻尔兹曼分布** ：势场下的密度分布
 
 假设系统处于外势场中，则
+
 $$
 dN_{\vec r} = \textcolor{red}{n_0}\cdot e^{-\frac{\textcolor{green}{\varepsilon_p(\vec r)}}{\textcolor{blue}{kT}}}dV
 $$
+
 其中
+
 $$
 n_0
 $$
+
 为零势能面的分子数密度。
 
 **玻尔兹曼·麦克斯韦分布** ：势场下的速度分布，就是
+
 $$
 玻尔兹曼分布\times麦克斯韦分布
 $$
@@ -129,10 +140,13 @@ $$
 **自由度**：决定物体空间坐标的独立坐标数
 
 **能量均分分定理**：每个平动自由度（*推广至每个平方项* ）对应平均动能为
+
 $$
 \bar\varepsilon=\frac 1 2 kT
 $$
+
 从而**理想气体内能**为
+
 $$
 E=(t+r+2v)\frac{1}{2}NkT
 =(t+r+2v)\frac{1}{2}\nu RT
@@ -141,10 +155,13 @@ $$
 ### 平均自由程
 
 **平均自由程**： 气体分子在相邻两次碰撞之间飞行的平均路程
+
 $$
 \bar \lambda = \frac{\bar v}{\bar z}
 $$
+
 其中
+
 $$
 \begin{aligned}
 \bar \lambda &:平均自由程\\\\
@@ -154,7 +171,9 @@ $$
 \Rightarrow \bar\lambda &=\frac{1}{\textcolor{red}{\sqrt 2}\textcolor{green}{\pi d^2}n}=\frac{kT}{\sqrt2 \pi d^2p}
 \end{aligned}
 $$
+
 **注意当容器很小的时候，需要考虑碰壁问题，此时**
+
 $$
 \bar\lambda = d_容
 $$
@@ -162,10 +181,13 @@ $$
 ### 范德瓦尔斯方程
 
 将气体分子视为**有吸引力的刚性球**即可得到
+
 $$
 \left(p+\frac{a}{V_m^2}\right)(V_m-b)=RT
 $$
+
 其中
+
 $$
 \begin{aligned}
 a &: 常数\\\\
@@ -201,14 +223,19 @@ $$
 **准静态过程**：进展无限缓慢（远大于*弛豫时间* ）的过程，认为时刻处于平衡状态
 
 **体积功**
+
 $$
 dA=pdV
 $$
+
 **内能**
+
 $$
 E = \frac{i}{2}\nu RT
 $$
+
 **内能是状态量**，从而可以选择*等体+等温*过程方便地计算元过程的dE
+
 $$
 \begin{aligned}
 dE&=dE_V+dE_T\\
@@ -220,13 +247,17 @@ $$
 ### 热容
 
 **摩尔热容**
+
 $$
 C_m=\frac{dQ}{\nu dT}
 $$
+
 **摩尔定体热容**
+
 $$
 C_{V,m}=\frac{i}{2}R=\left.\frac{dQ}{dT}\right|_{V=V_0}
 $$
+
 **摩尔定压热容**(麦耶公式)
 
 $$
@@ -234,19 +265,25 @@ C_{p,m}=\frac{i}{2}R+R=\left.\frac{dQ}{dT}\right|_{p=p_0}
 $$
 
 **热容比**
+
 $$
 \gamma := \frac{C_{p,m}}{C_{V,m}}=\frac{i+2}{i}
 $$
+
 **绝热过程**：热容正无穷
 
 状态方程：(泊松公式)
+
 $$
 pV^\gamma=const.
 $$
+
 **多方过程**
+
 $$
 pV^n=const.
 $$
+
 n称为*多方指数*
 
 
@@ -255,6 +292,7 @@ n称为*多方指数*
 若循环的各个阶段为准静态过程，则循环过程可用*状态图* ，如p-V图上闭合曲线表示。循环过程中，系统和**一系列热源**交换热量，一周下来系统复原，内能不变。
 
 **符号约定**
+
 $$
 \begin{aligned}
 Q_1\quad &:吸收的热量\\
@@ -263,15 +301,19 @@ Q_1\quad &:吸收的热量\\
 &\textcolor{red}{=循环曲线面积}
 \end{aligned}
 $$
+
 从而可以定义热机效率
+
 $$
 \eta = \frac {A}{Q_1} = 1-\frac{|Q_2|}{Q_1}
 $$
+
 **卡诺循环**：等温+绝热
 
 $$
 \eta_c = 1-\frac{T_2}{T_1}
 $$
+
 **制冷循环**：反向循环
 
 制冷系数$\omega = \frac{Q_2}{|A|}$,卡诺制冷机$\omega_c=\frac{T_2}{T_1-T_2}$
@@ -296,32 +338,43 @@ $$
 **任意可逆循环的效率**
 
 可以拆成多个小卡诺循环，推导出
+
 $$
 \eta\leq 1-\frac {T_2}{T_1}
 $$
+
 ### 克劳修斯熵公式
 对可逆循环过程
+
 $$
 \oint_R \frac{dQ}{T}=0
 $$
+
 其中$\frac{dQ}{T}$称为热温比。
 
 **熵$S$**
+
 $$
 \begin{aligned}
 S:&=\int_R\frac{dQ}T\\
 dS&=\frac{dQ}{T}\quad(可逆元过程)
 \end{aligned}
 $$
+
 结合热力学第一定律，有
+
 $$
 TdS=dE+dA
 $$
+
 只考虑体积功：
+
 $$
 TdS=dE+pdV
 $$
+
 **理想气体熵公式**
+
 $$
 S(T,V)=\nu C_{V,m}\ln\frac{T}{T_0}+\nu R\ln\frac{V}{V_0}+S_0
 $$
@@ -331,9 +384,11 @@ $$
 ### 熵增加原理
 **克劳修斯不等式**
 对于一般循环：
+
 $$
 \oint\frac{dQ}{T}\leq 0
 $$
+
 其中可逆时取等号。
 
 **熵增加原理**
@@ -347,22 +402,31 @@ $$
 $$
 \oint\frac{dQ}{T}<0
 $$
+
 从而
+
 $$
 \int_{1,IR}^2\frac{dQ}{T}+\int_{2,R}^1\frac{dQ}{T}<0
 $$
+
 其中
+
 $$
 \int_{2,R}^1\frac{dQ}{T}=S_1-S_2
 $$
+
 因此
+
 $$
 \Delta S=S_2-S_1=\int_{1,R}^2\frac{dQ}{T}>\int_{IR,1}^{2}\frac{dQ}{T}
 $$
+
 而由于绝热过程，有$dQ=0$，从而
+
 $$
 \Delta S_{绝热}\geq 0
 $$
+
 其中可逆过程取“=”。
 热力学系统经绝热过程熵不减少，可逆绝热过程熵不变，不可逆绝热过程熵增加。
 
