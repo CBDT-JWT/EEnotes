@@ -46,6 +46,7 @@ $$
 **麦克斯韦分布**
 
 麦克斯韦分布为**一定条件下速率分布函数的具体形式**。
+
 $$
 f(v)dv:=\frac{dN_v}{N}=\textcolor{red}{\left(\frac{m}{2\pi kT}\right)^{3/2}}\cdot e^{-\frac{\textcolor{green}{\frac{1}{2}mv^2}}{\textcolor{blue}{kT}}}\textcolor{purple}{4\pi v^2 dv}
 $$
