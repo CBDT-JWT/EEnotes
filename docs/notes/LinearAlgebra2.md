@@ -51,11 +51,15 @@
 $$
 b_a=\\frac{a^Tb}{a^Ta}a
 $$
+
 我们可以作分解
+
 $$
 b=\frac{a^Tb}{a^Ta}a+r
 $$
+
 则由于
+
 $$
 \begin{aligned}
 a^Tb&=a^T\frac{a^Tb}{a^Ta}a+a^Tr\\\\
@@ -64,13 +68,17 @@ a^Tb&=a^Tb+a^Tr\\\\
 \therefore a^Tr&=0\,.
 \end{aligned}
 $$
+
 因此$a\perp r$
 
 上面这个投影其实是$b$对子空间
+
 $$
 span(a)
 $$
+
 作的投影。而对于一个“平面”
+
 $$
 S=span(a_1,a_2,\cdots a_m)=R(
 \begin{bmatrix}
@@ -78,10 +86,13 @@ a_1&a_2&\cdots&a_m
 \end{bmatrix}
 )=R(A)
 $$
+
 不难想到$b$在其上的投影其实就是
+
 $$
 A(A^TA)^{-1}A^Tb
 $$
+
 这是因为，若我们做分解
 $$
 b=r+A(A^TA)^{-1}A^Tb
