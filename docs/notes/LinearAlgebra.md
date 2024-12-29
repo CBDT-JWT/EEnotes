@@ -955,6 +955,7 @@ $$
 代数余子式的求法：
 
 - 用行列式(逆用*Laplace*展开)。
+
 $$
   k_1A_{i1}+k_2A_{i2}+\cdots+k_nA_{in}=\left|
   \begin{matrix}
@@ -964,6 +965,7 @@ $$
   \end{matrix}
   \right|
 $$
+
 - 用矩阵。$A^*=|A|A^{-1}$.
 
 - 用特征值（还没学）
@@ -1130,7 +1132,6 @@ x_1+x_2+3x_4-x_5 &= 0\\\\
 2x_2 + x_3 + 4x_4 + x_5 &= 0\\\\
 x_1 + 3x_2 + x_3 + 4x_4 + 6x_5 &=0
 \end{cases}
-\right.
 $$
 **题3**	已知方程
 $$
@@ -1221,8 +1222,7 @@ $$
 px_2+x_3&= 1\\\\
 x_1+x_2+x_3&=1\\\\
 x_1+x_2+px_3&=p
-\end{aligned}
-\right.
+\end{cases}
 $$
 
 ### 2.3	$LU$分解
@@ -1401,7 +1401,7 @@ $$
  2. 利用1中结论，证明关于$m\times n$矩阵$X$的方程$AXB=C$有解，当且仅当
   $$
     rank(A)=rank([A\quad C])且rank(B)=rank(\begin{bmatrix}
-    B\\\\C
+    B\\\\mathbb{C}
     \end{bmatrix}
     ).
   $$
@@ -1467,7 +1467,7 @@ $$
 **问题3**	**复数与二阶矩阵**。考虑双射
 $$
 \begin{aligned}
-f: \C &\to M_{2\times2}(\mathbb{R})\\\\
+f: \mathbb{C} &\to M_{2\times2}(\mathbb{R})\\\\
 z &\mapsto A\\\\
 其中z&=a+bi\\\\
 A&=\begin{bmatrix}
@@ -1476,14 +1476,14 @@ b&a
 \end{bmatrix}
 \end{aligned}
 $$
-再令集合$S_C:=\\{A\in M_{2\times2}(\mathbb{R})|\exists z \in \C, f(z)=A\\}$。求证：
+再令集合$S_C:=\\{A\in M_{2\times2}(\mathbb{R})|\exists z \in \mathbb{C}, f(z)=A\\}$。求证：
 
 1. $\alpha f(z_1)+\beta f(z_2) = f(\alpha z_1+ \beta z_2), \alpha,\beta\in\mathbb{R} $
 2. $f(z_1z_2) = f(z_1)f(z_2)$
 3. 复数域的共轭运算对应$S_C$上的什么矩阵运算？
 4. 写出$z=\rho e^{-i\theta}=\rho\cos\theta+\rho i\sin\theta$对应的矩阵。结合旋转变换的表示矩阵$R_\theta$ 的形式，从矩阵分解的角度说明为什么复数乘法可以用旋转-拉伸的形式表示？
 
-**注3.1**	这里的映射$f$揭示了$\C$与$M_{2\times2}(\mathbb{R})$ 的一个子集的同构。即：复数和某些矩阵具有“类似的性质”。
+**注3.1**	这里的映射$f$揭示了$\mathbb{C}$与$M_{2\times2}(\mathbb{R})$ 的一个子集的同构。即：复数和某些矩阵具有“类似的性质”。
 
 **注3.2**	在机器人姿态控制中常用的四元数也可以用类似的方法同构到矩阵中，这在具身智能、机器人控制中有着重要的应用，感兴趣的同学可以自行查阅资料。
 
