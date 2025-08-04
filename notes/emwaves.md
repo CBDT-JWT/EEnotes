@@ -219,13 +219,16 @@ $$
 &= \vec{E}_z\cdot\exp{ }{-i\omega t}\exp{ }{ik_{ty}y}\cdot\exp{ }{ik_{tz}}
 \end{aligned}
 $$
-对于 $\sin\theta_i n_{21}$ 的情形，有  
+
+对于 $\sin\theta_i>n_{21}$ 的情形，有  
+
 $$
 k_{tz}=k_i\sqrt{n_{21}^2-\sin^2\theta_i}
 =ik_i\sqrt{-n_{21}^2+\sin^2\theta_i}:=iK_{tz}
 $$
 
 进而介质 2 侧  
+
 $$
 \begin{aligned}
 \vec{E}_2(\vec{x},t)&=\vec{E}_{02}\exp{ } i\left(\vec{k}_t\cdot\vec{x}-\omega t\right)\\\\
@@ -234,12 +237,14 @@ $$
 $$
 
 此时电场幅度沿 $z$ 轴指数衰减，穿透深度为  
+
 $$
 \delta=\frac{1}{K_{tz}}=\frac{1}{k_i\sqrt{-n_{21}^2+\sin^2\theta_i}}=
 \boxed{\frac{\lambda_i}{2\pi\sqrt{-n_{21}^2+\sin^2\theta_i}}}
 $$
 
 称发生了 **全反射**。此时反射波体现为相位移动：  
+
 $$
 \begin{aligned}
 \frac{E_{0r}}{E_{0i}}=\exp{ } -i2\phi_N \quad (\text{N波})\\\\
