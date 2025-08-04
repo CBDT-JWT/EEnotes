@@ -22,8 +22,6 @@ nav:
 markdown_extensions:
   - pymdownx.arithmatex:
       generic: true
-  # - pymdownx.tasklist:
-  #     custom_checkbox: true
   - admonition
   - pymdownx.details
   - pymdownx.superfences
