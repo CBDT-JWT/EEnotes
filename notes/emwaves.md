@@ -109,7 +109,7 @@ $$
 
 均匀平面波形如  
 $$
-\vec E(\vec{x},t)=\vec{E}_0\exp i\left(\vec{k}\cdot\vec{x}-\omega t\right)
+\vec E(\vec{x},t)=\vec{E}_0\exp{} i\left(\vec{k}\cdot\vec{x}-\omega t\right)
 $$  
 其中波矢 $|\vec{k}|=\omega\sqrt{\mu\varepsilon}$，方向沿波传播方向；  
 相速度 $\vec v_p=\frac{\omega}{k}\hat k=\frac{1}{\sqrt{\mu\varepsilon}}\hat k$；  
@@ -131,9 +131,9 @@ $$
 在介质表面，会发生反射和折射。这类问题一般假设  
 $$
 \begin{cases}
-    入射波：\quad\vec{E}_i(\vec{x},t)=\vec{E}_{0i}\exp i\left(\vec{k}_i\cdot\vec{x}-\omega t\right)\\\\
-    反射波：\quad\vec{E}_r(\vec{x},t)=\vec{E}_{0r}\exp i\left(\vec{k}_r\cdot\vec{x}-\omega t\right)\\\\
-    折射波：\quad\vec{E}_t(\vec{x},t)=\vec{E}_{0t}\exp i\left(\vec{k}_t\cdot\vec{x}-\omega t\right)\\
+    入射波：\quad\vec{E}_i(\vec{x},t)=\vec{E}_{0i}\exp{} i\left(\vec{k}_i\cdot\vec{x}-\omega t\right)\\\\
+    反射波：\quad\vec{E}_r(\vec{x},t)=\vec{E}_{0r}\exp{} i\left(\vec{k}_r\cdot\vec{x}-\omega t\right)\\\\
+    折射波：\quad\vec{E}_t(\vec{x},t)=\vec{E}_{0t}\exp{} i\left(\vec{k}_t\cdot\vec{x}-\omega t\right)\\
 \end{cases}
 $$
 
@@ -212,13 +212,13 @@ k_t=n_{21}k_i\quad,\quad\sin\theta_{t}=\frac{\sin\theta_{i}}{n_{21}}\quad,\quad 
 $$
 
 对应介质 2 侧电场  
+
 $$
 \begin{aligned}
-\vec{E}_2(\vec{x},t)&=\vec{E}_{02}\exp i\left(\vec{k}_t\cdot\vec{x}-\omega t\right)\\\\
-&= \vec{E}_{02}\exp (ik_{ty}y)\cdot\exp (i k_{tz}z)\cdot \exp (-i\omega t)
+\vec{E}_2(\vec{x},t)&=\vec{E}_{02}\exp{}{i\left(\vec{k}_t \cdot \vec{x}-\omega t\right)}\\
+&= \vec{E}_z\cdot\exp{}{-i\omega t}\exp{}{ik_{ty}y}\cdot\exp{}{ik_{tz}}
 \end{aligned}
 $$
-
 对于 $\sin\theta_i n_{21}$ 的情形，有  
 $$
 k_{tz}=k_i\sqrt{n_{21}^2-\sin^2\theta_i}
@@ -228,8 +228,8 @@ $$
 进而介质 2 侧  
 $$
 \begin{aligned}
-\vec{E}_2(\vec{x},t)&=\vec{E}_{02}\exp i\left(\vec{k}_t\cdot\vec{x}-\omega t\right)\\\\
-&=\vec{E}_{02}\exp (ik_{ty}y)\cdot \exp (- K_{tz}z) \cdot \exp (-i\omega t)
+\vec{E}_2(\vec{x},t)&=\vec{E}_{02}\exp{} i\left(\vec{k}_t\cdot\vec{x}-\omega t\right)\\\\
+&=\vec{E}_{02}\exp{} (ik_{ty}y)\cdot \exp{} (- K_{tz}z) \cdot \exp{} (-i\omega t)
 \end{aligned}
 $$
 
@@ -242,8 +242,8 @@ $$
 称发生了 **全反射**。此时反射波体现为相位移动：  
 $$
 \begin{aligned}
-\frac{E_{0r}}{E_{0i}}=\exp -i2\phi_N \quad (\text{N波})\\\\
-\frac{E_{0r}}{E_{0i}}=\exp -i2\phi_P \quad (\text{P波})
+\frac{E_{0r}}{E_{0i}}=\exp{} -i2\phi_N \quad (\text{N波})\\\\
+\frac{E_{0r}}{E_{0i}}=\exp{} -i2\phi_P \quad (\text{P波})
 \end{aligned}
 $$
 
@@ -277,7 +277,7 @@ $$
 
 电荷变化满足  
 $$
-\rho=\rho_0\exp-\frac{t}{\tau}
+\rho=\rho_0\exp{}-\frac{t}{\tau}
 $$  
 其中 $\tau=\varepsilon/\sigma$ 为**特征时间**。若导体满足  
 $$
@@ -310,9 +310,9 @@ $$
 下面考虑真空射入良导体的问题。方法与先前类似。仍然假设  
 $$
 \begin{cases}
-入射波：\quad\vec{E}_i(\vec{x},t) = \vec{E}_{0i} \exp i\left(\vec{k}_i \cdot \vec{x} - \omega t\right) \\\\
-反射波：\quad\vec{E}_r(\vec{x},t) = \vec{E}_{0r} \exp i\left(\vec{k}_r \cdot \vec{x} - \omega t\right) \\\\
-透射波：\quad\vec{E}_t(\vec{x},t) = \vec{E}_{0t} \exp i\left(\vec{k}_t \cdot \vec{x} - \omega t\right) \\
+入射波：\quad\vec{E}_i(\vec{x},t) = \vec{E}_{0i} \exp{} i\left(\vec{k}_i \cdot \vec{x} - \omega t\right) \\\\
+反射波：\quad\vec{E}_r(\vec{x},t) = \vec{E}_{0r} \exp{} i\left(\vec{k}_r \cdot \vec{x} - \omega t\right) \\\\
+透射波：\quad\vec{E}_t(\vec{x},t) = \vec{E}_{0t} \exp{} i\left(\vec{k}_t \cdot \vec{x} - \omega t\right) \\
 \end{cases}
 $$  
 则可以得到  
@@ -321,7 +321,7 @@ k_t^2 = \vec{k}_t \cdot \vec{k}_t = \omega^2 \mu \tilde{\varepsilon} \Rightarrow
 $$  
 进而透射波的形式为  
 $$
-\vec{E}_t(\vec{x},t) = \vec{E}_{0t} \exp i\left(\vec{k}_t \cdot \vec{x} - \omega t\right) = \vec{E}_{0t} \exp (-\vec{\alpha} \cdot \vec{x}) \exp (i \vec{\beta} \cdot \vec{x}) \exp (-i \omega t)
+\vec{E}_t(\vec{x},t) = \vec{E}_{0t} \exp{} i\left(\vec{k}_t \cdot \vec{x} - \omega t\right) = \vec{E}_{0t} \exp{} (-\vec{\alpha} \cdot \vec{x}) \exp{} (i \vec{\beta} \cdot \vec{x}) \exp{} (-i \omega t)
 \begin{cases}
 幅度沿 \ \vec{\alpha} \ 衰减 \\\\
 相位沿 \ \vec{\beta} \ 传播
@@ -345,7 +345,7 @@ $$
 
 磁场  
 $$
-\vec{H}_{0t} = \sqrt{\frac{\sigma}{\omega \mu}} \textcolor{cyan}{\exp i \frac{\pi}{4}}\hat{z} \times \vec{E}_{0t}
+\vec{H}_{0t} = \sqrt{\frac{\sigma}{\omega \mu}} \textcolor{cyan}{\exp{} i \frac{\pi}{4}}\hat{z} \times \vec{E}_{0t}
 $$
 
 $$
@@ -398,7 +398,7 @@ $$
 
 对于 N 波，此时有总电场（假设界面为 $yOz$ 平面，入射面 $xOz$）  
 $$
-\vec{E} = \vec{E}_i + \vec{E}_r = i 2 E_0 \sin k_x x \hat{e}_y \exp i k_z z
+\vec{E} = \vec{E}_i + \vec{E}_r = i 2 E_0 \sin k_x x \hat{e}_y \exp{} i k_z z
 $$  
 其中 $k_z = k \sin \theta$, \quad $k_x = k \cos \theta$。该场沿着 $x$ 方向为驻波，沿着 $z$ 方向为行波，为横电场（TE）模式。同时在 $x = -\frac{n \pi}{k_x}$ 处放第二块平行金属板，或在垂直于 $y$ 轴方向放两个金属板，都不会影响原有的场分布。
 ### 波导与导波模式
@@ -599,12 +599,12 @@ $$
 
 进而根据 $\vec{J}$ 和 $\vec{A}$ 就可以确定电磁场。根据推迟势解  
 $$
-\vec{A}(\vec{x}, t) = \frac{\mu_0}{4 \pi} \int \frac{\vec{J}(\vec{x}', t_r)}{r} dV' = \vec{A}(\vec{x}) \exp(-i \omega t)
+\vec{A}(\vec{x}, t) = \frac{\mu_0}{4 \pi} \int \frac{\vec{J}(\vec{x}', t_r)}{r} dV' = \vec{A}(\vec{x}) \exp{}(-i \omega t)
 $$
 
 结合时谐条件  
 $$
-\vec{J}(\vec{x}', t_r) = \vec{J}(\vec{x}') \exp(-i \omega t_r) = \vec{J}(\vec{x}') \exp(i k r) \exp(-i \omega t)
+\vec{J}(\vec{x}', t_r) = \vec{J}(\vec{x}') \exp{}(-i \omega t_r) = \vec{J}(\vec{x}') \exp{}(i k r) \exp{}(-i \omega t)
 $$
 
 其中用到了  
@@ -614,7 +614,7 @@ $$
 
 从而得到  
 $$
-\vec{A}(\vec{x}) = \frac{\mu_0}{4 \pi} \int \frac{\vec{J}(\vec{x}') \exp(i k r)}{r} dV'
+\vec{A}(\vec{x}) = \frac{\mu_0}{4 \pi} \int \frac{\vec{J}(\vec{x}') \exp{}(i k r)}{r} dV'
 $$
 
 考虑远场近似  
@@ -624,28 +624,28 @@ $$
 
 得到  
 $$
-\vec{A}(\vec{x}) = \frac{\mu_0}{4 \pi R} \exp(i k R) \int \vec{J}(\vec{x}') \exp(i k \hat{R} \cdot \vec{x}') \left(1 + \frac{\hat{R} \cdot \vec{x}'}{R}\right) dV'
+\vec{A}(\vec{x}) = \frac{\mu_0}{4 \pi R} \exp{}(i k R) \int \vec{J}(\vec{x}') \exp{}(i k \hat{R} \cdot \vec{x}') \left(1 + \frac{\hat{R} \cdot \vec{x}'}{R}\right) dV'
 $$
 
 进而考虑 $\rho, \vec{J}$ 集中在小区域的情形，即  
 $$
-|\vec{x}'| \ll \lambda = \frac{2 \pi}{k}, \quad \exp(i k \hat{R} \cdot \vec{x}') \approx 1 - i k \hat{R} \cdot \vec{x}'
+|\vec{x}'| \ll \lambda = \frac{2 \pi}{k}, \quad \exp{}(i k \hat{R} \cdot \vec{x}') \approx 1 - i k \hat{R} \cdot \vec{x}'
 $$
 
 即可得到  
 **时谐场的远场辐射多级展开**  
 $$
-\vec{A}(\vec{x}) = \frac{\mu_0}{4 \pi R} \exp(i k R) \int \vec{J}(\vec{x}') \left(1 + \left(\frac{1}{R} - i k \right) \hat{R} \cdot \vec{x}' + \cdots \right) dV'
+\vec{A}(\vec{x}) = \frac{\mu_0}{4 \pi R} \exp{}(i k R) \int \vec{J}(\vec{x}') \left(1 + \left(\frac{1}{R} - i k \right) \hat{R} \cdot \vec{x}' + \cdots \right) dV'
 $$
 ### 电偶极辐射
 
 上述式中第一项  
 $$
-\vec{A}(\vec{x}) = \frac{\mu_0}{4 \pi R} \exp(i k R) \int \vec{J}(\vec{x}') dV'
+\vec{A}(\vec{x}) = \frac{\mu_0}{4 \pi R} \exp{}(i k R) \int \vec{J}(\vec{x}') dV'
 $$
 对应电偶极辐射。相应地  
 $$
-\vec{A}(\vec{x}, t) = \frac{\mu_0}{4 \pi R} \exp(i k R) \int \vec{J}(\vec{x}', t) dV'
+\vec{A}(\vec{x}, t) = \frac{\mu_0}{4 \pi R} \exp{}(i k R) \int \vec{J}(\vec{x}', t) dV'
 $$
 进而结合  
 $$
@@ -653,13 +653,13 @@ $$
 $$
 得到  
 $$
-\vec{A}(\vec{x}, t) = \frac{\mu_0}{4 \pi R} \exp(i k R) \dot{\vec{p}}(t)
+\vec{A}(\vec{x}, t) = \frac{\mu_0}{4 \pi R} \exp{}(i k R) \dot{\vec{p}}(t)
 $$
-再利用 $\vec{p}(t) = \vec{p}_0 \exp(-i \omega t)$ 得到
+再利用 $\vec{p}(t) = \vec{p}_0 \exp{}(-i \omega t)$ 得到
 
 **电偶极辐射公式**  
 $$
-\vec{A}(\vec{x}, t) = -i \omega \frac{\mu_0}{4 \pi R} \exp(i k R) \vec{p}_0 \exp(-i \omega t)
+\vec{A}(\vec{x}, t) = -i \omega \frac{\mu_0}{4 \pi R} \exp{}(i k R) \vec{p}_0 \exp{}(-i \omega t)
 $$
 
 根据  
@@ -668,12 +668,12 @@ $$
 $$
 在球坐标系下得到  
 $$
-\vec{B} = -\frac{p_0 k^3}{4 \pi \varepsilon_0 c} \left( \frac{i}{(k R)^2} + \frac{1}{k R} \right) \sin \theta \exp i(k R - \omega t) \hat{\phi}
+\vec{B} = -\frac{p_0 k^3}{4 \pi \varepsilon_0 c} \left( \frac{i}{(k R)^2} + \frac{1}{k R} \right) \sin \theta \exp{} i(k R - \omega t) \hat{\phi}
 $$
 $$
 \begin{aligned}
-\vec{E} = & \frac{2 p_0 k^3}{4 \pi \varepsilon_0} \left( \frac{1}{(k R)^3} - \frac{i}{(k R)^2} \right) \cos \theta \exp i(k R - \omega t) \hat{R} \\\\
-& + \frac{p_0 k^3}{4 \pi \varepsilon_0} \left( \frac{1}{(k R)^3} - \frac{i}{(k R)^2} - \frac{1}{k R} \right) \sin \theta \exp i(k R - \omega t) \hat{\theta}
+\vec{E} = & \frac{2 p_0 k^3}{4 \pi \varepsilon_0} \left( \frac{1}{(k R)^3} - \frac{i}{(k R)^2} \right) \cos \theta \exp{} i(k R - \omega t) \hat{R} \\\\
+& + \frac{p_0 k^3}{4 \pi \varepsilon_0} \left( \frac{1}{(k R)^3} - \frac{i}{(k R)^2} - \frac{1}{k R} \right) \sin \theta \exp{} i(k R - \omega t) \hat{\theta}
 \end{aligned}
 $$
 
@@ -695,7 +695,7 @@ $$
 
 主要讨论短天线和半波天线两种。对于短天线 $l \ll \lambda$，其电流分布为  
 $$
-I(z,t) = I_0 \left(1 - \frac{2|z|}{l}\right) \exp(-i \omega t)
+I(z,t) = I_0 \left(1 - \frac{2|z|}{l}\right) \exp{}(-i \omega t)
 $$
 其电偶极矩振幅  
 $$
@@ -713,20 +713,20 @@ $$
 
 对于半波天线 $l = \frac{\lambda}{2}$，其电流分布为  
 $$
-I(z,t) = I_0 \cos(k z) \exp(-i \omega t)
+I(z,t) = I_0 \cos(k z) \exp{}(-i \omega t)
 $$
 进而由近似 $r \approx R - z \cos \theta$ 得到矢量位  
 $$
-\vec{A}(\vec{x}) \approx \frac{\mu_0}{4\pi} \int_{-\frac{\lambda}{4}}^{\frac{\lambda}{4}} \frac{I(z) \exp i(k R - k z \cos \theta)}{R} dz \hat{e}_z = \boxed{
-    \frac{\mu_0 I_0 \exp(i k R)}{2 \pi k R} \frac{\cos\left(\frac{\pi}{2} \cos \theta\right)}{\sin^2 \theta} \hat{e}_z
+\vec{A}(\vec{x}) \approx \frac{\mu_0}{4\pi} \int_{-\frac{\lambda}{4}}^{\frac{\lambda}{4}} \frac{I(z) \exp{} i(k R - k z \cos \theta)}{R} dz \hat{e}_z = \boxed{
+    \frac{\mu_0 I_0 \exp{}(i k R)}{2 \pi k R} \frac{\cos\left(\frac{\pi}{2} \cos \theta\right)}{\sin^2 \theta} \hat{e}_z
 }
 $$
 进而  
 $$
-\vec{B} = -i \frac{\mu_0 I_0 \exp(i k R)}{2 \pi k R} \frac{\cos\left(\frac{\pi}{2} \cos \theta\right)}{\sin \theta} \hat{\phi}
+\vec{B} = -i \frac{\mu_0 I_0 \exp{}(i k R)}{2 \pi k R} \frac{\cos\left(\frac{\pi}{2} \cos \theta\right)}{\sin \theta} \hat{\phi}
 $$
 $$
-\vec{E} = -i \frac{\mu_0 c I_0 \exp(i k R)}{2 \pi k R} \frac{\cos\left(\frac{\pi}{2} \cos \theta\right)}{\sin \theta} \hat{\theta}
+\vec{E} = -i \frac{\mu_0 c I_0 \exp{}(i k R)}{2 \pi k R} \frac{\cos\left(\frac{\pi}{2} \cos \theta\right)}{\sin \theta} \hat{\theta}
 $$
 辐射能流  
 $$
