@@ -277,9 +277,11 @@ $$
 $$
 
 同时  
+
 $$
 \hat{n}\cdot\tilde{\vec{S}}_t=\frac{\left|E_{0t}\right|^2\cos\theta_t}{2\eta_2}
 $$  
+
 为纯虚数，进而法向透射平均能流为 0，只有瞬时能流。
 ### 导体内的电磁波
 
@@ -740,48 +742,65 @@ $$
 $$
 P = \oint \left< \vec{S} \right> \cdot d \vec{S} = \boxed{\frac{|p_0|^2 \omega^4}{12 \pi \varepsilon_0 c^3}} \propto \omega^4
 $$
+
 ### 天线
 
 主要讨论短天线和半波天线两种。对于短天线 $l \ll \lambda$，其电流分布为  
+
 $$
 I(z,t) = I_0 \left(1 - \frac{2|z|}{l}\right) \exp{ }(-i \omega t)
 $$
+
 其电偶极矩振幅  
+
 $$
 \vec{p}_0 = \frac{i}{\omega} \int \vec{J}(\vec{x}') dV' = \frac{i I_0 l}{2 \omega} \hat{e}_z
 $$
-从而辐射功率  
+
+从而辐射功率 
+
 $$
 P = \frac{\pi \eta I_0^2}{12} \left(\frac{l}{\lambda}\right)^2 = \frac{I_0^2 R_{rad}}{2}
 $$
+
 其中辐射阻抗  
+
 $$
 R_{rad} = \frac{\pi \eta}{6} \left(\frac{l}{\lambda}\right)^2
 $$
+
 很小，故**辐射能力很弱**。
 
 对于半波天线 $l = \frac{\lambda}{2}$，其电流分布为  
+
 $$
 I(z,t) = I_0 \cos(k z) \exp{ }(-i \omega t)
 $$
+
 进而由近似 $r \approx R - z \cos \theta$ 得到矢量位  
+
 $$
 \vec{A}(\vec{x}) \approx \frac{\mu_0}{4\pi} \int_{-\frac{\lambda}{4}}^{\frac{\lambda}{4}} \frac{I(z) \exp{ } i(k R - k z \cos \theta)}{R} dz \hat{e}_z = \boxed{
     \frac{\mu_0 I_0 \exp{ }(i k R)}{2 \pi k R} \frac{\cos\left(\frac{\pi}{2} \cos \theta\right)}{\sin^2 \theta} \hat{e}_z
 }
 $$
+
 进而  
+
 $$
 \vec{B} = -i \frac{\mu_0 I_0 \exp{ }(i k R)}{2 \pi k R} \frac{\cos\left(\frac{\pi}{2} \cos \theta\right)}{\sin \theta} \hat{\phi}
 $$
+
 $$
 \vec{E} = -i \frac{\mu_0 c I_0 \exp{ }(i k R)}{2 \pi k R} \frac{\cos\left(\frac{\pi}{2} \cos \theta\right)}{\sin \theta} \hat{\theta}
 $$
-辐射能流  
+辐射能流 
+
 $$
 \left< \vec{S} \right> \propto \frac{\cos^2\left(\frac{\pi}{2} \cos \theta\right)}{\sin^2 \theta}
 $$
 辐射阻抗  
+
 $$
 R_{rad} = \boxed{73.2 \Omega}
 $$
