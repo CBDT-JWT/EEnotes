@@ -1,7 +1,7 @@
 # 《电子电路与系统基础》学习参考
 !!! info  "说明"
     先开个坑（）放张最喜欢的单管放大器镇楼。后面应该会同步写一下CAD教程
-    ![单管放大器](assets/image.png){: style="display: block; margin: auto; width: 60%;" }
+    ![单管放大器](assets/image.png)
     （很大程度上）参考了\ycgg/的小班辅导讲义，感谢！这篇文章大概会按照元件器件和方法工具两条主线完成，感觉电电确实就是这么个逻辑
 
 !!! tips "建议"
@@ -87,7 +87,7 @@ v_2\\\\
 \end{bmatrix}
 $$
 这里又有一个初学难以理解的点：这个$\textcolor{yellow}{-i_2}$的负号如何理解。
-![alt text](assets/image-3.png){: style="display: block; margin: auto; width: 60%;" }
+![alt text](assets/image-3.png)
 正如这张图所示，zyhg矩阵研究的是$\{v_1\,,v_2\,,i_1\,,i_2\}$之间的关系，而ABCD矩阵研究的则是$\{v_{in}\,,i_{in}\,,v_{out}\,,i_{out}\}$之间的关系。根据图中定义不难发现$i_{out}=\textcolor{yellow}{-i_2}$。也就是说，**ABCD矩阵本质的定义其实是**
 
 $$
@@ -105,7 +105,7 @@ $$
 #### 复合网络的参量矩阵
 这样定义的好处是，如果我们考虑两个级联的系统，那么就有**“级联ABCD相乘”**。
 
-![alt text](assets/image-5.png){: style="display: block; margin: auto; width: 60%;" }
+![alt text](assets/image-5.png)
 $$
 \begin{aligned}
 \begin{bmatrix}
@@ -151,7 +151,7 @@ C_2&D_2
 $$
 
 用类似的方法可以推导经典的口诀：**“串串相连z相加，并并相连y相加，串并相连h相加，并串相连g相加”。**
-![alt text](assets/image-6.png){: style="display: block; margin: auto; width: 60%;" }
+![alt text](assets/image-6.png)
 以h矩阵为例，上图中不难发现
 $$
 i_{1A}=i_{1B}\,,v_{2A}=v_{2B}\,,
@@ -195,7 +195,7 @@ $$
 进而$h=h_A+h_B\,.$用类似方法不难证明剩下三种情况，在此略过。
 #### 常用网络的参量矩阵
 首先是常用的串臂电阻和并臂电导，也就是挂在嘴边的"1z01, 10y1"。如下图：
-![alt text](assets/image-7.png){: style="display: block; margin: auto; width: 60%;" }
+![alt text](assets/image-7.png)
 两个电路的ABCD参量分别为
 $$
 ABCD_\text{串臂}=\begin{bmatrix}
@@ -221,7 +221,7 @@ Y & Y
 $$
 
 然后是同样常见的线性受控源模型。利用戴维南-诺顿定理不难证明下列电路的等价性。
-![alt text](assets/image-13.png){: style="display: block; margin: auto; width: 60%;" }
+![alt text](assets/image-13.png)
 #### 网络参量的物理意义
 直接观察矩阵的形式不利于初学者理解网络参量各个元素的物理意义，因此我们不妨把矩阵展开。以h参量为例：
 $$
@@ -254,11 +254,24 @@ h_{22}=\frac{i_2}{v_2} \big |_{i_1=0}\quad i_1置0时的电压反馈系数
 \end{cases}
 $$
 
-对于剩下三个矩阵也是类似的原理：11元素是输入xx，22元素是输出xx，21元素是xx放大系数，12元素是xx反馈系数。有了这一点之后可以记忆一个也很常用的公式：**基于zyhg矩阵给出传递函数。**
+对于剩下三个矩阵也是类似的原理：11元素是输入xx，22元素是输出xx，21元素是xx放大系数，12元素是xx反馈系数。常见用途是**输入输出阻抗公式**：
+$$
+\begin{cases}
+w_{in}=p_{11}-\frac{p_{12}p_{21}}{p_{22}+w_L}\\\\
+w_{out}=p_{22}-\frac{p_{21}p_{12}}{p_{11}+w_S}
+\end{cases}
+$$
+这里$p\in\{z,y,h,g\}$, $w$根据量纲为对应的阻抗或导纳。注意输入输出阻抗的定义如下图：
+
+![alt text](assets/image-15.png)
+
+
+
+有了这一点之后可以记忆一个也很常用的公式：**基于zyhg矩阵给出传递函数。**
 
 首先对于单向网络$p_{12}=0$,传递函数是容易写出的。还是以h矩阵为例，考虑这样的电路：
 
-![alt text](assets/image-12.png){: style="display: block; margin: auto; width: 60%;" }
+![alt text](assets/image-12.png)
 
 那么上图中的传递函数可以简单写成
 $$
@@ -308,7 +321,7 @@ $$
 
 !!! important "ABCD参量求传函"
     这里一个小方法就是利用ABCD参量求梯形网络的传递函数，利用上面提到串臂并臂网络的ABCD参数结合电压增益$A_v=\frac 1 A$就可以轻松求得。例如下图中
-    ![alt text](assets/image-14.png){: style="display: block; margin: auto; width: 60%;" }
+    ![alt text](assets/image-14.png)
 
     可以轻松获得ABCD参量（注意我们只关心A元素）为
     $$
@@ -351,3 +364,13 @@ $$
     \end{aligned}
     $$
     比KCL/KVL要快很多。
+### 时域分析与三/五要素法
+#### 三要素法
+一阶系统的变换域表达式总是为
+$$
+X(j\omega)=\frac{\cdots}{1+\omega\tau}
+$$
+的形式，其对应的时域表达式必然为【由于未学ss，此处不必深究】
+$$
+x(t)=\left(\textcolor{yellow}{x(0)}-\textcolor{yellow}{x_\infty(0)}\right)\exp\left(-\frac{t}{\textcolor{cyan}{\tau}}\right)
+$$
