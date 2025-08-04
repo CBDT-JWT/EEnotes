@@ -440,7 +440,7 @@ $$
 $$
 \vec{E} = \vec{E}_i + \vec{E}_r = i 2 E_0 \sin k_x x \hat{e}_y \exp{ } i k_z z
 $$  
-其中 $k_z = k \sin \theta$, \quad $k_x = k \cos \theta$。该场沿着 $x$ 方向为驻波，沿着 $z$ 方向为行波，为横电场（TE）模式。同时在 $x = -\frac{n \pi}{k_x}$ 处放第二块平行金属板，或在垂直于 $y$ 轴方向放两个金属板，都不会影响原有的场分布。
+其中 $k_z = k \sin \theta$, $k_x = k \cos \theta$。该场沿着 $x$ 方向为驻波，沿着 $z$ 方向为行波，为横电场（TE）模式。同时在 $x = -\frac{n \pi}{k_x}$ 处放第二块平行金属板，或在垂直于 $y$ 轴方向放两个金属板，都不会影响原有的场分布。
 ### 波导与导波模式
 
 求解方法：从 
@@ -527,7 +527,7 @@ $$
 
 #### TEM模
 
-!!! warning "注意”
+!!!warning "注意”
     矩形波导不能传 TEM 模
 
 
@@ -736,7 +736,7 @@ $$
 特别对于远区，有  
 
 $$
-\left< \vec{S} \right> = \Re \left\\\{ \frac{\vec{E} \times \vec{H}^*}{2} \right\\\} = \boxed{\frac{|p_0|^2 \omega^4 \sin^2 \theta}{32 \pi^2 \varepsilon_0 c^3 R^2} \hat{R}} \propto \sin^2 \theta
+\left< \vec{S} \right> = \Re \left\{ \frac{\vec{E} \times \vec{H}^*}{2} \right\} = \boxed{\frac{|p_0|^2 \omega^4 \sin^2 \theta}{32 \pi^2 \varepsilon_0 c^3 R^2} \hat{R}} \propto \sin^2 \theta
 $$
 
 总辐射功率  
