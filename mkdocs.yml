@@ -21,7 +21,7 @@ nav:
 
 markdown_extensions:
   - pymdownx.arithmatex:
-  #     generic: true
+       generic: true
   - admonition
   - pymdownx.details
   - pymdownx.superfences
