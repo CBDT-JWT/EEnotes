@@ -117,11 +117,13 @@ $$
 波长 $\lambda=\frac{2\pi}{k}$，波阻抗 $\eta=\sqrt\frac{\mu}{\varepsilon}=\boxed{\frac{|E|}{|H|}}$。
 
 对于电磁波有平均电场储能 = 平均磁场储能。即  
+
 $$
 \left<w_e\right>=\left<w_m\right>=\frac{\varepsilon|\vec{E}_0|^2}{4}
 $$
 
 电磁波为 **横波**。从而  
+
 $$
 \vec{H}=\hat k\times \frac{\vec{E}}{\eta}
 $$
@@ -780,9 +782,12 @@ $$
 进而由近似 $r \approx R - z \cos \theta$ 得到矢量位  
 
 $$
-\vec{A}(\vec{x}) \approx \frac{\mu_0}{4\pi} \int_{-\frac{\lambda}{4}}^{\frac{\lambda}{4}} \frac{I(z) \exp{ } i(k R - k z \cos \theta)}{R} dz \hat{e}_z = \boxed{
+\begin{aligned}
+\vec{A}(\vec{x}) &\approx \frac{\mu_0}{4\pi} \int_{-\frac{\lambda}{4}}^{\frac{\lambda}{4}} \frac{I(z) \exp{ } i(k R - k z \cos \theta)}{R} dz \hat{e}_z \\\\
+&= \boxed{
     \frac{\mu_0 I_0 \exp{ }(i k R)}{2 \pi k R} \frac{\cos\left(\frac{\pi}{2} \cos \theta\right)}{\sin^2 \theta} \hat{e}_z
 }
+\end{aligned}
 $$
 
 进而  
