@@ -131,9 +131,9 @@ $$
 在介质表面，会发生反射和折射。这类问题一般假设  
 $$
 \begin{cases}
-    入射波：\;\vec{E}_i(\vec x,t)=\vec{E}_{0i}\exp i\left(\vec{k}_i\cdot\vec{x}-\omega t\right)\\\\
-    反射波：\;\vec{E}_r(\vec x,t)=\vec{E}_{0r}\exp i\left(\vec{k}_r\cdot\vec{x}-\omega t\right)\\\\
-    折射波：\;\vec{E}_t(\vec x,t)=\vec{E}_{0t}\exp i\left(\vec{k}_t\cdot\vec{x}-\omega t\right)\\
+    入射波：\quad\vec{E}_i(\vec x,t)=\vec{E}_{0i}\exp i\left(\vec{k}_i\cdot\vec{x}-\omega t\right)\\\\
+    反射波：\quad\vec{E}_r(\vec x,t)=\vec{E}_{0r}\exp i\left(\vec{k}_r\cdot\vec{x}-\omega t\right)\\\\
+    折射波：\quad\vec{E}_t(\vec x,t)=\vec{E}_{0t}\exp i\left(\vec{k}_t\cdot\vec{x}-\omega t\right)\\
 \end{cases}
 $$
 
@@ -208,7 +208,7 @@ $$
 
 这里利用了  
 $$
-k_t=n_{21}k_i\;,\quad\sin\theta_{t}=\frac{\sin\theta_{i}}{n_{21}}\;,\quad n_{21}=\frac{n_2}{n_1}
+k_t=n_{21}k_i\quad,\quad\sin\theta_{t}=\frac{\sin\theta_{i}}{n_{21}}\quad,\quad n_{21}=\frac{n_2}{n_1}
 $$
 
 对应介质 2 侧电场  
@@ -310,9 +310,9 @@ $$
 下面考虑真空射入良导体的问题。方法与先前类似。仍然假设  
 $$
 \begin{cases}
-入射波：\;\vec{E}_i(\vec x,t) = \vec{E}_{0i} \exp i\left(\vec{k}_i \cdot \vec{x} - \omega t\right) \\\\
-反射波：\;\vec{E}_r(\vec x,t) = \vec{E}_{0r} \exp i\left(\vec{k}_r \cdot \vec{x} - \omega t\right) \\\\
-透射波：\;\vec{E}_t(\vec x,t) = \vec{E}_{0t} \exp i\left(\vec{k}_t \cdot \vec{x} - \omega t\right) \\
+入射波：\quad\vec{E}_i(\vec x,t) = \vec{E}_{0i} \exp i\left(\vec{k}_i \cdot \vec{x} - \omega t\right) \\\\
+反射波：\quad\vec{E}_r(\vec x,t) = \vec{E}_{0r} \exp i\left(\vec{k}_r \cdot \vec{x} - \omega t\right) \\\\
+透射波：\quad\vec{E}_t(\vec x,t) = \vec{E}_{0t} \exp i\left(\vec{k}_t \cdot \vec{x} - \omega t\right) \\
 \end{cases}
 $$  
 则可以得到  
@@ -423,7 +423,7 @@ $$
 
 纵向（Z）  
 $$
-E_z = E_0 \sin\frac{m\pi}{a} x \sin\frac{n\pi}{b} y \;, \quad H_z = 0
+E_z = E_0 \sin\frac{m\pi}{a} x \sin\frac{n\pi}{b} y \quad, \quad H_z = 0
 $$
 
 横向（T）  
@@ -455,7 +455,7 @@ $$
 
 纵向（Z）  
 $$
-E_z = 0 \;, \quad H_z = H_0 \cos\frac{m\pi}{a} x \cos\frac{n\pi}{b} y
+E_z = 0 \quad, \quad H_z = H_0 \cos\frac{m\pi}{a} x \cos\frac{n\pi}{b} y
 $$
 
 横向（T）  
@@ -684,7 +684,7 @@ $$
 
 特别对于远区，有  
 $$
-\left< \vec{S} \right> = \Re \left\{ \frac{\vec{E} \times \vec{H}^*}{2} \right\} = \boxed{\frac{|p_0|^2 \omega^4 \sin^2 \theta}{32 \pi^2 \varepsilon_0 c^3 R^2} \hat{R}} \propto \sin^2 \theta
+\left< \vec{S} \right> = \Re \left\\\{ \frac{\vec{E} \times \vec{H}^*}{2} \right\\\} = \boxed{\frac{|p_0|^2 \omega^4 \sin^2 \theta}{32 \pi^2 \varepsilon_0 c^3 R^2} \hat{R}} \propto \sin^2 \theta
 $$
 
 总辐射功率  
