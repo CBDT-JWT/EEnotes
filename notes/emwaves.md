@@ -271,9 +271,11 @@ T=-\frac{\hat n\cdot\left<\vec S_t\right>}{\hat n\cdot \left<\vec S_i\right>}
 =\left|\frac{E_{0t}}{E_{0i}}\right|^2\frac{\eta_1\cos\theta_t}{\eta_2\cos\theta_i}
 $$
 全反射时，有  
+
 $$
-\hat{n}\cdot\left<\vec S_i\right>=-\hat{n}\cdot\left<\vec S_r\right>
+\hat{n}\cdot \left<\vec S_i\right> =-\hat{n}\cdot\left<\vec S_r\right>
 $$
+
 同时  
 $$
 \hat{n}\cdot\tilde{\vec{S}}_t=\frac{\left|E_{0t}\right|^2\cos\theta_t}{2\eta_2}
@@ -314,6 +316,7 @@ $$
 可以在形式上继续套用 Fresnel 公式。
 
 下面考虑真空射入良导体的问题。方法与先前类似。仍然假设  
+
 $$
 \begin{cases}
 入射波：\quad\vec{E}_i(\vec{x},t) = \vec{E}_{0i} \exp{ } i\left(\vec{k}_i \cdot \vec{x} - \omega t\right) \\\\
@@ -321,13 +324,27 @@ $$
 透射波：\quad\vec{E}_t(\vec{x},t) = \vec{E}_{0t} \exp{ } i\left(\vec{k}_t \cdot \vec{x} - \omega t\right) \\
 \end{cases}
 $$  
+
 则可以得到  
+
 $$
-k_t^2 = \vec{k}_t \cdot \vec{k}_t = \omega^2 \mu \tilde{\varepsilon} \Rightarrow \vec{k}_t = \vec{\beta} + i \vec{\alpha}.
+\begin{aligned}
+k_t^2 &= \vec{k}_t \cdot \vec{k}_t\\\\
+&= \omega^2 \mu \tilde{\varepsilon} \Rightarrow \vec{k}_t \\\\
+&= \vec{\beta} + i \vec{\alpha}.
+\end{aligned}
 $$  
+
 进而透射波的形式为  
+
 $$
-\vec{E}_t(\vec{x},t) = \vec{E}_{0t} \exp{ } i\left(\vec{k}_t \cdot \vec{x} - \omega t\right) = \vec{E}_{0t} \exp{ } (-\vec{\alpha} \cdot \vec{x}) \exp{ } (i \vec{\beta} \cdot \vec{x}) \exp{ } (-i \omega t)
+\begin{aligned}
+\vec{E}_t(\vec{x},t) &= \vec{E}_{0t} \exp{ } i\left(\vec{k}_t \cdot \vec{x} - \omega t\right) \\\\
+&= \vec{E}_{0t} \exp{ } (-\vec{\alpha} \cdot \vec{x}) \exp{ } (i \vec{\beta} \cdot \vec{x}) \exp{ } (-i \omega t)
+\end{aligned}
+$$
+
+$$
 \begin{cases}
 幅度沿 \ \vec{\alpha} \ 衰减 \\\\
 相位沿 \ \vec{\beta} \ 传播
@@ -335,6 +352,7 @@ $$
 $$
 
 对于垂直入射，有  
+
 $$
 \begin{aligned}
 \vec{\alpha} &= \omega \sqrt{\mu \varepsilon} \left[ \frac{1}{2} \left(\sqrt{1 + \frac{\sigma^2}{\omega^2 \varepsilon^2}} - 1 \right) \right]^{\frac{1}{2}} \hat{z} \approx \sqrt{\frac{\omega \sigma \mu}{2}} \hat{z} \\\\
@@ -345,11 +363,13 @@ $$
 对于斜入射，则 $\vec{\alpha}$ 垂直于界面，而 $\vec{\beta}$ 接近垂直于界面，因此与垂直入射情况类似。
 
 从而穿透深度  
+
 $$
 \delta = \frac{1}{\alpha} \approx \boxed{\sqrt{\frac{2}{\omega \sigma \mu}}}
 $$
 
 磁场  
+
 $$
 \vec{H}_{0t} = \sqrt{\frac{\sigma}{\omega \mu}} \textcolor{cyan}{\exp{ } i \frac{\pi}{4}}\hat{z} \times \vec{E}_{0t}
 $$
@@ -357,20 +377,25 @@ $$
 $$
 \frac{\langle w_e \rangle}{\langle w_m \rangle} = \frac{\omega \varepsilon}{\sigma} \ll 1
 $$  
+
 即良导体内部电磁场能量以磁场能量为主。
 
 对于反射波而言，有  
 **导体表面正入射反射波性质**  
 幅度  
+
 $$
 \frac{E_{0r}}{E_{0i}} \approx \frac{\alpha - 1 - i}{\alpha + 1 + i}
 $$
-功率反射率  
+
+功率反射率 
+
 $$
 R = \left|\frac{E_{0r}}{E_{0i}}\right|^2 \approx 1
 $$
 
-同时对于透射波，单位面积产生焦耳热  
+同时对于透射波，单位面积产生焦耳热
+
 $$
 \begin{aligned}
 P_d &= \int_0^\infty \frac{\sigma |\vec{E}_t|^2}{2} dz \\\\
@@ -379,6 +404,7 @@ P_d &= \int_0^\infty \frac{\sigma |\vec{E}_t|^2}{2} dz \\\\
 $$
 
 定义表面电流  
+
 $$
 \begin{aligned}
 \vec{J}_s &= \int_0^\infty \sigma \vec{E}_t dz \\\\
@@ -386,30 +412,35 @@ $$
 \end{aligned}
 $$
 
-和表面电阻  
+和表面电阻 
+
 $$
 R_s = \frac{1}{\sigma \delta}
 $$
 
-则焦耳热可以写成  
+则焦耳热可以写成
+
 $$
 P_d = \frac{|\vec{J}_s|^2 R_s}{2}
 $$
 
 考虑 $\sigma \to \infty$ 的情形，则穿透深度 $\delta \to 0$，此时称为理想导体。理想导体内部没有电磁场，电荷、电流**只分布在表面**。此时仅需要讨论反射问题，边值关系只需要满足  
+
 $$
 \hat{n} \times \vec{E} = 0
 $$  
 即可。
 
-对于 N 波，此时有总电场（假设界面为 $yOz$ 平面，入射面 $xOz$）  
+对于 N 波，此时有总电场（假设界面为 $yOz$ 平面，入射面 $xOz$）
+
 $$
 \vec{E} = \vec{E}_i + \vec{E}_r = i 2 E_0 \sin k_x x \hat{e}_y \exp{ } i k_z z
 $$  
 其中 $k_z = k \sin \theta$, \quad $k_x = k \cos \theta$。该场沿着 $x$ 方向为驻波，沿着 $z$ 方向为行波，为横电场（TE）模式。同时在 $x = -\frac{n \pi}{k_x}$ 处放第二块平行金属板，或在垂直于 $y$ 轴方向放两个金属板，都不会影响原有的场分布。
 ### 波导与导波模式
 
-求解方法：从  
+求解方法：从 
+
 $$
 \begin{cases}
 \nabla \times \vec{E} = i \omega \mu \vec{H} \\\\
@@ -436,6 +467,7 @@ $$
 $$
 \vec{E}_t = \frac{i \beta}{k_c^2} \frac{m\pi}{a} E_0 \cos\frac{m\pi}{a} x \sin\frac{n\pi}{b} y \hat{e}_x + \frac{i \beta}{k_c^2} \frac{n\pi}{b} E_0 \sin\frac{m\pi}{a} x \cos\frac{n\pi}{b} y \hat{e}_y
 $$
+
 $$
 \vec{H}_t = -\frac{i \omega \varepsilon}{k_c^2} \frac{n\pi}{b} E_0 \sin\frac{m\pi}{a} x \cos\frac{n\pi}{b} y \hat{e}_x + \frac{i \omega \varepsilon}{k_c^2} \frac{m\pi}{a} E_0 \cos\frac{m\pi}{a} x \sin\frac{n\pi}{b} y \hat{e}_y
 $$
@@ -514,6 +546,7 @@ $$
 辐射问题中，已知全空间的 $\rho$ 和 $\vec{J}$ 分布，欲求解全空间的 $\vec{E}$ 和 $\vec{B}$。
 
 由时域 Maxwell 方程组  
+
 $$
 \begin{cases}
 \nabla \times \vec{E} = -\frac{\partial}{\partial t} \vec{B} \\\\
@@ -524,6 +557,7 @@ $$
 $$
 
 利用关系  
+
 $$
 \begin{cases}
 \vec{E} = -\nabla \varphi - \frac{\partial}{\partial t} \vec{A} \\\\
@@ -532,6 +566,7 @@ $$
 $$
 
 得到  
+
 $$
 \begin{cases}
 \nabla^2 \varphi + \frac{\partial}{\partial t} (\nabla \cdot \vec{A}) = - \frac{\rho}{\varepsilon_0} \\\\
@@ -551,6 +586,7 @@ $$
 $$
 
 得到**D'Alembert方程**  
+
 $$
 \begin{cases}
 \nabla^2 \varphi - \frac{1}{c^2} \frac{\partial^2}{\partial t^2} \varphi = - \frac{\rho}{\varepsilon_0} \\\\
@@ -559,12 +595,14 @@ $$
 $$
 
 进而解得**推迟势解**  
+
 $$
 \begin{cases}
 \displaystyle \varphi(\vec{x}, t) = \frac{1}{4\pi \varepsilon_0} \int \frac{\rho(\vec{x}', t_r)}{r} dV' \\\\
 \displaystyle \vec{A}(\vec{x}, t) = \frac{\mu_0}{4\pi} \int \frac{\vec{J}(\vec{x}', t_r)}{r} dV'
 \end{cases}
 $$
+
 其中**推迟时间**  
 $$
 t_r = t - \frac{r}{c}
@@ -572,7 +610,8 @@ $$
 
 
 
-进而求导得到电磁场 $\vec{E}, \vec{B}$ 的解（Jefimenko公式）：  
+进而求导得到电磁场 $\vec{E}, \vec{B}$ 的解（Jefimenko公式）： 
+
 $$
 \begin{cases}
 \displaystyle
@@ -596,6 +635,7 @@ $$
 $$
 
 作傅里叶变换得到  
+
 $$
 \begin{cases}
 \nabla \cdot \vec{J} - i \omega \rho = 0 \\\\
@@ -676,6 +716,7 @@ $$
 $$
 \vec{B} = -\frac{p_0 k^3}{4 \pi \varepsilon_0 c} \left( \frac{i}{(k R)^2} + \frac{1}{k R} \right) \sin \theta \exp{ } i(k R - \omega t) \hat{\phi}
 $$
+
 $$
 \begin{aligned}
 \vec{E} = & \frac{2 p_0 k^3}{4 \pi \varepsilon_0} \left( \frac{1}{(k R)^3} - \frac{i}{(k R)^2} \right) \cos \theta \exp{ } i(k R - \omega t) \hat{R} \\\\
@@ -689,11 +730,13 @@ $$
 3. 过渡区介于二者之间。
 
 特别对于远区，有  
+
 $$
 \left< \vec{S} \right> = \Re \left\\\{ \frac{\vec{E} \times \vec{H}^*}{2} \right\\\} = \boxed{\frac{|p_0|^2 \omega^4 \sin^2 \theta}{32 \pi^2 \varepsilon_0 c^3 R^2} \hat{R}} \propto \sin^2 \theta
 $$
 
 总辐射功率  
+
 $$
 P = \oint \left< \vec{S} \right> \cdot d \vec{S} = \boxed{\frac{|p_0|^2 \omega^4}{12 \pi \varepsilon_0 c^3}} \propto \omega^4
 $$
