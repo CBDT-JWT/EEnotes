@@ -22,6 +22,8 @@ nav:
 markdown_extensions:
   - pymdownx.arithmatex:
        generic: true
+  - pymdownx.tasklist:
+       custom_checkbox: true
   - admonition
   - pymdownx.details
   - pymdownx.superfences
@@ -65,16 +67,6 @@ theme:
       
 extra_javascript:
 - javascripts/navigation.js
-- javascripts/custom.js
-- javascripts/simpleLightbox.min.js
-- javascripts/optionalConfig.js
-- javascripts/mermaidloader.js
-- javascripts/umlconvert.js
-- javascripts/mathjax.js
-- javascripts/katex.js
-- https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js
-- https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js
-- https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js
 - themes/js/custom.js
 - themes/js/simpleLightbox.min.js
 - themes/js/optionalConfig.js
