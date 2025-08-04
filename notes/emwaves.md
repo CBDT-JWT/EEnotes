@@ -109,7 +109,7 @@ $$
 
 均匀平面波形如  
 $$
-\vec E(\vec x,t)=\vec{E}_0\exp i\left(\vec{k}\cdot\vec{x}-\omega t\right)
+\vec E(\vec{x},t)=\vec{E}_0\exp i\left(\vec{k}\cdot\vec{x}-\omega t\right)
 $$  
 其中波矢 $|\vec{k}|=\omega\sqrt{\mu\varepsilon}$，方向沿波传播方向；  
 相速度 $\vec v_p=\frac{\omega}{k}\hat k=\frac{1}{\sqrt{\mu\varepsilon}}\hat k$；  
@@ -131,9 +131,9 @@ $$
 在介质表面，会发生反射和折射。这类问题一般假设  
 $$
 \begin{cases}
-    入射波：\quad\vec{E}_i(\vec x,t)=\vec{E}_{0i}\exp i\left(\vec{k}_i\cdot\vec{x}-\omega t\right)\\\\
-    反射波：\quad\vec{E}_r(\vec x,t)=\vec{E}_{0r}\exp i\left(\vec{k}_r\cdot\vec{x}-\omega t\right)\\\\
-    折射波：\quad\vec{E}_t(\vec x,t)=\vec{E}_{0t}\exp i\left(\vec{k}_t\cdot\vec{x}-\omega t\right)\\
+    入射波：\quad\vec{E}_i(\vec{x},t)=\vec{E}_{0i}\exp i\left(\vec{k}_i\cdot\vec{x}-\omega t\right)\\\\
+    反射波：\quad\vec{E}_r(\vec{x},t)=\vec{E}_{0r}\exp i\left(\vec{k}_r\cdot\vec{x}-\omega t\right)\\\\
+    折射波：\quad\vec{E}_t(\vec{x},t)=\vec{E}_{0t}\exp i\left(\vec{k}_t\cdot\vec{x}-\omega t\right)\\
 \end{cases}
 $$
 
@@ -214,7 +214,7 @@ $$
 对应介质 2 侧电场  
 $$
 \begin{aligned}
-\vec{E}_2(\vec x,t)&=\vec{E}_{02}\exp i\left(\vec{k}_t\cdot\vec{x}-\omega t\right)\\\\
+\vec{E}_2(\vec{x},t)&=\vec{E}_{02}\exp i\left(\vec{k}_t\cdot\vec{x}-\omega t\right)\\\\
 &= \vec{E}_{02}\exp (ik_{ty}y)\cdot\exp (i k_{tz}z)\cdot \exp (-i\omega t)
 \end{aligned}
 $$
@@ -228,7 +228,7 @@ $$
 进而介质 2 侧  
 $$
 \begin{aligned}
-\vec{E}_2(\vec x,t)&=\vec{E}_{02}\exp i\left(\vec{k}_t\cdot\vec{x}-\omega t\right)\\\\
+\vec{E}_2(\vec{x},t)&=\vec{E}_{02}\exp i\left(\vec{k}_t\cdot\vec{x}-\omega t\right)\\\\
 &=\vec{E}_{02}\exp (ik_{ty}y)\cdot \exp (- K_{tz}z) \cdot \exp (-i\omega t)
 \end{aligned}
 $$
@@ -270,7 +270,7 @@ $$
 $$
 同时  
 $$
-\hat{n}\cdot\tilde{\vec{S}}_t=\frac{|E_{0t}|^2\cos\theta_t}{2\eta_2}
+\hat{n}\cdot\tilde{\vec{S}}_t=\frac{\left|E_{0t}\right|^2\cos\theta_t}{2\eta_2}
 $$  
 为纯虚数，进而法向透射平均能流为 0，只有瞬时能流。
 ### 导体内的电磁波
@@ -310,9 +310,9 @@ $$
 下面考虑真空射入良导体的问题。方法与先前类似。仍然假设  
 $$
 \begin{cases}
-入射波：\quad\vec{E}_i(\vec x,t) = \vec{E}_{0i} \exp i\left(\vec{k}_i \cdot \vec{x} - \omega t\right) \\\\
-反射波：\quad\vec{E}_r(\vec x,t) = \vec{E}_{0r} \exp i\left(\vec{k}_r \cdot \vec{x} - \omega t\right) \\\\
-透射波：\quad\vec{E}_t(\vec x,t) = \vec{E}_{0t} \exp i\left(\vec{k}_t \cdot \vec{x} - \omega t\right) \\
+入射波：\quad\vec{E}_i(\vec{x},t) = \vec{E}_{0i} \exp i\left(\vec{k}_i \cdot \vec{x} - \omega t\right) \\\\
+反射波：\quad\vec{E}_r(\vec{x},t) = \vec{E}_{0r} \exp i\left(\vec{k}_r \cdot \vec{x} - \omega t\right) \\\\
+透射波：\quad\vec{E}_t(\vec{x},t) = \vec{E}_{0t} \exp i\left(\vec{k}_t \cdot \vec{x} - \omega t\right) \\
 \end{cases}
 $$  
 则可以得到  
@@ -321,7 +321,7 @@ k_t^2 = \vec{k}_t \cdot \vec{k}_t = \omega^2 \mu \tilde{\varepsilon} \Rightarrow
 $$  
 进而透射波的形式为  
 $$
-\vec{E}_t(\vec x,t) = \vec{E}_{0t} \exp i\left(\vec{k}_t \cdot \vec{x} - \omega t\right) = \vec{E}_{0t} \exp (-\vec{\alpha} \cdot \vec{x}) \exp (i \vec{\beta} \cdot \vec{x}) \exp (-i \omega t)
+\vec{E}_t(\vec{x},t) = \vec{E}_{0t} \exp i\left(\vec{k}_t \cdot \vec{x} - \omega t\right) = \vec{E}_{0t} \exp (-\vec{\alpha} \cdot \vec{x}) \exp (i \vec{\beta} \cdot \vec{x}) \exp (-i \omega t)
 \begin{cases}
 幅度沿 \ \vec{\alpha} \ 衰减 \\\\
 相位沿 \ \vec{\beta} \ 传播
