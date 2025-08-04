@@ -129,6 +129,7 @@ $$
 ### 介质表面的电磁波
 
 在介质表面，会发生反射和折射。这类问题一般假设  
+
 $$
 \begin{cases}
     入射波：\quad\vec{E}_i(\vec{x},t)=\vec{E}_{0i}\exp{ } i\left(\vec{k}_i\cdot\vec{x}-\omega t\right)\\\\
