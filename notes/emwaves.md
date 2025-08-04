@@ -131,9 +131,9 @@ $$
 在介质表面，会发生反射和折射。这类问题一般假设  
 $$
 \begin{cases}
-    \text{入射波：}\;\vec{E}_i(\vec x,t)=\vec{E}_{0i}\exp i\left(\vec{k}_i\cdot\vec{x}-\omega t\right)\\\\
-    \text{反射波：}\;\vec{E}_r(\vec x,t)=\vec{E}_{0r}\exp i\left(\vec{k}_r\cdot\vec{x}-\omega t\right)\\\\
-    \text{折射波：}\;\vec{E}_t(\vec x,t)=\vec{E}_{0t}\exp i\left(\vec{k}_t\cdot\vec{x}-\omega t\right)\\
+    入射波：\;\vec{E}_i(\vec x,t)=\vec{E}_{0i}\exp i\left(\vec{k}_i\cdot\vec{x}-\omega t\right)\\\\
+    反射波：\;\vec{E}_r(\vec x,t)=\vec{E}_{0r}\exp i\left(\vec{k}_r\cdot\vec{x}-\omega t\right)\\\\
+    折射波：\;\vec{E}_t(\vec x,t)=\vec{E}_{0t}\exp i\left(\vec{k}_t\cdot\vec{x}-\omega t\right)\\
 \end{cases}
 $$
 
@@ -213,8 +213,10 @@ $$
 
 对应介质 2 侧电场  
 $$
-\vec{E}_2(\vec x,t)=\vec{E}_{02}\exp i\left(\vec{k}_t\cdot\vec{x}-\omega t\right)
-=\vec{E}_{02}\exp (ik_{ty}y)\cdot\exp (i k_{tz}z)\cdot \exp (-i\omega t)
+\begin{aligned}
+\vec{E}_2(\vec x,t)&=\vec{E}_{02}\exp i\left(\vec{k}_t\cdot\vec{x}-\omega t\right)\\\\
+&= \vec{E}_{02}\exp (ik_{ty}y)\cdot\exp (i k_{tz}z)\cdot \exp (-i\omega t)
+\end{aligned}
 $$
 
 对于 $\sin\theta_i n_{21}$ 的情形，有  
@@ -225,8 +227,10 @@ $$
 
 进而介质 2 侧  
 $$
-\vec{E}_2(\vec x,t)=\vec{E}_{02}\exp i\left(\vec{k}_t\cdot\vec{x}-\omega t\right)
-=\vec{E}_{02}\exp (ik_{ty}y)\cdot \exp (- K_{tz}z) \cdot \exp (-i\omega t)
+\begin{aligned}
+\vec{E}_2(\vec x,t)&=\vec{E}_{02}\exp i\left(\vec{k}_t\cdot\vec{x}-\omega t\right)\\\\
+&=\vec{E}_{02}\exp (ik_{ty}y)\cdot \exp (- K_{tz}z) \cdot \exp (-i\omega t)
+\end{aligned}
 $$
 
 此时电场幅度沿 $z$ 轴指数衰减，穿透深度为  
@@ -266,7 +270,7 @@ $$
 $$
 同时  
 $$
-\hat{n}\cdot\tilde{\vec{S}_t}=\frac{|E_{0t}|^2\cos\theta_t}{2\eta_2}
+\hat{n}\cdot\tilde{\vec{S}}_t=\frac{|E_{0t}|^2\cos\theta_t}{2\eta_2}
 $$  
 为纯虚数，进而法向透射平均能流为 0，只有瞬时能流。
 ### 导体内的电磁波
@@ -306,9 +310,9 @@ $$
 下面考虑真空射入良导体的问题。方法与先前类似。仍然假设  
 $$
 \begin{cases}
-\text{入射波：}\;\vec{E}_i(\vec x,t) = \vec{E}_{0i} \exp i\left(\vec{k}_i \cdot \vec{x} - \omega t\right) \\\\
-\text{反射波：}\;\vec{E}_r(\vec x,t) = \vec{E}_{0r} \exp i\left(\vec{k}_r \cdot \vec{x} - \omega t\right) \\\\
-\text{透射波：}\;\vec{E}_t(\vec x,t) = \vec{E}_{0t} \exp i\left(\vec{k}_t \cdot \vec{x} - \omega t\right) \\
+入射波：\;\vec{E}_i(\vec x,t) = \vec{E}_{0i} \exp i\left(\vec{k}_i \cdot \vec{x} - \omega t\right) \\\\
+反射波：\;\vec{E}_r(\vec x,t) = \vec{E}_{0r} \exp i\left(\vec{k}_r \cdot \vec{x} - \omega t\right) \\\\
+透射波：\;\vec{E}_t(\vec x,t) = \vec{E}_{0t} \exp i\left(\vec{k}_t \cdot \vec{x} - \omega t\right) \\
 \end{cases}
 $$  
 则可以得到  
@@ -319,8 +323,8 @@ $$
 $$
 \vec{E}_t(\vec x,t) = \vec{E}_{0t} \exp i\left(\vec{k}_t \cdot \vec{x} - \omega t\right) = \vec{E}_{0t} \exp (-\vec{\alpha} \cdot \vec{x}) \exp (i \vec{\beta} \cdot \vec{x}) \exp (-i \omega t)
 \begin{cases}
-\text{幅度沿} \ \vec{\alpha} \ \text{衰减} \\\\
-\text{相位沿} \ \vec{\beta} \ \text{传播}
+幅度沿 \ \vec{\alpha} \ 衰减 \\\\
+相位沿 \ \vec{\beta} \ 传播
 \end{cases}
 $$
 
@@ -341,7 +345,7 @@ $$
 
 磁场  
 $$
-\vec{H}_{0t} = \sqrt{\frac{\sigma}{\omega \mu}} \textcolor{red}{\exp i \frac{\pi}{4}} \textcolor{black}{\hat{z} \times \vec{E}_{0t}}
+\vec{H}_{0t} = \sqrt{\frac{\sigma}{\omega \mu}} \textcolor{cyan}{\exp i \frac{\pi}{4}}\hat{z} \times \vec{E}_{0t}
 $$
 
 $$
@@ -362,12 +366,18 @@ $$
 
 同时对于透射波，单位面积产生焦耳热  
 $$
-P_d = \int_0^\infty \frac{\sigma |\vec{E}_t|^2}{2} dz = \frac{\sigma |\vec{E}_{0t}|^2}{4 \alpha}
+\begin{aligned}
+P_d &= \int_0^\infty \frac{\sigma |\vec{E}_t|^2}{2} dz \\\\
+&= \frac{\sigma |\vec{E}_{0t}|^2}{4 \alpha}
+\end{aligned}
 $$
 
 定义表面电流  
 $$
-\vec{J}_s = \int_0^\infty \sigma \vec{E}_t dz = \boxed{\frac{\sigma \vec{E}_{0t}}{\alpha - i \beta}}
+\begin{aligned}
+\vec{J}_s &= \int_0^\infty \sigma \vec{E}_t dz \\\\
+&= \boxed{\frac{\sigma \vec{E}_{0t}}{\alpha - i \beta}}
+\end{aligned}
 $$
 
 和表面电阻  
@@ -475,13 +485,8 @@ $$
 
 #### TEM模
 
-\begin{tcolorbox}
-\begin{center}
-\LARGE{
-\textcolor{red}{\textbf{矩形波导不能传 TEM 模}}
-}
-\end{center}
-\end{tcolorbox}
+!!! warning "注意”
+    矩形波导不能传 TEM 模
 
 
 
@@ -679,12 +684,12 @@ $$
 
 特别对于远区，有  
 $$
-\left< \vec{S} \right= \Re \left\{ \frac{\vec{E} \times \vec{H}^*}{2} \right\} = \boxed{\frac{|p_0|^2 \omega^4 \sin^2 \theta}{32 \pi^2 \varepsilon_0 c^3 R^2} \hat{R}} \propto \sin^2 \theta
+\left< \vec{S} \right> = \Re \left\{ \frac{\vec{E} \times \vec{H}^*}{2} \right\} = \boxed{\frac{|p_0|^2 \omega^4 \sin^2 \theta}{32 \pi^2 \varepsilon_0 c^3 R^2} \hat{R}} \propto \sin^2 \theta
 $$
 
 总辐射功率  
 $$
-P = \oint \left< \vec{S} \right\cdot d \vec{S} = \boxed{\frac{|p_0|^2 \omega^4}{12 \pi \varepsilon_0 c^3}} \propto \omega^4
+P = \oint \left< \vec{S} \right> \cdot d \vec{S} = \boxed{\frac{|p_0|^2 \omega^4}{12 \pi \varepsilon_0 c^3}} \propto \omega^4
 $$
 ### 天线
 
@@ -725,7 +730,7 @@ $$
 $$
 辐射能流  
 $$
-\left< \vec{S} \right\propto \frac{\cos^2\left(\frac{\pi}{2} \cos \theta\right)}{\sin^2 \theta}
+\left< \vec{S} \right> \propto \frac{\cos^2\left(\frac{\pi}{2} \cos \theta\right)}{\sin^2 \theta}
 $$
 辐射阻抗  
 $$
