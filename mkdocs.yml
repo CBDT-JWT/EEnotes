@@ -20,8 +20,8 @@ nav:
   - 开往: 'https://www.travellings.cn/go.html'
 
 markdown_extensions:
-  - pymdownx.arithmatex:
-      generic: true
+  # - pymdownx.arithmatex:
+  #     generic: true
   - admonition
   - pymdownx.details
   - pymdownx.superfences
