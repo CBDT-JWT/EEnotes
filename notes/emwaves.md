@@ -164,7 +164,7 @@ $$
 n_1\sin\theta_i=n_2\sin\theta_t
 \end{cases}
 $$
->
+
 **Fresnel公式**（幅度关系）  
 $$
 \text{N波：}
