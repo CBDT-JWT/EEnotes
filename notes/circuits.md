@@ -322,51 +322,76 @@ $$
 !!! important "ABCD参量求传函"
     这里一个小方法就是利用ABCD参量求梯形网络的传递函数，利用上面提到串臂并臂网络的ABCD参数结合电压增益$A_v=\frac 1 A$就可以轻松求得。例如下图中
     ![alt text](assets/image-14.png)
-
-    可以轻松获得ABCD参量（注意我们只关心A元素）为
-    $$
-    \begin{aligned}
-        \begin{bmatrix}
-        A & B \\\\
-        C & D
-        \end{bmatrix}
-        &=\begin{bmatrix}
-        1 & \frac{1}{sC_1}\\\\
-        0 & 1
-        \end{bmatrix}\begin{bmatrix}
-        1 & 0\\\\
-        \frac{1}{R_1} & 1
-        \end{bmatrix}\begin{bmatrix}
-        1 & R_2\\\\
-        0 & 1
-        \end{bmatrix}\begin{bmatrix}
-        1 & 0\\\\
-        sC_2 & 1
-        \end{bmatrix}\\\\
-        &=\begin{bmatrix}
-        1+\frac{1}{sC_1R_1} & \frac{1}{sC_1}\\\\
-        \star & \star
-        \end{bmatrix}\begin{bmatrix}
-        1+sC_2R_2 & \star \\\\
-        sC_2 & \star
-        \end{bmatrix}\\\\
-        &=\begin{bmatrix}
-        1+\frac{C_2R_2}{C_1R_1}+\frac{1}{sC_1R_1}+sC_2R_2+\frac{C_2}{C_1} & \star \\\\
-        \star & \star
-        \end{bmatrix}
-    \end{aligned}
-    $$
-    进而电压传递函数
-    $$
-    \begin{aligned}
-    H&=A_v=\frac{1}{A}\\\\
-    &=\frac{1}{ 1+\frac{C_2R_2}{C_1R_1}+\frac{1}{sC_1R_1}+sC_2R_2+\frac{C_2}{C_1}}\,.
-    \end{aligned}
-    $$
-    比KCL/KVL要快很多。
+    ??? note "Answers
+        可以轻松获得ABCD参量（注意我们只关心A元素）为
+        $$
+        \begin{aligned}
+            \begin{bmatrix}
+            A & B \\\\
+            C & D
+            \end{bmatrix}
+            &=\begin{bmatrix}
+            1 & \frac{1}{sC_1}\\\\
+            0 & 1
+            \end{bmatrix}\begin{bmatrix}
+            1 & 0\\\\
+            \frac{1}{R_1} & 1
+            \end{bmatrix}\begin{bmatrix}
+            1 & R_2\\\\
+            0 & 1
+            \end{bmatrix}\begin{bmatrix}
+            1 & 0\\\\
+            sC_2 & 1
+            \end{bmatrix}\\\\
+            &=\begin{bmatrix}
+            1+\frac{1}{sC_1R_1} & \frac{1}{sC_1}\\\\
+            \star & \star
+            \end{bmatrix}\begin{bmatrix}
+            1+sC_2R_2 & \star \\\\
+            sC_2 & \star
+            \end{bmatrix}\\\\
+            &=\begin{bmatrix}
+            1+\frac{C_2R_2}{C_1R_1}+\frac{1}{sC_1R_1}+sC_2R_2+\frac{C_2}{C_1} & \star \\\\
+            \star & \star
+            \end{bmatrix}
+        \end{aligned}
+        $$
+        进而电压传递函数
+        $$
+        \begin{aligned}
+        H&=A_v=\frac{1}{A}\\\\
+        &=\frac{1}{ 1+\frac{C_2R_2}{C_1R_1}+\frac{1}{sC_1R_1}+sC_2R_2+\frac{C_2}{C_1}}\,.
+        \end{aligned}
+        $$
+        比KCL/KVL要快很多。
 ### 时域分析与三/五要素法
+!!!tips "说明"
+    电电重点分析1阶和2阶系统，主要是由于**代数基本定理**，即在实数范围内任何一个多项式都可以分解成若干一阶、二阶式之积的形式；对应到系统函数，则意味着一个高阶系统的表现其实可以看做若干一阶（指数衰减）和二阶（正弦振荡）系统之组合（“模式”），因此只需要弄懂了这两种情况，在此向上提高阶数并不会带来本质的提升。
+#### 传函和冲激响应
+!!!tips "注意"
+    原则上这里属于[《信号与系统》](https://www.jiangwt.org/docs-html/notes/ss/)的内容，《电电》课不需要掌握。我可能也写不完，反正先放在这。
+
+一个系统的冲激响应和其传递函数互为Laplace变换对。如何理解呢？
+这是因为在时域中，单位冲激函数 $ \delta(t) $ 作用于系统后，输出就是系统的冲激响应 $ h(t) $，所以系统的输入输出关系为：
+
+$$
+y(t) = h(t) * \delta(t) = h(t)
+$$
+对两边取拉普拉斯变换：
+
+$$
+Y(s) = H(s) \cdot \mathcal{L}\{\delta(t)\} = H(s) \cdot 1 = H(s)
+$$
+因此，系统对冲激函数的响应 $ h(t) $ 与传递函数 $ H(s) $ 满足：
+
+$$
+H(s) = \mathcal{L}\{h(t)\}
+\quad \text{以及} \quad
+h(t) = \mathcal{L}^{-1}\{H(s)\}
+$$
+
 #### 三要素法
-一阶系统的变换域表达式总是为
+一阶系统的传递函数表达式总是为
 $$
 X(j\omega)=\frac{\cdots}{1+\omega\tau}
 $$
@@ -374,3 +399,12 @@ $$
 $$
 x(t)=\left(\textcolor{yellow}{x(0)}-\textcolor{yellow}{x_\infty(0)}\right)\exp\left(-\frac{t}{\textcolor{cyan}{\tau}}\right)
 $$
+其中需要关注
+
+|物理量|意义|
+|---|---|
+|$\textcolor{cyan}{\tau}$|时间常数，来自传函或RC/GL|
+|$\textcolor{yellow}{x(0)}$|初值|
+|$\textcolor{yellow}{x_\infty(0)}$|稳态初值|
+
+注意这里$\textcolor{cyan}{\tau}$一般可以通过RC和GL来求，其中R就是电容“看到”的电阻，G就是电感“看到”的电导。
