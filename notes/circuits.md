@@ -322,7 +322,7 @@ $$
 !!! important "ABCD参量求传函"
     这里一个小方法就是利用ABCD参量求梯形网络的传递函数，利用上面提到串臂并臂网络的ABCD参数结合电压增益$A_v=\frac 1 A$就可以轻松求得。例如下图中
     ![alt text](assets/image-14.png)
-    ??? note "Answers
+    ??? note "Answers"
         可以轻松获得ABCD参量（注意我们只关心A元素）为
         $$
         \begin{aligned}
