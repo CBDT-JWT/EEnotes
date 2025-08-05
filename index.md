@@ -1,7 +1,9 @@
 ---
 comments: true
 ---
+
 # CBDT的笔记——序
+![alt text](assets/image-1.png){: style="display: block; margin: auto; width: 100%;" }
 ## 前言
 之前帮群友整理[数算习题](https://mp.weixin.qq.com/s/8955NVjGqlI13u3zvh2H1g)的时候，我曾经留下一段话：
 
@@ -20,13 +22,33 @@ comments: true
 - [x] 大物2
 - [x] 线性代数1（期中前）
 - [x] 线性代数2（期中后）
-- [ ] 电磁场与波
-- [x] 电电
+- [x] 电磁场与波
+- [ ] 电电
 - [ ] 数逻期中前
 - [ ] 程设
 - [ ] ss
 - [ ] 媒体与认知
 
 希望毕业或者我忘掉这些东西之前能够尽可能多地写完吧！
+##
+<div class="grid cards" markdown>
+-   :material-fish-off:{ .lg .middle } __课程笔记__
+
+    ---
+
+    努力更完清华电子系必修课
+
+    [:octicons-arrow-right-24: notes](#)
+
+-   :material-tools:{ .lg .middle } __其他文档__
+
+    ---
+
+    以及写其他一些有趣的文章
+
+    [:octicons-arrow-right-24: documents](#)
+
+</div>
+
 ## github合作说明与致谢
 一个人难免有错漏之处，还请不吝赐教！如果有问题可以在[此仓库](https://github.com/CBDT-JWT/EEnotes)提出，万分感激！
