@@ -287,7 +287,75 @@ $$
 H_{双向}=\frac{-h_{21}}{(R_S+h_{11})(h_{22}+G_{L})\textcolor{cyan}{-h_{12}h_{21}}}
 $$
 就可以随手推公式了。
+!!! note "为什么是分母上减去$p_{12}p_{21}$?"
+    只需要画出信号流图就可以轻松解释。考虑如下系统：
+    $$
+    \begin{bmatrix}
+    Y_1\\\\
+    Y_2
+    \end{bmatrix}
+    =\begin{bmatrix}
+    p_{11}&p_{12}\\\\
+    p_{21}&p_{22}
+    \end{bmatrix}\begin{bmatrix}
+    X_1\\\\
+    X_2
+    \end{bmatrix}
+    $$
+    同时有来自testbench的约束
 
+    $$
+    \begin{cases}
+    X_1+w_SY_1=x\\\\
+    X_2+w_LY_2=0
+    \end{cases}
+    $$
+
+    即
+
+    $$
+    \begin{cases}
+    X_1=-w_SY_1+x\\\\
+    X_2=-w_LY_2
+    \end{cases}
+    $$
+
+    以$X_1\,,X_2\,,Y_1\,,Y_2$为中间变量，对应的信号流图就是
+
+    ![alt text](assets/1.png)
+    不难写出其行列式为
+
+    $$
+    \begin{aligned}
+    \Delta &= 1 - (-w_Sp_{11}) - (-w_Lp_{22})\\\\
+    &\textcolor{red}{-p_{12}p_{21}w_Sw_L} + p_{11}p_{22}w_Sw_L
+    \end{aligned}
+    $$
+
+    而单向化后的信号流图如下
+
+    ![alt text](assets/image-16.png)
+
+    其行列式为
+
+    $$
+    \Delta = 1 - (-w_Sp_{11}) - (-w_Lp_{22})+ p_{11}p_{22}w_Sw_L
+    $$
+
+    可知，$p_12$带来的贡献就是图中青色的这个回路。
+
+    ![alt text](assets/image-17.png)
+
+    该回路与其余两个回路都接触，和唯一的前向通路也接触，且此边不参与任何前向通路。因此根据Mason公式
+
+    $$
+    H=\frac{1}{\Delta}\sum_k g_k\Delta_k
+    $$
+
+    该边不影响分子，只改变分母.
+
+
+    这也就解释了为什么求出单向网络传函之后只需要分母减去$p_{12}p_{21}$即可得到双向网络传递函数。
 之前提到ABCD矩阵也有其意义，我们不妨同样地进行展开。
 $$
 \begin{bmatrix}
