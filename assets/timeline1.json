@@ -2,28 +2,16 @@
 
 [
     {
-        "title": "Launch",
-        "content": "First implementation.",
-        "icon": ":fontawesome-rocket:",
-        "sub_title": "2022-Q1"
+        "title": "上线",
+        "content": "宿舍有线网终于恢复，网站上线",
+        "icon": ":fontawesome-solid-paper-plane:",
+        "sub_title": "2024-12-10"
     },
     {
-        "title": "One",
-        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        "icon": ":octicons-sun-16:",
-        "key": "cyan",
-        "sub_title": "2022-Q2"
-    },
-    {
-        "title": "Two",
-        "content": "Lorem ipsum dolor sit amet.",
-        "icon": ":material-github:",
-        "sub_title": "2022-Q3"
-    },
-    {
-        "title": "Three",
-        "content": "Lorem ipsum dolor sit amet.",
+        "title": "硬件部署",
+        "content": "部署了网站的硬件，使用树莓派4B作为服务器，并搭载了UPS以备宿舍断电；打印了机箱。",
+        "icon": ":material-raspberry-pi:",
         "key": "pink",
-        "sub_title": "2022-Q4"
-    }
+        "sub_title": "2024-12-11"
+    },
 ]
