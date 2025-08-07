@@ -25,6 +25,7 @@ nav:
   - 开往: 'https://www.travellings.cn/go.html'
 
 markdown_extensions:
+  - neoteroi.timeline
   - pymdownx.arithmatex:
        generic: true
   - pymdownx.tasklist:
@@ -44,6 +45,7 @@ markdown_extensions:
   - md_in_html
   
 extra_css:
+- stylesheets/neoteroi-mkdocs.css
 - stylesheets/custom.css
 - stylesheets/simpleLightbox.min.css
 - stylesheets/pied_piper.css

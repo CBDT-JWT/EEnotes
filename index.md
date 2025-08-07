@@ -31,6 +31,7 @@ comments: true
 
 希望毕业或者我忘掉这些东西之前能够尽可能多地写完吧！
 ## 站点说明
+[timeline center alternate(./assets/timeline1.yaml)]
 
 <div class="grid cards" markdown>
 -   :material-fish-off:{ .lg .middle } __课程笔记__

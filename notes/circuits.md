@@ -18,6 +18,12 @@
 3. BJT，MOSFETS
 ## 方法与工具
 方法和工具主要包括网络参量“小矩阵”（静态分析），三/五要素法（时域分析）和频域分析三个大类。
+### 电路变换
+
+#### 戴维南-诺顿
+
+#### 组态转换
+
 ### 网络参量
 
 #### 网络参量矩阵的定义
@@ -435,12 +441,15 @@ $$
 ### 时域分析与三/五要素法
 !!!tip "说明"
     电电重点分析1阶和2阶系统，主要是由于**代数基本定理**，即在实数范围内任何一个多项式都可以分解成若干一阶、二阶式之积的形式；对应到系统函数，则意味着一个高阶系统的表现其实可以看做若干一阶（指数衰减）和二阶（正弦振荡）系统之组合（“模式”），因此只需要弄懂了这两种情况，在此向上提高阶数并不会带来本质的提升。
+
+由于是电子电路与系统{==基础==}，因此这一部分主要记忆公式为主，比如三五要素法。相较于通过Laplace变换强硬求解的信号与系统，电电更强调电路直觉和几个“要素”的求解。
+
 #### 传函和冲激响应
 !!!tip "注意"
     原则上这里属于[《信号与系统》](https://www.jiangwt.org/docs-html/notes/ss/)的内容，《电电》课不需要掌握。我可能也写不完，反正先放在这。
 
 一个系统的冲激响应和其传递函数互为Laplace变换对。如何理解呢？
-这是因为在时域中，单位冲激函数 $ \delta(t) $ 作用于系统后，输出就是系统的冲激响应 $ h(t) $，所以系统的输入输出关系为：
+这是因为在时域中，单位冲激函数 $\delta(t)$ 作用于系统后，输出就是系统的冲激响应 $h(t)$，所以系统的输入输出关系为：
 
 $$
 y(t) = h(t) * \delta(t) = h(t)
@@ -458,6 +467,60 @@ H(s) = \mathcal{L}\{h(t)\}
 h(t) = \mathcal{L}^{-1}\{H(s)\}
 $$
 
+#### 状态方程法
+列状态方程的通用方法：用恒压源替代电容，恒流源替代电感，求电容电流和电感电压。此后根据
+
+$$
+\frac{\text{d}}{\text{d}t}\begin{bmatrix}
+v_C\\\\
+i_L
+\end{bmatrix}=\begin{bmatrix}
+\frac{1}{C}i_C\\\\
+\frac{1}{L}v_L
+\end{bmatrix}=A\begin{bmatrix}
+v_C\\\\
+i_L
+\end{bmatrix}+B
+$$
+
+求解即可。考试一般要求矩阵$A$和向量$B$，这里都通过电路方法（第二个等号）来求就可以了。
+
+!!! question "状态方程列写"
+    列出求解下面的电路所用的状态方程。
+    ![alt text](assets/image-18.png)
+    
+??? success "答案"
+    首先利用戴维南-诺顿轻松写出$i_C\,,v_L$关于$v_C\,,i_L$的表达式
+    $$
+    \begin{cases}
+    i_C=\frac{i_LR_1-v_C}{R_1+R_2}\\\\
+    v_L=V_S-(v_c\frac{R_1}{R_1+R_2}-i_L(R_1\parallel R_2))
+    \end{cases}
+    $$
+    整理为
+
+    $$
+    \begin{aligned}
+    \frac{\text{d}}{\text{d}t}\begin{bmatrix}
+        v_C\\\\
+        i_L
+    \end{bmatrix}&=\begin{bmatrix}
+    \frac{1}{C}i_C\\\\
+    \frac{1}{L}v_L
+    \end{bmatrix}\\\\
+    &=\frac{1}{R_1+R_2}\begin{bmatrix}
+    \frac{-1}{C} & \frac{R_1}{C} \\\\
+    \frac{-R_1}{L} & \frac{R_1R_2}{L}
+    \end{bmatrix}\begin{bmatrix}
+    v_C\\\\
+    i_L
+    \end{bmatrix}+\begin{bmatrix}
+    0\\\\
+    V_S - \frac{R_1}{R_1+R_2}
+    \end{bmatrix}
+    \end{aligned}
+    $$
+
 #### 三要素法
 一阶系统的传递函数表达式总是为
 $$
@@ -465,7 +528,7 @@ X(j\omega)=\frac{\cdots}{1+\omega\tau}
 $$
 的形式，其对应的时域表达式必然为【由于未学ss，此处不必深究】
 $$
-x(t)=\left(\textcolor{yellow}{x(0)}-\textcolor{yellow}{x_\infty(0)}\right)\exp\left(-\frac{t}{\textcolor{cyan}{\tau}}\right)
+x(t)=\left(\textcolor{yellow}{x(0)}-\textcolor{yellow}{x_\infty(0)}\right)\exp\left(-\frac{t}{\textcolor{cyan}{\tau}}\right)+x_\infty(t)
 $$
 其中需要关注
 
@@ -473,6 +536,75 @@ $$
 |---|---|
 |$\textcolor{cyan}{\tau}$|时间常数，来自传函或RC/GL|
 |$\textcolor{yellow}{x(0)}$|初值|
-|$\textcolor{yellow}{x_\infty(0)}$|稳态初值|
+|$\textcolor{yellow}{x_\infty(t)}$|稳态响应|
 
 注意这里$\textcolor{cyan}{\tau}$一般可以通过RC和GL来求，其中R就是电容“看到”的电阻，G就是电感“看到”的电导。
+
+#### 五要素法
+
+对于二阶系统应当采用五要素法。五要素法的形式比较难背，长成这样：
+
+**欠阻尼情形**$\xi<1$
+
+$$
+\begin{aligned}
+x(t)&=x_\infty(t)+\left(x(0)-x_\infty(0)\right)\exp\left(-\xi\omega_0t\right)\cos\left(\sqrt{1-\xi^2}\omega_0t\right)\\\\
+&+\left(x(0)-x_\infty(0)+\frac{\dot{x}(0)-\dot{x_\infty}(0)}{\xi\omega_0}\right)\\\\
+&\cdot\frac{\xi}{\sqrt{1-\xi^2}}\exp\left(-\xi\omega_0t\right)\sin\left(\sqrt{1-\xi^2}\omega_0t\right)
+\end{aligned}
+$$
+
+**临界阻尼**$\xi=1$
+
+$$
+\begin{aligned}
+x(t)&=x_\infty(t)+\left(x(0)-x_\infty(0)\right)\exp\left(-\omega_0t\right)\\\\
+&+\left(x(0)-x_\infty(0)+\frac{\dot{x}(0)-\dot{x_\infty}(0)}{\omega_0}\right)\exp\left(-\omega_0t\right)\omega_0t
+\end{aligned}
+$$
+
+**过阻尼**$\xi>1$
+
+$$
+\begin{aligned}
+x(t)&=x_\infty(t)+\left(x(0)-x_\infty(0)\right)\exp\left(-\xi\omega_0t\right)\cosh\left(\sqrt{\xi^2-1}\omega_0t\right)\\\\
+&+\left(x(0)-x_\infty(0)+\frac{\dot{x}(0)-\dot{x_\infty}(0)}{\xi\omega_0}\right)\\\\
+&\cdot\frac{\xi}{\sqrt{1-\xi^2}}\exp\left(-\xi\omega_0t\right)\sinh\left(\sqrt{\xi^2-1}\omega_0t\right)
+\end{aligned}
+$$
+
+!!!tip "记忆方法"
+    看似很难其实记忆难度一般。首先式子都很规律，$\exp$后面跟的都是$-\xi\omega_0t$, (反)三教函数后面都是$\sqrt{1-\xi^2}$。前面括弧里边的东西都是**初值-稳态初值**，$\sin$前面的多一个微分的。每天默念几遍即可背诵。
+
+特别对于过阻尼情形，我们需要把他编成**长寿+短寿**的形式
+$$
+x(t)=x_\infty(t)+A\exp-\lambda_1 t + B\exp-\lambda_2 t
+$$
+其中
+
+$$
+\begin{cases}
+A=\frac{\lambda_2}{\lambda_2-\lambda_1}(x(0)-x_\infty(0))-\frac{1}{\lambda_2-\lambda_1}(\dot{x}(0)-\dot{x}_\infty(0))\\\\
+B=\frac{\lambda_1}{\lambda_1-\lambda_2}(x(0)-x_\infty(0))-\frac{1}{\lambda_1-\lambda_2}(\dot{x}(0)-\dot{x}_\infty(0))\\\\
+\lambda_{1\,,2}=(-\xi\pm\sqrt{\xi^2-1})\omega_0
+\end{cases}
+$$
+
+而五要素就是指
+| 阻尼系数 | 自由震荡频率 | 初值 | 微分初值 | 稳态响应 |
+|-------|------------|------|------|------|
+| $\xi$ | $\omega_0$ | $x(0)$ | $\dot{x_0}$ | $x_\infty(t)$ |
+
+其中$\xi$和$\omega_0$由传递函数给出。随便写电路中两个离得远一点的量作为输入输出写一个传递函数，就可以得到
+$$
+H=\frac{*}{s^2+2\xi\omega_0s+\omega_0^2}
+$$
+这里边就可以得到上述两要素。稳态响应$x_\infty(t)$由输入的性质（冲激/阶跃激励的响应是直流，正弦的响应是改了相位和幅度的正弦）得到。
+
+三要素法和五要素法的公式都是简单的，但用起来最难求的也是最“值钱”的就是**初值和微分初值**，需要在$0-\to 0+$时刻进行精细的分析。例如下面这个例子。
+
+!!! question "三五要素法例题"
+    已知互感变压器的$k<1$, $L_1=1\mu H$, $L_2=4\mu H$, $M=0.8\mu H$, $R_L = 1k\Omega$, $R_S = 100\Omega$, $V_{S0}=5V$.试求$v_0(t)$, 若
+    1. $t<0$时开关闭合且电路稳定，$t=0$时断开开关。
+    2. $t<0$时开关断开且电路稳定，$t=0$时闭合开关。
+    
