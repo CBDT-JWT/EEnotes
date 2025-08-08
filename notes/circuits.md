@@ -604,7 +604,138 @@ $$
 三要素法和五要素法的公式都是简单的，但用起来最难求的也是最“值钱”的就是**初值和微分初值**，需要在$0-\to 0+$时刻进行精细的分析。例如下面这个例子。
 
 !!! question "三五要素法例题"
-    已知互感变压器的$k<1$, $L_1=1\mu H$, $L_2=4\mu H$, $M=0.8\mu H$, $R_L = 1k\Omega$, $R_S = 100\Omega$, $V_{S0}=5V$.试求$v_0(t)$, 若
+    ![alt text](assets/image-19.png)已知互感变压器的$k<1$, $L_1=1\mu H$, $L_2=4\mu H$, $M=0.8\mu H$, $R_L = 1k\Omega$, $R_S = 100\Omega$, $V_{S0}=5V$.试求$v_0(t)$, 若
+
     1. $t<0$时开关闭合且电路稳定，$t=0$时断开开关。
     2. $t<0$时开关断开且电路稳定，$t=0$时闭合开关。
     
+??? success "**第1问**答案"
+
+    由互感变压器的h参量等效模型（漏磁-励磁模型）将电路等效为
+
+    ![alt text](assets/image-20.png)
+
+    然后利用阻抗变换将右侧甩到左侧
+
+    $$
+    \begin{cases}
+        L_2'=\left(\frac{M}{L_2}\right)^2L_2=\frac{M^2}{L_2}\\\\
+        R_L'=\left(\frac{M}{L_2}\right)^2R_L=\frac{M^2}{L_2^2}R_L
+    \end{cases}
+    $$
+
+    ![alt text](assets/image-21.png)
+
+    断开开关后实际上有效的只有右侧的$R_L'\,,L_2'$，电路为二阶电路。因此不难得到三要素
+
+    $$
+    \begin{cases}
+    v_o'=-\frac{V_{S0}}{R_S}R_L'=-\frac{M^2V_{S0}}{R_SL_2'}R_L\\\\
+    v'_{o\infty}(t)=0\\\\
+    \tau=GL=\frac{L_2'}{R_L'}=\frac{L_2}{R_L}
+    \end{cases}
+    $$
+
+    带入三要素法公式结合$v_o=\frac{L_2}{M}v_o'$得到
+
+    $$
+    v_o(t)=-10V\cdot\exp\left(-\frac{t}{4\times 10^{-9}s}\right)
+    $$
+
+??? success "**第二问**答案"
+
+    强行令两侧共地并带入互感变压器的Z参量模型（T型模型）等效。得到电路为
+    ![alt text](assets/image-23.png)
+
+    这时看起来电路为三阶。但由于三个电感的带内容有耦合关系
+    $$
+    i_A=i_B+i_C
+    $$
+    因此电路实际为二阶。我们求解其五要素。首先利用梯形网络计算$V_s\to v_o$的传递函数以获得系统参数。我们采用之前的ABCD方法。
+
+    $$
+    \begin{aligned}
+    ABCD&=\begin{bmatrix}
+    1 & R_S \\\\
+    0 & 1
+    \end{bmatrix}\begin{bmatrix}
+    1 & s(L_1-M)\\\\
+    0 & 1
+    \end{bmatrix}
+    \begin{bmatrix}
+    1 & 0 \\\\
+    \frac{1}{sM} & 1
+    \end{bmatrix}
+    \begin{bmatrix}
+    1 & s(L_2-M) \\\\
+    0 & 1
+    \end{bmatrix}
+    \begin{bmatrix}
+    1 & 0 \\\\
+    \frac{1}{R_L} & 1
+    \end{bmatrix}\\\\
+    &=\cdots (数学运算略去，打矩阵太麻烦了。)\\\\
+    &=\begin{bmatrix}
+    1.25+1.25\times 10^8s^{-1} & 100+2\times10^{-7}s \\\\
+    * & *
+    \end{bmatrix}\begin{bmatrix}
+    1+3.2\times 10^{-9}s & * \\\\
+    10^{-3} & *
+    \end{bmatrix}\\\\
+    &=\begin{bmatrix}
+    1.75+4.2\times 10^{-9}s+1.25\times 10^8s^{-1} & * \\\\
+    * & *
+    \end{bmatrix}
+    \end{aligned}
+    $$ 
+
+    于是得到
+    $$
+    H_v = \frac{*}{s^2 + 4.17\times 10^{8}s + 2.98\times 10^{16}}
+    $$
+
+    进而
+    $$
+    \omega_0=1.73\times 10^8 S^{-1}\quad,\,\xi = 1.21
+    $$
+    可知此系统为**过阻尼**系统。从而得到
+    $$
+    \lambda_1=-9.17\times 10^7\,,\lambda_2=-3.27\times 10^8
+    $$
+    先放着。我们接下来根据电路的物理特性求剩下的参数。显然有$v_o(0)=0$和$v_{o\infty}(0)=0$。本题的难点在于求$\dot{v}_o(0)$.我们注意到**基尔霍夫定律对于微分后的电路依然适用**，因此
+
+    $$
+    \begin{aligned}
+    \dot{v}_o(0)&=\dot{i}_C(0)R_L\\\\
+    &=(\dot{i}_A(0)-\dot{i}_B(0))R_L\quad(KCL)\\\\
+    &=\left(\frac{V_{S0}}{L_1-M}-\frac{0}{M}\right)R_L\\\\
+    &=2.5\times 10^{10}V/S
+    \end{aligned}
+    $$
+
+    进而利用
+
+    $$
+    \begin{cases}
+    A=\frac{\lambda_2}{\lambda_2-\lambda_1}(x(0)-x_\infty(0))-\frac{1}{\lambda_2-\lambda_1}(\dot{x}(0)-\dot{x}_\infty(0))\\\\
+    B=\frac{\lambda_1}{\lambda_1-\lambda_2}(x(0)-x_\infty(0))-\frac{1}{\lambda_1-\lambda_2}(\dot{x}(0)-\dot{x}_\infty(0))
+    \end{cases}
+    $$
+
+    得到
+
+    $$
+    \begin{cases}
+    A=106.3\\\\
+    B=-106.3
+    \end{cases}
+    $$
+
+    从而
+
+    $$
+    \begin{aligned}
+    v_o(t)&=106.3V\cdot\exp\left(-9.17\times10^{-7}s^{-1}t\right)\\\\
+    &-106.3V\cdot\exp\left(-3.27\times10^{-8}s^{-1}t\right)
+    \end{aligned}
+    $$

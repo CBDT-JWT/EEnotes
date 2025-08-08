@@ -25,6 +25,7 @@ nav:
   - 开往: 'https://www.travellings.cn/go.html'
 
 markdown_extensions:
+  - def_list
   - neoteroi.timeline
   - pymdownx.arithmatex:
        generic: true
