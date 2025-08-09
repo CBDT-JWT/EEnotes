@@ -19,10 +19,44 @@
 ## 方法与工具
 方法和工具主要包括网络参量“小矩阵”（静态分析），三/五要素法（时域分析）和频域分析三个大类。
 ### 电路变换
-
+电电课不同于信号与系统的一大关键在于**电路变换**技巧的应用。电路变换本质上是把数学过程形象化了；但我们往往不需要关注背后的数学过程，善于运用相关的变换（“电路直觉”）往往可以给我们的学习和应试带来很大的好处。
 #### 戴维南-诺顿
-
+戴维南诺顿定理是电电课最常用的电路变换方法之一，也是最简单的之一。我们只要知道一个线性含源的单端口网络可以等效为电压源串电阻和电流源并电阻的形式就可以了。其中电阻的求法是{==独立源置0端口加流求压/加压求流==}，电压源和电流源的大小分别通过开路电压/短路电流求取。
+![alt text](assets/image-27.png)
+戴维南-诺顿最大的好处是可以在列些KCL/KVL矩阵方程的时候帮我们减少节点数（诺顿）和回路数（戴维南），进而减少方程的阶数。
 #### 组态转换
+以BJT为例。CE组态的管子其小信号模型很好画：
+![alt text](assets/image-28.png)
+但是对于CB组态，其小信号模型长成这样
+![alt text](assets/image-29.png)
+不够直观。怎么办呢？这里就要用一些电路变换的技巧，我将其成为组态转换，因为我也不知道叫什么名字好。或许可以叫“借流还流法”？总之，我们将$c\to e$的受控源拆开，拆成$c\to b$和$b\to e$两个，看起来像是从b节点借了$g_mv_be$又还了$g_mv_be$, 不会影响电路的功能。得到
+
+![alt text](assets/image-31.png)
+更进一步观察到左边的受控源的控制电压就是自己的电压，于是这个源就是一个电导$g_m$，从而进一步化简
+
+![alt text](assets/image-33.png)
+
+最后考虑理想晶体管
+$$
+r_{be}\,,r_{ce}=\infty
+$$
+得到
+
+![alt text](assets/image-34.png)
+因此CB组态的BJT为一个电流buffer。对于CC组态而言，也是一样：考虑其小信号模型
+
+![alt text](assets/image-35.png)
+
+这里采用拆压法，将控制电压$v_{be}$拆成$v_{bc}+v_{ce}$, 电路上意味着将受控源拆开成$g_mv_{bc}+g_mv_{ce}$：
+![alt text](assets/image-36.png)
+这时候右边又变成电阻了。于是
+![alt text](assets/image-37.png)
+进一步理想化得到
+![alt text](assets/image-38.png)
+得到了一个电压buffer。类似的原理应用很广泛，可以有效处理受控源的控制关系不直观的问题。
+#### 阻抗匹配
+
+#### 串并等效与部分接入法
 
 ### 网络参量
 
@@ -591,6 +625,7 @@ B=\frac{\lambda_1}{\lambda_1-\lambda_2}(x(0)-x_\infty(0))-\frac{1}{\lambda_1-\la
 $$
 
 而五要素就是指
+
 | 阻尼系数 | 自由震荡频率 | 初值 | 微分初值 | 稳态响应 |
 |-------|------------|------|------|------|
 | $\xi$ | $\omega_0$ | $x(0)$ | $\dot{x_0}$ | $x_\infty(t)$ |
@@ -599,7 +634,9 @@ $$
 $$
 H=\frac{*}{s^2+2\xi\omega_0s+\omega_0^2}
 $$
-这里边就可以得到上述两要素。稳态响应$x_\infty(t)$由输入的性质（冲激/阶跃激励的响应是直流，正弦的响应是改了相位和幅度的正弦）得到。
+这里边就可以得到上述两要素。稳态响应$x_\infty(t)$由输入的性质（冲激/阶跃激励的响应是直流，正弦的响应是改了相位和幅度的正弦）得到。有人曰：
+!!! quote "稳态响应"
+    人生的稳态响应是一盒灰
 
 三要素法和五要素法的公式都是简单的，但用起来最难求的也是最“值钱”的就是**初值和微分初值**，需要在$0-\to 0+$时刻进行精细的分析。例如下面这个例子。
 
@@ -739,3 +776,159 @@ $$
     &-106.3V\cdot\exp\left(-3.27\times10^{-8}s^{-1}t\right)
     \end{aligned}
     $$
+
+### 频域分析
+#### 伯特图画法
+伯特图是对数对数坐标下近似的幅频特性和相频特性图，属于必考但送分的内容。方法如下。
+
+**第一步**：求出传递函数并因式分解。得到形如
+$$
+H(s)=A_0\frac{(s+\omega_{z1})(s+\omega_{z2})\cdots(s+\omega_{zm})}{(s+\omega_{p1})(s+\omega_{p2})\cdots(s+\omega_{pn})}
+$$
+的形式。其中$s_z=-\omega_{z1}\,,\cdots\,,-\omega_{zm}$称之为零点，可在整个复平面；$s_p=-\omega_{p1}\,,\cdots\,,-\omega_{pn}$称之为极点，要求{==必须在左半平面==},否则系统将自激震荡或不收敛。最后得到
+$$
+H(j\omega)=H_0\frac{\left(1+\frac{j\omega}{\omega_{z1}}\right)\left(1+\frac{j\omega}{\omega_{z2}}\right)\cdots\left(1+\frac{j\omega}{\omega_{zm}}\right)}{\left(1+\frac{j\omega}{\omega_{p1}}\right)\left(1+\frac{j\omega}{\omega_{p2}}\right)\cdots\left(1+\frac{j\omega}{\omega_{pn}}\right)}
+$$
+这里用到了求频率特性时的代换$s=j\omega$。
+
+**第二步**：将零极点按照大小排序，然后按照频率从$0$开始往右走。依据如下口诀作图：
+- 幅频：碰到极点$-20$(dB/10倍频程)，碰到零点$+20$(dB/10倍频程).
+- 相频：极点滞后$90^\circ$，零点看左右，左超右滞$90^\circ$.作图的时候认为$\varphi$关于$\log\omega$在$0.1\omega\to10\omega$范围内线性完成超前/滞后。
+
+!!! question "伯特图例题"
+    已知$H(j\omega)=-10^6\frac{j\omega+5\times 10^9}{(j\omega+5\times 10^6)(j\omega + 1\times 10^8)}$,作出伯特图。
+
+??? success "答案"
+
+    $$
+    \begin{aligned}
+    H(j\omega)&=-10^6\frac{1+\frac{j\omega}{5\times 10^4}}{\left(1+\frac{j\omega}{5\times10^6}\right)\left(1+\frac{j\omega}{1\times10^8}\right)}\cdot\frac{5\times 10^9}{5\times 10^6\cdot 1\times 10^8}\\\\
+    &=(-10)\frac{1+\frac{j\omega}{5\times 10^4}}{\left(1+\frac{j\omega}{5\times10^6}\right)\left(1+\frac{j\omega}{1\times10^8}\right)}
+    \end{aligned}
+    $$
+
+    列出零极点为
+
+    $$
+    \begin{cases}
+    零点\quad -5\times 10^9\\\\
+    极点\quad -5\times 10^6\,,-1\times10^8
+    \end{cases}
+    $$
+
+    进而绘制幅频相频特性为
+
+    ![alt text](assets/image-25.png)
+    ![alt text](assets/image-24.png)
+
+#### 滤波器特性分析
+
+这一部分首先要掌握3dB的概念。3dB即为$H(s)=\frac{H_0}{\sqrt 2}$，对应可以定义3dB频点、3dB带宽等概念。
+
+一阶系统的3dB频点是$\frac{1}{\tau}$，其中$\tau$是时间常数。
+
+二阶系统一般关注3dB点、平坦性质和谐振峰特性。
+
+**3dB频点**
+
+低通系统：
+
+$$
+\omega_{3dB}=\begin{cases}
+\omega_0\,,\xi=0.707\\\\
+\frac{1}{2\xi}\,,\xi\gg1\quad(\frac{1}{\tau_{RC}}=\frac{1}{RC})\\\\
+\sqrt{1+\sqrt 2}\omega_0=1.554\omega_0\,,\xi\ll1
+\end{cases}
+$$
+
+高通系统：
+
+$$
+\omega_{3dB}=\begin{cases}
+\omega_0\,,\xi=0.707\\\\
+2\xi\,,\xi\gg1\quad(\frac{1}{\tau_{GL}}=\frac{R}{L})\\\\
+\frac{\omega_0}{1.554}\,,\xi\ll1
+\end{cases}
+$$
+
+带通（带阻）系统：
+
+$$
+\begin{cases}
+BW_{3dB}=f_2-f_1=\frac{f_0}{Q}\\\\
+f_0 = \sqrt{f_1f_2}=\frac{\omega_0}{2\pi}
+\end{cases}
+$$
+
+其中
+$$
+Q=\frac{1}{2\xi}=\frac{Z_0}{R}=\frac{Y_0}{G}
+$$
+
+**平坦性质**(最优二阶系统)
+
+|$\xi$|平坦性质|
+|----|----|
+| 0.707 | 幅度最大平坦【巴特沃斯】|
+|0.866 | 群延时最大平坦 【贝塞尔】|
+|0.707~1|最有二阶高低通系统，较快阶跃响应|
+
+**谐振峰** 
+
+谐振现象在时域体现为**振铃**现象，经过Q个周期，振铃幅度衰减为4.3%以下；经过1.5Q个周期，振铃幅度衰减为1%以下；经过2.2Q个周期，振铃幅度衰减为0.1%以下。一般认为振铃时间就是1.5QT。
+
+对于低通系统，其谐振频点
+$$
+\omega_e=\sqrt{1-2\xi^2}\omega_0\approx\omega_0\quad(\xi\ll0.707)
+$$
+峰高度
+$$
+A(\omega_e)=\frac{1}{2\xi\sqrt{1-\xi^2}}>1\quad(\xi<0.707)
+$$
+特别对于$\xi\ll0.707$有$A(\omega_e)\approx Q$.
+
+对于低通系统，其谐振频点
+$$
+\omega_e= \frac{1}{\sqrt{1-2\xi^2}}\omega_0\approx\omega_0\quad(\xi\ll0.707)
+$$
+峰高度
+$$
+A(\omega_e)=\frac{1}{2\xi\sqrt{1-\xi^2}}>1\quad(\xi<0.707)
+$$
+特别对于$\xi\ll0.707$有$A(\omega_e)\approx Q$.
+
+当发生谐振时，$Z$和$Y$为实数，即$\Im [Z]=0\,,\Im[Y]=0$。此时并联LC等效为开路，串联LC等效为短路。
+
+#### 信号通路法和开短路时间常数法
+信号通路法是估计零点的方法。当两条不同属性的路径到达输出端时会产生零点，类似于增透增反膜。如下面这个例子
+![alt text](assets/image-26.png)
+其中存在两条路径：
+
+1. 输入-$g_m$-$R_L$(主通路)
+2. 输入-$C_{bc}$-$R_L$
+
+而路径1为反相，路径2为同相。两条路径的gm分别为
+$$
+g_{m1}=-g_m\,,g_{m2}=y_{21,C_{bc}}=sC_{bc}
+$$
+因此当$sC_{bc}=g_m$的时候会造成一个零点，此时$s=\frac{g_m}{C_{bc}}$.
+
+开短路时间常数法用于估计极点。需要记住口诀
+!!! important "口诀"
+    高通开路频点法，低通短路时间法
+
+开短路时间常数发用来近似分析比较复杂（阶数较高）的电路的截止频率。
+
+- 低端3dB频点由{==高通电容==}（耦合电容和旁路电容）决定，使用开路时间常数法。此时有近似
+
+$$
+f_{l,3dB}=f_{o1}+f_{o2}+\cdots=\frac{1}{2\pi}\left(\frac{1}{C_1R_1}+\frac{1}{C_2R_2}+\cdots\right)
+$$
+
+- 高端3dB频点由{==低通电容==}（寄生电容）决定，使用短路时间常数法。此时有近似
+
+$$
+f_{h,3dB}=\frac{1}{2\pi(\tau_{s1}+\tau_{s2}+\cdots)}=\frac{1}{2\pi\left(R_1C_1+R_2C_2\cdots\right)}
+$$
+
+两种方法都是对应的量相差得越多，估计越准确。开路/短路的意思是，对每个“决定电容”（低端的高通和高端的低通），依次按住不动，开路/短路剩下所有的电容，将该电容大小$C_i$和{==该电容**看到**的电阻大小==}$R_i$带入上式中去。
