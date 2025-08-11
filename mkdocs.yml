@@ -23,7 +23,9 @@ nav:
       - 万花尺: 'documents/wanhuachi.md'
       - 电磁炮: 'documents/EMgun.md'
   - 开往: 'https://www.travellings.cn/go.html'
-
+plugins:
+  - search
+  - blog
 markdown_extensions:
   - def_list
   - neoteroi.timeline
