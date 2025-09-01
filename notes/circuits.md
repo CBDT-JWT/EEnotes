@@ -973,4 +973,74 @@ $$
 1. 分析直流偏置；
 2. 将小信号模型带入分析小信号。
 
-因此只要掌握常见元件如BJT，MOS的小信号模型就可以轻松拿捏。
+因此只要掌握常见元件如BJT，MOS的小信号模型就可以轻松拿捏。分析直流偏置的时候，应当保留大信号控制关系
+
+$$
+\begin{cases}
+\beta I_B=I_C\\\\
+v_{be}=0.7V\,or\,I_B=(\exp\frac{V_{be}}{V_T}-1)I_{S0}
+\end{cases}\quad(BJT)\,,
+\begin{cases}
+g_m = 0\\\\
+I_D = \beta_n V_{od}^2
+\end{cases}(MOS)
+$$
+
+然后分析小信号模型使用小信号控制关系
+
+$$
+\begin{cases}
+g_m = \frac{I_C}{v_T}\\\\
+r_{be}=\frac{\beta}{g_m}\\\\
+r_{ce}=\frac{V_A}{I_C}
+\end{cases}\quad(BJT)\,,
+\begin{cases}
+g_m = \frac {2I_D}{V_{od}}=2\beta_n V_{od}{1+\frac{V_DS}{V_A}}\\\\
+r_{ds} = \frac{V_A}{I_D}
+\end{cases}(MOS)
+$$
+
+带入电路即可分析。注意分析小信号时，直流源要{==置0==}。
+
+#### 负反馈分析
+
+《电电》要求掌握分析负反馈的电路流程。首先**分析连接方式**：反馈网络直接连到放大网络的输入输出则为并联，否则为串联。然后**求开环放大器参量**，方法为*反馈网络画两边，放大网络画一遍*，然后输入端反馈源置0，输出端反馈负载置零（输出电压则开路，输出电流则短路）。然后**求反馈系数**（对反馈网络加x求y），最后带入$A=\frac{A_0}{1+T}$, $w_{in,c}=(1+T)w_{in,o}$, $w_{out,c}=(1+T)w_{out,o}$求出放大器的剩余参量即可。参考下面的例题。
+
+!!! question "2024年T5"
+    已知运放电压放大倍数$A_{v0}$和晶体管T的跨导$g_m$，计算该放大器的输入输出电阻和增益（认为晶体管T理想，$r_{bc}\,,r_{ce}$\to\infty$.）
+    ![alt text](assets/image-43.png)
+
+??? success "答案"
+    首先分析该电路的连接方式。将其进行变形得到（注意$V_{CC}\,,V_{EE}$都是交流地）
+    ![alt text](assets/image-44.png)
+
+    因此这显然是一个**串串连接**，进而建模为**压控流源**。进一步分析开环放大器参数，使用*反馈网络画两边，放大网络画一遍*的方法并将输入侧反馈源置零，输出侧反馈载置零得到
+
+    ![alt text](assets/image-45.png)
+
+    计算输出阻抗时将输入电压置0，输出端加电压$v_{test}$得到
+
+    ![alt text](assets/image-47.png)
+
+    此时运放被掐死了，因此电路等效为
+
+    ![alt text](assets/image-48.png)
+
+    进而$I_{test} = \frac{g_m v_{test}}$, $r_{out,o}=\frac{1}{g_m}$.分析输入阻抗和跨导放大倍数时，短路输出，输入端加电压得到
+
+    ![alt text](assets/image-49.png)
+
+    不难算出$i_{out,o}=-g_mv_{in}A_{v0}$, 且$r_{in,o}=\infty$. 因此开环跨导$G_{m,o}=-g_mA_{v0}$.
+
+    然后分析反馈网络，注意这是压控流源，因此反馈系数应当是跨阻$F=R_c$. 进而得到环路增益$T=-g_mR_cA_{v0}$.
+
+    最后代入得到
+    
+    $$
+    \begin{cases}
+    R_{in,c}=(1+T)r_{in}=\infty\\\\
+    R_{out,c}=(1+T)r_{out}=(1-g_mR_cA_{v0})\frac{1}{g_m}=A_{v0}R_C\\\\
+    G_m = \frac{A_{v0}}{1+T}=-\frac{1}{R_C}
+    $$
+
+    
