@@ -1026,7 +1026,7 @@ $$
 
     ![alt text](assets/image-48.png)
 
-    进而$I_{test} = \frac{g_m v_{test}}$, $r_{out,o}=\frac{1}{g_m}$.分析输入阻抗和跨导放大倍数时，短路输出，输入端加电压得到
+    进而$I_{test} = g_m v_{test}$, $r_{out,o}=\frac{1}{g_m}$.分析输入阻抗和跨导放大倍数时，短路输出，输入端加电压得到
 
     ![alt text](assets/image-49.png)
 
@@ -1041,6 +1041,6 @@ $$
     R_{in,c}=(1+T)r_{in}=\infty\\\\
     R_{out,c}=(1+T)r_{out}=(1-g_mR_cA_{v0})\frac{1}{g_m}=A_{v0}R_C\\\\
     G_m = \frac{A_{v0}}{1+T}=-\frac{1}{R_C}
+    \end{cases}
     $$
 
-    
