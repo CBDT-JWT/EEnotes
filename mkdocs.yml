@@ -17,6 +17,7 @@ nav:
       - 程设（电子）: 'notes/prog.md'
       - 信号与系统: 'notes/ss.md'
       - 媒体与认知: 'notes/media-and-cog.md'
+      - 随机过程: 'notes/stochasticprocess.md'
     - 其他文档:
       - CircuiTikZ: 'documents/circuitikz.md'
       - MkDocs: 'documents/mkdocs.md'
