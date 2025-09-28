@@ -228,3 +228,68 @@ $$
     S_Y(\omega)=S_X(\omega)\cdot\omega^2
     $$
 
+$$
+X(t) w.s.s.\quad, R_X(\tau), proof: R_X(0)-R_X(\tau)\geq \frac{1}{4^n}(R_X(0)-R_X(2^n\tau))
+$$
+
+$$
+\begin{aligned}
+R_X(0)-R_X(\tau)&\geq \frac{1}{4}(R_X(0)-R_X(\tau))\\\\
+\Leftrightarrow 3R_X(0) - 4R_X(\tau) + R_X(2\tau)&\geq 0\\\\
+\end{aligned}
+$$
+
+根据正定性
+
+$$
+\forall n',\quad \forall t_1\,,t_2\,,\cdots\,,t_{n'} \quad[R_X(t_i-t_j)]_{ij}\quad\text{is p.d.}
+$$
+
+令$n'=3$, $t_1\,,t_2\,,t_3=0,\tau,2\tau$
+
+$$
+\begin{bmatrix}
+R_X(0) & R_X(\tau) & R_X(2\tau)\\\\
+R_X(\tau) & R_X(0) & R_X(\tau)\\\\
+R_X(2\tau) & R_X(\tau) & R_X(0)\\\\
+\end{bmatrix}\text{is p.d.}
+$$
+
+从而
+
+$$
+\begin{bmatrix}
+a& b & c
+\end{bmatrix}
+\begin{bmatrix}
+R_X(0) & R_X(\tau) & R_X(2\tau)\\\\
+R_X(\tau) & R_X(0) & R_X(\tau)\\\\
+R_X(2\tau) & R_X(\tau) & R_X(0)\\\\
+\end{bmatrix}\begin{bmatrix}
+a\\\\
+b\\\\\
+c
+\end{bmatrix}\geq 0
+$$
+
+从而
+
+$$
+(a^2 + b^2 + c^2)R_X(0)+(ab+ab+bc+bc)R_X(\tau)+2ac R_X(2\tau)\ge 0
+$$
+
+$$
+S_X(\omega)=\int_{-\infty}^{\infty}R_X(\tau)\cos(\omega\tau)d\tau=-S_X(\omega)
+$$
+
+$$
+\begin{aligned}
+R_X(\tau)&=\frac{1}{2\pi}\int_{-\infty}^{\infty}S_X(\omega)\exp(j\omega\tau)d\omega\\\\
+&=\frac{1}{2\pi}\int_{-\infty}^{\infty}S_X(\omega)\cos(\omega\tau)d\omega\\\\
+\textcolor{pink}{3R_X(0)} \textcolor{cyan}{- 4R_X(\tau)} \textcolor{yellow}{+ R_X(2\tau)}&= \frac{1}{2\pi}\int_{-\infty}^{\infty}S_X(\omega)(\textcolor{pink}{3}\textcolor{cyan}{-4\cos(\omega\tau)}\textcolor{yellow}{+\cos(2\omega\tau)})d\omega\\\\
+&=\frac{1}{2\pi}\int_{-\infty}^{\infty}S_X(\omega)(3-4\cos(\omega\tau)+2\cos^2(\omega\tau)-1)d\omega\\\\
+&=\frac{1}{2\pi}\int_{-\infty}^{\infty}S_X(\omega)(2\cos(\omega\tau)-1)^2d\omega\ge 0\quad\square
+\end{aligned}
+$$
+
+
