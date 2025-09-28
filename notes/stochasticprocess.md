@@ -292,4 +292,5 @@ R_X(\tau)&=\frac{1}{2\pi}\int_{-\infty}^{\infty}S_X(\omega)\exp(j\omega\tau)d\om
 \end{aligned}
 $$
 
+### Brown Motion
 

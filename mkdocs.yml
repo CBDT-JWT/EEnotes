@@ -8,16 +8,20 @@ nav:
   - 笔记:
     - 主页: 'index.md'
     - 课程笔记:
-      - 大学物理: 'notes/BigPhysics.md'
-      - 线性代数: 'notes/LinearAlgebra.md'
-      - 线性代数2: 'notes/LinearAlgebra2.md'
-      - 电磁波: 'notes/emwaves.md'
-      - 电子电路与系统基础: 'notes/circuits.md'
-      - 数字电路: 'notes/digital.md'
-      - 程设（电子）: 'notes/prog.md'
-      - 信号与系统: 'notes/ss.md'
-      - 媒体与认知: 'notes/media-and-cog.md'
-      - 随机过程: 'notes/stochasticprocess.md'
+      - 数学物理:
+        - 大学物理: 'notes/BigPhysics.md'
+        - 线性代数: 'notes/LinearAlgebra.md'
+        - 线性代数2: 'notes/LinearAlgebra2.md'
+        - 随机过程: 'notes/stochasticprocess.md'
+      - 电路电磁:
+        - 电磁波: 'notes/emwaves.md'
+        - 电子电路与系统基础: 'notes/circuits.md'
+        - 数字电路: 'notes/digital.md'
+        - 信号与系统: 'notes/ss.md'
+      - 程序设计:
+        - 程设（电子）: 'notes/prog.md'
+        - 媒体与认知: 'notes/media-and-cog.md'
+        - MATLAB: 'notes/matlab.md'
     - 其他文档:
       - CircuiTikZ: 'documents/circuitikz.md'
       - MkDocs: 'documents/mkdocs.md'
