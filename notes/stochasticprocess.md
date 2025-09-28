@@ -1,5 +1,5 @@
 
-!!! "note"
+!!! note
     从第三节课开始，之前的慢慢补（）
 ## Correlation Function and Positive Definite Functions
 
@@ -149,7 +149,9 @@ $$
 $$
 X(t)\, w.s.s.,\quad \int_{-\infty}^{\infty}|X(t)|dt<\infty?\quad X(t)\to R_X(\tau)
 $$
+
 功率谱密度
+
 $$
 S_X(\omega)=\lim_{T\to\infty}\frac{1}{T}\mathbb{E}\left|\int_{-\frac{T}{2}}^{\frac{T}{2}}\exp(-j\omega t)dt\right|^2=\int_{-\infty}^{\infty}R_X(\tau)\exp(-j\omega \tau)d\tau
 $$
@@ -165,13 +167,12 @@ $$
 $X(t)$ 是实数，$R_X(\tau)=\mathbb E(X(t)X(t+\tau))$ is Real.
 
 $$
-
 \begin{aligned}
 \Rightarrow S_X(\omega)&=\int_{-\infty}^{\infty}R_X(\tau)\cos(\omega\tau)d\tau+j\int_{-\infty}^{\infty}R_X(\tau)\sin(\omega\tau)d\tau\\\\
 &= \int_{-\infty}^{\infty}R_X(\tau)\cos(\omega\tau)d\tau=\S_X(-\omega)
 \end{aligned}
-
 $$
+
 考虑LTI系统$Y(t)=\text{LTI}[X(t)]$
 
 ![alt text](assets/image-50.png)
@@ -181,7 +182,6 @@ Y(t)=\int_{-\infty}^\infty h(t-\tau)X(\tau)d\tau\quad\textcolor{cyan}{(Time Doma
 $$
 
 $$
-
 \begin{aligned}
 R_Y(t,s) &= \mathbb E(Y(t)Y(s))\\\\
 &= \mathbb E(\int_{-\infty}^\infty h(t-\tau)X(\tau)d\tau\int_{-\infty}^\infty h(s-\tau)X(\tau)d\tau)\\\\
@@ -189,6 +189,7 @@ R_Y(t,s) &= \mathbb E(Y(t)Y(s))\\\\
 &= \int_{-\infty}^\infty\int_{-\infty}^\infty R_X(\tau-r)h(t-\tau)h(s-\tau)d\tau dr\\\\
 \end{aligned}
 $$
+
 ![alt text](assets/image-51.png)
 
 $$
@@ -202,14 +203,28 @@ $$
 $$
 \int_{-\infty}^{\infty}R_X(\tau-r)h(t-\tau)h(r-s)d\tau dr = R_X\ast h \ast \tilde h(t-s)
 $$
+
 $$
 \Rightarrow \textcolor{cyan}{S_Y(\omega)}=\int_{-\infty}^{\infty} R_X\ast h \ast \tilde h(t)\exp(-j\omega t)dt = \textcolor{cyan}{\boxed{S_X(\omega) H(\omega) H^\ast(\omega)}}
 $$
+
 而
+
 $$
 \int_{-\infty}^{\infty}\tilde h(t)\exp(-j\omega t)dt=\int_{-\infty}^{\infty}h(-t)\exp(-j\omega t)dt=H^\ast(\omega)
 $$
+
 因此
+
 $$
 \textcolor{cyan}{S_Y(\omega) = \boxed{S_X(\omega) |H(\omega)|^2}}
 $$
+
+![alt text](assets/image-52.png)
+
+!!! example
+    微分器$y=\frac{d}{dt}x$\, $H(\omega)=j\omega$:
+    $$
+    S_Y(\omega)=S_X(\omega)\cdot\omega^2
+    $$
+
