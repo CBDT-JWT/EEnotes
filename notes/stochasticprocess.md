@@ -1,6 +1,7 @@
 
 !!! note
     从第三节课开始，之前的慢慢补（）
+
 ## Correlation Function and Positive Definite Functions
 
 ### Correlation Function
