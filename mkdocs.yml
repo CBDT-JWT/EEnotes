@@ -17,7 +17,9 @@ nav:
         - 电磁波: 'notes/emwaves.md'
         - 电子电路与系统基础: 'notes/circuits.md'
         - 数字电路: 'notes/digital.md'
+      - 信号通信:
         - 信号与系统: 'notes/ss.md'
+        - 通信与网络: 'notes/comm.md'
       - 程序设计:
         - 程设（电子）: 'notes/prog.md'
         - 媒体与认知: 'notes/media-and-cog.md'
