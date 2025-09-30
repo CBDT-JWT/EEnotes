@@ -25,6 +25,7 @@ nav:
         - 媒体与认知: 'notes/media-and-cog.md'
         - MATLAB: 'notes/matlab.md'
     - 其他文档:
+      - LaTex: 'documents/latex.md'
       - CircuiTikZ: 'documents/circuitikz.md'
       - MkDocs: 'documents/mkdocs.md'
       - 万花尺: 'documents/wanhuachi.md'
