@@ -248,8 +248,48 @@ $$
 \mathbb{E}(X+N)^2=\mathbb{E}X^2+\mathbb{E}N^2\le P+\sigma^2
 $$
 
-所以
+其中$P$为发射功率，认为与$X^2$的均值相关。所以
 
 $$
-\max_{p(x)}
+\max_{p(x)}h(X+N)=\frac{1}{2}\log 2\pi\mathrm{e}(P+\sigma^2)
 $$
+
+因此高斯信道的信道容量为
+
+$$
+\begin{aligned}
+C&=\max_{p(x)}h(X+N)-\frac{1}{2}\log 2\pi\mathrm e \sigma^2\\\\
+&=\frac{1}{2}\log 2\pi\mathrm e (P+\sigma^2)-\frac{1}{2}\log 2\pi\mathrm e \sigma^2\\\\
+&=\boxed{\frac{1}{2}\log\left(1+\frac{P}{\sigma^2}\right)}
+\end{aligned}
+$$
+
+称为Shannon公式。
+![alt text](assets/shannon.png)
+考虑带宽$W$, 加性白高斯噪声单边功率谱密度$n_0$。根据Nyquist采样定理单位时间内最多获得$2W$个独立采样。因此信道容量（单位时间最大互信息量）为
+
+$$
+\begin{aligned}
+C&=\frac{1}{2}\log\left(1+\frac{P}{Wn_0}\right)\cdot2W\\\\
+&=\boxed{W\log\left(1+\frac{P}{Wn_0}\right)}
+\end{aligned}
+$$
+
+可见信道容量随着带宽$W$和信噪比$\frac{P}{n_0}$的增加而增加。在信噪比较低的情形下，根据Taylor展开
+
+$$
+\ln(1+x)=x+o(x)
+$$
+
+我们有近似
+
+$$
+C\dot=1.44\frac{P}{n_0}
+$$
+
+同样在高信噪比条件下
+
+$$
+C\dot=0.33W\mathrm{SNR}_\mathrm{dB}
+$$
+
