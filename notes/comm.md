@@ -293,3 +293,95 @@ $$
 C\dot=0.33W\mathrm{SNR}_\mathrm{dB}
 $$
 
+## 模拟信源的数字化
+
+### 信源编码
+
+信源编码的目的是将**时间连续、幅度连续**的**模拟信源**编码为比特串
+
+$$
+s(t)\mapsto 01\cdots 011
+$$
+
+其结构一般包括**抽样**、**量化**和**编码**三个步骤：
+
+$$
+s(t)-\boxed{\text{抽样}}\to x[k]=s(kT_s)-\boxed{\text{量化}}\to\hat x=Q(x)-\boxed{\text{编码}}\to 0\cdots10
+$$
+
+解码端则依次经过**译码**、**重建**和**内插**三个步骤，分别是**编码**、**量化**和**抽样**的逆过程。抽样和内插、编码和译码互为逆过程，具有无损性；但量化和重建是有损的。在一些实际系统（如语音的PCM（Pulse Coded Modulation））编码中，量化和编码同步完成。
+
+
+$$
+s(t)-\boxed{\text{抽样}}\to s(kT_s)-\boxed{\text{量化+编码}}\to 0\cdots10
+$$
+
+$$
+\text{速率}R=\text{抽样频率}f_s=\frac{1}{T_s}\text{Samples/S}\times\text{平均量化编码长度}b\,\text{bit/Sample}
+$$
+
+### 抽样定理
+抽样定理是指：对于带限于$|f|\leq W$的低通信号$s(t)$, 当抽样频率$f_s\geq 2W$就可以无失真恢复信号$s(t)$.
+
+抽样过程可以表述为
+
+$$
+s(kT_s)=s(t)\ast\delta(t-kT_s)
+$$
+
+频域上即为$S(f)$以周期$f_s$复制。恢复时只需要通过截止频点为$W$的低通滤波器即可实现恢复。
+
+![alt text](assets/image-54.png)
+
+该恢复过程在时域上体现为**内插**：(本质上就是卷一个sinc)
+
+$$
+s(t)=\sum_ks(kT_s)\frac{\sin 2\pi W(t-kT_s)}{\pi (tf_s-k)}
+$$
+
+对于最小抽样频率$f_s^{\min}=2W$ 带入内插公式得到
+
+$$
+s(t)=\sum_ks(\frac{k}{2W})\mathrm{sinc}(2Wt-k)
+$$
+
+为了确保信源的低通性，因此使用低通滤波进行预处理以保留其主要能量（特征）部分（对于语音信号主要集中于300-3400Hz）。低通滤波后使用$f_s=8k\mathrm{Hz}$频率采样并量化至8bit，PCM速率为$R=f_sb=64\mathrm {kbps}$。
+
+![alt text](assets/image-55.png)
+
+### 量化Basics
+
+量化是使用离散集合中的取值近似连续值$X$，同时确保近似误差尽可能小：
+
+$$
+Q(x)=y_i\,,\quad x_i<x\le x_{i+1}
+$$
+
+$I_i=(x_i,x_{i+1}]$表示第$i$个量化区间，$\Delta_i=x_{i+1}-x_i$为量化间隔，若$\Delta_i\equiv\Delta$则称为均匀量化，否则为非均匀量化。
+
+量化是**多对一映射**，因而存在损失和误差。定义量化误差
+
+$$
+e(x)=x-Q(x)
+$$
+
+由于$x$是r.v., 因此$e(x)$为一个随机噪声，我们关注其统计特性。量化均方误差为（其实相当于噪声功率）
+
+$$
+\begin{aligned}
+\sigma^2&=\int_{-\infty}^\infty [x-Q(x)]^2p(x)\mathrm{d}x\\\\
+&=\sum_{i=1}^L\int_{x_i}^{x_{i+1}}(x-y_i)^2p(x)\mathrm{d}x
+\end{aligned}
+$$
+
+定义量化信噪比为
+
+$$
+\mathrm{SNR}_q=\frac{\displaystyle\int_{-\infty}^\infty x^2p(x)\mathrm{d}x}{\displaystyle{\sum_{i=1}^L\int_{x_i}^{x_{i+1}}(x-y_i)^2p(x)\mathrm{d}x}}=\frac{\text{信号功率}}{\text{噪声功率}}
+$$
+
+若我们利用$Q(X)$精细设计编码器，则压缩后一个抽样的平均bit数最少为
+
+$$
+H(Q(X))=-\sum_{i=1}^{L}\int_{x_i}^{x_{i+1}}p(x)\mathrm{d}x\log\int_{x_i}^{x_{i+1}}p(x)\mathrm{d}x
+$$
