@@ -385,3 +385,7 @@ $$
 $$
 H(Q(X))=-\sum_{i=1}^{L}\int_{x_i}^{x_{i+1}}p(x)\mathrm{d}x\log\int_{x_i}^{x_{i+1}}p(x)\mathrm{d}x
 $$
+
+### 均匀量化
+
+对于电平限制在$[x_{min}\,,x_{max}]$的抽样$x$， 使用$n$个bit进行均匀量化。则
