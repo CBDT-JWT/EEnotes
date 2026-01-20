@@ -13,20 +13,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Validate required secrets
-        run: |
-          missing=0
-          for v in REMOTE_HOST REMOTE_USER REMOTE_PASSWORD REMOTE_DIR; do
-            if [ -z "${{ secrets[$v] }}" ]; then
-              echo "ERROR: secret $v is not set"
-              missing=1
-            fi
-          done
-          if [ "$missing" -eq 1 ]; then
-            echo "One or more required secrets are missing. Aborting."
-            exit 1
-          fi
-
       - name: Install rsync and sshpass
         run: |
           sudo apt-get update
