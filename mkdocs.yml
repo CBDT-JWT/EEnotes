@@ -1,42 +1,8 @@
 site_name: CBDT的资料屋
-site_url: https://www.jiangwt.org
+site_url: https://www.weitao-jiang.cn
 
-# 导航配置
-nav:
-  - 首页: '/index.html'
-  - 博客: '/blog/index.html'
-  - 笔记:
-    - 主页: 'index.md'
-    - 课程笔记:
-      - 数学物理:
-        - 大学物理: 'notes/BigPhysics.md'
-        - 线性代数: 'notes/LinearAlgebra.md'
-        - 线性代数2: 'notes/LinearAlgebra2.md'
-        - 随机过程: 'notes/stochasticprocess.md'
-        - 量子与统计: 'notes/quant.md'
-      - 电路电磁:
-        - 电磁波: 'notes/emwaves.md'
-        - 电子电路与系统基础: 'notes/circuits.md'
-        - 数字电路: 'notes/digital.md'
-        - 微波与光波技术基础: 'notes/microwave.md'
-      - 信号通信:
-        - 信号与系统: 'notes/ss.md'
-        - 通信与网络: 'notes/comm.md'
-        - 数字信号处理（DSP）: 'notes/dsp.md'
-      - 程序设计:
-        - 程设（电子）: 'notes/prog.md'
-        - 媒体与认知: 'notes/media-and-cog.md'
-        - MATLAB: 'notes/matlab.md'
-    - 其他文档:
-      - LaTex: 'documents/latex.md'
-      - CircuiTikZ: 'documents/circuitikz.md'
-      - MkDocs: 'documents/mkdocs.md'
-      - 万花尺: 'documents/wanhuachi.md'
-      - 电磁炮: 'documents/EMgun.md'
-  - 开往: 'https://www.travellings.cn/go.html'
 plugins:
   - search
-  - blog
 markdown_extensions:
   - def_list
   - neoteroi.timeline
@@ -60,14 +26,11 @@ markdown_extensions:
   
 extra_css:
 - stylesheets/neoteroi-mkdocs.css
-- stylesheets/custom.css
-- stylesheets/simpleLightbox.min.css
-- stylesheets/pied_piper.css
 - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css
   
 theme:
   name: material
-  custom_dir: overrides
+  doc_dir: notes
   palette:
     scheme: slate
     primary: black

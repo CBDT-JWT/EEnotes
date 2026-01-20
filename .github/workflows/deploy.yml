@@ -1,0 +1,74 @@
+name: Deploy via SSH (rsync + password)
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Deploy to remote server
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Validate required secrets
+        run: |
+          missing=0
+          for v in REMOTE_HOST REMOTE_USER REMOTE_PASSWORD REMOTE_DIR; do
+            if [ -z "${{ secrets[$v] }}" ]; then
+              echo "ERROR: secret $v is not set"
+              missing=1
+            fi
+          done
+          if [ "$missing" -eq 1 ]; then
+            echo "One or more required secrets are missing. Aborting."
+            exit 1
+          fi
+
+      - name: Install rsync and sshpass
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y rsync sshpass
+
+      - name: Sync repository to remote via rsync
+        env:
+          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+          REMOTE_PORT: ${{ secrets.REMOTE_PORT }}
+          REMOTE_USER: ${{ secrets.REMOTE_USER }}
+          REMOTE_PASSWORD: ${{ secrets.REMOTE_PASSWORD }}
+          REMOTE_DIR: ${{ secrets.REMOTE_DIR }}
+        run: |
+          set -euo pipefail
+          # Optional port handling
+          PORT_FLAG=""
+          if [ -n "${REMOTE_PORT-}" ]; then
+            PORT_FLAG="-p ${REMOTE_PORT}"
+          fi
+
+          SSH_OPTS="-o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
+
+          echo "Preparing to deploy to ${REMOTE_USER}@${REMOTE_HOST}:${REMOTE_DIR}"
+
+          # Create remote dir if it doesn't exist
+          echo "Creating remote directory (if needed)..."
+          sshpass -p "$REMOTE_PASSWORD" ssh $SSH_OPTS $PORT_FLAG ${REMOTE_USER}@${REMOTE_HOST} "mkdir -p \"${REMOTE_DIR}\""
+
+          # Exclude common files we don't want to deploy
+          EXCLUDES=(--exclude='.git' --exclude='.github' --exclude='node_modules' --exclude='.venv' --exclude='venv')
+
+          echo "Starting rsync..."
+          sshpass -p "$REMOTE_PASSWORD" rsync -avz --delete "${EXCLUDES[@]}" -e "ssh $SSH_OPTS $PORT_FLAG" ./ ${REMOTE_USER}@${REMOTE_HOST}:${REMOTE_DIR}
+
+          echo "Deployment finished."
+
+      - name: Success message
+        run: echo "Deployed to ${{ secrets.REMOTE_HOST }}:${{ secrets.REMOTE_DIR }}"
+
+# Notes:
+# - Required repository secrets: REMOTE_HOST, REMOTE_USER, REMOTE_PASSWORD, REMOTE_DIR
+# - Optional secret: REMOTE_PORT (defaults to SSH port 22 if not provided)
+# - To set secrets: GitHub repository -> Settings -> Secrets -> Actions -> New repository secret
+# - Security note: storing SSH passwords in repo secrets works but is less secure than using a deploy key (SSH private key).
+#   Prefer using an SSH key pair and `actions/ssh-agent` or `appleboy/scp-action` with keys for better security.
