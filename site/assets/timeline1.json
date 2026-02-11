@@ -1,0 +1,38 @@
+
+
+[
+    {
+        "title": "上线",
+        "content": "宿舍有线网终于恢复，网站上线",
+        "icon": ":fontawesome-solid-paper-plane:",
+        "sub_title": "2024-12-10"
+    },
+    {
+        "title": "硬件部署",
+        "content": "部署了网站的硬件，使用树莓派4B作为服务器，并搭载了UPS以备宿舍断电；打印了机箱。",
+        "icon": ":material-raspberry-pi:",
+        "key": "pink",
+        "sub_title": "2024-12-11"
+    },
+    {
+        "title": "被迫下线",
+        "content": "学校寒假停电，被迫下线一个月",
+        "icon": ":material-rss-off:",
+        "key": "black",
+        "sub_title": "2025-1-20"
+    },
+    {
+        "title": "恢复服务",
+        "content": "开学了",
+        "icon": ":material-rss:",
+        "key": "cyan",
+        "sub_title": "2025-2-20"
+    },
+    {
+        "title": "更好的主题",
+        "content": "重做了网站，添加了大量功能，绘制了新的主题。同时加入开往。",
+        "icon": ":fontawesome-brands-css3-alt:",
+        "key": "cyan",
+        "sub_title": "2025-8-1"
+    },
+]
