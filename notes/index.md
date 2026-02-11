@@ -32,7 +32,7 @@ comments: true
 希望毕业或者我忘掉这些东西之前能够尽可能多地写完吧！
 ## 站点历史
 
-[timeline center alternate(./docs/assets/timeline1.json)]
+[timeline center alternate(./notes/assets/timeline1.json)]
 
 ## github合作说明与致谢
 一个人难免有错漏之处，还请不吝赐教！如果有问题可以在[此仓库](https://github.com/CBDT-JWT/EEnotes)提出，万分感激！
