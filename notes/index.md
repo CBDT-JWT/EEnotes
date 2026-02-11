@@ -3,7 +3,7 @@ comments: true
 ---
 
 # CBDT的笔记——序
-![alt text](assets/image-1.png){: style="display: block; margin: auto; width: 100%;" }
+![alt text](assets/2image.png){: style="display: block; margin: auto; width: 100%;" }
 ## 前言
 之前帮群友整理[数算习题](https://mp.weixin.qq.com/s/8955NVjGqlI13u3zvh2H1g)的时候，我曾经留下一段话：
 
@@ -13,7 +13,7 @@ comments: true
 现在看来确实颇有些过激了。但是，我依然希望能给同学带来更好的、更广谱的学习体验的提升，希望这个笔记网站可以做到这一点。
 ## 美好的愿景
 不幸的是我本人并不能学会所有的课程。我曾经和同学打趣说，在电子系的培养方案上，我是一个带阻系统，具体阻在了数算和处理器的这一块。虽然高中时候学过一点编程（我都不好意思说自己打过竞赛），但确实对这一块提不起兴趣，因此就学不好。
-![alt text](assets/image.png){: style="display: block; margin: auto; width: 60%;" }
+![alt text](assets/1image.png){: style="display: block; margin: auto; width: 60%;" }
 不过我还是希望能够把自己学到的一点东西保留下来让大家看到。目前施工计划如下：
 
 - [ ] 高等微积分1
@@ -30,28 +30,9 @@ comments: true
 - [ ] 媒体与认知
 
 希望毕业或者我忘掉这些东西之前能够尽可能多地写完吧！
-## 站点说明
+## 站点历史
 
 [timeline center alternate(./docs/assets/timeline1.json)]
-
-<div class="grid cards" markdown>
--   :material-fish-off:{ .lg .middle } __课程笔记__
-
-    ---
-
-    努力更完清华电子系必修课
-
-    [:octicons-arrow-right-24: notes](notes/)
-
--   :material-tools:{ .lg .middle } __其他文档__
-
-    ---
-
-    以及写其他一些有趣的文章
-
-    [:octicons-arrow-right-24: documents](documents)
-
-</div>
 
 ## github合作说明与致谢
 一个人难免有错漏之处，还请不吝赐教！如果有问题可以在[此仓库](https://github.com/CBDT-JWT/EEnotes)提出，万分感激！
