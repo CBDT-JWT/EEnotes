@@ -1,6 +1,6 @@
 
 <!doctype html>
-<html lang="en" class="no-js">
+<html lang="zh" class="no-js">
   <head>
     
       <meta charset="utf-8">
@@ -8,31 +8,31 @@
       
       
       
-        <link rel="canonical" href="https://www.weitao-jiang.cn/circuits/">
+        <link rel="canonical" href="https://www.weitao-jiang.cn/circuits.html">
       
       
-        <link rel="prev" href="../LinearAlgebra2/">
+        <link rel="prev" href="solid.html">
       
       
-        <link rel="next" href="../comm/">
+        <link rel="next" href="analog.html">
       
       
         
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
     
     
       
-        <title>《电子电路与系统基础》学习参考 - CBDT的资料屋</title>
+        <title>电子电路与系统基础 - CBDT的资料屋</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.618322db.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
       
       
   
@@ -105,6 +105,8 @@
     
     
       
+        <script src="https://unpkg.com/iframe-worker/shim"></script>
+      
     
     
       
@@ -116,11 +118,11 @@
       
     
     
-      <link rel="stylesheet" href="../css/neoteroi-mkdocs.css">
+      <link rel="stylesheet" href="css/neoteroi-mkdocs.css">
     
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -131,10 +133,12 @@
   
     
     
+      
     
     
     
-    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="yellow">
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -144,7 +148,7 @@
       
         
         <a href="#_1" class="md-skip">
-          Skip to content
+          跳转至
         </a>
       
     </div>
@@ -158,11 +162,10 @@
   
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="CBDT的资料屋" class="md-header__button md-logo" aria-label="CBDT的资料屋" data-md-component="logo">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="index.html" title="CBDT的资料屋" class="md-header__button md-logo" aria-label="CBDT的资料屋" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <img src="https://www.weitao-jiang.cn/images/avatar.jpg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -179,7 +182,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              《电子电路与系统基础》学习参考
+              电子电路与系统基础
             
           </span>
         </div>
@@ -187,7 +190,33 @@
     </div>
     
       
+        <form class="md-header__option" data-md-component="palette">
+  
     
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -201,21 +230,21 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
       </label>
-      <nav class="md-search__options" aria-label="Search">
+      <nav class="md-search__options" aria-label="查找">
         
-          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
             
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
           </a>
         
-        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
@@ -226,7 +255,7 @@
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            Initializing search
+            正在初始化搜索引擎
           </div>
           <ol class="md-search-result__list" role="presentation"></ol>
         </div>
@@ -237,11 +266,23 @@
       
     
     
+      <div class="md-header__source">
+        <a href="https://github.com/CBDT-JWT/EEnotes" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    CBDT-JWT/EEnotes
+  </div>
+</a>
+      </div>
+    
   </nav>
   
     
       
-<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
   <div class="md-grid">
     <ul class="md-tabs__list">
       
@@ -251,13 +292,13 @@
   
   
     <li class="md-tabs__item">
-      <a href=".." class="md-tabs__link">
+      <a href="index.html" class="md-tabs__link">
         
   
   
     
   
-  CBDT的笔记——序
+  首页
 
       </a>
     </li>
@@ -269,17 +310,18 @@
   
   
   
-    <li class="md-tabs__item">
-      <a href="../BigPhysics/" class="md-tabs__link">
-        
-  
-  
     
+    
+      <li class="md-tabs__item">
+        <a href="LinearAlgebra.html" class="md-tabs__link">
+          
   
-  《大学物理A2》热学篇
+  
+  数理基础
 
-      </a>
-    </li>
+        </a>
+      </li>
+    
   
 
       
@@ -288,36 +330,18 @@
   
   
   
-    <li class="md-tabs__item">
-      <a href="../LinearAlgebra/" class="md-tabs__link">
-        
-  
-  
     
-  
-  《线性代数》期中参考讲义
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../LinearAlgebra2/" class="md-tabs__link">
-        
-  
-  
     
+      <li class="md-tabs__item">
+        <a href="emwaves.html" class="md-tabs__link">
+          
   
-  《线性代数》期末参考讲义
+  
+  物理-电磁组
 
-      </a>
-    </li>
+        </a>
+      </li>
+    
   
 
       
@@ -328,17 +352,18 @@
     
   
   
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="./" class="md-tabs__link">
-        
-  
-  
     
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="circuits.html" class="md-tabs__link">
+          
   
-  《电子电路与系统基础》学习参考
+  
+  电路组
 
-      </a>
-    </li>
+        </a>
+      </li>
+    
   
 
       
@@ -347,17 +372,18 @@
   
   
   
-    <li class="md-tabs__item">
-      <a href="../comm/" class="md-tabs__link">
-        
-  
-  
     
+    
+      <li class="md-tabs__item">
+        <a href="ss.html" class="md-tabs__link">
+          
   
-  Comm
+  
+  信号组
 
-      </a>
-    </li>
+        </a>
+      </li>
+    
   
 
       
@@ -366,188 +392,18 @@
   
   
   
-    <li class="md-tabs__item">
-      <a href="../digital/" class="md-tabs__link">
-        
-  
-  
     
-  
-  Digital
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../dsp/" class="md-tabs__link">
-        
-  
-  
     
+      <li class="md-tabs__item">
+        <a href="prog.html" class="md-tabs__link">
+          
   
-  Dsp
+  
+  计算机组
 
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../emwaves/" class="md-tabs__link">
-        
-  
-  
+        </a>
+      </li>
     
-  
-  Emwaves
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../matlab/" class="md-tabs__link">
-        
-  
-  
-    
-  
-  MATLAB 常用函数总结
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../media-and-cog/" class="md-tabs__link">
-        
-  
-  
-    
-  
-  Media and cog
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../microwave/" class="md-tabs__link">
-        
-  
-  
-    
-  
-  Microwave
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../prog/" class="md-tabs__link">
-        
-  
-  
-    
-  
-  Prog
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../quant/" class="md-tabs__link">
-        
-  
-  
-    
-  
-  Quant
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../ss/" class="md-tabs__link">
-        
-  
-  
-    
-  
-  Ss
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../stochasticprocess/" class="md-tabs__link">
-        
-  
-  
-    
-  
-  Stochasticprocess
-
-      </a>
-    </li>
   
 
       
@@ -577,16 +433,27 @@
   
 
 
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="CBDT的资料屋" class="md-nav__button md-logo" aria-label="CBDT的资料屋" data-md-component="logo">
+    <a href="index.html" title="CBDT的资料屋" class="md-nav__button md-logo" aria-label="CBDT的资料屋" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <img src="https://www.weitao-jiang.cn/images/avatar.jpg" alt="logo">
 
     </a>
     CBDT的资料屋
   </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/CBDT-JWT/EEnotes" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    CBDT-JWT/EEnotes
+  </div>
+</a>
+    </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
     
@@ -597,14 +464,14 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="index.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    CBDT的笔记——序
+    首页
   
 
     
@@ -619,19 +486,71 @@
     
       
       
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数理基础
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    数理基础
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
   
   
   
   
     <li class="md-nav__item">
-      <a href="../BigPhysics/" class="md-nav__link">
+      <a href="LinearAlgebra.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    《大学物理A2》热学篇
+    线性代数(1)
   
 
     
@@ -643,22 +562,23 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
   
     <li class="md-nav__item">
-      <a href="../LinearAlgebra/" class="md-nav__link">
+      <a href="LinearAlgebra2.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    《线性代数》期中参考讲义
+    线性代数(2)
   
 
     
@@ -670,22 +590,23 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
   
     <li class="md-nav__item">
-      <a href="../LinearAlgebra2/" class="md-nav__link">
+      <a href="BigPhysics.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    《线性代数》期末参考讲义
+    大学物理
   
 
     
@@ -697,9 +618,217 @@
     </li>
   
 
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
     
       
       
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    物理-电磁组
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    物理-电磁组
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="emwaves.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    电磁场与电磁波
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="quant.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    量子与统计
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="solid.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    固体物理
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    电路组
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    电路组
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
   
   
     
@@ -721,7 +850,7 @@
   <span class="md-ellipsis">
     
   
-    《电子电路与系统基础》学习参考
+    电子电路与系统基础
   
 
     
@@ -732,14 +861,14 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="./" class="md-nav__link md-nav__link--active">
+      <a href="circuits.html" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
     
   
-    《电子电路与系统基础》学习参考
+    电子电路与系统基础
   
 
     
@@ -751,7 +880,7 @@
       
         
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+<nav class="md-nav md-nav--secondary" aria-label="目录">
   
   
   
@@ -760,7 +889,7 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      Table of contents
+      目录
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
@@ -1082,22 +1211,23 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
   
     <li class="md-nav__item">
-      <a href="../comm/" class="md-nav__link">
+      <a href="analog.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Comm
+    模拟电路原理
   
 
     
@@ -1109,22 +1239,23 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
   
     <li class="md-nav__item">
-      <a href="../digital/" class="md-nav__link">
+      <a href="digital.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Digital
+    数字逻辑与处理器基础
   
 
     
@@ -1136,22 +1267,23 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
   
     <li class="md-nav__item">
-      <a href="../dsp/" class="md-nav__link">
+      <a href="micro.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Dsp
+    微波与光波技术基础
   
 
     
@@ -1163,6 +1295,14 @@
     </li>
   
 
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
     
       
       
@@ -1170,15 +1310,67 @@
   
   
   
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    信号组
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    信号组
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../emwaves/" class="md-nav__link">
+      <a href="ss.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Emwaves
+    信号与系统
   
 
     
@@ -1190,22 +1382,23 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
   
     <li class="md-nav__item">
-      <a href="../matlab/" class="md-nav__link">
+      <a href="dsp.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    MATLAB 常用函数总结
+    数字信号处理
   
 
     
@@ -1217,22 +1410,23 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
   
     <li class="md-nav__item">
-      <a href="../media-and-cog/" class="md-nav__link">
+      <a href="comm.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Media and cog
+    通信与网络
   
 
     
@@ -1244,22 +1438,23 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
   
     <li class="md-nav__item">
-      <a href="../microwave/" class="md-nav__link">
+      <a href="stochasticprocess.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Microwave
+    随机过程
   
 
     
@@ -1271,6 +1466,14 @@
     </li>
   
 
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
     
       
       
@@ -1278,15 +1481,67 @@
   
   
   
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    计算机组
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    计算机组
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../prog/" class="md-nav__link">
+      <a href="prog.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Prog
+    程设基础
   
 
     
@@ -1298,22 +1553,23 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
   
     <li class="md-nav__item">
-      <a href="../quant/" class="md-nav__link">
+      <a href="dsa.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Quant
+    数据结构与算法
   
 
     
@@ -1325,22 +1581,23 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
   
     <li class="md-nav__item">
-      <a href="../ss/" class="md-nav__link">
+      <a href="media-and-cog.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Ss
+    媒体与认知
   
 
     
@@ -1352,22 +1609,23 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
   
     <li class="md-nav__item">
-      <a href="../stochasticprocess/" class="md-nav__link">
+      <a href="matlab.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Stochasticprocess
+    Matlab高级编程与工程应用
   
 
     
@@ -1376,6 +1634,14 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -1393,7 +1659,7 @@
                   <div class="md-sidebar__inner">
                     
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+<nav class="md-nav md-nav--secondary" aria-label="目录">
   
   
   
@@ -1402,7 +1668,7 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      Table of contents
+      目录
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
@@ -1733,25 +1999,28 @@
                   
 
 
+  
+  
+
 
 <h1 id="_1">《电子电路与系统基础》学习参考</h1>
 <div class="admonition info">
 <p class="admonition-title">说明</p>
 <p>先开个坑（）放张最喜欢的单管放大器镇楼。后面应该会同步写一下CAD教程
-<img alt="单管放大器" src="../assets/image.png" />
+<img alt="单管放大器" src="assets/image.png" />
 （很大程度上）参考了\ycgg/的小班辅导讲义，感谢！这篇文章大概会按照元件器件和方法工具两条主线完成，感觉电电确实就是这么个逻辑</p>
 </div>
 <div class="admonition tips">
 <p class="admonition-title">建议</p>
 <p>目前感觉这个课最有效的方法是背背背+直觉，在大脑里建立又大又快的L1-cache。我当时学（2）的时候把所有的PPT都抄了2遍，差不多背下来了，能80%默写正课内容的程度，感觉对于应试还是非常有效的。考试的时候就直接顺着写了，甚至富裕30分钟。当然还是要提倡先做大题（）</p>
 </div>
-<p><img alt="alt text" src="../assets/bb77be64681c6087857fc9125088def1.jpg" />
-<img alt="alt text" src="../assets/0fb5cd1cb703601e83d0b3480c1540b3.jpg" /></p>
+<p><img alt="alt text" src="assets/bb77be64681c6087857fc9125088def1.jpg" />
+<img alt="alt text" src="assets/0fb5cd1cb703601e83d0b3480c1540b3.jpg" /></p>
 <h2 id="_2">前言</h2>
 <p>参考\ycgg/的小班辅导对电电进行了粗浅的梳理，私以为大致有这样两个主线。其一是从局部变换到模块分析到系统分析的<mark class="critic">分析方法</mark>线：
-<img alt="alt text" src="../assets/%E5%88%86%E6%9E%90%E6%96%B9%E6%B3%95.png" />
+<img alt="alt text" src="assets/%E5%88%86%E6%9E%90%E6%96%B9%E6%B3%95.png" />
 另一条则是从简单的阻容感到受控源到晶体管再到单元电路的<mark class="critic">元件器件</mark>线：
-<img alt="alt text" src="../assets/%E5%85%83%E4%BB%B6%E5%99%A8%E4%BB%B6.png" />
+<img alt="alt text" src="assets/%E5%85%83%E4%BB%B6%E5%99%A8%E4%BB%B6.png" />
 【没写完】</p>
 <h2 id="_3">元件与器件</h2>
 <p>《电电》涉及的元件器件主要有</p>
@@ -1766,31 +2035,31 @@
 <p>电电课不同于信号与系统的一大关键在于<strong>电路变换</strong>技巧的应用。电路变换本质上是把数学过程形象化了；但我们往往不需要关注背后的数学过程，善于运用相关的变换（“电路直觉”）往往可以给我们的学习和应试带来很大的好处。</p>
 <h4 id="-">戴维南-诺顿</h4>
 <p>戴维南诺顿定理是电电课最常用的电路变换方法之一，也是最简单的之一。我们只要知道一个线性含源的单端口网络可以等效为电压源串电阻和电流源并电阻的形式就可以了。其中电阻的求法是<mark class="critic">独立源置0端口加流求压/加压求流</mark>，电压源和电流源的大小分别通过开路电压/短路电流求取。
-<img alt="alt text" src="../assets/image-27.png" />
+<img alt="alt text" src="assets/image-27.png" />
 戴维南-诺顿最大的好处是可以在列些KCL/KVL矩阵方程的时候帮我们减少节点数（诺顿）和回路数（戴维南），进而减少方程的阶数。</p>
 <h4 id="_6">组态转换</h4>
 <p>以BJT为例。CE组态的管子其小信号模型很好画：
-<img alt="alt text" src="../assets/image-28.png" />
+<img alt="alt text" src="assets/image-28.png" />
 但是对于CB组态，其小信号模型长成这样
-<img alt="alt text" src="../assets/image-29.png" />
+<img alt="alt text" src="assets/image-29.png" />
 不够直观。怎么办呢？这里就要用一些电路变换的技巧，我将其成为组态转换，因为我也不知道叫什么名字好。或许可以叫“借流还流法”？总之，我们将<span class="arithmatex">\(c\to e\)</span>的受控源拆开，拆成<span class="arithmatex">\(c\to b\)</span>和<span class="arithmatex">\(b\to e\)</span>两个，看起来像是从b节点借了<span class="arithmatex">\(g_mv_be\)</span>又还了<span class="arithmatex">\(g_mv_be\)</span>, 不会影响电路的功能。得到</p>
-<p><img alt="alt text" src="../assets/image-31.png" />
+<p><img alt="alt text" src="assets/image-31.png" />
 更进一步观察到左边的受控源的控制电压就是自己的电压，于是这个源就是一个电导<span class="arithmatex">\(g_m\)</span>，从而进一步化简</p>
-<p><img alt="alt text" src="../assets/image-33.png" /></p>
+<p><img alt="alt text" src="assets/image-33.png" /></p>
 <p>最后考虑理想晶体管
 $$
 r_{be}\,,r_{ce}=\infty
 $$
 得到</p>
-<p><img alt="alt text" src="../assets/image-34.png" />
+<p><img alt="alt text" src="assets/image-34.png" />
 因此CB组态的BJT为一个电流buffer。对于CC组态而言，也是一样：考虑其小信号模型</p>
-<p><img alt="alt text" src="../assets/image-35.png" /></p>
+<p><img alt="alt text" src="assets/image-35.png" /></p>
 <p>这里采用拆压法，将控制电压<span class="arithmatex">\(v_{be}\)</span>拆成<span class="arithmatex">\(v_{bc}+v_{ce}\)</span>, 电路上意味着将受控源拆开成<span class="arithmatex">\(g_mv_{bc}+g_mv_{ce}\)</span>：
-<img alt="alt text" src="../assets/image-36.png" />
+<img alt="alt text" src="assets/image-36.png" />
 这时候右边又变成电阻了。于是
-<img alt="alt text" src="../assets/image-37.png" />
+<img alt="alt text" src="assets/image-37.png" />
 进一步理想化得到
-<img alt="alt text" src="../assets/image-38.png" />
+<img alt="alt text" src="assets/image-38.png" />
 得到了一个电压buffer。类似的原理应用很广泛，可以有效处理受控源的控制关系不直观的问题。</p>
 <h4 id="_7">阻抗匹配</h4>
 <p>阻抗匹配是通过<mark class="critic">双向无损网络</mark>实现源和负载之间最大功率传输的方式，方法为共轭匹配
@@ -1805,12 +2074,12 @@ Q = \underbrace{\frac{\text{串联电抗}}{\text{串联电阻}}
 \]</div>
 <h4 id="_8">串并等效与部分接入法</h4>
 <p>串并等效是指，当<span class="arithmatex">\(Q\gg 1\)</span>时，近似认为下面的电路等效：
-<img alt="alt text" src="../assets/image-39.png" />
-<img alt="alt text" src="../assets/image-40.png" /></p>
+<img alt="alt text" src="assets/image-39.png" />
+<img alt="alt text" src="assets/image-40.png" /></p>
 <p><strong>不论是并联还是串联，都可以通过<span class="arithmatex">\(\times Q^2\)</span>把<span class="arithmatex">\(R\)</span>“翻上去”。</strong></p>
 <p>部分接入法是指，当<span class="arithmatex">\(Q\gg 1\)</span>时，近似认为下面电路等效：
-<img alt="alt text" src="../assets/image-41.png" />
-<img alt="alt text" src="../assets/image-42.png" />
+<img alt="alt text" src="assets/image-41.png" />
+<img alt="alt text" src="assets/image-42.png" />
 其中<span class="arithmatex">\(p=\frac{C_1}{C_1+C_2}=\frac{L_2}{L_1+L_2}\)</span>称为<strong>接入系数</strong>，注意电容和电感是反过来的。本质上就是先并转串，然后再整体串转并。</p>
 <h3 id="_9">网络参量</h3>
 <h4 id="_10">网络参量矩阵的定义</h4>
@@ -1876,7 +2145,7 @@ v_2\\
 \end{bmatrix}
 $$
 这里又有一个初学难以理解的点：这个<span class="arithmatex">\(\textcolor{yellow}{-i_2}\)</span>的负号如何理解。
-<img alt="alt text" src="../assets/image-3.png" />
+<img alt="alt text" src="assets/image-3.png" />
 正如这张图所示，zyhg矩阵研究的是<span class="arithmatex">\(\{v_1\,,v_2\,,i_1\,,i_2\}\)</span>之间的关系，而ABCD矩阵研究的则是<span class="arithmatex">\(\{v_{in}\,,i_{in}\,,v_{out}\,,i_{out}\}\)</span>之间的关系。根据图中定义不难发现<span class="arithmatex">\(i_{out}=\textcolor{yellow}{-i_2}\)</span>。也就是说，<strong>ABCD矩阵本质的定义其实是</strong></p>
 <div class="arithmatex">\[
 \begin{bmatrix}
@@ -1892,7 +2161,7 @@ i_{out}
 \]</div>
 <h4 id="_11">复合网络的参量矩阵</h4>
 <p>这样定义的好处是，如果我们考虑两个级联的系统，那么就有<strong>“级联ABCD相乘”</strong>。</p>
-<p><img alt="alt text" src="../assets/image-5.png" />
+<p><img alt="alt text" src="assets/image-5.png" />
 $$
 \begin{aligned}
 \begin{bmatrix}
@@ -1937,7 +2206,7 @@ C_2&amp;D_2
 \end{bmatrix}
 $$</p>
 <p>用类似的方法可以推导经典的口诀：<strong>“串串相连z相加，并并相连y相加，串并相连h相加，并串相连g相加”。</strong>
-<img alt="alt text" src="../assets/image-6.png" />
+<img alt="alt text" src="assets/image-6.png" />
 以h矩阵为例，上图中不难发现
 $$
 i_{1A}=i_{1B}\,,v_{2A}=v_{2B}\,,
@@ -1981,7 +2250,7 @@ $$
 进而<span class="arithmatex">\(h=h_A+h_B\,.\)</span>用类似方法不难证明剩下三种情况，在此略过。</p>
 <h4 id="_12">常用网络的参量矩阵</h4>
 <p>首先是常用的串臂电阻和并臂电导，也就是挂在嘴边的"1z01, 10y1"。如下图：
-<img alt="alt text" src="../assets/image-7.png" />
+<img alt="alt text" src="assets/image-7.png" />
 两个电路的ABCD参量分别为
 $$
 ABCD_\text{串臂}=\begin{bmatrix}
@@ -2006,7 +2275,7 @@ Y &amp; Y
 \end{bmatrix}\,;
 $$</p>
 <p>然后是同样常见的线性受控源模型。利用戴维南-诺顿定理不难证明下列电路的等价性。
-<img alt="alt text" src="../assets/image-13.png" /></p>
+<img alt="alt text" src="assets/image-13.png" /></p>
 <h4 id="_13">网络参量的物理意义</h4>
 <p>直接观察矩阵的形式不利于初学者理解网络参量各个元素的物理意义，因此我们不妨把矩阵展开。以h参量为例：
 $$
@@ -2045,10 +2314,10 @@ w_{out}=p_{22}-\frac{p_{21}p_{12}}{p_{11}+w_S}
 \end{cases}
 $$
 这里<span class="arithmatex">\(p\in\{z,y,h,g\}\)</span>, <span class="arithmatex">\(w\)</span>根据量纲为对应的阻抗或导纳。注意输入输出阻抗的定义如下图：</p>
-<p><img alt="alt text" src="../assets/image-15.png" /></p>
+<p><img alt="alt text" src="assets/image-15.png" /></p>
 <p>有了这一点之后可以记忆一个也很常用的公式：<strong>基于zyhg矩阵给出传递函数。</strong></p>
 <p>首先对于单向网络<span class="arithmatex">\(p_{12}=0\)</span>,传递函数是容易写出的。还是以h矩阵为例，考虑这样的电路：</p>
-<p><img alt="alt text" src="../assets/image-12.png" /></p>
+<p><img alt="alt text" src="assets/image-12.png" /></p>
 <p>那么上图中的传递函数可以简单写成
 $$
 \begin{aligned}
@@ -2094,7 +2363,7 @@ X_2=-w_LY_2
 \end{cases}
 \]</div>
 <p>以<span class="arithmatex">\(X_1\,,X_2\,,Y_1\,,Y_2\)</span>为中间变量，对应的信号流图就是</p>
-<p><img alt="alt text" src="../assets/1.png" />
+<p><img alt="alt text" src="assets/1.png" />
 不难写出其行列式为</p>
 <div class="arithmatex">\[
 \begin{aligned}
@@ -2103,13 +2372,13 @@ X_2=-w_LY_2
 \end{aligned}
 \]</div>
 <p>而单向化后的信号流图如下</p>
-<p><img alt="alt text" src="../assets/image-16.png" /></p>
+<p><img alt="alt text" src="assets/image-16.png" /></p>
 <p>其行列式为</p>
 <div class="arithmatex">\[
 \Delta = 1 - (-w_Sp_{11}) - (-w_Lp_{22})+ p_{11}p_{22}w_Sw_L
 \]</div>
 <p>可知，<span class="arithmatex">\(p_12\)</span>带来的贡献就是图中青色的这个回路。</p>
-<p><img alt="alt text" src="../assets/image-17.png" /></p>
+<p><img alt="alt text" src="assets/image-17.png" /></p>
 <p>该回路与其余两个回路都接触，和唯一的前向通路也接触，且此边不参与任何前向通路。因此根据Mason公式</p>
 <div class="arithmatex">\[
 H=\frac{1}{\Delta}\sum_k g_k\Delta_k
@@ -2147,7 +2416,7 @@ i_{in}=Cv_{out}+Di_{out}
 <div class="admonition question">
 <p class="admonition-title">ABCD参量求传函</p>
 <p>这里一个小方法就是利用ABCD参量求梯形网络的传递函数，利用上面提到串臂并臂网络的ABCD参数结合电压增益<span class="arithmatex">\(A_v=\frac 1 A\)</span>就可以轻松求得。例如下图中
-<img alt="alt text" src="../assets/image-14.png" /></p>
+<img alt="alt text" src="assets/image-14.png" /></p>
 </div>
 <details class="success">
 <summary>Answers</summary>
@@ -2237,7 +2506,7 @@ i_L
 <div class="admonition question">
 <p class="admonition-title">状态方程列写</p>
 <p>列出求解下面的电路所用的状态方程。
-<img alt="alt text" src="../assets/image-18.png" /></p>
+<img alt="alt text" src="assets/image-18.png" /></p>
 </div>
 <details class="success">
 <summary>答案</summary>
@@ -2378,7 +2647,7 @@ $$
 <p>三要素法和五要素法的公式都是简单的，但用起来最难求的也是最“值钱”的就是<strong>初值和微分初值</strong>，需要在<span class="arithmatex">\(0-\to 0+\)</span>时刻进行精细的分析。例如下面这个例子。</p>
 <div class="admonition question">
 <p class="admonition-title">三五要素法例题</p>
-<p><img alt="alt text" src="../assets/image-19.png" />已知互感变压器的<span class="arithmatex">\(k&lt;1\)</span>, <span class="arithmatex">\(L_1=1\mu H\)</span>, <span class="arithmatex">\(L_2=4\mu H\)</span>, <span class="arithmatex">\(M=0.8\mu H\)</span>, <span class="arithmatex">\(R_L = 1k\Omega\)</span>, <span class="arithmatex">\(R_S = 100\Omega\)</span>, <span class="arithmatex">\(V_{S0}=5V\)</span>.试求<span class="arithmatex">\(v_0(t)\)</span>, 若</p>
+<p><img alt="alt text" src="assets/image-19.png" />已知互感变压器的<span class="arithmatex">\(k&lt;1\)</span>, <span class="arithmatex">\(L_1=1\mu H\)</span>, <span class="arithmatex">\(L_2=4\mu H\)</span>, <span class="arithmatex">\(M=0.8\mu H\)</span>, <span class="arithmatex">\(R_L = 1k\Omega\)</span>, <span class="arithmatex">\(R_S = 100\Omega\)</span>, <span class="arithmatex">\(V_{S0}=5V\)</span>.试求<span class="arithmatex">\(v_0(t)\)</span>, 若</p>
 <ol>
 <li><span class="arithmatex">\(t&lt;0\)</span>时开关闭合且电路稳定，<span class="arithmatex">\(t=0\)</span>时断开开关。</li>
 <li><span class="arithmatex">\(t&lt;0\)</span>时开关断开且电路稳定，<span class="arithmatex">\(t=0\)</span>时闭合开关。</li>
@@ -2387,7 +2656,7 @@ $$
 <details class="success">
 <summary><strong>第1问</strong>答案</summary>
 <p>由互感变压器的h参量等效模型（漏磁-励磁模型）将电路等效为</p>
-<p><img alt="alt text" src="../assets/image-20.png" /></p>
+<p><img alt="alt text" src="assets/image-20.png" /></p>
 <p>然后利用阻抗变换将右侧甩到左侧</p>
 <div class="arithmatex">\[
 \begin{cases}
@@ -2395,7 +2664,7 @@ $$
     R_L'=\left(\frac{M}{L_2}\right)^2R_L=\frac{M^2}{L_2^2}R_L
 \end{cases}
 \]</div>
-<p><img alt="alt text" src="../assets/image-21.png" /></p>
+<p><img alt="alt text" src="assets/image-21.png" /></p>
 <p>断开开关后实际上有效的只有右侧的<span class="arithmatex">\(R_L'\,,L_2'\)</span>，电路为二阶电路。因此不难得到三要素</p>
 <div class="arithmatex">\[
 \begin{cases}
@@ -2412,7 +2681,7 @@ v_o(t)=-10V\cdot\exp\left(-\frac{t}{4\times 10^{-9}s}\right)
 <details class="success">
 <summary><strong>第二问</strong>答案</summary>
 <p>强行令两侧共地并带入互感变压器的Z参量模型（T型模型）等效。得到电路为
-<img alt="alt text" src="../assets/image-23.png" /></p>
+<img alt="alt text" src="assets/image-23.png" /></p>
 <p>这时看起来电路为三阶。但由于三个电感的带内容有耦合关系
 $$
 i_A=i_B+i_C
@@ -2531,8 +2800,8 @@ H(j\omega)&amp;=-10^6\frac{1+\frac{j\omega}{5\times 10^4}}{\left(1+\frac{j\omega
 \end{cases}
 \]</div>
 <p>进而绘制幅频相频特性为</p>
-<p><img alt="alt text" src="../assets/image-25.png" />
-<img alt="alt text" src="../assets/image-24.png" /></p>
+<p><img alt="alt text" src="assets/image-25.png" />
+<img alt="alt text" src="assets/image-24.png" /></p>
 </details>
 <h4 id="_21">滤波器特性分析</h4>
 <p>这一部分首先要掌握3dB的概念。3dB即为<span class="arithmatex">\(H(s)=\frac{H_0}{\sqrt 2}\)</span>，对应可以定义3dB频点、3dB带宽等概念。</p>
@@ -2612,7 +2881,7 @@ $$
 <p>当发生谐振时，<span class="arithmatex">\(Z\)</span>和<span class="arithmatex">\(Y\)</span>为实数，即<span class="arithmatex">\(\Im [Z]=0\,,\Im[Y]=0\)</span>。此时并联LC等效为开路，串联LC等效为短路。</p>
 <h4 id="_22">信号通路法和开短路时间常数法</h4>
 <p>信号通路法是估计零点的方法。当两条不同属性的路径到达输出端时会产生零点，类似于增透增反膜。如下面这个例子
-<img alt="alt text" src="../assets/image-26.png" />
+<img alt="alt text" src="assets/image-26.png" />
 其中存在两条路径：</p>
 <ol>
 <li>输入-<span class="arithmatex">\(g_m\)</span>-<span class="arithmatex">\(R_L\)</span>(主通路)</li>
@@ -2682,20 +2951,20 @@ r_{ds} = \frac{V_A}{I_D}
 <div class="admonition question">
 <p class="admonition-title">2024年T5</p>
 <p>已知运放电压放大倍数<span class="arithmatex">\(A_{v0}\)</span>和晶体管T的跨导<span class="arithmatex">\(g_m\)</span>，计算该放大器的输入输出电阻和增益（认为晶体管T理想，<span class="arithmatex">\(r_{bc}\,,r_{ce}\)</span>\to\infty$.）
-<img alt="alt text" src="../assets/image-43.png" /></p>
+<img alt="alt text" src="assets/image-43.png" /></p>
 </div>
 <details class="success">
 <summary>答案</summary>
 <p>首先分析该电路的连接方式。将其进行变形得到（注意<span class="arithmatex">\(V_{CC}\,,V_{EE}\)</span>都是交流地）
-<img alt="alt text" src="../assets/image-44.png" /></p>
+<img alt="alt text" src="assets/image-44.png" /></p>
 <p>因此这显然是一个<strong>串串连接</strong>，进而建模为<strong>压控流源</strong>。进一步分析开环放大器参数，使用<em>反馈网络画两边，放大网络画一遍</em>的方法并将输入侧反馈源置零，输出侧反馈载置零得到</p>
-<p><img alt="alt text" src="../assets/image-45.png" /></p>
+<p><img alt="alt text" src="assets/image-45.png" /></p>
 <p>计算输出阻抗时将输入电压置0，输出端加电压<span class="arithmatex">\(v_{test}\)</span>得到</p>
-<p><img alt="alt text" src="../assets/image-47.png" /></p>
+<p><img alt="alt text" src="assets/image-47.png" /></p>
 <p>此时运放被掐死了，因此电路等效为</p>
-<p><img alt="alt text" src="../assets/image-48.png" /></p>
+<p><img alt="alt text" src="assets/image-48.png" /></p>
 <p>进而<span class="arithmatex">\(I_{test} = g_m v_{test}\)</span>, <span class="arithmatex">\(r_{out,o}=\frac{1}{g_m}\)</span>.分析输入阻抗和跨导放大倍数时，短路输出，输入端加电压得到</p>
-<p><img alt="alt text" src="../assets/image-49.png" /></p>
+<p><img alt="alt text" src="assets/image-49.png" /></p>
 <p>不难算出<span class="arithmatex">\(i_{out,o}=-g_mv_{in}A_{v0}\)</span>, 且<span class="arithmatex">\(r_{in,o}=\infty\)</span>. 因此开环跨导<span class="arithmatex">\(G_{m,o}=-g_mA_{v0}\)</span>.</p>
 <p>然后分析反馈网络，注意这是压控流源，因此反馈系数应当是跨阻<span class="arithmatex">\(F=R_c\)</span>. 进而得到环路增益<span class="arithmatex">\(T=-g_mR_cA_{v0}\)</span>.</p>
 <p>最后代入得到</p>
@@ -2714,6 +2983,27 @@ G_m = \frac{A_{v0}}{1+T}=-\frac{1}{R_C}
 
 
 
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="最后更新">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年9月1日 05:33:20 UTC">2025年9月1日</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
 
 
 
@@ -2730,21 +3020,89 @@ G_m = \frac{A_{v0}}{1+T}=-\frac{1}{R_C}
           <button type="button" class="md-top md-icon" data-md-component="top" hidden>
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
-  Back to top
+  回到页面顶部
 </button>
         
       </main>
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="solid.html" class="md-footer__link md-footer__link--prev" aria-label="上一页: 固体物理">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                固体物理
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="analog.html" class="md-footer__link md-footer__link--next" aria-label="下一页: 模拟电路原理">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                模拟电路原理
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024 - 2026 Weitao JIANG.
+    </div>
   
   
     Made with
     <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
       Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="mailto:cbdt@weitao-jiang.cn" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0 1 14.25 14H1.75A1.75 1.75 0 0 1 0 12.25v-8.5C0 2.784.784 2 1.75 2M1.5 12.251c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25V5.809L8.38 9.397a.75.75 0 0 1-.76 0L1.5 5.809zm13-8.181v-.32a.25.25 0 0 0-.25-.25H1.75a.25.25 0 0 0-.25.25v.32L8 7.88Z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.weitao-jiang.cn" target="_blank" rel="noopener" title="www.weitao-jiang.cn" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .75.75 0 0 1 .018-1.042.75.75 0 0 1 1.042-.018 2 2 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.75.75 0 0 1-1.042-.018.75.75 0 0 1-.018-1.042m-4.69 9.64a2 2 0 0 0 2.83 0l1.25-1.25a.75.75 0 0 1 1.042.018.75.75 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .75.75 0 0 1-.018 1.042.75.75 0 0 1-1.042.018 2 2 0 0 0-2.83 0l-2.5 2.5a2 2 0 0 0 0 2.83"/></svg>
     </a>
   
 </div>
@@ -2762,24 +3120,24 @@ G_m = \frac{A_{v0}}{1+T}=-\frac{1}{R_C}
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "search.highlight", "search.share", "attr_list", "md_in_html"], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.footer", "search.highlight", "search.share", "attr_list", "md_in_html"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>
       
-        <script src="../javascripts/navigation.js"></script>
+        <script src="javascripts/navigation.js"></script>
       
-        <script src="../themes/js/custom.js"></script>
+        <script src="themes/js/custom.js"></script>
       
-        <script src="../themes/js/simpleLightbox.min.js"></script>
+        <script src="themes/js/simpleLightbox.min.js"></script>
       
-        <script src="../themes/js/optionalConfig.js"></script>
+        <script src="themes/js/optionalConfig.js"></script>
       
-        <script src="../themes/js/mermaidloader.js"></script>
+        <script src="themes/js/mermaidloader.js"></script>
       
-        <script src="../themes/js/umlconvert.js"></script>
+        <script src="themes/js/umlconvert.js"></script>
       
-        <script src="../themes/js/mathjax.js"></script>
+        <script src="themes/js/mathjax.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
       

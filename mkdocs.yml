@@ -1,8 +1,15 @@
 site_name: CBDT的资料屋
 site_url: https://www.weitao-jiang.cn
 docs_dir: notes
+repo_url: https://github.com/CBDT-JWT/EEnotes
+repo_name: CBDT-JWT/EEnotes
 plugins:
   - search
+  - git-revision-date-localized:
+      enable_creation_date: false
+      type: date
+  - offline
+copyright: Copyright &copy; 2024 - 2026 Weitao JIANG.
 markdown_extensions:
   - def_list
   - neoteroi.timeline
@@ -27,24 +34,61 @@ markdown_extensions:
 extra_css:
 - css/neoteroi-mkdocs.css
 - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css
-  
+
+nav:
+  - 首页: index.md
+  - 数理基础:
+    - 线性代数(1): LinearAlgebra.md
+    - 线性代数(2): LinearAlgebra2.md
+    - 大学物理: BigPhysics.md
+  - 物理-电磁组:  
+    - 电磁场与电磁波: emwaves.md
+    - 量子与统计: quant.md
+    - 固体物理: solid.md
+  - 电路组:
+    - 电子电路与系统基础: circuits.md
+    - 模拟电路原理: analog.md
+    - 数字逻辑与处理器基础: digital.md
+    - 微波与光波技术基础: micro.md
+  - 信号组:
+    - 信号与系统: ss.md
+    - 数字信号处理: dsp.md
+    - 通信与网络: comm.md
+    - 随机过程: stochasticprocess.md
+  - 计算机组:
+    - 程设基础: prog.md
+    - 数据结构与算法: dsa.md
+    - 媒体与认知: media-and-cog.md
+    - Matlab高级编程与工程应用: matlab.md
 theme:
   name: material
-  
-  palette:
-    scheme: slate
-    primary: black
-    accent: yellow
+  logo: https://www.weitao-jiang.cn/images/avatar.jpg
+  palette: 
+    
+    # Palette toggle for light mode
+    - scheme: default
+      toggle:
+        icon: material/brightness-7 
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  language: zh
   features:
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.sections
     - navigation.top
+    - navigation.footer
     - search.highlight
     - search.share
     - attr_list
     - md_in_html
   icon:
+    repo: fontawesome/brands/github
     admonition:
       note: octicons/tag-16
       abstract: octicons/checklist-16
@@ -81,3 +125,10 @@ extra_javascript:
 - https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-svg-full.js
 #- https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js
 #- https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js
+
+extra:
+  social:
+    - icon: octicons/mail-16
+      link: mailto:cbdt@weitao-jiang.cn
+    - icon: octicons/link-16
+      link: https://www.weitao-jiang.cn
