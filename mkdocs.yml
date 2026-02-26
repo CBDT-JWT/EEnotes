@@ -13,10 +13,17 @@ copyright: Copyright &copy; 2024 - 2026 Weitao JIANG.
 markdown_extensions:
   - def_list
   - neoteroi.timeline
+  - footnotes
   - pymdownx.arithmatex:
        generic: true
   - pymdownx.tasklist:
        custom_checkbox: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
@@ -63,6 +70,7 @@ nav:
 theme:
   name: material
   logo: https://www.weitao-jiang.cn/images/avatar.jpg
+  favicon: https://www.weitao-jiang.cn/images/favicon.ico
   palette: 
     
     # Palette toggle for light mode
@@ -78,6 +86,9 @@ theme:
         name: Switch to light mode
   language: zh
   features:
+    - content.code.copy
+    - content.code.select
+    - content.code.annotate
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.sections
