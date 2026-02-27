@@ -1,10 +1,15 @@
 site_name: CBDT的资料屋
-site_url: https://www.weitao-jiang.cn
+site_url: https://note.weitao-jiang.cn
 docs_dir: notes
 repo_url: https://github.com/CBDT-JWT/EEnotes
 repo_name: CBDT-JWT/EEnotes
 plugins:
   - search
+  - social:
+      cards_layout_options:
+        background_image: notes/assets/2image.png
+        background_color: transparent
+        font_family: Noto Sans SC
   - git-revision-date-localized:
       enable_creation_date: false
       type: date
@@ -66,11 +71,14 @@ nav:
     - 程设基础: prog.md
     - 数据结构与算法: dsa.md
     - 媒体与认知: media-and-cog.md
+  - 科研与工具:
     - Matlab高级编程与工程应用: matlab.md
+    - 模拟数字数据转换器: adda.md
 theme:
   name: material
   logo: https://www.weitao-jiang.cn/images/avatar.jpg
   favicon: https://www.weitao-jiang.cn/images/favicon.ico
+  custom_dir: overrides
   palette: 
     
     # Palette toggle for light mode
