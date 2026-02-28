@@ -1237,7 +1237,35 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#fourier" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fourier 变换
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fourier 变换">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        傅立叶级数
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
       
         通信系统
@@ -1249,7 +1277,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     <span class="md-ellipsis">
       
         系统可实现性、佩里维纳准则
@@ -1261,7 +1289,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+  <a href="#_10" class="md-nav__link">
     <span class="md-ellipsis">
       
         佩里维纳准则
@@ -1272,7 +1300,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
+  <a href="#_11" class="md-nav__link">
     <span class="md-ellipsis">
       
         希尔伯特变换
@@ -1288,7 +1316,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
+  <a href="#_12" class="md-nav__link">
     <span class="md-ellipsis">
       
         调制解调
@@ -1355,7 +1383,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
+  <a href="#_13" class="md-nav__link">
     <span class="md-ellipsis">
       
         复用
@@ -1869,7 +1897,35 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#fourier" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fourier 变换
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fourier 变换">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        傅立叶级数
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
       
         通信系统
@@ -1881,7 +1937,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     <span class="md-ellipsis">
       
         系统可实现性、佩里维纳准则
@@ -1893,7 +1949,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+  <a href="#_10" class="md-nav__link">
     <span class="md-ellipsis">
       
         佩里维纳准则
@@ -1904,7 +1960,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
+  <a href="#_11" class="md-nav__link">
     <span class="md-ellipsis">
       
         希尔伯特变换
@@ -1920,7 +1976,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
+  <a href="#_12" class="md-nav__link">
     <span class="md-ellipsis">
       
         调制解调
@@ -1987,7 +2043,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
+  <a href="#_13" class="md-nav__link">
     <span class="md-ellipsis">
       
         复用
@@ -2253,8 +2309,15 @@ f_1(t)\ast f_2(t)=\int_{-\infty}^\infty f_1(\tau)f_2(t-\tau)\mathrm d\tau
 f_1(t-T_1)\ast f_2(t-T_2)=c(t-T_1-T_2)
 \]</div>
 <p><strong>筛选特性</strong>：<span class="arithmatex">\(f(t)\ast\delta(t-t_0)=f(t-t_0)\)</span>  </p>
-<h2 id="_7">通信系统</h2>
-<h3 id="_8">系统可实现性、佩里维纳准则</h3>
+<h2 id="fourier">Fourier 变换</h2>
+<p>当代通信系统和信号处理技术的发展处处伴随着傅里叶变换的精心应用。作为一种变换方法，傅里叶变换启发引领了一系列变换方法的产生：陆续出现了短时傅里叶变换、Gabor 展开、Wigner-Wille 分布、小波变换、子带编码等众多研究课题。</p>
+<h3 id="_7">傅立叶级数</h3>
+<p>周期信号可以表示为一系列三角函数的叠加，即傅立叶级数：</p>
+<div class="arithmatex">\[
+f(t)=a_0+\sum_{n=1}^\infty\left[a_n\cos\left(\frac{2\pi nt}{T}\right)+b_n\sin\left(\frac{2\pi nt}{T}\right)\right]
+\]</div>
+<h2 id="_8">通信系统</h2>
+<h3 id="_9">系统可实现性、佩里维纳准则</h3>
 <p>可实现系统要求因果性，因此无法实现理想低通滤波器等非因果系统。可以通过增大阶数（引入更多元件）改善系统性能。</p>
 <p>频域角度，可实现性要求 <mark>幅度函数</mark> <span class="arithmatex">\(|H(j\omega)|\)</span><mark>满足平方可积</mark>，即</p>
 <div class="arithmatex">\[
@@ -2264,7 +2327,7 @@ f_1(t-T_1)\ast f_2(t-T_2)=c(t-T_1-T_2)
 <div class="arithmatex">\[
 \int_{-\infty}^\infty|h(t)|^2\mathrm dt&lt;\infty
 \]</div>
-<h4 id="_9">佩里维纳准则</h4>
+<h4 id="_10">佩里维纳准则</h4>
 <p>对于系统的频率响应<span class="arithmatex">\(H(j\omega)\)</span>，如果不满足以下条件，则系统是不可实现的：</p>
 <div class="arithmatex">\[
 \int_{-\infty}^\infty\frac{\left|\ln|H(j\omega)|\right|}{1+\omega^2}\mathrm d\omega&lt;\infty
@@ -2281,7 +2344,7 @@ f_1(t-T_1)\ast f_2(t-T_2)=c(t-T_1-T_2)
 <li>只有 <mark>多项式类型</mark> 的函数和 <mark>双曲函数</mark> 的频率响应满足佩里维纳准则。</li>
 </ol>
 </div>
-<h4 id="_10">希尔伯特变换</h4>
+<h4 id="_11">希尔伯特变换</h4>
 <p>佩里维纳准则约束了幅频响应，对于相位（即实虚部的相互约束），需要采用希尔伯特变换。对于因果系统</p>
 <div class="arithmatex">\[
 h(t)=h(t)u(t)=h(t)\mathrm{sgn}(t)
@@ -2325,7 +2388,7 @@ f(t)=\mathcal{H}^{-1}\{\hat f(t)\}=-\frac{1}{\pi}\int_{-\infty}^\infty\frac{\hat
 \mathcal{F}\{\frac{1}{\pi t}\ast\left(-\frac{1}{\pi t}\right)\}=\mathcal{F}\left\{\frac{1}{\pi t}\right\}\cdot\mathcal{F}\left\{-\frac{1}{\pi t}\right\}=-j\mathrm{sgn}(\omega)\cdot j\mathrm{sgn}(\omega)=1
 \]</div>
 </div>
-<h3 id="_11">调制解调</h3>
+<h3 id="_12">调制解调</h3>
 <p>调制解调器 (Modem，猫) 指用电话线传送计算机数据的设备。<mark>现代无线系统需要调制解调的原因：</mark></p>
 <ol>
 <li>大气对音频衰减严重，为传输更远将音频调到更高频带</li>
@@ -2443,7 +2506,7 @@ f(t)=A\cos\left[\omega_c t+\int_{-\infty}^t g(\tau)\mathrm d\tau\right]
 <li>信道中的加性噪声和衰落引发的幅度变化将直接加在 AM的调制信号上，但对 PM 和 FM 信号，能在很大程度上被接收机消除</li>
 </ol>
 <p><img alt="alt text" src="assets/ss_1772245842673_png" /></p>
-<h4 id="_12">复用</h4>
+<h4 id="_13">复用</h4>
 <p><strong>频分复用（FDM）</strong>：将不同信号调制到不同载波上，利用频带分割实现多路复用。</p>
 <p><img alt="alt text" src="assets/ss_1772245961186_png" /></p>
 <p><strong>解复用</strong>：通过带通滤波器提取出对应频段的信号，然后解调得到原始信号。</p>
@@ -2468,7 +2531,7 @@ f(t)=A\cos\left[\omega_c t+\int_{-\infty}^t g(\tau)\mathrm d\tau\right]
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年2月27日 09:12:50 UTC">2026年2月27日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年2月28日 03:41:52 UTC">2026年2月28日</span>
   </span>
 
     
@@ -2497,6 +2560,7 @@ f(t)=A\cos\left[\omega_c t+\int_{-\infty}^t g(\tau)\mathrm d\tau\right]
         
       </main>
       
+  
         <footer class="md-footer">
   
     
@@ -2544,7 +2608,11 @@ f(t)=A\cos\left[\omega_c t+\int_{-\infty}^t g(\tau)\mathrm d\tau\right]
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2024 - 2026 Weitao JIANG.
+      Copyright &copy; 2024 - 2026 Weitao JIANG. <br>
+<a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">京ICP备2025155858号-1</a> | 
+<a href="https://beian.mps.gov.cn/#/query/webSearch?code=11010802047067" rel="noreferrer" target="_blank">京公网安备11010802047067号</a> | 
+<a href="https://icp.gov.moe/?keyword=20268192" target="_blank">萌ICP备20268192号</a>
+
     </div>
   
   
@@ -2583,6 +2651,16 @@ f(t)=A\cos\left[\omega_c t+\int_{-\infty}^t g(\tau)\mathrm d\tau\right]
   </div>
 </footer>
       
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const copyright = document.querySelector('.md-footer-copyright__highlight');
+      if (copyright) {
+        const beianHTML = ` | <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">京ICP备2025155858号-1</a> | <a href="https://beian.mps.gov.cn/#/query/webSearch?code=11010802047067" rel="noreferrer" target="_blank" style="display: inline-flex; align-items: center; gap: 4px; text-decoration: none;"><img src="https://beian.mps.gov.cn/web/assets/logo01.6189a29f.png" alt="police" style="height: 14px; vertical-align: middle;">京公网安备11010802047067号</a> | <a href="https://icp.gov.moe/?keyword=20268192" target="_blank" style="text-decoration: none;">萌ICP备20268192号</a>`;
+        copyright.insertAdjacentHTML('afterend', beianHTML);
+      }
+    });
+  </script>
+
     </div>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>

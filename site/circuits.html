@@ -3177,6 +3177,7 @@ G_m = \frac{A_{v0}}{1+T}=-\frac{1}{R_C}
         
       </main>
       
+  
         <footer class="md-footer">
   
     
@@ -3224,7 +3225,11 @@ G_m = \frac{A_{v0}}{1+T}=-\frac{1}{R_C}
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2024 - 2026 Weitao JIANG.
+      Copyright &copy; 2024 - 2026 Weitao JIANG. <br>
+<a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">京ICP备2025155858号-1</a> | 
+<a href="https://beian.mps.gov.cn/#/query/webSearch?code=11010802047067" rel="noreferrer" target="_blank">京公网安备11010802047067号</a> | 
+<a href="https://icp.gov.moe/?keyword=20268192" target="_blank">萌ICP备20268192号</a>
+
     </div>
   
   
@@ -3263,6 +3268,16 @@ G_m = \frac{A_{v0}}{1+T}=-\frac{1}{R_C}
   </div>
 </footer>
       
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const copyright = document.querySelector('.md-footer-copyright__highlight');
+      if (copyright) {
+        const beianHTML = ` | <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">京ICP备2025155858号-1</a> | <a href="https://beian.mps.gov.cn/#/query/webSearch?code=11010802047067" rel="noreferrer" target="_blank" style="display: inline-flex; align-items: center; gap: 4px; text-decoration: none;"><img src="https://beian.mps.gov.cn/web/assets/logo01.6189a29f.png" alt="police" style="height: 14px; vertical-align: middle;">京公网安备11010802047067号</a> | <a href="https://icp.gov.moe/?keyword=20268192" target="_blank" style="text-decoration: none;">萌ICP备20268192号</a>`;
+        copyright.insertAdjacentHTML('afterend', beianHTML);
+      }
+    });
+  </script>
+
     </div>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>

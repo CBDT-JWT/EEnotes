@@ -14,7 +14,11 @@ plugins:
       enable_creation_date: false
       type: date
   - offline
-copyright: Copyright &copy; 2024 - 2026 Weitao JIANG.
+copyright: |
+  Copyright &copy; 2024 - 2026 Weitao JIANG. <br>
+  <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">京ICP备2025155858号-1</a> | 
+  <a href="https://beian.mps.gov.cn/#/query/webSearch?code=11010802047067" rel="noreferrer" target="_blank">京公网安备11010802047067号</a> | 
+  <a href="https://icp.gov.moe/?keyword=20268192" target="_blank">萌ICP备20268192号</a>
 markdown_extensions:
   - def_list
   - neoteroi.timeline
