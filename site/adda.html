@@ -144,6 +144,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1412,6 +1417,24 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    模拟数字数据转换器
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="adda.html" class="md-nav__link md-nav__link--active">
         
   
@@ -1428,6 +1451,90 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        数据转换器的性能指标
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="数据转换器的性能指标">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        静态指标
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="静态指标">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dnl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        微分非线性 (DNL)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        积分非线性 (INL)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        动态指标
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1459,6 +1566,81 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        数据转换器的性能指标
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="数据转换器的性能指标">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        静态指标
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="静态指标">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dnl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        微分非线性 (DNL)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        积分非线性 (INL)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        动态指标
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1479,7 +1661,164 @@
 
   <h1>模拟数字数据转换器</h1>
 
-
+<h2 id="_1">数据转换器的性能指标</h2>
+<p>数据转换器的性能指标分为静态和动态两类。</p>
+<h3 id="_2">静态指标</h3>
+<p>包括：</p>
+<ol>
+<li>失调</li>
+<li>增益误差</li>
+<li>微分非线性（DNL）</li>
+<li>积分非线性（INL）</li>
+</ol>
+<p>失调指起始点相对于理想位置的便宜，增益误差指去除失调后终点相比理想位置的偏移，都以LSB为单位。</p>
+<p>ADC的起始点指第一个切换位置前<span class="arithmatex">\(0.5LSB\)</span>处，终点指最后一个切换位置后<span class="arithmatex">\(0.5LSB\)</span>处。</p>
+<p><img alt="alt text" src="assets/adda_1772417316058_png" /></p>
+<p>DAC的起始点与终点分别为最小、最大输入数字码字对应的模拟输出电压,增益误差与失调同样以LSB为单位</p>
+<p><img alt="alt text" src="assets/adda_1772417384084_png" /></p>
+<p>当关心输出的精确绝对值时，增益和失调误差非常重要；在其他某些应用场景中，增益和失调误差并不重要（因为不会引入失真），通常更关注非线性（DNL和INL）指标。</p>
+<h4 id="dnl">微分非线性 (DNL)</h4>
+<p>对于理想线性的有限精度ADC，所有输出码字的码宽相等；对于理想线性的有限精度DAC，所有输出电平的步长相等。</p>
+<p>但真实的ADC/DAC的输出码宽/步长不一定是均匀的。</p>
+<p>ADC的<span class="arithmatex">\(DNL[k]\)</span> 被定义为<mark class="critic">第k个码字的码宽偏离平均码宽的程度</mark>,用来衡量<strong>码宽的均匀程度</strong>。</p>
+<div class="arithmatex">\[
+DNL[k] = \frac{W[k] - W_{avg}}{W_{avg}}
+\]</div>
+<p>其中</p>
+<div class="arithmatex">\[
+W[k] = T[k+1] - T[k]\quad, W_{avg} = \frac{T[N] - T[1]}{N}
+\]</div>
+<p>如下图ADC中有</p>
+<div class="arithmatex">\[
+W_{avg}=\frac{9.4\mathrm V-1.0\mathrm V}{6}=1.4\mathrm V
+\]</div>
+<div class="arithmatex">\[
+DNL[k]=\frac{W[k]-1.4\mathrm V}{1.4\mathrm V}
+\]</div>
+<p><img alt="alt text" src="assets/adda_1772417857972_png" /></p>
+<p><img alt="alt text" src="assets/adda_1772417947252_png" /></p>
+<ul>
+<li>DNL正负性表示该码字的码宽相对于平均码宽更宽还是更窄</li>
+<li>DNL=-1 LSB代表失码</li>
+<li>DNL可以大于+1 LSB，但一定不小于-1LSB。</li>
+<li><mark class="critic">各个码字的DNL之和为0</mark></li>
+</ul>
+<p>一个设计良好的ADC的DNL通常在<span class="arithmatex">\(\pm 1LSB\)</span>范围内。可以对ADC输入均匀斜升信号，并测量每一输出码字的<strong>保持时间</strong>来得到相对码宽。</p>
+<p>DAC的DNL定义为第k个输出电平的步长偏离平均步长的程度，可以小于-1LSB。</p>
+<div class="arithmatex">\[
+DNL[k] = \frac{Step[k] - Step_{avg}}{Step_{avg}}
+\]</div>
+<p><img alt="alt text" src="assets/adda_1772418181800_png" /></p>
+<h4 id="inl">积分非线性 (INL)</h4>
+<p>INL刻画了<mark class="critic">整体的转移特性曲线</mark>相比理想的转移特性曲线的偏差。</p>
+<p><img alt="alt text" src="assets/adda_1772418394866_png" /></p>
+<p>ADC的INL定义为第k个码字的实际切换位置与理想切换位置的偏差，单位为LSB。</p>
+<div class="arithmatex">\[
+INL[k] = \frac{T[k] - T_{0}[k]}{W_{avg}}
+\]</div>
+<p>其中 <span class="arithmatex">\(T[k]\)</span> 为第 <span class="arithmatex">\(k\)</span> 个码字的实际切换位置，<span class="arithmatex">\(T_{0}[k]\)</span> 为理想切换位置，<span class="arithmatex">\(W_{avg}\)</span> 为平均码宽注意<strong>INL(0)无定义</strong>。</p>
+<p><img alt="alt text" src="assets/adda_1772420220586_png" /></p>
+<p>INL与DNL的关系：</p>
+<div class="arithmatex">\[
+INL[k] = \sum_{i=1}^{k-1} DNL[i]
+\]</div>
+<table>
+<thead>
+<tr>
+<th>Code [k]</th>
+<th>ADC #1 DNL [LSB]</th>
+<th>ADC #1 INL [LSB]</th>
+<th>ADC #2 DNL [LSB]</th>
+<th>ADC #2 INL [LSB]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>-0.6</td>
+<td>0</td>
+<td>-0.6</td>
+<td>0</td>
+</tr>
+<tr>
+<td>2</td>
+<td>-0.6</td>
+<td>-0.6</td>
+<td>+0.6</td>
+<td>-0.6</td>
+</tr>
+<tr>
+<td>3</td>
+<td>-0.6</td>
+<td>-1.2</td>
+<td>-0.6</td>
+<td>0</td>
+</tr>
+<tr>
+<td>4</td>
+<td>-0.6</td>
+<td>-1.8</td>
+<td>+0.6</td>
+<td>-0.6</td>
+</tr>
+<tr>
+<td>5</td>
+<td>+0.6</td>
+<td>-2.4</td>
+<td>-0.6</td>
+<td>0</td>
+</tr>
+<tr>
+<td>6</td>
+<td>+0.6</td>
+<td>-1.8</td>
+<td>+0.6</td>
+<td>-0.6</td>
+</tr>
+<tr>
+<td>7</td>
+<td>+0.6</td>
+<td>-1.2</td>
+<td>-0.6</td>
+<td>0</td>
+</tr>
+<tr>
+<td>8</td>
+<td>+0.6</td>
+<td>-0.6</td>
+<td>+0.6</td>
+<td>-0.6</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Undefined</td>
+<td>0</td>
+<td>Undefined</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p>可见ADC#1更不线性。</p>
+<p><img alt="alt text" src="assets/adda_1772420376920_png" /></p>
+<p>可以从DNL/INL曲线推测出ADC的架构；一个设计良好的ADC的INL和DNL都应在<span class="arithmatex">\(\pm 1\)</span> LSB之间</p>
+<p><strong>DAC的INL</strong>与ADC类似。定义为</p>
+<div class="arithmatex">\[
+INL[k] = \frac{V_{out}[k] - V_{out,0}[k]}{Step_{avg}}
+\]</div>
+<h3 id="_3">动态指标</h3>
+<p>常用的动态指标：</p>
+<ul>
+<li>信号噪声比（Signal-to-noise ratio, SNR）</li>
+<li>信号噪声失真比（Signal-to-(noise + distortion) ratio, SNDR/SINAD）</li>
+<li>有效位数（Effective number of bits, ENOB）</li>
+<li>动态范围（Dynamic range, DR）：</li>
+<li>无杂散动态范围（Spurious free dynamic range, SFDR）</li>
+<li>总谐波失真（Total harmonic distortion, THD）</li>
+<li>有效精度带宽（Effective Resolution Bandwidth, ERBW）</li>
+<li>交调失真（Intermodulation distortion, IMD）</li>
+<li>多音功率比（Multi-tone power ratio, MTPR）</li>
+</ul>
+<p><img alt="alt text" src="assets/adda_1772425072943_png" /></p>
 
 
 
@@ -1500,7 +1839,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年2月27日 09:12:50 UTC">2026年2月27日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年3月2日 04:18:58 UTC">2026年3月2日</span>
   </span>
 
     
