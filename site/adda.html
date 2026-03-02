@@ -1469,6 +1469,45 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
+        数据转换基本概念
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="数据转换基本概念">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ADC与采样
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模拟信号的量化
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
         数据转换器的性能指标
       
     </span>
@@ -1478,7 +1517,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
         静态指标
@@ -1517,7 +1556,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
         动态指标
@@ -1576,6 +1615,45 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
+        数据转换基本概念
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="数据转换基本概念">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ADC与采样
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模拟信号的量化
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
         数据转换器的性能指标
       
     </span>
@@ -1585,7 +1663,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
         静态指标
@@ -1624,7 +1702,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
         动态指标
@@ -1661,9 +1739,61 @@
 
   <h1>模拟数字数据转换器</h1>
 
-<h2 id="_1">数据转换器的性能指标</h2>
+<h2 id="_1">数据转换基本概念</h2>
+<h3 id="adc">ADC与采样</h3>
+<p>模数转换：<mark class="critic">采样,量化,输出</mark></p>
+<p><img alt="alt text" src="assets/adda_1772451149952_png" /></p>
+<p>理论上可以交换顺序，但实际上不这么干。</p>
+<p>理想采样：</p>
+<div class="arithmatex">\[
+x_d(t)=\sum_{n=-\infty}^{\infty} x(nT)\delta(t-nT_s)
+\]</div>
+<p>频域上等价于乘法，把<span class="arithmatex">\(X(f)\)</span>复制搬移到<span class="arithmatex">\(Nf_s\)</span>处</p>
+<div class="arithmatex">\[
+X_d(f) = X(f) * \frac{1}{T_s}\sum_{n=-\infty}^{\infty} \delta(f-\frac{n}{T_s})
+\]</div>
+<p><img alt="alt text" src="assets/adda_1772450917659_png" /></p>
+<p><img alt="alt text" src="assets/adda_1772451020422_png" /></p>
+<p>当<span class="arithmatex">\(f_s&gt;2B\)</span>不会混叠，<span class="arithmatex">\(f_s&lt;2B\)</span>会混叠。采样率<span class="arithmatex">\(2B\)</span>被称为Nyquist rate。如果存在带外干扰和噪声，则可以通过<strong>增大</strong><span class="arithmatex">\(f_s\)</span>让<span class="arithmatex">\([0,f_s/2]\)</span>覆盖大部分干扰和噪声，然后用滤波器限制B。</p>
+<p>利用模拟滤波器可以抑制不想要的信号，即抗混叠滤波器。</p>
+<p><img alt="alt text" src="assets/adda_1772451801264_png" /></p>
+<p>增大带外衰减的方法：</p>
+<ol>
+<li>增大<span class="arithmatex">\(f_s/B\)</span>(过采样率)</li>
+<li>增大滤波器阶数</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">注意</p>
+<p><span class="arithmatex">\(f_s/B=2\)</span>的时候无法抗混叠滤波，即使提高滤波器阶数也没用！</p>
+</div>
+<p><img alt="alt text" src="assets/adda_1772452000230_png" /></p>
+<p>采样的分类：</p>
+<ol>
+<li>Nyquist采样：<span class="arithmatex">\(f_s&gt;2B\)</span>,作数据转换器，实际上会<mark class="critic">轻微过采样</mark></li>
+<li>过采样：<span class="arithmatex">\(f_s\gg 2B\)</span>。抗混叠滤波容易实现；同时可以降低量化噪声</li>
+<li>欠采样：<span class="arithmatex">\(f_s&lt;2B\)</span>，用于利用频谱混叠完成高频信号的下变频</li>
+</ol>
+<p>利用欠采样进行高频信号下变频的原理如下：</p>
+<p><img alt="alt text" src="assets/adda_1772460743256_png" /></p>
+<p>需要使用高Q值带通滤波器防止噪声混叠</p>
+<h3 id="_2">模拟信号的量化</h3>
+<p><img alt="alt text" src="assets/adda_1772460863613_png" /></p>
+<ul>
+<li><span class="arithmatex">\(V_q\)</span>: 量化电压</li>
+<li><span class="arithmatex">\(e_q\)</span>: 量化误差</li>
+<li><span class="arithmatex">\(e_q=V_q-V_{in}\)</span></li>
+</ul>
+<p>理想情况下具有无限大的输入范围和无限数量的量化电平，但实际中输入范围和量化电平都是有限的。超出转化码字边界时，量化误差会超出允许范围。当施加的输入信号超过FSR时，就会发生过载（overloading）。</p>
+<p><img alt="alt text" src="assets/adda_1772461236355_png" /></p>
+<p><strong>相关术语</strong></p>
+<ul>
+<li>LSB大小：与码字宽度<span class="arithmatex">\(\Delta\)</span>等价</li>
+<li>切换位置（Transition Level）：<span class="arithmatex">\(T[k]\)</span>是码字<span class="arithmatex">\(k-1\)</span>和<span class="arithmatex">\(k\)</span>之间的边界位置</li>
+<li>码宽（Code Width）：<span class="arithmatex">\(W[k]=T[k+1]-T[k]\)</span></li>
+</ul>
+<h2 id="_3">数据转换器的性能指标</h2>
 <p>数据转换器的性能指标分为静态和动态两类。</p>
-<h3 id="_2">静态指标</h3>
+<h3 id="_4">静态指标</h3>
 <p>包括：</p>
 <ol>
 <li>失调</li>
@@ -1805,7 +1935,7 @@ INL[k] = \sum_{i=1}^{k-1} DNL[i]
 <div class="arithmatex">\[
 INL[k] = \frac{V_{out}[k] - V_{out,0}[k]}{Step_{avg}}
 \]</div>
-<h3 id="_3">动态指标</h3>
+<h3 id="_5">动态指标</h3>
 <p>常用的动态指标：</p>
 <ul>
 <li>信号噪声比（Signal-to-noise ratio, SNR）</li>
