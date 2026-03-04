@@ -93,3 +93,172 @@ $$
 $$
 
 得鲁德模型取得了相当大的成功，特别是对金属。但它也存在一些问题，即大大高估了金属的电子热容。
+
+### 索末菲电子理论
+
+#### 量子力学基本概念
+
+**薛定谔方程**
+
+$$
+i\hbar \frac{\partial}{\partial t}\psi(\mathbf{r},t) = \left(-\frac{\hbar^2}{2m}\nabla^2 + U(\mathbf{r})\right)\psi(\mathbf{r},t)
+$$
+
+**费米狄拉克分布**
+
+$$
+f(E) = \frac{1}{e^{\frac{E-E_F}{k_B T}} + 1}
+$$
+
+费米能级$E_F$由系统中电子总数$N$决定：
+
+$$
+\sum_{E_i}f(E_i) = N
+$$
+
+对系统所有本征态叠加。对于一维自由电子，有$E(k) = \frac{\hbar^2 k^2}{2m}$
+
+#### 波恩卡门条件
+
+在无穷大空间中$E$连续分布，有无穷个取值无法确定$E_F$，因此引入**周期性边界条件**，使得$k$离散化：(波恩-卡门条件)：
+
+![alt text](assets/solid_1772509553450_png)
+
+$$
+\psi(x+Na) = \psi(x)
+$$
+
+波恩-卡门条件是{==忽略边界影响的边界条件==}。代入得到
+
+$$
+\frac{1}{\sqrt{Na}}\exp(ik_x(x+Na)) = \frac{1}{\sqrt{Na}}\exp(ik_x x)
+$$
+
+因此
+
+$$
+k_x = \frac{2\pi}{Na}n, n=0\,,1\,,2\,,\cdots
+$$
+
+**成立的条件**:{==忽略了边界的影响，对于大量原子的情况是很好的近似==}
+
+![alt text](assets/solid_1772509895263_png)
+
+三维情况下，类比得到
+
+$$
+k_{x,y,z} = \frac{2\pi}{L_{x,y,z}}n_{x,y,z},\quad n_{x,y,z}=0\,,1\,,2\,,\cdots
+$$
+
+在3个坐标轴方向上两个相邻波矢状态的间隔为：
+
+$$
+\Delta k_x = \frac{2\pi}{L_x},\quad \Delta k_y = \frac{2\pi}{L_y},\quad \Delta k_z = \frac{2\pi}{L_z}
+$$
+
+因此每个波矢状态（k状态）占据的体积为：
+
+$$
+\Delta k_x \Delta k_y \Delta k_z = \frac{(2\pi)^3}{V}
+$$
+
+#### 基态填充
+
+当$T=0K$，系统的能量最低。 由于**电子的填充必须遵从Pauli原理**，即使在T＝0K时电子也不可能全部填充在能量最低的能态上。如能量最低的能态已经填有电子，其他电子就必须填到能量较高的能态上。
+
+**自由电子的E-k关系**：
+
+$$
+E=\frac{\hbar^2}{2m}(k_x^2+k_y^2+k_z^2)
+$$
+
+![alt text](assets/solid_1772510405616_png)
+
+**三维情况下的E-k关系——费米球**: 每个量子态对应波矢空间的一点。在k空间中，电子从能量最低的原点开始填起，能量由低到高逐层向外填充，其**等能面为球面**，一直到所有电子都填完为止。
+
+**利用波恩-卡门条件计算费米能级**
+
+引入态密度函数$g(E)$，则
+
+$$
+N=\int_0^{\infty}f(E) g(E) \mathrm d E
+$$
+
+壮态密度函数$g(E)$表示能量为$E$的量子态数目，也就是简并度。在能量为$E$的球体中，波矢k允许取值的总数为
+
+$$
+k\text{空间的密度}\times\text{球体的体积} = g_k\cdot\frac{4\pi}3k^3
+$$
+
+每个k取值对应一个电子能级，考虑电子自旋，每个能级可以填充自旋相反的两个电子，在能量为$E$的球体中，电子能态数目为
+
+$$
+\begin{aligned}
+N(E)&=2\cdot g_k\cdot\frac{4\pi}3k^3\\
+&=2\cdot\frac{V}{8\pi^3}\cdot\frac{4\pi}{3}\frac{(2m)^{3/2}}{\hbar^3}\cdot E^{3/2}\\
+&=\boxed{\frac{V(2m)^{\frac{3}{2}}}{3\pi^2\hbar^3}E^{\frac{3}{2}}}
+\end{aligned}
+$$
+
+进而
+
+$$
+\begin{aligned}
+\mathrm dN&=\frac{V}{2\pi^2}\left(\frac{2m}{\hbar^2}\right)^{3/2}E^{1/2}\mathrm dE\\
+&=g(E)\mathrm dE\\
+\Rightarrow g(E)&=\frac{\mathrm dN}{\mathrm dE}=\boxed{\frac{V}{2\pi^2}\left(\frac{2m}{\hbar^2}\right)^{3/2}E^{1/2}}
+\end{aligned}
+$$
+
+能量标度下的态密度 $g(E)$ ，一般简称态密度.电子的能态密度并不是均匀分布的，电子能量越高，能态密度就越大。
+
+![alt text](assets/solid_1772516664055_png)
+
+!!! warning "注意"
+    $g_k$没有考虑自旋，但$g(E)$考虑了自旋。本课程中的同一规定：**波矢状态（k空间状态）不考虑自旋，量子态或者电子的运动状态需要考虑自旋。**
+
+在零温下，可计算电子总数
+
+$$
+N=\int_0^{E_F^0}g(E)\mathrm dE=\frac{V}{3\pi^2}\left(\frac{2m}{\hbar^2}\right)^{3/2}(E_F^0)^{3/2}
+$$
+
+进而导出**费米能量**：
+
+$$
+E_F^0 = \frac{\hbar^2}{2m}\left(3\pi^2\frac{N}{V}\right)^{2/3}=\frac{\hbar^2}{2m}\left(3\pi^2 n\right)^{2/3}\sim 1\mathrm{eV}
+$$
+
+**费米动量**：
+
+$$
+P_F=\hbar k_F\,, E_F^0=\frac{\hbar}{2m}(3\pi^2 n)^{2/3}=\frac{\hbar^2k_F^2}{2m}
+$$
+
+**费米温度**：
+
+$$
+T_F^0 = \frac{E_F^0}{k_B} \sim 10^4\mathrm{K}
+$$
+
+!!! danger "注意"
+    费米温度不是真实的温度,而是费米能量（0K时的费米能级）对应的等效温度！
+
+$g(E)$的物理实质就是$\dfrac{\mathrm dN}{\mathrm dE}$。假设单个电子具有某个物理量$x(E)$,则0K时对应电子气系综的宏观物理量$X$可以计算为
+
+$$
+X=\int_0^{E_F^0}x(E)g(E)\mathrm dE
+$$
+
+#### 高温情形
+
+当$T>0$时，电子热运动能量$\sim k_BT\ll E_F$。因此只有费米面附近的电子才能被激发到高能态，即只有$E－E_F= \sim k_BT$的电子才能被热激发，而能量比EF低几个kBT的电子则仍被Pauli原理所束缚，其分布与$T＝0$时相同。
+
+能量在$E\sim E＋\mathrm dE$之间的电子数为
+
+$$
+\mathrm dN = f(E)g(E)\mathrm dE
+$$
+
+![alt text](assets/solid_1772594793414_png)
+
