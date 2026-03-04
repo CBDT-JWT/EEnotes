@@ -48,7 +48,19 @@ FILE / Open / Library，选择库文件（`.olb`），点击Open
 ![alt text](assets/orcad_1772622792391_png)
 
 点左侧的`.dsn`文件，右键New-Schemetic
+
 ![alt text](assets/orcad_1772641466842_png)
+
+### 修改原理图大小
+
+选中page右键，找到Properties
+
+![alt text](assets/orcad_1772643042306_png)
+
+选择合适大小即可
+
+![alt text](assets/orcad_1772643065528_png)
+
 ### 绘制用的快捷键
 
 | 快捷键 | English | 中文说明 |
@@ -73,3 +85,66 @@ FILE / Open / Library，选择库文件（`.olb`），点击Open
 | `Shift+T` | Elliptical Arc | 绘制椭圆弧 |
 | `Shift+Q` | Bezier Curve | 绘制贝塞尔曲线 |
 | `Y` | Polyline | 绘制多段线 |
+
+### 导入自带库
+
+自带库`C:\Cadence\Cadence_SPB_17.2\tools\capture\library`下，有多个OLB文件。一般电容在`Descrete.olb`
+
+![alt text](assets/orcad_1772645168228_png)
+
+??? note "库文件列表"
+    | 库文件 | 器件数量 | 说明 |
+    |---|---|---|
+    | AMPLIFIER.OLB | 182 | 存放模拟放大器 IC，如 LM386、MAX457 等 |
+    | ARITHMETIC.OLB | 182 | 存放逻辑运算 IC，如 54HC147、74HC147 等 |
+    | ATOD.OLB | 618 | 存放 A/D 转换 IC，如 AD7580、ADC08031 等 |
+    | BUS DRIVERTRANSCEIVER.OLB | 632 | 存放总线驱动 IC，如 74LS366、74LS440 等数字 IC |
+    | CAPSYM.OLB | 35 | 存放电源、地、输入输出、标题栏等 |
+    | CONNECTOR.OLB | 816 | 存放连接器，如 CON10、CONN PWR 2-P、HEADERS 等 |
+    | COUNTER.OLB | 182 | 存放计数器 IC，如 54AC191、74F168 |
+    | DISCRETE.OLB | 872 | 存放分立式元件，如电阻、电容、电感、开关、变压器等常用器件 |
+    | DRAM.OLB | 623 | 存放动态存储器，如 TM2224、HM514256 等 |
+    | ELECTRO MECHANICAL.OLB | 6 | 存放马达、断路器等电机类元件 |
+    | FIFO.OLB | 177 | 存放先进先出资料暂存器，如 54LS222、67413 |
+    | FILTRE.OLB | 80 | 存放滤波器类元件，如 LMF100、LTC1059 等 |
+    | FPGA.OLB | - | 存放可编程逻辑器件，如 A1225A |
+    | GATE.OLB | 691 | 存放逻辑门（含 CMOS 和 TTL） |
+    | LATCH.OLB | 305 | 存放锁存器，如 4096、5475、54HC375 等 |
+    | LINE DRIVER RECEIVER.OLB | 380 | 存放线驱动与接收器，如 74ACG241、ADM203 等 |
+    | MECHANICAL.OLB | 110 | 存放机构图件，如 SIPSOC-10、ZIFSOC-8x2 等 |
+    | MICROCONTROLLER.OLB | 523 | 存放单片机微处理器，如 80C51FA、AT89C52 等 |
+    | MICRO PROCESSOR.OLB | 288 | 存放微处理器，如 80387、HD63C09 等 |
+    | MISC.OLB | 1567 | 存放杂项图件，如电压表（METER V）、微处理器周边（Z80-PIO）等 |
+    | MISCLINEAR.OLB | 365 | 存放线性杂项器件（未分类），如 14574、AD534、LM334 等 |
+    | MISCMEMORY.OLB | 278 | 存放记忆体杂项器件（未分类），如 28F102、M28V101 等 |
+    | MISCPOWER.OLB | 222 | 存放高功率杂项器件（未分类），如 A2919、EL7272、LT1161 等 |
+    | MUXDECODER.OLB | 449 | 存放解码器，如 54F253、54HC153、74AC139 等 |
+    | OPAMP.OLB | 610 | 存放运放，如 AD712、OP37、OPA660 等 |
+    | PASSIVEFILTER.OLB | 14 | 存放被动式滤波器，如 271MT、NFM41、EMIFILTER 等 |
+    | PLD.OLB | 355 | 存放可编程逻辑器件，如 14H4、20V8 等 |
+    | PROM.OLB | 811 | 存放只读记忆体，如 24LC64、27C512 等 |
+    | REGULATOR.OLB | 549 | 存放稳压 IC，如 78xxx、79xxx 等 |
+    | SHIFTREGISTER.OLB | 610 | 存放移位寄存器，如 100341、4021 等 |
+    | SRAM.OLB | 691 | 存放静态存储器，如 54S301、74C89 等 |
+    | TRANSISTOR.OLB | 210 | 存放晶体管（含 FET、UJT、PUT 等），如 2N1070、2N1613 等 |
+
+### 导入外部元件
+
+在Snap EDA 或 Ultra librarian上下载文件的schematic 和 layout
+
+#### case 1: 有 OLB 文件（一般是集成电路）
+![alt text](assets/orcad_1772642640813_png)
+
+![alt text](assets/orcad_1772642667314_png)
+
+把文件夹复制到项目文件夹
+
+![alt text](assets/orcad_1772642853103_png)
+
+![alt text](assets/orcad_1772642870793_png)
+
+#### case 2: 没有olb
+
+1. Copy the footprint and padstack files from the zipped folder and paste them into your footprint directory. The default **footprint** directory is: `C:\Cadence\SPB_xx.x\share\pcb\pcb_lib\symbols`
+1. Copy the STEP model from the zipped folder and paste it into your step directory. The default **STEP** directory is: `C:\Cadence\SPB_xx.x\share\local\pcb\step`
+

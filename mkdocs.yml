@@ -46,6 +46,7 @@ markdown_extensions:
   - pymdownx.superfences
   - attr_list
   - md_in_html
+  - tables
   
 extra_css:
 - css/neoteroi-mkdocs.css
@@ -130,13 +131,8 @@ theme:
       
 extra_javascript:
 - javascripts/navigation.js
-- themes/js/custom.js
-- themes/js/simpleLightbox.min.js
-- themes/js/optionalConfig.js
-- themes/js/mermaidloader.js
-- themes/js/umlconvert.js
-- themes/js/mathjax.js
-#- themes/js/katex.js
+- https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
+- javascripts/tablesort.js
 - https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js
 - https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.17.1/flowchart.min.js
 - https://cdnjs.cloudflare.com/ajax/libs/raphael/2.3.0/raphael.min.js
