@@ -78,6 +78,8 @@ nav:
   - 科研与工具:
     - Matlab高级编程与工程应用: matlab.md
     - 模拟数字数据转换器: adda.md
+    - OrCAD使用笔记: orcad.md
+    - Latex基础教程: latex.md
 theme:
   name: material
   logo: https://www.weitao-jiang.cn/images/avatar.jpg
