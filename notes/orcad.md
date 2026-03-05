@@ -148,3 +148,75 @@ FILE / Open / Library，选择库文件（`.olb`），点击Open
 1. Copy the footprint and padstack files from the zipped folder and paste them into your footprint directory. The default **footprint** directory is: `C:\Cadence\SPB_xx.x\share\pcb\pcb_lib\symbols`
 1. Copy the STEP model from the zipped folder and paste it into your step directory. The default **STEP** directory is: `C:\Cadence\SPB_xx.x\share\local\pcb\step`
 
+## 版图绘制
+
+### 修改封装
+Edit-Browser-Parts
+
+![alt text](assets/orcad_1772709761670_png)
+
+全选，Edit-Properties（ctrl+E）
+
+![alt text](assets/orcad_1772709822508_png)
+
+修改PCB Footprint
+
+![alt text](assets/orcad_1772710036818_png)
+
+改好一个点Copy，点列头全选整列，然后Paste
+
+![alt text](assets/orcad_1772710078734_png)
+
+### 新建版图
+
+
+首先完成DRC检查，确保原理图没有错误。然后PCB-New Layout
+
+![alt text](assets/orcad_1772709370882_png)
+
+![alt text](assets/orcad_1772710928773_png)
+
+成功进入allegro界面。
+
+![alt text](assets/orcad_1772710965954_png)
+
+### 放置元件
+
+Place-Manual手动放置
+
+![alt text](assets/orcad_1772711097876_png)
+
+选好元件就可以放。
+
+![alt text](assets/orcad_1772711119004_png)
+
+第一次放可能出现`Cannot load symbol 'xxxx'`报错。需要导入元件封装库：
+
+#### 导入封装库
+
+
+顶部菜单Setup-User Preferences
+
+![alt text](assets/orcad_1772711776641_png)
+
+左侧菜单找Paths/Library
+
+![alt text](assets/orcad_1772711814608_png)
+
+添加以下目录：
+
+1. `devpath`：`../PcbLibrary/device`
+1. `padpath`：`../PcbLibrary/pads`
+1. `psmpath`:`../PcbLibrary/psm`
+
+然后ok，重新放置元件就不会报错了。
+
+### 画边框
+
+add-Rectangle
+
+![alt text](assets/orcad_1772713468556_png)
+
+
+选择`Board Geometry`和`Design_Outline`，画出边框。
+![alt text](assets/orcad_1772713497740_png)
