@@ -53,7 +53,8 @@ extra_css:
 - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css
 
 nav:
-  - 首页: index.md
+  - 主页: https://www.weitao-jiang.cn
+  - 序言: index.md
   - 数理基础:
     - 线性代数(1): LinearAlgebra.md
     - 线性代数(2): LinearAlgebra2.md
@@ -81,6 +82,7 @@ nav:
     - 模拟数字数据转换器: adda.md
     - OrCAD使用笔记: orcad.md
     - Latex基础教程: latex.md
+  - 开往: https://www.travellings.cn/go.html
 theme:
   name: material
   logo: https://www.weitao-jiang.cn/images/avatar.jpg
