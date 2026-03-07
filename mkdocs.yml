@@ -79,6 +79,7 @@ nav:
     - 媒体与认知: media-and-cognition.md
   - 科研与工具:
     - Matlab高级编程与工程应用: matlab.md
+    - 高等模拟电路原理: advanced-analog-circuits.md
     - 模拟数字数据转换器: AD-and-DA-convertors.md
     - OrCAD使用笔记: orcad-and-allegro.md
     - Latex基础教程: latex-tutorial.md
