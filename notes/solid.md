@@ -262,3 +262,56 @@ $$
 
 ![alt text](assets/solid_1772594793414_png)
 
+可以证明[^1]此时有
+
+$$
+E_F\approx E_F^0\left[1-\frac{\pi^2}{12}\left(\frac{k_BT}{E_F^0}\right)^2\right]
+$$
+
+#### 利用索末菲展开计算宏观物理量
+
+**索末菲展开**：计算**自由电子费米气体**对应微观物理量$x(E)$的宏观物理量$X$的近似表达式：
+
+$$
+\begin{aligned}
+X&=\int_0^{\infty}x(E)f(E)g(E)\mathrm dE\\
+&=\int_0^\infty \mathrm dE\left(\frac{\mathrm df}{\mathrm dE}\right)y(E),\quad \frac{\mathrm dy(E)}{\mathrm dE}=x(E)g(E)\\
+&=y(E)+\sum_{m=1}^\infty a_m(E)\frac{\mathrm d^{2m}}{\mathrm dE^{2m}}y(E)\bigg|_{E^0_F}(k_BT)^{2m}\,,a_1=\frac{\pi^2}{6}
+\end{aligned}
+$$
+
+[^1]: 证明需要用到索末菲展开。参见我写的[这个博客](https://www.weitao-jiang.cn/blog_viewer.html?id=18)。
+
+如内能
+
+$$
+U=\frac{3}{5}NE_F^0+\frac{\pi^2}{6}g(E_F^0)(k_BT)^2\,,g(E_F^0)=\frac{3}{2}\frac{N}{E_F^0}
+$$
+
+比热容
+
+$$
+c_V=\frac{\mathrm dU}{\mathrm dT}=\frac{\pi^2}{2}N\frac{k_B^2T}{E_F^0}
+$$
+
+对比经典比热容
+
+$$
+c_V^{\text{经典}} = \frac{3}{2}Nk_B
+$$
+
+可见量子统计获得的比热容比经典结果小得多，源于**泡利不相容**原理和**基态填充**。
+
+#### 对索末菲模型的评价
+
+索末菲模型很好的解释了多个物理量的**变化趋势**，但是仍与实验结果有偏差，主要的偏差在于
+
+1. 电子态密度偏大
+1. 比热容偏小
+1. 不能真正解释电子长平均自由程、电阻与温度等问题。
+
+| 物理量 | 经典力学 | 量子力学 |
+|---|---|---|
+| 能量 | $E(p)=\dfrac{p^2}{2m}$ | $E(k)=\dfrac{\hbar^2 k^2}{2m}$ |
+| 电子质量 | $\dfrac{1}{m}=\dfrac{d^2E}{dp^2}$ | $\dfrac{1}{m}=\dfrac{1}{\hbar^2}\dfrac{d^2E}{dk^2}$ |
+| 电子速度 | $v=\dfrac{p}{m}=\dfrac{dE}{dp}$ | $v=\dfrac{1}{\hbar}\dfrac{dE}{dk}$ |
