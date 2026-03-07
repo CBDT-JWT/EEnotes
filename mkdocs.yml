@@ -56,32 +56,32 @@ nav:
   - 主页: https://www.weitao-jiang.cn
   - 序言: index.md
   - 数理基础:
-    - 线性代数(1): LinearAlgebra.md
-    - 线性代数(2): LinearAlgebra2.md
-    - 大学物理: BigPhysics.md
+    - 线性代数(1): linear-algebra-1.md
+    - 线性代数(2): linear-algebra-2.md
+    - 大学物理（热学）: thermo-physics.md
   - 物理-电磁组:  
-    - 电磁场与电磁波: emwaves.md
-    - 量子与统计: quant.md
-    - 固体物理: solid.md
+    - 电磁场与电磁波: electromagnetic-fields-and-waves.md
+    - 量子与统计: quantum-and-statistics.md
+    - 固体物理: solid-state-physics.md
   - 电路组:
-    - 电子电路与系统基础: circuits.md
-    - 模拟电路原理: analog.md
-    - 数字逻辑与处理器基础: digital.md
-    - 微波与光波技术基础: micro.md
+    - 电子电路与系统基础: fundamentals-of-electronic-circuits.md
+    - 模拟电路原理: analog-circuits.md
+    - 数字逻辑与处理器基础: digital-logic-and-processors.md
+    - 微波与光波技术基础: microwave-engineering-basics.md
   - 信号组:
-    - 信号与系统: ss.md
-    - 数字信号处理: dsp.md
-    - 通信与网络: comm.md
-    - 随机过程: stochasticprocess.md
+    - 信号与系统: signals-and-systems.md
+    - 数字信号处理: digital-signal-processing.md
+    - 通信与网络: communication-and-networks.md
+    - 随机过程: stochastic-processes.md
   - 计算机组:
-    - 程设基础: prog.md
+    - 程设基础: c-and-c++-programming.md
     - 数据结构与算法: dsa.md
-    - 媒体与认知: media-and-cog.md
+    - 媒体与认知: media-and-cognition.md
   - 科研与工具:
     - Matlab高级编程与工程应用: matlab.md
-    - 模拟数字数据转换器: adda.md
-    - OrCAD使用笔记: orcad.md
-    - Latex基础教程: latex.md
+    - 模拟数字数据转换器: AD-and-DA-convertors.md
+    - OrCAD使用笔记: orcad-and-allegro.md
+    - Latex基础教程: latex-tutorial.md
   - 开往: https://www.travellings.cn/go.html
 theme:
   name: material
