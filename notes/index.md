@@ -36,3 +36,5 @@ comments: true
 
 ## github合作说明与致谢
 一个人难免有错漏之处，还请不吝赐教！如果有问题可以在[此仓库](https://github.com/CBDT-JWT/EEnotes)提出，万分感激！
+
+<iframe allow="autoplay *; encrypted-media *;" frameborder="0" height="150" style="width:100%;max-width:660px;overflow:hidden;background:transparent;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/cn/album/itasca/1533741298?i=1533741300"></iframe>

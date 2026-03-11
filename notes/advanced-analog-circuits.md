@@ -284,6 +284,7 @@ $$
 $$
 
 得到
+
 $$
 \begin{aligned}
 Y_{in}&=\frac{i_{test}}{v_{test}}\approx\frac{g'_mr_o}{R_L+r_o}+sC_S\\
@@ -334,7 +335,174 @@ $$
 \frac{v_x}{v_i}=g_{m1}Z_x\approx \frac{g_{m1}}{g'_{m2}}\left(1+\frac{R_L}{r_{o2}}\right)
 $$
 
-优势：
+#### 性能
+高频优势：
 
 1. 增益较小，削减密勒倍增效应；即使 $R_L$ 较大，通常也会有一个负载电容提供低阻抗端接，帮助维持这一特性.
 1. 共源共栅结构削弱了高频下从 Vi 到 Vo 的直接正向耦合
+
+高频缺点：共源共栅结构引入了$f_T$附近的极点，可能会影响相位裕度和稳定性:
+
+$$
+\frac{i_o}{i_i}\approx\frac{1}{1+s\frac{C_{gs}+C_{sb}}{g'_m}}
+$$
+
+另一个问题是输出摆幅问题，增加共栅极会降低输出信号摆幅。先进工艺下（$V_DD<1\mathrm V$）会造成严重问题，因为通常需要$V_{DS}>150\mathrm{mV}$，损失动态范围。
+
+#### 噪声
+
+![alt text](assets/advanced-analog-circuits_1773058299157_png)
+
+通常认为共栅极不会产生额外噪声。但，其在高频的时候会产生额外噪声：高频时噪声电流A和B不能抵消。
+
+### 共漏极
+
+![alt text](assets/advanced-analog-circuits_1773060838460_png)
+
+#### 电压传递函数和输入输出阻抗
+
+![alt text](assets/advanced-analog-circuits_1773060957379_png)
+
+定义$C_{Ltot}=C_L+C_{sb}$, $R_{Ltot}=R_L\parallel \dfrac{1}{g_{mb}}\parallel r_o$, 则
+
+$$
+\begin{aligned}
+0&=v_o\left(sC_{L_{tot}} + sC_{gs} + \frac{1}{R_{L_{tot}}}\right)
+- v_i sC_{gs} - g_m (v_i - v_o) \\
+\frac{v_o}{v_i}
+&= \frac{g_m + sC_{gs}}
+{g_m + sC_{gs} + sC_{L_{tot}} + \frac{1}{R_{L_{tot}}}} \\
+&= \boxed{\frac{g_m}{g_m + \frac{1}{R_{L_{tot}}}}
+\cdot
+\frac{1 + \frac{sC_{gs}}{g_m}}
+{1 + \frac{s(C_{gs}+C_{L_{tot}})}{g_m + \frac{1}{R_{L_{tot}}}}
+}}
+\end{aligned}
+$$
+
+**低频增益**
+
+$$
+a_{v0}=\frac{g_m}{g_m+\frac{1}{R_{Ltot}}}
+$$
+
+1. PMOS，源极接衬底作为理想电流源: $R_L\to\infty$, $r_o\to\infty$, $g_{mb}=0$从而 $a_{v0}=1$
+1. NMOS做理想电流源：$R_L\to\infty$, $r_o\to\infty$, $g_{mb}\neq 0$从而 $a_{v0}=\dfrac{g_m}{g_m+g_{mb}}$ (一般0.8左右)
+1. PMOS，源极与衬底相连作为负载电阻: $R_L<\infty$, $r_o\to\infty$, $g_{mb}\neq 0$,此时$a_{vo}=\dfrac{g_m}{g_m+\frac{1}{R_L}}$
+
+**高频增益**
+
+$$
+a_v(s)=a_{v0}\cdot\frac{1-s/z}{1-s/p}
+$$
+
+其中
+
+$$
+z= -\frac{g_m}{C_{gs}}\,,p=-\frac{g_m+\frac{1}{R_{Ltot}}}{C_{gs}+C_{Ltot}}
+$$
+
+![alt text](assets/advanced-analog-circuits_1773068656014_png)
+
+#### 输入阻抗
+
+注意到
+
+$$
+Y_{in}=s(C_{gd}+C_{gb})+sC_{gs}(1-a_v(s))
+$$
+
+增益项 $a_v(s)$是实数，且在很宽的频率范围内都接近$1$，因此在一定频率范围内，可以忽略$C_{gs}$的影响。此时$Y_{in}=s(C_{gd}+C_{gb}),输入电容非常之小。
+
+**衬底与源连接的PMOS共漏极**
+
+![alt text](assets/advanced-analog-circuits_1773069269105_png)
+
+栅极与衬底间的电容与 $C_gs$ 并联, $g_{mb}$不起作用，低频增益接近1。输入电容$Y_{in}\approx sC_{gd}$极小。
+
+**共漏极输入电容“自举”**
+
+![alt text](assets/advanced-analog-circuits_1773110194369_png)
+
+$v_i$经过两个共漏极到$C_{gd}$另一端
+
+$$
+Y_{in}\approx sC_{gd}\left(1-a_{vP}(s)a_{vN}(s)\right)
+$$
+
+#### 输出阻抗
+
+**理想电压源驱动**：显然
+
+$$
+Z_{out}=\frac{1}{g_m+g_{mb}}\parallel \frac{1}{s(C_{gs}+C_{sb})}
+$$
+
+其输出阻抗较低，在很宽的频率范围内都呈现出阻性。
+
+**有限输入源电阻**：
+
+![alt text](assets/advanced-analog-circuits_1773146492716_png)
+
+$$
+Z_x=\frac{v_o}{i_x}\,,i_x=(v_o-v_g)(g_m+sC_{gs})=v_o\left(1-\frac{v_g}{v_o}\right)(g_m+sC_{gs})
+$$
+
+$$
+\frac{v_g}{v_o}=\frac{R_i}{\frac{1}{sC_{gs}}+R_i}
+$$
+
+$$
+\boxed{Z_x\approx\frac{1}{g_m}\frac{1+sR_iC_{gs}}{1+\frac{sC_{gs}}{g_m}}}
+$$
+
+![alt text](assets/advanced-analog-circuits_1773147078103_png)
+
+当$R_i>\frac{1}{g_m}$，产生了电感效应！此时电路容易振荡。
+
+![alt text](assets/advanced-analog-circuits_1773148335647_png)
+
+若不忽略$C_i=C_{gd}+C_{gb}$,则
+
+$$
+\boxed{Z_x=\frac{1}{g_m}\frac{1+sR_i(C_{gs}+C_i)}{\left(1+\dfrac{sC_{gs}}{g_m}\right)(1+sR_iC_i)}}
+$$
+
+![alt text](assets/advanced-analog-circuits_1773148305463_png)
+
+#### 应用
+
+**电平转换器**：输出的静态工作点比输入低$V_t+V_{ov}$
+![alt text](assets/advanced-analog-circuits_1773148452662_png)
+
+**驱动器**：隔离重负载$R_{small}$
+
+![alt text](assets/advanced-analog-circuits_1773148470987_png)
+
+问题：
+
+1. NMOS，源极与衬底不相连，$V_t$随$V_o$变化
+1. $R_L$不大的时候，$I_D$和$V_{ov}$随$V_o$变化
+1. 输入和输出电压摆幅受限（$V_{GS}$分走大部分）
+
+**有源负载**
+
+![alt text](assets/advanced-analog-circuits_1773148835607_png)
+
+优势：
+
+1. 增益取决于同量纲物理量的比值，PVT稳定
+1. 一阶非线性抵消
+
+劣势：摆幅降低
+
+### 总结
+
+| 组态 | 特性 | 用途 |
+|---|---|---|
+| 共源极 | 压控电流源；当输出为高阻时可形成较好的电压放大器 | 电压放大 |
+| 共栅极 | 低输入阻抗，高输出阻抗 | 电流缓冲器 |
+| 共栅极 | 可与共源级级联，提高整体本征电压增益 | 共源-共栅级（Cascode） |
+| 共漏极 | 高输入阻抗，低输出阻抗 | 缓冲器（源极跟随器） |
+| 共漏极 | 适合进行直流工作点的搬移 | 电平移动 |
+| 共漏极 | 当摆幅与非线性要求不高时可作电压驱动器 | 电压驱动 |
