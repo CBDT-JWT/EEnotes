@@ -3,6 +3,7 @@ site_url: https://note.weitao-jiang.cn
 docs_dir: notes
 repo_url: https://github.com/CBDT-JWT/EEnotes
 repo_name: CBDT-JWT/EEnotes
+use_directory_urls: true
 plugins:
   - search
   - social:
