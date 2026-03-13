@@ -1510,6 +1510,17 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
+        绘图相关
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
         离散系统相关
       
     </span>
@@ -1519,7 +1530,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
         得到系统函数
@@ -1530,7 +1541,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
         画频率响应
@@ -1541,7 +1552,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
         画时域响应
@@ -1553,7 +1564,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       
         初值
@@ -1564,7 +1575,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
       
         样值和阶跃
@@ -1575,7 +1586,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
       
         一般信号的响应
@@ -1780,6 +1791,17 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
+        绘图相关
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
         离散系统相关
       
     </span>
@@ -1789,7 +1811,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
         得到系统函数
@@ -1800,7 +1822,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
         画频率响应
@@ -1811,7 +1833,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
         画时域响应
@@ -1823,7 +1845,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       
         初值
@@ -1834,7 +1856,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
       
         样值和阶跃
@@ -1845,7 +1867,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
       
         一般信号的响应
@@ -1920,50 +1942,42 @@
 <td><code>bode(sys)</code> 或 <code>freqresp(sys)</code></td>
 <td><code>freqz(b,a,N)</code></td>
 </tr>
-<tr>
-<td>## 绘图相关</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>连续图（幅频相频/连续时域）用<code>plot(x,y)</code>画，离散响应用<code>stem(x,y)</code>画。使用<code>xlabel('xxx')</code>,<code>ylabel('xxx')</code>,<code>title('xxx')</code>画xy坐标轴和标题，支持latex语法。</td>
-<td></td>
-<td></td>
-</tr>
 </tbody>
 </table>
-<p>子图定义：使用<code>subplot(m,n,p)</code>后，<code>plot</code>就能绘制<span class="arithmatex">\(m\times n\)</span>图的第<span class="arithmatex">\(p\)</span>个子图。如2006年题依次使用<code>subplot(3,1,1)</code>, <code>subplot(3,1,2)</code>, <code>subplot(3,1,3)</code>绘制幅频、相频、样值响应：
-<img alt="alt text" src="../assets/image11.png" /> </p>
-<h2 id="_1">离散系统相关</h2>
-<h3 id="_2">得到系统函数</h3>
-<p>已知系统零点<span class="arithmatex">\(\{z_1\,,z_2\,,\cdots\}\)</span>极点<span class="arithmatex">\(\{p_1\,,p_2\,,\cdots\}\)</span>，即系统函数
+<h2 id="_1">绘图相关</h2>
+<p>连续图（幅频相频/连续时域）用<code>plot(x,y)</code>画，离散响应用<code>stem(x,y)</code>画。使用<code>xlabel('xxx')</code>,<code>ylabel('xxx')</code>,<code>title('xxx')</code>画xy坐标轴和标题，支持latex语法。</p>
+<p>子图定义：使用<code>subplot(m,n,p)</code>后，<code>plot</code>就能绘制<span class="arithmatex">\(m\\times n\)</span>图的第<span class="arithmatex">\(p\)</span>个子图。如2006年题依次使用<code>subplot(3,1,1)</code>, <code>subplot(3,1,2)</code>, <code>subplot(3,1,3)</code>绘制幅频、相频、样值响应：
+ <img alt="alt text" src="../assets/image11.png" /></p>
+<h2 id="_2">离散系统相关</h2>
+<h3 id="_3">得到系统函数</h3>
+<p>已知系统零点<span class="arithmatex">\({z_1,,z_2,,\\cdots}\)</span>极点<span class="arithmatex">\({p_1,,p_2,,\\cdots}\)</span>，即系统函数
 $$
 H(z)=k\cdot \frac{(z-z_1)\cdot(z-z_2)\cdots}{(z-p_1)\cdot(z-p_2)\cdots}
 $$
-使用<code>zp2tf</code>
+使用<code>zp2tf</code></p>
 <div class="language-matlab highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">z</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="n">z1</span><span class="p">;</span><span class="n">z2</span><span class="p">;</span><span class="k">...</span><span class="c">];   % 零点</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">p</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="n">p1</span><span class="p">;</span><span class="n">p2</span><span class="p">;</span><span class="k">...</span><span class="c">];   % 极点</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">k</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">       </span><span class="c">% 系统增益，可以调整</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="p">[</span><span class="n">b</span><span class="p">,</span><span class="n">a</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">zp2tf</span><span class="p">(</span><span class="n">z</span><span class="p">,</span><span class="n">p</span><span class="p">,</span><span class="n">k</span><span class="p">);</span><span class="w">   </span><span class="c">% 转成分子分母多项式</span>
 </span></code></pre></div>
-即可得到系统函数<span class="arithmatex">\(H(z)=B(z)/A(z)\)</span>。如果已知条件是差分方程
+<p>即可得到系统函数<span class="arithmatex">\(H(z)=B(z)/A(z)\)</span>。如果已知条件是差分方程
 $$
 a_0y[n]+a_1y[n-1]+\cdots+a_py[n-p]=b_0x[n]+b_1x[n-1]+\cdots+b_qx[n-q]
 $$
-则直接令
+则直接令</p>
 <div class="language-matlab highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">b</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="n">b0</span><span class="p">,</span><span class="n">b1</span><span class="p">,</span><span class="n">b2</span><span class="k">...</span><span class="c">bq];</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">a</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="n">a0</span><span class="p">,</span><span class="n">a1</span><span class="p">,</span><span class="n">a2</span><span class="k">...</span><span class="c">ap];</span>
 </span></code></pre></div>
-即可。</p>
-<h3 id="_3">画频率响应</h3>
+<p>即可。</p>
+<h3 id="_4">画频率响应</h3>
 <p>频率响应即
 $$
 H(\exp(j\omega))=H(z){|} _{z=\exp(j\omega)}
 $$
-使用函数<code>freqz</code>得到频率响应（复数形式）
+使用函数<code>freqz</code>得到频率响应（复数形式）</p>
 <div class="language-matlab highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">[</span><span class="n">H</span><span class="p">,</span><span class="n">w</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">freqz</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="mi">512</span><span class="p">);</span>
 </span></code></pre></div>
-然后使用<code>abs</code>和<code>angle</code>得到模和相位, 使用<code>plot</code>画图。
+<p>然后使用<code>abs</code>和<code>angle</code>得到模和相位, 使用<code>plot</code>画图。</p>
 <div class="language-matlab highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nb">plot</span><span class="p">(</span><span class="n">w</span><span class="o">/</span><span class="nb">pi</span><span class="p">,</span><span class="w"> </span><span class="nb">abs</span><span class="p">(</span><span class="n">H</span><span class="p">));</span>
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;归一化频率 \omega/\pi&#39;</span><span class="p">);</span>
@@ -1974,34 +1988,34 @@ $$
 </span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;归一化频率 \omega/\pi&#39;</span><span class="p">);</span>
 </span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;\phi(\omega)&#39;</span><span class="p">);</span>
 </span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="nb">title</span><span class="p">(</span><span class="s">&#39;相位响应&#39;</span><span class="p">)</span>
-</span></code></pre></div></p>
-<h3 id="_4">画时域响应</h3>
-<h4 id="_5">初值</h4>
-<p><div class="language-matlab highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">yPast</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="n">y</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">y</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="k">...</span><span class="c">];</span>
+</span></code></pre></div>
+<h3 id="_5">画时域响应</h3>
+<h4 id="_6">初值</h4>
+<div class="language-matlab highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">yPast</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="n">y</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">y</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="k">...</span><span class="c">];</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">xPast</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="n">x</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">x</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="k">...</span><span class="c">];</span>
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">zi</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">filtic</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">yPast</span><span class="p">,</span><span class="n">xPast</span><span class="p">);</span>
 </span></code></pre></div>
-得到初值<code>zi</code>,然后<code>filter(b,a,x,zi)</code>即可。</p>
-<h4 id="_6">样值和阶跃</h4>
-<p>分别使用<code>impz</code>和<code>stepz</code>绘制。如
+<p>得到初值<code>zi</code>,然后<code>filter(b,a,x,zi)</code>即可。</p>
+<h4 id="_7">样值和阶跃</h4>
+<p>分别使用<code>impz</code>和<code>stepz</code>绘制。如</p>
 <div class="language-matlab highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">h</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">impz</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="mi">20</span><span class="p">);</span><span class="w">   </span><span class="c">% 前20个冲激响应</span>
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nb">stem</span><span class="p">(</span><span class="mi">0</span><span class="p">:</span><span class="mi">19</span><span class="p">,</span><span class="n">h</span><span class="p">);</span>
 </span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;n&#39;</span><span class="p">);</span><span class="w"> </span><span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;h[n]&#39;</span><span class="p">);</span>
 </span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="nb">title</span><span class="p">(</span><span class="s">&#39;单位样值响应&#39;</span><span class="p">);</span>
-</span></code></pre></div></p>
-<h4 id="_7">一般信号的响应</h4>
-<p>对于已知的<span class="arithmatex">\(x[n]\)</span>, 只需要令
+</span></code></pre></div>
+<h4 id="_8">一般信号的响应</h4>
+<p>对于已知的<span class="arithmatex">\(x\[n\]\)</span>, 只需要令
 $$
 y[n]=x[n]*h[n]
 $$
-即可得到其响应。matlab种使用函数<code>conv(x,h)</code>即可，其中<code>h</code>由<code>impz</code>得到。同样也可以利用<code>filter</code>函数得到
+即可得到其响应。matlab种使用函数<code>conv(x,h)</code>即可，其中<code>h</code>由<code>impz</code>得到。同样也可以利用<code>filter</code>函数得到</p>
 <div class="language-matlab highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">y</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">filter</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">x</span><span class="p">);</span>
 </span></code></pre></div>
-其中系数矩阵<code>[b,a]=zp2tf(z,p,k);</code>对应
+<p>其中系数矩阵<code>[b,a]=zp2tf(z,p,k);</code>对应
 $$
 H(z)=\frac{B(z)}{A(z)}
 $$</p>
-<p><span class="arithmatex">\(x[n]\)</span>可以通过对<code>(0:N)</code>作逐元素运算得到。这里<code>(0:N)</code>表示矩阵<span class="arithmatex">\([\,0\,,1\,,2\,,\cdots\,,N\,]\)</span></p>
+<p><span class="arithmatex">\(x\[n\]\)</span>可以通过对<code>(0:N)</code>作逐元素运算得到。这里<code>(0:N)</code>表示矩阵<span class="arithmatex">\(\[,0,,1,,2,,\\cdots,,N,\]\)</span></p>
 
 
 
@@ -2022,7 +2036,7 @@ $$</p>
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年3月11日 17:26:17 UTC">2026年3月11日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年9月29日 02:04:55 UTC">2025年9月29日</span>
   </span>
 
     

@@ -358,4 +358,51 @@ $$
 
 ### 惯用晶胞
 
-**单胞**是点阵中产生完全评议覆盖并能提现旋转对称性的常用单元。
+**单胞**是点阵中产生完全评议覆盖并能提现旋转对称性的常用单元。原胞的选取是不唯一的，只要是最小周期性单元都可以，但实际上各种晶体结构已有习惯的原胞选取方式。
+
+![alt text](assets/solid-state-physics_1773370143388_png)
+
+![alt text](assets/solid-state-physics_1773370595898_png)
+
+体心立方的原胞和基矢：
+
+$$
+\begin{cases}
+\vec{\alpha}_1&=\dfrac{a}{2}\left(-\vec i+\vec j+\vec k\right)\\
+\vec{\alpha}_2&=\dfrac{a}{2}\left(\vec i-\vec j+\vec k\right)\\
+\vec{\alpha}_3&=\dfrac{a}{2}\left(\vec i+\vec j-\vec k\right)\\
+\end{cases}
+$$
+
+面心立方的原胞和基矢
+
+$$
+\begin{cases}
+\vec{\alpha}_1&=\dfrac{a}{2}\left(\vec j+\vec k\right)\\
+\vec{\alpha}_2&=\dfrac{a}{2}\left(\vec i+\vec k\right)\\
+\vec{\alpha}_3&=\dfrac{a}{2}\left(\vec i+\vec j\right)\\
+\end{cases}
+$$
+
+### 晶向
+
+微观上晶格中基元（原子或原子团）分列在一系列直线系上，这些直线都相互平行1组平行直线称为1个晶列。
+
+晶列的方向称为晶向，不同的晶列有不同的晶向。
+
+从一个格点沿晶向到{==最近邻格点==}的位移矢量
+
+$$
+l_1\vec{a}_1+l_2\vec{a}_2+l_3\vec{a}_3
+$$
+
+则晶向用$[l_1\,l_2\,l_3]$表示，注意用的方括号。对于负数，使用指数上加横杠的方式，如$[\bar{1}\,0\,0]$
+
+### 等效晶向
+
+由于对称的晶向在性质上没有区别，因此用同一个符号表示对称的几个，称为等效晶向。例如立方晶格中
+
+* 立方边，统称$\left<1\,0\,0\right>$
+* 对角线，统称$\left<1\,1\,1\right>$
+* 面对角线，统称$\left<1\,1\,0\right>$
+
