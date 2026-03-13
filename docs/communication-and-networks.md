@@ -30,8 +30,8 @@ $$
 
 $$
 \begin{aligned}
-\frac{1}{n}\log\# &\le \frac{1}{n}\left(\log n\left(\frac{n}{e}\right)^n-\sum_{i=1}^M\log\left(\frac{np_i}{e}\right)^{np_i}\right)\\\\
-&=\frac{1}{n}\log n-\sum_{i=1}^M\frac{np_i}{n}\log\frac{np_i}{n}\\\\
+\frac{1}{n}\log\# &\le \frac{1}{n}\left(\log n\left(\frac{n}{e}\right)^n-\sum_{i=1}^M\log\left(\frac{np_i}{e}\right)^{np_i}\right)\\
+&=\frac{1}{n}\log n-\sum_{i=1}^M\frac{np_i}{n}\log\frac{np_i}{n}\\
 &\to -\sum_{i=1}^Mp_i\log p_i = H(X)\quad(n\to\infty)
 \end{aligned}
 $$
@@ -40,8 +40,8 @@ $$
 
 $$
 \begin{aligned}
-\frac{1}{n}\log\# &\ge \frac{1}{n}\left(\log \left(\frac{n}{e}\right)^n-\sum_{i=1}^M\log\left(np_i\frac{np_i}{e}\right)^{np_i}\right)\\\\
-&=\frac{1}{n}\log (n^Mp_1p_2\cdots p_M)-\sum_{i=1}^M\log\frac{np_i}{n}\\\\
+\frac{1}{n}\log\# &\ge \frac{1}{n}\left(\log \left(\frac{n}{e}\right)^n-\sum_{i=1}^M\log\left(np_i\frac{np_i}{e}\right)^{np_i}\right)\\
+&=\frac{1}{n}\log (n^Mp_1p_2\cdots p_M)-\sum_{i=1}^M\log\frac{np_i}{n}\\
 &\to -\sum_{i=1}^Mp_i\log p_i = H(X)\quad(n\to\infty)
 \end{aligned}
 $$
@@ -78,8 +78,8 @@ $$
 
 $$
 \begin{aligned}
-I(X;Y)&=H(X)+H(Y)-H(XY)\\\\
-&=H(X)-H(X|Y)\\\\
+I(X;Y)&=H(X)+H(Y)-H(XY)\\
+&=H(X)-H(X|Y)\\
 &=H(Y)-H(Y|X)
 \end{aligned}
 $$
@@ -90,7 +90,7 @@ $$
 
 $$
     p_{i|j}=\begin{cases}
-    1\,, x_i=f(\alpha_j)\\\\
+    1\,, x_i=f(\alpha_j)\\
     0\,, x_i\ne f(\alpha_j)
     \end{cases}
 $$
@@ -121,8 +121,8 @@ $$
 
 $$
 \begin{aligned}
-I(X;Y)&=h(X)+h(Y)-h(XY)\\\\
-&=h(X)-h(Y|X)\\\\
+I(X;Y)&=h(X)+h(Y)-h(XY)\\
+&=h(X)-h(Y|X)\\
 &=h(Y)-h(Y|X)
 \end{aligned}
 $$
@@ -134,6 +134,7 @@ p(x)=\frac{1}{2A}
 $$
 
 给定**方差约束**$\int_{-\infty}^\infty p(x)x^2\mathrm dx=\sigma^2$\,则最大微分熵分布为正态分布，熵为
+
 $$
 h(X)=\frac{1}{2}\log2\pi\mathrm e\sigma^2
 $$
@@ -184,8 +185,8 @@ $$
 
 $$
 \begin{aligned}
-I(X;Y)&=H(Y)-H(Y|X)\\\\
-&=H(Y)-\sum_ip_i\left(-\sum_jp_{j|i}\log p_{j|i}\right)\\\\
+I(X;Y)&=H(Y)-H(Y|X)\\
+&=H(Y)-\sum_ip_i\left(-\sum_jp_{j|i}\log p_{j|i}\right)\\
 &=H(Y)-\left(-\varepsilon\log\varepsilon-(1-\varepsilon)\log(1-\varepsilon)\right)
 \end{aligned}
 $$
@@ -194,10 +195,10 @@ $$
 
 $$
 H(Y)\le 1\Leftrightarrow Y\sim\begin{pmatrix}
-0 & 1\\\\
+0 & 1\\
 1/2 & 1/2
 \end{pmatrix}\Leftrightarrow X\sim\begin{pmatrix}
-0 & 1\\\\
+0 & 1\\
 1/2 & 1/2
 \end{pmatrix}
 $$
@@ -226,8 +227,8 @@ $$
 
 $$
 \begin{aligned}
-I(X;Y)&=h(Y)-h(Y|X)\\\\
-&=h(Y)-h(X+N|X)\\\\
+I(X;Y)&=h(Y)-h(Y|X)\\
+&=h(Y)-h(X+N|X)\\
 &=h(Y)-h(N)
 \end{aligned}
 $$
@@ -236,9 +237,9 @@ $$
 
 $$
 \begin{aligned}
-C&=\max_{p(x)}I(X;Y)\\\\
-&=\max_{p(x)}h(X+N)-h(N)\\\\
-&=\max_{p(x)}h(X+N)-\frac{1}{2}\log 2\pi\mathrm e\sigma^2\\\\
+C&=\max_{p(x)}I(X;Y)\\
+&=\max_{p(x)}h(X+N)-h(N)\\
+&=\max_{p(x)}h(X+N)-\frac{1}{2}\log 2\pi\mathrm e\sigma^2\\
 \end{aligned}
 $$
 
@@ -258,8 +259,8 @@ $$
 
 $$
 \begin{aligned}
-C&=\max_{p(x)}h(X+N)-\frac{1}{2}\log 2\pi\mathrm e \sigma^2\\\\
-&=\frac{1}{2}\log 2\pi\mathrm e (P+\sigma^2)-\frac{1}{2}\log 2\pi\mathrm e \sigma^2\\\\
+C&=\max_{p(x)}h(X+N)-\frac{1}{2}\log 2\pi\mathrm e \sigma^2\\
+&=\frac{1}{2}\log 2\pi\mathrm e (P+\sigma^2)-\frac{1}{2}\log 2\pi\mathrm e \sigma^2\\
 &=\boxed{\frac{1}{2}\log\left(1+\frac{P}{\sigma^2}\right)}
 \end{aligned}
 $$
@@ -270,7 +271,7 @@ $$
 
 $$
 \begin{aligned}
-C&=\frac{1}{2}\log\left(1+\frac{P}{Wn_0}\right)\cdot2W\\\\
+C&=\frac{1}{2}\log\left(1+\frac{P}{Wn_0}\right)\cdot2W\\
 &=\boxed{W\log\left(1+\frac{P}{Wn_0}\right)}
 \end{aligned}
 $$
@@ -369,7 +370,7 @@ $$
 
 $$
 \begin{aligned}
-\sigma^2&=\int_{-\infty}^\infty [x-Q(x)]^2p(x)\mathrm{d}x\\\\
+\sigma^2&=\int_{-\infty}^\infty [x-Q(x)]^2p(x)\mathrm{d}x\\
 &=\sum_{i=1}^L\int_{x_i}^{x_{i+1}}(x-y_i)^2p(x)\mathrm{d}x
 \end{aligned}
 $$

@@ -2027,16 +2027,16 @@ H(X)=\mathbb E[H(X=x_i)] = -\sum_ip_i\log p_i
 <p>我们估计出</p>
 <div class="arithmatex">\[
 \begin{aligned}
-\frac{1}{n}\log\# &amp;\le \frac{1}{n}\left(\log n\left(\frac{n}{e}\right)^n-\sum_{i=1}^M\log\left(\frac{np_i}{e}\right)^{np_i}\right)\\\\
-&amp;=\frac{1}{n}\log n-\sum_{i=1}^M\frac{np_i}{n}\log\frac{np_i}{n}\\\\
+\frac{1}{n}\log\# &amp;\le \frac{1}{n}\left(\log n\left(\frac{n}{e}\right)^n-\sum_{i=1}^M\log\left(\frac{np_i}{e}\right)^{np_i}\right)\\
+&amp;=\frac{1}{n}\log n-\sum_{i=1}^M\frac{np_i}{n}\log\frac{np_i}{n}\\
 &amp;\to -\sum_{i=1}^Mp_i\log p_i = H(X)\quad(n\to\infty)
 \end{aligned}
 \]</div>
 <p>同时</p>
 <div class="arithmatex">\[
 \begin{aligned}
-\frac{1}{n}\log\# &amp;\ge \frac{1}{n}\left(\log \left(\frac{n}{e}\right)^n-\sum_{i=1}^M\log\left(np_i\frac{np_i}{e}\right)^{np_i}\right)\\\\
-&amp;=\frac{1}{n}\log (n^Mp_1p_2\cdots p_M)-\sum_{i=1}^M\log\frac{np_i}{n}\\\\
+\frac{1}{n}\log\# &amp;\ge \frac{1}{n}\left(\log \left(\frac{n}{e}\right)^n-\sum_{i=1}^M\log\left(np_i\frac{np_i}{e}\right)^{np_i}\right)\\
+&amp;=\frac{1}{n}\log (n^Mp_1p_2\cdots p_M)-\sum_{i=1}^M\log\frac{np_i}{n}\\
 &amp;\to -\sum_{i=1}^Mp_i\log p_i = H(X)\quad(n\to\infty)
 \end{aligned}
 \]</div>
@@ -2061,8 +2061,8 @@ H(XY)=H(X)+H(Y|X)=H(Y)+H(X|Y)
 <p><strong>互信息</strong>：观察一个随机变量带来的关于另一个随机变量的信息</p>
 <div class="arithmatex">\[
 \begin{aligned}
-I(X;Y)&amp;=H(X)+H(Y)-H(XY)\\\\
-&amp;=H(X)-H(X|Y)\\\\
+I(X;Y)&amp;=H(X)+H(Y)-H(XY)\\
+&amp;=H(X)-H(X|Y)\\
 &amp;=H(Y)-H(Y|X)
 \end{aligned}
 \]</div>
@@ -2070,7 +2070,7 @@ I(X;Y)&amp;=H(X)+H(Y)-H(XY)\\\\
 <p>若<span class="arithmatex">\(X=f(Y)\)</span>, 则</p>
 <div class="arithmatex">\[
     p_{i|j}=\begin{cases}
-    1\,, x_i=f(\alpha_j)\\\\
+    1\,, x_i=f(\alpha_j)\\
     0\,, x_i\ne f(\alpha_j)
     \end{cases}
 \]</div>
@@ -2091,8 +2091,8 @@ h(Y|X)=-\int_{-\infty}^\infty p(x,y)\log p(y|x)\mathrm dx\mathrm dy
 <p><strong>互信息</strong>为绝对值。定义为</p>
 <div class="arithmatex">\[
 \begin{aligned}
-I(X;Y)&amp;=h(X)+h(Y)-h(XY)\\\\
-&amp;=h(X)-h(Y|X)\\\\
+I(X;Y)&amp;=h(X)+h(Y)-h(XY)\\
+&amp;=h(X)-h(Y|X)\\
 &amp;=h(Y)-h(Y|X)
 \end{aligned}
 \]</div>
@@ -2100,10 +2100,10 @@ I(X;Y)&amp;=h(X)+h(Y)-h(XY)\\\\
 <div class="arithmatex">\[
 p(x)=\frac{1}{2A}
 \]</div>
-<p>给定<strong>方差约束</strong><span class="arithmatex">\(\int_{-\infty}^\infty p(x)x^2\mathrm dx=\sigma^2\)</span>\,则最大微分熵分布为正态分布，熵为
-$$
+<p>给定<strong>方差约束</strong><span class="arithmatex">\(\int_{-\infty}^\infty p(x)x^2\mathrm dx=\sigma^2\)</span>\,则最大微分熵分布为正态分布，熵为</p>
+<div class="arithmatex">\[
 h(X)=\frac{1}{2}\log2\pi\mathrm e\sigma^2
-$$</p>
+\]</div>
 <p>若随机向量由映射关系</p>
 <div class="arithmatex">\[
 \mathbf Y=f(\mathbf X)
@@ -2134,18 +2134,18 @@ p_i^\ast=\argmax_{\sum_ip_i=1\,,p_i\ge 0} \left\{-\sum_i\sum_{j|i}\log\frac{\sum
 <p>根据</p>
 <div class="arithmatex">\[
 \begin{aligned}
-I(X;Y)&amp;=H(Y)-H(Y|X)\\\\
-&amp;=H(Y)-\sum_ip_i\left(-\sum_jp_{j|i}\log p_{j|i}\right)\\\\
+I(X;Y)&amp;=H(Y)-H(Y|X)\\
+&amp;=H(Y)-\sum_ip_i\left(-\sum_jp_{j|i}\log p_{j|i}\right)\\
 &amp;=H(Y)-\left(-\varepsilon\log\varepsilon-(1-\varepsilon)\log(1-\varepsilon)\right)
 \end{aligned}
 \]</div>
 <p>注意到<span class="arithmatex">\(\left(-\varepsilon\log\varepsilon-(1-\varepsilon)\log(1-\varepsilon)\right)\)</span>为常数，因此应当最大化<span class="arithmatex">\(H(Y)\)</span></p>
 <div class="arithmatex">\[
 H(Y)\le 1\Leftrightarrow Y\sim\begin{pmatrix}
-0 &amp; 1\\\\
+0 &amp; 1\\
 1/2 &amp; 1/2
 \end{pmatrix}\Leftrightarrow X\sim\begin{pmatrix}
-0 &amp; 1\\\\
+0 &amp; 1\\
 1/2 &amp; 1/2
 \end{pmatrix}
 \]</div>
@@ -2165,17 +2165,17 @@ f_{Y|X}(y|x)=\frac{1}{\sqrt{2\pi\sigma^2}}\exp\left(-\frac{(y-x)^2}{2\sigma^2}\r
 <p>互信息为</p>
 <div class="arithmatex">\[
 \begin{aligned}
-I(X;Y)&amp;=h(Y)-h(Y|X)\\\\
-&amp;=h(Y)-h(X+N|X)\\\\
+I(X;Y)&amp;=h(Y)-h(Y|X)\\
+&amp;=h(Y)-h(X+N|X)\\
 &amp;=h(Y)-h(N)
 \end{aligned}
 \]</div>
 <p>从而</p>
 <div class="arithmatex">\[
 \begin{aligned}
-C&amp;=\max_{p(x)}I(X;Y)\\\\
-&amp;=\max_{p(x)}h(X+N)-h(N)\\\\
-&amp;=\max_{p(x)}h(X+N)-\frac{1}{2}\log 2\pi\mathrm e\sigma^2\\\\
+C&amp;=\max_{p(x)}I(X;Y)\\
+&amp;=\max_{p(x)}h(X+N)-h(N)\\
+&amp;=\max_{p(x)}h(X+N)-\frac{1}{2}\log 2\pi\mathrm e\sigma^2\\
 \end{aligned}
 \]</div>
 <p>而</p>
@@ -2189,8 +2189,8 @@ C&amp;=\max_{p(x)}I(X;Y)\\\\
 <p>因此高斯信道的信道容量为</p>
 <div class="arithmatex">\[
 \begin{aligned}
-C&amp;=\max_{p(x)}h(X+N)-\frac{1}{2}\log 2\pi\mathrm e \sigma^2\\\\
-&amp;=\frac{1}{2}\log 2\pi\mathrm e (P+\sigma^2)-\frac{1}{2}\log 2\pi\mathrm e \sigma^2\\\\
+C&amp;=\max_{p(x)}h(X+N)-\frac{1}{2}\log 2\pi\mathrm e \sigma^2\\
+&amp;=\frac{1}{2}\log 2\pi\mathrm e (P+\sigma^2)-\frac{1}{2}\log 2\pi\mathrm e \sigma^2\\
 &amp;=\boxed{\frac{1}{2}\log\left(1+\frac{P}{\sigma^2}\right)}
 \end{aligned}
 \]</div>
@@ -2199,7 +2199,7 @@ C&amp;=\max_{p(x)}h(X+N)-\frac{1}{2}\log 2\pi\mathrm e \sigma^2\\\\
 考虑带宽<span class="arithmatex">\(W\)</span>, 加性白高斯噪声单边功率谱密度<span class="arithmatex">\(n_0\)</span>。根据Nyquist采样定理单位时间内最多获得<span class="arithmatex">\(2W\)</span>个独立采样。因此信道容量（单位时间最大互信息量）为</p>
 <div class="arithmatex">\[
 \begin{aligned}
-C&amp;=\frac{1}{2}\log\left(1+\frac{P}{Wn_0}\right)\cdot2W\\\\
+C&amp;=\frac{1}{2}\log\left(1+\frac{P}{Wn_0}\right)\cdot2W\\
 &amp;=\boxed{W\log\left(1+\frac{P}{Wn_0}\right)}
 \end{aligned}
 \]</div>
@@ -2263,7 +2263,7 @@ e(x)=x-Q(x)
 <p>由于<span class="arithmatex">\(x\)</span>是r.v., 因此<span class="arithmatex">\(e(x)\)</span>为一个随机噪声，我们关注其统计特性。量化均方误差为（其实相当于噪声功率）</p>
 <div class="arithmatex">\[
 \begin{aligned}
-\sigma^2&amp;=\int_{-\infty}^\infty [x-Q(x)]^2p(x)\mathrm{d}x\\\\
+\sigma^2&amp;=\int_{-\infty}^\infty [x-Q(x)]^2p(x)\mathrm{d}x\\
 &amp;=\sum_{i=1}^L\int_{x_i}^{x_{i+1}}(x-y_i)^2p(x)\mathrm{d}x
 \end{aligned}
 \]</div>

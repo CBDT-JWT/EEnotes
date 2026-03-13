@@ -2372,11 +2372,11 @@
 <p><img alt="alt text" src="../assets/image-31.png" />
 更进一步观察到左边的受控源的控制电压就是自己的电压，于是这个源就是一个电导<span class="arithmatex">\(g_m\)</span>，从而进一步化简</p>
 <p><img alt="alt text" src="../assets/image-33.png" /></p>
-<p>最后考虑理想晶体管
-$$
+<p>最后考虑理想晶体管</p>
+<div class="arithmatex">\[
 r_{be}\,,r_{ce}=\infty
-$$
-得到</p>
+\]</div>
+<p>得到</p>
 <p><img alt="alt text" src="../assets/image-34.png" />
 因此CB组态的BJT为一个电流buffer。对于CC组态而言，也是一样：考虑其小信号模型</p>
 <p><img alt="alt text" src="../assets/image-35.png" /></p>
@@ -2388,11 +2388,11 @@ $$
 <img alt="alt text" src="../assets/image-38.png" />
 得到了一个电压buffer。类似的原理应用很广泛，可以有效处理受控源的控制关系不直观的问题。</p>
 <h4 id="_7">阻抗匹配</h4>
-<p>阻抗匹配是通过<mark class="critic">双向无损网络</mark>实现源和负载之间最大功率传输的方式，方法为共轭匹配
-$$
-Z_L=Z_S^<em>
-$$
-阻抗匹配的参数通过</em><em>并大串小<span class="arithmatex">\(Q\)</span>相等</em>*获得。设计中要求<span class="arithmatex">\(R\)</span>大的一侧并联东西，<span class="arithmatex">\(R\)</span>小的一侧串联东西；并保证</p>
+<p>阻抗匹配是通过<mark class="critic">双向无损网络</mark>实现源和负载之间最大功率传输的方式，方法为共轭匹配</p>
+<div class="arithmatex">\[
+Z_L=Z_S^*
+\]</div>
+<p>阻抗匹配的参数通过<strong>并大串小<span class="arithmatex">\(Q\)</span>相等</strong>获得。设计中要求<span class="arithmatex">\(R\)</span>大的一侧并联东西，<span class="arithmatex">\(R\)</span>小的一侧串联东西；并保证</p>
 <div class="arithmatex">\[
 Q = \underbrace{\frac{\text{串联电抗}}{\text{串联电阻}}
     = \frac{\text{并联电纳}}{\text{并联电导}}}_{\text{局部}}
@@ -2412,43 +2412,43 @@ Q = \underbrace{\frac{\text{串联电抗}}{\text{串联电阻}}
 <p>首先是<span class="arithmatex">\(zyhg\)</span> 矩阵：</p>
 <div class="arithmatex">\[
 \begin{bmatrix}
-v_1 \\\\
+v_1 \\
 v_2
 \end{bmatrix}=\begin{bmatrix}
-z_{11}&amp;z_{12} \\\\
+z_{11}&amp;z_{12} \\
 z_{21}&amp;z_{22}
 \end{bmatrix}\begin{bmatrix}
-i_1\\\\
+i_1\\
 i_2
 \end{bmatrix}\quad\begin{bmatrix}
-i_1 \\\\
+i_1 \\
 i_2
 \end{bmatrix}=\begin{bmatrix}
-y_{11}&amp;y_{12} \\\\
+y_{11}&amp;y_{12} \\
 y_{21}&amp;y_{22}
 \end{bmatrix}\begin{bmatrix}
-v_1\\\\
+v_1\\
 v_2
 \end{bmatrix}
 \]</div>
 <div class="arithmatex">\[
 \begin{bmatrix}
-v_1 \\\\
+v_1 \\
 \textcolor{cyan}{i_2}
 \end{bmatrix}=\begin{bmatrix}
-h_{11}&amp;h_{12} \\\\
+h_{11}&amp;h_{12} \\
 \textcolor{cyan}{h_{21}}&amp;h_{22}
 \end{bmatrix}\begin{bmatrix}
-\textcolor{cyan}{i_1}\\\\
+\textcolor{cyan}{i_1}\\
 v_2
 \end{bmatrix}\quad\begin{bmatrix}
-i_1 \\\\
+i_1 \\
 v_2
 \end{bmatrix}=\begin{bmatrix}
-g_{11}&amp;g_{12} \\\\
+g_{11}&amp;g_{12} \\
 g_{21}&amp;g_{22}
 \end{bmatrix}\begin{bmatrix}
-v_1\\\\
+v_1\\
 i_2
 \end{bmatrix}
 \]</div>
@@ -2458,7 +2458,7 @@ i_2
 <p>如上公式中<span class="arithmatex">\(\textcolor{cyan}{青色}\)</span>标注。只要记住<strong><span class="arithmatex">\(P_{ij}\)</span>元素对应着<span class="arithmatex">\(i\)</span>端口受到<span class="arithmatex">\(j\)</span>端口的作用</strong>，如<span class="arithmatex">\(\textcolor{cyan}{h_{21}}\)</span>表示<span class="arithmatex">\(2\)</span>端口受到<span class="arithmatex">\(1\)</span>端口的作用，从而对应着“放大器”。而<span class="arithmatex">\(h\)</span>矩阵是<strong>混</strong>合矩阵，由于<strong>混</strong>是<strong>氵</strong>旁，和电流的<strong>流</strong>一样，所以<strong>混</strong>合矩阵对应着<strong>电流</strong>放大器，自然<span class="arithmatex">\(\textcolor{cyan}{h_{21}}\)</span>就对应着<strong>电流放大系数</strong>，即<span class="arithmatex">\(\textcolor{cyan}{i_2}\)</span>受到<span class="arithmatex">\(\textcolor{cyan}{i_1}\)</span>的作用。当然，也可以用<strong>hi</strong>和<strong>gv</strong>两个词来记住这两个矩阵，原理是类似的。<strong>hi</strong>是打招呼的意思，<strong>gv</strong>我也不知道是什么（x</p>
 </div>
 <p>然后是ABCD矩阵：</p>
-<p>$$
+<div class="arithmatex">\[
 \begin{bmatrix}
 v_1 \\
 i_1
@@ -2469,26 +2469,26 @@ C&amp;D
 v_2\\
 \textcolor{yellow}{-i_2}
 \end{bmatrix}
-$$
-这里又有一个初学难以理解的点：这个<span class="arithmatex">\(\textcolor{yellow}{-i_2}\)</span>的负号如何理解。
+\]</div>
+<p>这里又有一个初学难以理解的点：这个<span class="arithmatex">\(\textcolor{yellow}{-i_2}\)</span>的负号如何理解。
 <img alt="alt text" src="../assets/image-3.png" />
 正如这张图所示，zyhg矩阵研究的是<span class="arithmatex">\(\{v_1\,,v_2\,,i_1\,,i_2\}\)</span>之间的关系，而ABCD矩阵研究的则是<span class="arithmatex">\(\{v_{in}\,,i_{in}\,,v_{out}\,,i_{out}\}\)</span>之间的关系。根据图中定义不难发现<span class="arithmatex">\(i_{out}=\textcolor{yellow}{-i_2}\)</span>。也就是说，<strong>ABCD矩阵本质的定义其实是</strong></p>
 <div class="arithmatex">\[
 \begin{bmatrix}
-v_{in} \\\\
+v_{in} \\
 i_{in}
 \end{bmatrix}=\begin{bmatrix}
-A&amp;B \\\\
+A&amp;B \\
 C&amp;D
 \end{bmatrix}\begin{bmatrix}
-v_{out}\\\\
+v_{out}\\
 i_{out}
 \end{bmatrix}
 \]</div>
 <h4 id="_11">复合网络的参量矩阵</h4>
 <p>这样定义的好处是，如果我们考虑两个级联的系统，那么就有<strong>“级联ABCD相乘”</strong>。</p>
-<p><img alt="alt text" src="../assets/image-5.png" />
-$$
+<p><img alt="alt text" src="../assets/image-5.png" /></p>
+<div class="arithmatex">\[
 \begin{aligned}
 \begin{bmatrix}
 v_{in} \\
@@ -2517,9 +2517,9 @@ v_{out}\\
 i_{out}
 \end{bmatrix}
 \end{aligned}
-$$
-因此
-$$
+\]</div>
+<p>因此</p>
+<div class="arithmatex">\[
 \begin{bmatrix}
 A&amp;B \\
 C&amp;D
@@ -2530,19 +2530,19 @@ C_1&amp;D_1
 A_2&amp;B_2 \\
 C_2&amp;D_2
 \end{bmatrix}
-$$</p>
+\]</div>
 <p>用类似的方法可以推导经典的口诀：<strong>“串串相连z相加，并并相连y相加，串并相连h相加，并串相连g相加”。</strong>
 <img alt="alt text" src="../assets/image-6.png" />
-以h矩阵为例，上图中不难发现
-$$
+以h矩阵为例，上图中不难发现</p>
+<div class="arithmatex">\[
 i_{1A}=i_{1B}\,,v_{2A}=v_{2B}\,,
-$$
-同时又有
-$$
+\]</div>
+<p>同时又有</p>
+<div class="arithmatex">\[
 v_1=v_{1A}+v_{1B}\,,i_2=i_{2A}+i_{2B}\,,
-$$
-所以
-$$
+\]</div>
+<p>所以</p>
+<div class="arithmatex">\[
 \begin{aligned}
 \begin{bmatrix}
 v_1\\ i_2
@@ -2572,13 +2572,13 @@ h_{21A}+h_{21B}&amp;h_{22A}+h_{22B}
 i_1\\ v_2
 \end{bmatrix}
 \end{aligned}
-$$
-进而<span class="arithmatex">\(h=h_A+h_B\,.\)</span>用类似方法不难证明剩下三种情况，在此略过。</p>
+\]</div>
+<p>进而<span class="arithmatex">\(h=h_A+h_B\,.\)</span>用类似方法不难证明剩下三种情况，在此略过。</p>
 <h4 id="_12">常用网络的参量矩阵</h4>
 <p>首先是常用的串臂电阻和并臂电导，也就是挂在嘴边的"1z01, 10y1"。如下图：
 <img alt="alt text" src="../assets/image-7.png" />
-两个电路的ABCD参量分别为
-$$
+两个电路的ABCD参量分别为</p>
+<div class="arithmatex">\[
 ABCD_\text{串臂}=\begin{bmatrix}
 1 &amp; Z\\
 0 &amp; 1
@@ -2586,25 +2586,25 @@ ABCD_\text{串臂}=\begin{bmatrix}
 1 &amp; 0\\
 Y &amp; 1
 \end{bmatrix}
-$$
-记住这一点结合之前提到的<strong>“级联ABCD相乘”</strong>，可以快速计算梯形网络的ABCD矩阵，进而得到很多性质。这两个网络的zyhg矩阵也很重要,应当记忆。
-$$
+\]</div>
+<p>记住这一点结合之前提到的<strong>“级联ABCD相乘”</strong>，可以快速计算梯形网络的ABCD矩阵，进而得到很多性质。这两个网络的zyhg矩阵也很重要,应当记忆。</p>
+<div class="arithmatex">\[
 Z_\text{串臂}=\begin{bmatrix}
 Z &amp; Z\\
 Z &amp; Z
 \end{bmatrix}\,,Z_\text{并臂}不存在\,;
-$$
-$$
+\]</div>
+<div class="arithmatex">\[
 Y_\text{串臂}不存在\,,Y_\text{并臂}=\begin{bmatrix}
 Y &amp; Y\\
 Y &amp; Y
 \end{bmatrix}\,;
-$$</p>
+\]</div>
 <p>然后是同样常见的线性受控源模型。利用戴维南-诺顿定理不难证明下列电路的等价性。
 <img alt="alt text" src="../assets/image-13.png" /></p>
 <h4 id="_13">网络参量的物理意义</h4>
-<p>直接观察矩阵的形式不利于初学者理解网络参量各个元素的物理意义，因此我们不妨把矩阵展开。以h参量为例：
-$$
+<p>直接观察矩阵的形式不利于初学者理解网络参量各个元素的物理意义，因此我们不妨把矩阵展开。以h参量为例：</p>
+<div class="arithmatex">\[
 \begin{bmatrix}
 v_1\\ i_2
 \end{bmatrix}=
@@ -2615,53 +2615,53 @@ h_{21} &amp; h_{22}
 \begin{bmatrix}
 i_1\\ v_2
 \end{bmatrix}
-$$
-展开得到
-$$
+\]</div>
+<p>展开得到</p>
+<div class="arithmatex">\[
 \begin{cases}
 v_1=h_{11}i_1+h_{12}v_2\\
 i_2=h_{21}i_1+h_{22}v_2
 \end{cases}
-$$
-从而</p>
+\]</div>
+<p>从而</p>
 <div class="arithmatex">\[
 \begin{cases}
-h_{11}=\frac{v_1}{i_1} \big |_{v_2=0}\quad v_2置0时的输入阻抗\\\\
-h_{22}=\frac{i_2}{v_1} \big |_{i_1=0}\quad i_1置0时的输出导纳\\\\
-h_{21}=\frac{i_2}{i_1} \big |_{v_2=0}\quad v_2置0时的电流放大系数\\\\
+h_{11}=\frac{v_1}{i_1} \big |_{v_2=0}\quad v_2置0时的输入阻抗\\
+h_{22}=\frac{i_2}{v_1} \big |_{i_1=0}\quad i_1置0时的输出导纳\\
+h_{21}=\frac{i_2}{i_1} \big |_{v_2=0}\quad v_2置0时的电流放大系数\\
 h_{22}=\frac{i_2}{v_2} \big |_{i_1=0}\quad i_1置0时的电压反馈系数
 \end{cases}
 \]</div>
-<p>对于剩下三个矩阵也是类似的原理：11元素是输入xx，22元素是输出xx，21元素是xx放大系数，12元素是xx反馈系数。常见用途是<strong>输入输出阻抗公式</strong>：
-$$
+<p>对于剩下三个矩阵也是类似的原理：11元素是输入xx，22元素是输出xx，21元素是xx放大系数，12元素是xx反馈系数。常见用途是<strong>输入输出阻抗公式</strong>：</p>
+<div class="arithmatex">\[
 \begin{cases}
 w_{in}=p_{11}-\frac{p_{12}p_{21}}{p_{22}+w_L}\\
 w_{out}=p_{22}-\frac{p_{21}p_{12}}{p_{11}+w_S}
 \end{cases}
-$$
-这里<span class="arithmatex">\(p\in\{z,y,h,g\}\)</span>, <span class="arithmatex">\(w\)</span>根据量纲为对应的阻抗或导纳。注意输入输出阻抗的定义如下图：</p>
+\]</div>
+<p>这里<span class="arithmatex">\(p\in\{z,y,h,g\}\)</span>, <span class="arithmatex">\(w\)</span>根据量纲为对应的阻抗或导纳。注意输入输出阻抗的定义如下图：</p>
 <p><img alt="alt text" src="../assets/image-15.png" /></p>
 <p>有了这一点之后可以记忆一个也很常用的公式：<strong>基于zyhg矩阵给出传递函数。</strong></p>
 <p>首先对于单向网络<span class="arithmatex">\(p_{12}=0\)</span>,传递函数是容易写出的。还是以h矩阵为例，考虑这样的电路：</p>
 <p><img alt="alt text" src="../assets/image-12.png" /></p>
-<p>那么上图中的传递函数可以简单写成
-$$
+<p>那么上图中的传递函数可以简单写成</p>
+<div class="arithmatex">\[
 \begin{aligned}
 H_{单向}=\frac{v_L}{v_S}&amp;=\textcolor{yellow}{\frac{i_{in}}{v_S}}\cdot
 \textcolor{cyan}{\frac{i_{out}}{i_{in}}}\cdot\textcolor{pink}{\frac{v_L}{i_{out}}}\\
 &amp;=\textcolor{yellow}{\frac{1}{R_S+h_{11}}}\cdot\textcolor{cyan}{-h_{21}}\cdot\textcolor{pink}{\frac{1}{h_{22}+G_L}}\\
 &amp;=\frac{-h_{21}}{(R_S+h_{11})(h_{22}+G_{L})}
 \end{aligned}
-$$
-然后记住<strong>双向化方法</strong>，对于每一种矩阵，处理方法都是<strong>在分母上减去<span class="arithmatex">\(p_{12}p_{21}\)</span></strong>。即此例中
-$$
+\]</div>
+<p>然后记住<strong>双向化方法</strong>，对于每一种矩阵，处理方法都是<strong>在分母上减去<span class="arithmatex">\(p_{12}p_{21}\)</span></strong>。即此例中</p>
+<div class="arithmatex">\[
 H_{双向}=\frac{-h_{21}}{(R_S+h_{11})(h_{22}+G_{L})\textcolor{cyan}{-h_{12}h_{21}}}
-$$
-就可以随手推公式了。</p>
+\]</div>
+<p>就可以随手推公式了。</p>
 <details class="note">
 <summary>为什么是分母上减去<span class="arithmatex">\(p_{12}p_{21}\)</span>?</summary>
-<p>只需要画出信号流图就可以轻松解释。考虑如下系统：
-$$
+<p>只需要画出信号流图就可以轻松解释。考虑如下系统：</p>
+<div class="arithmatex">\[
 \begin{bmatrix}
 Y_1\\
 Y_2
@@ -2673,18 +2673,18 @@ p_{21}&amp;p_{22}
 X_1\\
 X_2
 \end{bmatrix}
-$$
-同时有来自testbench的约束</p>
+\]</div>
+<p>同时有来自testbench的约束</p>
 <div class="arithmatex">\[
 \begin{cases}
-X_1+w_SY_1=x\\\\
+X_1+w_SY_1=x\\
 X_2+w_LY_2=0
 \end{cases}
 \]</div>
 <p>即</p>
 <div class="arithmatex">\[
 \begin{cases}
-X_1=-w_SY_1+x\\\\
+X_1=-w_SY_1+x\\
 X_2=-w_LY_2
 \end{cases}
 \]</div>
@@ -2693,7 +2693,7 @@ X_2=-w_LY_2
 不难写出其行列式为</p>
 <div class="arithmatex">\[
 \begin{aligned}
-\Delta &amp;= 1 - (-w_Sp_{11}) - (-w_Lp_{22})\\\\
+\Delta &amp;= 1 - (-w_Sp_{11}) - (-w_Lp_{22})\\
 &amp;\textcolor{red}{-p_{12}p_{21}w_Sw_L} + p_{11}p_{22}w_Sw_L
 \end{aligned}
 \]</div>
@@ -2712,8 +2712,8 @@ H=\frac{1}{\Delta}\sum_k g_k\Delta_k
 <p>该边不影响分子，只改变分母.</p>
 <p>这也就解释了为什么求出单向网络传函之后只需要分母减去<span class="arithmatex">\(p_{12}p_{21}\)</span>即可得到双向网络传递函数。</p>
 </details>
-<p>之前提到ABCD矩阵也有其意义，我们不妨同样地进行展开。
-$$
+<p>之前提到ABCD矩阵也有其意义，我们不妨同样地进行展开。</p>
+<div class="arithmatex">\[
 \begin{bmatrix}
 v_{in}\\ i_{in}
 \end{bmatrix}
@@ -2723,19 +2723,19 @@ C &amp; D
 \end{bmatrix}\begin{bmatrix}
 v_{out}\\ i_{out}
 \end{bmatrix}
-$$</p>
+\]</div>
 <div class="arithmatex">\[
 \begin{cases}
-v_{in}=Av_{out}+Bi_{out}\\\\
+v_{in}=Av_{out}+Bi_{out}\\
 i_{in}=Cv_{out}+Di_{out}
 \end{cases}
 \]</div>
 <p>于是</p>
 <div class="arithmatex">\[
 \begin{cases}
-\frac{1}{A}=\frac{v_{out}}{v_{in}}\big |_{i_{out}=0}\quad本征电压增益A_{v0}=g_{21}\\\\
-\frac{1}{D}=\frac{i_{out}}{v_{in}}\big |_{v_{out}=0}\quad本征电流增益A_{i0}=-h_{21}\\\\
-\frac{1}{C}=\frac{v_{out}}{i_{in}}\big |_{i_{out}=0}\quad本征跨阻增益R_{m0}=z_{21}\\\\
+\frac{1}{A}=\frac{v_{out}}{v_{in}}\big |_{i_{out}=0}\quad本征电压增益A_{v0}=g_{21}\\
+\frac{1}{D}=\frac{i_{out}}{v_{in}}\big |_{v_{out}=0}\quad本征电流增益A_{i0}=-h_{21}\\
+\frac{1}{C}=\frac{v_{out}}{i_{in}}\big |_{i_{out}=0}\quad本征跨阻增益R_{m0}=z_{21}\\
 \frac{1}{B}=\frac{i_{out}}{i_{in}}\big |_{v_{out}=0}\quad本征跨导增益G_{m0}=-y_{21}
 \end{cases}
 \]</div>
@@ -2746,8 +2746,8 @@ i_{in}=Cv_{out}+Di_{out}
 </div>
 <details class="success">
 <summary>Answers</summary>
-<p>可以轻松获得ABCD参量（注意我们只关心A元素）为
-$$
+<p>可以轻松获得ABCD参量（注意我们只关心A元素）为</p>
+<div class="arithmatex">\[
 \begin{aligned}
     \begin{bmatrix}
     A &amp; B \\
@@ -2778,15 +2778,15 @@ $$
     \star &amp; \star
     \end{bmatrix}
 \end{aligned}
-$$
-进而电压传递函数
-$$
+\]</div>
+<p>进而电压传递函数</p>
+<div class="arithmatex">\[
 \begin{aligned}
 H&amp;=A_v=\frac{1}{A}\\
 &amp;=\frac{1}{ 1+\frac{C_2R_2}{C_1R_1}+\frac{1}{sC_1R_1}+sC_2R_2+\frac{C_2}{C_1}}\,.
 \end{aligned}
-$$
-比KCL/KVL要快很多。</p>
+\]</div>
+<p>比KCL/KVL要快很多。</p>
 </details>
 <h3 id="_14">时域分析与三/五要素法</h3>
 <div class="admonition tip">
@@ -2801,14 +2801,14 @@ $$
 </div>
 <p>一个系统的冲激响应和其传递函数互为Laplace变换对。如何理解呢？
 这是因为在时域中，单位冲激函数 <span class="arithmatex">\(\delta(t)\)</span> 作用于系统后，输出就是系统的冲激响应 <span class="arithmatex">\(h(t)\)</span>，所以系统的输入输出关系为：</p>
-<p>$$
+<div class="arithmatex">\[
 y(t) = h(t) * \delta(t) = h(t)
-$$
-对两边取拉普拉斯变换：</p>
-<p>$$
-Y(s) = H(s) \cdot \mathcal{L}{\delta(t)} = H(s) \cdot 1 = H(s)
-$$
-因此，系统对冲激函数的响应 $ h(t) $ 与传递函数 $ H(s) $ 满足：</p>
+\]</div>
+<p>对两边取拉普拉斯变换：</p>
+<div class="arithmatex">\[
+Y(s) = H(s) \cdot \mathcal{L}\{\delta(t)\} = H(s) \cdot 1 = H(s)
+\]</div>
+<p>因此，系统对冲激函数的响应 $ h(t) $ 与传递函数 $ H(s) $ 满足：</p>
 <div class="arithmatex">\[
 H(s) = \mathcal{L}\{h(t)\}
 \quad \text{以及} \quad
@@ -2818,13 +2818,13 @@ h(t) = \mathcal{L}^{-1}\{H(s)\}
 <p>列状态方程的通用方法：用恒压源替代电容，恒流源替代电感，求电容电流和电感电压。此后根据</p>
 <div class="arithmatex">\[
 \frac{\text{d}}{\text{d}t}\begin{bmatrix}
-v_C\\\\
+v_C\\
 i_L
 \end{bmatrix}=\begin{bmatrix}
-\frac{1}{C}i_C\\\\
+\frac{1}{C}i_C\\
 \frac{1}{L}v_L
 \end{bmatrix}=A\begin{bmatrix}
-v_C\\\\
+v_C\\
 i_L
 \end{bmatrix}+B
 \]</div>
@@ -2836,46 +2836,46 @@ i_L
 </div>
 <details class="success">
 <summary>答案</summary>
-<p>首先利用戴维南-诺顿轻松写出<span class="arithmatex">\(i_C\,,v_L\)</span>关于<span class="arithmatex">\(v_C\,,i_L\)</span>的表达式
-$$
+<p>首先利用戴维南-诺顿轻松写出<span class="arithmatex">\(i_C\,,v_L\)</span>关于<span class="arithmatex">\(v_C\,,i_L\)</span>的表达式</p>
+<div class="arithmatex">\[
 \begin{cases}
 i_C=\frac{i_LR_1-v_C}{R_1+R_2}\\
 v_L=V_S-(v_c\frac{R_1}{R_1+R_2}-i_L(R_1\parallel R_2))
 \end{cases}
-$$
-整理为</p>
+\]</div>
+<p>整理为</p>
 <div class="arithmatex">\[
 \begin{aligned}
 \frac{\text{d}}{\text{d}t}\begin{bmatrix}
-    v_C\\\\
+    v_C\\
     i_L
 \end{bmatrix}&amp;=\begin{bmatrix}
-\frac{1}{C}i_C\\\\
+\frac{1}{C}i_C\\
 \frac{1}{L}v_L
-\end{bmatrix}\\\\
+\end{bmatrix}\\
 &amp;=\frac{1}{R_1+R_2}\begin{bmatrix}
-\frac{-1}{C} &amp; \frac{R_1}{C} \\\\
+\frac{-1}{C} &amp; \frac{R_1}{C} \\
 \frac{-R_1}{L} &amp; \frac{R_1R_2}{L}
 \end{bmatrix}\begin{bmatrix}
-v_C\\\\
+v_C\\
 i_L
 \end{bmatrix}+\begin{bmatrix}
-0\\\\
+0\\
 V_S - \frac{R_1}{R_1+R_2}
 \end{bmatrix}
 \end{aligned}
 \]</div>
 </details>
 <h4 id="_17">三要素法</h4>
-<p>一阶系统的传递函数表达式总是为
-$$
+<p>一阶系统的传递函数表达式总是为</p>
+<div class="arithmatex">\[
 X(j\omega)=\frac{\cdots}{1+\omega\tau}
-$$
-的形式，其对应的时域表达式必然为【由于未学ss，此处不必深究】
-$$
+\]</div>
+<p>的形式，其对应的时域表达式必然为【由于未学ss，此处不必深究】</p>
+<div class="arithmatex">\[
 x(t)=\left(\textcolor{yellow}{x(0)}-\textcolor{yellow}{x_\infty(0)}\right)\exp\left(-\frac{t}{\textcolor{cyan}{\tau}}\right)+x_\infty(t)
-$$
-其中需要关注</p>
+\]</div>
+<p>其中需要关注</p>
 <table>
 <thead>
 <tr>
@@ -2904,23 +2904,23 @@ $$
 <p><strong>欠阻尼情形</strong><span class="arithmatex">\(\xi&lt;1\)</span></p>
 <div class="arithmatex">\[
 \begin{aligned}
-x(t)&amp;=x_\infty(t)+\left(x(0)-x_\infty(0)\right)\exp\left(-\xi\omega_0t\right)\cos\left(\sqrt{1-\xi^2}\omega_0t\right)\\\\
-&amp;+\left(x(0)-x_\infty(0)+\frac{\dot{x}(0)-\dot{x_\infty}(0)}{\xi\omega_0}\right)\\\\
+x(t)&amp;=x_\infty(t)+\left(x(0)-x_\infty(0)\right)\exp\left(-\xi\omega_0t\right)\cos\left(\sqrt{1-\xi^2}\omega_0t\right)\\
+&amp;+\left(x(0)-x_\infty(0)+\frac{\dot{x}(0)-\dot{x_\infty}(0)}{\xi\omega_0}\right)\\
 &amp;\cdot\frac{\xi}{\sqrt{1-\xi^2}}\exp\left(-\xi\omega_0t\right)\sin\left(\sqrt{1-\xi^2}\omega_0t\right)
 \end{aligned}
 \]</div>
 <p><strong>临界阻尼</strong><span class="arithmatex">\(\xi=1\)</span></p>
 <div class="arithmatex">\[
 \begin{aligned}
-x(t)&amp;=x_\infty(t)+\left(x(0)-x_\infty(0)\right)\exp\left(-\omega_0t\right)\\\\
+x(t)&amp;=x_\infty(t)+\left(x(0)-x_\infty(0)\right)\exp\left(-\omega_0t\right)\\
 &amp;+\left(x(0)-x_\infty(0)+\frac{\dot{x}(0)-\dot{x_\infty}(0)}{\omega_0}\right)\exp\left(-\omega_0t\right)\omega_0t
 \end{aligned}
 \]</div>
 <p><strong>过阻尼</strong><span class="arithmatex">\(\xi&gt;1\)</span></p>
 <div class="arithmatex">\[
 \begin{aligned}
-x(t)&amp;=x_\infty(t)+\left(x(0)-x_\infty(0)\right)\exp\left(-\xi\omega_0t\right)\cosh\left(\sqrt{\xi^2-1}\omega_0t\right)\\\\
-&amp;+\left(x(0)-x_\infty(0)+\frac{\dot{x}(0)-\dot{x_\infty}(0)}{\xi\omega_0}\right)\\\\
+x(t)&amp;=x_\infty(t)+\left(x(0)-x_\infty(0)\right)\exp\left(-\xi\omega_0t\right)\cosh\left(\sqrt{\xi^2-1}\omega_0t\right)\\
+&amp;+\left(x(0)-x_\infty(0)+\frac{\dot{x}(0)-\dot{x_\infty}(0)}{\xi\omega_0}\right)\\
 &amp;\cdot\frac{\xi}{\sqrt{1-\xi^2}}\exp\left(-\xi\omega_0t\right)\sinh\left(\sqrt{\xi^2-1}\omega_0t\right)
 \end{aligned}
 \]</div>
@@ -2928,15 +2928,15 @@ x(t)&amp;=x_\infty(t)+\left(x(0)-x_\infty(0)\right)\exp\left(-\xi\omega_0t\right
 <p class="admonition-title">记忆方法</p>
 <p>看似很难其实记忆难度一般。首先式子都很规律，<span class="arithmatex">\(\exp\)</span>后面跟的都是<span class="arithmatex">\(-\xi\omega_0t\)</span>, (反)三教函数后面都是<span class="arithmatex">\(\sqrt{1-\xi^2}\)</span>。前面括弧里边的东西都是<strong>初值-稳态初值</strong>，<span class="arithmatex">\(\sin\)</span>前面的多一个微分的。每天默念几遍即可背诵。</p>
 </div>
-<p>特别对于过阻尼情形，我们需要把他编成<strong>长寿+短寿</strong>的形式
-$$
+<p>特别对于过阻尼情形，我们需要把他编成<strong>长寿+短寿</strong>的形式</p>
+<div class="arithmatex">\[
 x(t)=x_\infty(t)+A\exp-\lambda_1 t + B\exp-\lambda_2 t
-$$
-其中</p>
+\]</div>
+<p>其中</p>
 <div class="arithmatex">\[
 \begin{cases}
-A=\frac{\lambda_2}{\lambda_2-\lambda_1}(x(0)-x_\infty(0))-\frac{1}{\lambda_2-\lambda_1}(\dot{x}(0)-\dot{x}_\infty(0))\\\\
-B=\frac{\lambda_1}{\lambda_1-\lambda_2}(x(0)-x_\infty(0))-\frac{1}{\lambda_1-\lambda_2}(\dot{x}(0)-\dot{x}_\infty(0))\\\\
+A=\frac{\lambda_2}{\lambda_2-\lambda_1}(x(0)-x_\infty(0))-\frac{1}{\lambda_2-\lambda_1}(\dot{x}(0)-\dot{x}_\infty(0))\\
+B=\frac{\lambda_1}{\lambda_1-\lambda_2}(x(0)-x_\infty(0))-\frac{1}{\lambda_1-\lambda_2}(\dot{x}(0)-\dot{x}_\infty(0))\\
 \lambda_{1\,,2}=(-\xi\pm\sqrt{\xi^2-1})\omega_0
 \end{cases}
 \]</div>
@@ -2961,11 +2961,11 @@ B=\frac{\lambda_1}{\lambda_1-\lambda_2}(x(0)-x_\infty(0))-\frac{1}{\lambda_1-\la
 </tr>
 </tbody>
 </table>
-<p>其中<span class="arithmatex">\(\xi\)</span>和<span class="arithmatex">\(\omega_0\)</span>由传递函数给出。随便写电路中两个离得远一点的量作为输入输出写一个传递函数，就可以得到
-$$
-H=\frac{*}{s<sup>2+2\xi\omega_0s+\omega_0</sup>2}
-$$
-这里边就可以得到上述两要素。稳态响应<span class="arithmatex">\(x_\infty(t)\)</span>由输入的性质（冲激/阶跃激励的响应是直流，正弦的响应是改了相位和幅度的正弦）得到。有人曰：</p>
+<p>其中<span class="arithmatex">\(\xi\)</span>和<span class="arithmatex">\(\omega_0\)</span>由传递函数给出。随便写电路中两个离得远一点的量作为输入输出写一个传递函数，就可以得到</p>
+<div class="arithmatex">\[
+H=\frac{*}{s^2+2\xi\omega_0s+\omega_0^2}
+\]</div>
+<p>这里边就可以得到上述两要素。稳态响应<span class="arithmatex">\(x_\infty(t)\)</span>由输入的性质（冲激/阶跃激励的响应是直流，正弦的响应是改了相位和幅度的正弦）得到。有人曰：</p>
 <div class="admonition quote">
 <p class="admonition-title">稳态响应</p>
 <p>人生的稳态响应是一盒灰</p>
@@ -2986,7 +2986,7 @@ $$
 <p>然后利用阻抗变换将右侧甩到左侧</p>
 <div class="arithmatex">\[
 \begin{cases}
-    L_2'=\left(\frac{M}{L_2}\right)^2L_2=\frac{M^2}{L_2}\\\\
+    L_2'=\left(\frac{M}{L_2}\right)^2L_2=\frac{M^2}{L_2}\\
     R_L'=\left(\frac{M}{L_2}\right)^2R_L=\frac{M^2}{L_2^2}R_L
 \end{cases}
 \]</div>
@@ -2994,8 +2994,8 @@ $$
 <p>断开开关后实际上有效的只有右侧的<span class="arithmatex">\(R_L'\,,L_2'\)</span>，电路为二阶电路。因此不难得到三要素</p>
 <div class="arithmatex">\[
 \begin{cases}
-v_o'=-\frac{V_{S0}}{R_S}R_L'=-\frac{M^2V_{S0}}{R_SL_2'}R_L\\\\
-v'_{o\infty}(t)=0\\\\
+v_o'=-\frac{V_{S0}}{R_S}R_L'=-\frac{M^2V_{S0}}{R_SL_2'}R_L\\
+v'_{o\infty}(t)=0\\
 \tau=GL=\frac{L_2'}{R_L'}=\frac{L_2}{R_L}
 \end{cases}
 \]</div>
@@ -3008,85 +3008,85 @@ v_o(t)=-10V\cdot\exp\left(-\frac{t}{4\times 10^{-9}s}\right)
 <summary><strong>第二问</strong>答案</summary>
 <p>强行令两侧共地并带入互感变压器的Z参量模型（T型模型）等效。得到电路为
 <img alt="alt text" src="../assets/image-23.png" /></p>
-<p>这时看起来电路为三阶。但由于三个电感的带内容有耦合关系
-$$
+<p>这时看起来电路为三阶。但由于三个电感的带内容有耦合关系</p>
+<div class="arithmatex">\[
 i_A=i_B+i_C
-$$
-因此电路实际为二阶。我们求解其五要素。首先利用梯形网络计算<span class="arithmatex">\(V_s\to v_o\)</span>的传递函数以获得系统参数。我们采用之前的ABCD方法。</p>
+\]</div>
+<p>因此电路实际为二阶。我们求解其五要素。首先利用梯形网络计算<span class="arithmatex">\(V_s\to v_o\)</span>的传递函数以获得系统参数。我们采用之前的ABCD方法。</p>
 <div class="arithmatex">\[
 \begin{aligned}
 ABCD&amp;=\begin{bmatrix}
-1 &amp; R_S \\\\
+1 &amp; R_S \\
 0 &amp; 1
 \end{bmatrix}\begin{bmatrix}
-1 &amp; s(L_1-M)\\\\
+1 &amp; s(L_1-M)\\
 0 &amp; 1
 \end{bmatrix}
 \begin{bmatrix}
-1 &amp; 0 \\\\
+1 &amp; 0 \\
 \frac{1}{sM} &amp; 1
 \end{bmatrix}
 \begin{bmatrix}
-1 &amp; s(L_2-M) \\\\
+1 &amp; s(L_2-M) \\
 0 &amp; 1
 \end{bmatrix}
 \begin{bmatrix}
-1 &amp; 0 \\\\
+1 &amp; 0 \\
 \frac{1}{R_L} &amp; 1
-\end{bmatrix}\\\\
-&amp;=\cdots (数学运算略去，打矩阵太麻烦了。)\\\\
+\end{bmatrix}\\
+&amp;=\cdots (数学运算略去，打矩阵太麻烦了。)\\
 &amp;=\begin{bmatrix}
-1.25+1.25\times 10^8s^{-1} &amp; 100+2\times10^{-7}s \\\\
+1.25+1.25\times 10^8s^{-1} &amp; 100+2\times10^{-7}s \\
 * &amp; *
 \end{bmatrix}\begin{bmatrix}
-1+3.2\times 10^{-9}s &amp; * \\\\
+1+3.2\times 10^{-9}s &amp; * \\
 10^{-3} &amp; *
-\end{bmatrix}\\\\
+\end{bmatrix}\\
 &amp;=\begin{bmatrix}
-1.75+4.2\times 10^{-9}s+1.25\times 10^8s^{-1} &amp; * \\\\
+1.75+4.2\times 10^{-9}s+1.25\times 10^8s^{-1} &amp; * \\
 * &amp; *
 \end{bmatrix}
 \end{aligned}
 \]</div>
-<p>于是得到
-$$
+<p>于是得到</p>
+<div class="arithmatex">\[
 H_v = \frac{*}{s^2 + 4.17\times 10^{8}s + 2.98\times 10^{16}}
-$$</p>
-<p>进而
-$$
+\]</div>
+<p>进而</p>
+<div class="arithmatex">\[
 \omega_0=1.73\times 10^8 S^{-1}\quad,\,\xi = 1.21
-$$
-可知此系统为<strong>过阻尼</strong>系统。从而得到
-$$
+\]</div>
+<p>可知此系统为<strong>过阻尼</strong>系统。从而得到</p>
+<div class="arithmatex">\[
 \lambda_1=-9.17\times 10^7\,,\lambda_2=-3.27\times 10^8
-$$
-先放着。我们接下来根据电路的物理特性求剩下的参数。显然有<span class="arithmatex">\(v_o(0)=0\)</span>和<span class="arithmatex">\(v_{o\infty}(0)=0\)</span>。本题的难点在于求<span class="arithmatex">\(\dot{v}_o(0)\)</span>.我们注意到<strong>基尔霍夫定律对于微分后的电路依然适用</strong>，因此</p>
+\]</div>
+<p>先放着。我们接下来根据电路的物理特性求剩下的参数。显然有<span class="arithmatex">\(v_o(0)=0\)</span>和<span class="arithmatex">\(v_{o\infty}(0)=0\)</span>。本题的难点在于求<span class="arithmatex">\(\dot{v}_o(0)\)</span>.我们注意到<strong>基尔霍夫定律对于微分后的电路依然适用</strong>，因此</p>
 <div class="arithmatex">\[
 \begin{aligned}
-\dot{v}_o(0)&amp;=\dot{i}_C(0)R_L\\\\
-&amp;=(\dot{i}_A(0)-\dot{i}_B(0))R_L\quad(KCL)\\\\
-&amp;=\left(\frac{V_{S0}}{L_1-M}-\frac{0}{M}\right)R_L\\\\
+\dot{v}_o(0)&amp;=\dot{i}_C(0)R_L\\
+&amp;=(\dot{i}_A(0)-\dot{i}_B(0))R_L\quad(KCL)\\
+&amp;=\left(\frac{V_{S0}}{L_1-M}-\frac{0}{M}\right)R_L\\
 &amp;=2.5\times 10^{10}V/S
 \end{aligned}
 \]</div>
 <p>进而利用</p>
 <div class="arithmatex">\[
 \begin{cases}
-A=\frac{\lambda_2}{\lambda_2-\lambda_1}(x(0)-x_\infty(0))-\frac{1}{\lambda_2-\lambda_1}(\dot{x}(0)-\dot{x}_\infty(0))\\\\
+A=\frac{\lambda_2}{\lambda_2-\lambda_1}(x(0)-x_\infty(0))-\frac{1}{\lambda_2-\lambda_1}(\dot{x}(0)-\dot{x}_\infty(0))\\
 B=\frac{\lambda_1}{\lambda_1-\lambda_2}(x(0)-x_\infty(0))-\frac{1}{\lambda_1-\lambda_2}(\dot{x}(0)-\dot{x}_\infty(0))
 \end{cases}
 \]</div>
 <p>得到</p>
 <div class="arithmatex">\[
 \begin{cases}
-A=106.3\\\\
+A=106.3\\
 B=-106.3
 \end{cases}
 \]</div>
 <p>从而</p>
 <div class="arithmatex">\[
 \begin{aligned}
-v_o(t)&amp;=106.3V\cdot\exp\left(-9.17\times10^{-7}s^{-1}t\right)\\\\
+v_o(t)&amp;=106.3V\cdot\exp\left(-9.17\times10^{-7}s^{-1}t\right)\\
 &amp;-106.3V\cdot\exp\left(-3.27\times10^{-8}s^{-1}t\right)
 \end{aligned}
 \]</div>
@@ -3094,15 +3094,15 @@ v_o(t)&amp;=106.3V\cdot\exp\left(-9.17\times10^{-7}s^{-1}t\right)\\\\
 <h3 id="_19">频域分析</h3>
 <h4 id="_20">伯特图画法</h4>
 <p>伯特图是对数对数坐标下近似的幅频特性和相频特性图，属于必考但送分的内容。方法如下。</p>
-<p><strong>第一步</strong>：求出传递函数并因式分解。得到形如
-$$
+<p><strong>第一步</strong>：求出传递函数并因式分解。得到形如</p>
+<div class="arithmatex">\[
 H(s)=A_0\frac{(s+\omega_{z1})(s+\omega_{z2})\cdots(s+\omega_{zm})}{(s+\omega_{p1})(s+\omega_{p2})\cdots(s+\omega_{pn})}
-$$
-的形式。其中<span class="arithmatex">\(s_z=-\omega_{z1}\,,\cdots\,,-\omega_{zm}\)</span>称之为零点，可在整个复平面；<span class="arithmatex">\(s_p=-\omega_{p1}\,,\cdots\,,-\omega_{pn}\)</span>称之为极点，要求<mark class="critic">必须在左半平面</mark>,否则系统将自激震荡或不收敛。最后得到
-$$
+\]</div>
+<p>的形式。其中<span class="arithmatex">\(s_z=-\omega_{z1}\,,\cdots\,,-\omega_{zm}\)</span>称之为零点，可在整个复平面；<span class="arithmatex">\(s_p=-\omega_{p1}\,,\cdots\,,-\omega_{pn}\)</span>称之为极点，要求<mark class="critic">必须在左半平面</mark>,否则系统将自激震荡或不收敛。最后得到</p>
+<div class="arithmatex">\[
 H(j\omega)=H_0\frac{\left(1+\frac{j\omega}{\omega_{z1}}\right)\left(1+\frac{j\omega}{\omega_{z2}}\right)\cdots\left(1+\frac{j\omega}{\omega_{zm}}\right)}{\left(1+\frac{j\omega}{\omega_{p1}}\right)\left(1+\frac{j\omega}{\omega_{p2}}\right)\cdots\left(1+\frac{j\omega}{\omega_{pn}}\right)}
-$$
-这里用到了求频率特性时的代换<span class="arithmatex">\(s=j\omega\)</span>。</p>
+\]</div>
+<p>这里用到了求频率特性时的代换<span class="arithmatex">\(s=j\omega\)</span>。</p>
 <p><strong>第二步</strong>：将零极点按照大小排序，然后按照频率从<span class="arithmatex">\(0\)</span>开始往右走。依据如下口诀作图：
 - 幅频：碰到极点<span class="arithmatex">\(-20\)</span>(dB/10倍频程)，碰到零点<span class="arithmatex">\(+20\)</span>(dB/10倍频程).
 - 相频：极点滞后<span class="arithmatex">\(90^\circ\)</span>，零点看左右，左超右滞<span class="arithmatex">\(90^\circ\)</span>.作图的时候认为<span class="arithmatex">\(\varphi\)</span>关于<span class="arithmatex">\(\log\omega\)</span>在<span class="arithmatex">\(0.1\omega\to10\omega\)</span>范围内线性完成超前/滞后。</p>
@@ -3114,14 +3114,14 @@ $$
 <summary>答案</summary>
 <div class="arithmatex">\[
 \begin{aligned}
-H(j\omega)&amp;=-10^6\frac{1+\frac{j\omega}{5\times 10^4}}{\left(1+\frac{j\omega}{5\times10^6}\right)\left(1+\frac{j\omega}{1\times10^8}\right)}\cdot\frac{5\times 10^9}{5\times 10^6\cdot 1\times 10^8}\\\\
+H(j\omega)&amp;=-10^6\frac{1+\frac{j\omega}{5\times 10^4}}{\left(1+\frac{j\omega}{5\times10^6}\right)\left(1+\frac{j\omega}{1\times10^8}\right)}\cdot\frac{5\times 10^9}{5\times 10^6\cdot 1\times 10^8}\\
 &amp;=(-10)\frac{1+\frac{j\omega}{5\times 10^4}}{\left(1+\frac{j\omega}{5\times10^6}\right)\left(1+\frac{j\omega}{1\times10^8}\right)}
 \end{aligned}
 \]</div>
 <p>列出零极点为</p>
 <div class="arithmatex">\[
 \begin{cases}
-零点\quad -5\times 10^9\\\\
+零点\quad -5\times 10^9\\
 极点\quad -5\times 10^6\,,-1\times10^8
 \end{cases}
 \]</div>
@@ -3137,30 +3137,30 @@ H(j\omega)&amp;=-10^6\frac{1+\frac{j\omega}{5\times 10^4}}{\left(1+\frac{j\omega
 <p>低通系统：</p>
 <div class="arithmatex">\[
 \omega_{3dB}=\begin{cases}
-\omega_0\,,\xi=0.707\\\\
-\frac{1}{2\xi}\,,\xi\gg1\quad(\frac{1}{\tau_{RC}}=\frac{1}{RC})\\\\
+\omega_0\,,\xi=0.707\\
+\frac{1}{2\xi}\,,\xi\gg1\quad(\frac{1}{\tau_{RC}}=\frac{1}{RC})\\
 \sqrt{1+\sqrt 2}\omega_0=1.554\omega_0\,,\xi\ll1
 \end{cases}
 \]</div>
 <p>高通系统：</p>
 <div class="arithmatex">\[
 \omega_{3dB}=\begin{cases}
-\omega_0\,,\xi=0.707\\\\
-2\xi\,,\xi\gg1\quad(\frac{1}{\tau_{GL}}=\frac{R}{L})\\\\
+\omega_0\,,\xi=0.707\\
+2\xi\,,\xi\gg1\quad(\frac{1}{\tau_{GL}}=\frac{R}{L})\\
 \frac{\omega_0}{1.554}\,,\xi\ll1
 \end{cases}
 \]</div>
 <p>带通（带阻）系统：</p>
 <div class="arithmatex">\[
 \begin{cases}
-BW_{3dB}=f_2-f_1=\frac{f_0}{Q}\\\\
+BW_{3dB}=f_2-f_1=\frac{f_0}{Q}\\
 f_0 = \sqrt{f_1f_2}=\frac{\omega_0}{2\pi}
 \end{cases}
 \]</div>
-<p>其中
-$$
+<p>其中</p>
+<div class="arithmatex">\[
 Q=\frac{1}{2\xi}=\frac{Z_0}{R}=\frac{Y_0}{G}
-$$</p>
+\]</div>
 <p><strong>平坦性质</strong>(最优二阶系统)</p>
 <table>
 <thead>
@@ -3186,24 +3186,24 @@ $$</p>
 </table>
 <p><strong>谐振峰</strong> </p>
 <p>谐振现象在时域体现为<strong>振铃</strong>现象，经过Q个周期，振铃幅度衰减为4.3%以下；经过1.5Q个周期，振铃幅度衰减为1%以下；经过2.2Q个周期，振铃幅度衰减为0.1%以下。一般认为振铃时间就是1.5QT。</p>
-<p>对于低通系统，其谐振频点
-$$
+<p>对于低通系统，其谐振频点</p>
+<div class="arithmatex">\[
 \omega_e=\sqrt{1-2\xi^2}\omega_0\approx\omega_0\quad(\xi\ll0.707)
-$$
-峰高度
-$$
+\]</div>
+<p>峰高度</p>
+<div class="arithmatex">\[
 A(\omega_e)=\frac{1}{2\xi\sqrt{1-\xi^2}}&gt;1\quad(\xi&lt;0.707)
-$$
-特别对于<span class="arithmatex">\(\xi\ll0.707\)</span>有<span class="arithmatex">\(A(\omega_e)\approx Q\)</span>.</p>
-<p>对于低通系统，其谐振频点
-$$
+\]</div>
+<p>特别对于<span class="arithmatex">\(\xi\ll0.707\)</span>有<span class="arithmatex">\(A(\omega_e)\approx Q\)</span>.</p>
+<p>对于低通系统，其谐振频点</p>
+<div class="arithmatex">\[
 \omega_e= \frac{1}{\sqrt{1-2\xi^2}}\omega_0\approx\omega_0\quad(\xi\ll0.707)
-$$
-峰高度
-$$
+\]</div>
+<p>峰高度</p>
+<div class="arithmatex">\[
 A(\omega_e)=\frac{1}{2\xi\sqrt{1-\xi^2}}&gt;1\quad(\xi&lt;0.707)
-$$
-特别对于<span class="arithmatex">\(\xi\ll0.707\)</span>有<span class="arithmatex">\(A(\omega_e)\approx Q\)</span>.</p>
+\]</div>
+<p>特别对于<span class="arithmatex">\(\xi\ll0.707\)</span>有<span class="arithmatex">\(A(\omega_e)\approx Q\)</span>.</p>
 <p>当发生谐振时，<span class="arithmatex">\(Z\)</span>和<span class="arithmatex">\(Y\)</span>为实数，即<span class="arithmatex">\(\Im [Z]=0\,,\Im[Y]=0\)</span>。此时并联LC等效为开路，串联LC等效为短路。</p>
 <h4 id="_22">信号通路法和开短路时间常数法</h4>
 <p>信号通路法是估计零点的方法。当两条不同属性的路径到达输出端时会产生零点，类似于增透增反膜。如下面这个例子
@@ -3213,11 +3213,11 @@ $$
 <li>输入-<span class="arithmatex">\(g_m\)</span>-<span class="arithmatex">\(R_L\)</span>(主通路)</li>
 <li>输入-<span class="arithmatex">\(C_{bc}\)</span>-<span class="arithmatex">\(R_L\)</span></li>
 </ol>
-<p>而路径1为反相，路径2为同相。两条路径的gm分别为
-$$
+<p>而路径1为反相，路径2为同相。两条路径的gm分别为</p>
+<div class="arithmatex">\[
 g_{m1}=-g_m\,,g_{m2}=y_{21,C_{bc}}=sC_{bc}
-$$
-因此当<span class="arithmatex">\(sC_{bc}=g_m\)</span>的时候会造成一个零点，此时<span class="arithmatex">\(s=\frac{g_m}{C_{bc}}\)</span>.</p>
+\]</div>
+<p>因此当<span class="arithmatex">\(sC_{bc}=g_m\)</span>的时候会造成一个零点，此时<span class="arithmatex">\(s=\frac{g_m}{C_{bc}}\)</span>.</p>
 <p>开短路时间常数法用于估计极点。需要记住口诀</p>
 <div class="admonition important">
 <p class="admonition-title">口诀</p>
@@ -3239,11 +3239,11 @@ f_{h,3dB}=\frac{1}{2\pi(\tau_{s1}+\tau_{s2}+\cdots)}=\frac{1}{2\pi\left(R_1C_1+R
 <p>两种方法都是对应的量相差得越多，估计越准确。开路/短路的意思是，对每个“决定电容”（低端的高通和高端的低通），依次按住不动，开路/短路剩下所有的电容，将该电容大小<span class="arithmatex">\(C_i\)</span>和<mark class="critic">该电容<strong>看到</strong>的电阻大小</mark><span class="arithmatex">\(R_i\)</span>带入上式中去。</p>
 <h3 id="_23">系统分析</h3>
 <h4 id="_24">小信号分析</h4>
-<p>小信号分析的本质就是利用<strong>叠加原理</strong>，分别考虑直流偏置和小信号的作用。也即利用Taylor展开
-$$
+<p>小信号分析的本质就是利用<strong>叠加原理</strong>，分别考虑直流偏置和小信号的作用。也即利用Taylor展开</p>
+<div class="arithmatex">\[
 f(x+\delta)=f(x)+\delta f'(x)+\cdots
-$$
-将所有的电路对小信号<span class="arithmatex">\(\delta\)</span>的响应看成是一次的。式中<span class="arithmatex">\(x\)</span>为所有的直流偏置源。《电电》课的小信号分析非常程式化，流程如下：</p>
+\]</div>
+<p>将所有的电路对小信号<span class="arithmatex">\(\delta\)</span>的响应看成是一次的。式中<span class="arithmatex">\(x\)</span>为所有的直流偏置源。《电电》课的小信号分析非常程式化，流程如下：</p>
 <ol>
 <li>分析直流偏置；</li>
 <li>将小信号模型带入分析小信号。</li>
@@ -3251,23 +3251,23 @@ $$
 <p>因此只要掌握常见元件如BJT，MOS的小信号模型就可以轻松拿捏。分析直流偏置的时候，应当保留大信号控制关系</p>
 <div class="arithmatex">\[
 \begin{cases}
-\beta I_B=I_C\\\\
+\beta I_B=I_C\\
 v_{be}=0.7V\,or\,I_B=(\exp\frac{V_{be}}{V_T}-1)I_{S0}
 \end{cases}\quad(BJT)\,,
 \begin{cases}
-g_m = 0\\\\
+g_m = 0\\
 I_D = \beta_n V_{od}^2
 \end{cases}(MOS)
 \]</div>
 <p>然后分析小信号模型使用小信号控制关系</p>
 <div class="arithmatex">\[
 \begin{cases}
-g_m = \frac{I_C}{v_T}\\\\
-r_{be}=\frac{\beta}{g_m}\\\\
+g_m = \frac{I_C}{v_T}\\
+r_{be}=\frac{\beta}{g_m}\\
 r_{ce}=\frac{V_A}{I_C}
 \end{cases}\quad(BJT)\,,
 \begin{cases}
-g_m = \frac {2I_D}{V_{od}}=2\beta_n V_{od}{1+\frac{V_DS}{V_A}}\\\\
+g_m = \frac {2I_D}{V_{od}}=2\beta_n V_{od}{1+\frac{V_DS}{V_A}}\\
 r_{ds} = \frac{V_A}{I_D}
 \end{cases}(MOS)
 \]</div>
@@ -3296,8 +3296,8 @@ r_{ds} = \frac{V_A}{I_D}
 <p>最后代入得到</p>
 <div class="arithmatex">\[
 \begin{cases}
-R_{in,c}=(1+T)r_{in}=\infty\\\\
-R_{out,c}=(1+T)r_{out}=(1-g_mR_cA_{v0})\frac{1}{g_m}=A_{v0}R_C\\\\
+R_{in,c}=(1+T)r_{in}=\infty\\
+R_{out,c}=(1+T)r_{out}=(1-g_mR_cA_{v0})\frac{1}{g_m}=A_{v0}R_C\\
 G_m = \frac{A_{v0}}{1+T}=-\frac{1}{R_C}
 \end{cases}
 \]</div>

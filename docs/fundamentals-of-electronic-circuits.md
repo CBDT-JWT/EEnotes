@@ -45,9 +45,11 @@
 ![alt text](assets/image-33.png)
 
 最后考虑理想晶体管
+
 $$
 r_{be}\,,r_{ce}=\infty
 $$
+
 得到
 
 ![alt text](assets/image-34.png)
@@ -64,9 +66,11 @@ $$
 得到了一个电压buffer。类似的原理应用很广泛，可以有效处理受控源的控制关系不直观的问题。
 #### 阻抗匹配
 阻抗匹配是通过{==双向无损网络==}实现源和负载之间最大功率传输的方式，方法为共轭匹配
+
 $$
 Z_L=Z_S^*
 $$
+
 阻抗匹配的参数通过**并大串小$Q$相等**获得。设计中要求$R$大的一侧并联东西，$R$小的一侧串联东西；并保证
 
 $$
@@ -94,44 +98,44 @@ $$
 
 $$
 \begin{bmatrix}
-v_1 \\\\
+v_1 \\
 v_2
 \end{bmatrix}=\begin{bmatrix}
-z_{11}&z_{12} \\\\
+z_{11}&z_{12} \\
 z_{21}&z_{22}
 \end{bmatrix}\begin{bmatrix}
-i_1\\\\
+i_1\\
 i_2
 \end{bmatrix}\quad\begin{bmatrix}
-i_1 \\\\
+i_1 \\
 i_2
 \end{bmatrix}=\begin{bmatrix}
-y_{11}&y_{12} \\\\
+y_{11}&y_{12} \\
 y_{21}&y_{22}
 \end{bmatrix}\begin{bmatrix}
-v_1\\\\
+v_1\\
 v_2
 \end{bmatrix}
 $$
 
 $$
 \begin{bmatrix}
-v_1 \\\\
+v_1 \\
 \textcolor{cyan}{i_2}
 \end{bmatrix}=\begin{bmatrix}
-h_{11}&h_{12} \\\\
+h_{11}&h_{12} \\
 \textcolor{cyan}{h_{21}}&h_{22}
 \end{bmatrix}\begin{bmatrix}
-\textcolor{cyan}{i_1}\\\\
+\textcolor{cyan}{i_1}\\
 v_2
 \end{bmatrix}\quad\begin{bmatrix}
-i_1 \\\\
+i_1 \\
 v_2
 \end{bmatrix}=\begin{bmatrix}
-g_{11}&g_{12} \\\\
+g_{11}&g_{12} \\
 g_{21}&g_{22}
 \end{bmatrix}\begin{bmatrix}
-v_1\\\\
+v_1\\
 i_2
 \end{bmatrix}
 $$
@@ -145,76 +149,81 @@ $$
 
 $$
 \begin{bmatrix}
-v_1 \\\\
+v_1 \\
 i_1
 \end{bmatrix}=\begin{bmatrix}
-A&B \\\\
+A&B \\
 C&D
 \end{bmatrix}\begin{bmatrix}
-v_2\\\\
+v_2\\
 \textcolor{yellow}{-i_2}
 \end{bmatrix}
 $$
+
 这里又有一个初学难以理解的点：这个$\textcolor{yellow}{-i_2}$的负号如何理解。
 ![alt text](assets/image-3.png)
 正如这张图所示，zyhg矩阵研究的是$\{v_1\,,v_2\,,i_1\,,i_2\}$之间的关系，而ABCD矩阵研究的则是$\{v_{in}\,,i_{in}\,,v_{out}\,,i_{out}\}$之间的关系。根据图中定义不难发现$i_{out}=\textcolor{yellow}{-i_2}$。也就是说，**ABCD矩阵本质的定义其实是**
 
 $$
 \begin{bmatrix}
-v_{in} \\\\
+v_{in} \\
 i_{in}
 \end{bmatrix}=\begin{bmatrix}
-A&B \\\\
+A&B \\
 C&D
 \end{bmatrix}\begin{bmatrix}
-v_{out}\\\\
+v_{out}\\
 i_{out}
 \end{bmatrix}
 $$
+
 #### 复合网络的参量矩阵
 这样定义的好处是，如果我们考虑两个级联的系统，那么就有**“级联ABCD相乘”**。
 
 ![alt text](assets/image-5.png)
+
 $$
 \begin{aligned}
 \begin{bmatrix}
-v_{in} \\\\
+v_{in} \\
 i_{in}
 \end{bmatrix}&=\begin{bmatrix}
-A_1&B_1 \\\\
+A_1&B_1 \\
 C_1&D_1
 \end{bmatrix}\begin{bmatrix}
-v_{out1}\\\\
+v_{out1}\\
 i_{out1}
-\end{bmatrix}\\\\&=\begin{bmatrix}
-A_1&B_1 \\\\
+\end{bmatrix}\\&=\begin{bmatrix}
+A_1&B_1 \\
 C_1&D_1
 \end{bmatrix}\begin{bmatrix}
-v_{in2}\\\\
+v_{in2}\\
 i_{in2}
-\end{bmatrix}\\\\
+\end{bmatrix}\\
 &=\begin{bmatrix}
-A_1&B_1 \\\\
+A_1&B_1 \\
 C_1&D_1
 \end{bmatrix}\begin{bmatrix}
-A_2&B_2 \\\\
+A_2&B_2 \\
 C_2&D_2
 \end{bmatrix}\begin{bmatrix}
-v_{out}\\\\
+v_{out}\\
 i_{out}
 \end{bmatrix}
 \end{aligned}
 $$
+
 因此
+
 $$
 \begin{bmatrix}
-A&B \\\\
+A&B \\
 C&D
 \end{bmatrix}=\begin{bmatrix}
-A_1&B_1 \\\\
+A_1&B_1 \\
 C_1&D_1
 \end{bmatrix}\begin{bmatrix}
-A_2&B_2 \\\\
+A_2&B_2 \\
 C_2&D_2
 \end{bmatrix}
 $$
@@ -222,69 +231,80 @@ $$
 用类似的方法可以推导经典的口诀：**“串串相连z相加，并并相连y相加，串并相连h相加，并串相连g相加”。**
 ![alt text](assets/image-6.png)
 以h矩阵为例，上图中不难发现
+
 $$
 i_{1A}=i_{1B}\,,v_{2A}=v_{2B}\,,
 $$
+
 同时又有
+
 $$
 v_1=v_{1A}+v_{1B}\,,i_2=i_{2A}+i_{2B}\,,
 $$
+
 所以
+
 $$
 \begin{aligned}
 \begin{bmatrix}
-v_1\\\\ i_2
+v_1\\ i_2
 \end{bmatrix}&=
 \begin{bmatrix}
-v_{1A}\\\\ i_{2A}
+v_{1A}\\ i_{2A}
 \end{bmatrix}+\begin{bmatrix}
-v_{1B}\\\\ i_{2B}
+v_{1B}\\ i_{2B}
 \end{bmatrix}
-\\\\
+\\
 &=\begin{bmatrix}
-h_{11A}&h_{12A}\\\\
+h_{11A}&h_{12A}\\
 h_{21A}&h_{22A}
 \end{bmatrix}\begin{bmatrix}
-i_1\\\\ v_2
+i_1\\ v_2
 \end{bmatrix}
 +\begin{bmatrix}
-h_{11B}&h_{12B}\\\\
+h_{11B}&h_{12B}\\
 h_{21B}&h_{22B}
 \end{bmatrix}\begin{bmatrix}
-i_1\\\\ v_2
-\end{bmatrix}\\\\
+i_1\\ v_2
+\end{bmatrix}\\
 &=\begin{bmatrix}
-h_{11A}+h_{11B}&h_{12A}+h_{12B}\\\\
+h_{11A}+h_{11B}&h_{12A}+h_{12B}\\
 h_{21A}+h_{21B}&h_{22A}+h_{22B}
 \end{bmatrix}\begin{bmatrix}
-i_1\\\\ v_2
+i_1\\ v_2
 \end{bmatrix}
 \end{aligned}
 $$
+
 进而$h=h_A+h_B\,.$用类似方法不难证明剩下三种情况，在此略过。
 #### 常用网络的参量矩阵
 首先是常用的串臂电阻和并臂电导，也就是挂在嘴边的"1z01, 10y1"。如下图：
 ![alt text](assets/image-7.png)
 两个电路的ABCD参量分别为
+
 $$
 ABCD_\text{串臂}=\begin{bmatrix}
-1 & Z\\\\
+1 & Z\\
 0 & 1
 \end{bmatrix}\,,ABCD_\text{并臂}=\begin{bmatrix}
-1 & 0\\\\
+1 & 0\\
 Y & 1
 \end{bmatrix}
 $$
+
 记住这一点结合之前提到的**“级联ABCD相乘”**，可以快速计算梯形网络的ABCD矩阵，进而得到很多性质。这两个网络的zyhg矩阵也很重要,应当记忆。
+
 $$
 Z_\text{串臂}=\begin{bmatrix}
-Z & Z\\\\
+Z & Z\\
 Z & Z
 \end{bmatrix}\,,Z_\text{并臂}不存在\,;
 $$
+
+
 $$
 Y_\text{串臂}不存在\,,Y_\text{并臂}=\begin{bmatrix}
-Y & Y\\\\
+Y & Y\\
 Y & Y
 \end{bmatrix}\,;
 $$
@@ -293,43 +313,49 @@ $$
 ![alt text](assets/image-13.png)
 #### 网络参量的物理意义
 直接观察矩阵的形式不利于初学者理解网络参量各个元素的物理意义，因此我们不妨把矩阵展开。以h参量为例：
+
 $$
 \begin{bmatrix}
-v_1\\\\ i_2
+v_1\\ i_2
 \end{bmatrix}=
 \begin{bmatrix}
-h_{11} & h_{12}\\\\
+h_{11} & h_{12}\\
 h_{21} & h_{22}
 \end{bmatrix}
 \begin{bmatrix}
-i_1\\\\ v_2
+i_1\\ v_2
 \end{bmatrix}
 $$
+
 展开得到
+
 $$
 \begin{cases}
-v_1=h_{11}i_1+h_{12}v_2\\\\
+v_1=h_{11}i_1+h_{12}v_2\\
 i_2=h_{21}i_1+h_{22}v_2
 \end{cases}
 $$
+
 从而
 
 $$
 \begin{cases}
-h_{11}=\frac{v_1}{i_1} \big |_{v_2=0}\quad v_2置0时的输入阻抗\\\\
-h_{22}=\frac{i_2}{v_1} \big |_{i_1=0}\quad i_1置0时的输出导纳\\\\
-h_{21}=\frac{i_2}{i_1} \big |_{v_2=0}\quad v_2置0时的电流放大系数\\\\
+h_{11}=\frac{v_1}{i_1} \big |_{v_2=0}\quad v_2置0时的输入阻抗\\
+h_{22}=\frac{i_2}{v_1} \big |_{i_1=0}\quad i_1置0时的输出导纳\\
+h_{21}=\frac{i_2}{i_1} \big |_{v_2=0}\quad v_2置0时的电流放大系数\\
 h_{22}=\frac{i_2}{v_2} \big |_{i_1=0}\quad i_1置0时的电压反馈系数
 \end{cases}
 $$
 
 对于剩下三个矩阵也是类似的原理：11元素是输入xx，22元素是输出xx，21元素是xx放大系数，12元素是xx反馈系数。常见用途是**输入输出阻抗公式**：
+
 $$
 \begin{cases}
-w_{in}=p_{11}-\frac{p_{12}p_{21}}{p_{22}+w_L}\\\\
+w_{in}=p_{11}-\frac{p_{12}p_{21}}{p_{22}+w_L}\\
 w_{out}=p_{22}-\frac{p_{21}p_{12}}{p_{11}+w_S}
 \end{cases}
 $$
+
 这里$p\in\{z,y,h,g\}$, $w$根据量纲为对应的阻抗或导纳。注意输入输出阻抗的定义如下图：
 
 ![alt text](assets/image-15.png)
@@ -343,39 +369,45 @@ $$
 ![alt text](assets/image-12.png)
 
 那么上图中的传递函数可以简单写成
+
 $$
 \begin{aligned}
 H_{单向}=\frac{v_L}{v_S}&=\textcolor{yellow}{\frac{i_{in}}{v_S}}\cdot
-\textcolor{cyan}{\frac{i_{out}}{i_{in}}}\cdot\textcolor{pink}{\frac{v_L}{i_{out}}}\\\\
-&=\textcolor{yellow}{\frac{1}{R_S+h_{11}}}\cdot\textcolor{cyan}{-h_{21}}\cdot\textcolor{pink}{\frac{1}{h_{22}+G_L}}\\\\
+\textcolor{cyan}{\frac{i_{out}}{i_{in}}}\cdot\textcolor{pink}{\frac{v_L}{i_{out}}}\\
+&=\textcolor{yellow}{\frac{1}{R_S+h_{11}}}\cdot\textcolor{cyan}{-h_{21}}\cdot\textcolor{pink}{\frac{1}{h_{22}+G_L}}\\
 &=\frac{-h_{21}}{(R_S+h_{11})(h_{22}+G_{L})}
 \end{aligned}
 $$
+
 然后记住**双向化方法**，对于每一种矩阵，处理方法都是**在分母上减去$p_{12}p_{21}$**。即此例中
+
 $$
 H_{双向}=\frac{-h_{21}}{(R_S+h_{11})(h_{22}+G_{L})\textcolor{cyan}{-h_{12}h_{21}}}
 $$
+
 就可以随手推公式了。
 ??? note "为什么是分母上减去$p_{12}p_{21}$?"
     只需要画出信号流图就可以轻松解释。考虑如下系统：
+
     $$
     \begin{bmatrix}
-    Y_1\\\\
+    Y_1\\
     Y_2
     \end{bmatrix}
     =\begin{bmatrix}
-    p_{11}&p_{12}\\\\
+    p_{11}&p_{12}\\
     p_{21}&p_{22}
     \end{bmatrix}\begin{bmatrix}
-    X_1\\\\
+    X_1\\
     X_2
     \end{bmatrix}
     $$
+
     同时有来自testbench的约束
 
     $$
     \begin{cases}
-    X_1+w_SY_1=x\\\\
+    X_1+w_SY_1=x\\
     X_2+w_LY_2=0
     \end{cases}
     $$
@@ -384,7 +416,7 @@ $$
 
     $$
     \begin{cases}
-    X_1=-w_SY_1+x\\\\
+    X_1=-w_SY_1+x\\
     X_2=-w_LY_2
     \end{cases}
     $$
@@ -396,7 +428,7 @@ $$
 
     $$
     \begin{aligned}
-    \Delta &= 1 - (-w_Sp_{11}) - (-w_Lp_{22})\\\\
+    \Delta &= 1 - (-w_Sp_{11}) - (-w_Lp_{22})\\
     &\textcolor{red}{-p_{12}p_{21}w_Sw_L} + p_{11}p_{22}w_Sw_L
     \end{aligned}
     $$
@@ -426,21 +458,22 @@ $$
 
     这也就解释了为什么求出单向网络传函之后只需要分母减去$p_{12}p_{21}$即可得到双向网络传递函数。
 之前提到ABCD矩阵也有其意义，我们不妨同样地进行展开。
+
 $$
 \begin{bmatrix}
-v_{in}\\\\ i_{in}
+v_{in}\\ i_{in}
 \end{bmatrix}
 =\begin{bmatrix}
-A & B\\\\
+A & B\\
 C & D
 \end{bmatrix}\begin{bmatrix}
-v_{out}\\\\ i_{out}
+v_{out}\\ i_{out}
 \end{bmatrix}
 $$
 
 $$
 \begin{cases}
-v_{in}=Av_{out}+Bi_{out}\\\\
+v_{in}=Av_{out}+Bi_{out}\\
 i_{in}=Cv_{out}+Di_{out}
 \end{cases}
 $$
@@ -449,9 +482,9 @@ $$
 
 $$
 \begin{cases}
-\frac{1}{A}=\frac{v_{out}}{v_{in}}\big |_{i_{out}=0}\quad本征电压增益A_{v0}=g_{21}\\\\
-\frac{1}{D}=\frac{i_{out}}{v_{in}}\big |_{v_{out}=0}\quad本征电流增益A_{i0}=-h_{21}\\\\
-\frac{1}{C}=\frac{v_{out}}{i_{in}}\big |_{i_{out}=0}\quad本征跨阻增益R_{m0}=z_{21}\\\\
+\frac{1}{A}=\frac{v_{out}}{v_{in}}\big |_{i_{out}=0}\quad本征电压增益A_{v0}=g_{21}\\
+\frac{1}{D}=\frac{i_{out}}{v_{in}}\big |_{v_{out}=0}\quad本征电流增益A_{i0}=-h_{21}\\
+\frac{1}{C}=\frac{v_{out}}{i_{in}}\big |_{i_{out}=0}\quad本征跨阻增益R_{m0}=z_{21}\\
 \frac{1}{B}=\frac{i_{out}}{i_{in}}\big |_{v_{out}=0}\quad本征跨导增益G_{m0}=-y_{21}
 \end{cases}
 $$
@@ -461,45 +494,49 @@ $$
     ![alt text](assets/image-14.png)
 ??? success "Answers"
     可以轻松获得ABCD参量（注意我们只关心A元素）为
+
     $$
     \begin{aligned}
         \begin{bmatrix}
-        A & B \\\\
+        A & B \\
         C & D
         \end{bmatrix}
         &=\begin{bmatrix}
-        1 & \frac{1}{sC_1}\\\\
+        1 & \frac{1}{sC_1}\\
         0 & 1
         \end{bmatrix}\begin{bmatrix}
-        1 & 0\\\\
+        1 & 0\\
         \frac{1}{R_1} & 1
         \end{bmatrix}\begin{bmatrix}
-        1 & R_2\\\\
+        1 & R_2\\
         0 & 1
         \end{bmatrix}\begin{bmatrix}
-        1 & 0\\\\
+        1 & 0\\
         sC_2 & 1
-        \end{bmatrix}\\\\
+        \end{bmatrix}\\
         &=\begin{bmatrix}
-        1+\frac{1}{sC_1R_1} & \frac{1}{sC_1}\\\\
+        1+\frac{1}{sC_1R_1} & \frac{1}{sC_1}\\
         \star & \star
         \end{bmatrix}\begin{bmatrix}
-        1+sC_2R_2 & \star \\\\
+        1+sC_2R_2 & \star \\
         sC_2 & \star
-        \end{bmatrix}\\\\
+        \end{bmatrix}\\
         &=\begin{bmatrix}
-        1+\frac{C_2R_2}{C_1R_1}+\frac{1}{sC_1R_1}+sC_2R_2+\frac{C_2}{C_1} & \star \\\\
+        1+\frac{C_2R_2}{C_1R_1}+\frac{1}{sC_1R_1}+sC_2R_2+\frac{C_2}{C_1} & \star \\
         \star & \star
         \end{bmatrix}
     \end{aligned}
     $$
+
     进而电压传递函数
+
     $$
     \begin{aligned}
-    H&=A_v=\frac{1}{A}\\\\
+    H&=A_v=\frac{1}{A}\\
     &=\frac{1}{ 1+\frac{C_2R_2}{C_1R_1}+\frac{1}{sC_1R_1}+sC_2R_2+\frac{C_2}{C_1}}\,.
     \end{aligned}
     $$
+
     比KCL/KVL要快很多。
 ### 时域分析与三/五要素法
 !!!tip "说明"
@@ -517,11 +554,13 @@ $$
 $$
 y(t) = h(t) * \delta(t) = h(t)
 $$
+
 对两边取拉普拉斯变换：
 
 $$
 Y(s) = H(s) \cdot \mathcal{L}\{\delta(t)\} = H(s) \cdot 1 = H(s)
 $$
+
 因此，系统对冲激函数的响应 $ h(t) $ 与传递函数 $ H(s) $ 满足：
 
 $$
@@ -535,13 +574,13 @@ $$
 
 $$
 \frac{\text{d}}{\text{d}t}\begin{bmatrix}
-v_C\\\\
+v_C\\
 i_L
 \end{bmatrix}=\begin{bmatrix}
-\frac{1}{C}i_C\\\\
+\frac{1}{C}i_C\\
 \frac{1}{L}v_L
 \end{bmatrix}=A\begin{bmatrix}
-v_C\\\\
+v_C\\
 i_L
 \end{bmatrix}+B
 $$
@@ -554,31 +593,33 @@ $$
     
 ??? success "答案"
     首先利用戴维南-诺顿轻松写出$i_C\,,v_L$关于$v_C\,,i_L$的表达式
+
     $$
     \begin{cases}
-    i_C=\frac{i_LR_1-v_C}{R_1+R_2}\\\\
+    i_C=\frac{i_LR_1-v_C}{R_1+R_2}\\
     v_L=V_S-(v_c\frac{R_1}{R_1+R_2}-i_L(R_1\parallel R_2))
     \end{cases}
     $$
+
     整理为
 
     $$
     \begin{aligned}
     \frac{\text{d}}{\text{d}t}\begin{bmatrix}
-        v_C\\\\
+        v_C\\
         i_L
     \end{bmatrix}&=\begin{bmatrix}
-    \frac{1}{C}i_C\\\\
+    \frac{1}{C}i_C\\
     \frac{1}{L}v_L
-    \end{bmatrix}\\\\
+    \end{bmatrix}\\
     &=\frac{1}{R_1+R_2}\begin{bmatrix}
-    \frac{-1}{C} & \frac{R_1}{C} \\\\
+    \frac{-1}{C} & \frac{R_1}{C} \\
     \frac{-R_1}{L} & \frac{R_1R_2}{L}
     \end{bmatrix}\begin{bmatrix}
-    v_C\\\\
+    v_C\\
     i_L
     \end{bmatrix}+\begin{bmatrix}
-    0\\\\
+    0\\
     V_S - \frac{R_1}{R_1+R_2}
     \end{bmatrix}
     \end{aligned}
@@ -586,13 +627,17 @@ $$
 
 #### 三要素法
 一阶系统的传递函数表达式总是为
+
 $$
 X(j\omega)=\frac{\cdots}{1+\omega\tau}
 $$
+
 的形式，其对应的时域表达式必然为【由于未学ss，此处不必深究】
+
 $$
 x(t)=\left(\textcolor{yellow}{x(0)}-\textcolor{yellow}{x_\infty(0)}\right)\exp\left(-\frac{t}{\textcolor{cyan}{\tau}}\right)+x_\infty(t)
 $$
+
 其中需要关注
 
 |物理量|意义|
@@ -611,8 +656,8 @@ $$
 
 $$
 \begin{aligned}
-x(t)&=x_\infty(t)+\left(x(0)-x_\infty(0)\right)\exp\left(-\xi\omega_0t\right)\cos\left(\sqrt{1-\xi^2}\omega_0t\right)\\\\
-&+\left(x(0)-x_\infty(0)+\frac{\dot{x}(0)-\dot{x_\infty}(0)}{\xi\omega_0}\right)\\\\
+x(t)&=x_\infty(t)+\left(x(0)-x_\infty(0)\right)\exp\left(-\xi\omega_0t\right)\cos\left(\sqrt{1-\xi^2}\omega_0t\right)\\
+&+\left(x(0)-x_\infty(0)+\frac{\dot{x}(0)-\dot{x_\infty}(0)}{\xi\omega_0}\right)\\
 &\cdot\frac{\xi}{\sqrt{1-\xi^2}}\exp\left(-\xi\omega_0t\right)\sin\left(\sqrt{1-\xi^2}\omega_0t\right)
 \end{aligned}
 $$
@@ -621,7 +666,7 @@ $$
 
 $$
 \begin{aligned}
-x(t)&=x_\infty(t)+\left(x(0)-x_\infty(0)\right)\exp\left(-\omega_0t\right)\\\\
+x(t)&=x_\infty(t)+\left(x(0)-x_\infty(0)\right)\exp\left(-\omega_0t\right)\\
 &+\left(x(0)-x_\infty(0)+\frac{\dot{x}(0)-\dot{x_\infty}(0)}{\omega_0}\right)\exp\left(-\omega_0t\right)\omega_0t
 \end{aligned}
 $$
@@ -630,8 +675,8 @@ $$
 
 $$
 \begin{aligned}
-x(t)&=x_\infty(t)+\left(x(0)-x_\infty(0)\right)\exp\left(-\xi\omega_0t\right)\cosh\left(\sqrt{\xi^2-1}\omega_0t\right)\\\\
-&+\left(x(0)-x_\infty(0)+\frac{\dot{x}(0)-\dot{x_\infty}(0)}{\xi\omega_0}\right)\\\\
+x(t)&=x_\infty(t)+\left(x(0)-x_\infty(0)\right)\exp\left(-\xi\omega_0t\right)\cosh\left(\sqrt{\xi^2-1}\omega_0t\right)\\
+&+\left(x(0)-x_\infty(0)+\frac{\dot{x}(0)-\dot{x_\infty}(0)}{\xi\omega_0}\right)\\
 &\cdot\frac{\xi}{\sqrt{1-\xi^2}}\exp\left(-\xi\omega_0t\right)\sinh\left(\sqrt{\xi^2-1}\omega_0t\right)
 \end{aligned}
 $$
@@ -640,15 +685,17 @@ $$
     看似很难其实记忆难度一般。首先式子都很规律，$\exp$后面跟的都是$-\xi\omega_0t$, (反)三教函数后面都是$\sqrt{1-\xi^2}$。前面括弧里边的东西都是**初值-稳态初值**，$\sin$前面的多一个微分的。每天默念几遍即可背诵。
 
 特别对于过阻尼情形，我们需要把他编成**长寿+短寿**的形式
+
 $$
 x(t)=x_\infty(t)+A\exp-\lambda_1 t + B\exp-\lambda_2 t
 $$
+
 其中
 
 $$
 \begin{cases}
-A=\frac{\lambda_2}{\lambda_2-\lambda_1}(x(0)-x_\infty(0))-\frac{1}{\lambda_2-\lambda_1}(\dot{x}(0)-\dot{x}_\infty(0))\\\\
-B=\frac{\lambda_1}{\lambda_1-\lambda_2}(x(0)-x_\infty(0))-\frac{1}{\lambda_1-\lambda_2}(\dot{x}(0)-\dot{x}_\infty(0))\\\\
+A=\frac{\lambda_2}{\lambda_2-\lambda_1}(x(0)-x_\infty(0))-\frac{1}{\lambda_2-\lambda_1}(\dot{x}(0)-\dot{x}_\infty(0))\\
+B=\frac{\lambda_1}{\lambda_1-\lambda_2}(x(0)-x_\infty(0))-\frac{1}{\lambda_1-\lambda_2}(\dot{x}(0)-\dot{x}_\infty(0))\\
 \lambda_{1\,,2}=(-\xi\pm\sqrt{\xi^2-1})\omega_0
 \end{cases}
 $$
@@ -660,9 +707,11 @@ $$
 | $\xi$ | $\omega_0$ | $x(0)$ | $\dot{x_0}$ | $x_\infty(t)$ |
 
 其中$\xi$和$\omega_0$由传递函数给出。随便写电路中两个离得远一点的量作为输入输出写一个传递函数，就可以得到
+
 $$
 H=\frac{*}{s^2+2\xi\omega_0s+\omega_0^2}
 $$
+
 这里边就可以得到上述两要素。稳态响应$x_\infty(t)$由输入的性质（冲激/阶跃激励的响应是直流，正弦的响应是改了相位和幅度的正弦）得到。有人曰：
 !!! quote "稳态响应"
     人生的稳态响应是一盒灰
@@ -685,7 +734,7 @@ $$
 
     $$
     \begin{cases}
-        L_2'=\left(\frac{M}{L_2}\right)^2L_2=\frac{M^2}{L_2}\\\\
+        L_2'=\left(\frac{M}{L_2}\right)^2L_2=\frac{M^2}{L_2}\\
         R_L'=\left(\frac{M}{L_2}\right)^2R_L=\frac{M^2}{L_2^2}R_L
     \end{cases}
     $$
@@ -696,8 +745,8 @@ $$
 
     $$
     \begin{cases}
-    v_o'=-\frac{V_{S0}}{R_S}R_L'=-\frac{M^2V_{S0}}{R_SL_2'}R_L\\\\
-    v'_{o\infty}(t)=0\\\\
+    v_o'=-\frac{V_{S0}}{R_S}R_L'=-\frac{M^2V_{S0}}{R_SL_2'}R_L\\
+    v'_{o\infty}(t)=0\\
     \tau=GL=\frac{L_2'}{R_L'}=\frac{L_2}{R_L}
     \end{cases}
     $$
@@ -714,67 +763,74 @@ $$
     ![alt text](assets/image-23.png)
 
     这时看起来电路为三阶。但由于三个电感的带内容有耦合关系
+
     $$
     i_A=i_B+i_C
     $$
+
     因此电路实际为二阶。我们求解其五要素。首先利用梯形网络计算$V_s\to v_o$的传递函数以获得系统参数。我们采用之前的ABCD方法。
 
     $$
     \begin{aligned}
     ABCD&=\begin{bmatrix}
-    1 & R_S \\\\
+    1 & R_S \\
     0 & 1
     \end{bmatrix}\begin{bmatrix}
-    1 & s(L_1-M)\\\\
+    1 & s(L_1-M)\\
     0 & 1
     \end{bmatrix}
     \begin{bmatrix}
-    1 & 0 \\\\
+    1 & 0 \\
     \frac{1}{sM} & 1
     \end{bmatrix}
     \begin{bmatrix}
-    1 & s(L_2-M) \\\\
+    1 & s(L_2-M) \\
     0 & 1
     \end{bmatrix}
     \begin{bmatrix}
-    1 & 0 \\\\
+    1 & 0 \\
     \frac{1}{R_L} & 1
-    \end{bmatrix}\\\\
-    &=\cdots (数学运算略去，打矩阵太麻烦了。)\\\\
+    \end{bmatrix}\\
+    &=\cdots (数学运算略去，打矩阵太麻烦了。)\\
     &=\begin{bmatrix}
-    1.25+1.25\times 10^8s^{-1} & 100+2\times10^{-7}s \\\\
+    1.25+1.25\times 10^8s^{-1} & 100+2\times10^{-7}s \\
     * & *
     \end{bmatrix}\begin{bmatrix}
-    1+3.2\times 10^{-9}s & * \\\\
+    1+3.2\times 10^{-9}s & * \\
     10^{-3} & *
-    \end{bmatrix}\\\\
+    \end{bmatrix}\\
     &=\begin{bmatrix}
-    1.75+4.2\times 10^{-9}s+1.25\times 10^8s^{-1} & * \\\\
+    1.75+4.2\times 10^{-9}s+1.25\times 10^8s^{-1} & * \\
     * & *
     \end{bmatrix}
     \end{aligned}
     $$ 
 
     于是得到
+
     $$
     H_v = \frac{*}{s^2 + 4.17\times 10^{8}s + 2.98\times 10^{16}}
     $$
 
     进而
+
     $$
     \omega_0=1.73\times 10^8 S^{-1}\quad,\,\xi = 1.21
     $$
+
     可知此系统为**过阻尼**系统。从而得到
+
     $$
     \lambda_1=-9.17\times 10^7\,,\lambda_2=-3.27\times 10^8
     $$
+
     先放着。我们接下来根据电路的物理特性求剩下的参数。显然有$v_o(0)=0$和$v_{o\infty}(0)=0$。本题的难点在于求$\dot{v}_o(0)$.我们注意到**基尔霍夫定律对于微分后的电路依然适用**，因此
 
     $$
     \begin{aligned}
-    \dot{v}_o(0)&=\dot{i}_C(0)R_L\\\\
-    &=(\dot{i}_A(0)-\dot{i}_B(0))R_L\quad(KCL)\\\\
-    &=\left(\frac{V_{S0}}{L_1-M}-\frac{0}{M}\right)R_L\\\\
+    \dot{v}_o(0)&=\dot{i}_C(0)R_L\\
+    &=(\dot{i}_A(0)-\dot{i}_B(0))R_L\quad(KCL)\\
+    &=\left(\frac{V_{S0}}{L_1-M}-\frac{0}{M}\right)R_L\\
     &=2.5\times 10^{10}V/S
     \end{aligned}
     $$
@@ -783,7 +839,7 @@ $$
 
     $$
     \begin{cases}
-    A=\frac{\lambda_2}{\lambda_2-\lambda_1}(x(0)-x_\infty(0))-\frac{1}{\lambda_2-\lambda_1}(\dot{x}(0)-\dot{x}_\infty(0))\\\\
+    A=\frac{\lambda_2}{\lambda_2-\lambda_1}(x(0)-x_\infty(0))-\frac{1}{\lambda_2-\lambda_1}(\dot{x}(0)-\dot{x}_\infty(0))\\
     B=\frac{\lambda_1}{\lambda_1-\lambda_2}(x(0)-x_\infty(0))-\frac{1}{\lambda_1-\lambda_2}(\dot{x}(0)-\dot{x}_\infty(0))
     \end{cases}
     $$
@@ -792,7 +848,7 @@ $$
 
     $$
     \begin{cases}
-    A=106.3\\\\
+    A=106.3\\
     B=-106.3
     \end{cases}
     $$
@@ -801,7 +857,7 @@ $$
 
     $$
     \begin{aligned}
-    v_o(t)&=106.3V\cdot\exp\left(-9.17\times10^{-7}s^{-1}t\right)\\\\
+    v_o(t)&=106.3V\cdot\exp\left(-9.17\times10^{-7}s^{-1}t\right)\\
     &-106.3V\cdot\exp\left(-3.27\times10^{-8}s^{-1}t\right)
     \end{aligned}
     $$
@@ -811,13 +867,17 @@ $$
 伯特图是对数对数坐标下近似的幅频特性和相频特性图，属于必考但送分的内容。方法如下。
 
 **第一步**：求出传递函数并因式分解。得到形如
+
 $$
 H(s)=A_0\frac{(s+\omega_{z1})(s+\omega_{z2})\cdots(s+\omega_{zm})}{(s+\omega_{p1})(s+\omega_{p2})\cdots(s+\omega_{pn})}
 $$
+
 的形式。其中$s_z=-\omega_{z1}\,,\cdots\,,-\omega_{zm}$称之为零点，可在整个复平面；$s_p=-\omega_{p1}\,,\cdots\,,-\omega_{pn}$称之为极点，要求{==必须在左半平面==},否则系统将自激震荡或不收敛。最后得到
+
 $$
 H(j\omega)=H_0\frac{\left(1+\frac{j\omega}{\omega_{z1}}\right)\left(1+\frac{j\omega}{\omega_{z2}}\right)\cdots\left(1+\frac{j\omega}{\omega_{zm}}\right)}{\left(1+\frac{j\omega}{\omega_{p1}}\right)\left(1+\frac{j\omega}{\omega_{p2}}\right)\cdots\left(1+\frac{j\omega}{\omega_{pn}}\right)}
 $$
+
 这里用到了求频率特性时的代换$s=j\omega$。
 
 **第二步**：将零极点按照大小排序，然后按照频率从$0$开始往右走。依据如下口诀作图：
@@ -831,7 +891,7 @@ $$
 
     $$
     \begin{aligned}
-    H(j\omega)&=-10^6\frac{1+\frac{j\omega}{5\times 10^4}}{\left(1+\frac{j\omega}{5\times10^6}\right)\left(1+\frac{j\omega}{1\times10^8}\right)}\cdot\frac{5\times 10^9}{5\times 10^6\cdot 1\times 10^8}\\\\
+    H(j\omega)&=-10^6\frac{1+\frac{j\omega}{5\times 10^4}}{\left(1+\frac{j\omega}{5\times10^6}\right)\left(1+\frac{j\omega}{1\times10^8}\right)}\cdot\frac{5\times 10^9}{5\times 10^6\cdot 1\times 10^8}\\
     &=(-10)\frac{1+\frac{j\omega}{5\times 10^4}}{\left(1+\frac{j\omega}{5\times10^6}\right)\left(1+\frac{j\omega}{1\times10^8}\right)}
     \end{aligned}
     $$
@@ -840,7 +900,7 @@ $$
 
     $$
     \begin{cases}
-    零点\quad -5\times 10^9\\\\
+    零点\quad -5\times 10^9\\
     极点\quad -5\times 10^6\,,-1\times10^8
     \end{cases}
     $$
@@ -864,8 +924,8 @@ $$
 
 $$
 \omega_{3dB}=\begin{cases}
-\omega_0\,,\xi=0.707\\\\
-\frac{1}{2\xi}\,,\xi\gg1\quad(\frac{1}{\tau_{RC}}=\frac{1}{RC})\\\\
+\omega_0\,,\xi=0.707\\
+\frac{1}{2\xi}\,,\xi\gg1\quad(\frac{1}{\tau_{RC}}=\frac{1}{RC})\\
 \sqrt{1+\sqrt 2}\omega_0=1.554\omega_0\,,\xi\ll1
 \end{cases}
 $$
@@ -874,8 +934,8 @@ $$
 
 $$
 \omega_{3dB}=\begin{cases}
-\omega_0\,,\xi=0.707\\\\
-2\xi\,,\xi\gg1\quad(\frac{1}{\tau_{GL}}=\frac{R}{L})\\\\
+\omega_0\,,\xi=0.707\\
+2\xi\,,\xi\gg1\quad(\frac{1}{\tau_{GL}}=\frac{R}{L})\\
 \frac{\omega_0}{1.554}\,,\xi\ll1
 \end{cases}
 $$
@@ -884,12 +944,13 @@ $$
 
 $$
 \begin{cases}
-BW_{3dB}=f_2-f_1=\frac{f_0}{Q}\\\\
+BW_{3dB}=f_2-f_1=\frac{f_0}{Q}\\
 f_0 = \sqrt{f_1f_2}=\frac{\omega_0}{2\pi}
 \end{cases}
 $$
 
 其中
+
 $$
 Q=\frac{1}{2\xi}=\frac{Z_0}{R}=\frac{Y_0}{G}
 $$
@@ -907,23 +968,31 @@ $$
 谐振现象在时域体现为**振铃**现象，经过Q个周期，振铃幅度衰减为4.3%以下；经过1.5Q个周期，振铃幅度衰减为1%以下；经过2.2Q个周期，振铃幅度衰减为0.1%以下。一般认为振铃时间就是1.5QT。
 
 对于低通系统，其谐振频点
+
 $$
 \omega_e=\sqrt{1-2\xi^2}\omega_0\approx\omega_0\quad(\xi\ll0.707)
 $$
+
 峰高度
+
 $$
 A(\omega_e)=\frac{1}{2\xi\sqrt{1-\xi^2}}>1\quad(\xi<0.707)
 $$
+
 特别对于$\xi\ll0.707$有$A(\omega_e)\approx Q$.
 
 对于低通系统，其谐振频点
+
 $$
 \omega_e= \frac{1}{\sqrt{1-2\xi^2}}\omega_0\approx\omega_0\quad(\xi\ll0.707)
 $$
+
 峰高度
+
 $$
 A(\omega_e)=\frac{1}{2\xi\sqrt{1-\xi^2}}>1\quad(\xi<0.707)
 $$
+
 特别对于$\xi\ll0.707$有$A(\omega_e)\approx Q$.
 
 当发生谐振时，$Z$和$Y$为实数，即$\Im [Z]=0\,,\Im[Y]=0$。此时并联LC等效为开路，串联LC等效为短路。
@@ -937,9 +1006,11 @@ $$
 2. 输入-$C_{bc}$-$R_L$
 
 而路径1为反相，路径2为同相。两条路径的gm分别为
+
 $$
 g_{m1}=-g_m\,,g_{m2}=y_{21,C_{bc}}=sC_{bc}
 $$
+
 因此当$sC_{bc}=g_m$的时候会造成一个零点，此时$s=\frac{g_m}{C_{bc}}$.
 
 开短路时间常数法用于估计极点。需要记住口诀
@@ -965,9 +1036,11 @@ $$
 ### 系统分析
 #### 小信号分析
 小信号分析的本质就是利用**叠加原理**，分别考虑直流偏置和小信号的作用。也即利用Taylor展开
+
 $$
 f(x+\delta)=f(x)+\delta f'(x)+\cdots
 $$
+
 将所有的电路对小信号$\delta$的响应看成是一次的。式中$x$为所有的直流偏置源。《电电》课的小信号分析非常程式化，流程如下：
 
 1. 分析直流偏置；
@@ -977,11 +1050,11 @@ $$
 
 $$
 \begin{cases}
-\beta I_B=I_C\\\\
+\beta I_B=I_C\\
 v_{be}=0.7V\,or\,I_B=(\exp\frac{V_{be}}{V_T}-1)I_{S0}
 \end{cases}\quad(BJT)\,,
 \begin{cases}
-g_m = 0\\\\
+g_m = 0\\
 I_D = \beta_n V_{od}^2
 \end{cases}(MOS)
 $$
@@ -990,12 +1063,12 @@ $$
 
 $$
 \begin{cases}
-g_m = \frac{I_C}{v_T}\\\\
-r_{be}=\frac{\beta}{g_m}\\\\
+g_m = \frac{I_C}{v_T}\\
+r_{be}=\frac{\beta}{g_m}\\
 r_{ce}=\frac{V_A}{I_C}
 \end{cases}\quad(BJT)\,,
 \begin{cases}
-g_m = \frac {2I_D}{V_{od}}=2\beta_n V_{od}{1+\frac{V_DS}{V_A}}\\\\
+g_m = \frac {2I_D}{V_{od}}=2\beta_n V_{od}{1+\frac{V_DS}{V_A}}\\
 r_{ds} = \frac{V_A}{I_D}
 \end{cases}(MOS)
 $$
@@ -1038,8 +1111,8 @@ $$
     
     $$
     \begin{cases}
-    R_{in,c}=(1+T)r_{in}=\infty\\\\
-    R_{out,c}=(1+T)r_{out}=(1-g_mR_cA_{v0})\frac{1}{g_m}=A_{v0}R_C\\\\
+    R_{in,c}=(1+T)r_{in}=\infty\\
+    R_{out,c}=(1+T)r_{out}=(1-g_mR_cA_{v0})\frac{1}{g_m}=A_{v0}R_C\\
     G_m = \frac{A_{v0}}{1+T}=-\frac{1}{R_C}
     \end{cases}
     $$

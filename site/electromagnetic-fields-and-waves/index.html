@@ -2083,9 +2083,9 @@
 <p>由时域 Maxwell 方程组</p>
 <div class="arithmatex">\[
 \begin{cases}
-    \nabla\times\vec{E}=-\frac{\partial}{\partial t}\vec{B}\\\\
-    \nabla\times\vec{H}=\vec{J}+\frac{\partial}{\partial t}\vec{D}\\\\
-    \nabla\cdot \vec{D}=\rho\\\\
+    \nabla\times\vec{E}=-\frac{\partial}{\partial t}\vec{B}\\
+    \nabla\times\vec{H}=\vec{J}+\frac{\partial}{\partial t}\vec{D}\\
+    \nabla\cdot \vec{D}=\rho\\
     \nabla\cdot \vec{B}=0\\
 \end{cases}
 \]</div>
@@ -2097,18 +2097,18 @@
 <p><strong>频域 Maxwell 方程组</strong></p>
 <div class="arithmatex">\[
 \begin{cases}
-    \nabla\times\vec{E}=i\omega\vec{B}\\\\
-    \nabla\times\vec{H}=\vec{J}-i\omega\vec{D}\\\\
-    \nabla\cdot \vec{D}=\rho\\\\
+    \nabla\times\vec{E}=i\omega\vec{B}\\
+    \nabla\times\vec{H}=\vec{J}-i\omega\vec{D}\\
+    \nabla\cdot \vec{D}=\rho\\
     \nabla\cdot \vec{B}=0\\
 \end{cases}
 \]</div>
 <p>对应的边值关系为</p>
 <div class="arithmatex">\[
 \begin{cases}
-    \hat n\times(\vec{E_2}-\vec{E_1})=0\\\\
-    \hat n\times(\vec{H_2}-\vec{H_1})=\vec{J_{sf}}\\\\
-    \hat n\cdot(\vec{D_2}-\vec{D_1})=\rho_{sf}\\\\
+    \hat n\times(\vec{E_2}-\vec{E_1})=0\\
+    \hat n\times(\vec{H_2}-\vec{H_1})=\vec{J_{sf}}\\
+    \hat n\cdot(\vec{D_2}-\vec{D_1})=\rho_{sf}\\
     \hat n\cdot(\vec{B_2}-\vec{B_1})=0\\
 \end{cases}
 \]</div>
@@ -2150,11 +2150,11 @@
 -\nabla\cdot \mathrm{Im}[\mathbf{S}] = \omega\mathrm{Im}[\mathbf{E}\cdot\mathbf{D}^*+\mathbf{B}\cdot\mathbf{H}^*]
 \]</div>
 <h3 id="_2">均匀介质内的电磁波</h3>
-<p>均匀平面波形如<br />
-$$
+<p>均匀平面波形如  </p>
+<div class="arithmatex">\[
 \vec E(\vec{x},t)=\vec{E}_0\exp{ } i\left(\vec{k}\cdot\vec{x}-\omega t\right)
-$$<br />
-其中波矢 <span class="arithmatex">\(|\vec{k}|=\omega\sqrt{\mu\varepsilon}\)</span>，方向沿波传播方向；<br />
+\]</div>
+<p>其中波矢 <span class="arithmatex">\(|\vec{k}|=\omega\sqrt{\mu\varepsilon}\)</span>，方向沿波传播方向；<br />
 相速度 <span class="arithmatex">\(\vec v_p=\frac{\omega}{k}\hat k=\frac{1}{\sqrt{\mu\varepsilon}}\hat k\)</span>；<br />
 折射率 <span class="arithmatex">\(n=\frac{c}{v_p}=\sqrt{\varepsilon_r\mu_r} \boxed{\approx\sqrt{\varepsilon_r}}\)</span>；<br />
 波长 <span class="arithmatex">\(\lambda=\frac{2\pi}{k}\)</span>，波阻抗 <span class="arithmatex">\(\eta=\sqrt\frac{\mu}{\varepsilon}=\boxed{\frac{|E|}{|H|}}\)</span>。</p>
@@ -2170,66 +2170,66 @@ $$<br />
 <p>在介质表面，会发生反射和折射。这类问题一般假设  </p>
 <div class="arithmatex">\[
 \begin{cases}
-    入射波：\quad\vec{E}_i(\vec{x},t)=\vec{E}_{0i}\exp{ } i\left(\vec{k}_i\cdot\vec{x}-\omega t\right)\\\\
-    反射波：\quad\vec{E}_r(\vec{x},t)=\vec{E}_{0r}\exp{ } i\left(\vec{k}_r\cdot\vec{x}-\omega t\right)\\\\
+    入射波：\quad\vec{E}_i(\vec{x},t)=\vec{E}_{0i}\exp{ } i\left(\vec{k}_i\cdot\vec{x}-\omega t\right)\\
+    反射波：\quad\vec{E}_r(\vec{x},t)=\vec{E}_{0r}\exp{ } i\left(\vec{k}_r\cdot\vec{x}-\omega t\right)\\
     折射波：\quad\vec{E}_t(\vec{x},t)=\vec{E}_{0t}\exp{ } i\left(\vec{k}_t\cdot\vec{x}-\omega t\right)\\
 \end{cases}
 \]</div>
-<p>得到界面两侧电磁场<br />
-$$
+<p>得到界面两侧电磁场  </p>
+<div class="arithmatex">\[
 \begin{cases}
     \vec E_1=\vec E_i+\vec E_r\\
     \vec E_2=\vec E_t\\
     \vec H_1=\hat k_i\times\frac{\vec E_i}{\eta_1}+\hat k_r\times\frac{\vec E_r}{\eta_1}\\
-    \vec H_2=\hat k_t\times\frac{\vec E_t}{\eta_2}\
+    \vec H_2=\hat k_t\times\frac{\vec E_t}{\eta_2}\\
 \end{cases}
-$$</p>
-<p>再带入切向边值关系（法向自然成立）<br />
-$$
+\]</div>
+<p>再带入切向边值关系（法向自然成立）  </p>
+<div class="arithmatex">\[
 \begin{cases}
     \hat{n}\times(\vec E_2-\vec E_1)=0\\
-    \hat{n}\times(\vec H_2-\vec H_1)=0\
+    \hat{n}\times(\vec H_2-\vec H_1)=0\\
 \end{cases}
-$$</p>
+\]</div>
 <p>进行求解。对于反射与折射问题，有如下结论：</p>
-<p><strong>Snell定律</strong>（角度关系）<br />
-$$
+<p><strong>Snell定律</strong>（角度关系）  </p>
+<div class="arithmatex">\[
 \begin{cases}
 \theta_i=\theta_r\\
 n_1\sin\theta_i=n_2\sin\theta_t
 \end{cases}
-$$</p>
-<p><strong>Fresnel公式</strong>（幅度关系）<br />
-$$
+\]</div>
+<p><strong>Fresnel公式</strong>（幅度关系）  </p>
+<div class="arithmatex">\[
 \text{N波：}
 \begin{cases}
 \displaystyle
 \frac{E_{0r}}{E_{0i}}=-\frac{\sin\left(\theta_i-\theta_t\right)}{\sin\left(\theta_i+\theta_t\right)}\\
 \displaystyle
-\frac{E_{0t}}{E_{0i}}=\frac{2\cos\theta_i\sin\theta_t}{\sin\left(\theta_i+\theta_t\right)}\
+\frac{E_{0t}}{E_{0i}}=\frac{2\cos\theta_i\sin\theta_t}{\sin\left(\theta_i+\theta_t\right)}\\
 \end{cases}
-$$
-$$
+\]</div>
+<div class="arithmatex">\[
 \text{P波：}
 \begin{cases}
 \displaystyle
 \frac{E_{0r}}{E_{0i}}=\frac{\tan\left(\theta_i-\theta_t\right)}{\tan\left(\theta_i+\theta_t\right)}\\
 \displaystyle
-\frac{E_{0t}}{E_{0i}}=\frac{2\cos\theta_i\sin\theta_t}{\sin\left(\theta_i+\theta_t\right)\cos\left(\theta_i-\theta_t\right)}\
+\frac{E_{0t}}{E_{0i}}=\frac{2\cos\theta_i\sin\theta_t}{\sin\left(\theta_i+\theta_t\right)\cos\left(\theta_i-\theta_t\right)}\\
 \end{cases}
-$$</p>
-<p>考虑入射面为 <span class="arithmatex">\(yOz\)</span> 平面、介质面为 <span class="arithmatex">\(xOy\)</span> 的情况，有<br />
-$$
+\]</div>
+<p>考虑入射面为 <span class="arithmatex">\(yOz\)</span> 平面、介质面为 <span class="arithmatex">\(xOy\)</span> 的情况，有  </p>
+<div class="arithmatex">\[
 \vec k_t=
 \begin{bmatrix}
-0\
+0\\
 k_t\sin\theta_t\\
-k_t\cos\theta_t\
+k_t\cos\theta_t\\
 \end{bmatrix}=
 \begin{bmatrix}
 0\\
 k_i\sin\theta_i\\
-k_i\sqrt{n_{21}<sup>2-\sin</sup>2\theta_i}
+k_i\sqrt{n_{21}^2-\sin^2\theta_i}
 \end{bmatrix}
 :=
 \begin{bmatrix}
@@ -2237,11 +2237,11 @@ k_{tx}\\
 k_{ty}\\
 k_{tz}
 \end{bmatrix}
-$$</p>
-<p>这里利用了<br />
-$$
+\]</div>
+<p>这里利用了  </p>
+<div class="arithmatex">\[
 k_t=n_{21}k_i\quad,\quad\sin\theta_{t}=\frac{\sin\theta_{i}}{n_{21}}\quad,\quad n_{21}=\frac{n_2}{n_1}
-$$</p>
+\]</div>
 <p>对应介质 2 侧电场  </p>
 <div class="arithmatex">\[
 \begin{aligned}
@@ -2257,7 +2257,7 @@ k_{tz}=k_i\sqrt{n_{21}^2-\sin^2\theta_i}
 <p>进而介质 2 侧  </p>
 <div class="arithmatex">\[
 \begin{aligned}
-\vec{E}_2(\vec{x},t)&amp;=\vec{E}_{02}\exp{ } i\left(\vec{k}_t\cdot\vec{x}-\omega t\right)\\\\
+\vec{E}_2(\vec{x},t)&amp;=\vec{E}_{02}\exp{ } i\left(\vec{k}_t\cdot\vec{x}-\omega t\right)\\
 &amp;=\vec{E}_{02}\exp{ } (ik_{ty}y)\cdot \exp{ } (- K_{tz}z) \cdot \exp{ } (-i\omega t)
 \end{aligned}
 \]</div>
@@ -2269,7 +2269,7 @@ k_{tz}=k_i\sqrt{n_{21}^2-\sin^2\theta_i}
 <p>称发生了 <strong>全反射</strong>。此时反射波体现为相位移动：  </p>
 <div class="arithmatex">\[
 \begin{aligned}
-\frac{E_{0r}}{E_{0i}}=\exp{ } -i2\phi_N \quad (\text{N波})\\\\
+\frac{E_{0r}}{E_{0i}}=\exp{ } -i2\phi_N \quad (\text{N波})\\
 \frac{E_{0r}}{E_{0i}}=\exp{ } -i2\phi_P \quad (\text{P波})
 \end{aligned}
 \]</div>
@@ -2280,16 +2280,16 @@ k_{tz}=k_i\sqrt{n_{21}^2-\sin^2\theta_i}
 <li>Brewster角：当 <span class="arithmatex">\(\theta_i + \theta_t = \pi/2\)</span>，P波无反射（此时 <span class="arithmatex">\(\theta_i = \theta_B = \arctan n_{21}\)</span> 称为 Brewster 角）</li>
 </ul>
 <p><strong>介质面的能流分析</strong><br />
-功率反射率<br />
-$$
+功率反射率  </p>
+<div class="arithmatex">\[
 R=-\frac{\hat n\cdot\left&lt;\vec S_r\right&gt;}{\hat n\cdot \left&lt;\vec S_i\right&gt;}=\left|\frac{E_{0r}}{E_{0i}}\right|^2
-$$
-功率透射率<br />
-$$
+\]</div>
+<p>功率透射率  </p>
+<div class="arithmatex">\[
 T=-\frac{\hat n\cdot\left&lt;\vec S_t\right&gt;}{\hat n\cdot \left&lt;\vec S_i\right&gt;}
 =\left|\frac{E_{0t}}{E_{0i}}\right|^2\frac{\eta_1\cos\theta_t}{\eta_2\cos\theta_i}
-$$
-全反射时，有  </p>
+\]</div>
+<p>全反射时，有  </p>
 <div class="arithmatex">\[
 \hat{n}\cdot \left&lt;\vec S_i\right&gt; =-\hat{n}\cdot\left&lt;\vec S_r\right&gt;
 \]</div>
@@ -2299,69 +2299,69 @@ $$
 \]</div>
 <p>为纯虚数，进而法向透射平均能流为 0，只有瞬时能流。</p>
 <h3 id="_4">导体内的电磁波</h3>
-<p>电荷变化满足<br />
-$$
+<p>电荷变化满足  </p>
+<div class="arithmatex">\[
 \rho=\rho_0\exp{ }-\frac{t}{\tau}
-$$<br />
-其中 <span class="arithmatex">\(\tau=\varepsilon/\sigma\)</span> 为<strong>特征时间</strong>。若导体满足<br />
-$$
+\]</div>
+<p>其中 <span class="arithmatex">\(\tau=\varepsilon/\sigma\)</span> 为<strong>特征时间</strong>。若导体满足  </p>
+<div class="arithmatex">\[
 \tau \ll T_\text{波}
-$$<br />
-即<br />
-$$
+\]</div>
+<p>即  </p>
+<div class="arithmatex">\[
 \boxed{\frac{\sigma}{\omega\varepsilon} \gg 1}
-$$<br />
-导体内有<strong>Ohm定律</strong><br />
-$$
+\]</div>
+<p>导体内有<strong>Ohm定律</strong>  </p>
+<div class="arithmatex">\[
 \vec J = \sigma \vec E
-$$</p>
-<p><strong>良导体内的频域Maxwell方程组</strong><br />
-$$
+\]</div>
+<p><strong>良导体内的频域Maxwell方程组</strong>  </p>
+<div class="arithmatex">\[
 \begin{cases}
 \nabla \times \vec{E} = i \omega \mu \vec{H} \\
 \nabla \times \vec{H} = \sigma \vec{E} - i \omega \varepsilon \vec{E} := -i \omega \tilde{\varepsilon} \vec{E} \\
 \nabla \cdot \vec{E} = 0 \\
-\nabla \cdot \vec{H} = 0 \
+\nabla \cdot \vec{H} = 0 \\
 \end{cases}
-$$
-其中复介电常数 <span class="arithmatex">\(\tilde{\varepsilon} = \varepsilon + i \frac{\sigma}{\omega}\)</span>，复折射率<br />
-$$
+\]</div>
+<p>其中复介电常数 <span class="arithmatex">\(\tilde{\varepsilon} = \varepsilon + i \frac{\sigma}{\omega}\)</span>，复折射率  </p>
+<div class="arithmatex">\[
 \tilde{n} = \sqrt{\tilde{\varepsilon}} = \sqrt{\varepsilon + i \frac{\sigma}{\omega}} = \sqrt{\varepsilon_r \left(1 + i \frac{\sigma}{\omega \varepsilon}\right)},
-$$<br />
-可以在形式上继续套用 Fresnel 公式。</p>
+\]</div>
+<p>可以在形式上继续套用 Fresnel 公式。</p>
 <p>下面考虑真空射入良导体的问题。方法与先前类似。仍然假设  </p>
 <div class="arithmatex">\[
 \begin{cases}
-入射波：\quad\vec{E}_i(\vec{x},t) = \vec{E}_{0i} \exp{ } i\left(\vec{k}_i \cdot \vec{x} - \omega t\right) \\\\
-反射波：\quad\vec{E}_r(\vec{x},t) = \vec{E}_{0r} \exp{ } i\left(\vec{k}_r \cdot \vec{x} - \omega t\right) \\\\
+入射波：\quad\vec{E}_i(\vec{x},t) = \vec{E}_{0i} \exp{ } i\left(\vec{k}_i \cdot \vec{x} - \omega t\right) \\
+反射波：\quad\vec{E}_r(\vec{x},t) = \vec{E}_{0r} \exp{ } i\left(\vec{k}_r \cdot \vec{x} - \omega t\right) \\
 透射波：\quad\vec{E}_t(\vec{x},t) = \vec{E}_{0t} \exp{ } i\left(\vec{k}_t \cdot \vec{x} - \omega t\right) \\
 \end{cases}
 \]</div>
 <p>则可以得到  </p>
 <div class="arithmatex">\[
 \begin{aligned}
-k_t^2 &amp;= \vec{k}_t \cdot \vec{k}_t\\\\
-&amp;= \omega^2 \mu \tilde{\varepsilon} \Rightarrow \vec{k}_t \\\\
+k_t^2 &amp;= \vec{k}_t \cdot \vec{k}_t\\
+&amp;= \omega^2 \mu \tilde{\varepsilon} \Rightarrow \vec{k}_t \\
 &amp;= \vec{\beta} + i \vec{\alpha}.
 \end{aligned}
 \]</div>
 <p>进而透射波的形式为  </p>
 <div class="arithmatex">\[
 \begin{aligned}
-\vec{E}_t(\vec{x},t) &amp;= \vec{E}_{0t} \exp{ } i\left(\vec{k}_t \cdot \vec{x} - \omega t\right) \\\\
+\vec{E}_t(\vec{x},t) &amp;= \vec{E}_{0t} \exp{ } i\left(\vec{k}_t \cdot \vec{x} - \omega t\right) \\
 &amp;= \vec{E}_{0t} \exp{ } (-\vec{\alpha} \cdot \vec{x}) \exp{ } (i \vec{\beta} \cdot \vec{x}) \exp{ } (-i \omega t)
 \end{aligned}
 \]</div>
 <div class="arithmatex">\[
 \begin{cases}
-幅度沿 \ \vec{\alpha} \ 衰减 \\\\
+幅度沿 \ \vec{\alpha} \ 衰减 \\
 相位沿 \ \vec{\beta} \ 传播
 \end{cases}
 \]</div>
 <p>对于垂直入射，有  </p>
 <div class="arithmatex">\[
 \begin{aligned}
-\vec{\alpha} &amp;= \omega \sqrt{\mu \varepsilon} \left[ \frac{1}{2} \left(\sqrt{1 + \frac{\sigma^2}{\omega^2 \varepsilon^2}} - 1 \right) \right]^{\frac{1}{2}} \hat{z} \approx \sqrt{\frac{\omega \sigma \mu}{2}} \hat{z} \\\\
+\vec{\alpha} &amp;= \omega \sqrt{\mu \varepsilon} \left[ \frac{1}{2} \left(\sqrt{1 + \frac{\sigma^2}{\omega^2 \varepsilon^2}} - 1 \right) \right]^{\frac{1}{2}} \hat{z} \approx \sqrt{\frac{\omega \sigma \mu}{2}} \hat{z} \\
 \vec{\beta} &amp;= \omega \sqrt{\mu \varepsilon} \left[ \frac{1}{2} \left(\sqrt{1 + \frac{\sigma^2}{\omega^2 \varepsilon^2}} + 1 \right) \right]^{\frac{1}{2}} \hat{z} \approx \sqrt{\frac{\omega \sigma \mu}{2}} \hat{z}
 \end{aligned}
 \]</div>
@@ -2391,14 +2391,14 @@ R = \left|\frac{E_{0r}}{E_{0i}}\right|^2 \approx 1
 <p>同时对于透射波，单位面积产生焦耳热</p>
 <div class="arithmatex">\[
 \begin{aligned}
-P_d &amp;= \int_0^\infty \frac{\sigma |\vec{E}_t|^2}{2} dz \\\\
+P_d &amp;= \int_0^\infty \frac{\sigma |\vec{E}_t|^2}{2} dz \\
 &amp;= \frac{\sigma |\vec{E}_{0t}|^2}{4 \alpha}
 \end{aligned}
 \]</div>
 <p>定义表面电流  </p>
 <div class="arithmatex">\[
 \begin{aligned}
-\vec{J}_s &amp;= \int_0^\infty \sigma \vec{E}_t dz \\\\
+\vec{J}_s &amp;= \int_0^\infty \sigma \vec{E}_t dz \\
 &amp;= \boxed{\frac{\sigma \vec{E}_{0t}}{\alpha - i \beta}}
 \end{aligned}
 \]</div>
@@ -2411,20 +2411,20 @@ R_s = \frac{1}{\sigma \delta}
 P_d = \frac{|\vec{J}_s|^2 R_s}{2}
 \]</div>
 <p>考虑 <span class="arithmatex">\(\sigma \to \infty\)</span> 的情形，则穿透深度 <span class="arithmatex">\(\delta \to 0\)</span>，此时称为理想导体。理想导体内部没有电磁场，电荷、电流<strong>只分布在表面</strong>。此时仅需要讨论反射问题，边值关系只需要满足  </p>
-<p>$$
+<div class="arithmatex">\[
 \hat{n} \times \vec{E} = 0
-$$<br />
-即可。</p>
+\]</div>
+<p>即可。</p>
 <p>对于 N 波，此时有总电场（假设界面为 <span class="arithmatex">\(yOz\)</span> 平面，入射面 <span class="arithmatex">\(xOz\)</span>）</p>
-<p>$$
+<div class="arithmatex">\[
 \vec{E} = \vec{E}_i + \vec{E}_r = i 2 E_0 \sin k_x x \hat{e}_y \exp{ } i k_z z
-$$<br />
-其中 <span class="arithmatex">\(k_z = k \sin \theta\)</span>, <span class="arithmatex">\(k_x = k \cos \theta\)</span>。该场沿着 <span class="arithmatex">\(x\)</span> 方向为驻波，沿着 <span class="arithmatex">\(z\)</span> 方向为行波，为横电场（TE）模式。同时在 <span class="arithmatex">\(x = -\frac{n \pi}{k_x}\)</span> 处放第二块平行金属板，或在垂直于 <span class="arithmatex">\(y\)</span> 轴方向放两个金属板，都不会影响原有的场分布。</p>
+\]</div>
+<p>其中 <span class="arithmatex">\(k_z = k \sin \theta\)</span>, <span class="arithmatex">\(k_x = k \cos \theta\)</span>。该场沿着 <span class="arithmatex">\(x\)</span> 方向为驻波，沿着 <span class="arithmatex">\(z\)</span> 方向为行波，为横电场（TE）模式。同时在 <span class="arithmatex">\(x = -\frac{n \pi}{k_x}\)</span> 处放第二块平行金属板，或在垂直于 <span class="arithmatex">\(y\)</span> 轴方向放两个金属板，都不会影响原有的场分布。</p>
 <h3 id="_5">波导与导波模式</h3>
 <p>求解方法：从 </p>
 <div class="arithmatex">\[
 \begin{cases}
-\nabla \times \vec{E} = i \omega \mu \vec{H} \\\\
+\nabla \times \vec{E} = i \omega \mu \vec{H} \\
 \nabla \times \vec{H} = -i \omega \varepsilon \vec{E} 
 \end{cases}
 \]</div>
@@ -2435,217 +2435,221 @@ $$<br />
 </ol>
 <p>对于矩形波导 <span class="arithmatex">\(a \times b\)</span>，三种模式的波分别为：</p>
 <h4 id="tm">TM模</h4>
-<p>纵向（Z）<br />
-$$
+<p>纵向（Z）  </p>
+<div class="arithmatex">\[
 E_z = E_0 \sin\frac{m\pi}{a} x \sin\frac{n\pi}{b} y \quad, \quad H_z = 0
-$$</p>
-<p>横向（T）<br />
-$$
+\]</div>
+<p>横向（T）  </p>
+<div class="arithmatex">\[
 \vec{E}_t = \frac{i \beta}{k_c^2} \frac{m\pi}{a} E_0 \cos\frac{m\pi}{a} x \sin\frac{n\pi}{b} y \hat{e}_x + \frac{i \beta}{k_c^2} \frac{n\pi}{b} E_0 \sin\frac{m\pi}{a} x \cos\frac{n\pi}{b} y \hat{e}_y
-$$</p>
+\]</div>
 <div class="arithmatex">\[
 \vec{H}_t = -\frac{i \omega \varepsilon}{k_c^2} \frac{n\pi}{b} E_0 \sin\frac{m\pi}{a} x \cos\frac{n\pi}{b} y \hat{e}_x + \frac{i \omega \varepsilon}{k_c^2} \frac{m\pi}{a} E_0 \cos\frac{m\pi}{a} x \sin\frac{n\pi}{b} y \hat{e}_y
 \]</div>
 <p><strong><span class="arithmatex">\(TM_{mn}\)</span> 模性质</strong><br />
 - 基模 <span class="arithmatex">\(TM_{11}\)</span>；<br />
-- 行波条件：<br />
-$$
+- 行波条件：  </p>
+<div class="arithmatex">\[
 \beta = \sqrt{k^2 - k_c^2} = \frac{1}{c} \sqrt{\omega^2 - \omega_c^2} \quad \text{为实数}
-$$
-其中 <span class="arithmatex">\(\omega_c = c k_c\)</span> 称为截止频率，高于该频率 <span class="arithmatex">\(TM_{mn}\)</span> 模式才可以传播；<br />
-$$
+\]</div>
+<p>其中 <span class="arithmatex">\(\omega_c = c k_c\)</span> 称为截止频率，高于该频率 <span class="arithmatex">\(TM_{mn}\)</span> 模式才可以传播；  </p>
+<div class="arithmatex">\[
 k_c^2 = \boxed{\left(\frac{m\pi}{a}\right)^2 + \left(\frac{n\pi}{b}\right)^2}
-$$
-- 相速度为<br />
-$$
+\]</div>
+<ul>
+<li>相速度为  </li>
+</ul>
+<div class="arithmatex">\[
 v_p = \frac{\omega}{\beta} = \boxed{\frac{c}{\sqrt{1 - \left(\frac{\omega_c}{\omega}\right)^2}}}
-$$</p>
+\]</div>
 <h4 id="te">TE模</h4>
-<p>纵向（Z）<br />
-$$
+<p>纵向（Z）  </p>
+<div class="arithmatex">\[
 E_z = 0 \quad, \quad H_z = H_0 \cos\frac{m\pi}{a} x \cos\frac{n\pi}{b} y
-$$</p>
-<p>横向（T）<br />
-$$
+\]</div>
+<p>横向（T）  </p>
+<div class="arithmatex">\[
 \vec{E}_t = -\frac{i \omega \mu}{k_c^2} \frac{n\pi}{b} H_0 \cos\frac{m\pi}{a} x \sin\frac{n\pi}{b} y \hat{e}_x + \frac{i \omega \mu}{k_c^2} \frac{m\pi}{a} H_0 \sin\frac{m\pi}{a} x \cos\frac{n\pi}{b} y \hat{e}_y
-$$
-$$
+\]</div>
+<div class="arithmatex">\[
 \vec{H}_t = -\frac{i \beta}{k_c^2} \frac{m\pi}{a} H_0 \sin\frac{m\pi}{a} x \cos\frac{n\pi}{b} y \hat{e}_x - \frac{i \beta}{k_c^2} \frac{n\pi}{b} H_0 \cos\frac{m\pi}{a} x \sin\frac{n\pi}{b} y \hat{e}_y
-$$</p>
+\]</div>
 <p><strong><span class="arithmatex">\(TE_{mn}\)</span> 模性质</strong><br />
 - 基模 <span class="arithmatex">\(TE_{01}, TE_{10}\)</span>；<br />
-- 行波条件：<br />
-$$
+- 行波条件：  </p>
+<div class="arithmatex">\[
 \beta = \sqrt{k^2 - k_c^2} = \frac{1}{c} \sqrt{\omega^2 - \omega_c^2} \quad \text{为实数}
-$$
-其中 <span class="arithmatex">\(\omega_c = c k_c\)</span> 称为截止频率，高于该频率 <span class="arithmatex">\(TM_{mn}\)</span> 模式才可以传播；<br />
-$$
+\]</div>
+<p>其中 <span class="arithmatex">\(\omega_c = c k_c\)</span> 称为截止频率，高于该频率 <span class="arithmatex">\(TM_{mn}\)</span> 模式才可以传播；  </p>
+<div class="arithmatex">\[
 k_c^2 = \boxed{\left(\frac{m\pi}{a}\right)^2 + \left(\frac{n\pi}{b}\right)^2}
-$$
-- 相速度为<br />
-$$
+\]</div>
+<ul>
+<li>相速度为  </li>
+</ul>
+<div class="arithmatex">\[
 v_p = \frac{\omega}{\beta} = \boxed{\frac{c}{\sqrt{1 - \left(\frac{\omega_c}{\omega}\right)^2}}}
-$$</p>
+\]</div>
 <h4 id="tem">TEM模</h4>
 <div class="admonition warning">
 <p class="admonition-title">注意</p>
 <p>矩形波导不能传 TEM 模</p>
 </div>
 <p>对于谐振腔 <span class="arithmatex">\(a \times b \times c\)</span>，有：</p>
-<p><strong>谐振频率</strong><br />
-$$
+<p><strong>谐振频率</strong>  </p>
+<div class="arithmatex">\[
 \omega_{mnp} = \frac{1}{\sqrt{\varepsilon \mu}} \sqrt{\left(\frac{m\pi}{a}\right)^2 + \left(\frac{n\pi}{b}\right)^2 + \left(\frac{p\pi}{c}\right)^2}
-$$
-其中 <span class="arithmatex">\(m, n, p\)</span> <strong>至多有一个 0</strong>。谐振腔内有<br />
-$$
+\]</div>
+<p>其中 <span class="arithmatex">\(m, n, p\)</span> <strong>至多有一个 0</strong>。谐振腔内有  </p>
+<div class="arithmatex">\[
 \int \langle W_e \rangle dV = \int \langle W_m \rangle dV
-$$
-即总平均电场能 = 总平均磁场能。</p>
+\]</div>
+<p>即总平均电场能 = 总平均磁场能。</p>
 <h3 id="_6">辐射问题</h3>
 <h4 id="dalembert">D'Alembert方程及其解</h4>
 <p>辐射问题中，已知全空间的 <span class="arithmatex">\(\rho\)</span> 和 <span class="arithmatex">\(\vec{J}\)</span> 分布，欲求解全空间的 <span class="arithmatex">\(\vec{E}\)</span> 和 <span class="arithmatex">\(\vec{B}\)</span>。</p>
 <p>由时域 Maxwell 方程组  </p>
 <div class="arithmatex">\[
 \begin{cases}
-\nabla \times \vec{E} = -\frac{\partial}{\partial t} \vec{B} \\\\
-\nabla \times \vec{B} = \mu_0 \vec{J} + \mu_0 \varepsilon_0 \frac{\partial}{\partial t} \vec{E} \\\\
-\nabla \cdot \vec{E} = \frac{\rho}{\varepsilon_0} \\\\
-\nabla \cdot \vec{B} = 0 \\\\
+\nabla \times \vec{E} = -\frac{\partial}{\partial t} \vec{B} \\
+\nabla \times \vec{B} = \mu_0 \vec{J} + \mu_0 \varepsilon_0 \frac{\partial}{\partial t} \vec{E} \\
+\nabla \cdot \vec{E} = \frac{\rho}{\varepsilon_0} \\
+\nabla \cdot \vec{B} = 0 \\
 \end{cases}
 \]</div>
 <p>利用关系  </p>
 <div class="arithmatex">\[
 \begin{cases}
-\vec{E} = -\nabla \varphi - \frac{\partial}{\partial t} \vec{A} \\\\
+\vec{E} = -\nabla \varphi - \frac{\partial}{\partial t} \vec{A} \\
 \vec{B} = \nabla \times \vec{A}
 \end{cases}
 \]</div>
 <p>得到  </p>
 <div class="arithmatex">\[
 \begin{cases}
-\nabla^2 \varphi + \frac{\partial}{\partial t} (\nabla \cdot \vec{A}) = - \frac{\rho}{\varepsilon_0} \\\\
+\nabla^2 \varphi + \frac{\partial}{\partial t} (\nabla \cdot \vec{A}) = - \frac{\rho}{\varepsilon_0} \\
 \nabla^2 \vec{A} - \frac{1}{c^2} \frac{\partial^2}{\partial t^2} \vec{A} - \nabla \left( \nabla \cdot \vec{A} + \frac{1}{c^2} \frac{\partial}{\partial t} \varphi \right) = - \mu_0 \vec{J}
 \end{cases}
 \]</div>
 <p>再由  </p>
-<p><strong>Coulomb规范</strong><br />
-$$
+<p><strong>Coulomb规范</strong>  </p>
+<div class="arithmatex">\[
 \nabla \cdot \vec{A} = 0
-$$
-<strong>Lorentz规范</strong><br />
-$$
+\]</div>
+<p><strong>Lorentz规范</strong>  </p>
+<div class="arithmatex">\[
 \nabla \cdot \vec{A} + \frac{1}{c^2} \frac{\partial}{\partial t} \varphi = 0
-$$</p>
+\]</div>
 <p>得到<strong>D'Alembert方程</strong>  </p>
 <div class="arithmatex">\[
 \begin{cases}
-\nabla^2 \varphi - \frac{1}{c^2} \frac{\partial^2}{\partial t^2} \varphi = - \frac{\rho}{\varepsilon_0} \\\\
+\nabla^2 \varphi - \frac{1}{c^2} \frac{\partial^2}{\partial t^2} \varphi = - \frac{\rho}{\varepsilon_0} \\
 \nabla^2 \vec{A} - \frac{1}{c^2} \frac{\partial^2}{\partial t^2} \vec{A} = - \mu_0 \vec{J}
 \end{cases}
 \]</div>
 <p>进而解得<strong>推迟势解</strong>  </p>
 <div class="arithmatex">\[
 \begin{cases}
-\displaystyle \varphi(\vec{x}, t) = \frac{1}{4\pi \varepsilon_0} \int \frac{\rho(\vec{x}', t_r)}{r} dV' \\\\
+\displaystyle \varphi(\vec{x}, t) = \frac{1}{4\pi \varepsilon_0} \int \frac{\rho(\vec{x}', t_r)}{r} dV' \\
 \displaystyle \vec{A}(\vec{x}, t) = \frac{\mu_0}{4\pi} \int \frac{\vec{J}(\vec{x}', t_r)}{r} dV'
 \end{cases}
 \]</div>
-<p>其中<strong>推迟时间</strong><br />
-$$
+<p>其中<strong>推迟时间</strong>  </p>
+<div class="arithmatex">\[
 t_r = t - \frac{r}{c}
-$$</p>
+\]</div>
 <p>进而求导得到电磁场 <span class="arithmatex">\(\vec{E}, \vec{B}\)</span> 的解（Jefimenko公式）： </p>
 <div class="arithmatex">\[
 \begin{cases}
 \displaystyle
-\vec{E}(\vec{x}, t) = \frac{1}{4\pi \varepsilon_0} \int \left[ \frac{\rho(\vec{x}', t_r) \hat{r}}{r^2} + \frac{\dot{\rho}(\vec{x}', t_r) \hat{r}}{c r} - \frac{\ddot{\vec{J}}(\vec{x}', t_r)}{c^2 r} \right] dV' \\\\
+\vec{E}(\vec{x}, t) = \frac{1}{4\pi \varepsilon_0} \int \left[ \frac{\rho(\vec{x}', t_r) \hat{r}}{r^2} + \frac{\dot{\rho}(\vec{x}', t_r) \hat{r}}{c r} - \frac{\ddot{\vec{J}}(\vec{x}', t_r)}{c^2 r} \right] dV' \\
 \displaystyle
 \vec{B}(\vec{x}, t) = \frac{\mu_0}{4\pi} \int \left[ \frac{\vec{J}(\vec{x}', t_r)}{r^2} + \frac{\dot{\vec{J}}(\vec{x}', t_r)}{c r} \right] \times \hat{r} \, dV'
 \end{cases}
 \]</div>
 <p><strong>其中 <span class="arithmatex">\(\frac{1}{r^2}\)</span> 项不产生辐射，只有 <span class="arithmatex">\(\frac{1}{r}\)</span> 项产生辐射。</strong></p>
 <h3 id="_7">时谐场的辐射</h3>
-<p>对<strong>电流连续性方程</strong><br />
-$$
+<p>对<strong>电流连续性方程</strong>  </p>
+<div class="arithmatex">\[
 \nabla \cdot \vec{J} + \frac{\partial}{\partial t} \rho = 0
-$$</p>
-<p>和<strong>Lorentz规范</strong><br />
-$$
+\]</div>
+<p>和<strong>Lorentz规范</strong>  </p>
+<div class="arithmatex">\[
 \nabla \cdot \vec{A} + \frac{1}{c^2} \frac{\partial}{\partial t} \varphi = 0
-$$</p>
+\]</div>
 <p>作傅里叶变换得到  </p>
 <div class="arithmatex">\[
 \begin{cases}
-\nabla \cdot \vec{J} - i \omega \rho = 0 \\\\
+\nabla \cdot \vec{J} - i \omega \rho = 0 \\
 \displaystyle \nabla \cdot \vec{A} - i \omega \frac{\varphi}{c^2} = 0
 \end{cases}
 \]</div>
-<p>进而根据 <span class="arithmatex">\(\vec{J}\)</span> 和 <span class="arithmatex">\(\vec{A}\)</span> 就可以确定电磁场。根据推迟势解<br />
-$$
+<p>进而根据 <span class="arithmatex">\(\vec{J}\)</span> 和 <span class="arithmatex">\(\vec{A}\)</span> 就可以确定电磁场。根据推迟势解  </p>
+<div class="arithmatex">\[
 \vec{A}(\vec{x}, t) = \frac{\mu_0}{4 \pi} \int \frac{\vec{J}(\vec{x}', t_r)}{r} dV' = \vec{A}(\vec{x}) \exp{ }(-i \omega t)
-$$</p>
-<p>结合时谐条件<br />
-$$
+\]</div>
+<p>结合时谐条件  </p>
+<div class="arithmatex">\[
 \vec{J}(\vec{x}', t_r) = \vec{J}(\vec{x}') \exp{ }(-i \omega t_r) = \vec{J}(\vec{x}') \exp{ }(i k r) \exp{ }(-i \omega t)
-$$</p>
-<p>其中用到了<br />
-$$
+\]</div>
+<p>其中用到了  </p>
+<div class="arithmatex">\[
 t_r = t - \frac{r}{c}, \quad k = \frac{\omega}{c}
-$$</p>
-<p>从而得到<br />
-$$
+\]</div>
+<p>从而得到  </p>
+<div class="arithmatex">\[
 \vec{A}(\vec{x}) = \frac{\mu_0}{4 \pi} \int \frac{\vec{J}(\vec{x}') \exp{ }(i k r)}{r} dV'
-$$</p>
-<p>考虑远场近似<br />
-$$
+\]</div>
+<p>考虑远场近似  </p>
+<div class="arithmatex">\[
 \vec{x}' \ll \vec{x}, \quad r \approx R - \hat{R} \cdot \vec{x}', \quad \frac{1}{r} \approx \frac{1}{R} + \frac{\hat{R} \cdot \vec{x}'}{R^2}
-$$</p>
-<p>得到<br />
-$$
+\]</div>
+<p>得到  </p>
+<div class="arithmatex">\[
 \vec{A}(\vec{x}) = \frac{\mu_0}{4 \pi R} \exp{ }(i k R) \int \vec{J}(\vec{x}') \exp{ }(i k \hat{R} \cdot \vec{x}') \left(1 + \frac{\hat{R} \cdot \vec{x}'}{R}\right) dV'
-$$</p>
-<p>进而考虑 <span class="arithmatex">\(\rho, \vec{J}\)</span> 集中在小区域的情形，即<br />
-$$
+\]</div>
+<p>进而考虑 <span class="arithmatex">\(\rho, \vec{J}\)</span> 集中在小区域的情形，即  </p>
+<div class="arithmatex">\[
 |\vec{x}'| \ll \lambda = \frac{2 \pi}{k}, \quad \exp{ }(i k \hat{R} \cdot \vec{x}') \approx 1 - i k \hat{R} \cdot \vec{x}'
-$$</p>
+\]</div>
 <p>即可得到<br />
-<strong>时谐场的远场辐射多级展开</strong><br />
-$$
+<strong>时谐场的远场辐射多级展开</strong>  </p>
+<div class="arithmatex">\[
 \vec{A}(\vec{x}) = \frac{\mu_0}{4 \pi R} \exp{ }(i k R) \int \vec{J}(\vec{x}') \left(1 + \left(\frac{1}{R} - i k \right) \hat{R} \cdot \vec{x}' + \cdots \right) dV'
-$$</p>
+\]</div>
 <h3 id="_8">电偶极辐射</h3>
-<p>上述式中第一项<br />
-$$
+<p>上述式中第一项  </p>
+<div class="arithmatex">\[
 \vec{A}(\vec{x}) = \frac{\mu_0}{4 \pi R} \exp{ }(i k R) \int \vec{J}(\vec{x}') dV'
-$$
-对应电偶极辐射。相应地<br />
-$$
+\]</div>
+<p>对应电偶极辐射。相应地  </p>
+<div class="arithmatex">\[
 \vec{A}(\vec{x}, t) = \frac{\mu_0}{4 \pi R} \exp{ }(i k R) \int \vec{J}(\vec{x}', t) dV'
-$$
-进而结合<br />
-$$
+\]</div>
+<p>进而结合  </p>
+<div class="arithmatex">\[
 \frac{\partial}{\partial t} \vec{p}(t) = \int \vec{J}(\vec{x}', t) dV'
-$$
-得到<br />
-$$
+\]</div>
+<p>得到  </p>
+<div class="arithmatex">\[
 \vec{A}(\vec{x}, t) = \frac{\mu_0}{4 \pi R} \exp{ }(i k R) \dot{\vec{p}}(t)
-$$
-再利用 <span class="arithmatex">\(\vec{p}(t) = \vec{p}_0 \exp{ }(-i \omega t)\)</span> 得到</p>
-<p><strong>电偶极辐射公式</strong><br />
-$$
+\]</div>
+<p>再利用 <span class="arithmatex">\(\vec{p}(t) = \vec{p}_0 \exp{ }(-i \omega t)\)</span> 得到</p>
+<p><strong>电偶极辐射公式</strong>  </p>
+<div class="arithmatex">\[
 \vec{A}(\vec{x}, t) = -i \omega \frac{\mu_0}{4 \pi R} \exp{ }(i k R) \vec{p}_0 \exp{ }(-i \omega t)
-$$</p>
-<p>根据<br />
-$$
+\]</div>
+<p>根据  </p>
+<div class="arithmatex">\[
 \vec{B} = \nabla \times \vec{A}, \quad \vec{E} = \frac{i c}{k} \nabla \times \vec{B}
-$$
-在球坐标系下得到<br />
-$$
+\]</div>
+<p>在球坐标系下得到  </p>
+<div class="arithmatex">\[
 \vec{B} = -\frac{p_0 k^3}{4 \pi \varepsilon_0 c} \left( \frac{i}{(k R)^2} + \frac{1}{k R} \right) \sin \theta \exp{ } i(k R - \omega t) \hat{\phi}
-$$</p>
+\]</div>
 <div class="arithmatex">\[
 \begin{aligned}
-\vec{E} = &amp; \frac{2 p_0 k^3}{4 \pi \varepsilon_0} \left( \frac{1}{(k R)^3} - \frac{i}{(k R)^2} \right) \cos \theta \exp{ } i(k R - \omega t) \hat{R} \\\\
+\vec{E} = &amp; \frac{2 p_0 k^3}{4 \pi \varepsilon_0} \left( \frac{1}{(k R)^3} - \frac{i}{(k R)^2} \right) \cos \theta \exp{ } i(k R - \omega t) \hat{R} \\
 &amp; + \frac{p_0 k^3}{4 \pi \varepsilon_0} \left( \frac{1}{(k R)^3} - \frac{i}{(k R)^2} - \frac{1}{k R} \right) \sin \theta \exp{ } i(k R - \omega t) \hat{\theta}
 \end{aligned}
 \]</div>
@@ -2686,7 +2690,7 @@ I(z,t) = I_0 \cos(k z) \exp{ }(-i \omega t)
 <p>进而由近似 <span class="arithmatex">\(r \approx R - z \cos \theta\)</span> 得到矢量位  </p>
 <div class="arithmatex">\[
 \begin{aligned}
-\vec{A}(\vec{x}) &amp;\approx \frac{\mu_0}{4\pi} \int_{-\frac{\lambda}{4}}^{\frac{\lambda}{4}} \frac{I(z) \exp{ } i(k R - k z \cos \theta)}{R} dz \hat{e}_z \\\\
+\vec{A}(\vec{x}) &amp;\approx \frac{\mu_0}{4\pi} \int_{-\frac{\lambda}{4}}^{\frac{\lambda}{4}} \frac{I(z) \exp{ } i(k R - k z \cos \theta)}{R} dz \hat{e}_z \\
 &amp;= \boxed{
     \frac{\mu_0 I_0 \exp{ }(i k R)}{2 \pi k R} \frac{\cos\left(\frac{\pi}{2} \cos \theta\right)}{\sin^2 \theta} \hat{e}_z
 }
@@ -2696,14 +2700,14 @@ I(z,t) = I_0 \cos(k z) \exp{ }(-i \omega t)
 <div class="arithmatex">\[
 \vec{B} = -i \frac{\mu_0 I_0 \exp{ }(i k R)}{2 \pi k R} \frac{\cos\left(\frac{\pi}{2} \cos \theta\right)}{\sin \theta} \hat{\phi}
 \]</div>
-<p>$$
+<div class="arithmatex">\[
 \vec{E} = -i \frac{\mu_0 c I_0 \exp{ }(i k R)}{2 \pi k R} \frac{\cos\left(\frac{\pi}{2} \cos \theta\right)}{\sin \theta} \hat{\theta}
-$$
-辐射能流 </p>
-<p>$$
+\]</div>
+<p>辐射能流 </p>
+<div class="arithmatex">\[
 \left&lt; \vec{S} \right&gt; \propto \frac{\cos^2\left(\frac{\pi}{2} \cos \theta\right)}{\sin^2 \theta}
-$$
-辐射阻抗  </p>
+\]</div>
+<p>辐射阻抗  </p>
 <div class="arithmatex">\[
 R_{rad} = \boxed{73.2 \Omega}
 \]</div>

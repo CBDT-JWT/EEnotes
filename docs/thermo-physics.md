@@ -7,14 +7,19 @@
 ### 常数
 
 **阿伏伽德罗常量**： mol
+
 $$
 N_A = 6.023\times 10^{23} 个/mol
 $$
+
 **普适气体常量** ：*nTR*的R
+
 $$
 R=8.31 J/mol\cdot K
 $$
+
 **玻尔兹曼常量**：*kT*的k
+
 $$
 k:=\frac{R}{N_A}=1.38\times 10^{-23}J/K
 $$
@@ -22,8 +27,8 @@ $$
 ### 理想气体状态方程
 
 $$
-pV = \nu RT = nkT\\\\
-\nu :摩尔数\\\\
+pV = \nu RT = nkT\\
+\nu :摩尔数\\
 n:分子数
 $$
 
@@ -32,15 +37,19 @@ $$
 **速率分布函数**
 
 定义
+
 $$
 f(v)dv := \frac{dN_v}N
 $$
+
 式中，f称为速率分布函数。其表示：速率在速率v所在的单位速率区间内分子数占总数的比例。
 
 显然有
+
 $$
 \int_0^\infty f(v)dv = \int_0^N\frac{dN_{v}}N=1
 $$
+
 称为**归一化条件**。
 
 **麦克斯韦分布**
@@ -97,8 +106,8 @@ $$
 
 $$
 \begin{aligned}
-f(v)dv &=\iint_{v^2\leq v_x^2+v_y^2+v_z^2\leq (v+dv)^2} F(\left[ v_x,v_y,v_z\right]^T)dv_xdv_ydv_z\\\\
-&=F(\left[v,0,0\right]^T)\textcolor{purple}{dV}\\\\
+f(v)dv &=\iint_{v^2\leq v_x^2+v_y^2+v_z^2\leq (v+dv)^2} F(\left[ v_x,v_y,v_z\right]^T)dv_xdv_ydv_z\\
+&=F(\left[v,0,0\right]^T)\textcolor{purple}{dV}\\
 &=\textcolor{red}{\left(\frac{m}{2\pi kT}\right)^{3/2}}e^{-\frac{\textcolor{green}{\frac{1}{2}m(v^2)}}{\textcolor{blue}{kT}}}\textcolor{purple}{4\pi v^2dv}
 \end{aligned}
 $$
@@ -162,10 +171,10 @@ $$
 
 $$
 \begin{aligned}
-\bar \lambda &:平均自由程\\\\
-\bar v &:平均速率\\\\
-\bar z &: 平均碰撞频率\\\\
-\bar z &= \textcolor{red}{\sqrt 2 \bar v}\cdot\textcolor{green}{\pi d^2} \cdot n\\\\
+\bar \lambda &:平均自由程\\
+\bar v &:平均速率\\
+\bar z &: 平均碰撞频率\\
+\bar z &= \textcolor{red}{\sqrt 2 \bar v}\cdot\textcolor{green}{\pi d^2} \cdot n\\
 \Rightarrow \bar\lambda &=\frac{1}{\textcolor{red}{\sqrt 2}\textcolor{green}{\pi d^2}n}=\frac{kT}{\sqrt2 \pi d^2p}
 \end{aligned}
 $$
@@ -191,9 +200,9 @@ $$
 
 $$
 \begin{aligned}
-a &: 常数\\\\
-b&: 常数\\\\
-V_m&:分子体积\\\\
+a &: 常数\\
+b&: 常数\\
+V_m&:分子体积\\
 \end{aligned}
 $$
 
@@ -203,9 +212,9 @@ $$
 
 $$
 \begin{aligned}
-内摩擦&\quad df=-\eta \left(\frac{du}{dz}\right)_{z_0}dS\quad&\eta=\frac{1}{3}mn\bar v\bar \lambda&\quad:粘度\\\\
+内摩擦&\quad df=-\eta \left(\frac{du}{dz}\right)_{z_0}dS\quad&\eta=\frac{1}{3}mn\bar v\bar \lambda&\quad:粘度\\
 热传导&\quad dQ=-\kappa\left(\frac{dT}{dz}\right)_{z_0}
-dSdt\quad&\kappa=\frac{1}{3}mn\bar v\bar\lambda C_V\quad&:热导率\\\\
+dSdt\quad&\kappa=\frac{1}{3}mn\bar v\bar\lambda C_V\quad&:热导率\\
 扩散&\quad dM=-D\left(\frac{d\rho}{dz}\right)_{z0}dSdt\quad&D=\frac{1}{3}\bar v\bar\lambda\quad&:扩散系数
 \end{aligned}
 $$
@@ -433,9 +442,11 @@ $$
 热力学系统经绝热过程熵不减少，可逆绝热过程熵不变，不可逆绝热过程熵增加。
 
 由于孤立系统进行过程必然绝热，因此
+
 $$
 \Delta S_{孤立系统}\geq 0
 $$
+
 >孤立系统内一切过程熵都不会减少；**熵增加原理是热力学第二定律的数学表示**。
 ### 热力学第二定律的统计意义
 **热力学概率**  任意宏观态对应的微观态数称为该宏观态的热力学概率，记作$\Omega$
@@ -445,22 +456,28 @@ $$
 >一个孤立系统内部自发进行的过程，总是由热力学概率小的宏观态向热力学概率大的宏观态过渡
 
 **玻尔兹曼熵公式**
+
 $$
 S=k\ln\Omega
 $$
+
 回忆：理想气体有
+
 $$
 \begin{aligned}
 S(T,V)&=\textcolor{red}{\nu C_{V,m}\ln\frac{T}{T_0}}+\textcolor{blue}{\nu R\ln\frac{V}{V_0}}+\textcolor{purple}{S_0}\\
 &=\textcolor{red}{速度熵}+\textcolor{blue}{位形熵}+\textcolor{purple}{S_0}
 \end{aligned}
 $$
+
 无序性增加$\rightarrow$熵增加。
 ### 温熵图
 用温熵图（T-S）反应过程中状态的关系，则由于
+
 $$
 Q=\int TdS
 $$
+
 因此循环中吸热为温商曲线*所围面积*。
 
 ![卡诺循环的温商图](assets/01dfcc1afe19f94904d670b577af59f51d13f20c.png){: style="display: block; margin: auto; width: 60%;" }

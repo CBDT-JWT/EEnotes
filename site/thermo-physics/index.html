@@ -2187,36 +2187,36 @@
 <h2 id="_1">气体动理论：研究稳态的气体</h2>
 <p><strong>关键词</strong> 几个常数，各种速度，各种速率，各种分布，理想气体状态方程。</p>
 <h3 id="_2">常数</h3>
-<p><strong>阿伏伽德罗常量</strong>： mol
-$$
+<p><strong>阿伏伽德罗常量</strong>： mol</p>
+<div class="arithmatex">\[
 N_A = 6.023\times 10^{23} 个/mol
-$$
-<strong>普适气体常量</strong> ：<em>nTR</em>的R
-$$
+\]</div>
+<p><strong>普适气体常量</strong> ：<em>nTR</em>的R</p>
+<div class="arithmatex">\[
 R=8.31 J/mol\cdot K
-$$
-<strong>玻尔兹曼常量</strong>：<em>kT</em>的k
-$$
+\]</div>
+<p><strong>玻尔兹曼常量</strong>：<em>kT</em>的k</p>
+<div class="arithmatex">\[
 k:=\frac{R}{N_A}=1.38\times 10^{-23}J/K
-$$</p>
+\]</div>
 <h3 id="_3">理想气体状态方程</h3>
 <div class="arithmatex">\[
-pV = \nu RT = nkT\\\\
-\nu :摩尔数\\\\
+pV = \nu RT = nkT\\
+\nu :摩尔数\\
 n:分子数
 \]</div>
 <h3 id="_4">速率、速度分布</h3>
 <p><strong>速率分布函数</strong></p>
-<p>定义
-$$
+<p>定义</p>
+<div class="arithmatex">\[
 f(v)dv := \frac{dN_v}N
-$$
-式中，f称为速率分布函数。其表示：速率在速率v所在的单位速率区间内分子数占总数的比例。</p>
-<p>显然有
-$$
+\]</div>
+<p>式中，f称为速率分布函数。其表示：速率在速率v所在的单位速率区间内分子数占总数的比例。</p>
+<p>显然有</p>
+<div class="arithmatex">\[
 \int_0^\infty f(v)dv = \int_0^N\frac{dN_{v}}N=1
-$$
-称为<strong>归一化条件</strong>。</p>
+\]</div>
+<p>称为<strong>归一化条件</strong>。</p>
 <p><strong>麦克斯韦分布</strong></p>
 <p>麦克斯韦分布为<strong>一定条件下速率分布函数的具体形式</strong>。</p>
 <div class="arithmatex">\[
@@ -2257,8 +2257,8 @@ F(\vec v)=g(v_x)\cdot g(v_y)\cdot g(v_z)=\textcolor{red}{\left(\frac{m}{2\pi kT}
 <p>于是：</p>
 <div class="arithmatex">\[
 \begin{aligned}
-f(v)dv &amp;=\iint_{v^2\leq v_x^2+v_y^2+v_z^2\leq (v+dv)^2} F(\left[ v_x,v_y,v_z\right]^T)dv_xdv_ydv_z\\\\
-&amp;=F(\left[v,0,0\right]^T)\textcolor{purple}{dV}\\\\
+f(v)dv &amp;=\iint_{v^2\leq v_x^2+v_y^2+v_z^2\leq (v+dv)^2} F(\left[ v_x,v_y,v_z\right]^T)dv_xdv_ydv_z\\
+&amp;=F(\left[v,0,0\right]^T)\textcolor{purple}{dV}\\
 &amp;=\textcolor{red}{\left(\frac{m}{2\pi kT}\right)^{3/2}}e^{-\frac{\textcolor{green}{\frac{1}{2}m(v^2)}}{\textcolor{blue}{kT}}}\textcolor{purple}{4\pi v^2dv}
 \end{aligned}
 \]</div>
@@ -2302,10 +2302,10 @@ E=(t+r+2v)\frac{1}{2}NkT
 <p>其中</p>
 <div class="arithmatex">\[
 \begin{aligned}
-\bar \lambda &amp;:平均自由程\\\\
-\bar v &amp;:平均速率\\\\
-\bar z &amp;: 平均碰撞频率\\\\
-\bar z &amp;= \textcolor{red}{\sqrt 2 \bar v}\cdot\textcolor{green}{\pi d^2} \cdot n\\\\
+\bar \lambda &amp;:平均自由程\\
+\bar v &amp;:平均速率\\
+\bar z &amp;: 平均碰撞频率\\
+\bar z &amp;= \textcolor{red}{\sqrt 2 \bar v}\cdot\textcolor{green}{\pi d^2} \cdot n\\
 \Rightarrow \bar\lambda &amp;=\frac{1}{\textcolor{red}{\sqrt 2}\textcolor{green}{\pi d^2}n}=\frac{kT}{\sqrt2 \pi d^2p}
 \end{aligned}
 \]</div>
@@ -2326,18 +2326,18 @@ E=(t+r+2v)\frac{1}{2}NkT
 <p>其中</p>
 <div class="arithmatex">\[
 \begin{aligned}
-a &amp;: 常数\\\\
-b&amp;: 常数\\\\
-V_m&amp;:分子体积\\\\
+a &amp;: 常数\\
+b&amp;: 常数\\
+V_m&amp;:分子体积\\
 \end{aligned}
 \]</div>
 <h3 id="_8">非平衡态 输运过程</h3>
 <p><strong>输运过程</strong>包括：<strong>内摩擦</strong>（输运分子定向动量），<strong>热传导</strong>（输运分子无规则运动能量），<strong>扩散</strong>（输运分子质量），分别服从：</p>
 <div class="arithmatex">\[
 \begin{aligned}
-内摩擦&amp;\quad df=-\eta \left(\frac{du}{dz}\right)_{z_0}dS\quad&amp;\eta=\frac{1}{3}mn\bar v\bar \lambda&amp;\quad:粘度\\\\
+内摩擦&amp;\quad df=-\eta \left(\frac{du}{dz}\right)_{z_0}dS\quad&amp;\eta=\frac{1}{3}mn\bar v\bar \lambda&amp;\quad:粘度\\
 热传导&amp;\quad dQ=-\kappa\left(\frac{dT}{dz}\right)_{z_0}
-dSdt\quad&amp;\kappa=\frac{1}{3}mn\bar v\bar\lambda C_V\quad&amp;:热导率\\\\
+dSdt\quad&amp;\kappa=\frac{1}{3}mn\bar v\bar\lambda C_V\quad&amp;:热导率\\
 扩散&amp;\quad dM=-D\left(\frac{d\rho}{dz}\right)_{z0}dSdt\quad&amp;D=\frac{1}{3}\bar v\bar\lambda\quad&amp;:扩散系数
 \end{aligned}
 \]</div>
@@ -2499,10 +2499,10 @@ S(T,V)=\nu C_{V,m}\ln\frac{T}{T_0}+\nu R\ln\frac{V}{V_0}+S_0
 \]</div>
 <p>其中可逆过程取“=”。
 热力学系统经绝热过程熵不减少，可逆绝热过程熵不变，不可逆绝热过程熵增加。</p>
-<p>由于孤立系统进行过程必然绝热，因此
-$$
+<p>由于孤立系统进行过程必然绝热，因此</p>
+<div class="arithmatex">\[
 \Delta S_{孤立系统}\geq 0
-$$</p>
+\]</div>
 <blockquote>
 <p>孤立系统内一切过程熵都不会减少；<strong>熵增加原理是热力学第二定律的数学表示</strong>。</p>
 </blockquote>
@@ -2513,24 +2513,24 @@ $$</p>
 <blockquote>
 <p>一个孤立系统内部自发进行的过程，总是由热力学概率小的宏观态向热力学概率大的宏观态过渡</p>
 </blockquote>
-<p><strong>玻尔兹曼熵公式</strong>
-$$
+<p><strong>玻尔兹曼熵公式</strong></p>
+<div class="arithmatex">\[
 S=k\ln\Omega
-$$
-回忆：理想气体有
-$$
+\]</div>
+<p>回忆：理想气体有</p>
+<div class="arithmatex">\[
 \begin{aligned}
-S(T,V)&amp;=\textcolor{red}{\nu C_{V,m}\ln\frac{T}{T_0}}+\textcolor{blue}{\nu R\ln\frac{V}{V_0}}+\textcolor{purple}{S_0}\
+S(T,V)&amp;=\textcolor{red}{\nu C_{V,m}\ln\frac{T}{T_0}}+\textcolor{blue}{\nu R\ln\frac{V}{V_0}}+\textcolor{purple}{S_0}\\
 &amp;=\textcolor{red}{速度熵}+\textcolor{blue}{位形熵}+\textcolor{purple}{S_0}
 \end{aligned}
-$$
-无序性增加<span class="arithmatex">\(\rightarrow\)</span>熵增加。</p>
+\]</div>
+<p>无序性增加<span class="arithmatex">\(\rightarrow\)</span>熵增加。</p>
 <h3 id="_19">温熵图</h3>
-<p>用温熵图（T-S）反应过程中状态的关系，则由于
-$$
+<p>用温熵图（T-S）反应过程中状态的关系，则由于</p>
+<div class="arithmatex">\[
 Q=\int TdS
-$$
-因此循环中吸热为温商曲线<em>所围面积</em>。</p>
+\]</div>
+<p>因此循环中吸热为温商曲线<em>所围面积</em>。</p>
 <p><img alt="卡诺循环的温商图" src="../assets/01dfcc1afe19f94904d670b577af59f51d13f20c.png" style="display: block; margin: auto; width: 60%;" /></p>
 <p><img alt="任意可逆循环与卡诺循环比较" src="../assets/f43ac6b734c17837aeb9af48146e9f23c6e15c18.png" style="display: block; margin: auto; width: 60%;" /></p>
 <h2 id="_20">参考资料</h2>
