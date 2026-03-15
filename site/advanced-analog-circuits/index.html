@@ -1813,7 +1813,8 @@
     </span>
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="输出阻抗">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#_22" class="md-nav__link">
@@ -1831,14 +1832,47 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+        
           <li class="md-nav__item">
   <a href="#_23" class="md-nav__link">
     <span class="md-ellipsis">
       
-        总结
+        单管电路总结
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="单管电路总结">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        基本电流镜
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        共源共栅电流镜
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -2281,7 +2315,8 @@
     </span>
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="输出阻抗">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#_22" class="md-nav__link">
@@ -2299,14 +2334,47 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+        
           <li class="md-nav__item">
   <a href="#_23" class="md-nav__link">
     <span class="md-ellipsis">
       
-        总结
+        单管电路总结
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="单管电路总结">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        基本电流镜
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        共源共栅电流镜
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -2711,7 +2779,7 @@ Z_x=\frac{v_o}{i_x}\,,i_x=(v_o-v_g)(g_m+sC_{gs})=v_o\left(1-\frac{v_g}{v_o}\righ
 \boxed{Z_x=\frac{1}{g_m}\frac{1+sR_i(C_{gs}+C_i)}{\left(1+\dfrac{sC_{gs}}{g_m}\right)(1+sR_iC_i)}}
 \]</div>
 <p><img alt="alt text" src="../assets/advanced-analog-circuits_1773148305463_png" /></p>
-<h4 id="_22">应用</h4>
+<h5 id="_22">应用</h5>
 <p><strong>电平转换器</strong>：输出的静态工作点比输入低<span class="arithmatex">\(V_t+V_{ov}\)</span>
 <img alt="alt text" src="../assets/advanced-analog-circuits_1773148452662_png" /></p>
 <p><strong>驱动器</strong>：隔离重负载<span class="arithmatex">\(R_{small}\)</span></p>
@@ -2730,7 +2798,7 @@ Z_x=\frac{v_o}{i_x}\,,i_x=(v_o-v_g)(g_m+sC_{gs})=v_o\left(1-\frac{v_g}{v_o}\righ
 <li>一阶非线性抵消</li>
 </ol>
 <p>劣势：摆幅降低</p>
-<h3 id="_23">总结</h3>
+<h3 id="_23">单管电路总结</h3>
 <table>
 <thead>
 <tr>
@@ -2770,8 +2838,42 @@ Z_x=\frac{v_o}{i_x}\,,i_x=(v_o-v_g)(g_m+sC_{gs})=v_o\left(1-\frac{v_g}{v_o}\righ
 <td>当摆幅与非线性要求不高时可作电压驱动器</td>
 <td>电压驱动</td>
 </tr>
+<tr>
+<td>### 电流镜</td>
+<td></td>
+<td></td>
+</tr>
 </tbody>
 </table>
+<p><img alt="1773555547586.png" src="../assets/1773555547586.png" /></p>
+<p>目标：</p>
+<ul>
+<li>精确的景象比<span class="arithmatex">\(I_{Tail}/I_Ref}\)</span></li>
+<li>大的<span class="arithmatex">\(R_{Tail}\)</span>,用来获得好CMRR</li>
+<li>小的<span class="arithmatex">\(V_{min}\)</span>,最大化共模输入范围</li>
+</ul>
+<h4 id="_24">基本电流镜</h4>
+<p><img alt="1773555696877.png" src="../assets/1773555696877.png" /></p>
+<p>一般来说始终令<span class="arithmatex">\(L_1=L_2\)</span>,并将<span class="arithmatex">\(W_1/W_2\)</span>或者<span class="arithmatex">\(W_2/W_1\)</span>设置为整数（从而并联使用单元器件）。</p>
+<div class="arithmatex">\[
+\Delta I=I_1-I_2=\frac{\Delta V}{r_o}
+\]</div>
+<p>从而两种选择：</p>
+<ol>
+<li>用大输出电阻<span class="arithmatex">\(r_o\)</span>的器件（加大<span class="arithmatex">\(L\)</span>）</li>
+<li>令<span class="arithmatex">\(V_1\)</span>尽量接近<span class="arithmatex">\(V_2\)</span>.</li>
+</ol>
+<h4 id="_25">共源共栅电流镜</h4>
+<p><img alt="1773556681813.png" src="../assets/1773556681813.png" /></p>
+<p>共源共栅结构有助于得到更高的输出电阻，可用于提高差分对的CMRR</p>
+<div class="arithmatex">\[
+R_{out}\approx g_m r_o^2
+\]</div>
+<p>即使电流镜输出端的电阻很高，仍然希望<span class="arithmatex">\(V_1=V_2\)</span>,这样尽量减少<span class="arithmatex">\(I_2/I_1\)</span>的系统误差</p>
+<p><strong>方案1</strong> ref上也叠一个共栅管，坏处是<span class="arithmatex">\(V_{OUTmin}\)</span>将会很高</p>
+<p><img alt="1773557037821.png" src="../assets/1773557037821.png" /></p>
+<p><strong>方案2</strong> 用电压源提供共源共栅管的栅极电位，让<span class="arithmatex">\(V_{outmin}=2V_{ov}\)</span>(最小值）：（因为只需要<span class="arithmatex">\(V_{DS}&gt;V_{ov}\)</span>就可以，不需要大于<span class="arithmatex">\(V_{GS}\)</span>)</p>
+<p><img alt="1773558262510.png" src="../assets/1773558262510.png" /></p>
 
 
 

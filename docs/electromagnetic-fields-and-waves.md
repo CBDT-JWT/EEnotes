@@ -88,7 +88,7 @@ $$
 \mathbf{S} = \mathbf{E}\times \mathbf{H}^*
 $$
 
-于是有**复 Poynting 定理**：
+于是有**复 Poynt[[]]ing 定理**：
 
 $$
 -\nabla\cdot\mathbf{S} = \mathbf{E}\cdot\mathbf{J}^* + i\omega(\mathbf{E}\cdot\mathbf{D}^* + \mathbf{B}\cdot\mathbf{H}^*)
