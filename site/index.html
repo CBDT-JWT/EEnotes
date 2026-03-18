@@ -693,6 +693,34 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        本地部署
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="本地部署">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        说明
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1768,6 +1796,34 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        本地部署
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="本地部署">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        说明
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1851,6 +1907,40 @@
 <h2 id="github">github合作说明与致谢</h2>
 <p>一个人难免有错漏之处，还请不吝赐教！如果有问题可以在<a href="https://github.com/CBDT-JWT/EEnotes">此仓库</a>提出，万分感激！</p>
 <iframe allow="autoplay *; encrypted-media *;" frameborder="0" height="150" style="width:100%;max-width:660px;overflow:hidden;background:transparent;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/cn/album/itasca/1533741298?i=1533741300"></iframe>
+
+<h2 id="_4">本地部署</h2>
+<p>建议使用 Python 3.10 及以上版本，并确保本机已安装 <code>git</code>。本项目当前使用 <code>MkDocs Material</code> 主题，以及 <code>git-revision-date-localized</code>、<code>pymdown-extensions</code>、<code>neoteroi.timeline</code> 等插件/扩展。</p>
+<ol>
+<li>创建并激活虚拟环境</li>
+</ol>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+</span></code></pre></div>
+<ol>
+<li>安装 MkDocs 及所需依赖</li>
+</ol>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>pip<span class="w"> </span>install<span class="w"> </span>mkdocs<span class="w"> </span>mkdocs-material<span class="w"> </span>mkdocs-git-revision-date-localized-plugin<span class="w"> </span>pymdown-extensions<span class="w"> </span>neoteroi-mkdocs
+</span></code></pre></div>
+<ol>
+<li>在项目根目录启动本地预览</li>
+</ol>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>mkdocs<span class="w"> </span>serve
+</span></code></pre></div>
+<p>默认访问地址为：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>http://127.0.0.1:8000
+</span></code></pre></div>
+<ol>
+<li>如需生成静态站点文件，可执行</li>
+</ol>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>mkdocs<span class="w"> </span>build
+</span></code></pre></div>
+<p>生成结果默认位于 <code>site/</code> 目录。</p>
+<h3 id="_5">说明</h3>
+<ul>
+<li>配置文件为项目根目录下的 <code>mkdocs.yml</code>。</li>
+<li>文档源文件位于 <code>docs/</code> 目录。</li>
+<li><code>git-revision-date-localized</code> 插件依赖 Git 历史记录来显示页面更新时间，因此请尽量在完整克隆仓库后再本地构建。</li>
+</ul>
 
 
 

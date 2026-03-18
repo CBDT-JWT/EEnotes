@@ -38,3 +38,46 @@ comments: true
 一个人难免有错漏之处，还请不吝赐教！如果有问题可以在[此仓库](https://github.com/CBDT-JWT/EEnotes)提出，万分感激！
 
 <iframe allow="autoplay *; encrypted-media *;" frameborder="0" height="150" style="width:100%;max-width:660px;overflow:hidden;background:transparent;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/cn/album/itasca/1533741298?i=1533741300"></iframe>
+
+## 本地部署
+
+建议使用 Python 3.10 及以上版本，并确保本机已安装 `git`。本项目当前使用 `MkDocs Material` 主题，以及 `git-revision-date-localized`、`pymdown-extensions`、`neoteroi.timeline` 等插件/扩展。
+
+1. 创建并激活虚拟环境
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+```
+
+2. 安装 MkDocs 及所需依赖
+
+```bash
+pip install mkdocs mkdocs-material mkdocs-git-revision-date-localized-plugin pymdown-extensions neoteroi-mkdocs
+```
+
+3. 在项目根目录启动本地预览
+
+```bash
+mkdocs serve
+```
+
+默认访问地址为：
+
+```text
+http://127.0.0.1:8000
+```
+
+4. 如需生成静态站点文件，可执行
+
+```bash
+mkdocs build
+```
+
+生成结果默认位于 `site/` 目录。
+
+### 说明
+
+- 配置文件为项目根目录下的 `mkdocs.yml`。
+- 文档源文件位于 `docs/` 目录。
+- `git-revision-date-localized` 插件依赖 Git 历史记录来显示页面更新时间，因此请尽量在完整克隆仓库后再本地构建。
