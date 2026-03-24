@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://note.weitao-jiang.cn/stochastic-processes/">
+        <link rel="canonical" href="https://note.weitao-jiang.cn/Power-IC-Basics/">
       
       
-        <link rel="prev" href="../communication-and-networks/">
+        <link rel="prev" href="../AD-and-DA-convertors/">
       
       
-        <link rel="next" href="../c-and-c%2B%2B-programming/">
+        <link rel="next" href="../orcad-and-allegro/">
       
       
         
@@ -25,7 +25,7 @@
     
     
       
-        <title>随机过程 - CBDT的资料屋</title>
+        <title>电源管理芯片 - CBDT的资料屋</title>
       
     
     
@@ -144,6 +144,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#ldo" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -220,7 +225,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              随机过程
+              电源管理芯片
             
           </span>
         </div>
@@ -426,12 +431,10 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
+      <li class="md-tabs__item">
         <a href="../signals-and-systems/" class="md-tabs__link">
           
   
@@ -468,10 +471,12 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../matlab/" class="md-tabs__link">
           
   
@@ -1068,31 +1073,26 @@
       
   
   
-    
   
   
-  
     
     
     
     
-      
-        
-        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
             
   
   
@@ -1110,7 +1110,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1209,17 +1209,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../stochastic-processes/" class="md-nav__link">
         
   
   
@@ -1235,7 +1228,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -1395,26 +1387,31 @@
       
   
   
+    
   
   
+  
     
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
         
           
-          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
             
   
   
@@ -1432,7 +1429,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1531,10 +1528,35 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../Power-IC-Basics/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    电源管理芯片
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1550,6 +1572,91 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ldo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LDO
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dc-dc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DC-DC
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DC-DC">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dc-dc_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        开关电容DC-DC
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="开关电容DC-DC">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        电压倍增器
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        其他转换比
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1663,6 +1770,81 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ldo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LDO
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dc-dc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DC-DC
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DC-DC">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dc-dc_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        开关电容DC-DC
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="开关电容DC-DC">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        电压倍增器
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        其他转换比
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1681,9 +1863,71 @@
   
 
 
-  <h1>随机过程</h1>
+  <h1>电源管理芯片</h1>
 
-
+<h2 id="ldo">LDO</h2>
+<h2 id="dc-dc">DC-DC</h2>
+<h3 id="dc-dc_1">开关电容DC-DC</h3>
+<p><img alt="" src="../assets/Power-IC-Basics_image.png" /></p>
+<p>电荷转移中，导通电阻上的损失与电阻无关。</p>
+<p><img alt="" src="../assets/Power-IC-Basics_image-1.png" /></p>
+<div class="arithmatex">\[
+C_1 V_1 + C_2 V_2 = (C_1+C_2) V\,,V=\frac{C_1V_1+C_2V_2}{C_1+C_2}
+\]</div>
+<div class="arithmatex">\[
+E_{cap}=\frac{1}{2}CV^2
+\]</div>
+<div class="arithmatex">\[
+E_{initial}=\frac{1}{2}C_1V_1^2+\frac{1}{2}C_2V_2^2
+\]</div>
+<div class="arithmatex">\[
+E_{final}=\frac{1}{2}{C_1}{C_2}V^2
+\]</div>
+<div class="arithmatex">\[
+E_{loss} = E_{initial}-E_{final}=\frac{1}{2}\left(\frac{C_1C_2}{C_1+C_2}\right)(V_1-V_2)^2
+\]</div>
+<h4 id="_1">电压倍增器</h4>
+<p><img alt="" src="../assets/pMv3URoUbBwzx4P.png" /></p>
+<p><span class="arithmatex">\(\Phi_1\)</span>阶段给<span class="arithmatex">\(C_1\)</span>充电，<span class="arithmatex">\(\Phi_2\)</span>阶段<span class="arithmatex">\(V_{dd}\)</span>把<span class="arithmatex">\(C_2\)</span>捅上<span class="arithmatex">\(2V_{dd}\)</span></p>
+<p>输出电压（考虑纹波）：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\bar V_o &amp;= \frac{1}{2}\left(\frac{V_{o1}+V_{o2}}{2}+\frac{V_{o2}+V_{o3}}{2}\right)\\
+&amp;=2V_{dd}-\frac{I_oT}{C_1}+\frac{I_oT}{8(C_1+C_L)}-\frac{I_oT}{8C_L}
+\end{aligned}
+\]</div>
+<div class="arithmatex">\[
+\Delta V = \frac{I_oT}{C_1}-\frac{I_oT}{8(C_1+C_L)}+\frac{I_oT}{8C_L}
+\]</div>
+<p>改进：加一个支路</p>
+<p><img alt="" src="../assets/7QuZT69dXl3SL5N.png" /></p>
+<p><span class="arithmatex">\(\Phi_1\)</span>阶段：<span class="arithmatex">\(C_2\)</span>和<span class="arithmatex">\(V_{dd}\)</span>串联对<span class="arithmatex">\(C_L\)</span>放电，<span class="arithmatex">\(C_1\)</span>充电；</p>
+<p><span class="arithmatex">\(\Phi_2\)</span>阶段：<span class="arithmatex">\(C_1\)</span>​和<span class="arithmatex">\(V_{dd}\)</span>​串联对<span class="arithmatex">\(C_L\)</span>放电，<span class="arithmatex">\(C_2\)</span>充电；</p>
+<p>意义：压降大的时候比LDO高效！<span class="arithmatex">\(\eta_{LDO}\approx\frac{V_{out}}{V_{in}}\)</span>, <span class="arithmatex">\(\eta_{CP}\approx\frac{V_{out}}{VCR\times V_{in}}\)</span></p>
+<p><img alt="" src="../assets/wr5G5azqfMR2avV.png" /></p>
+<p><strong>开关电容DC-DC转换器只能处理离散VCR！</strong></p>
+<h4 id="_2">其他转换比</h4>
+<p>1/2, 1/3, 2/3比例：可重构单元</p>
+<p><img alt="" src="../assets/bQNRqs4QoLP2evI.png" /></p>
+<p>线性VCR拓扑（2，3，4，5）：Dickson/梯形/串-并联</p>
+<p><img alt="" src="../assets/0SZ2JrXKCYfFpWD.png" /></p>
+<p>非线性VCR拓扑：</p>
+<ul>
+<li>斐波那契比例（2，3，5，8）：</li>
+</ul>
+<p><img alt="" src="../assets/161rczCziq6CsPn.png" /></p>
+<ul>
+<li>指数比例（2，4，8，16）：级连电压倍增器</li>
+<li>多级</li>
+</ul>
+<p><img alt="" src="../assets/LSCGd2d585ITwKm.png" /></p>
+<p>不同拓扑的对比：</p>
+<ol>
+<li>串联-并联结构：高效利用电容，串联阶段开关阻抗大，对电容受限场景适用（FIVR）</li>
+<li>Dickson和梯型拓扑：高频更好，等效电容小</li>
+<li>Fibonacci：电容利用率和开关利用率都一般</li>
+</ol>
+<p><img alt="" src="../assets/jfNfLaqCEQ3yYM3.png" /></p>
 
 
 
@@ -1704,7 +1948,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年2月11日 12:55:28 UTC">2026年2月11日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年3月24日 03:55:01 UTC">2026年3月24日</span>
   </span>
 
     
@@ -1740,7 +1984,7 @@
       <nav class="md-footer__inner md-grid" aria-label="页脚" >
         
           
-          <a href="../communication-and-networks/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 通信与网络">
+          <a href="../AD-and-DA-convertors/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 模拟数字数据转换器">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1750,20 +1994,20 @@
                 上一页
               </span>
               <div class="md-ellipsis">
-                通信与网络
+                模拟数字数据转换器
               </div>
             </div>
           </a>
         
         
           
-          <a href="../c-and-c%2B%2B-programming/" class="md-footer__link md-footer__link--next" aria-label="下一页: 程设基础">
+          <a href="../orcad-and-allegro/" class="md-footer__link md-footer__link--next" aria-label="下一页: OrCAD使用笔记">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                程设基础
+                OrCAD使用笔记
               </div>
             </div>
             <div class="md-footer__button md-icon">

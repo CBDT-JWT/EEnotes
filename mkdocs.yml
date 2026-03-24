@@ -76,8 +76,10 @@ nav:
     - Matlab高级编程与工程应用: matlab.md
     - 高等模拟电路原理: advanced-analog-circuits.md
     - 模拟数字数据转换器: AD-and-DA-convertors.md
+    - 电源管理芯片: Power-IC-Basics.md
     - OrCAD使用笔记: orcad-and-allegro.md
     - Latex基础教程: latex-tutorial.md
+    
   - 开往: https://www.travellings.cn/go.html
 theme:
   name: material
