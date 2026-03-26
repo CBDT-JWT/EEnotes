@@ -104,3 +104,4 @@ $\Phi_2$阶段：$C_1$​和$V_{dd}$​串联对$C_L$放电，$C_2$充电；
 
 ![](assets/jfNfLaqCEQ3yYM3.png)
 
+![alt text](assets/Power-IC-Basics_image-2.png)
