@@ -45,7 +45,7 @@ markdown_extensions:
   
 extra_css:
 - css/neoteroi-mkdocs.css
-- stylesheets/blogviewer.css
+- stylesheets/homepage-palette.css
 - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css
 
 nav:
@@ -69,6 +69,7 @@ nav:
     - 数字信号处理: digital-signal-processing.md
     - 通信与网络: communication-and-networks.md
     - 随机过程: stochastic-processes.md
+    - 统计信号处理: statistic-signal-processing.md
   - 计算机组:
     - 程设基础: c-and-c++-programming.md
     - 数据结构与算法: dsa.md
@@ -86,21 +87,16 @@ theme:
   name: material
   logo: https://www.weitao-jiang.cn/images/avatar.jpg
   favicon: https://www.weitao-jiang.cn/images/favicon.ico
-  custom_dir: overrides
-  palette: 
-    
-    # Palette toggle for light mode
+  language: zh
+  palette:
     - scheme: default
       toggle:
-        icon: material/brightness-7 
+        icon: material/brightness-7
         name: Switch to dark mode
-
-    # Palette toggle for dark mode
     - scheme: slate
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
-  language: zh
   features:
     - content.code.copy
     - content.code.select
