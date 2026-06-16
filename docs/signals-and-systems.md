@@ -312,6 +312,24 @@ $F(\omega)$是$f(t)$的频域表示，称为$f(t)$的频谱。$|F(\omega)|$称�
 
 ![alt text](assets/ss_1772260601379_png)
 
+## Laplace变换
+
+Laplace变换即$f(t)e^{-\sigma t}$的傅里叶变换，其中$f(t)$为因果信号。
+
+$$
+F(s)=\int_{0-}^\infty f(t)e^{-st}\mathrm dt=\int_{0-}^\infty f(t)e^{-\sigma t}e^{-\mathrm j\omega t}\mathrm dt
+$$
+
+Laplace变换存在的条件：原函数 ==分段连续== 且为 ==指数阶函数== 。
+
+??? tip "指数阶函数"
+    对于给定$f(t)$，若存在$\sigma_0$满足
+    
+    $$
+    \lim_{t\to\infty}f(t)\mathrm e^{-\sigma t}=0\,\quad\forall \sigma>\sigma_0
+    $$
+
+    则称$f(t)$为指数阶函数。
 
 
 ## 通信系统

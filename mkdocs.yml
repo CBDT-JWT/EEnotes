@@ -45,7 +45,7 @@ markdown_extensions:
   
 extra_css:
 - css/neoteroi-mkdocs.css
-- stylesheets/homepage-palette.css
+# - stylesheets/homepage-palette.css
 - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css
 
 nav:
@@ -90,12 +90,14 @@ theme:
   language: zh
   palette:
     - scheme: default
+      primary: deep purple
       toggle:
-        icon: material/brightness-7
+        icon: material/lightbulb
         name: Switch to dark mode
     - scheme: slate
+      primary: deep purple
       toggle:
-        icon: material/brightness-4
+        icon: material/lightbulb-outline
         name: Switch to light mode
   features:
     - content.code.copy
@@ -116,7 +118,7 @@ theme:
       note: octicons/tag-16
       abstract: octicons/checklist-16
       info: octicons/info-16
-      tip: octicons/squirrel-16
+      tip: octicons/light-bulb-16
       success: octicons/check-16
       question: octicons/question-16
       warning: octicons/alert-16
@@ -150,3 +152,9 @@ extra:
       link: mailto:cbdt@weitao-jiang.cn
     - icon: octicons/link-16
       link: https://www.weitao-jiang.cn
+    - icon: fontawesome/brands/x-twitter
+      link: https://x.com/cbdtJIANG
+    - icon: fontawesome/brands/github
+      link: https://github.com/CBDT-JWT
+    - icon: fontawesome/brands/weixin
+      link: https://mp.weixin.qq.com/s/tLDOvb3dJZ2jrEGZZp8wxA
