@@ -331,6 +331,32 @@ Laplace变换存在的条件：原函数 ==分段连续== 且为 ==指数阶函�
 
     则称$f(t)$为指数阶函数。
 
+### Laplace 变换的性质
+
+**线性:** 若$\mathscr{L}[f_1(t)]=F_1(s)$,$\mathscr{L}[f_2(t)]=F_2(s)$，对常数$K_1\,,K_2$有
+
+$$
+\mathscr{L}[K_1f_1(t)+K_2f_2(t)]=K_1F_1(s)+K_2F_2(s)
+$$
+
+---
+
+**微分、积分性质:** $\mathscr{L}\left[\dfrac{\mathrm df(t)}{\mathrm dt}\right]=sF(s)-f(0-)$，对高阶有
+
+$$
+\displaystyle\mathscr{L}\left[\dfrac{\mathrm d^nf(t)}{\mathrm dt^n}\right]=s^nF(s)-\sum_{r=0}^{n-1}s^{n-r-1}f^{(r)}(0-)
+$$
+
+$$
+\mathscr{L}\left[\int_{-\infty}^tf(\tau)\mathrm{d}\tau\right]=\frac{F(s)}{s}+\frac{\displaystyle\int_{-\infty}^{0-}f(\tau)\mathrm d\tau}{s}
+$$
+---
+
+
+
+
+
+
 
 ## 通信系统
 ### 系统可实现性、佩里维纳准则
