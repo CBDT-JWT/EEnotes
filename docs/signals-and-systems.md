@@ -350,13 +350,140 @@ $$
 $$
 \mathscr{L}\left[\int_{-\infty}^tf(\tau)\mathrm{d}\tau\right]=\frac{F(s)}{s}+\frac{\displaystyle\int_{-\infty}^{0-}f(\tau)\mathrm d\tau}{s}
 $$
+
+![alt text](assets/signals-and-systems_image.png)
+
 ---
 
+**延时 (时域平移) 性质:** $\mathscr{L}[f(t-t_0)u(t-t_0)]=e^{-st_0}F(s)\,,t_0>0$
 
+注意有$u(t-t_0)$,就是只取$t\ge t_0$的部分。
 
+**频移（s域平移）性质:** $\mathscr{L}[f(t)e^{-at}]=F(s+a)$
 
+---
 
+**尺度变换性质:** $\mathscr{L}[f(at)]=\dfrac{1}{a}F\left(\dfrac{s}{a}\right)\,,a>0$。
 
+---
+
+**s域微分、积分性质**
+
+$$
+\frac{\mathrm{d}F(s)}{\mathrm{d}s}=\mathscr{L}[-tf(t)]
+$$
+
+$$
+\int_s^\infty F(\xi)\mathrm d\xi=\mathscr{L}{\frac{f(t)}t}
+$$
+
+---
+
+**初值定理**
+
+$$
+\lim_{t\to 0_+}f(t)=f(0_+)=\lim_{s\to \infty}sF(s)
+$$
+
+要求$f(t)\,,f'(t)$的Laplace变换存在。
+
+**终值定理**
+
+$$
+\lim_{t\to\infty}f(t)=\lim_{s\to0}sF(s)
+$$
+
+!!! warning "终值定理应用条件"
+    1. **时域**：$\displaystyle\lim_{t\to\infty}f(t)$存在
+    1. **频域**：极点必须在左半平面。
+
+??? tip "例-锁相环分析"
+    锁相环是通信接收机的重要单元，用于频率恢复和解调。现在想研究$F(s)$的特性。
+    ![alt text](assets/signals-and-systems_image-1.png)
+    不妨假设鉴相器理想，即
+
+    $$
+    g\left(\theta(t)-\hat{\theta}(t)\right)=K_p\left(\theta(t)-\hat{\theta}(t)\right)
+    $$
+
+    ![alt text](assets/signals-and-systems_image-2.png)
+
+    相位估计误差和输入相位的关系为
+
+    $$
+    \Theta_e(s)=\frac{s}{s+K_0K_pF(s)}\Theta(s)
+    $$
+
+    当输入相位为恒定值时，即$\theta(t)=\Delta\theta u(t)$时
+
+    $$
+    \Theta_e(s)=\frac{s}{s+K_0K_pF(s)}\cdot\frac{\Delta\theta}{s}=\frac{\Delta\theta}{s+K_0K_pF(s)}
+    $$
+
+    应用终值定理得到
+
+    $$
+    \lim_{t\to\infty}\theta_e(t)=\lim_{s\to 0}\Theta_e(s)=\lim_{s\to 0}\frac{s\Delta\theta}{s+K_0K_pF(s)}=0\,,\forall F(0)\neq 0
+    $$
+
+    因此前向增益$F(s)$一定要能通过直流。
+
+---
+
+**卷积定理**
+
+$$
+\begin{aligned}
+\text{时域}:&\mathscr{L}[f_1(t)\ast f_2(t)]=F_1(s)F_2(s)\\
+\text{频域}:&\mathscr{L}[f_1(t)\cdot f_2(t)]=\boxed{\frac{1}{2\pi\mathrm{j}}}F_1(s)\ast F_2(s)
+\end{aligned}
+$$
+
+### Laplace 逆变换
+
+Laplace 的一般表达式可以写为
+
+$$
+F(s)=\frac{B(s)}{A(s)}=\frac{\displaystyle b_m\prod_{j=1}^{m}(s-z_j)}{\displaystyle a_n\prod_{i=1}^{m}(s-p_i)}
+$$
+
+!!! tip "非有理函数怎么办"
+    对于连续非有理函数$F(s)$,可以用 ==伯恩斯坦多项式== 近似。若$f(x)\in\mathbb{C}[0,1]$，则其n阶伯恩斯坦多项式定义为
+    
+    $$
+    B_n(x)=\sum_{k=0}^nf\left(\frac{x}{n}\right)C_n^kx^k(1-x)^{n-k}
+    $$
+
+    对于函数$|x|$，可以采用 ==Newman近似== ：
+
+    $$
+    r_n(x)=\frac{x\left(p_n(x)-p_n(-x)\right)}{p_n(x)+p_n(-x)}\,,p_n(x)=\sum_{k=1}^{n-1}(x+a^k)
+    $$
+
+    其中系数$a=\exp\left(-\frac{1}{\sqrt{\pi}}\right)$，$n\geq 5$时有$||x|-r_n(x)|\leq 3\exp\left(-\sqrt{n}\right)$
+
+Laplace 逆变换可以采用部分分式分解法和留数定理求解。
+
+#### 部分分式分解法
+
+对于有理函数形式，假设$n>m$，即$F(s)$为真分式。
+
+$$
+\begin{aligned}
+F(s)&=\frac{B(s)}{(s-p_1)(s-p_2)\cdots(s-p_n)}\\
+&=\frac{K_1}{s-p_1}+\frac{K_2}{s-p_2}+\cdots+\frac{K_n}{s-p_n}
+\end{aligned}
+$$
+
+其中$\left.K_i=(s-p_i)F(s)\right|_{s=p_i}$
+
+**单根** 若$K_i\in \mathbb{R}$, 则
+
+$$
+\mathscr{L}^{-1}\left[\frac{K_i}{s-p_i}\right]=K_i\exp(p_i t)u(t)
+$$
+
+#### 留数定理法
 
 ## 通信系统
 ### 系统可实现性、佩里维纳准则
