@@ -2748,10 +2748,13 @@ f_1(t)\ast f_2(t)=\int_{-\infty}^\infty f_1(\tau)f_2(t-\tau)\mathrm d\tau
 \]</div>
 <p><strong>代数性质</strong>：</p>
 <ol>
-<li><strong>交换律：</strong><span class="arithmatex">\(f_1(t)\ast f_2(t)=f_2(t)\ast f_1(t)\)</span></li>
-<li><strong>结合律</strong>：<span class="arithmatex">\((f_1(t)\ast f_2(t))\ast f_3(t)=f_1(t)\ast(f_2(t)\ast f_3(t))\)</span></li>
-<li><strong>分配律</strong>：<span class="arithmatex">\(f_1(t)\ast(f_2(t)+f_3(t))=f_1(t)\ast f_2(t)+f_1(t)\ast f_3(t)\)</span></li>
+<li><strong>交换律：</strong><span class="arithmatex">\(f_1\ast f_2=f_2\ast f_1\)</span></li>
+<li><strong>结合律</strong>：<span class="arithmatex">\((f_1\ast f_2)\ast f_3=f_1\ast(f_2\ast f_3)\)</span></li>
+<li><strong>分配律</strong>：</li>
 </ol>
+<div class="arithmatex">\[
+f_1\ast(f_2+f_3)=f_1\ast f_2+f_1\ast f_3
+\]</div>
 <p><strong>拓扑性质</strong></p>
 <ol>
 <li><strong>微分性质</strong>：<span class="arithmatex">\(\dfrac{\mathrm d}{\mathrm dt}(f_1(t)\ast f_2(t))=\dfrac{\mathrm df_1(t)}{\mathrm dt}\ast f_2(t)\)</span></li>
@@ -3015,6 +3018,28 @@ F(s)&amp;=\frac{B(s)}{(s-p_1)(s-p_2)\cdots(s-p_n)}\\
 <div class="arithmatex">\[
 \mathscr{L}^{-1}\left[\frac{K_i}{s-p_i}\right]=K_i\exp(p_i t)u(t)
 \]</div>
+<p><strong>共轭复根</strong> 若有一堆共轭复数根<span class="arithmatex">\(-\alpha\pm\mathrm{j}\beta\)</span>,即</p>
+<div class="arithmatex">\[
+\begin{aligned}
+F(s)&amp;=\frac{1}{(s+\alpha-\mathrm j\beta)\cdot(s+\alpha+\mathrm j\beta)}\cdot F_1(s)\\
+&amp;=\frac{K_1}{s+\alpha-\mathrm j\beta}+\frac{K_2}{s+\alpha+\mathrm j\beta}+\cdots
+\end{aligned}
+\]</div>
+<p>其中</p>
+<div class="arithmatex">\[
+\begin{cases}
+K_1=(s+\alpha-\mathrm{j}\beta)F(-\alpha+j\beta)=\frac{F_1(-\alpha+j\beta)}{2\mathrm j\beta}\\
+K_2=(s+\alpha+\mathrm{j}\beta)F(-\alpha-j\beta)=\frac{F_1(-\alpha-j\beta)}{-2\mathrm j\beta}\\
+\end{cases}
+\]</div>
+<p>即<span class="arithmatex">\(K_2=K_1^\ast\)</span>。令<span class="arithmatex">\(K_1=A+\mathrm jB\)</span>,则</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\mathscr{L}^{-1}&amp;\left[\frac{K_1}{s+\alpha-\mathrm j\beta}+\frac{K_2}{s+\alpha+\mathrm j\beta}\right]\\
+&amp;=2\exp(-\alpha t)\left(A\cos\beta t-B\sin\beta t\right)u(t)
+\end{aligned}
+\]</div>
+<p><strong>多重根</strong> 假设<span class="arithmatex">\(F(s)\)</span>有一个<span class="arithmatex">\(k\)</span>阶极点</p>
 <h4 id="_14">留数定理法</h4>
 <h2 id="_15">通信系统</h2>
 <h3 id="_16">系统可实现性、佩里维纳准则</h3>
@@ -3231,7 +3256,7 @@ f(t)=A\cos\left[\omega_c t+\int_{-\infty}^t g(\tau)\mathrm d\tau\right]
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年6月17日 03:54:01 UTC">2026年6月17日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年6月18日 07:18:56 UTC">2026年6月18日</span>
   </span>
 
     

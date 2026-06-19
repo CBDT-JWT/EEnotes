@@ -162,9 +162,13 @@ $$
 
 **代数性质**：
 
-1. **交换律：**$f_1(t)\ast f_2(t)=f_2(t)\ast f_1(t)$
-1. **结合律**：$(f_1(t)\ast f_2(t))\ast f_3(t)=f_1(t)\ast(f_2(t)\ast f_3(t))$
-1. **分配律**：$f_1(t)\ast(f_2(t)+f_3(t))=f_1(t)\ast f_2(t)+f_1(t)\ast f_3(t)$
+1. **交换律：**$f_1\ast f_2=f_2\ast f_1$
+1. **结合律**：$(f_1\ast f_2)\ast f_3=f_1\ast(f_2\ast f_3)$
+1. **分配律**：
+
+$$
+f_1\ast(f_2+f_3)=f_1\ast f_2+f_1\ast f_3
+$$
 
 **拓扑性质**
 
@@ -482,6 +486,35 @@ $$
 $$
 \mathscr{L}^{-1}\left[\frac{K_i}{s-p_i}\right]=K_i\exp(p_i t)u(t)
 $$
+
+**共轭复根** 若有一堆共轭复数根$-\alpha\pm\mathrm{j}\beta$,即
+
+$$
+\begin{aligned}
+F(s)&=\frac{1}{(s+\alpha-\mathrm j\beta)\cdot(s+\alpha+\mathrm j\beta)}\cdot F_1(s)\\
+&=\frac{K_1}{s+\alpha-\mathrm j\beta}+\frac{K_2}{s+\alpha+\mathrm j\beta}+\cdots
+\end{aligned}
+$$
+
+其中
+
+$$
+\begin{cases}
+K_1=(s+\alpha-\mathrm{j}\beta)F(-\alpha+j\beta)=\frac{F_1(-\alpha+j\beta)}{2\mathrm j\beta}\\
+K_2=(s+\alpha+\mathrm{j}\beta)F(-\alpha-j\beta)=\frac{F_1(-\alpha-j\beta)}{-2\mathrm j\beta}\\
+\end{cases}
+$$
+
+即$K_2=K_1^\ast$。令$K_1=A+\mathrm jB$,则
+
+$$
+\begin{aligned}
+\mathscr{L}^{-1}&\left[\frac{K_1}{s+\alpha-\mathrm j\beta}+\frac{K_2}{s+\alpha+\mathrm j\beta}\right]\\
+&=2\exp(-\alpha t)\left(A\cos\beta t-B\sin\beta t\right)u(t)
+\end{aligned}
+$$
+
+**多重根** 假设$F(s)$有一个$k$阶极点
 
 #### 留数定理法
 
