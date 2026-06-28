@@ -281,13 +281,13 @@ $$
 傅立叶变换定义为
 
 $$
-\mathcal{F}\{f(t)\}=F(\omega)=\int_{-\infty}^\infty f(t)e^{-j\omega t}\mathrm dt
+\mathscr{F}\{f(t)\}=F(\omega)=\int_{-\infty}^\infty f(t)e^{-j\omega t}\mathrm dt
 $$
 
 逆变换为
 
 $$
-\mathcal{F}^{-1}\{F(\omega)\}=f(t)=\frac{1}{2\pi}\int_{-\infty}^\infty F(\omega)e^{j\omega t}\mathrm d\omega
+\mathscr{F}^{-1}\{F(\omega)\}=f(t)=\frac{1}{2\pi}\int_{-\infty}^\infty F(\omega)e^{j\omega t}\mathrm d\omega
 $$
 
 $F(\omega)$是$f(t)$的频域表示，称为$f(t)$的频谱。$|F(\omega)|$称为幅度谱，$\varphi(\omega)=\arg F(\omega)$称为相位谱。
@@ -300,11 +300,11 @@ $F(\omega)$是$f(t)$的频域表示，称为$f(t)$的频谱。$|F(\omega)|$称�
 
 #### 傅立叶变换的性质
 
-**可逆性**：$\mathcal{F}^{-1}\{\mathcal{F}\{f(t)\}\}=f(t)$
+**可逆性**：$\mathscr{F}^{-1}\{\mathscr{F}\{f(t)\}\}=f(t)$
 
-**对称性**：$\mathcal{F}\{\mathcal{F}\{f(t)\}\}=2\pi f(-t)$，$\mathcal{F}^{-1}\{\mathcal{F}^{-1}\{F(\omega)\}\}=\dfrac{1}{2\pi}F(-\omega)$
+**对称性**：$\mathscr{F}\{\mathscr{F}\{f(t)\}\}=2\pi f(-t)$，$\mathscr{F}^{-1}\{\mathscr{F}^{-1}\{F(\omega)\}\}=\dfrac{1}{2\pi}F(-\omega)$
 
-**线性**：$\mathcal{F}\{a_1f_1(t)+a_2f_2(t)\}=a_1F_1(\omega)+a_2F_2(\omega)$
+**线性**：$\mathscr{F}\{a_1f_1(t)+a_2f_2(t)\}=a_1F_1(\omega)+a_2F_2(\omega)$
 
 **衰减速率**：时域波形增加一阶可导，傅里叶变换包络的衰减速度增加$\omega^{-1}$.例如
 
@@ -660,6 +660,108 @@ $$
 
 $E(s)\,,R(s)$可能是电压或者电流，因而 $H(s)$ 可能为阻抗、导纳或者比值.如果$E(s)$和$R(s)$在同一端口，则$H(s)$称为策动点函数(Driving point function)；否则称为转移函数或传递函数(Transfer function).
 
+### 零极点分布与时频特性
+
+拉氏变换建立起时域和频域的对应关系。拉氏变换将不同的电路 (系统) 统一，即不同电路可以完成同样的功能，具有相同的性质。
+
+#### $H(s)$零极点分布与$h(t)$波形特征的对应
+
+设$H(s)$由$n$个子系统$H_i(s)$并联而成，每个子系统又唯一一阶极点$p_i$，即
+
+$$
+H(s)=\sum_{i=1}^{n}H_i(s)=\sum_{i=1}^{n}\frac{K_i}{s-p_i}
+$$
+
+其冲激响应：
+
+$$
+h(t)=\mathscr L^{-1}[H(s)]=\sum_{i=1}^n K_i\mathrm e^{p_it}u(t)
+$$
+
+**一阶极点位置与原函数波形的对应关系**
+
+![alt text](assets/signals-and-systems_image-7.png)
+
+**一阶共轭极点位置与原函数波形的对应关系**
+
+![alt text](assets/signals-and-systems_image-8.png)
+
+若$p_i$是个二阶极点，即
+
+$$
+H_i(s)=\frac{K_i}{(s-p_i)^2}=K_i\frac{1}{s=p_i}\frac{1}{s-p_i}
+$$
+
+因此
+
+$$
+\begin{aligned}
+h_i(t)&=K_i\mathscr L^{-1}\left[\frac{1}{s-p_i}\right]\ast\mathscr L^{-1}\left[\frac{1}{s-p_i}\right]\\
+&=K_i\left[\mathrm e^{p_it}u(t)\right]\ast\left[\mathrm e^{p_it}u(t)\right]\\
+&=K_iu(t)\int_0^t\mathrm e^{p_i\tau}\mathrm e^{p_i(t-\tau)}\mathrm d\tau\\
+&=K_it\mathrm e^{p_it}u(t)
+\end{aligned}
+$$
+
+**二阶极点位置与原函数波形的对应关系**
+
+![alt text](assets/signals-and-systems_image-9.png)
+
+!!! tip "结论"
+    若$H(s)$极点位于左半平面，则$h(t)$波形为衰减形式；若一阶极点且位于虚轴上，则为等幅 (常量或振荡)；其他情况(位于右半平面或二阶虚轴上) 则为增长形式.
+
+    $H(s)$极点分布和时域波形形式有明确的对应关系，但 ==零点分布不会对时域波形发生实质影响== 。例子：
+
+    $$
+    \begin{cases}
+    \mathscr L^{-1}\left[\dfrac{s+a}{(s+a)^2+\omega^2}\right]=\mathrm e^{-at}\cos\omega t\\
+    \mathscr L^{-1}\left[\dfrac{s}{(s+a)^2+\omega^2}\right]=\mathrm e^{-at}\left(\cos\omega t-\dfrac{a}{\omega}\sin\omega t\right)
+    \end{cases}
+    $$
+
+    衰减趋势和振荡频率都不变，只是 ==幅度和相位有些变化==
+
+    ![alt text](assets/signals-and-systems_image-10.png)
+
+#### 系统对激励的响应
+
+考虑系统输出的Laplace变换
+
+![alt text](assets/signals-and-systems_image-11.png)
+
+已知系统函数和激励信号的Laplace变换
+
+$$
+H(s)=\frac{\displaystyle \prod^{m}_{j=1}(s-z_j)}{\displaystyle \prod^{n}_{i=1}(s-p_i)}\,,E(s)=\frac{\displaystyle \prod^{u}_{l=1}(s-b_l)}{\displaystyle \prod^{v}_{k=1}(s-a_k)}
+$$
+
+其中$n+v>m+u$. 可见响应$R(s)$的极点分别来自系统$H(s)$和激励源$E(s)$。
+
+$$
+R(s)=H(s)E(s)=\sum_{i=1}^n \frac{K_i}{s-p_i} + \sum_{k=1}^v\frac{W_k}{s-a_k}
+$$
+
+根据 ==极点的来源== 可以分解为自由响应 (Natural Response) 和强迫响应 (Forced Response)
+
+$$
+r(t)=\underbrace{\sum_{i=1}^nK_i\mathrm e^{p_it}}_{\text{自由响应}}+\underbrace{\sum_{k=1}^vW_k\mathrm e^{a_kt}}_{\text{强迫响应}}
+$$
+
+- 自由响应的形式只与系统函数$H(s)$, 即极点$p_i$有关
+- 强迫响应的形式只与激励信号$E(s)$, 即极点$a_k$有关
+- 两部分响应的系数$K_i$,$C_k$与$H(s)$,$E(s)$都有关
+- 两部分的极点$p_i$和$a_k$相同时，自由响应和强迫响应不能完全分开
+
+对于非零起始状态，有
+
+$$
+R(s)=\underbrace{\frac{C(s)}{A(s)}}_{\text{零输入响应}}+\underbrace{\frac{B(s)}{A(s)}E(s)}_{\text{零状态响应}}=\underbrace{\sum_{i=1}^n \frac{L_i}{s-p_i}}_\text{零输入响应}+\underbrace{\sum_{i=1}^n \frac{K_i}{s-p_i} + \sum_{k=1}^v\frac{W_k}{s-a_k}}_{\text{零状态响应}}
+$$
+
+$$
+r(t)=\underbrace{\sum_{k=1}^nA_k\mathrm e^{\alpha_k t}}_{\text{自由响应/齐次解}}+\underbrace{r_P(t)}_{\text{强迫响应/特解}}=\underbrace{\sum_{i=1}^nL_i\mathrm e^{p_it}}_{\text{零输入响应}}+\underbrace{\sum_{i=1}^nK_i\mathrm e^{p_it}+\sum_{k=1}^vW_k\mathrm e^{a_kt}}_{\text{零状态响应}}
+$$
+
 ## 通信系统
 ### 系统可实现性、佩里维纳准则
 可实现系统要求因果性，因此无法实现理想低通滤波器等非因果系统。可以通过增大阶数（引入更多元件）改善系统性能。
@@ -702,13 +804,13 @@ $$
 由于稳定性，其傅立叶变换存在
 
 $$
-H(j\omega)=\mathcal{F}\{h(t)\}=\int_{-\infty}^\infty h(t)e^{-j\omega t}\mathrm dt=R(\omega)+\mathrm jX(\omega)
+H(j\omega)=\mathscr{F}\{h(t)\}=\int_{-\infty}^\infty h(t)e^{-j\omega t}\mathrm dt=R(\omega)+\mathrm jX(\omega)
 $$
 
 根据卷积定理
 
 $$
-H(j\omega)=\frac{1}{2\pi}H(j\omega)\ast \mathcal{F}\{\mathrm{sgn}(t)\}
+H(j\omega)=\frac{1}{2\pi}H(j\omega)\ast \mathscr{F}\{\mathrm{sgn}(t)\}
 $$
 
 因此
@@ -725,13 +827,13 @@ $$
 **希尔伯特变换**定义为：
 
 $$
-\hat f(t)=\mathcal{H}\{f(t)\}=\frac{1}{\pi}\int_{-\infty}^\infty\frac{f(\tau)}{t-\tau}\mathrm d\tau=\boxed{f(t)\ast\frac{1}{\pi t}}
+\hat f(t)=\mathscr{H}\{f(t)\}=\frac{1}{\pi}\int_{-\infty}^\infty\frac{f(\tau)}{t-\tau}\mathrm d\tau=\boxed{f(t)\ast\frac{1}{\pi t}}
 $$
 
 逆变换
 
 $$
-f(t)=\mathcal{H}^{-1}\{\hat f(t)\}=-\frac{1}{\pi}\int_{-\infty}^\infty\frac{\hat f(\tau)}{t-\tau}\mathrm d\tau=\boxed{\hat f(t)\ast\left(-\frac{1}{\pi t}\right)}
+f(t)=\mathscr{H}^{-1}\{\hat f(t)\}=-\frac{1}{\pi}\int_{-\infty}^\infty\frac{\hat f(\tau)}{t-\tau}\mathrm d\tau=\boxed{\hat f(t)\ast\left(-\frac{1}{\pi t}\right)}
 $$
 
 !!! note
@@ -744,13 +846,13 @@ $$
     验证。频域上，由于
 
     $$
-    \mathcal{F}\left\{\frac{1}{\pi t}\right\}=-j\mathrm{sgn}(\omega)\,,\mathcal{F}\left\{-\frac{1}{\pi t}\right\}=j\mathrm{sgn}(\omega)
+    \mathscr{F}\left\{\frac{1}{\pi t}\right\}=-j\mathrm{sgn}(\omega)\,,\mathscr{F}\left\{-\frac{1}{\pi t}\right\}=j\mathrm{sgn}(\omega)
     $$
 
     得到
 
     $$
-    \mathcal{F}\{\frac{1}{\pi t}\ast\left(-\frac{1}{\pi t}\right)\}=\mathcal{F}\left\{\frac{1}{\pi t}\right\}\cdot\mathcal{F}\left\{-\frac{1}{\pi t}\right\}=-j\mathrm{sgn}(\omega)\cdot j\mathrm{sgn}(\omega)=1
+    \mathscr{F}\{\frac{1}{\pi t}\ast\left(-\frac{1}{\pi t}\right)\}=\mathscr{F}\left\{\frac{1}{\pi t}\right\}\cdot\mathscr{F}\left\{-\frac{1}{\pi t}\right\}=-j\mathrm{sgn}(\omega)\cdot j\mathrm{sgn}(\omega)=1
     $$
 
 ### 调制解调

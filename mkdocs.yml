@@ -83,11 +83,15 @@ nav:
     - Latex基础教程: latex-tutorial.md
     
   - 开往: https://www.travellings.cn/go.html
+
+plugins:
+  - meta
 theme:
   name: material
   logo: https://www.weitao-jiang.cn/images/avatar.jpg
   favicon: https://www.weitao-jiang.cn/images/favicon.ico
   language: zh
+  custom_dir: overrides
   palette:
     - scheme: default
       primary: deep purple
