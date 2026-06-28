@@ -514,9 +514,151 @@ $$
 \end{aligned}
 $$
 
-**多重根** 假设$F(s)$有一个$k$阶极点
+**多重根** 假设$F(s)$有一个$k$阶极点$p_1$，即
+
+$$
+\begin{aligned}
+F(s)&=\frac{F_1(s)}{(s-p_1)^k}\\
+&=\frac{K_{11}}{(s-p_1)^k}+\frac{K_{12}}{(s-p_1)^{k-1}}+\cdots+\frac{K_{1k}}{s-p_1}+\cdots
+\end{aligned}
+$$
+
+其中$K_{11}=(s-p_1)^k F(s)\big{|}_{s=p_1}=F_1(p_1)$。为了确定$K_{12}$，考察$F_1(s)$并对其求导数：
+
+$$
+\begin{aligned}
+F_1(s)&=K_{11}(s)+K_{12}(s-p_1)+\cdots+K_{1k}(s-p_1)^{k-1}+\cdots\\
+\frac{\mathrm d}{\mathrm ds}F_1(s)&=0+K_{12}+\cdots+(k-1)K_{1k}(s-p_1)^{k-2}+\cdots
+\end{aligned}
+$$
+
+因此$\displaystyle K_{12}=\frac{\mathrm d}{\mathrm ds}F_1(s)\big|_{s=p_1}=F_1'(p_1)$. 同理可以得到:
+
+$$
+K_{1i}=\left.\frac{1}{(i-1)!}\frac{\mathrm d^{i-1}}{\mathrm d s^{i-1}}F_1(s)\right|_{s=p_1}=\frac{1}{(i-1)!}F_1^{(i-1)}(p_1)
+$$
+
+又由于
+
+$$
+\mathscr{L}\left[t^n u(t)\right]=\frac{n!}{s^{n+1}}\Rightarrow\mathscr{L}\left[\frac{t^{n-1}\mathrm e^{p_1t}}{(n-1)!}u(t)\right]=\frac{1}{(s-p_1)^n}
+$$
+
+因此
+
+$$
+f(t)=\sum_{i=1}^{k}\frac{F_1^{(i-1)}(p_1)}{(i-1)!(k-i)!}t^{k-i}\mathrm{e}^{p_1t}u(t)+\cdots
+$$
 
 #### 留数定理法
+
+??? note "留数的概念"
+    设函数 $f(z)$ 在区域 $0<|z-z_0|<R$ 内解析。选取 $r$，使 $0<r<R$，并且作圆 $C:|z-z_0|=r$。如果 $z_0$ 是 $f(z)$ 的孤立奇点，定义函数 $f(z)$ 在孤立奇点 $z_0$ 的留数为
+
+    $$
+    \operatorname{Res}(f,z_0)=\frac{1}{2\pi j}\int_C f(z)dz
+    $$
+
+    设 $D$ 是在复平面上的一个有界区域，其边界是一条或有限条简单闭曲线 $C$。设函数 $f(z)$ 在 $D$ 内除去孤立奇点 $z_1,z_2,\cdots,z_n$ 外，在每一点都解析，并且它在 $C$ 上的每一点也解析，那么有
+
+    $$
+    \int_C f(z)dz=2\pi j\sum_{i=1}^{n}\operatorname{Res}(f,z_i)
+    $$
+
+    其中沿 $C$ 的积分取为关于区域 $D$ 的正向。
+    留数的计算公式如下。
+    对函数 $f(z)$ 的一阶极点 $z_0$，有
+
+    $$
+    \operatorname{Res}(f,z_0)=\lim_{z\to z_0}(z-z_0)f(z)
+    $$
+
+    对函数 $f(z)$ 的 $k(k>1)$ 阶极点 $z_0$，则有
+
+    $$
+    \operatorname{Res}(f,z_0)=\frac{1}{(k-1)!}\lim_{z\to z_0}\frac{d^{k-1}[(z-z_0)^kf(z)]}{dz^{k-1}}
+    $$
+
+考虑逆变换式和留数的关系：
+
+$$
+\begin{aligned}
+f(t)&=\frac{1}{2\pi j}\int_{\sigma-j\infty}^{\sigma+j\infty}F(s)e^{st}ds\\
+&=\frac{1}{2\pi j}\int_C F(s)e^{st}ds-\frac{1}{2\pi j}\int_{C_R}F(s)e^{st}ds
+\end{aligned}
+$$
+
+其中 $C_R$ 是半径为无穷大的圆弧，$C$ 是 $C_R$ 和拉氏逆变换积分路径构成的闭合曲线。
+根据留数定理有
+
+$$
+\frac{1}{2\pi j}\int_C F(s)e^{st}ds=\sum_{i=1}^{n}\operatorname{Res}[F(s)e^{st},z_i]
+$$
+
+若满足对 $C_R$ 上任意 $s$，有 $|F(s)|\le M_R$，且 $\lim_{R\to\infty}M_R=0$，有
+
+$$
+\lim_{R\to\infty}\left|\int_{C_R}F(s)e^{st}ds\right|=0
+$$
+
+最终得到
+
+$$
+f(t)=\sum_{i=1}^{n}\operatorname{Res}[F(s)e^{st},z_i]
+$$
+
+一阶极点情况：
+
+$$
+\begin{aligned}
+F(s)&=\sum_{i=1}^{n}\frac{K_i}{s-p_i}\\
+K_i&=(s-p_i)F(s)|_{s=p_i}\\
+f(t)&=\sum_{i=1}^{n}K_ie^{p_it}\\
+&=\sum_{i=1}^{n}(s-p_i)F(p_i)e^{p_it}
+\end{aligned}
+$$
+
+用留数法有
+
+$$
+\begin{aligned}
+f(t)&=\sum_{i=1}^{n}\operatorname{Res}[F(s)e^{st},p_i]\\
+&=\sum_{i=1}^{n}\lim_{s\to p_i}(s-p_i)F(s)e^{st}\\
+&=\sum_{i=1}^{n}(s-p_i)F(p_i)e^{p_it}
+\end{aligned}
+$$
+
+高阶极点情况，假设只在 $p_1$ 处有一个 $k$ 阶极点：
+
+$$
+\begin{aligned}
+F(s)&=\frac{F_1(s)}{(s-p_1)^k}\\
+f(t)&=\operatorname{Res}[F(s)e^{st},p_1]\\
+&=\frac{1}{(k-1)!}\lim_{s\to p_1}\frac{d^{k-1}[(s-p_1)^kF(s)e^{st}]}{ds^{k-1}}\\
+&=\frac{1}{(k-1)!}\lim_{s\to p_1}\sum_{i=0}^{k-1}C_{k-1}^{i}F_1^{(i)}(s)(e^{st})^{(k-1-i)}\\
+&=\frac{1}{(k-1)!}\lim_{s\to p_1}\sum_{i=1}^{k}C_{k-1}^{i-1}F_1^{(i-1)}(s)(e^{st})^{(k-i)}\\
+&=\sum_{i=1}^{k}\frac{F_1^{(i-1)}(p_1)}{(i-1)!(k-i)!}t^{k-i}e^{p_1t}u(t)
+\end{aligned}
+$$
+
+### S域元件模型与电路分析
+
+!!! danger "说明"
+    具体见[《电子电路与系统基础》](./fundamentals-of-electronic-circuits.md).
+    
+把网络中每个元件都用 s 域模型代替，串联、并联和分压分流性质都可利用，从而直接写变换式.s 域模型也称为运算阻抗,用 s 域模型时，交、直流电路的各种性质，如戴维南等效、诺顿等效都可使用。
+
+![alt text](assets/signals-and-systems_image-4.png)
+
+![alt text](assets/signals-and-systems_image-5.png)
+
+### 系统函数
+
+系统零状态响应的拉氏变换与激励的拉氏变换之比称为“系统函数”(或网络函数)，以 $H(s)$表示.
+
+![alt text](assets/signals-and-systems_image-6.png)
+
+$E(s)\,,R(s)$可能是电压或者电流，因而 $H(s)$ 可能为阻抗、导纳或者比值.如果$E(s)$和$R(s)$在同一端口，则$H(s)$称为策动点函数(Driving point function)；否则称为转移函数或传递函数(Transfer function).
 
 ## 通信系统
 ### 系统可实现性、佩里维纳准则
