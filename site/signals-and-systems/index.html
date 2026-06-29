@@ -1422,6 +1422,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        零极点图的几何解释
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1433,7 +1444,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_18" class="md-nav__link">
+  <a href="#_19" class="md-nav__link">
     <span class="md-ellipsis">
       
         通信系统
@@ -1445,7 +1456,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_19" class="md-nav__link">
+  <a href="#_20" class="md-nav__link">
     <span class="md-ellipsis">
       
         系统可实现性、佩里维纳准则
@@ -1457,7 +1468,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_20" class="md-nav__link">
+  <a href="#_21" class="md-nav__link">
     <span class="md-ellipsis">
       
         佩里维纳准则
@@ -1468,7 +1479,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_21" class="md-nav__link">
+  <a href="#_22" class="md-nav__link">
     <span class="md-ellipsis">
       
         希尔伯特变换
@@ -1484,7 +1495,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_22" class="md-nav__link">
+  <a href="#_23" class="md-nav__link">
     <span class="md-ellipsis">
       
         调制解调
@@ -1551,7 +1562,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_23" class="md-nav__link">
+  <a href="#_24" class="md-nav__link">
     <span class="md-ellipsis">
       
         复用
@@ -2444,6 +2455,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        零极点图的几何解释
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2455,7 +2477,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_18" class="md-nav__link">
+  <a href="#_19" class="md-nav__link">
     <span class="md-ellipsis">
       
         通信系统
@@ -2467,7 +2489,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_19" class="md-nav__link">
+  <a href="#_20" class="md-nav__link">
     <span class="md-ellipsis">
       
         系统可实现性、佩里维纳准则
@@ -2479,7 +2501,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_20" class="md-nav__link">
+  <a href="#_21" class="md-nav__link">
     <span class="md-ellipsis">
       
         佩里维纳准则
@@ -2490,7 +2512,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_21" class="md-nav__link">
+  <a href="#_22" class="md-nav__link">
     <span class="md-ellipsis">
       
         希尔伯特变换
@@ -2506,7 +2528,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_22" class="md-nav__link">
+  <a href="#_23" class="md-nav__link">
     <span class="md-ellipsis">
       
         调制解调
@@ -2573,7 +2595,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_23" class="md-nav__link">
+  <a href="#_24" class="md-nav__link">
     <span class="md-ellipsis">
       
         复用
@@ -3295,8 +3317,35 @@ R(s)=\underbrace{\frac{C(s)}{A(s)}}_{\text{零输入响应}}+\underbrace{\frac{B
 <div class="arithmatex">\[
 r(t)=\underbrace{\sum_{k=1}^nA_k\mathrm e^{\alpha_k t}}_{\text{自由响应/齐次解}}+\underbrace{r_P(t)}_{\text{强迫响应/特解}}=\underbrace{\sum_{i=1}^nL_i\mathrm e^{p_it}}_{\text{零输入响应}}+\underbrace{\sum_{i=1}^nK_i\mathrm e^{p_it}+\sum_{k=1}^vW_k\mathrm e^{a_kt}}_{\text{零状态响应}}
 \]</div>
-<h2 id="_18">通信系统</h2>
-<h3 id="_19">系统可实现性、佩里维纳准则</h3>
+<p>系统特征方程的行列式<span class="arithmatex">\(\Delta\)</span>的根为系统的<strong>固有频率</strong>。但有时候，有某些因子被消去，如</p>
+<div class="arithmatex">\[
+H(s)=\frac{s+1}{(s+1)\cdot(s+2)}=\frac{1}{s+2}
+\]</div>
+<p>因此<span class="arithmatex">\(H(s)\)</span>的极点属于固有频率，但不一定全（<span class="arithmatex">\(H(s)\)</span>并不能表征系统的完全特性）</p>
+<h4 id="_18">零极点图的几何解释</h4>
+<p>利用<span class="arithmatex">\(H(s)\)</span>写出<span class="arithmatex">\(H(j\omega)\)</span>：</p>
+<div class="arithmatex">\[
+H(s)=K\frac{\prod^m_{j=1}(s-z_j)}{\prod^n_{i=1}(s-p_i)}\Rightarrow H(\mathrm j\omega)=K\frac{\prod_{j=1}^m\mathrm j\omega-z_j}{\prod_{i=1}^n\mathrm j\omega-p_i}
+\]</div>
+<p>则<span class="arithmatex">\(\displaystyle\begin{matrix}(\mathrm j\omega-z_j)\\(\mathrm j\omega-p_i)\end{matrix}\)</span>表示从<span class="arithmatex">\(\displaystyle\begin{matrix}z_j\\p_i\end{matrix}\)</span>到虚轴某点的矢量，以<span class="arithmatex">\(\displaystyle\begin{matrix}N_j\mathrm e^{\mathrm j\psi_j}\\M_i\mathrm e^{\mathrm j\theta_i}\end{matrix}\)</span>表示。</p>
+<p><img alt="alt text" src="../assets/signals-and-systems_image-12.png" /></p>
+<p>该代换要求收敛域包括虚轴，（对单边 LT）极点在左半平面。于是</p>
+<div class="arithmatex">\[
+H(\mathrm j\omega)=K\frac{N_1\cdots N_m}{M_1\cdots M_n}\mathrm e^{\mathrm j(\psi_1+\cdots+\psi_m-\theta_1-\cdots-\theta_n)}=\left|H(\mathrm j\omega)\right|\mathrm e^{\mathrm{j}\varphi(\omega)}
+\]</div>
+<p>因此</p>
+<div class="arithmatex">\[
+\begin{cases}
+\left|H(\mathrm j\omega)\right|=\frac{N_1\cdots N_m}{M_1\cdots M_n}\\
+\varphi(\omega)=\psi_1+\cdots+\psi_m-\theta_1-\cdots-\theta_n
+\end{cases}
+\]</div>
+<p>当<span class="arithmatex">\(\omega\)</span>沿虚轴移动时，各复数因子的模和辐角随之改变，从
+而绘出频响曲线,由零、极点分布可判断出频响特性 (表明特征、区分类型).</p>
+<p><img alt="alt text" src="../assets/signals-and-systems_image-13.png" /></p>
+<p><img alt="alt text" src="../assets/signals-and-systems_image-14.png" /></p>
+<h2 id="_19">通信系统</h2>
+<h3 id="_20">系统可实现性、佩里维纳准则</h3>
 <p>可实现系统要求因果性，因此无法实现理想低通滤波器等非因果系统。可以通过增大阶数（引入更多元件）改善系统性能。</p>
 <p>频域角度，可实现性要求 <mark>幅度函数</mark> <span class="arithmatex">\(|H(j\omega)|\)</span><mark>满足平方可积</mark>，即</p>
 <div class="arithmatex">\[
@@ -3306,7 +3355,7 @@ r(t)=\underbrace{\sum_{k=1}^nA_k\mathrm e^{\alpha_k t}}_{\text{自由响应/齐�
 <div class="arithmatex">\[
 \int_{-\infty}^\infty|h(t)|^2\mathrm dt&lt;\infty
 \]</div>
-<h4 id="_20">佩里维纳准则</h4>
+<h4 id="_21">佩里维纳准则</h4>
 <p>对于系统的频率响应<span class="arithmatex">\(H(j\omega)\)</span>，如果不满足以下条件，则系统是不可实现的：</p>
 <div class="arithmatex">\[
 \int_{-\infty}^\infty\frac{\left|\ln|H(j\omega)|\right|}{1+\omega^2}\mathrm d\omega&lt;\infty
@@ -3323,7 +3372,7 @@ r(t)=\underbrace{\sum_{k=1}^nA_k\mathrm e^{\alpha_k t}}_{\text{自由响应/齐�
 <li>只有 <mark>多项式类型</mark> 的函数和 <mark>双曲函数</mark> 的频率响应满足佩里维纳准则。</li>
 </ol>
 </div>
-<h4 id="_21">希尔伯特变换</h4>
+<h4 id="_22">希尔伯特变换</h4>
 <p>佩里维纳准则约束了幅频响应，对于相位（即实虚部的相互约束），需要采用希尔伯特变换。对于因果系统</p>
 <div class="arithmatex">\[
 h(t)=h(t)u(t)=h(t)\mathrm{sgn}(t)
@@ -3367,7 +3416,7 @@ f(t)=\mathscr{H}^{-1}\{\hat f(t)\}=-\frac{1}{\pi}\int_{-\infty}^\infty\frac{\hat
 \mathscr{F}\{\frac{1}{\pi t}\ast\left(-\frac{1}{\pi t}\right)\}=\mathscr{F}\left\{\frac{1}{\pi t}\right\}\cdot\mathscr{F}\left\{-\frac{1}{\pi t}\right\}=-j\mathrm{sgn}(\omega)\cdot j\mathrm{sgn}(\omega)=1
 \]</div>
 </div>
-<h3 id="_22">调制解调</h3>
+<h3 id="_23">调制解调</h3>
 <p>调制解调器 (Modem，猫) 指用电话线传送计算机数据的设备。<mark>现代无线系统需要调制解调的原因：</mark></p>
 <ol>
 <li>大气对音频衰减严重，为传输更远将音频调到更高频带</li>
@@ -3485,7 +3534,7 @@ f(t)=A\cos\left[\omega_c t+\int_{-\infty}^t g(\tau)\mathrm d\tau\right]
 <li>信道中的加性噪声和衰落引发的幅度变化将直接加在 AM的调制信号上，但对 PM 和 FM 信号，能在很大程度上被接收机消除</li>
 </ol>
 <p><img alt="alt text" src="../assets/ss_1772245842673_png" /></p>
-<h4 id="_23">复用</h4>
+<h4 id="_24">复用</h4>
 <p><strong>频分复用（FDM）</strong>：将不同信号调制到不同载波上，利用频带分割实现多路复用。</p>
 <p><img alt="alt text" src="../assets/ss_1772245961186_png" /></p>
 <p><strong>解复用</strong>：通过带通滤波器提取出对应频段的信号，然后解调得到原始信号。</p>

@@ -762,6 +762,48 @@ $$
 r(t)=\underbrace{\sum_{k=1}^nA_k\mathrm e^{\alpha_k t}}_{\text{自由响应/齐次解}}+\underbrace{r_P(t)}_{\text{强迫响应/特解}}=\underbrace{\sum_{i=1}^nL_i\mathrm e^{p_it}}_{\text{零输入响应}}+\underbrace{\sum_{i=1}^nK_i\mathrm e^{p_it}+\sum_{k=1}^vW_k\mathrm e^{a_kt}}_{\text{零状态响应}}
 $$
 
+系统特征方程的行列式$\Delta$的根为系统的**固有频率**。但有时候，有某些因子被消去，如
+
+$$
+H(s)=\frac{s+1}{(s+1)\cdot(s+2)}=\frac{1}{s+2}
+$$
+
+因此$H(s)$的极点属于固有频率，但不一定全（$H(s)$并不能表征系统的完全特性）
+
+#### 零极点图的几何解释
+
+利用$H(s)$写出$H(j\omega)$：
+
+$$
+H(s)=K\frac{\prod^m_{j=1}(s-z_j)}{\prod^n_{i=1}(s-p_i)}\Rightarrow H(\mathrm j\omega)=K\frac{\prod_{j=1}^m\mathrm j\omega-z_j}{\prod_{i=1}^n\mathrm j\omega-p_i}
+$$
+
+则$\displaystyle\begin{matrix}(\mathrm j\omega-z_j)\\(\mathrm j\omega-p_i)\end{matrix}$表示从$\displaystyle\begin{matrix}z_j\\p_i\end{matrix}$到虚轴某点的矢量，以$\displaystyle\begin{matrix}N_j\mathrm e^{\mathrm j\psi_j}\\M_i\mathrm e^{\mathrm j\theta_i}\end{matrix}$表示。
+
+![alt text](assets/signals-and-systems_image-12.png)
+
+该代换要求收敛域包括虚轴，（对单边 LT）极点在左半平面。于是
+
+$$
+H(\mathrm j\omega)=K\frac{N_1\cdots N_m}{M_1\cdots M_n}\mathrm e^{\mathrm j(\psi_1+\cdots+\psi_m-\theta_1-\cdots-\theta_n)}=\left|H(\mathrm j\omega)\right|\mathrm e^{\mathrm{j}\varphi(\omega)}
+$$
+
+因此
+
+$$
+\begin{cases}
+\left|H(\mathrm j\omega)\right|=\frac{N_1\cdots N_m}{M_1\cdots M_n}\\
+\varphi(\omega)=\psi_1+\cdots+\psi_m-\theta_1-\cdots-\theta_n
+\end{cases}
+$$
+
+当$\omega$沿虚轴移动时，各复数因子的模和辐角随之改变，从
+而绘出频响曲线,由零、极点分布可判断出频响特性 (表明特征、区分类型).
+
+![alt text](assets/signals-and-systems_image-13.png)
+
+![alt text](assets/signals-and-systems_image-14.png)
+
 ## 通信系统
 ### 系统可实现性、佩里维纳准则
 可实现系统要求因果性，因此无法实现理想低通滤波器等非因果系统。可以通过增大阶数（引入更多元件）改善系统性能。
