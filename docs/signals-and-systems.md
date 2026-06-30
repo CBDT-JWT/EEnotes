@@ -859,6 +859,15 @@ $$
 | $\dfrac{1}{s^2}$ | $tu(t)$ | $m<n$ | 不稳定，二阶极点在虚轴上，积分 |
 | $\dfrac{1}{(s+a)^2}$ | $te^{-at}u(t)$ | $m<n$ | 稳定，极点在左半平面，低通，积分 |
 
+#### 双边Laplace变换
+
+$$
+\mathcal L_B [f(t)]=F_B(s)=\int_{-\infty}^{\infty}\mathrm e^{-st}\mathrm dt
+$$
+
+$$
+\mathcal L^{-1} [F_B(s)]=f(t)=\frac{1}{2\pi\mathrm j}\int_{\sigma-\mathrm j\infty}^{\sigma+\mathrm j\infty}F_B(s)\mathrm e^{st}\mathrm dt
+$$
 
 ## 通信系统
 ### 系统可实现性、佩里维纳准则
