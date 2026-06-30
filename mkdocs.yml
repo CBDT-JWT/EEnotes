@@ -86,6 +86,7 @@ nav:
 
 plugins:
   - meta
+  - search
 theme:
   name: material
   logo: https://www.weitao-jiang.cn/images/avatar.jpg
@@ -116,6 +117,7 @@ theme:
     - search.share
     - attr_list
     - md_in_html
+    - search.suggest
   icon:
     repo: fontawesome/brands/github
     admonition:
