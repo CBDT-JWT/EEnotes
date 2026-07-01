@@ -1,3 +1,6 @@
+---
+comments: true
+---
 !!! info  "说明"
     先开个坑（）
 
@@ -36,7 +39,7 @@
 
 通信系统的结构：
 
-![alt text](assets/ss_1772162543116_png)
+![alt text](assets/ss_1772162543116.png)
 
 **复指数信号**：定义为
 
@@ -50,7 +53,7 @@ $$
 \mathrm{Sa}(t)=\frac{\sin t}{t}\,,\mathrm{sinc}(t)=\frac{\sin(\pi t)}{\pi t}=\mathrm{Sa}(\pi t)
 $$
 
-![alt text](assets/ss_1772169610202_png)
+![alt text](assets/ss_1772169610202.png)
 
 性质：
 
@@ -127,7 +130,7 @@ $$
 r(t)=e(t)\ast h(t)=\int_{-\infty}^\infty e(\tau)h(t-\tau)\mathrm d\tau
 $$
 
-![alt text](assets/ss_1772246938516_png)
+![alt text](assets/ss_1772246938516.png)
 
 **卷积的步骤：**
 
@@ -136,9 +139,9 @@ $$
 1. **乘积**：将$e(\tau)$和$h(t-\tau)$相乘得到$e(\tau)h(t-\tau)$
 1. **积分**：对**乘积**在$\tau\in(-\infty,\infty)$积分得到卷积结果$r(t)$,改变$t$的值可以取遍感兴趣的区间
 
-![alt text](assets/ss_1772247121011_png)
+![alt text](assets/ss_1772247121011.png)
 
-![alt text](assets/ss_1772247134673_png)
+![alt text](assets/ss_1772247134673.png)
 
 若以$e^{st}$为输入，输出为
 
@@ -239,7 +242,7 @@ $$
 
 #### 周期矩形脉冲信号
 
-![alt text](assets/ss_1772258243651_png)
+![alt text](assets/ss_1772258243651.png)
 
 对应傅立叶级数
 
@@ -247,15 +250,15 @@ $$
 F_n=\frac{E\tau}{T_1}\mathrm{Sa}\left(\frac{n\pi\tau}{T_1}\right)
 $$
 
-![alt text](assets/ss_1772258402929_png)
+![alt text](assets/ss_1772258402929.png)
 
 其谱线密度和$T_1$成反比
 
-![alt text](assets/ss_1772258476726_png)
+![alt text](assets/ss_1772258476726.png)
 
 包络形状和$\tau$有关：
 
-![alt text](assets/ss_1772258580732_png)
+![alt text](assets/ss_1772258580732.png)
 
 **频谱的性质**
 
@@ -267,7 +270,7 @@ $$
 
 方波的波形如下：
 
-![alt text](assets/ss_1772258881011_png)
+![alt text](assets/ss_1772258881011.png)
 
 1. 偶对称，因此只有正弦项，即只有奇次谐波分量。
 1. 正负交替，没有直流分量
@@ -314,7 +317,7 @@ $F(\omega)$是$f(t)$的频域表示，称为$f(t)$的频谱。$|F(\omega)|$称�
 |三角波|$f'(t)$不连续| $\omega^{-2}$ |
 |升余弦波|$f''(t)$不连续| $\omega^{-3}$ |
 
-![alt text](assets/ss_1772260601379_png)
+![alt text](assets/ss_1772260601379.png)
 
 ## Laplace变换
 
@@ -869,6 +872,10 @@ $$
 \mathcal L^{-1} [F_B(s)]=f(t)=\frac{1}{2\pi\mathrm j}\int_{\sigma-\mathrm j\infty}^{\sigma+\mathrm j\infty}F_B(s)\mathrm e^{st}\mathrm dt
 $$
 
+双边拉氏变换的性质与单边相同，但**没有初值定理**。所以双边变换适合计算非因果信号的响应，单边变换适合计算因果信号激励有起始状态的系统的响应。
+
+
+
 ## 通信系统
 ### 系统可实现性、佩里维纳准则
 可实现系统要求因果性，因此无法实现理想低通滤波器等非因果系统。可以通过增大阶数（引入更多元件）改善系统性能。
@@ -989,11 +996,11 @@ G_0(\omega)&=\frac{1}{4}\left[G(\omega-2\omega_c)+G(\omega+2\omega_c)\right]+\bo
 \end{aligned}
 $$
 
-![alt text](assets/ss_1772244324628_png)
+![alt text](assets/ss_1772244324628.png)
 
-![alt text](assets/ss_1772244251881_png)
+![alt text](assets/ss_1772244251881.png)
 
-![alt text](assets/ss_1772244364711_png)
+![alt text](assets/ss_1772244364711.png)
 
 #### 调幅（AM）
 
@@ -1007,11 +1014,11 @@ $$
 
 其中$k=1/A$为调制深度。**AM 的包络体现调制信号，SC-AM 波形不体现。**
 
-![alt text](assets/ss_1772244568003_png)
+![alt text](assets/ss_1772244568003.png)
 
 **解调过程：**直接包络检波解调，省去本地载波。
 
-![alt text](assets/ss_1772244791739_png)
+![alt text](assets/ss_1772244791739.png)
 
 意义：==用更大载波功率换简单接收机==。
 
@@ -1027,9 +1034,9 @@ $$
 #### 单边带（SSB）
 为了节省频带，只发半个边带，不影响恢复，多用于短波通信、跳频电台等。
 
-![alt text](assets/ss_1772245070247_png)
+![alt text](assets/ss_1772245070247.png)
 
-![alt text](assets/ss_1772245127809_png)
+![alt text](assets/ss_1772245127809.png)
 
 **优点：**节省频带和发射功率
 
@@ -1038,9 +1045,9 @@ $$
 #### 残留边带（VSB）
 为了降低滤波器设计难度，保留部分边带，常用于电视广播。
 
-![alt text](assets/ss_1772245213521_png)
+![alt text](assets/ss_1772245213521.png)
 
-![alt text](assets/ss_1772245241177_png)
+![alt text](assets/ss_1772245241177.png)
 
 为了保证能恢复，需要边带滤波器在$\omega_c$左右斜对称，即频率特性有
 
@@ -1081,13 +1088,13 @@ $$
 1. 和 AM 相比，已调信号幅度保持不变，保证发射机工作在峰值功率状态
 1. 信道中的加性噪声和衰落引发的幅度变化将直接加在 AM的调制信号上，但对 PM 和 FM 信号，能在很大程度上被接收机消除
 
-![alt text](assets/ss_1772245842673_png)
+![alt text](assets/ss_1772245842673.png)
 
 #### 复用
 **频分复用（FDM）**：将不同信号调制到不同载波上，利用频带分割实现多路复用。
 
-![alt text](assets/ss_1772245961186_png)
+![alt text](assets/ss_1772245961186.png)
 
 **解复用**：通过带通滤波器提取出对应频段的信号，然后解调得到原始信号。
 
-![alt text](assets/ss_1772245982948_png)
+![alt text](assets/ss_1772245982948.png)

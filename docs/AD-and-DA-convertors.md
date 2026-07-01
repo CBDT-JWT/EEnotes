@@ -1,10 +1,13 @@
+---
+comments: true
+---
 ## 数据转换基本概念
 
 ### ADC与采样
 
 模数转换：{==采样,量化,输出==}
 
-![alt text](assets/adda_1772451149952_png)
+![alt text](assets/adda_1772451149952.png)
 
 理论上可以交换顺序，但实际上不这么干。
 
@@ -20,15 +23,15 @@ $$
 X_d(f) = X(f) * \frac{1}{T_s}\sum_{n=-\infty}^{\infty} \delta(f-\frac{n}{T_s})
 $$
 
-![alt text](assets/adda_1772450917659_png)
+![alt text](assets/adda_1772450917659.png)
 
-![alt text](assets/adda_1772451020422_png)
+![alt text](assets/adda_1772451020422.png)
 
 当$f_s>2B$不会混叠，$f_s<2B$会混叠。采样率$2B$被称为Nyquist rate。如果存在带外干扰和噪声，则可以通过**增大**$f_s$让$[0,f_s/2]$覆盖大部分干扰和噪声，然后用滤波器限制B。
 
 利用模拟滤波器可以抑制不想要的信号，即抗混叠滤波器。
 
-![alt text](assets/adda_1772451801264_png)
+![alt text](assets/adda_1772451801264.png)
 
 增大带外衰减的方法：
 
@@ -38,7 +41,7 @@ $$
 !!! warning "注意"
     $f_s/B=2$的时候无法抗混叠滤波，即使提高滤波器阶数也没用！
 
-![alt text](assets/adda_1772452000230_png)
+![alt text](assets/adda_1772452000230.png)
 
 采样的分类：
 
@@ -48,13 +51,13 @@ $$
 
 利用欠采样进行高频信号下变频的原理如下：
 
-![alt text](assets/adda_1772460743256_png)
+![alt text](assets/adda_1772460743256.png)
 
 需要使用高Q值带通滤波器防止噪声混叠
 
 ### 模拟信号的量化
 
-![alt text](assets/adda_1772460863613_png)
+![alt text](assets/adda_1772460863613.png)
 
 * $V_q$: 量化电压
 * $e_q$: 量化误差
@@ -62,7 +65,7 @@ $$
 
 理想情况下具有无限大的输入范围和无限数量的量化电平，但实际中输入范围和量化电平都是有限的。超出转化码字边界时，量化误差会超出允许范围。当施加的输入信号超过FSR时，就会发生过载（overloading）。
 
-![alt text](assets/adda_1772461236355_png)
+![alt text](assets/adda_1772461236355.png)
 
 **相关术语**
 
@@ -87,11 +90,11 @@ $$
 
 ADC的起始点指第一个切换位置前$0.5LSB$处，终点指最后一个切换位置后$0.5LSB$处。
 
-![alt text](assets/adda_1772417316058_png)
+![alt text](assets/adda_1772417316058.png)
 
 DAC的起始点与终点分别为最小、最大输入数字码字对应的模拟输出电压,增益误差与失调同样以LSB为单位
 
-![alt text](assets/adda_1772417384084_png)
+![alt text](assets/adda_1772417384084.png)
 
 当关心输出的精确绝对值时，增益和失调误差非常重要；在其他某些应用场景中，增益和失调误差并不重要（因为不会引入失真），通常更关注非线性（DNL和INL）指标。
 
@@ -122,9 +125,9 @@ $$
 DNL[k]=\frac{W[k]-1.4\mathrm V}{1.4\mathrm V}
 $$
 
-![alt text](assets/adda_1772417857972_png)
+![alt text](assets/adda_1772417857972.png)
 
-![alt text](assets/adda_1772417947252_png)
+![alt text](assets/adda_1772417947252.png)
 
 * DNL正负性表示该码字的码宽相对于平均码宽更宽还是更窄
 * DNL=-1 LSB代表失码
@@ -139,13 +142,13 @@ $$
 DNL[k] = \frac{Step[k] - Step_{avg}}{Step_{avg}}
 $$
 
-![alt text](assets/adda_1772418181800_png)
+![alt text](assets/adda_1772418181800.png)
 
 #### 积分非线性 (INL)
 
 INL刻画了{==整体的转移特性曲线==}相比理想的转移特性曲线的偏差。
 
-![alt text](assets/adda_1772418394866_png)
+![alt text](assets/adda_1772418394866.png)
 
 ADC的INL定义为第k个码字的实际切换位置与理想切换位置的偏差，单位为LSB。
 
@@ -155,7 +158,7 @@ $$
 
 其中 $T[k]$ 为第 $k$ 个码字的实际切换位置，$T_{0}[k]$ 为理想切换位置，$W_{avg}$ 为平均码宽注意**INL(0)无定义**。
 
-![alt text](assets/adda_1772420220586_png)
+![alt text](assets/adda_1772420220586.png)
 
 INL与DNL的关系：
 
@@ -177,7 +180,7 @@ $$
 
 可见ADC#1更不线性。
 
-![alt text](assets/adda_1772420376920_png)
+![alt text](assets/adda_1772420376920.png)
 
 可以从DNL/INL曲线推测出ADC的架构；一个设计良好的ADC的INL和DNL都应在$\pm 1$ LSB之间
 
@@ -201,4 +204,4 @@ $$
 * 交调失真（Intermodulation distortion, IMD）
 * 多音功率比（Multi-tone power ratio, MTPR）
 
-![alt text](assets/adda_1772425072943_png)
+![alt text](assets/adda_1772425072943.png)

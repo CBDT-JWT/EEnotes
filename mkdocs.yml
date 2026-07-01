@@ -16,6 +16,7 @@ copyright: |
   <a href="https://icp.gov.moe/?keyword=20268192" target="_blank">萌ICP备20268192号</a>
 markdown_extensions:
   - def_list
+  - zensical.extensions.glightbox
   - neoteroi.timeline
   - footnotes
   - pymdownx.arithmatex:
@@ -42,6 +43,7 @@ markdown_extensions:
   - attr_list
   - md_in_html
   - tables
+
   
 extra_css:
 - css/neoteroi-mkdocs.css
@@ -86,7 +88,9 @@ nav:
 
 plugins:
   - meta
-  - search
+  - search:
+      lang: zh
+
 theme:
   name: material
   logo: https://www.weitao-jiang.cn/images/avatar.jpg

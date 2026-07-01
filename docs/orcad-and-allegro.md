@@ -1,3 +1,6 @@
+---
+comments: true
+---
 !!! danger "说明"
     这个OrCAD太难用了，我要在这里记录一些学到的方法，不会很成体系，以后有机会再整理一下。
 
@@ -5,25 +8,25 @@
 
 先把这堆文件复制过来，清空Layout和Schemetic文件夹
 
-![alt text](assets/orcad_1772622370347_png)
+![alt text](assets/orcad_1772622370347.png)
 
-![alt text](assets/orcad_1772621625093_png)
+![alt text](assets/orcad_1772621625093.png)
 
 打开Capture CIS
 
-![alt text](assets/orcad_1772621647030_png)
+![alt text](assets/orcad_1772621647030.png)
 
 选择new
 
-![alt text](assets/orcad_1772621726228_png)
+![alt text](assets/orcad_1772621726228.png)
 
 在Schemetic文件夹下新建项目
 
-![alt text](assets/orcad_1772622494241_png)
+![alt text](assets/orcad_1772622494241.png)
 
 现在的文件结构：
 
-![alt text](assets/orcad_1772622550930_png)
+![alt text](assets/orcad_1772622550930.png)
 
 | 文件后缀 | 说明 |
 |----------|------|
@@ -34,32 +37,32 @@
 
 ## 导入已有库
 
-![alt text](assets/orcad_1772621971293_png)
+![alt text](assets/orcad_1772621971293.png)
 
 FILE / Open / Library，选择库文件（`.olb`），点击Open
 
-![alt text](assets/orcad_1772622640144_png)
+![alt text](assets/orcad_1772622640144.png)
 
 ## 原理图绘制
 
 ### 新建原理图
 
 点File-New-Design
-![alt text](assets/orcad_1772622792391_png)
+![alt text](assets/orcad_1772622792391.png)
 
 点左侧的`.dsn`文件，右键New-Schemetic
 
-![alt text](assets/orcad_1772641466842_png)
+![alt text](assets/orcad_1772641466842.png)
 
 ### 修改原理图大小
 
 选中page右键，找到Properties
 
-![alt text](assets/orcad_1772643042306_png)
+![alt text](assets/orcad_1772643042306.png)
 
 选择合适大小即可
 
-![alt text](assets/orcad_1772643065528_png)
+![alt text](assets/orcad_1772643065528.png)
 
 ### 绘制用的快捷键
 
@@ -90,7 +93,7 @@ FILE / Open / Library，选择库文件（`.olb`），点击Open
 
 自带库`C:\Cadence\Cadence_SPB_17.2\tools\capture\library`下，有多个OLB文件。一般电容在`Descrete.olb`
 
-![alt text](assets/orcad_1772645168228_png)
+![alt text](assets/orcad_1772645168228.png)
 
 ??? note "库文件列表"
     | 库文件 | 器件数量 | 说明 |
@@ -133,15 +136,15 @@ FILE / Open / Library，选择库文件（`.olb`），点击Open
 在Snap EDA 或 Ultra librarian上下载文件的schematic 和 layout
 
 #### case 1: 有 OLB 文件（一般是集成电路）
-![alt text](assets/orcad_1772642640813_png)
+![alt text](assets/orcad_1772642640813.png)
 
-![alt text](assets/orcad_1772642667314_png)
+![alt text](assets/orcad_1772642667314.png)
 
 把文件夹复制到项目文件夹
 
-![alt text](assets/orcad_1772642853103_png)
+![alt text](assets/orcad_1772642853103.png)
 
-![alt text](assets/orcad_1772642870793_png)
+![alt text](assets/orcad_1772642870793.png)
 
 #### case 2: 没有olb
 
@@ -153,42 +156,42 @@ FILE / Open / Library，选择库文件（`.olb`），点击Open
 ### 修改封装
 Edit-Browser-Parts
 
-![alt text](assets/orcad_1772709761670_png)
+![alt text](assets/orcad_1772709761670.png)
 
 全选，Edit-Properties（ctrl+E）
 
-![alt text](assets/orcad_1772709822508_png)
+![alt text](assets/orcad_1772709822508.png)
 
 修改PCB Footprint
 
-![alt text](assets/orcad_1772710036818_png)
+![alt text](assets/orcad_1772710036818.png)
 
 改好一个点Copy，点列头全选整列，然后Paste
 
-![alt text](assets/orcad_1772710078734_png)
+![alt text](assets/orcad_1772710078734.png)
 
 ### 新建版图
 
 
 首先完成DRC检查，确保原理图没有错误。然后PCB-New Layout
 
-![alt text](assets/orcad_1772709370882_png)
+![alt text](assets/orcad_1772709370882.png)
 
-![alt text](assets/orcad_1772710928773_png)
+![alt text](assets/orcad_1772710928773.png)
 
 成功进入allegro界面。
 
-![alt text](assets/orcad_1772710965954_png)
+![alt text](assets/orcad_1772710965954.png)
 
 ### 放置元件
 
 Place-Manual手动放置
 
-![alt text](assets/orcad_1772711097876_png)
+![alt text](assets/orcad_1772711097876.png)
 
 选好元件就可以放。
 
-![alt text](assets/orcad_1772711119004_png)
+![alt text](assets/orcad_1772711119004.png)
 
 第一次放可能出现`Cannot load symbol 'xxxx'`报错。需要导入元件封装库：
 
@@ -197,11 +200,11 @@ Place-Manual手动放置
 
 顶部菜单Setup-User Preferences
 
-![alt text](assets/orcad_1772711776641_png)
+![alt text](assets/orcad_1772711776641.png)
 
 左侧菜单找Paths/Library
 
-![alt text](assets/orcad_1772711814608_png)
+![alt text](assets/orcad_1772711814608.png)
 
 添加以下目录：
 
@@ -215,8 +218,8 @@ Place-Manual手动放置
 
 add-Rectangle
 
-![alt text](assets/orcad_1772713468556_png)
+![alt text](assets/orcad_1772713468556.png)
 
 
 选择`Board Geometry`和`Design_Outline`，画出边框。
-![alt text](assets/orcad_1772713497740_png)
+![alt text](assets/orcad_1772713497740.png)

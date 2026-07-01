@@ -1,6 +1,9 @@
+---
+comments: true
+---
 ## 晶体管的长沟道模型
 
-![alt text](assets/advanced-analog-circuits_1772886541281_png)
+![alt text](assets/advanced-analog-circuits_1772886541281.png)
 
 1. 栅极电压为零时，器件处于"关断"状态
 2. $V_{GS}>0$时，电子被拉到作为**正极**的栅极；$V_{GS}>V_{t}$时形成导电的{==反型层==}
@@ -8,7 +11,7 @@
 
 ### 一阶电流-电压特性
 
-![alt text](assets/advanced-analog-circuits_1772886709033_png)
+![alt text](assets/advanced-analog-circuits_1772886709033.png)
 
 假定$Q_n(x)=C_{ox}[V_{GS}-V(x)-V_t]$, $I_D=Q_n\cdot v\cdot W$, $v=\mu E$。则
 
@@ -22,11 +25,11 @@ $$
 \boxed{I_D=\mu C_{ox}\frac{W}{L}\left[(V_{GS}-V_t)-\frac{V_{DS}}{2}\right]\cdot V_{DS}}
 $$
 
-![alt text](assets/advanced-analog-circuits_1772886942798_png)
+![alt text](assets/advanced-analog-circuits_1772886942798.png)
 
 观察到$V_{DS}>V_{GS}-V_t$时图线异常下降，这是因为$V_{GD}=V_{GS}-V_{DS}<V_t$，时**沟道夹断**不能用这个模型。此时沟道电流**与$V_{DS}$无关**，称为饱和区。
 
-![alt text](assets/advanced-analog-circuits_1772887140531_png)
+![alt text](assets/advanced-analog-circuits_1772887140531.png)
 
 修正后的电流方程：
 
@@ -37,7 +40,7 @@ $$
 \end{aligned}
 $$
 
-![alt text](assets/advanced-analog-circuits_1772887302100_png)
+![alt text](assets/advanced-analog-circuits_1772887302100.png)
 
 ### 电容模型
 
@@ -55,7 +58,7 @@ $$
 
 #### 线性区本征电容模型
 
-![alt text](assets/advanced-analog-circuits_1772887971986_png)
+![alt text](assets/advanced-analog-circuits_1772887971986.png)
 
 栅极和导电沟道以栅氧化层为中间介质构成平行板电容器。电容值为$C_{gc}=C_{ox}\cdot W\cdot L$、$C_{gs}=C_{gd}=C_{gc}/2$。势垒电容$C_{cb}$ **增加了漏、源到衬底的电容**，但通常可以忽略不计。
 
@@ -67,7 +70,7 @@ $V_{GD}$ 对沟道电荷的控制能力较弱，而 $V_{GS}$ 对沟道电荷的�
 
 #### 非本征电容模型
 
-![alt text](assets/advanced-analog-circuits_1772892720370_png)
+![alt text](assets/advanced-analog-circuits_1772892720370.png)
 
 包括交叠电容（栅极到源极、栅极到漏极）和pn结电容（源极到衬底、漏极到衬底）。
 
@@ -76,7 +79,7 @@ $V_{GD}$ 对沟道电荷的控制能力较弱，而 $V_{GS}$ 对沟道电荷的�
 
 ### 衬底
 
-![alt text](assets/advanced-analog-circuits_1773022110824_png)
+![alt text](assets/advanced-analog-circuits_1773022110824.png)
 
 在 40nm CMOS（N 阱）工艺中,{==PMOS晶体管是五端器件==}（G、D、S、N阱、P衬底）。N 阱与衬底形成 PN 结，产生势垒电容 $C_W$。
 
@@ -87,17 +90,17 @@ $V_{GD}$ 对沟道电荷的控制能力较弱，而 $V_{GS}$ 对沟道电荷的�
 
 低成本（N阱）工艺中，只有 PMOS 具有独立的衬底连接，NMOS的P衬底是一大块。
 
-![alt text](assets/advanced-analog-circuits_1773022609791_png)
+![alt text](assets/advanced-analog-circuits_1773022609791.png)
 
-![alt text](assets/advanced-analog-circuits_1773022661401_png)
+![alt text](assets/advanced-analog-circuits_1773022661401.png)
 
 N阱工艺下衬底的连接接方案：（注意NMOS的P衬底全都接地了）
 
-![alt text](assets/advanced-analog-circuits_1773022755826_png)
+![alt text](assets/advanced-analog-circuits_1773022755826.png)
 
 #### 背栅效应
 
-![alt text](assets/advanced-analog-circuits_1773022821294_png)
+![alt text](assets/advanced-analog-circuits_1773022821294.png)
 
 随着$V_{SB}$增加，源极周围耗尽区也随之扩大；耗尽区中的负电荷增加会排斥电子阻止其聚集到沟道。因此需要更大的$V_{GS}$来对抗这种影响，相当于$V_{t}$增加了。
 
@@ -120,7 +123,7 @@ $$
 
 最终得到的小信号模型：（考虑了背栅效应和衬底电容）
 
-![alt text](assets/advanced-analog-circuits_1773023524551_png)
+![alt text](assets/advanced-analog-circuits_1773023524551.png)
 
 ## 放大器的线性化分析
 
@@ -130,7 +133,7 @@ $$
 
 CS组态的MOS可以作为VCCS：
 
-![alt text](assets/advanced-analog-circuits_1773024288628_png)
+![alt text](assets/advanced-analog-circuits_1773024288628.png)
 
 $$
 I_D = \frac{1}{2}\mu C_{ox}\frac{W}{L}(V_{i}-V_t)^2
@@ -142,7 +145,7 @@ $$
 
 为此需要通过偏置把输入电压带入合适的工作区。我们定义静态工作点栅极过驱动电压$V_{ov}=V_{I}-V_t$（无输入信号时$V_{ov}=V_{GS}-V_t$）。
 
-![alt text](assets/advanced-analog-circuits_1773024521434_png)
+![alt text](assets/advanced-analog-circuits_1773024521434.png)
 
 $$
 \begin{aligned}
@@ -171,7 +174,7 @@ $$
 I_D=\frac{1}{2}\mu C_{ox}\frac{W}{L}(V_{ov})^2\cdot \color{red}{(1+\lambda V_{DS})}
 $$
 
-![alt text](assets/advanced-analog-circuits_1773025321392_png)
+![alt text](assets/advanced-analog-circuits_1773025321392.png)
 
 因此从小新好看，有限的$\dfrac{\mathrm dI_D}{\mathrm dV_{DS}}$等效为与工作点有关的输出电导
 
@@ -181,11 +184,11 @@ g_{ds} &= \frac{\partial I_D}{\partial V_{DS}} = \lambda I_D \\
 \end{aligned}
 $$
 
-![alt text](assets/advanced-analog-circuits_1773025457703_png)
+![alt text](assets/advanced-analog-circuits_1773025457703.png)
 
 ### 性能指标
 
-![alt text](assets/advanced-analog-circuits_1773025687579_png)
+![alt text](assets/advanced-analog-circuits_1773025687579.png)
 
 $$
 H(s)=\frac{v_o(s)}{v_i(s)}=\frac{-g_mR}{1+sR_iC_{gs}}
@@ -209,7 +212,7 @@ $$
 \frac{g_m}{I_D}\cdot \frac{g_m}{C_{gs}}=\frac{3\mu}{L^2}
 $$
 
-![alt text](assets/advanced-analog-circuits_1773026178109_png)
+![alt text](assets/advanced-analog-circuits_1773026178109.png)
 
 !!! note "工艺演进的影响"
     得益于“摩尔定律”，特征尺寸以及最小沟道长度不断缩小。$L_{min}$大约每 5 年减少 2 倍。1970 年时 Lmin=10μm ，2020 年时 Lmin=10nm。可以通过不同的方式{==利用工艺微缩==}：
@@ -219,7 +222,7 @@ $$
 
 ### 特征指标
 
-![alt text](assets/advanced-analog-circuits_1773027182723_png)
+![alt text](assets/advanced-analog-circuits_1773027182723.png)
 
 **特征频率**定义为共源电流增益为1的频率。忽略非本征电容得到
 
@@ -247,11 +250,11 @@ $$
 
 晶体管有共源、共栅和共漏三种基本的连接模式。一个共源极就足以构建一个简单的放大器，栅极和共漏极可以作为有用的附加电路，用于构造“更好的”放大器。更复杂的模拟电路可以分解为上述三种基本连接方式的组合。
 
-![alt text](assets/advanced-analog-circuits_1773027802370_png)
+![alt text](assets/advanced-analog-circuits_1773027802370.png)
 
 ### 共源极
 
-![alt text](assets/advanced-analog-circuits_1773027836808_png)
+![alt text](assets/advanced-analog-circuits_1773027836808.png)
 
 $$
 H(s)=\frac{v_o(s)}{v_i(s)}=\frac{-g_mR}{1+sR_iC_{gs}}\,\quad R=R_L\parallel r_o
@@ -260,11 +263,11 @@ $$
 共源极具有很高的输入输出阻抗，是很好的VCCS。
 ### 共栅极
 
-![alt text](assets/advanced-analog-circuits_1773027912598_png)
+![alt text](assets/advanced-analog-circuits_1773027912598.png)
 
 定义$C_s=C_{gs}+C_{sb}$，$g_m'=g_m+g_{mb}$，忽略$R_L$得到
 
-![alt text](assets/advanced-analog-circuits_1773028108850_png)
+![alt text](assets/advanced-analog-circuits_1773028108850.png)
 
 $$
 \frac{i_o}{i_i}=\frac{1}{1+s\frac{C_S}{g'_m}}\,,g'_mR_s\gg 1
@@ -272,7 +275,7 @@ $$
 
 共栅级是电流缓冲器，增益为1，带宽很高.
 
-![alt text](assets/advanced-analog-circuits_1773028920960_png)
+![alt text](assets/advanced-analog-circuits_1773028920960.png)
 
 **求解输入阻抗：**
 
@@ -319,7 +322,7 @@ $$
 
 ### 共源共栅结构
 
-![alt text](assets/advanced-analog-circuits_1773029752060_png)
+![alt text](assets/advanced-analog-circuits_1773029752060.png)
 
 $$
 G_m = g_{m1}\cdot\frac{i_o}{i_i}\approx g_{m1}\,,R_o\approx r_{o2}(1+g'_{m2}r_{o1})
@@ -329,7 +332,7 @@ $$
 \boxed{G_mR_o=g_{m1}r_{o2}(1+g'_{m2}r_{o1})\approx g_{m1}g_{m2}r_{o1}r_{o2}\sim (g_mr_o)^2}
 $$
 
-![alt text](assets/advanced-analog-circuits_1773029978716_png)
+![alt text](assets/advanced-analog-circuits_1773029978716.png)
 
 $$
 \frac{v_x}{v_i}=g_{m1}Z_x\approx \frac{g_{m1}}{g'_{m2}}\left(1+\frac{R_L}{r_{o2}}\right)
@@ -351,17 +354,17 @@ $$
 
 #### 噪声
 
-![alt text](assets/advanced-analog-circuits_1773058299157_png)
+![alt text](assets/advanced-analog-circuits_1773058299157.png)
 
 通常认为共栅极不会产生额外噪声。但，其在高频的时候会产生额外噪声：高频时噪声电流A和B不能抵消。
 
 ### 共漏极
 
-![alt text](assets/advanced-analog-circuits_1773060838460_png)
+![alt text](assets/advanced-analog-circuits_1773060838460.png)
 
 #### 电压传递函数和输入输出阻抗
 
-![alt text](assets/advanced-analog-circuits_1773060957379_png)
+![alt text](assets/advanced-analog-circuits_1773060957379.png)
 
 定义$C_{Ltot}=C_L+C_{sb}$, $R_{Ltot}=R_L\parallel \dfrac{1}{g_{mb}}\parallel r_o$, 则
 
@@ -402,7 +405,7 @@ $$
 z= -\frac{g_m}{C_{gs}}\,,p=-\frac{g_m+\frac{1}{R_{Ltot}}}{C_{gs}+C_{Ltot}}
 $$
 
-![alt text](assets/advanced-analog-circuits_1773068656014_png)
+![alt text](assets/advanced-analog-circuits_1773068656014.png)
 
 #### 输入阻抗
 
@@ -416,13 +419,13 @@ $$
 
 **衬底与源连接的PMOS共漏极**
 
-![alt text](assets/advanced-analog-circuits_1773069269105_png)
+![alt text](assets/advanced-analog-circuits_1773069269105.png)
 
 栅极与衬底间的电容与 $C_gs$ 并联, $g_{mb}$不起作用，低频增益接近1。输入电容$Y_{in}\approx sC_{gd}$极小。
 
 **共漏极输入电容“自举”**
 
-![alt text](assets/advanced-analog-circuits_1773110194369_png)
+![alt text](assets/advanced-analog-circuits_1773110194369.png)
 
 $v_i$经过两个共漏极到$C_{gd}$另一端
 
@@ -442,7 +445,7 @@ $$
 
 **有限输入源电阻**：
 
-![alt text](assets/advanced-analog-circuits_1773146492716_png)
+![alt text](assets/advanced-analog-circuits_1773146492716.png)
 
 $$
 Z_x=\frac{v_o}{i_x}\,,i_x=(v_o-v_g)(g_m+sC_{gs})=v_o\left(1-\frac{v_g}{v_o}\right)(g_m+sC_{gs})
@@ -456,11 +459,11 @@ $$
 \boxed{Z_x\approx\frac{1}{g_m}\frac{1+sR_iC_{gs}}{1+\frac{sC_{gs}}{g_m}}}
 $$
 
-![alt text](assets/advanced-analog-circuits_1773147078103_png)
+![alt text](assets/advanced-analog-circuits_1773147078103.png)
 
 当$R_i>\frac{1}{g_m}$，产生了电感效应！此时电路容易振荡。
 
-![alt text](assets/advanced-analog-circuits_1773148335647_png)
+![alt text](assets/advanced-analog-circuits_1773148335647.png)
 
 若不忽略$C_i=C_{gd}+C_{gb}$,则
 
@@ -468,16 +471,16 @@ $$
 \boxed{Z_x=\frac{1}{g_m}\frac{1+sR_i(C_{gs}+C_i)}{\left(1+\dfrac{sC_{gs}}{g_m}\right)(1+sR_iC_i)}}
 $$
 
-![alt text](assets/advanced-analog-circuits_1773148305463_png)
+![alt text](assets/advanced-analog-circuits_1773148305463.png)
 
 ##### 应用
 
 **电平转换器**：输出的静态工作点比输入低$V_t+V_{ov}$
-![alt text](assets/advanced-analog-circuits_1773148452662_png)
+![alt text](assets/advanced-analog-circuits_1773148452662.png)
 
 **驱动器**：隔离重负载$R_{small}$
 
-![alt text](assets/advanced-analog-circuits_1773148470987_png)
+![alt text](assets/advanced-analog-circuits_1773148470987.png)
 
 问题：
 
@@ -487,7 +490,7 @@ $$
 
 **有源负载**
 
-![alt text](assets/advanced-analog-circuits_1773148835607_png)
+![alt text](assets/advanced-analog-circuits_1773148835607.png)
 
 优势：
 

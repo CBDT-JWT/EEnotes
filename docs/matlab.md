@@ -1,3 +1,6 @@
+---
+comments: true
+---
 # MATLAB 常用函数总结
 
 | 功能/响应类型 | 连续系统 (Continuous) | 离散系统 (Discrete) |

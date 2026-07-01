@@ -1,3 +1,6 @@
+---
+comments: true
+---
 ## 金属电子论
 
 ### 固体电子论的演化
@@ -11,7 +14,7 @@
 
 德鲁德建立模型为**离子实+自由电子（价电子）**，将金属的热特性和电特性归因于自由电子的运动。
 
-![alt text](assets/solid_1772353359086_png)
+![alt text](assets/solid_1772353359086.png)
 
 1. 孤立原子的满壳层电子（**芯电子**）仍然被束缚
 2. 芯电子与原子核构成了离子实
@@ -122,7 +125,7 @@ $$
 
 在无穷大空间中$E$连续分布，有无穷个取值无法确定$E_F$，因此引入**周期性边界条件**，使得$k$离散化：(波恩-卡门条件)：
 
-![alt text](assets/solid_1772509553450_png)
+![alt text](assets/solid_1772509553450.png)
 
 $$
 \psi(x+Na) = \psi(x)
@@ -142,7 +145,7 @@ $$
 
 **成立的条件**:{==忽略了边界的影响，对于大量原子的情况是很好的近似==}
 
-![alt text](assets/solid_1772509895263_png)
+![alt text](assets/solid_1772509895263.png)
 
 三维情况下，类比得到
 
@@ -172,7 +175,7 @@ $$
 E=\frac{\hbar^2}{2m}(k_x^2+k_y^2+k_z^2)
 $$
 
-![alt text](assets/solid_1772510405616_png)
+![alt text](assets/solid_1772510405616.png)
 
 **三维情况下的E-k关系——费米球**: 每个量子态对应波矢空间的一点。在k空间中，电子从能量最低的原点开始填起，能量由低到高逐层向外填充，其**等能面为球面**，一直到所有电子都填完为止。
 
@@ -212,7 +215,7 @@ $$
 
 能量标度下的态密度 $g(E)$ ，一般简称态密度.电子的能态密度并不是均匀分布的，电子能量越高，能态密度就越大。
 
-![alt text](assets/solid_1772516664055_png)
+![alt text](assets/solid_1772516664055.png)
 
 !!! warning "注意"
     $g_k$没有考虑自旋，但$g(E)$考虑了自旋。本课程中的同一规定：**波矢状态（k空间状态）不考虑自旋，量子态或者电子的运动状态需要考虑自旋。**
@@ -260,7 +263,7 @@ $$
 \mathrm dN = f(E)g(E)\mathrm dE
 $$
 
-![alt text](assets/solid_1772594793414_png)
+![alt text](assets/solid_1772594793414.png)
 
 可以证明[^1]此时有
 
@@ -335,19 +338,19 @@ $$
 
 **简单立方**
 
-![alt text](assets/solid-state-physics_1773151793733_png)
+![alt text](assets/solid-state-physics_1773151793733.png)
 
 **体心立方**
 
-![alt text](assets/solid-state-physics_1773151801500_png)
+![alt text](assets/solid-state-physics_1773151801500.png)
 
 **面心立方**
 
-![alt text](assets/solid-state-physics_1773151810228_png)
+![alt text](assets/solid-state-physics_1773151810228.png)
 
 **六角密排**
 
-![alt text](assets/solid-state-physics_1773151830284_png)
+![alt text](assets/solid-state-physics_1773151830284.png)
 
 **简单晶格**：所有院子完全等价，{==每个格点代表一个原子==}
 
@@ -360,9 +363,9 @@ $$
 
 **单胞**是点阵中产生完全评议覆盖并能提现旋转对称性的常用单元。原胞的选取是不唯一的，只要是最小周期性单元都可以，但实际上各种晶体结构已有习惯的原胞选取方式。
 
-![alt text](assets/solid-state-physics_1773370143388_png)
+![alt text](assets/solid-state-physics_1773370143388.png)
 
-![alt text](assets/solid-state-physics_1773370595898_png)
+![alt text](assets/solid-state-physics_1773370595898.png)
 
 体心立方的原胞和基矢：
 

@@ -1,3 +1,6 @@
+---
+comments: true
+---
 # EEnotes
 ![alt text](docs/assets/2image.png)
 
