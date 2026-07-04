@@ -25,7 +25,7 @@
     
     
       
-        <title>Dsa - CBDT的资料屋</title>
+        <title>数据与算法 - CBDT的资料屋</title>
       
     
     
@@ -149,7 +149,8 @@
     <label class="md-overlay" for="__drawer" aria-label="导航栏"></label>
     <div data-md-component="skip">
       
-        <a href="#__skip" class="md-skip">
+        
+        <a href="#_1" class="md-skip">
           跳转至
         </a>
       
@@ -184,7 +185,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Dsa
+              数据与算法
             
           </span>
         </div>
@@ -1268,6 +1269,25 @@
       
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  数据结构与算法
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="././" class="md-nav__link md-nav__link--active">
         
@@ -1284,6 +1304,54 @@
   
 
       </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        基础数据结构
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="基础数据结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        二元关系与抽象数据类型
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1583,6 +1651,13 @@
                     
                     
                     
+                      
+                    
+                    
+                      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+                      <div class="md-sidebar-button__wrapper">
+                        <label class="md-sidebar-button" for="__toc"></label>
+                      </div>
                     
                   
                   <div class="md-sidebar__inner">
@@ -1593,6 +1668,44 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        基础数据结构
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="基础数据结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        二元关系与抽象数据类型
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1610,9 +1723,24 @@
   
 
 
-  <h1 id="__skip">Dsa</h1>
-
-
+<h1 id="_1">数据与算法</h1>
+<h2 id="_2">基础数据结构</h2>
+<h3 id="_3">二元关系与抽象数据类型</h3>
+<p>二元关系是描述数据之间关系的数学工具。它利用集合论中的符号体系，将各种数据集中数据元素之间的关系用集合的语言精确描述出来。</p>
+<p><strong>集合的笛卡尔积</strong>：给定两个集合 A 和 B，它们的笛卡尔积记作 A × B，定义为所有有序对 (a, b) 的集合，其中 a ∈ A 且 b ∈ B。形式化表示为：</p>
+<div class="arithmatex">\[
+A \times B = \{(a, b) \mid a \in A, b \in B\}
+\]</div>
+<p><strong>二元关系</strong>：在集合 <span class="arithmatex">\(A\)</span> 和 <span class="arithmatex">\(B\)</span> 上的二元关系 <span class="arithmatex">\(R\)</span> 是 <span class="arithmatex">\(A \times B\)</span> 的子集。换句话说，<span class="arithmatex">\(R\)</span> 是由 <span class="arithmatex">\(A\)</span> 和 <span class="arithmatex">\(B\)</span> 中元素组成的有序对的集合。</p>
+<p><strong>二元关系的性质</strong>：假设 <span class="arithmatex">\(R\)</span> 是定义在集合 <span class="arithmatex">\(M\)</span> 上的二元关系，<span class="arithmatex">\(R \subseteq A \times A\)</span>。二元关系可以具有以下性质：</p>
+<ol>
+<li>自反性：对于<span class="arithmatex">\(\forall a \in A\)</span>，如果 <span class="arithmatex">\((a, a) \in R\)</span>，则 <span class="arithmatex">\(R\)</span> 是自反的。</li>
+<li>对称性：对于<span class="arithmatex">\(\forall a, b \in A\)</span>，如果 <span class="arithmatex">\((a, b) \in R\)</span>，则 <span class="arithmatex">\((b, a) \in R\)</span>，则 <span class="arithmatex">\(R\)</span> 是对称的。</li>
+<li>传递性：对于<span class="arithmatex">\(\forall a, b, c \in A\)</span>，如果 <span class="arithmatex">\((a, b) \in R\)</span> 且 <span class="arithmatex">\((b, c) \in R\)</span>，则 <span class="arithmatex">\((a, c) \in R\)</span>，则 <span class="arithmatex">\(R\)</span> 是传递的。</li>
+<li>反对称性：对于<span class="arithmatex">\(\forall a, b \in A\)</span>，如果 <span class="arithmatex">\((a, b) \in R\)</span> 且 <span class="arithmatex">\((b, a) \in R\)</span>，则 <span class="arithmatex">\(a = b\)</span>，则 <span class="arithmatex">\(R\)</span> 是反对称的。</li>
+</ol>
+<p><strong>等价关系</strong>：满足自反性、对称性和传递性(<span class="arithmatex">\(=\)</span>)</p>
+<p><strong>偏序关系</strong>：满足自反性、反对称性和传递性(<span class="arithmatex">\(\leq\)</span>)</p>
 
 
 

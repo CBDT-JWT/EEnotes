@@ -1,3 +1,7 @@
 {
-  "workbench.colorTheme": "Material Theme"
+  "workbench.colorTheme": "Material Theme",
+  "files.associations": {
+    "*.md": "python-markdown"
+  }
+
 }
