@@ -64,6 +64,8 @@ extra_css:
 - css/neoteroi-mkdocs.css
 # - stylesheets/homepage-palette.css
 - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css
+- https://cbdt-jwt.github.io/mkdocs-ai-chat/ai-chat.css
+
 
 nav:
   - 主页: https://www.weitao-jiang.cn
@@ -168,6 +170,9 @@ extra_javascript:
 - https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-svg-full.js
 #- https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js
 #- https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js
+- js/ai-chat-config.js
+- https://cbdt-jwt.github.io/mkdocs-ai-chat/ai-chat.js
+
 
 extra:
   social:

@@ -125,6 +125,8 @@
     
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
     
+      <link rel="stylesheet" href="https://cbdt-jwt.github.io/mkdocs-ai-chat/ai-chat.css">
+    
     <script>__md_scope=new URL("..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
     
       
@@ -1455,25 +1457,36 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        串
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
+  <a href="#_14" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        基础算法思想
+        基础非数值算法
       </span>
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="基础算法思想">
+    <nav class="md-nav" aria-label="基础非数值算法">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
+  <a href="#_15" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
         递归
@@ -1485,7 +1498,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_15" class="md-nav__link">
+  <a href="#_16" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
         递归的消除
@@ -1967,25 +1980,36 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        串
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
+  <a href="#_14" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        基础算法思想
+        基础非数值算法
       </span>
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="基础算法思想">
+    <nav class="md-nav" aria-label="基础非数值算法">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
+  <a href="#_15" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
         递归
@@ -1997,7 +2021,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_15" class="md-nav__link">
+  <a href="#_16" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
         递归的消除
@@ -2516,15 +2540,16 @@ A \times B = \{(a, b) \mid a \in A, b \in B\}
 </ol>
 <p>队列的应用：构建缓冲区，处理不同设备之间的速度差异。</p>
 <p><a class="glightbox" data-type="image" href="../assets/dsa_image-14.png"><img alt="alt text" src="../assets/dsa_image-14.png" /></a></p>
-<h2 id="_13">基础算法思想</h2>
-<h3 id="_14">递归</h3>
+<h3 id="_13">串</h3>
+<h2 id="_14">基础非数值算法</h2>
+<h3 id="_15">递归</h3>
 <p>若一个对象部分地包含它自己, 或用它自己给自己定义, 称这个对象是递归的；若一个过程直接地或间接地调用自己, 则称这个过程是递归的。</p>
 <p>递归求解的两个条件：</p>
 <ol>
 <li>找到了规模较大的问题和规模较小的同样问题之间的联系</li>
 <li>有终止条件</li>
 </ol>
-<h4 id="_15">递归的消除</h4>
+<h4 id="_16">递归的消除</h4>
 <p>递归可能导致较高的时间复杂度和空间复杂度。</p>
 <p><strong>尾递归</strong>：在递归程序中，递归语句只有一个，且处在函数的最后。对于尾递归形式的递归算法，可以很方便的利用循环结构来替代。</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">尾递归函数</label><label for="__tabbed_6_2">非递归函数</label></div>
@@ -2833,6 +2858,10 @@ A \times B = \{(a, b) \mid a \in A, b \in B\}
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-chtml-full.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-svg-full.js"></script>
+      
+        <script src="../js/ai-chat-config.js"></script>
+      
+        <script src="https://cbdt-jwt.github.io/mkdocs-ai-chat/ai-chat.js"></script>
       
     
   </body>
