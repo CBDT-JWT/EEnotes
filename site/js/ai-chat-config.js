@@ -1,5 +1,7 @@
 window.mkdocsAiChat = {
   endpoint: "https://www.weitao-jiang.cn/mkdocs-ai/api/chat",
-  title: "EEnotes AI",
-  placeholder: "问 EEnotes..."
+  title: "CBDT @ EEnotes",
+  placeholder: "问问CBDT......",
+  icon: "https://www.weitao-jiang.cn/images/avatar.jpg",
+  welcome: "欢迎向CBDT提问！"
 };
