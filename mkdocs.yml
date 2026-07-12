@@ -64,7 +64,7 @@ extra_css:
 - css/neoteroi-mkdocs.css
 # - stylesheets/homepage-palette.css
 - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css
-- https://cbdt-jwt.github.io/mkdocs-ai-chat/ai-chat.css?v=13edbf2
+- https://cbdt-jwt.github.io/mkdocs-ai-chat/ai-chat.css?v=2373caa
 
 
 nav:
@@ -167,8 +167,8 @@ extra_javascript:
 - https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js
 #- https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js
 #- https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js
-- js/ai-chat-config.js?v=13edbf2
-- https://cbdt-jwt.github.io/mkdocs-ai-chat/ai-chat.js?v=13edbf2
+- js/ai-chat-config.js?v=2373caa
+- https://cbdt-jwt.github.io/mkdocs-ai-chat/ai-chat.js?v=2373caa
 
 
 extra:
