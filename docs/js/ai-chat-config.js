@@ -7,5 +7,10 @@ window.mkdocsAiChat = {
   memoryTurns: 6,
   clearLabel: "清除历史",
   clearConfirm: "确定要清除全部对话历史吗？",
+  selectionActionLabel: "问问CBDT",
+  quoteLabel: "引用内容",
+  removeQuoteLabel: "移除引用",
+  selectionMaxLength: 4000,
+  selectionRootSelector: "article",
   storageKey: "eenotes-ai-chat-history"
 };
