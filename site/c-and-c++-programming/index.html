@@ -2100,17 +2100,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      <span class="md-typeset">
-        复习时应能独立完成的内容
-      </span>
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -3270,17 +3259,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      <span class="md-typeset">
-        复习时应能独立完成的内容
-      </span>
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -3301,11 +3279,11 @@
 
 <h1 id="_1">计算机程序设计基础</h1>
 <h2 id="c-1">C 部分（计算机程序设计基础（1））</h2>
-<p>这门课的主线不是记语法，而是把一个问题拆成计算机能够逐步执行的过程，再用 C 语言准确表达出来。下面按课件的 13 章整理，例子均采用标准 C 的写法；涉及编译器差异的地方另作说明。</p>
 <h2 id="1">1. 绪论</h2>
+<p>C 语言由 Bell 实验室的 D. M. Ritchie 在 1972 年研制，最初和 UNIX 系统一起发展起来。</p>
 <h3 id="11">1.1 程序、算法与结构化设计</h3>
-<p><strong>算法</strong>是解决一类问题的有限步骤集合。一个可执行的算法至少应满足：步骤明确、能够终止、允许输入、产生输出，并且每一步都能在有限时间内完成。</p>
-<p>程序设计通常经过以下过程：</p>
+<p><strong>算法</strong>：解决一类问题的一组有限步骤。每一步都得写清楚，而且最终必须停下来。只说“不断尝试，直到成功”不算完整的算法，因为没有说明怎样尝试，也不能保证一定结束。</p>
+<p>从题目到程序，大致要走下面几步：</p>
 <ol>
 <li>分析问题，明确输入、输出和约束；</li>
 <li>建立数学模型，选择数据结构和算法；</li>
@@ -3313,27 +3291,27 @@
 <li>编码、编译、链接、运行；</li>
 <li>测试并调试。</li>
 </ol>
-<p>结构化程序只用三种基本控制结构：<strong>顺序、选择、循环</strong>。每个结构只有一个入口和一个出口，复杂程序则通过模块分解和逐步求精完成。</p>
+<p>结构化程序归根到底只有三种结构：<strong>顺序、选择、循环</strong>。复杂程序看着长，其实也只是这三种结构的嵌套，再加上函数拆分。</p>
 <p>传统流程图用箭头表示控制流，容易出现随意跳转，也不便于表示嵌套。NS 图把每个基本结构画成一个方框，结构边界、作用域和嵌套关系更清楚。</p>
 <p><a class="glightbox" data-type="image" href="../assets/prog_1771994100775.png"><img alt="NS 图中的三种基本结构" src="../assets/prog_1771994100775.png" /></a></p>
 <h3 id="12">1.2 测试与调试</h3>
-<p>测试的目的，是尽可能发现错误，而不是证明程序正确。测试数据至少要包括：</p>
+<p>测试是为了找错，不是为了证明程序没错。自己测程序时，至少准备这几类数据：</p>
 <ul>
 <li>正常情况；</li>
 <li>边界值，如 0、1、最大值、最小值；</li>
 <li>特殊情况，如空输入、重复值、除数为 0；</li>
 <li>非法输入（题目要求处理时）。</li>
 </ul>
-<p>调试是定位并修正错误。常见错误可分为：</p>
+<p>错误大致分四类：</p>
 <ul>
 <li><strong>编译错误</strong>：语法、类型或声明有问题；</li>
 <li><strong>链接错误</strong>：函数只有声明却没有定义，或缺少所需库；</li>
 <li><strong>运行错误</strong>：越界、空指针解引用、除零等；</li>
 <li><strong>逻辑错误</strong>：程序能运行，但算法或边界处理不对。</li>
 </ul>
-<p>调试时不要只盯着最终结果。先找出第一个偏离预期的中间状态，再向前追查，通常比反复改代码更快。</p>
+<p>调试时先看中间量从哪一步开始不对。找到第一个错误状态后再往前追，比看到答案不对就到处改代码靠谱得多。</p>
 <h3 id="13-c">1.3 程序设计语言与 C 程序</h3>
-<p>机器语言由机器指令组成；汇编语言用助记符表示指令；高级语言更接近人的表达方式。C 源程序须经预处理、编译和链接生成可执行文件。</p>
+<p>机器语言直接写机器指令，汇编语言用助记符代替二进制指令，高级语言则更接近人的表达。C 程序从源文件到真正运行，中间还要经过<strong>预处理、编译、链接</strong>。</p>
 <div class="language-c highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
@@ -3346,35 +3324,37 @@
 </span></code></pre></div>
 <ul>
 <li><code>#include &lt;stdio.h&gt;</code> 引入标准输入输出函数的声明；</li>
-<li><code>main</code> 是程序入口，标准写法应明确返回 <code>int</code>；</li>
+<li><code>main</code> 是程序入口，返回类型写成 <code>int</code>；</li>
 <li>花括号围成函数体或复合语句；</li>
 <li>C 区分大小写，一般语句以分号结束；</li>
 <li>注释可写成 <code>/* ... */</code> 或 <code>// ...</code>。</li>
 </ul>
 <h2 id="2-c">2. C 语言的基本数据类型</h2>
 <h3 id="21">2.1 进位计数制</h3>
-<p>一个 <span class="arithmatex">\(r\)</span> 进制数中，每一位的权为 <span class="arithmatex">\(r^k\)</span>。二进制、八进制和十六进制之间可以分别按 3 位、4 位二进制直接分组转换。</p>
+<p>一个 <span class="arithmatex">\(r\)</span> 进制数中，第 <span class="arithmatex">\(k\)</span> 位的位权是 <span class="arithmatex">\(r^k\)</span>。二进制转八进制时每 3 位一组，转十六进制时每 4 位一组，这比先转十进制省事。</p>
 <ul>
 <li>十进制整数转 <span class="arithmatex">\(r\)</span> 进制：除 <span class="arithmatex">\(r\)</span> 取余，余数逆序排列；</li>
 <li>十进制小数转 <span class="arithmatex">\(r\)</span> 进制：乘 <span class="arithmatex">\(r\)</span> 取整，整数部分顺序排列；</li>
 <li><span class="arithmatex">\(r\)</span> 进制转十进制：各位数字乘相应位权后求和。</li>
 </ul>
-<p>十进制小数在二进制中不一定能有限表示，<code>0.1 + 0.2</code> 一类计算因此可能有微小舍入误差。判断浮点数相等通常应比较误差，而不是直接使用 <code>==</code>。</p>
+<p>有些十进制小数换成二进制会变成无限小数，所以浮点计算会带一点舍入误差。判断两个浮点数“相等”时，一般看误差是否足够小，不要想当然地直接用 <code>==</code>。</p>
 <h3 id="22">2.2 整数在计算机中的表示</h3>
-<p>原码的最高位表示符号；负数的反码是原码符号位不变、其余位取反；负数的补码是在反码末位加 1。现代计算机通常用补码保存有符号整数，因为加减法可以使用同一套电路，并且 0 只有一种表示。</p>
+<p>这几个概念容易混，按转换顺序记：<strong>原码 <span class="arithmatex">\(\rightarrow\)</span> 反码 <span class="arithmatex">\(\rightarrow\)</span> 补码</strong>。负数原码的最高位是 1；求反码时符号位不动，其余位取反；反码再加 1 就是补码。正数的三种表示相同。</p>
+<p>机器里实际用补码存有符号整数。这样加减法可以共用一套运算规则，0 也只有一种表示。</p>
+<p><strong>偏移码</strong>可以由补码把符号位取反得到，正数最高位为 1，负数最高位为 0。浮点数的阶码就是用偏移码保存的。</p>
+<p><strong>定点数</strong>的小数点位置固定；<strong>浮点数</strong>则把数写成类似科学计数法的形式。课件按 IEEE 754 讲 <code>float</code> 和 <code>double</code>：一段存符号，一段存带偏移的阶码，剩下的存尾数。因此浮点数能表示很大的范围，但有效数字有限。</p>
 <p>对 <span class="arithmatex">\(n\)</span> 位整数：</p>
 <ul>
 <li>无符号数范围为 <span class="arithmatex">\(0\sim 2^n-1\)</span>；</li>
 <li>二进制补码有符号数范围为 <span class="arithmatex">\(-2^{n-1}\sim 2^{n-1}-1\)</span>。</li>
 </ul>
-<p>C 标准没有规定 <code>int</code> 必须是 32 位，应以当前平台的 <code>sizeof</code> 和 <code>&lt;limits.h&gt;</code> 为准。无符号整数运算按模 <span class="arithmatex">\(2^n\)</span> 回绕；有符号整数溢出则是未定义行为。</p>
+<p><code>int</code> 不一定永远是 32 位，具体大小看平台，可以用 <code>sizeof</code> 或 <code>&lt;limits.h&gt;</code> 查。无符号整数溢出后按模 <span class="arithmatex">\(2^n\)</span> 回绕；有符号整数溢出不能这样推结果。</p>
 <h3 id="23">2.3 基本类型、常量与变量</h3>
-<p>C 的基本类型包括：</p>
+<p>基本类型先按下面这几类记：</p>
 <ul>
 <li>整型：<code>char</code>、<code>short</code>、<code>int</code>、<code>long</code>、<code>long long</code>，以及对应的 <code>unsigned</code> 类型；</li>
 <li>浮点型：<code>float</code>、<code>double</code>、<code>long double</code>；</li>
-<li>空类型：<code>void</code>；</li>
-<li>C99 还提供布尔类型 <code>_Bool</code>，可通过 <code>&lt;stdbool.h&gt;</code> 使用 <code>bool</code>。</li>
+<li>空类型：<code>void</code>。</li>
 </ul>
 <p>常量的常见写法：</p>
 <div class="language-c highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="mi">42</span><span class="w">          </span><span class="cm">/* 十进制整数 */</span>
@@ -3389,22 +3369,22 @@
 </span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="s">&quot;A&quot;</span><span class="w">         </span><span class="cm">/* 字符串，占两个 char：&#39;A&#39; 和 &#39;\0&#39; */</span>
 </span></code></pre></div>
 <p>转义字符包括 <code>\n</code>（换行）、<code>\t</code>（制表）、<code>\\</code>（反斜杠）、<code>\'</code>、<code>\"</code> 和 <code>\0</code>。字符在计算中按其字符编码值参与整型运算，如 <code>'7' - '0'</code> 得到整数 <code>7</code>。</p>
-<p>变量使用前必须先定义。未显式初始化的全局变量和静态变量初始化为 0；自动局部变量的初值不确定，读取它会产生未定义行为。</p>
+<p>变量先定义再使用。全局变量和静态变量没有手动给初值时会被置 0；普通局部变量不会，刚定义就拿来算通常会得到乱值。</p>
 <div class="language-c highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">pi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.141592653589793</span><span class="p">;</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0UL</span><span class="p">;</span>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="kt">char</span><span class="w"> </span><span class="n">grade</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;A&#39;</span><span class="p">;</span>
 </span></code></pre></div>
-<p><code>const</code> 表示不应通过该名字修改对象；它与预处理宏不同，仍然具有类型和作用域。</p>
+<p><code>const</code> 表示不通过这个名字修改对象。它和宏常量不是一回事：<code>const</code> 变量有明确类型，也受作用域限制。</p>
 <h3 id="24-sizeof">2.4 <code>sizeof</code> 与类型转换</h3>
-<p><code>sizeof(类型)</code> 或 <code>sizeof 表达式</code> 得到对象占用的字节数，结果类型为 <code>size_t</code>。除变长数组外，<code>sizeof</code> 的操作数通常不会被求值，因此 <code>sizeof(i++)</code> 不会令 <code>i</code> 增加。</p>
-<p>混合运算会发生整型提升和通常算术转换，较低等级的类型转换为较高等级的类型。赋值时还会转换为左侧变量的类型：</p>
+<p><code>sizeof</code> 算一个类型或对象占多少字节，写成 <code>sizeof(类型)</code> 或 <code>sizeof 表达式</code>。有个容易出现在读程序题里的细节：<code>sizeof(i++)</code> 只看 <code>i</code> 的类型，并不会真的执行 <code>i++</code>。</p>
+<p>不同类型混在一个表达式中时，会先按类型等级自动转换；赋值时还要再转成左边变量的类型。最常考的是整数除法：</p>
 <div class="language-c highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w">          </span><span class="cm">/* 先做整数除法，x 为 2.0 */</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kt">double</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5.0</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w">        </span><span class="cm">/* y 为 2.5 */</span>
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="mf">3.8</span><span class="p">;</span><span class="w">          </span><span class="cm">/* 强制转换，截去小数部分，n 为 3 */</span>
 </span></code></pre></div>
-<p>强制类型转换只改变这次表达式的计算方式，不改变原变量本身的类型。</p>
+<p>强制类型转换只管这一次计算，原变量的类型并没有变。</p>
 <h2 id="3">3. 数据的输入与输出</h2>
-<p>C 语言本身没有输入输出语句，相关功能由标准库提供。<code>stdin</code>、<code>stdout</code> 和 <code>stderr</code> 分别表示标准输入、标准输出和标准错误流。</p>
+<p>C 语言把输入输出放在库函数里。键盘输入通常走 <code>stdin</code>，屏幕输出走 <code>stdout</code>；<code>stderr</code> 专门留给错误信息。</p>
 <h3 id="31-printf">3.1 <code>printf</code></h3>
 <div class="language-c highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">printf</span><span class="p">(</span><span class="s">&quot;格式控制字符串&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">输出项1</span><span class="p">,</span><span class="w"> </span><span class="n">输出项2</span><span class="p">,</span><span class="w"> </span><span class="p">...);</span>
 </span></code></pre></div>
@@ -3453,15 +3433,10 @@
 <td><code>%p</code></td>
 <td>参数应转换为 <code>void *</code></td>
 </tr>
-<tr>
-<td><code>size_t</code></td>
-<td><code>%zu</code></td>
-<td><code>sizeof</code> 的结果</td>
-</tr>
 </tbody>
 </table>
-<p><code>%8.2f</code> 表示总场宽至少为 8，小数点后保留 2 位；<code>%-8d</code> 左对齐；<code>%08d</code> 用 0 补足。场宽不足时不会截断数据。<code>printf</code> 的返回值是成功输出的字符数，失败时为负数。</p>
-<p>格式说明与实参类型或数量不一致是未定义行为。一个表达式中也不要多次修改同一变量，例如 <code>printf("%d %d", i++, i++)</code> 的结果不应依赖。</p>
+<p>再记一下场宽和精度：<code>%8.2f</code> 表示总宽度至少为 8，小数点后留 2 位；<code>%-8d</code> 左对齐；<code>%08d</code> 用 0 补齐。实际内容超过场宽时照常输出，不会为了凑宽度把数字截掉。</p>
+<p>格式符和变量类型一定要对上。<code>printf("%d %d", i++, i++)</code> 这种写法也别用：两个实参谁先算没有固定顺序，没法可靠判断输出。</p>
 <h3 id="32-scanf">3.2 <code>scanf</code></h3>
 <div class="language-c highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
@@ -3469,7 +3444,7 @@
 </span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="kt">int</span><span class="w"> </span><span class="n">ok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%lf%19s&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">word</span><span class="p">);</span>
 </span></code></pre></div>
 <ul>
-<li>除数组名等本身可转换为地址的表达式外，接收变量要写地址；</li>
+<li>普通变量要传地址，所以通常要写 <code>&amp;</code>；字符数组名本身就能表示首地址，不再加 <code>&amp;</code>；</li>
 <li><code>float *</code> 用 <code>%f</code>，<code>double *</code> 用 <code>%lf</code>，不要与 <code>printf</code> 的规则混淆；</li>
 <li><code>%s</code> 应限制最大宽度，给结尾的 <code>\0</code> 留出一个位置；</li>
 <li><code>%c</code> 不跳过空白，常写成 <code>" %c"</code>，前面的空格会吃掉残留空白；</li>
@@ -3480,9 +3455,9 @@
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="cm">/* 每次只处理一次有效输入 */</span>
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="p">}</span>
 </span></code></pre></div>
-<p>格式串中的普通字符必须与输入完全匹配。<code>scanf("%d,%d", &amp;a, &amp;b)</code> 要求两个数之间真的出现逗号。</p>
+<p>格式串里的普通字符也要匹配。比如 <code>scanf("%d,%d", &amp;a, &amp;b)</code> 规定了两个数中间必须输入逗号，这一点很容易看漏。</p>
 <h3 id="33">3.3 字符与字符串输入输出</h3>
-<p><code>getchar()</code> 读取一个字节，返回类型是 <code>int</code>，这样才能同时表示所有 <code>unsigned char</code> 值和 <code>EOF</code>。因此判断文件结束时不要先把结果存进 <code>char</code>。</p>
+<p><code>getchar()</code> 每次读一个字符，但返回类型是 <code>int</code>，因为除了正常字符还要表示 <code>EOF</code>。所以要判断文件结束时，接收变量也用 <code>int</code>：</p>
 <div class="language-c highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">ch</span><span class="p">;</span>
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="k">while</span><span class="w"> </span><span class="p">((</span><span class="n">ch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getchar</span><span class="p">())</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">EOF</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="n">putchar</span><span class="p">(</span><span class="n">ch</span><span class="p">);</span>
@@ -3494,19 +3469,21 @@
 </span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span><span class="cm">/* 成功读入，换行符可能仍在 line 中 */</span>
 </span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="p">}</span>
 </span></code></pre></div>
-<p>课件中出现的 <code>_getch</code>、<code>_getche</code>、<code>_ungetch</code> 来自特定编译器的 <code>&lt;conio.h&gt;</code>，不属于标准 C；可移植程序不要依赖它们。标准库的 <code>ungetc</code> 用于把一个字符退回输入流。</p>
+<p>课件特别提醒不要把 <code>scanf</code> 和 <code>gets</code> 混着用，前一个函数留在输入缓冲区里的换行会被后一个函数直接读走。<code>gets</code> 本身也没有长度限制，现在已经不再使用；课内只读一个不含空格的字符串时，用带宽度的 <code>%s</code> 即可。</p>
+<p>课件还讲了 <code>_getch</code>、<code>_getche</code> 和 <code>_ungetch</code>。它们来自 <code>&lt;conio.h&gt;</code>，在 Visual C 一类环境里能用，但不是标准库函数。标准 C 中把字符退回输入流用的是 <code>ungetc</code>。</p>
 <h2 id="4-c">4. C 表达式与宏定义</h2>
 <h3 id="41">4.1 赋值、算术、关系与逻辑运算</h3>
-<p>赋值表达式 <code>变量 = 表达式</code> 的值就是赋入后的值，结合方向从右向左，因此 <code>a = b = 0</code> 可用。<code>+=</code>、<code>-=</code>、<code>*=</code>、<code>/=</code>、<code>%=</code> 等复合赋值只对左操作数求值一次。</p>
+<p>赋值表达式本身也有值，值就是最后赋进去的内容；而且赋值从右向左结合，所以 <code>a = b = 0</code> 会先把 0 给 <code>b</code>，再给 <code>a</code>。</p>
+<p><code>+=</code>、<code>-=</code>、<code>*=</code>、<code>/=</code>、<code>%=</code> 是复合赋值。<code>a += b + 3</code> 等价于 <code>a = a + (b + 3)</code>，右边的括号不要忘。</p>
 <p>整数的 <code>/</code> 舍去小数部分，C99 起结果向 0 截断；余数满足 <code>(a / b) * b + a % b == a</code>，余数与被除数同号。<code>%</code> 只能用于整数。</p>
-<p>关系运算结果为 0 或 1。不要把 <code>==</code> 误写成 <code>=</code>：</p>
+<p>关系运算的结果只有 0 或 1。程序能编译但判断总是不对时，先看看是不是把 <code>==</code> 写成了 <code>=</code>：</p>
 <div class="language-c highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span><span class="w">   </span><span class="cm">/* 给 x 赋 0，条件恒假 */</span>
 </span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span><span class="w">  </span><span class="cm">/* 判断 x 是否为 0 */</span>
 </span></code></pre></div>
 <p>逻辑非、与、或分别为 <code>!</code>、<code>&amp;&amp;</code>、<code>||</code>。C 中 0 为假，非 0 为真。<code>&amp;&amp;</code> 和 <code>||</code> 采用短路求值：</p>
 <div class="language-c highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">p</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">NULL</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span><span class="w">  </span><span class="cm">/* p 为空时不会计算 *p */</span>
 </span></code></pre></div>
-<p>不要写数学式 <code>0 &lt; x &lt; 10</code>。它先算 <code>0 &lt; x</code>，结果 0 或 1，再与 10 比较，几乎总为真；正确写法是 <code>0 &lt; x &amp;&amp; x &lt; 10</code>。</p>
+<p>另一个常见坑是 <code>0 &lt; x &lt; 10</code>。C 会先算 <code>0 &lt; x</code>，得到 0 或 1，再拿这个结果和 10 比，所以这个条件几乎总为真。区间要拆开写成 <code>0 &lt; x &amp;&amp; x &lt; 10</code>。</p>
 <h3 id="42">4.2 其他运算符</h3>
 <ul>
 <li>前置 <code>++i</code>：先增加，再产生新值；后置 <code>i++</code>：先产生旧值，再增加；</li>
@@ -3516,7 +3493,7 @@
 <li>成员访问：<code>.</code> 与 <code>-&gt;</code>；</li>
 <li>数组下标和函数调用：<code>[]</code>、<code>()</code>。</li>
 </ul>
-<p>运算符优先级只决定表达式如何分组，不保证子表达式的实际求值先后。看不准时应加括号，也不要在同一个完整表达式中既修改对象又以无确定顺序读取它。</p>
+<p>优先级只负责“怎么加括号”，不负责“先算左边还是右边”。这一点和数学式不太一样。读程序时如果一眼看不清，先自己补括号。</p>
 <h3 id="43">4.3 标准数学函数</h3>
 <p><code>&lt;math.h&gt;</code> 中常用函数包括 <code>sqrt</code>、<code>pow</code>、<code>fabs</code>、<code>exp</code>、<code>log</code>、<code>sin</code>、<code>cos</code>。参数和返回值通常为 <code>double</code>。</p>
 <div class="language-c highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;math.h&gt;</span>
@@ -3528,11 +3505,11 @@
 </span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="cp">#define SQUARE(x) ((x) * (x))</span>
 </span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="cp">#define TO_STRING(x) #x</span>
 </span></code></pre></div>
-<p>宏是预处理阶段的文本替换，没有类型检查。带参数宏要把每个参数和整个替换体都加括号；即使如此，<code>SQUARE(i++)</code> 仍会使 <code>i</code> 增加两次，所以有副作用的实参不要传给会重复使用参数的宏。</p>
-<p><code>#</code> 把实参转换成字符串；<code>##</code> 可以连接两个记号。多行宏末尾用反斜杠续行。常量优先考虑 <code>const</code> 或枚举，简单计算优先考虑函数；只有确实需要文本替换时再用宏。</p>
+<p>宏就是预处理阶段的文本替换，没有函数那样的类型检查。带参数宏的坑主要有两个：一是括号，二是参数可能被展开多次。上面的 <code>SQUARE(i++)</code> 会把 <code>i++</code> 展开两遍，绝不是普通函数调用的效果。</p>
+<p>宏替换体里的 <code>#</code> 把实参变成字符串，<code>##</code> 把两个记号拼在一起；多行宏用反斜杠续行。普通常量用 <code>const</code> 往往更清楚，简单计算也尽量写函数，宏留给确实需要文本替换的地方。</p>
 <h2 id="5">5. 选择结构</h2>
 <h3 id="51">5.1 语句、复合语句和作用域</h3>
-<p>表达式加分号构成表达式语句；单独一个分号是空语句；花括号中的若干声明和语句组成复合语句。复合语句在语法上等价于一条语句，并引入新的块作用域。</p>
+<p>表达式后面加分号就是一条语句；单独一个分号则是空语句。花括号把若干声明和语句包成一个复合语句，同时也划出一层新的作用域。</p>
 <div class="language-c highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">condition</span><span class="p">);</span><span class="w">     </span><span class="cm">/* 这个分号是空语句 */</span>
 </span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="p">{</span>
 </span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">    </span><span class="n">work</span><span class="p">();</span><span class="w">         </span><span class="cm">/* 无论条件真假都会执行 */</span>
@@ -3545,13 +3522,13 @@
 </span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="w">    </span><span class="n">puts</span><span class="p">(</span><span class="s">&quot;fail&quot;</span><span class="p">);</span>
 </span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="p">}</span>
 </span></code></pre></div>
-<p>没有花括号时，<code>else</code> 总与最近一个尚未配对的 <code>if</code> 结合。即使分支只有一条语句，也建议保留花括号。</p>
-<p>多分支常写成 <code>if - else if - else</code>。区间判断要注意先后次序，例如成绩等级应先判断最高分段，否则较宽的条件会提前截住后续分支。</p>
+<p>没有花括号时，<code>else</code> 会找离它最近、还没配对的 <code>if</code>。缩进不参与语法判断，不能只看代码排得像不像一组。</p>
+<p>多分支一般串成 <code>if - else if - else</code>。判断成绩等级时要从高分往低分写；如果第一句就是 <code>score &gt;= 60</code>，后面的 80、90 分分支永远走不到。</p>
 <h3 id="53">5.3 条件运算符</h3>
-<p>条件表达式适合在两个值中选一个：</p>
+<p>条件运算符适合二选一地取一个值：</p>
 <div class="language-c highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="n">max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
 </span></code></pre></div>
-<p>若分支要执行多条语句或具有明显副作用，<code>if</code> 通常更清楚。</p>
+<p>分支里要做很多事时，直接写 <code>if</code>，不必硬塞成一行。</p>
 <h3 id="54-switch">5.4 <code>switch</code></h3>
 <div class="language-c highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">op</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="k">case</span><span class="w"> </span><span class="sc">&#39;+&#39;</span><span class="p">:</span>
@@ -3565,14 +3542,14 @@
 </span><span id="__span-16-10"><a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="w">    </span><span class="k">break</span><span class="p">;</span>
 </span><span id="__span-16-11"><a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a><span class="p">}</span>
 </span></code></pre></div>
-<p>控制表达式必须是整数或枚举类型，<code>case</code> 后必须是互不相同的整型常量表达式。进入某个 <code>case</code> 后会继续向下执行，直到遇到 <code>break</code> 或 <code>switch</code> 结束；有意贯穿时应写注释说明。<code>default</code> 可放在任意位置，但通常放在最后。</p>
+<p><code>switch</code> 只能按整数或枚举值分支，<code>case</code> 后面也必须是互不重复的整型常量。看到 <code>case</code> 时顺手检查 <code>break</code>：没有它，程序会从匹配处一直往下跑。确实想让两个分支共用代码时可以故意不写，但最好留一句注释。</p>
 <h2 id="6">6. 编译预处理</h2>
-<p>预处理命令以 <code>#</code> 开头，不是 C 语句，末尾通常不加分号。</p>
+<p>预处理发生在正式编译之前。命令都以 <code>#</code> 开头，不是 C 语句，末尾也不加分号。</p>
 <h3 id="61">6.1 文件包含</h3>
 <div class="language-c highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="c1">     /* 通常从系统头文件目录查找 */</span>
 </span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;my_math.h&quot;</span><span class="c1">   /* 通常先从当前工程查找 */</span>
 </span></code></pre></div>
-<p>头文件中一般放类型定义、宏、常量和函数声明，不应随意放普通函数定义或外部变量定义。用包含保护避免重复包含：</p>
+<p>头文件里通常放类型定义、宏、常量和函数声明。为了防止同一个头文件被反复展开，要加包含保护：</p>
 <div class="language-c highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="cp">#ifndef MY_MATH_H</span>
 </span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="cp">#define MY_MATH_H</span>
 </span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>
@@ -3580,6 +3557,7 @@
 </span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>
 </span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="cp">#endif</span>
 </span></code></pre></div>
+<p><code>#include</code> 做的是原样插入文件内容。工程里包含头文件 <code>.h</code>，不要为了省事去 <code>#include "file.c"</code>，否则源文件中的定义很容易重复。</p>
 <h3 id="62">6.2 条件编译</h3>
 <div class="language-c highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="cp">#ifdef DEBUG</span>
 </span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="w">    </span><span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;x = %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">);</span>
@@ -3591,13 +3569,13 @@
 </span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="w">    </span><span class="cm">/* 兼容代码 */</span>
 </span><span id="__span-19-9"><a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="cp">#endif</span>
 </span></code></pre></div>
-<p><code>defined(NAME)</code> 可在 <code>#if</code> 中判断宏是否已定义。条件编译适合平台差异、调试输出和可选功能，不适合代替普通运行时分支。</p>
+<p><code>defined(NAME)</code> 可以在 <code>#if</code> 中检查宏有没有定义。条件编译是在编译前决定某段代码留不留下；普通 <code>if</code> 则是在程序运行时选择，两者不要混在一起。</p>
 <h3 id="63-pragma-line">6.3 <code>#pragma</code> 与 <code>#line</code></h3>
-<p><code>#pragma</code> 向编译器传递实现相关指令，不同编译器支持情况不同。课件重点涉及 <code>#pragma pack(n)</code>：它会影响结构体成员的最大对齐粒度，使用后应恢复原设置，否则后面的结构体布局也可能改变。</p>
+<p><code>#pragma</code> 用来给编译器传一些额外指令，各家编译器不完全一样。课上重点是 <code>#pragma pack(n)</code>：它会改结构体成员的对齐方式，用完要恢复，不然后面定义的结构体也会受影响。</p>
 <p><code>#line 行号 "文件名"</code> 修改编译器此后报告的逻辑行号和文件名，常用于代码生成工具，普通程序很少直接使用。</p>
 <h2 id="7">7. 循环结构</h2>
 <h3 id="71-whiledo-while-for">7.1 <code>while</code>、<code>do ... while</code> 与 <code>for</code></h3>
-<p><code>while</code> 先判断后执行，循环体可能一次也不执行；<code>do ... while</code> 先执行后判断，至少执行一次，末尾不要漏掉分号。</p>
+<p>三种循环先分清判断时机：<code>while</code> 先判断，第一次条件就不成立时一遍也不执行；<code>do ... while</code> 先做一遍再判断，所以至少执行一次；<code>for</code> 只是把初始化、条件和更新集中写在了一行。</p>
 <div class="language-c highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">condition</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="w">    </span><span class="cm">/* 循环体 */</span>
 </span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="p">}</span>
@@ -3610,36 +3588,32 @@
 </span><span id="__span-20-10"><a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a><span class="w">    </span><span class="cm">/* 循环体 */</span>
 </span><span id="__span-20-11"><a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a><span class="p">}</span>
 </span></code></pre></div>
-<p>设计循环时要明确四件事：循环变量的初值、继续条件、每轮工作、状态更新。边界错误常来自 <code>&lt;</code> 与 <code>&lt;=</code> 混淆，最好先手算第 0 次、第一次和最后一次循环。</p>
+<p>循环写错往往不是语法问题，而是差一轮。拿不准 <code>&lt;</code> 还是 <code>&lt;=</code> 时，别凭感觉，直接把第一次和最后一次循环的变量值写在纸上。</p>
 <p><code>for</code> 的三个表达式均可省略。省略条件相当于真，但循环仍要通过 <code>break</code> 等方式退出。</p>
+<p>中间的表达式是“循环是否继续”的条件，不是“满足后只执行一次”的 <code>if</code>。另外，<code>while (条件);</code> 后面那个分号代表空循环体；条件一直为真时，后面的花括号永远也执行不到。</p>
 <h3 id="72-break-continue">7.2 嵌套、<code>break</code> 与 <code>continue</code></h3>
-<p>循环可以嵌套。内层循环变量一般要在每次进入内层循环前重新初始化。</p>
+<p>循环嵌套时，每执行一轮外层循环，内层循环都要从头跑一遍。因此内层循环变量要重新初始化；忘了这一点，第二轮外循环里内层循环可能一次也不进。</p>
 <ul>
 <li><code>break</code> 只跳出它所在的最内层循环或 <code>switch</code>；</li>
 <li><code>continue</code> 跳过本轮余下语句，进入下一轮；</li>
 <li>在 <code>for</code> 中，<code>continue</code> 后先执行更新表达式；在 <code>while</code> 中则直接判断条件，注意不要漏掉必要的状态更新。</li>
 </ul>
-<p>需要同时退出多层循环时，可以设置标志、把循环封装为函数后 <code>return</code>，或重新组织条件。</p>
+<p><code>break</code> 只能跳一层。要一次离开多层循环，可以设标志，也可以把这段搜索单独写成函数，找到答案就直接 <code>return</code>。</p>
 <h3 id="73">7.3 输入循环</h3>
-<p>把输入函数的返回值直接作为循环条件，能同时处理正常输入和文件结束：</p>
+<p>连续读数据时，直接拿输入函数的返回值控制循环最省心：</p>
 <div class="language-c highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 </span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="w">    </span><span class="n">sum</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
 </span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="p">}</span>
 </span></code></pre></div>
-<p>不要使用 <code>while (!feof(stdin))</code> 预测文件结束。<code>feof</code> 只有在一次读取已经失败后才会置位，容易把上一次数据重复处理。</p>
+<p><code>while (!feof(stdin))</code> 看起来合理，实际会慢一拍：只有读取已经失败，文件结束标志才会出现，上一组数据可能因此被处理两遍。</p>
 <h3 id="74">7.4 常用算法思路</h3>
-<ul>
-<li><strong>列举法</strong>：遍历有限候选集，逐个验证条件；</li>
-<li><strong>试探法</strong>：按规则生成候选，失败后调整再试；</li>
-<li><strong>整数分解</strong>：反复使用 <code>/</code> 和 <code>%</code> 取出各位或因子；</li>
-<li><strong>级数求和</strong>：更新通项并累加，浮点终止条件应使用误差；</li>
-<li><strong>方程求根</strong>：二分法要求区间端点函数值异号，牛顿法要注意导数为 0 和初值；</li>
-<li><strong>数值积分</strong>：把区间分段，逐段累加矩形或梯形面积。</li>
-</ul>
+<p>候选范围不大时可以直接<strong>列举</strong>，把所有可能都试一遍；如果候选需要边生成边调整，就是<strong>试探法</strong>。课件里的密码问题、四叶玫瑰数都属于这一类。这些题的循环通常不难，难的是有没有漏掉判定条件。</p>
+<p>整数拆位经常成对出现：<code>n % 10</code> 取出个位，<code>n /= 10</code> 再删掉个位。例如判断回文数，就是一边取位一边拼出逆序数。</p>
+<p>数值计算题则是另一套循环：级数求和要同时更新通项和总和；二分求根每次保留仍然夹着根的半个区间；梯形积分把区间切成小段后逐段累加。这里的循环次数或误差阈值都要写清楚，否则很容易多算一项或一直不结束。</p>
 <h2 id="8">8. 模块设计（函数）</h2>
 <h3 id="81">8.1 函数的声明、定义与调用</h3>
-<p>函数把一个完整任务分成职责明确的模块，有利于阅读、测试、修改和复用。</p>
+<p>一个函数最好只做一件说得清的事。比如“读入数组”“找最大值”“输出结果”可以分开写，这样某一步出错时也知道该查哪一段。</p>
 <div class="language-c highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="kt">double</span><span class="w"> </span><span class="nf">max</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">b</span><span class="p">);</span><span class="w">     </span><span class="cm">/* 声明，也叫函数原型 */</span>
 </span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>
 </span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="kt">double</span><span class="w"> </span><span class="nf">max</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w">      </span><span class="cm">/* 定义 */</span>
@@ -3647,9 +3621,9 @@
 </span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
 </span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a><span class="p">}</span>
 </span></code></pre></div>
-<p>调用函数前应已有声明。返回类型为 <code>void</code> 的函数不返回值；非 <code>void</code> 函数的所有正常路径都应返回与声明兼容的值。<code>return</code> 立即结束当前函数。</p>
+<p>编译器看到函数调用之前，至少要先见过函数声明。<code>void</code> 函数不返回结果；其他函数走到正常出口时要有对应的 <code>return</code>。执行 <code>return</code> 后，当前函数剩下的语句不会再跑。</p>
 <h3 id="82">8.2 参数传递</h3>
-<p>C 的参数传递都是<strong>值传递</strong>：形参得到实参值的副本，修改形参不改变实参。</p>
+<p>C 只有<strong>值传递</strong>。调用函数时，实参的值被复制给形参；函数里改的是副本，外面的变量不会跟着变。下面第一个 <code>swap</code> 看着像交换，实际什么也没交换：</p>
 <div class="language-c highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">swap_wrong</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">)</span>
 </span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="p">{</span>
 </span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
@@ -3664,24 +3638,20 @@
 </span><span id="__span-23-12"><a id="__codelineno-23-12" name="__codelineno-23-12" href="#__codelineno-23-12"></a><span class="w">    </span><span class="o">*</span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="p">;</span>
 </span><span id="__span-23-13"><a id="__codelineno-23-13" name="__codelineno-23-13" href="#__codelineno-23-13"></a><span class="p">}</span>
 </span></code></pre></div>
-<p>所谓“传地址”，仍是把地址值复制给指针形参；通过该地址间接访问，才修改了调用者对象。</p>
+<p>平时说的“传地址”，本质上仍然是值传递，只不过这次复制的值恰好是地址。函数通过地址找到原变量，才真的改到外面。</p>
 <h3 id="83">8.3 作用域、存储期与链接</h3>
 <ul>
-<li>块内定义的名字具有块作用域；函数外定义的名字具有文件作用域；</li>
-<li>普通局部变量通常具有自动存储期，每次进入块时创建，离开时失效；</li>
-<li><code>static</code> 局部变量具有静态存储期，只初始化一次，但作用域仍在函数内；</li>
-<li>全局变量具有静态存储期，应尽量减少使用，以免模块间形成隐含依赖；</li>
+<li>块内定义的名字只能在这一层花括号内使用；函数外定义的名字具有文件作用域；</li>
+<li>普通局部变量每次进入函数都会重新产生，离开后失效；</li>
+<li><code>static</code> 局部变量只初始化一次，下次调用函数时还保留上次的值；</li>
+<li>全局变量在整个运行期间都存在，但用得太多会让函数之间互相牵连；</li>
 <li>文件作用域的 <code>static</code> 函数或变量只在本源文件可见；</li>
-<li><code>extern</code> 声明引用其他位置定义的外部对象或函数。</li>
+<li><code>extern</code> 用来声明“这个外部名字定义在别处”。</li>
 </ul>
-<p>同名时，内层作用域会遮蔽外层名字。返回局部自动变量的地址是错误的，因为函数返回后该对象已经失效。</p>
+<p>课件把作用域归纳为全局、文件、函数和复合语句几层。做读程序题时，先看变量定义在哪一层花括号里，再判断当前语句究竟用的是哪一个同名变量。</p>
+<p>内外层出现同名变量时，里层会把外层遮住。还要特别留意：普通局部变量在函数返回时就没了，不能把它的地址返回出去。</p>
 <h3 id="84">8.4 递归</h3>
-<p>递归函数直接或间接调用自身。正确的递归必须包含：</p>
-<ol>
-<li>明确的终止条件；</li>
-<li>每次调用都向终止条件靠近；</li>
-<li>对当前规模问题的处理，以及对子问题结果的组合。</li>
-</ol>
+<p>递归先别急着在脑中一层层展开，先找两件事：<strong>什么时候停</strong>，以及<strong>问题规模怎样变小</strong>。例如阶乘在 <code>n &lt;= 1</code> 时直接返回，否则把问题交给 <code>factorial(n - 1)</code>：</p>
 <div class="language-c highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="nf">factorial</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span>
 </span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="p">{</span>
 </span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -3690,33 +3660,35 @@
 </span><span id="__span-24-6"><a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
 </span><span id="__span-24-7"><a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a><span class="p">}</span>
 </span></code></pre></div>
-<p>每次调用都有独立的形参和局部变量，保存在调用栈中。递归层数过深会导致栈溢出；能自然改写成简单循环时，循环通常更省空间。Hanoi 塔是典型的递归分解：先把 <span class="arithmatex">\(n-1\)</span> 个盘移到辅助柱，再移动最大盘，最后把 <span class="arithmatex">\(n-1\)</span> 个盘移到目标柱。</p>
+<p>每层递归都有自己的一套形参和局部变量。读递归程序时，可以从最小输入开始画调用过程，再逐层把返回值带回来。层数太深会耗尽调用栈。</p>
+<p>Hanoi 塔的分法很典型：先把 <span class="arithmatex">\(n-1\)</span> 个盘移到辅助柱，移动最大的盘，再把那 <span class="arithmatex">\(n-1\)</span> 个盘移到目标柱。三步里第一步和第三步与原问题同形，只是规模少了 1。</p>
 <h2 id="9">9. 数组与字符串</h2>
 <h3 id="91">9.1 一维数组</h3>
-<p>数组是相同类型元素的连续集合，下标从 0 开始：</p>
+<p>数组把一批同类型元素连续放在内存中，下标从 0 开始：</p>
 <div class="language-c highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span><span class="w">        </span><span class="cm">/* 其余元素初始化为 0 */</span>
 </span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">};</span><span class="w">      </span><span class="cm">/* 编译器推断长度为 4 */</span>
-</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="kt">size_t</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">sizeof</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="k">sizeof</span><span class="w"> </span><span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">sizeof</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="k">sizeof</span><span class="w"> </span><span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
 </span></code></pre></div>
-<p>合法下标为 <code>0</code> 到 <code>长度 - 1</code>。C 不做越界检查，越界读写是未定义行为。数组定义后不能整体赋值，也不能用 <code>==</code> 比较内容；应逐元素处理或调用适当库函数。</p>
+<p>按本课程使用的编译环境，定义数组时长度要写整型常量表达式，可以用符号常量，不能临时输入一个变量再写 <code>int a[n]</code>。</p>
+<p>长度为 <code>n</code> 的数组，合法下标只有 <code>0</code> 到 <code>n - 1</code>。C 不替我们查越界，写到 <code>a[n]</code> 已经出了数组。数组定义好后也不能整体赋值，比较内容时要逐个元素比。</p>
 <h3 id="92">9.2 二维数组</h3>
 <div class="language-c highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">matrix</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="w">    </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">},</span>
 </span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="w">    </span><span class="p">{</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">}</span>
 </span><span id="__span-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="p">};</span>
 </span></code></pre></div>
-<p>二维数组按行连续存储。<code>matrix[i][j]</code> 等价于 <code>*(*(matrix + i) + j)</code>。传给函数时，第一维长度可省略，但后续维度必须已知，这样编译器才能计算每一行的跨度：</p>
+<p>二维数组按行存放：第一行放完，紧接着才是第二行。<code>matrix[i][j]</code> 等价于 <code>*(*(matrix + i) + j)</code>。作为函数参数时第一维可以不写，但列数不能省，因为编译器要靠列数算“跨过一行”究竟跨多少元素：</p>
 <div class="language-c highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">print_matrix</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[][</span><span class="mi">3</span><span class="p">],</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">rows</span><span class="p">);</span>
 </span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="cm">/* 等价参数形式：void print_matrix(int (*a)[3], int rows); */</span>
 </span></code></pre></div>
 <h3 id="93">9.3 数组作为函数参数</h3>
-<p>函数形参中的 <code>int a[]</code> 会调整为 <code>int *a</code>，函数只收到首元素地址，不知道数组长度。因此长度要另作参数传入，在函数中对该形参使用 <code>sizeof a</code> 得到的是指针大小，不是整个数组大小。</p>
+<p>数组传进函数后只剩首元素地址，长度信息不会跟着过去，所以数组长度要另外传。形参虽然写成 <code>int a[]</code>，到函数里实际按 <code>int *a</code> 处理；此时 <code>sizeof a</code> 得到的是指针大小，不是原数组大小。</p>
 <p>若函数只读取数组，可写：</p>
 <div class="language-c highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="kt">double</span><span class="w"> </span><span class="nf">average</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">a</span><span class="p">[],</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">n</span><span class="p">);</span>
 </span></code></pre></div>
-<p><code>const</code> 能防止函数意外修改元素，也把接口意图写得更清楚。</p>
+<p>只读数组参数加上 <code>const</code>，一眼就能看出这个函数不会改数组内容。</p>
 <h3 id="94">9.4 字符数组与字符串</h3>
-<p>C 字符串是以空字符 <code>\0</code> 结尾的字符序列：</p>
+<p>C 字符串没有单独的字符串类型，就是一串以 <code>\0</code> 结尾的字符。有没有这个结尾，决定了它能不能安全地交给 <code>strlen</code>、<code>printf("%s")</code> 等字符串函数：</p>
 <div class="language-c highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="kt">char</span><span class="w"> </span><span class="n">s1</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;hello&quot;</span><span class="p">;</span><span class="w">         </span><span class="cm">/* 可修改数组，大小为 6 */</span>
 </span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">s2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;hello&quot;</span><span class="p">;</span><span class="w">    </span><span class="cm">/* 指向字符串字面量，不应修改 */</span>
 </span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="kt">char</span><span class="w"> </span><span class="n">s3</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="sc">&#39;h&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;e&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;l&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;l&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;o&#39;</span><span class="p">};</span><span class="w"> </span><span class="cm">/* 没有 \0，不是 C 字符串 */</span>
@@ -3763,9 +3735,9 @@
 </tr>
 </tbody>
 </table>
-<p><code>scanf("%s", s)</code> 遇空白停止，读取整行用 <code>fgets</code>。<code>gets</code> 无法限制长度，已从 C 标准中删除，不能使用。</p>
+<p><code>scanf("%s", s)</code> 一遇到空格就停，只适合读一个单词。要读整行用 <code>fgets</code>。旧代码里的 <code>gets</code> 没法限制长度，很容易越界，不要再用。</p>
 <h3 id="95">9.5 查找与排序</h3>
-<p><strong>顺序查找</strong>适用于一般表，逐项比较，时间复杂度为 <span class="arithmatex">\(O(n)\)</span>。<strong>二分查找</strong>只适用于有序表，每次排除一半区间，时间复杂度为 <span class="arithmatex">\(O(\log n)\)</span>：</p>
+<p><strong>顺序查找</strong>就是从头比到尾，一般数组都能用。<strong>二分查找</strong>快得多，但前提是数组已经有序。每一轮看中点：相等就结束，目标更大就丢掉左半边，否则丢掉右半边。</p>
 <div class="language-c highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="kt">int</span><span class="w"> </span><span class="nf">binary_search</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[],</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">key</span><span class="p">)</span>
 </span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="p">{</span>
 </span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">left</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
@@ -3778,46 +3750,47 @@
 </span><span id="__span-30-10"><a id="__codelineno-30-10" name="__codelineno-30-10" href="#__codelineno-30-10"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span>
 </span><span id="__span-30-11"><a id="__codelineno-30-11" name="__codelineno-30-11" href="#__codelineno-30-11"></a><span class="p">}</span>
 </span></code></pre></div>
-<p>课件涉及三种基础排序：</p>
+<p>三种基础排序不要只背名字，要记住每一轮结束后“哪一部分已经有序”：</p>
 <ul>
-<li>冒泡排序：相邻元素逆序就交换，每轮把一个极值送到末端；</li>
-<li>选择排序：每轮在未排序区间选择最小值，与区间首项交换；</li>
-<li>插入排序：把当前元素插入前面已经有序的部分。</li>
+<li>冒泡排序：相邻元素逆序就交换，一轮结束后最大值到了最右边；</li>
+<li>选择排序：从未排序区找最小值，放到这一段最前面；</li>
+<li>插入排序：左边始终有序，把当前元素向左插到合适位置。</li>
 </ul>
-<p>三者平均时间复杂度都是 <span class="arithmatex">\(O(n^2)\)</span>；插入排序对接近有序的小数组常较合适。写排序时要先明确内外层循环的不变量和下标范围。</p>
+<p>三者平均时间复杂度都是 <span class="arithmatex">\(O(n^2)\)</span>。读排序程序时先判断它维护的是哪一种“有序区”，内外层边界就容易看懂了。</p>
+<p>课件里的其他数组题也可以按“下标代表什么”来整理：有序表插入、删除时要先给元素腾位置或补空位；用数组做超长整数时，每个元素存一位或一段数字；数值与下标映射时，先找出两者的换算关系。递归找最大值和递归排序，则是把数组前 <span class="arithmatex">\(n\)</span> 项的问题缩成前 <span class="arithmatex">\(n-1\)</span> 项。</p>
 <h2 id="10">10. 指针</h2>
 <h3 id="101">10.1 基本概念</h3>
-<p>指针变量保存对象地址；<code>&amp;</code> 取得地址，<code>*</code> 通过地址访问对象。</p>
+<p>指针变量里存的是<strong>地址</strong>。<code>&amp;</code> 取得变量地址，<code>*</code> 再按这个地址找到变量：</p>
 <div class="language-c highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
 </span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x</span><span class="p">;</span>
 </span><span id="__span-31-3"><a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a><span class="o">*</span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w">             </span><span class="cm">/* x 变为 5 */</span>
 </span></code></pre></div>
-<p><code>int *p, q;</code> 中只有 <code>p</code> 是指针，<code>q</code> 是 <code>int</code>。未初始化指针不能解引用；不指向有效对象时应设为 <code>NULL</code>，但解引用 <code>NULL</code> 同样错误。</p>
+<p><code>int *p, q;</code> 中只有 <code>p</code> 是指针，<code>q</code> 仍然是普通 <code>int</code>。野指针不能解引用；暂时不指向对象时可设为 <code>NULL</code>，但 <code>NULL</code> 只是明确表示“没有指向”，照样不能写 <code>*p</code>。</p>
 <p><code>void *</code> 可以保存任意对象指针，转换回原类型后再解引用。指针类型不仅说明所指对象类型，也决定解引用方式和指针算术的步长。</p>
 <h3 id="102">10.2 指针运算与数组</h3>
-<p>若 <code>p</code> 指向数组元素，则 <code>p + 1</code> 指向下一个元素，地址增加 <code>sizeof *p</code> 个字节。只允许在同一数组（以及尾后一个位置）范围内进行指针加减和有序比较；尾后指针可比较但不能解引用。</p>
+<p>若 <code>p</code> 指向数组元素，<code>p + 1</code> 就指向下一个元素。实际地址增加多少字节由 <code>p</code> 的类型决定：增量是 <code>sizeof *p</code>，并不是固定加 1 个字节。</p>
 <p>在多数表达式中，数组名会转换为首元素指针：</p>
 <div class="language-c highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>
 </span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">;</span><span class="w">          </span><span class="cm">/* 与 &amp;a[0] 相同 */</span>
 </span><span id="__span-32-3"><a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="o">*</span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">i</span><span class="p">);</span><span class="w">    </span><span class="cm">/* 两种访问等价 */</span>
 </span></code></pre></div>
-<p>但 <code>sizeof a</code> 和 <code>&amp;a</code> 是例外。<code>&amp;a</code> 的类型是“指向整个数组的指针”，即 <code>int (*)[10]</code>，与 <code>int *</code> 不同。</p>
+<p>不过 <code>sizeof a</code> 和 <code>&amp;a</code> 是两个例外。<code>sizeof a</code> 算整个数组大小；<code>&amp;a</code> 取得的是整个数组的地址，类型为 <code>int (*)[10]</code>，不是普通的 <code>int *</code>。</p>
 <h3 id="103">10.3 指针数组、数组指针和二级指针</h3>
 <p>声明应从变量名向外读：</p>
 <div class="language-c highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span><span class="w">          </span><span class="cm">/* p 是数组，有 10 个 int * 元素：指针数组 */</span>
 </span><span id="__span-33-2"><a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a><span class="kt">int</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">q</span><span class="p">)[</span><span class="mi">10</span><span class="p">];</span><span class="w">        </span><span class="cm">/* q 是指针，指向含 10 个 int 的数组：数组指针 */</span>
 </span><span id="__span-33-3"><a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a><span class="kt">int</span><span class="w"> </span><span class="o">**</span><span class="n">r</span><span class="p">;</span><span class="w">             </span><span class="cm">/* r 指向 int *：二级指针 */</span>
 </span></code></pre></div>
-<p>二级指针常用于修改一个指针变量、处理指针数组或动态二维结构。二维数组不是 <code>int **</code>：它的各行连续，传参时应使用与列数匹配的数组指针。</p>
+<p>二维数组和 <code>int **</code> 不是一回事。二维数组的各行连续，传参时要用列数匹配的数组指针；<code>int **</code> 指向的是一个 <code>int *</code>，两者的内存结构并不一样。</p>
 <h3 id="104">10.4 动态内存</h3>
-<p><code>&lt;stdlib.h&gt;</code> 提供：</p>
+<p>动态数组开在堆上，用完要自己释放。相关函数都在 <code>&lt;stdlib.h&gt;</code>：</p>
 <ul>
 <li><code>malloc(bytes)</code>：申请指定字节数，内容未初始化；</li>
 <li><code>calloc(count, size)</code>：申请元素数组，并把所有字节置 0；</li>
 <li><code>realloc(ptr, new_size)</code>：调整内存块大小，地址可能改变；</li>
 <li><code>free(ptr)</code>：释放动态内存，<code>free(NULL)</code> 合法。</li>
 </ul>
-<div class="language-c highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">malloc</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">sizeof</span><span class="w"> </span><span class="o">*</span><span class="n">a</span><span class="p">);</span>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">sizeof</span><span class="w"> </span><span class="o">*</span><span class="n">a</span><span class="p">);</span>
 </span><span id="__span-34-2"><a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-34-3"><a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a><span class="w">    </span><span class="cm">/* 申请失败 */</span>
 </span><span id="__span-34-4"><a id="__codelineno-34-4" name="__codelineno-34-4" href="#__codelineno-34-4"></a><span class="p">}</span>
@@ -3827,27 +3800,28 @@
 </span><span id="__span-34-8"><a id="__codelineno-34-8" name="__codelineno-34-8" href="#__codelineno-34-8"></a><span class="n">free</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
 </span><span id="__span-34-9"><a id="__codelineno-34-9" name="__codelineno-34-9" href="#__codelineno-34-9"></a><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
 </span></code></pre></div>
-<p>在 C 中 <code>void *</code> 可自动转换为对象指针，不必给 <code>malloc</code> 返回值强制转换；省略转换还能及时暴露漏写 <code>&lt;stdlib.h&gt;</code> 的问题。计算申请大小时优先写 <code>sizeof *a</code>，类型改变后不易出错。</p>
-<p><code>realloc</code> 失败时原内存仍有效，因此要用临时指针接收：</p>
-<div class="language-c highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">tmp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">realloc</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">new_n</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">sizeof</span><span class="w"> </span><span class="o">*</span><span class="n">a</span><span class="p">);</span>
+<p>课件中的写法会把 <code>malloc</code> 返回的 <code>void *</code> 强制转换成目标指针类型。申请大小写成 <code>n * sizeof *a</code>，以后就算改了 <code>a</code> 的类型，这一行也不用跟着手改。</p>
+<p><code>realloc</code> 有个麻烦：扩容后地址可能改变，但失败时原来的内存又还在。因此先用临时指针接：</p>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">tmp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">realloc</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">new_n</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">sizeof</span><span class="w"> </span><span class="o">*</span><span class="n">a</span><span class="p">);</span>
 </span><span id="__span-35-2"><a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">tmp</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-35-3"><a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a><span class="w">    </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tmp</span><span class="p">;</span>
 </span><span id="__span-35-4"><a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a><span class="p">}</span>
 </span></code></pre></div>
-<p>常见内存错误有：泄漏、重复释放、释放后继续使用、越界、释放非动态内存。每一块成功申请的内存都应有清楚的所有者和唯一的释放位置。</p>
+<p>动态内存的错来来回回就这几种：申请后忘记释放、同一块内存释放两次、释放后还在用、访问越界、拿不是动态申请的地址去 <code>free</code>。写代码时顺着每个 <code>malloc</code> 找一次对应的 <code>free</code>，比较不容易漏。</p>
 <h3 id="105">10.5 字符串指针</h3>
 <div class="language-c highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="kt">char</span><span class="w"> </span><span class="n">a</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;abc&quot;</span><span class="p">;</span><span class="w">          </span><span class="cm">/* 数组内容可修改 */</span>
 </span><span id="__span-36-2"><a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;abc&quot;</span><span class="p">;</span><span class="w">     </span><span class="cm">/* 指针可改指向，字面量不可修改 */</span>
 </span></code></pre></div>
-<p>数组名不能重新赋值，指针变量可以。把字符串指针作为参数时，若函数不修改内容应写 <code>const char *</code>。</p>
+<p>数组名不能改成指向别处，指针变量可以。两者都能访问字符串，但不是同一种东西。函数只读字符串时，参数写成 <code>const char *</code>。</p>
 <h3 id="106">10.6 函数指针和返回指针的函数</h3>
 <div class="language-c highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="kt">double</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">y</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
 </span><span id="__span-37-2"><a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a>
 </span><span id="__span-37-3"><a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a><span class="kt">double</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">operation</span><span class="p">)(</span><span class="kt">double</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">add</span><span class="p">;</span>
 </span><span id="__span-37-4"><a id="__codelineno-37-4" name="__codelineno-37-4" href="#__codelineno-37-4"></a><span class="kt">double</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">operation</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="mf">3.0</span><span class="p">);</span>
 </span></code></pre></div>
-<p>函数指针可用于回调、按条件选择算法和函数表。函数指针数组写作 <code>double (*ops[4])(double, double)</code>。</p>
-<p>返回指针的函数写作 <code>int *find(...)</code>；不能返回局部自动变量的地址，但可以返回数组元素地址、动态内存地址、静态对象地址或由调用者传入的地址。</p>
+<p>函数指针最直观的用法是“把要调用的函数也当成参数传进去”。按条件选择不同运算、写回调函数时都会见到它。函数指针数组写作 <code>double (*ops[4])(double, double)</code>。</p>
+<p>课件最后的变步长梯形求积就是函数指针的一个用法：积分程序只负责不断减小步长并比较两次结果，被积函数通过函数指针传进来，于是同一套积分程序可以计算不同函数。</p>
+<p>返回指针的函数写作 <code>int *find(...)</code>。判断一个地址能不能返回，关键看函数结束后它指向的对象还在不在：局部自动变量已经没了，数组元素、动态内存、静态对象或调用者传入的对象仍可能有效。</p>
 <h3 id="107-main">10.7 <code>main</code> 的命令行参数</h3>
 <div class="language-c highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">argv</span><span class="p">[])</span>
 </span><span id="__span-38-2"><a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a><span class="p">{</span>
@@ -3855,10 +3829,10 @@
 </span><span id="__span-38-4"><a id="__codelineno-38-4" name="__codelineno-38-4" href="#__codelineno-38-4"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 </span><span id="__span-38-5"><a id="__codelineno-38-5" name="__codelineno-38-5" href="#__codelineno-38-5"></a><span class="p">}</span>
 </span></code></pre></div>
-<p><code>argv</code> 是字符串指针数组，<code>argv[argc]</code> 保证为 <code>NULL</code>。命令行参数都是字符串，需要用 <code>strtol</code>、<code>strtod</code> 等函数转换并检查错误。</p>
+<p><code>argv</code> 是字符串指针数组，每个 <code>argv[k]</code> 指向一个参数字符串，<code>argv[argc]</code> 为 <code>NULL</code>。处理命令行参数时通常从 <code>argv[1]</code> 开始，因为 <code>argv[0]</code> 留给程序名。</p>
 <h2 id="11_1">11. 结构体、联合体、枚举与链表</h2>
 <h3 id="111">11.1 结构体</h3>
-<p>结构体把不同类型的数据组织成一个整体：</p>
+<p>数组要求所有元素同类型，而结构体正好用来把不同类型的数据捆在一起。例如一个日期同时有年、月、日：</p>
 <div class="language-c highlight"><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="k">struct</span><span class="w"> </span><span class="nc">date</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-39-2"><a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">year</span><span class="p">;</span>
 </span><span id="__span-39-3"><a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">month</span><span class="p">;</span>
@@ -3868,13 +3842,14 @@
 </span><span id="__span-39-7"><a id="__codelineno-39-7" name="__codelineno-39-7" href="#__codelineno-39-7"></a><span class="k">struct</span><span class="w"> </span><span class="nc">date</span><span class="w"> </span><span class="n">today</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">2026</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">14</span><span class="p">};</span>
 </span><span id="__span-39-8"><a id="__codelineno-39-8" name="__codelineno-39-8" href="#__codelineno-39-8"></a><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d-%02d-%02d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">today</span><span class="p">.</span><span class="n">year</span><span class="p">,</span><span class="w"> </span><span class="n">today</span><span class="p">.</span><span class="n">month</span><span class="p">,</span><span class="w"> </span><span class="n">today</span><span class="p">.</span><span class="n">day</span><span class="p">);</span>
 </span></code></pre></div>
-<p><code>.</code> 用于对象，<code>-&gt;</code> 用于结构体指针，<code>p-&gt;member</code> 等价于 <code>(*p).member</code>。同类型结构体可以整体赋值、作为函数参数和返回值，但不能直接用 <code>==</code> 比较整个结构体。</p>
-<p>按值传递大结构体会复制全部成员；只读时常传 <code>const struct type *</code>，需要修改时传普通结构体指针。</p>
+<p><code>.</code> 跟在结构体对象后面，<code>-&gt;</code> 跟在结构体指针后面，<code>p-&gt;member</code> 就是 <code>(*p).member</code>。同类型结构体能整体赋值，也能作为函数参数和返回值；但 C 没有定义整个结构体的 <code>==</code>，比较时还是要看成员。</p>
+<p>结构体按值传参会复制全部成员。结构体很大时通常传指针：只读就加 <code>const</code>，要修改就传普通结构体指针。</p>
+<p>结构体成员本身还可以是结构体，也可以定义结构体数组。例如学生数组中的每个元素都是一份完整的学生记录。数组传给函数时仍按首元素地址处理，而单个结构体传参会把整个结构体复制一份，这两种情况不要混。</p>
 <h3 id="112">11.2 对齐与结构体大小</h3>
-<p>编译器通常在成员之间和结构体末尾加入填充字节，使成员按合适边界对齐，所以 <code>sizeof(struct)</code> 不一定等于各成员大小之和。成员顺序会影响总大小。</p>
-<p><code>#pragma pack</code> 能改变某些编译器的对齐规则，但它是实现相关功能；读写外部二进制格式时还要同时考虑字节序、类型宽度和浮点表示，不能简单把内存中的结构体原样写出就认为可跨平台。</p>
+<p><code>sizeof(结构体)</code> 经常比各成员大小简单相加更大，因为编译器会在成员之间塞入填充字节来满足对齐。成员顺序一换，结构体总大小也可能跟着变。</p>
+<p><code>#pragma pack</code> 可以调整某些编译器的对齐规则。不过结构体直接写进二进制文件后，仍然可能受到字节序、类型宽度和浮点表示影响，换一台机器未必还能原样读。</p>
 <h3 id="113">11.3 单链表</h3>
-<p>链表结点由数据域和指针域组成，结点在内存中不必连续：</p>
+<p>单链表的结点分成数据域和指针域。结点在内存中可以东一块西一块，全靠 <code>next</code> 把逻辑顺序串起来：</p>
 <div class="language-c highlight"><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="k">struct</span><span class="w"> </span><span class="nc">node</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-40-2"><a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">data</span><span class="p">;</span>
 </span><span id="__span-40-3"><a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a><span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">node</span><span class="w"> </span><span class="o">*</span><span class="n">next</span><span class="p">;</span>
@@ -3890,7 +3865,7 @@
 </span><span id="__span-41-7"><a id="__codelineno-41-7" name="__codelineno-41-7" href="#__codelineno-41-7"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">p</span><span class="p">;</span>
 </span><span id="__span-41-8"><a id="__codelineno-41-8" name="__codelineno-41-8" href="#__codelineno-41-8"></a><span class="p">}</span>
 </span></code></pre></div>
-<p>遍历时从头指针沿 <code>next</code> 前进，直到 <code>NULL</code>。删除结点时要先保存后继并正确改链，再释放被删结点；释放整条链表时同样不能在 <code>free(p)</code> 后再读取 <code>p-&gt;next</code>。</p>
+<p>遍历就是从头指针开始不断走 <code>next</code>，直到 <code>NULL</code>。链表题真正容易错的不是循环，而是改指针的顺序：旧的后继还没保存时不要先把链接断掉，<code>free(p)</code> 以后也不能再读 <code>p-&gt;next</code>。</p>
 <div class="language-c highlight"><pre><span></span><code><span id="__span-42-1"><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">clear</span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">node</span><span class="w"> </span><span class="o">**</span><span class="n">head</span><span class="p">)</span>
 </span><span id="__span-42-2"><a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a><span class="p">{</span>
 </span><span id="__span-42-3"><a id="__codelineno-42-3" name="__codelineno-42-3" href="#__codelineno-42-3"></a><span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">node</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="n">head</span><span class="p">;</span>
@@ -3902,24 +3877,25 @@
 </span><span id="__span-42-9"><a id="__codelineno-42-9" name="__codelineno-42-9" href="#__codelineno-42-9"></a><span class="w">    </span><span class="o">*</span><span class="n">head</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
 </span><span id="__span-42-10"><a id="__codelineno-42-10" name="__codelineno-42-10" href="#__codelineno-42-10"></a><span class="p">}</span>
 </span></code></pre></div>
-<p>数组支持 <span class="arithmatex">\(O(1)\)</span> 随机访问但中间插删需要搬移；链表按位置访问是 <span class="arithmatex">\(O(n)\)</span>，已知结点位置时插删只需修改指针。选择哪一种取决于主要操作，而不是谁“更高级”。课件还以链表表示多项式：每个结点保存系数、指数和下一项指针，运算时按指数合并同类项。</p>
+<p>要频繁按下标访问就偏向数组；已经拿到结点位置、又要经常插删时，链表更顺手。课件还用链表表示多项式：每个结点保存系数、指数和下一项指针，相加时按指数合并同类项。</p>
 <h3 id="114-typedef">11.4 联合体、枚举与 <code>typedef</code></h3>
-<p>联合体的所有成员共享同一段存储空间，大小足以容纳最大的成员，并满足最严格的对齐要求：</p>
+<p>联合体的成员共用同一块内存，写入一个成员会覆盖原来的内容。它的大小至少要装得下最大的那个成员：</p>
 <div class="language-c highlight"><pre><span></span><code><span id="__span-43-1"><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a><span class="k">union</span><span class="w"> </span><span class="nc">value</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-43-2"><a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
 </span><span id="__span-43-3"><a id="__codelineno-43-3" name="__codelineno-43-3" href="#__codelineno-43-3"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">d</span><span class="p">;</span>
 </span><span id="__span-43-4"><a id="__codelineno-43-4" name="__codelineno-43-4" href="#__codelineno-43-4"></a><span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">text</span><span class="p">[</span><span class="mi">20</span><span class="p">];</span>
 </span><span id="__span-43-5"><a id="__codelineno-43-5" name="__codelineno-43-5" href="#__codelineno-43-5"></a><span class="p">};</span>
 </span></code></pre></div>
-<p>同一时刻通常只有最后写入的成员有效。实际程序常配合一个枚举标签记录当前成员类型，形成“带标签联合体”。</p>
+<p>所以同一时刻通常只认最后写入的成员。实际使用时常再配一个枚举，专门记录“现在存的到底是哪一种数据”。</p>
 <div class="language-c highlight"><pre><span></span><code><span id="__span-44-1"><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a><span class="k">enum</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">RED</span><span class="p">,</span><span class="w"> </span><span class="n">GREEN</span><span class="p">,</span><span class="w"> </span><span class="n">BLUE</span><span class="w"> </span><span class="p">};</span>
 </span><span id="__span-44-2"><a id="__codelineno-44-2" name="__codelineno-44-2" href="#__codelineno-44-2"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">node</span><span class="w"> </span><span class="n">Node</span><span class="p">;</span>
 </span></code></pre></div>
-<p>枚举常量默认从 0 开始，也可显式赋值。<code>typedef</code> 只给已有类型取别名，不创建新的、彼此不兼容的类型。</p>
+<p>枚举常量默认从 0 开始，也可以自己指定数值。<code>typedef</code> 只是给已有类型换个短一点的名字，并没有创造一种全新的类型。</p>
 <h2 id="12_1">12. 文件</h2>
 <h3 id="121">12.1 文本文件、二进制文件与文件指针</h3>
-<p>文本文件以字符序列保存数据，便于阅读和跨平台交换，但读写时要做格式转换。二进制文件直接保存字节序列，通常更紧凑、更快，但可能受类型大小、字节序和数据布局影响。</p>
-<p>标准 I/O 使用 <code>FILE *</code> 表示流。打开文件后应检查是否成功，并在不再使用时关闭。</p>
+<p>文件操作的套路很固定：<strong>打开，检查，读写，关闭</strong>。哪一步失败都不能装作没看见。</p>
+<p>文本文件保存的是字符，人能直接看懂，但数字读写时要做格式转换。二进制文件直接保存字节，通常更紧凑，不过会受类型大小、字节序和数据布局影响。</p>
+<p>标准 I/O 用 <code>FILE *</code> 表示一个文件流。<code>fopen</code> 失败会返回 <code>NULL</code>，因此打开之后第一件事就是检查。</p>
 <h3 id="122">12.2 打开与关闭</h3>
 <div class="language-c highlight"><pre><span></span><code><span id="__span-45-1"><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a><span class="kt">FILE</span><span class="w"> </span><span class="o">*</span><span class="n">fp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fopen</span><span class="p">(</span><span class="s">&quot;data.txt&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;r&quot;</span><span class="p">);</span>
 </span><span id="__span-45-2"><a id="__codelineno-45-2" name="__codelineno-45-2" href="#__codelineno-45-2"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">fp</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -3933,7 +3909,7 @@
 </span><span id="__span-45-10"><a id="__codelineno-45-10" name="__codelineno-45-10" href="#__codelineno-45-10"></a><span class="w">    </span><span class="cm">/* 关闭或刷新失败 */</span>
 </span><span id="__span-45-11"><a id="__codelineno-45-11" name="__codelineno-45-11" href="#__codelineno-45-11"></a><span class="p">}</span>
 </span></code></pre></div>
-<p>常见模式：</p>
+<p>打开模式主要看两件事：要读还是要写，原文件要保留还是清空。</p>
 <table>
 <thead>
 <tr>
@@ -3968,35 +3944,30 @@
 </tr>
 </tbody>
 </table>
-<p>加 <code>b</code> 表示二进制模式，如 <code>rb</code>、<code>wb</code>。在 Unix 系统中两种模式通常无区别，在 Windows 中会影响换行等转换。</p>
+<p>后面加 <code>b</code> 就是二进制模式，如 <code>rb</code>、<code>wb</code>。在 Windows 中它会影响换行转换；Unix 下通常没有区别。</p>
+<p><code>w+</code> 和 <code>w+b</code> 都是“写、读”方式，区别在文本还是二进制；共同点是文件一打开，原内容就先被清空。需要保留旧数据时不能误用这两个模式。</p>
 <h3 id="123">12.3 文本读写</h3>
-<ul>
-<li><code>fprintf</code>、<code>fscanf</code>：格式化读写；</li>
-<li><code>fputc</code>、<code>fgetc</code>：单字符读写；</li>
-<li><code>fputs</code>、<code>fgets</code>：字符串或整行读写。</li>
-</ul>
+<p>文本读写和键盘输入输出很像，只是多了一个文件指针：<code>fprintf</code>、<code>fscanf</code> 负责格式化数据，<code>fputc</code>、<code>fgetc</code> 每次处理一个字符，<code>fputs</code>、<code>fgets</code> 处理字符串或一整行。</p>
 <div class="language-c highlight"><pre><span></span><code><span id="__span-46-1"><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">id</span><span class="p">;</span>
 </span><span id="__span-46-2"><a id="__codelineno-46-2" name="__codelineno-46-2" href="#__codelineno-46-2"></a><span class="kt">double</span><span class="w"> </span><span class="n">score</span><span class="p">;</span>
 </span><span id="__span-46-3"><a id="__codelineno-46-3" name="__codelineno-46-3" href="#__codelineno-46-3"></a><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">fscanf</span><span class="p">(</span><span class="n">fp</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;%d%lf&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">score</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-46-4"><a id="__codelineno-46-4" name="__codelineno-46-4" href="#__codelineno-46-4"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d %.1f</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">score</span><span class="p">);</span>
 </span><span id="__span-46-5"><a id="__codelineno-46-5" name="__codelineno-46-5" href="#__codelineno-46-5"></a><span class="p">}</span>
 </span></code></pre></div>
-<p>用返回值控制循环，不要用 <code>feof(fp)</code> 作为读取前提。读取结束后，可用 <code>feof(fp)</code> 区分正常到达文件末尾，用 <code>ferror(fp)</code> 判断 I/O 错误，<code>clearerr(fp)</code> 清除这两个状态标志。</p>
+<p>上面循环里的 <code>== 2</code> 不能省，它表示这一轮确实读到了学号和成绩两个数据。循环结束后，再用 <code>feof(fp)</code> 判断是不是正常读到文件末尾，用 <code>ferror(fp)</code> 看有没有 I/O 错误；<code>clearerr(fp)</code> 可以清掉这两个状态。</p>
+<p>格式化写文本时，数据之间要自己留空格、逗号或换行。连续写成 <code>fprintf(fp, "%d%lf", a, x)</code>，两个数可能直接粘在一起，之后就不一定能按原来的格式读回来。</p>
 <h3 id="124">12.4 二进制读写</h3>
+<p>二进制文件不做字符串转换，直接按“每个元素多大、一共有几个元素”读写：</p>
 <div class="language-c highlight"><pre><span></span><code><span id="__span-47-1"><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a><span class="kt">size_t</span><span class="w"> </span><span class="n">written</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fwrite</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">fp</span><span class="p">);</span>
 </span><span id="__span-47-2"><a id="__codelineno-47-2" name="__codelineno-47-2" href="#__codelineno-47-2"></a><span class="kt">size_t</span><span class="w"> </span><span class="n">read_n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fread</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">fp</span><span class="p">);</span>
 </span></code></pre></div>
-<p>返回值是成功读写的<strong>元素个数</strong>，不是字节数。若返回值小于请求数，应结合 <code>feof</code> 和 <code>ferror</code> 判断原因。</p>
+<p>因此 <code>fread</code>、<code>fwrite</code> 的返回值也是成功处理的<strong>元素个数</strong>，不是字节数。比如要求读 10 个 <code>int</code>，返回 7 就表示只读到 7 个完整元素。</p>
 <h3 id="125">12.5 文件定位与缓冲</h3>
-<ul>
-<li><code>rewind(fp)</code>：回到文件开头并清除错误状态；</li>
-<li><code>fseek(fp, offset, origin)</code>：相对 <code>SEEK_SET</code>、<code>SEEK_CUR</code> 或 <code>SEEK_END</code> 移动；</li>
-<li><code>ftell(fp)</code>：取得当前位置；</li>
-<li><code>fflush(fp)</code>：把输出缓冲区送往文件。</li>
-</ul>
-<p>标准 C 只规定 <code>fflush</code> 可用于输出流或最近执行输出操作的更新流；<code>fflush(stdin)</code> 不是清空键盘输入的可移植写法。文件位置和随机访问也要服从文本模式与二进制模式各自的限制。</p>
+<p><code>rewind(fp)</code> 让文件位置回到开头。要从任意位置移动就用 <code>fseek</code>，起点可以选 <code>SEEK_SET</code>、<code>SEEK_CUR</code> 或 <code>SEEK_END</code>；<code>ftell</code> 则用来查看当前位置。这几个函数放在一起记，比单独背函数名好记。</p>
+<p>文件刚写完时，位置通常已经在末尾。如果接下来还要从头读，先 <code>rewind</code> 或 <code>fseek</code>，否则第一次读取就可能失败。</p>
+<p><code>fflush(fp)</code> 做的是另一件事：把输出缓冲区真正写出去。课件里提到的 <code>fflush(stdin)</code> 在部分编译器上被当作清空输入，但这不是标准 C 的通用写法。</p>
 <h2 id="13">13. 位运算</h2>
-<p>位运算的对象必须是整数类型。实际做掩码和移位时优先使用无符号类型，避免符号扩展和溢出规则带来的麻烦。</p>
+<p>位运算就是直接对整数的二进制位动手。写掩码、做移位时尽量用无符号整数，规则更直观。</p>
 <h3 id="131">13.1 六种位运算</h3>
 <table>
 <thead>
@@ -4050,30 +4021,18 @@
 </span><span id="__span-48-9"><a id="__codelineno-48-9" name="__codelineno-48-9" href="#__codelineno-48-9"></a><span class="w">    </span><span class="cm">/* 测试某一位 */</span>
 </span><span id="__span-48-10"><a id="__codelineno-48-10" name="__codelineno-48-10" href="#__codelineno-48-10"></a><span class="p">}</span>
 </span></code></pre></div>
-<p>对无符号数，左移相当于在可表示范围内乘 <span class="arithmatex">\(2^k\)</span>，右移相当于除 <span class="arithmatex">\(2^k\)</span>。移位数为负数或不小于类型位数是未定义行为；负的有符号数右移结果由实现决定，有符号数左移还可能产生未定义行为。</p>
-<p>位运算符的优先级容易误判，例如应写 <code>(x &amp; mask) == 0</code>，不要省略括号。</p>
+<p>对无符号数，在没有移出有效位的前提下，左移 <span class="arithmatex">\(k\)</span> 位相当于乘 <span class="arithmatex">\(2^k\)</span>，右移相当于除 <span class="arithmatex">\(2^k\)</span>。移位数不能是负数，也不能大于等于类型本身的位数。负的有符号数移位规则不够统一，做位操作时避开它最省事。</p>
+<p>位运算的优先级很容易记错，<code>(x &amp; mask) == 0</code> 里的括号别省。</p>
+<p>检查某一位时要用掩码。例如判断第 3 位是否为 1，可以写 <code>if (x &amp; 0x08)</code>；不能写成 <code>x == 0x08</code>，因为 <code>x</code> 的其他位也可能同时为 1。</p>
 <h3 id="132">13.2 位段</h3>
-<p>结构体成员可指定所占位数：</p>
+<p>位段是在结构体成员后面写明要占几位：</p>
 <div class="language-c highlight"><pre><span></span><code><span id="__span-49-1"><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a><span class="k">struct</span><span class="w"> </span><span class="nc">status</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-49-2"><a id="__codelineno-49-2" name="__codelineno-49-2" href="#__codelineno-49-2"></a><span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="n">ready</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
 </span><span id="__span-49-3"><a id="__codelineno-49-3" name="__codelineno-49-3" href="#__codelineno-49-3"></a><span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="n">error</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
 </span><span id="__span-49-4"><a id="__codelineno-49-4" name="__codelineno-49-4" href="#__codelineno-49-4"></a><span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="n">mode</span><span class="w">  </span><span class="o">:</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
 </span><span id="__span-49-5"><a id="__codelineno-49-5" name="__codelineno-49-5" href="#__codelineno-49-5"></a><span class="p">};</span>
 </span></code></pre></div>
-<p>位段适合在同一实现内紧凑保存标志，但成员排列次序、跨存储单元方式和对齐均可能由实现决定，不宜直接拿它描述网络协议或可移植文件格式。对需要精确布局的数据，显式使用无符号整数和掩码通常更可靠。</p>
-<h2 id="_2">复习时应能独立完成的内容</h2>
-<p>学完本课程，至少应能不依赖模板完成这些工作：</p>
-<ol>
-<li>从输入、输出和边界条件出发写出顺序、分支、循环程序；</li>
-<li>看懂表达式的类型转换、短路规则和副作用，判断程序输出；</li>
-<li>用函数分解问题，解释值传递、作用域、存储期和递归过程；</li>
-<li>正确处理一维、二维数组和 C 字符串，实现查找与基础排序；</li>
-<li>画出指针、数组、动态内存之间的指向关系，避免越界和悬空指针；</li>
-<li>定义结构体并完成单链表的建立、遍历、插入、删除与释放；</li>
-<li>使用文本和二进制文件的打开、读写、定位与错误检查；</li>
-<li>用位掩码完成置位、清零、翻转和测试。</li>
-</ol>
-<p>程序题写完后，最后检查一遍：数组下标是否越界、字符串是否留了 <code>\0</code>、输入函数返回值是否检查、动态内存是否成对释放、每条分支和循环是否都能在边界数据下正确结束。很多问题并不出在算法本身，而是出在这些小地方。</p>
+<p>位段能紧凑地保存多个标志。不过成员究竟怎样排列、是否跨存储单元都可能随编译器改变，遇到必须精确规定每一位的文件或协议时，用无符号整数配合掩码更稳妥。</p>
 
 
 
