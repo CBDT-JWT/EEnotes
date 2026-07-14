@@ -4093,6 +4093,8 @@ g'(x)&amp;=\frac{\mu}{\ln(1+\mu)\left(1+\mu|x|/x_{\max}\right)}\\
 \mathrm{SNR}_q\approx\frac{3L^2}{\ln^2(1+\mu)}
 \]</div>
 <p>此时量化信噪比近似与输入分布无关。</p>
+<p><a class="glightbox" data-type="image" href="../assets/communication-quantization-companding.png"><img alt="均匀量化、压扩量化与压缩曲线" src="../assets/communication-quantization-companding.png" /></a></p>
+<p>左图给出等间隔的均匀量化阶梯；中图在压缩域均匀量化后再扩张，零点附近的门限明显更密；右图则画出了课件采用的<span class="arithmatex">\(A=87.6\)</span>与<span class="arithmatex">\(\mu=255\)</span>压缩曲线。两条曲线在小信号区都比直线更陡，正是小幅度信号得到更细量化间隔的原因。</p>
 <h3 id="_16">脉冲编码调制</h3>
 <p>脉冲编码调制（Pulse Code Modulation，PCM）是语音信号常用的数字化方式。电话语音先以<span class="arithmatex">\(f_s=8000\mathrm{Hz}\)</span>抽样，再用近似对数压扩完成量化和编码，每个抽样用<span class="arithmatex">\(8\mathrm{bit}\)</span>表示，因此输出码率为</p>
 <div class="arithmatex">\[
@@ -4190,6 +4192,8 @@ d(n)&amp;=\begin{cases}+\Delta,&amp;C(n)=1\\-\Delta,&amp;C(n)=0\end{cases}\\
 <div class="arithmatex">\[
 A\omega=\frac{\Delta}{T_s},\qquad \omega_c=\frac{\Delta}{AT_s}
 \]</div>
+<p><a class="glightbox" data-type="image" href="../assets/communication-delta-modulation.png"><img alt="增量调制的正常跟踪与斜率过载" src="../assets/communication-delta-modulation.png" /></a></p>
+<p>输入变化较慢时，重建阶梯会在原信号两侧来回跟踪；输入斜率超过<span class="arithmatex">\(\Delta/T_s\)</span>后，阶梯每个抽样周期只能上升一次，误差便会持续积累。这里是否过载取决于斜率，而不是信号本身的幅度。</p>
 <p>提高抽样率可以减小斜率过载，但会提高编码速率；增大步长<span class="arithmatex">\(\Delta\)</span>也能减小斜率过载，却会增加量化噪声。自适应增量调制在信号变化缓慢时采用较小步长，变化剧烈时采用较大步长，不过收发两端必须同步调整步长，系统同步设计更困难。</p>
 <h3 id="_18">差分脉冲编码调制</h3>
 <p>差分脉冲编码调制（Differential Pulse Code Modulation，DPCM）同样通过刻画信号变化来压缩。它与增量调制的主要区别是：反馈预测器可以采用一般滤波器，预测误差也不再只用<span class="arithmatex">\(1\mathrm{bit}\)</span>，而是用多比特量化。用一般的线性预测器表示，其基本关系为</p>
@@ -4252,6 +4256,8 @@ g(kT_s)=\begin{cases}1,&amp;k=0,\\0,&amp;k\ne0.\end{cases}
 \]</div>
 <p>这项条件只要求脉冲在整数倍符号周期处过零，并不要求各个脉冲在其余时刻互不重叠。</p>
 <p>眼图把许多段接收波形按符号周期对齐并叠加，可以直观看出 ISI。眼睛张得越开，最佳抽样时刻的噪声容限越大；最佳抽样点处的斜率反映系统对定时误差的敏感程度；交叉点的模糊则反映过零抖动和定时抖动。ISI 增大时，眼睛逐渐闭合，严重时不同电平在抽样点已经无法区分。</p>
+<p><a class="glightbox" data-type="image" href="../assets/communication-eye-diagram.png"><img alt="ISI较小时张开的眼图和ISI加重时闭合的眼图" src="../assets/communication-eye-diagram.png" /></a></p>
+<p>纵向虚线是最佳抽样时刻。左图在该处仍能清楚分开正、负电平；右图中前后符号的影响被带到同一抽样时刻，出现靠近判决门限的多组电平，眼睛随之闭合。</p>
 <h3 id="nyquist-isi">Nyquist 无 ISI 准则</h3>
 <p>时域无 ISI 条件也可以写成</p>
 <div class="arithmatex">\[
@@ -4309,6 +4315,8 @@ W=\frac{1+\alpha}{2T_s}=\frac{1+\alpha}{2}R_s,\qquad R_s=\frac{2W}{1+\alpha}
 \eta_b=\frac{R_s\log_2M}{W}=\frac{2\log_2M}{1+\alpha}
 \]</div>
 <p>较大的 <span class="arithmatex">\(\alpha\)</span> 让过渡带更宽、滤波器更容易实现，代价是带宽效率下降。</p>
+<p><a class="glightbox" data-type="image" href="../assets/communication-raised-cosine.png"><img alt="不同滚降系数下升余弦脉冲的频率响应和时域响应" src="../assets/communication-raised-cosine.png" /></a></p>
+<p>频域图把滚降系数的代价画得很直观：<span class="arithmatex">\(\alpha\)</span>越大，占用带宽越宽，过渡却越平缓。时域波形虽然不同，但都在非零整数倍<span class="arithmatex">\(T_s\)</span>处过零，因此抽样点仍满足无ISI条件。</p>
 <h3 id="_23">基带波形的功率谱</h3>
 <p>通信波形</p>
 <div class="arithmatex">\[
@@ -4455,7 +4463,10 @@ y_m(t)=\int_{-\infty}^{\infty}[a_ih(\tau)+n(\tau)]h_m(t-\tau)\,\mathrm d\tau
 <div class="arithmatex">\[
 h_m(t)=h^*(T_s-t)
 \]</div>
-<p>也就是说，匹配滤波器的冲激响应是已知信号的共轭、时间反转和延迟。实信号时共轭可以省略。其频域形式为</p>
+<p>也就是说，匹配滤波器的冲激响应是已知信号的共轭、时间反转和延迟。实信号时共轭可以省略。</p>
+<p><a class="glightbox" data-type="image" href="../assets/communication-matched-filter.png"><img alt="矩形脉冲下相关器与匹配滤波器的连续输出" src="../assets/communication-matched-filter.png" /></a></p>
+<p>以矩形脉冲为例，相关器输出在积分区间内单调上升，匹配滤波器输出则是三角形。两条连续时间波形并不相同，但在<span class="arithmatex">\(t=T_s\)</span>处都取得同一个判决统计量；匹配滤波器的峰值也正好落在这一抽样时刻。</p>
+<p>其频域形式为</p>
 <div class="arithmatex">\[
 H_m(f)=H^*(f)e^{-j2\pi fT_s}
 \]</div>
@@ -4630,7 +4641,10 @@ y=a+n,\qquad a=a_I+\mathrm ja_Q,\qquad n=n_I+\mathrm jn_Q
 <div class="arithmatex">\[
 a_m=A\exp(\mathrm j\phi_m),\qquad \phi_m=\frac{2\pi m}{M},\quad m=0,1,\ldots,M-1
 \]</div>
-<p>最小距离判决把复平面划成<span class="arithmatex">\(M\)</span>个扇区。高信噪比、<span class="arithmatex">\(M\)</span>较大时，可以把扇区两条边界局部近似成平行线。星座点到边界的垂直距离为<span class="arithmatex">\(A\sin(\pi/M)\)</span>，因此</p>
+<p>最小距离判决把复平面划成<span class="arithmatex">\(M\)</span>个扇区。相邻星座点的中垂线就是判决边界，星座点到最近边界的垂直距离为<span class="arithmatex">\(A\sin(\pi/M)\)</span>。</p>
+<p><a class="glightbox" data-type="image" href="../assets/communication-mpsk-decision.png"><img alt="8PSK星座、最小距离与扇形判决域" src="../assets/communication-mpsk-decision.png" /></a></p>
+<p>相邻星座点的中垂线构成扇形判决边界。图中的相邻点距离为<span class="arithmatex">\(d_{\min}=2A\sin(\pi/M)\)</span>，所以星座点到最近边界的距离恰好是<span class="arithmatex">\(d_{\min}/2\)</span>，这就是误符号率近似式中<span class="arithmatex">\(A\sin(\pi/M)\)</span>的几何来源。</p>
+<p>高信噪比、<span class="arithmatex">\(M\)</span>较大时，可以把扇区两条边界局部近似成平行线，两个相邻边界的差错贡献近似相同，因此</p>
 <div class="arithmatex">\[
 P_{s,\mathrm{MPSK}}\approx2Q\left(\sqrt{\frac{S}{N}}\sin\frac{\pi}{M}\right)
 \]</div>
@@ -4647,6 +4661,8 @@ P_{b,\mathrm{MPSK}}\approx\frac{2}{\log_2M}Q\left(\sqrt{2\log_2M\frac{E_b}{n_0}}
 <div class="arithmatex">\[
 S=\frac{2(M-1)}{3}A^2
 \]</div>
+<p><a class="glightbox" data-type="image" href="../assets/communication-qam-decision.png"><img alt="16QAM星座、判决门限及角点边点内点" src="../assets/communication-qam-decision.png" /></a></p>
+<p>方形QAM的判决域由相邻电平的中点划开。角点、边点和内点分别面对两条、三条和四条最近判决边界，所以精确计算符号错误率时必须分开计数。</p>
 <p>精确计算时要分别数角点、边界点和内部点；在高信噪比下忽略<span class="arithmatex">\(Q^2(\cdot)\)</span>项，可得</p>
 <div class="arithmatex">\[
 P_{s,\mathrm{MQAM}}\approx4\left(1-\frac{1}{\sqrt M}\right)Q\left(\sqrt{\frac{3}{2(M-1)}\frac{S}{N}}\right)
@@ -4701,7 +4717,10 @@ s_{\mathrm{QAM}}(t)=\left[\sum_na_ng(t-nT_s)\right]\cos\omega_ct-\left[\sum_nb_n
 <div class="arithmatex">\[
 s_b(t)=\sum_nc_ng(t-nT_s)
 \]</div>
-<p>于是MPSK、QAM以及一般线性载波调制都能放在同一个IQ框架下分析。接收端分别对两路做匹配滤波和抽样后，仍然得到</p>
+<p>于是MPSK、QAM以及一般线性载波调制都能放在同一个IQ框架下分析。</p>
+<p><a class="glightbox" data-type="image" href="../assets/communication-qam-receiver.png"><img alt="QAM相干解调的IQ两路接收结构" src="../assets/communication-qam-receiver.png" /></a></p>
+<p>本地载波一路直接送入<span class="arithmatex">\(I\)</span>路混频器，另一路移相<span class="arithmatex">\(90^\circ\)</span>后送入<span class="arithmatex">\(Q\)</span>路。两路分别匹配滤波并恢复电平，最后再合成一个复符号估计；载波同步一旦偏离，原本正交的两路就会互相串扰。</p>
+<p>两路匹配滤波和抽样后，仍然得到</p>
 <div class="arithmatex">\[
 \mathbf y=\mathbf a+\mathbf n
 \]</div>
@@ -4956,6 +4975,8 @@ v_{i,1}=u_i+u_{i-1}+u_{i-2},\qquad v_{i,2}=u_i+u_{i-2}
 </tbody>
 </table>
 <p>网格图又称Trellis图，它把状态图沿时间轴逐级展开。每一列列出当前可能的状态，相邻两列之间的边就是允许的状态转移。树状图适合枚举和观察距离，状态图适合分析状态转移与自由距，网格图则直接用于编码路径表示和Viterbi译码。</p>
+<p><a class="glightbox" data-type="image" href="../assets/communication-convolutional-trellis.png"><img alt="输入1101时二一三卷积码在网格图上的编码路径" src="../assets/communication-convolutional-trellis.png" /></a></p>
+<p>图中状态<span class="arithmatex">\(00,01,10,11\)</span>分别对应课件里的<span class="arithmatex">\(a,b,c,d\)</span>。红色路径从全零状态出发，依次经过<span class="arithmatex">\(01,11,10,01\)</span>，四条分支输出为<span class="arithmatex">\(11,01,01,00\)</span>，与前面的编码结果一致。</p>
 <h4 id="_41">自由距</h4>
 <p>卷积码也是线性码，所以两个编码序列之间的距离可转化为某个非零编码序列相对全零序列的重量。由于卷积码没有固定的码字边界，更有意义的距离参数是自由距：所有从全零状态出发、经过非零状态后第一次重新并入全零状态的路径中，输出汉明重量的最小值。</p>
 <div class="arithmatex">\[
@@ -5076,6 +5097,8 @@ T_{dca}'=\left\lceil\frac{T_{dca}}{T_m}\right\rceil T_m
 \hat a_i=\langle\mathbf x,\mathbf x_i\rangle=a_i
 \]</div>
 <p>频分、时分和码分的差别，本质上只是正交基选在了不同维度。</p>
+<p><a class="glightbox" data-type="image" href="../assets/communication-resource-allocation.png"><img alt="频分时分与码分的资源划分" src="../assets/communication-resource-allocation.png" /></a></p>
+<p>把通信资源画成“时间—频率”平面后，FD沿频率切成横条，TD沿时间切成竖条；CD中的用户占用同一块时频区域，接收端靠不同的码空间基把它们分开。</p>
 <h3 id="_45">固定接入</h3>
 <h4 id="_46">频分与时分</h4>
 <p>频分多址（FDMA）把总带宽切成若干互不重叠的子频带，每个用户占用一个载频。各用户可以连续发送，时钟同步要求不高，但频带之间要留保护间隔，滤波器和信道非线性也会影响相邻用户。</p>
@@ -5140,6 +5163,8 @@ P_0=\mathrm e^{-G},\qquad S=G\mathrm e^{-G}
 G^*=1,\qquad S_{\max}=\frac{1}{\mathrm e}\approx0.368
 \]</div>
 <p>时隙化把最高利用率提高了一倍，代价是所有站点必须同步。一次尝试到成功所需的次数服从几何分布；在时隙ALOHA中，其均值为<span class="arithmatex">\(\mathrm e^G\)</span>。</p>
+<p><a class="glightbox" data-type="image" href="../assets/communication-aloha-throughput.png"><img alt="纯ALOHA与时隙ALOHA的吞吐量曲线" src="../assets/communication-aloha-throughput.png" /></a></p>
+<p>两条曲线都不是负载越大越好：超过峰值以后，新尝试带来的冲突多于成功帧，吞吐量反而下降。时隙化把危险区减半，峰值便从<span class="arithmatex">\((0.5,1/(2\mathrm e))\)</span>提高到<span class="arithmatex">\((1,1/\mathrm e)\)</span>。</p>
 <h4 id="csma">CSMA与冲突处理</h4>
 <p>ALOHA发送前不看信道是否空闲。载波监听多路访问（CSMA）先监听再决定发送：</p>
 <ul>
@@ -5198,6 +5223,8 @@ MN^2+NM^2=MN(M+N)
 d_x(y)=\min_{p:x\leadsto y}\sum_{(u,v)\in p}c(u,v)
 \]</div>
 <p>路由算法给出计算规则，路由协议则规定各节点怎样交换信息并分布式地实现算法。</p>
+<p><a class="glightbox" data-type="image" href="../assets/communication-switching-routing.png"><img alt="多级交换结构与最短路径树" src="../assets/communication-switching-routing.png" /></a></p>
+<p>左图对比单级交叉开关和两级结构：分级后开关数由<span class="arithmatex">\((MN)^2\)</span>降为<span class="arithmatex">\(MN(M+N)\)</span>，但要接受更复杂的控制和内部阻塞。右图沿用课件的带权拓扑，彩色边是从<span class="arithmatex">\(u\)</span>出发得到的最短路径树，节点旁的<span class="arithmatex">\(d\)</span>给出累计路径代价。</p>
 <h3 id="_54">生成树协议</h3>
 <p>生成树包含全部节点，任意两点之间只有一条路径，因而结构简单、没有环路并且便于广播；代价是部分链路不能被利用。生成树协议先选择ID最小的节点作为根，再让各节点寻找跳数最少的到根路径。节点通告可概括成三元组</p>
 <div class="arithmatex">\[
@@ -5257,6 +5284,8 @@ W_{\mathrm{send}}=\min(\mathrm{cwnd},\mathrm{rwnd})
 <p>路由器线路卡要完成包转发、缓存、过滤和链路调度。缓存能吸收短时突发，却不能无限增大：缓存太小容易丢包，太大又会把排队时延推高。因此队列管理既要决定何时丢、丢哪个包，也要决定下一步发送哪个包。</p>
 <p>最简单的方案是FIFO加队尾丢弃（Drop-Tail）：分组按到达顺序发送，队列满时丢掉新到分组。它实现容易，却要等缓存完全填满才给出拥塞信号。多个TCP连接可能同时看到丢包、同时减小窗口，之后又同时增长，形成全局同步。</p>
 <p>提前随机丢包的思路，是在队列尚未满时就随机丢弃少量分组。丢弃概率随平均队列长度增加，队列满时取<span class="arithmatex">\(1\)</span>。发送速率越高的连接，到达的分组越多，被提前选中的概率也越高；先让少数连接减速，可以避免等到队列溢出时让大量连接同时发现丢包。</p>
+<p><a class="glightbox" data-type="image" href="../assets/communication-congestion-red.png"><img alt="TCP拥塞窗口变化与RED丢包概率" src="../assets/communication-congestion-red.png" /></a></p>
+<p>左图把课件中的窗口过程连起来：慢启动到门限后改为线性增长，超时后<span class="arithmatex">\(cwnd\)</span>回到<span class="arithmatex">\(1\)</span>，门限更新为原窗口的一半。右图对应随机早期检测（RED）：平均队列较短时不丢包，随后逐步提高提前丢包概率，队列满时概率达到<span class="arithmatex">\(1\)</span>。</p>
 <p>调度策略决定队首之后究竟服务哪一类流：</p>
 <ul>
 <li>FIFO最简单，但不能照顾实时业务的低时延需求。</li>
