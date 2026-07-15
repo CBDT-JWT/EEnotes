@@ -77,19 +77,19 @@ x(t)\delta(t-t_0)=x(t_0)\delta(t-t_0),\qquad x(t)*\delta(t-t_0)=x(t-t_0)
 $$
 
 $$
-e^{j\Omega_0t}\quad\xleftrightarrow{\mathrm{FT}}\quad2\pi\delta(\Omega-\Omega_0)
+e^{j\Omega_0t}\quad\overset{\mathrm{FT}}{\longleftrightarrow}\quad2\pi\delta(\Omega-\Omega_0)
 $$
 
 以及时域相乘对应频域卷积：
 
 $$
-x(t)y(t)\quad\xleftrightarrow{\mathrm{FT}}\quad\frac{1}{2\pi}X(j\Omega)*Y(j\Omega)
+x(t)y(t)\quad\overset{\mathrm{FT}}{\longleftrightarrow}\quad\frac{1}{2\pi}X(j\Omega)*Y(j\Omega)
 $$
 
 若 $x_p(t)$ 以 $T_0$ 为周期，傅里叶级数系数与线谱为
 
 $$
-a_k=\frac{1}{T_0}\int_{T_0}x_p(t)e^{-jk\Omega_0t}\,\mathrm dt,qquad
+a_k=\frac{1}{T_0}\int_{T_0}x_p(t)e^{-jk\Omega_0t}\,\mathrm dt,\qquad
 X_p(j\Omega)=2\pi\sum_{k=-\infty}^{\infty}a_k\delta(\Omega-k\Omega_0)
 $$
 
@@ -97,7 +97,7 @@ $$
 
 $$
 s(t)=\sum_{n=-\infty}^{\infty}\delta(t-nT_s)
-\quad\xleftrightarrow{\mathrm{FT}}\quad
+\quad\overset{\mathrm{FT}}{\longleftrightarrow}\quad
 S(j\Omega)=\frac{2\pi}{T_s}\sum_{k=-\infty}^{\infty}\delta(\Omega-k\Omega_s)
 $$
 
@@ -535,7 +535,7 @@ $$
 右边指数序列与矩形窗的常用变换为
 
 $$
-a^nu[n]\quad\xleftrightarrow{\mathrm{DTFT}}\quad\frac{1}{1-ae^{-j\omega}},\qquad |a|<1
+a^nu[n]\quad\overset{\mathrm{DTFT}}{\longleftrightarrow}\quad\frac{1}{1-ae^{-j\omega}},\qquad |a|<1
 $$
 
 其幅度为
@@ -547,7 +547,7 @@ $$
 例如 $a=0.5$ 时峰值在 $\omega=0$，$a=-0.5$ 时峰值移到 $\omega=\pm\pi$。
 
 $$
-R_N[n]\quad\xleftrightarrow{\mathrm{DTFT}}\quad
+R_N[n]\quad\overset{\mathrm{DTFT}}{\longleftrightarrow}\quad
 e^{-j\omega(N-1)/2}\frac{\sin(N\omega/2)}{\sin(\omega/2)}
 $$
 
@@ -581,7 +581,7 @@ $$
 满足
 
 $$
-r_{xy}[m]\quad\xleftrightarrow{\mathrm{DTFT}}\quad X(e^{j\omega})Y^*(e^{j\omega})
+r_{xy}[m]\quad\overset{\mathrm{DTFT}}{\longleftrightarrow}\quad X(e^{j\omega})Y^*(e^{j\omega})
 $$
 
 自相关对应功率谱密度，即 Wiener-Khinchin 关系。Parseval 等式为
@@ -613,21 +613,21 @@ $$
 几个特殊周期序列的 DTFT 为
 
 $$
-1\quad\xleftrightarrow{\mathrm{DTFT}}\quad2\pi\sum_{k=-\infty}^{\infty}\delta(\omega-2\pi k)
+1\quad\overset{\mathrm{DTFT}}{\longleftrightarrow}\quad2\pi\sum_{k=-\infty}^{\infty}\delta(\omega-2\pi k)
 $$
 
 $$
-e^{j\omega_0n}\quad\xleftrightarrow{\mathrm{DTFT}}\quad
+e^{j\omega_0n}\quad\overset{\mathrm{DTFT}}{\longleftrightarrow}\quad
 2\pi\sum_{k=-\infty}^{\infty}\delta(\omega-\omega_0-2\pi k)
 $$
 
 $$
-\cos(\omega_0n+\phi)\quad\xleftrightarrow{\mathrm{DTFT}}\quad\pi\sum_{k=-\infty}^{\infty}\left[e^{j\phi}\delta(\omega-\omega_0-2\pi k)+e^{-j\phi}\delta(\omega+\omega_0-2\pi k)\right]
+\cos(\omega_0n+\phi)\quad\overset{\mathrm{DTFT}}{\longleftrightarrow}\quad\pi\sum_{k=-\infty}^{\infty}\left[e^{j\phi}\delta(\omega-\omega_0-2\pi k)+e^{-j\phi}\delta(\omega+\omega_0-2\pi k)\right]
 $$
 
 $$
 p_N[n]=\sum_{r=-\infty}^{\infty}\delta[n-rN]
-\quad\xleftrightarrow{\mathrm{DTFT}}\quad
+\quad\overset{\mathrm{DTFT}}{\longleftrightarrow}\quad
 \frac{2\pi}{N}\sum_{k=-\infty}^{\infty}\delta\!\left(\omega-\frac{2\pi k}{N}\right)
 $$
 
@@ -722,22 +722,22 @@ $\Phi_N$ 是周期的 Dirichlet 插值核，在本采样点取 1，在其余 DFT
 常用的基本变换对包括
 
 $$
-\delta[((n-n_0))_N]\quad\xleftrightarrow{\mathrm{DFT}}\quad W_N^{kn_0}
+\delta[((n-n_0))_N]\quad\overset{\mathrm{DFT}}{\longleftrightarrow}\quad W_N^{kn_0}
 $$
 
 $$
-1\quad\xleftrightarrow{\mathrm{DFT}}\quad N\delta[((k))_N]
+1\quad\overset{\mathrm{DFT}}{\longleftrightarrow}\quad N\delta[((k))_N]
 $$
 
 $$
-W_N^{-k_0n}\quad\xleftrightarrow{\mathrm{DFT}}\quad N\delta[((k-k_0))_N]
+W_N^{-k_0n}\quad\overset{\mathrm{DFT}}{\longleftrightarrow}\quad N\delta[((k-k_0))_N]
 $$
 
 其中 $((n))_N$ 表示以 $N$ 为模的下标。
 
 ### 循环移位、卷积与相关
 
-设 $x[n]\xleftrightarrow{N}X[k]$、$y[n]\xleftrightarrow{N}Y[k]$，主要性质为：
+设 $x[n]\overset{N}{\longleftrightarrow}X[k]$、$y[n]\overset{N}{\longleftrightarrow}Y[k]$，主要性质为：
 
 | 时域操作 | 频域结果 |
 |---|---|
@@ -780,7 +780,7 @@ $$
 并满足
 
 $$
-r_{xy}^{(N)}[m]\quad\xleftrightarrow{N}\quad X[k]Y^*[k]
+r_{xy}^{(N)}[m]\quad\overset{N}{\longleftrightarrow}\quad X[k]Y^*[k]
 $$
 
 要得到有限长序列的线性相关，同样需要补足避免循环折叠。DFT 的 Parseval 等式为
@@ -794,7 +794,7 @@ $$
 DFT 还具有对偶性：
 
 $$
-x[n]\xleftrightarrow{N}X[k]\quad\Longrightarrow\quad X[n]\xleftrightarrow{N}N x[((-k))_N]
+x[n]\overset{N}{\longleftrightarrow}X[k]\quad\Longrightarrow\quad X[n]\overset{N}{\longleftrightarrow}N x[((-k))_N]
 $$
 
 实序列的 DFT 共轭对称，即 $X[N-k]=X^*[k]$。当 $N$ 为偶数时，$X[0]$ 与 $X[N/2]$ 必为实数，只需保存或计算略多于半个频谱。实偶、实奇、虚偶、虚奇分量仍分别对应实偶、纯虚奇、纯虚偶、实奇的频谱分量。
@@ -825,7 +825,7 @@ $$
 几个直接可用的特值和共轭关系为
 
 $$
-W_N^0=W_N^{kN}=1,\qquad W_N^{N/2}=-1,\qquad W_N^{N/4}=-j,\qquad W_N^{3N/4}=j,qquad (W_N^k)^*=W_N^{-k}
+W_N^0=W_N^{kN}=1,\qquad W_N^{N/2}=-1,\qquad W_N^{N/4}=-j,\qquad W_N^{3N/4}=j,\qquad (W_N^k)^*=W_N^{-k}
 $$
 
 当 $N=2^m$ 时，按时间下标奇偶拆分可得基 2 时间抽取形式：
@@ -852,9 +852,13 @@ $$
 
 它不需要乘法，只需两次复加减。
 
+![基 2 DIT 与 DIF 蝶形运算](assets/dsp_fft_butterflies.png)
+
 时间抽取的原位迭代实现通常以位倒序输入、自然顺序输出。若 $n$ 的 $m$ 位二进制表示为 $b_{m-1}\cdots b_1b_0$，位倒序下标就是 $b_0b_1\cdots b_{m-1}$。
 
 $N=8$ 时自然序 $0,1,2,3,4,5,6,7$ 的位倒序为 $0,4,2,6,1,5,3,7$；$N=16$ 时为 $0,8,4,12,2,10,6,14,1,9,5,13,3,11,7,15$。
+
+![8 点基 2 DIT FFT 的三级信号流](assets/dsp_fft_8point_flow.png)
 
 按频率下标奇偶拆分则得到基 2 频率抽取：
 
@@ -1403,7 +1407,7 @@ $$
 有理函数更常用部分分式展开。若分子次数不低于分母，先做长除法，把多项式部分借助
 
 $$
-z^{-m}\quad\xleftrightarrow{\mathcal Z}\quad\delta[n-m]
+z^{-m}\quad\overset{\mathcal Z}{\longleftrightarrow}\quad\delta[n-m]
 $$
 
 直接还原，剩余真分式再按极点拆开。单极点项使用
@@ -1422,13 +1426,13 @@ $$
 对应的基本变换对为
 
 $$
-\frac{z}{z-p}\quad\xleftrightarrow{\mathcal Z}\quad\begin{cases}p^nu[n],&|z|>|p|\\-p^nu[-n-1],&|z|<|p|\end{cases}
+\frac{z}{z-p}\quad\overset{\mathcal Z}{\longleftrightarrow}\quad\begin{cases}p^nu[n],&|z|>|p|\\-p^nu[-n-1],&|z|<|p|\end{cases}
 $$
 
 若有 $m$ 重极点，则
 
 $$
-\frac{z}{(z-p)^m}\quad\xleftrightarrow{\mathcal Z}\quad\begin{cases}\dfrac{n(n-1)\cdots(n-m+2)}{(m-1)!}p^{n-m+1}u[n],&|z|>|p|\\-\dfrac{n(n-1)\cdots(n-m+2)}{(m-1)!}p^{n-m+1}u[-n-1],&|z|<|p|\end{cases}
+\frac{z}{(z-p)^m}\quad\overset{\mathcal Z}{\longleftrightarrow}\quad\begin{cases}\dfrac{n(n-1)\cdots(n-m+2)}{(m-1)!}p^{n-m+1}u[n],&|z|>|p|\\-\dfrac{n(n-1)\cdots(n-m+2)}{(m-1)!}p^{n-m+1}u[-n-1],&|z|<|p|\end{cases}
 $$
 
 每一项取右边还是左边形式必须由总 ROC 决定。例如
@@ -1491,7 +1495,7 @@ $$
 
 ### Z 变换的性质
 
-设 $x[n]\xleftrightarrow{\mathcal Z}X(z)$，常用性质如下：
+设 $x[n]\overset{\mathcal Z}{\longleftrightarrow}X(z)$，常用性质如下：
 
 | 时域操作 | Z 域结果 | ROC 说明 |
 |---|---|---|
@@ -2839,6 +2843,8 @@ H(e^{j\omega})=\begin{cases}L,&|\omega|\leq\min(\pi/L,\pi/M)\\0,&\text{其他}
 \end{cases}
 $$
 
+![抽取、内插与有理倍采样率转换框图](assets/dsp_multirate_blocks.png)
+
 升、降采样都是线性时变操作，不能任意交换。以 $3/2$ 转换且输入谱铺满 $[-\pi,\pi]$ 为例，先 $\uparrow3$、滤到 $\pi/3$、再 $\downarrow2$，最终谱可到 $2\pi/3$；若先 $\downarrow2$，为防混叠必须先滤到 $\pi/2$，随后再升采样，最终只到 $\pi/3$，两条链路丢失的信息不同。
 
 ### 交换恒等式、多级与多相实现
@@ -2864,6 +2870,8 @@ H(z)\longrightarrow\uparrow L\quad\equiv\quad\uparrow L\longrightarrow H(z^L)
 $$
 
 它们把昂贵滤波搬到低采样率一侧。
+
+![抽取与内插的 Noble 恒等式](assets/dsp_noble_identities.png)
 
 若总抽取率分解为
 
@@ -2904,6 +2912,8 @@ $$
 $$
 \frac{NR}{M}
 $$
+
+![直接抽取器与多相抽取器](assets/dsp_polyphase_decimator.png)
 
 整数倍内插也可按同样方式在低速侧计算各个相位，只生成实际需要的非零输出，而不对插入的零作无用乘法。
 

@@ -18,6 +18,7 @@ matplotlib.use("Agg")
 
 import matplotlib.pyplot as plt
 import numpy as np
+from matplotlib.patches import Circle, FancyBboxPatch
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -84,6 +85,79 @@ def save(fig: plt.Figure, filename: str) -> None:
         pad_inches=0.12,
     )
     plt.close(fig)
+
+
+def diagram_axes(ax: plt.Axes, title: str) -> None:
+    """Prepare an axis for a transparent signal-flow diagram."""
+
+    ax.set(xlim=(0, 1), ylim=(0, 1))
+    ax.set_title(title, color=INK, pad=10)
+    ax.set_axis_off()
+
+
+def diagram_arrow(
+    ax: plt.Axes,
+    start: tuple[float, float],
+    end: tuple[float, float],
+    *,
+    color: str = INK,
+    linewidth: float = 1.8,
+) -> None:
+    """Draw one directed signal path."""
+
+    ax.annotate(
+        "",
+        xy=end,
+        xytext=start,
+        arrowprops={
+            "arrowstyle": "-|>",
+            "color": color,
+            "linewidth": linewidth,
+            "shrinkA": 0,
+            "shrinkB": 0,
+            "mutation_scale": 11,
+        },
+    )
+
+
+def diagram_block(
+    ax: plt.Axes,
+    center: tuple[float, float],
+    label: str,
+    *,
+    width: float = 0.16,
+    height: float = 0.18,
+    color: str = BLUE,
+    fontsize: float = 11,
+) -> None:
+    """Draw a labeled processing block with a transparent fill."""
+
+    x, y = center
+    patch = FancyBboxPatch(
+        (x - width / 2, y - height / 2),
+        width,
+        height,
+        boxstyle="round,pad=0.015,rounding_size=0.018",
+        facecolor="none",
+        edgecolor=color,
+        linewidth=1.9,
+    )
+    ax.add_patch(patch)
+    ax.text(x, y, label, ha="center", va="center", color=color, fontsize=fontsize)
+
+
+def diagram_node(
+    ax: plt.Axes,
+    center: tuple[float, float],
+    label: str,
+    *,
+    color: str,
+) -> None:
+    """Draw a circular adder or subtractor node."""
+
+    node = Circle(center, 0.047, facecolor="none", edgecolor=color, linewidth=1.9)
+    ax.add_patch(node)
+    ax.text(*center, label, ha="center", va="center", color=color, fontsize=13)
 
 
 def triangular_spectrum(f: np.ndarray, center: float, bandwidth: float) -> np.ndarray:
@@ -871,6 +945,406 @@ def figure_noise_shaping() -> None:
     save(fig, "dsp_noise_shaping.png")
 
 
+def figure_fft_butterflies() -> None:
+    fig, axes = plt.subplots(1, 2, figsize=(11.8, 4.2), constrained_layout=True)
+
+    dit = axes[0]
+    diagram_axes(dit, "Radix-2 DIT butterfly")
+    upper_y, lower_y = 0.72, 0.28
+    dit.text(0.01, upper_y, r"$E[k]$", ha="left", va="center", color=BLUE, fontsize=11)
+    dit.text(0.01, lower_y, r"$O[k]$", ha="left", va="center", color=ORANGE, fontsize=11)
+    diagram_arrow(dit, (0.13, upper_y), (0.67, upper_y), color=BLUE)
+    diagram_arrow(dit, (0.13, upper_y), (0.67, lower_y), color=BLUE)
+    diagram_arrow(dit, (0.13, lower_y), (0.22, lower_y), color=ORANGE)
+    diagram_block(
+        dit,
+        (0.31, lower_y),
+        r"$W_N^k$",
+        width=0.16,
+        height=0.16,
+        color=ORANGE,
+    )
+    diagram_arrow(dit, (0.40, lower_y), (0.67, upper_y), color=ORANGE)
+    diagram_arrow(dit, (0.40, lower_y), (0.67, lower_y), color=ORANGE)
+    diagram_node(dit, (0.72, upper_y), "+", color=TEAL)
+    diagram_node(dit, (0.72, lower_y), "-", color=PURPLE)
+    diagram_arrow(dit, (0.77, upper_y), (0.95, upper_y), color=TEAL)
+    diagram_arrow(dit, (0.77, lower_y), (0.95, lower_y), color=PURPLE)
+    dit.text(
+        0.99,
+        upper_y,
+        r"$X[k]$",
+        ha="right",
+        va="bottom",
+        color=TEAL,
+        fontsize=11,
+    )
+    dit.text(
+        0.99,
+        lower_y,
+        r"$X[k+N/2]$",
+        ha="right",
+        va="bottom",
+        color=PURPLE,
+        fontsize=11,
+    )
+    dit.text(
+        0.31,
+        0.10,
+        "twiddle before add/subtract",
+        ha="center",
+        color=INK,
+        fontsize=9,
+    )
+
+    dif = axes[1]
+    diagram_axes(dif, "Radix-2 DIF butterfly")
+    dif.text(0.01, upper_y, r"$x[n]$", ha="left", va="center", color=BLUE, fontsize=10.5)
+    dif.text(0.01, lower_y, r"$x[n+N/2]$", ha="left", va="center", color=ORANGE, fontsize=10.5)
+    diagram_arrow(dif, (0.18, upper_y), (0.40, upper_y), color=BLUE)
+    diagram_arrow(dif, (0.18, upper_y), (0.40, lower_y), color=BLUE)
+    diagram_arrow(dif, (0.18, lower_y), (0.40, upper_y), color=ORANGE)
+    diagram_arrow(dif, (0.18, lower_y), (0.40, lower_y), color=ORANGE)
+    diagram_node(dif, (0.45, upper_y), "+", color=TEAL)
+    diagram_node(dif, (0.45, lower_y), "-", color=PURPLE)
+    diagram_arrow(dif, (0.50, upper_y), (0.95, upper_y), color=TEAL)
+    diagram_arrow(dif, (0.50, lower_y), (0.62, lower_y), color=PURPLE)
+    diagram_block(
+        dif,
+        (0.71, lower_y),
+        r"$W_N^n$",
+        width=0.16,
+        height=0.16,
+        color=ORANGE,
+    )
+    diagram_arrow(dif, (0.80, lower_y), (0.95, lower_y), color=ORANGE)
+    dif.text(
+        0.99,
+        upper_y,
+        r"$g_1[n]$",
+        ha="right",
+        va="bottom",
+        color=TEAL,
+        fontsize=11,
+    )
+    dif.text(
+        0.99,
+        lower_y,
+        r"$g_2[n]$",
+        ha="right",
+        va="bottom",
+        color=ORANGE,
+        fontsize=11,
+    )
+    dif.text(
+        0.71,
+        0.10,
+        "twiddle after add/subtract",
+        ha="center",
+        color=INK,
+        fontsize=9,
+    )
+
+    save(fig, "dsp_fft_butterflies.png")
+
+
+def figure_multirate_blocks() -> None:
+    fig, ax = plt.subplots(figsize=(11.8, 6.4), constrained_layout=True)
+    diagram_axes(ax, "Basic multirate processing chains")
+
+    rows = (0.79, 0.50, 0.21)
+    ax.text(0.02, 0.91, "Decimation", color=INK, fontsize=11, weight="bold")
+    ax.text(0.02, 0.62, "Interpolation", color=INK, fontsize=11, weight="bold")
+    ax.text(0.02, 0.33, "Rational rate conversion", color=INK, fontsize=11, weight="bold")
+
+    y = rows[0]
+    ax.text(0.03, y, r"$x[n]$", ha="left", va="center", color=INK, fontsize=11)
+    diagram_arrow(ax, (0.10, y), (0.26, y))
+    diagram_block(ax, (0.35, y), r"$H_{aa}(z)$", color=BLUE)
+    diagram_arrow(ax, (0.44, y), (0.55, y))
+    diagram_block(ax, (0.63, y), r"$\downarrow M$", width=0.14, color=ORANGE)
+    diagram_arrow(ax, (0.71, y), (0.94, y))
+    ax.text(0.97, y, r"$y[n]$", ha="right", va="center", color=INK, fontsize=11)
+    ax.text(0.35, y - 0.13, "anti-alias LPF", ha="center", color=INK, fontsize=9)
+    ax.text(0.17, y - 0.07, r"$f_s$", ha="center", color=INK, fontsize=9)
+    ax.text(0.83, y - 0.07, r"$f_s/M$", ha="center", color=INK, fontsize=9)
+
+    y = rows[1]
+    ax.text(0.03, y, r"$x[n]$", ha="left", va="center", color=INK, fontsize=11)
+    diagram_arrow(ax, (0.10, y), (0.25, y))
+    diagram_block(ax, (0.33, y), r"$\uparrow L$", width=0.14, color=TEAL)
+    diagram_arrow(ax, (0.41, y), (0.55, y))
+    diagram_block(ax, (0.64, y), r"$H_i(z)$", color=BLUE)
+    diagram_arrow(ax, (0.73, y), (0.94, y))
+    ax.text(0.97, y, r"$y[n]$", ha="right", va="center", color=INK, fontsize=11)
+    ax.text(0.64, y - 0.13, "anti-image LPF, gain $L$", ha="center", color=INK, fontsize=9)
+    ax.text(0.17, y - 0.07, r"$f_s$", ha="center", color=INK, fontsize=9)
+    ax.text(0.84, y - 0.07, r"$Lf_s$", ha="center", color=INK, fontsize=9)
+
+    y = rows[2]
+    ax.text(0.03, y, r"$x[n]$", ha="left", va="center", color=INK, fontsize=11)
+    diagram_arrow(ax, (0.10, y), (0.20, y))
+    diagram_block(ax, (0.28, y), r"$\uparrow L$", width=0.14, color=TEAL)
+    diagram_arrow(ax, (0.36, y), (0.44, y))
+    diagram_block(ax, (0.53, y), r"$H(z)$", color=BLUE)
+    diagram_arrow(ax, (0.62, y), (0.70, y))
+    diagram_block(ax, (0.78, y), r"$\downarrow M$", width=0.14, color=ORANGE)
+    diagram_arrow(ax, (0.86, y), (0.94, y))
+    ax.text(0.97, y, r"$y[n]$", ha="right", va="center", color=INK, fontsize=11)
+    ax.text(
+        0.53,
+        y - 0.13,
+        r"cutoff $\min(\pi/L,\pi/M)$",
+        ha="center",
+        color=INK,
+        fontsize=9,
+    )
+    ax.text(0.15, y - 0.07, r"$f_s$", ha="center", color=INK, fontsize=9)
+    ax.text(0.91, y - 0.07, r"$Lf_s/M$", ha="center", color=INK, fontsize=9)
+
+    save(fig, "dsp_multirate_blocks.png")
+
+
+def figure_noble_identities() -> None:
+    fig, axes = plt.subplots(2, 1, figsize=(11.8, 5.8), constrained_layout=True)
+
+    down = axes[0]
+    diagram_axes(down, "Noble identity for decimation")
+    y = 0.52
+    down.text(0.01, y, r"$x[n]$", ha="left", va="center", color=INK, fontsize=10)
+    diagram_arrow(down, (0.07, y), (0.11, y))
+    diagram_block(down, (0.20, y), r"$H(z^M)$", color=BLUE)
+    diagram_arrow(down, (0.29, y), (0.34, y))
+    diagram_block(down, (0.41, y), r"$\downarrow M$", width=0.13, color=ORANGE)
+    diagram_arrow(down, (0.48, y), (0.49, y))
+    down.text(0.50, y, r"$\equiv$", ha="center", va="center", color=INK, fontsize=18)
+    diagram_arrow(down, (0.53, y), (0.57, y))
+    diagram_block(down, (0.64, y), r"$\downarrow M$", width=0.13, color=ORANGE)
+    diagram_arrow(down, (0.71, y), (0.76, y))
+    diagram_block(down, (0.85, y), r"$H(z)$", color=BLUE)
+    diagram_arrow(down, (0.94, y), (0.99, y))
+    down.text(0.25, 0.24, "filter at the high rate", ha="center", color=INK, fontsize=9)
+    down.text(0.80, 0.24, "filter at the low rate", ha="center", color=INK, fontsize=9)
+
+    up = axes[1]
+    diagram_axes(up, "Noble identity for interpolation")
+    up.text(0.01, y, r"$x[n]$", ha="left", va="center", color=INK, fontsize=10)
+    diagram_arrow(up, (0.07, y), (0.11, y))
+    diagram_block(up, (0.20, y), r"$H(z)$", color=BLUE)
+    diagram_arrow(up, (0.29, y), (0.34, y))
+    diagram_block(up, (0.41, y), r"$\uparrow L$", width=0.13, color=TEAL)
+    diagram_arrow(up, (0.48, y), (0.49, y))
+    up.text(0.50, y, r"$\equiv$", ha="center", va="center", color=INK, fontsize=18)
+    diagram_arrow(up, (0.53, y), (0.57, y))
+    diagram_block(up, (0.64, y), r"$\uparrow L$", width=0.13, color=TEAL)
+    diagram_arrow(up, (0.71, y), (0.76, y))
+    diagram_block(up, (0.85, y), r"$H(z^L)$", color=BLUE)
+    diagram_arrow(up, (0.94, y), (0.99, y))
+    up.text(0.25, 0.24, "filter at the low rate", ha="center", color=INK, fontsize=9)
+    up.text(0.80, 0.24, "expanded filter at the high rate", ha="center", color=INK, fontsize=9)
+
+    save(fig, "dsp_noble_identities.png")
+
+
+def draw_fft_stage(
+    ax: plt.Axes,
+    x_start: float,
+    x_end: float,
+    y_positions: np.ndarray,
+    pairs: list[tuple[int, int]],
+    twiddles: list[str],
+) -> None:
+    """Draw one radix-2 DIT stage in an eight-point signal-flow graph."""
+
+    for (upper, lower), twiddle in zip(pairs, twiddles, strict=True):
+        y_upper = y_positions[upper]
+        y_lower = y_positions[lower]
+        ax.plot([x_start, x_end], [y_upper, y_upper], color=BLUE, linewidth=1.35)
+        ax.plot([x_start, x_end], [y_upper, y_lower], color=BLUE, linewidth=1.20)
+        ax.plot([x_start, x_end], [y_lower, y_upper], color=ORANGE, linewidth=1.20)
+        ax.plot([x_start, x_end], [y_lower, y_lower], color=ORANGE, linewidth=1.35)
+        ax.text(
+            x_start + 0.035,
+            y_lower - 0.020,
+            twiddle,
+            ha="left",
+            va="top",
+            color=ORANGE,
+            fontsize=7.2,
+        )
+        ax.text(
+            x_end - 0.022,
+            y_lower + 0.012,
+            r"$-1$",
+            ha="right",
+            va="bottom",
+            color=PURPLE,
+            fontsize=7.2,
+        )
+
+
+def figure_fft_8point_flow() -> None:
+    fig, ax = plt.subplots(figsize=(12.2, 6.5), constrained_layout=True)
+    diagram_axes(ax, "Eight-point radix-2 DIT FFT signal flow")
+
+    y_positions = np.linspace(0.86, 0.14, 8)
+    x_columns = (0.12, 0.38, 0.64, 0.90)
+    input_order = (0, 4, 2, 6, 1, 5, 3, 7)
+
+    for row, (y, index) in enumerate(zip(y_positions, input_order, strict=True)):
+        ax.text(
+            0.02,
+            y,
+            rf"$x[{index}]$",
+            ha="left",
+            va="center",
+            color=INK,
+            fontsize=9.5,
+        )
+        diagram_arrow(ax, (0.08, y), (x_columns[0], y), linewidth=1.15)
+        diagram_arrow(ax, (x_columns[-1], y), (0.96, y), linewidth=1.15)
+        ax.text(
+            0.99,
+            y,
+            rf"$X[{row}]$",
+            ha="right",
+            va="center",
+            color=INK,
+            fontsize=9.5,
+        )
+
+    draw_fft_stage(
+        ax,
+        x_columns[0],
+        x_columns[1],
+        y_positions,
+        [(0, 1), (2, 3), (4, 5), (6, 7)],
+        [r"$W_2^0$"] * 4,
+    )
+    draw_fft_stage(
+        ax,
+        x_columns[1],
+        x_columns[2],
+        y_positions,
+        [(0, 2), (1, 3), (4, 6), (5, 7)],
+        [r"$W_4^0$", r"$W_4^1$", r"$W_4^0$", r"$W_4^1$"],
+    )
+    draw_fft_stage(
+        ax,
+        x_columns[2],
+        x_columns[3],
+        y_positions,
+        [(0, 4), (1, 5), (2, 6), (3, 7)],
+        [r"$W_8^0$", r"$W_8^1$", r"$W_8^2$", r"$W_8^3$"],
+    )
+
+    for x in x_columns:
+        ax.scatter(
+            np.full_like(y_positions, x),
+            y_positions,
+            s=17,
+            facecolor="none",
+            edgecolor=INK,
+            linewidth=0.9,
+            zorder=5,
+        )
+
+    ax.text(0.06, 0.96, "bit-reversed input", ha="center", color=INK, fontsize=9)
+    ax.text(0.25, 0.96, r"stage 1: $W_2^0$", ha="center", color=INK, fontsize=9)
+    ax.text(0.51, 0.96, r"stage 2: $W_4^{0,1}$", ha="center", color=INK, fontsize=9)
+    ax.text(0.77, 0.96, r"stage 3: $W_8^{0,1,2,3}$", ha="center", color=INK, fontsize=9)
+    ax.text(0.96, 0.96, "natural output", ha="center", color=INK, fontsize=9)
+    ax.text(
+        0.50,
+        0.035,
+        "blue: upper contribution   orange: twiddled lower contribution   purple: difference sign",
+        ha="center",
+        color=INK,
+        fontsize=8.3,
+    )
+
+    save(fig, "dsp_fft_8point_flow.png")
+
+
+def figure_polyphase_decimator() -> None:
+    fig, axes = plt.subplots(1, 2, figsize=(12.2, 5.2), constrained_layout=True)
+
+    direct = axes[0]
+    diagram_axes(direct, "Direct decimator")
+    y = 0.55
+    direct.text(0.02, y, r"$x[n]$", ha="left", va="center", color=INK, fontsize=11)
+    diagram_arrow(direct, (0.11, y), (0.23, y))
+    diagram_block(direct, (0.36, y), r"$H(z)$", width=0.22, color=BLUE)
+    diagram_arrow(direct, (0.48, y), (0.61, y))
+    diagram_block(direct, (0.72, y), r"$\downarrow M$", width=0.18, color=ORANGE)
+    diagram_arrow(direct, (0.82, y), (0.95, y))
+    direct.text(0.99, y, r"$w[n]$", ha="right", va="center", color=INK, fontsize=11)
+    direct.text(0.36, 0.31, "long FIR at the input rate", ha="center", color=INK, fontsize=9)
+
+    poly = axes[1]
+    diagram_axes(poly, "Polyphase decimator")
+    branch_y = (0.81, 0.62, 0.38, 0.19)
+    delay_labels = (r"$1$", r"$z^{-1}$", r"$\vdots$", r"$z^{-(M-1)}$")
+    filter_labels = (r"$H_0(z)$", r"$H_1(z)$", r"$\vdots$", r"$H_{M-1}(z)$")
+
+    poly.text(0.01, 0.50, r"$x[n]$", ha="left", va="center", color=INK, fontsize=10)
+    diagram_arrow(poly, (0.08, 0.50), (0.14, 0.50))
+    poly.plot([0.14, 0.14], [branch_y[-1], branch_y[0]], color=INK, linewidth=1.3)
+    for y_branch, delay_label, filter_label in zip(
+        branch_y, delay_labels, filter_labels, strict=True
+    ):
+        poly.plot([0.14, 0.20], [y_branch, y_branch], color=INK, linewidth=1.3)
+        if delay_label == r"$\vdots$":
+            poly.text(0.27, y_branch, delay_label, ha="center", va="center", color=INK, fontsize=14)
+            poly.text(0.48, y_branch, r"$\vdots$", ha="center", va="center", color=INK, fontsize=14)
+            poly.text(0.70, y_branch, filter_label, ha="center", va="center", color=INK, fontsize=14)
+            continue
+        diagram_block(
+            poly,
+            (0.27, y_branch),
+            delay_label,
+            width=0.12,
+            height=0.12,
+            color=PURPLE,
+            fontsize=9,
+        )
+        diagram_arrow(poly, (0.34, y_branch), (0.41, y_branch), linewidth=1.15)
+        diagram_block(
+            poly,
+            (0.48, y_branch),
+            r"$\downarrow M$",
+            width=0.12,
+            height=0.12,
+            color=ORANGE,
+            fontsize=9,
+        )
+        diagram_arrow(poly, (0.55, y_branch), (0.61, y_branch), linewidth=1.15)
+        diagram_block(
+            poly,
+            (0.70, y_branch),
+            filter_label,
+            width=0.15,
+            height=0.12,
+            color=BLUE,
+            fontsize=9,
+        )
+        diagram_arrow(poly, (0.785, y_branch), (0.86, 0.50), linewidth=1.15)
+
+    diagram_node(poly, (0.88, 0.50), "+", color=TEAL)
+    diagram_arrow(poly, (0.93, 0.50), (0.98, 0.50), color=TEAL, linewidth=1.3)
+    poly.text(0.99, 0.50, r"$w[n]$", ha="right", va="bottom", color=INK, fontsize=10)
+    poly.text(
+        0.61,
+        0.06,
+        r"$H(z)=\sum_{m=0}^{M-1}z^{-m}H_m(z^M)$; each $H_m$ runs at $f_s/M$",
+        ha="center",
+        color=INK,
+        fontsize=8.6,
+    )
+
+    save(fig, "dsp_polyphase_decimator.png")
+
+
 def main() -> None:
     figure_sampling_aliasing()
     figure_dirichlet_gibbs()
@@ -880,6 +1354,11 @@ def main() -> None:
     figure_quantization_noise()
     figure_multirate_spectra()
     figure_noise_shaping()
+    figure_fft_butterflies()
+    figure_multirate_blocks()
+    figure_noble_identities()
+    figure_fft_8point_flow()
+    figure_polyphase_decimator()
 
 
 if __name__ == "__main__":

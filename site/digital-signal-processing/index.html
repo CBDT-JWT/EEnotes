@@ -3290,21 +3290,21 @@ x_q[n]=x[n]+e[n]
 x(t)\delta(t-t_0)=x(t_0)\delta(t-t_0),\qquad x(t)*\delta(t-t_0)=x(t-t_0)
 \]</div>
 <div class="arithmatex">\[
-e^{j\Omega_0t}\quad\xleftrightarrow{\mathrm{FT}}\quad2\pi\delta(\Omega-\Omega_0)
+e^{j\Omega_0t}\quad\overset{\mathrm{FT}}{\longleftrightarrow}\quad2\pi\delta(\Omega-\Omega_0)
 \]</div>
 <p>以及时域相乘对应频域卷积：</p>
 <div class="arithmatex">\[
-x(t)y(t)\quad\xleftrightarrow{\mathrm{FT}}\quad\frac{1}{2\pi}X(j\Omega)*Y(j\Omega)
+x(t)y(t)\quad\overset{\mathrm{FT}}{\longleftrightarrow}\quad\frac{1}{2\pi}X(j\Omega)*Y(j\Omega)
 \]</div>
 <p>若 <span class="arithmatex">\(x_p(t)\)</span> 以 <span class="arithmatex">\(T_0\)</span> 为周期，傅里叶级数系数与线谱为</p>
 <div class="arithmatex">\[
-a_k=\frac{1}{T_0}\int_{T_0}x_p(t)e^{-jk\Omega_0t}\,\mathrm dt,qquad
+a_k=\frac{1}{T_0}\int_{T_0}x_p(t)e^{-jk\Omega_0t}\,\mathrm dt,\qquad
 X_p(j\Omega)=2\pi\sum_{k=-\infty}^{\infty}a_k\delta(\Omega-k\Omega_0)
 \]</div>
 <p>理想采样可分为“连续信号乘冲激串”和“加权冲激串转为序列”两步。周期单位冲激串及其傅里叶变换为</p>
 <div class="arithmatex">\[
 s(t)=\sum_{n=-\infty}^{\infty}\delta(t-nT_s)
-\quad\xleftrightarrow{\mathrm{FT}}\quad
+\quad\overset{\mathrm{FT}}{\longleftrightarrow}\quad
 S(j\Omega)=\frac{2\pi}{T_s}\sum_{k=-\infty}^{\infty}\delta(\Omega-k\Omega_s)
 \]</div>
 <p>其中用到了冲激筛选、冲激卷积、复指数的傅里叶变换和时域相乘对应频域卷积。加权冲激串</p>
@@ -3602,7 +3602,7 @@ x[n]=
 <p>该序列无限长、非因果、平方可和但不绝对可和。有限截断在跳变附近产生 Gibbs 现象；阶数增大时振荡区域收窄，但峰值误差仍约为跳变量的 <span class="arithmatex">\(9\%\)</span>。</p>
 <p>右边指数序列与矩形窗的常用变换为</p>
 <div class="arithmatex">\[
-a^nu[n]\quad\xleftrightarrow{\mathrm{DTFT}}\quad\frac{1}{1-ae^{-j\omega}},\qquad |a|&lt;1
+a^nu[n]\quad\overset{\mathrm{DTFT}}{\longleftrightarrow}\quad\frac{1}{1-ae^{-j\omega}},\qquad |a|&lt;1
 \]</div>
 <p>其幅度为</p>
 <div class="arithmatex">\[
@@ -3610,7 +3610,7 @@ a^nu[n]\quad\xleftrightarrow{\mathrm{DTFT}}\quad\frac{1}{1-ae^{-j\omega}},\qquad
 \]</div>
 <p>例如 <span class="arithmatex">\(a=0.5\)</span> 时峰值在 <span class="arithmatex">\(\omega=0\)</span>，<span class="arithmatex">\(a=-0.5\)</span> 时峰值移到 <span class="arithmatex">\(\omega=\pm\pi\)</span>。</p>
 <div class="arithmatex">\[
-R_N[n]\quad\xleftrightarrow{\mathrm{DTFT}}\quad
+R_N[n]\quad\overset{\mathrm{DTFT}}{\longleftrightarrow}\quad
 e^{-j\omega(N-1)/2}\frac{\sin(N\omega/2)}{\sin(\omega/2)}
 \]</div>
 <p>矩形窗频谱的第一对零点位于 <span class="arithmatex">\(\omega=\pm2\pi/N\)</span>，主瓣零点间宽度为 <span class="arithmatex">\(4\pi/N\)</span>；归一化后它也是 <span class="arithmatex">\(N\)</span> 点滑动平均滤波器的频率响应。</p>
@@ -3666,7 +3666,7 @@ r_{xy}[m]=\sum_n x[n+m]y^*[n]
 \]</div>
 <p>满足</p>
 <div class="arithmatex">\[
-r_{xy}[m]\quad\xleftrightarrow{\mathrm{DTFT}}\quad X(e^{j\omega})Y^*(e^{j\omega})
+r_{xy}[m]\quad\overset{\mathrm{DTFT}}{\longleftrightarrow}\quad X(e^{j\omega})Y^*(e^{j\omega})
 \]</div>
 <p>自相关对应功率谱密度，即 Wiener-Khinchin 关系。Parseval 等式为</p>
 <div class="arithmatex">\[
@@ -3689,18 +3689,18 @@ Y(e^{j\omega})=\frac12\left[X(e^{j\omega/2})+X\left(e^{j(\omega/2+\pi)}\right)\r
 </ul>
 <p>几个特殊周期序列的 DTFT 为</p>
 <div class="arithmatex">\[
-1\quad\xleftrightarrow{\mathrm{DTFT}}\quad2\pi\sum_{k=-\infty}^{\infty}\delta(\omega-2\pi k)
+1\quad\overset{\mathrm{DTFT}}{\longleftrightarrow}\quad2\pi\sum_{k=-\infty}^{\infty}\delta(\omega-2\pi k)
 \]</div>
 <div class="arithmatex">\[
-e^{j\omega_0n}\quad\xleftrightarrow{\mathrm{DTFT}}\quad
+e^{j\omega_0n}\quad\overset{\mathrm{DTFT}}{\longleftrightarrow}\quad
 2\pi\sum_{k=-\infty}^{\infty}\delta(\omega-\omega_0-2\pi k)
 \]</div>
 <div class="arithmatex">\[
-\cos(\omega_0n+\phi)\quad\xleftrightarrow{\mathrm{DTFT}}\quad\pi\sum_{k=-\infty}^{\infty}\left[e^{j\phi}\delta(\omega-\omega_0-2\pi k)+e^{-j\phi}\delta(\omega+\omega_0-2\pi k)\right]
+\cos(\omega_0n+\phi)\quad\overset{\mathrm{DTFT}}{\longleftrightarrow}\quad\pi\sum_{k=-\infty}^{\infty}\left[e^{j\phi}\delta(\omega-\omega_0-2\pi k)+e^{-j\phi}\delta(\omega+\omega_0-2\pi k)\right]
 \]</div>
 <div class="arithmatex">\[
 p_N[n]=\sum_{r=-\infty}^{\infty}\delta[n-rN]
-\quad\xleftrightarrow{\mathrm{DTFT}}\quad
+\quad\overset{\mathrm{DTFT}}{\longleftrightarrow}\quad
 \frac{2\pi}{N}\sum_{k=-\infty}^{\infty}\delta\!\left(\omega-\frac{2\pi k}{N}\right)
 \]</div>
 <p>若 <span class="arithmatex">\(\widetilde x[n]\)</span> 是长度 <span class="arithmatex">\(N\)</span> 的一周期主值，周期延拓可写为</p>
@@ -3761,17 +3761,17 @@ X(e^{j\omega})=\sum_{k=0}^{N-1}X[k]\,\Phi_N\!\left(\omega-\frac{2\pi k}{N}\right
 <p>例如长度 <span class="arithmatex">\(L=10\)</span> 的全 1 序列在 <span class="arithmatex">\(N=10\)</span> 时只有直流 DFT 样本非零；补零到 <span class="arithmatex">\(N=50\)</span> 或 100 后，会在同一个 Dirichlet 幅度包络上取得越来越密的样本。包络、主瓣宽度和原有信息都没有改变。</p>
 <p>常用的基本变换对包括</p>
 <div class="arithmatex">\[
-\delta[((n-n_0))_N]\quad\xleftrightarrow{\mathrm{DFT}}\quad W_N^{kn_0}
+\delta[((n-n_0))_N]\quad\overset{\mathrm{DFT}}{\longleftrightarrow}\quad W_N^{kn_0}
 \]</div>
 <div class="arithmatex">\[
-1\quad\xleftrightarrow{\mathrm{DFT}}\quad N\delta[((k))_N]
+1\quad\overset{\mathrm{DFT}}{\longleftrightarrow}\quad N\delta[((k))_N]
 \]</div>
 <div class="arithmatex">\[
-W_N^{-k_0n}\quad\xleftrightarrow{\mathrm{DFT}}\quad N\delta[((k-k_0))_N]
+W_N^{-k_0n}\quad\overset{\mathrm{DFT}}{\longleftrightarrow}\quad N\delta[((k-k_0))_N]
 \]</div>
 <p>其中 <span class="arithmatex">\(((n))_N\)</span> 表示以 <span class="arithmatex">\(N\)</span> 为模的下标。</p>
 <h3 id="_19">循环移位、卷积与相关</h3>
-<p>设 <span class="arithmatex">\(x[n]\xleftrightarrow{N}X[k]\)</span>、<span class="arithmatex">\(y[n]\xleftrightarrow{N}Y[k]\)</span>，主要性质为：</p>
+<p>设 <span class="arithmatex">\(x[n]\overset{N}{\longleftrightarrow}X[k]\)</span>、<span class="arithmatex">\(y[n]\overset{N}{\longleftrightarrow}Y[k]\)</span>，主要性质为：</p>
 <table>
 <thead>
 <tr>
@@ -3830,7 +3830,7 @@ r_{xy}^{(N)}[m]=\sum_{n=0}^{N-1}x[((n+m))_N]y^*[n]
 \]</div>
 <p>并满足</p>
 <div class="arithmatex">\[
-r_{xy}^{(N)}[m]\quad\xleftrightarrow{N}\quad X[k]Y^*[k]
+r_{xy}^{(N)}[m]\quad\overset{N}{\longleftrightarrow}\quad X[k]Y^*[k]
 \]</div>
 <p>要得到有限长序列的线性相关，同样需要补足避免循环折叠。DFT 的 Parseval 等式为</p>
 <div class="arithmatex">\[
@@ -3839,7 +3839,7 @@ r_{xy}^{(N)}[m]\quad\xleftrightarrow{N}\quad X[k]Y^*[k]
 <p>取 <span class="arithmatex">\(x=y\)</span> 时，两端分别是时域能量和缩放后的频域能量。</p>
 <p>DFT 还具有对偶性：</p>
 <div class="arithmatex">\[
-x[n]\xleftrightarrow{N}X[k]\quad\Longrightarrow\quad X[n]\xleftrightarrow{N}N x[((-k))_N]
+x[n]\overset{N}{\longleftrightarrow}X[k]\quad\Longrightarrow\quad X[n]\overset{N}{\longleftrightarrow}N x[((-k))_N]
 \]</div>
 <p>实序列的 DFT 共轭对称，即 <span class="arithmatex">\(X[N-k]=X^*[k]\)</span>。当 <span class="arithmatex">\(N\)</span> 为偶数时，<span class="arithmatex">\(X[0]\)</span> 与 <span class="arithmatex">\(X[N/2]\)</span> 必为实数，只需保存或计算略多于半个频谱。实偶、实奇、虚偶、虚奇分量仍分别对应实偶、纯虚奇、纯虚偶、实奇的频谱分量。</p>
 <p>一般复序列也可按模 <span class="arithmatex">\(N\)</span> 的共轭对称性拆成</p>
@@ -3858,7 +3858,7 @@ W_N^{k+N}=W_N^k,\qquad W_N^{k+N/2}=-W_N^k,\qquad W_N^{2k}=W_{N/2}^k
 \]</div>
 <p>几个直接可用的特值和共轭关系为</p>
 <div class="arithmatex">\[
-W_N^0=W_N^{kN}=1,\qquad W_N^{N/2}=-1,\qquad W_N^{N/4}=-j,\qquad W_N^{3N/4}=j,qquad (W_N^k)^*=W_N^{-k}
+W_N^0=W_N^{kN}=1,\qquad W_N^{N/2}=-1,\qquad W_N^{N/4}=-j,\qquad W_N^{3N/4}=j,\qquad (W_N^k)^*=W_N^{-k}
 \]</div>
 <p>当 <span class="arithmatex">\(N=2^m\)</span> 时，按时间下标奇偶拆分可得基 2 时间抽取形式：</p>
 <div class="arithmatex">\[
@@ -3876,8 +3876,10 @@ X[k+N/2]=E[k]-W_N^kO[k],\qquad 0\leq k&lt;N/2
 X[0]=x[0]+x[1],\qquad X[1]=x[0]-x[1]
 \]</div>
 <p>它不需要乘法，只需两次复加减。</p>
+<p><a class="glightbox" data-type="image" href="../assets/dsp_fft_butterflies.png"><img alt="基 2 DIT 与 DIF 蝶形运算" src="../assets/dsp_fft_butterflies.png" /></a></p>
 <p>时间抽取的原位迭代实现通常以位倒序输入、自然顺序输出。若 <span class="arithmatex">\(n\)</span> 的 <span class="arithmatex">\(m\)</span> 位二进制表示为 <span class="arithmatex">\(b_{m-1}\cdots b_1b_0\)</span>，位倒序下标就是 <span class="arithmatex">\(b_0b_1\cdots b_{m-1}\)</span>。</p>
 <p><span class="arithmatex">\(N=8\)</span> 时自然序 <span class="arithmatex">\(0,1,2,3,4,5,6,7\)</span> 的位倒序为 <span class="arithmatex">\(0,4,2,6,1,5,3,7\)</span>；<span class="arithmatex">\(N=16\)</span> 时为 <span class="arithmatex">\(0,8,4,12,2,10,6,14,1,9,5,13,3,11,7,15\)</span>。</p>
+<p><a class="glightbox" data-type="image" href="../assets/dsp_fft_8point_flow.png"><img alt="8 点基 2 DIT FFT 的三级信号流" src="../assets/dsp_fft_8point_flow.png" /></a></p>
 <p>按频率下标奇偶拆分则得到基 2 频率抽取：</p>
 <div class="arithmatex">\[
 X[2r]=\sum_{n=0}^{N/2-1}\bigl(x[n]+x[n+N/2]\bigr)W_{N/2}^{nr}
@@ -4341,7 +4343,7 @@ x[n]=\sum_{z_m\text{ 在 }C\text{ 内}}\operatorname{Res}\bigl[X(z)z^{n-1},z_m\b
 <p>需要找的是 <span class="arithmatex">\(X(z)z^{n-1}\)</span> 的极点，而不只是 <span class="arithmatex">\(X(z)\)</span> 的极点。</p>
 <p>有理函数更常用部分分式展开。若分子次数不低于分母，先做长除法，把多项式部分借助</p>
 <div class="arithmatex">\[
-z^{-m}\quad\xleftrightarrow{\mathcal Z}\quad\delta[n-m]
+z^{-m}\quad\overset{\mathcal Z}{\longleftrightarrow}\quad\delta[n-m]
 \]</div>
 <p>直接还原，剩余真分式再按极点拆开。单极点项使用</p>
 <div class="arithmatex">\[
@@ -4354,11 +4356,11 @@ K_{lj}=\left.\frac{1}{(r_l-j)!}\frac{\mathrm d^{\,r_l-j}}{\mathrm dz^{\,r_l-j}}
 \]</div>
 <p>对应的基本变换对为</p>
 <div class="arithmatex">\[
-\frac{z}{z-p}\quad\xleftrightarrow{\mathcal Z}\quad\begin{cases}p^nu[n],&amp;|z|&gt;|p|\\-p^nu[-n-1],&amp;|z|&lt;|p|\end{cases}
+\frac{z}{z-p}\quad\overset{\mathcal Z}{\longleftrightarrow}\quad\begin{cases}p^nu[n],&amp;|z|&gt;|p|\\-p^nu[-n-1],&amp;|z|&lt;|p|\end{cases}
 \]</div>
 <p>若有 <span class="arithmatex">\(m\)</span> 重极点，则</p>
 <div class="arithmatex">\[
-\frac{z}{(z-p)^m}\quad\xleftrightarrow{\mathcal Z}\quad\begin{cases}\dfrac{n(n-1)\cdots(n-m+2)}{(m-1)!}p^{n-m+1}u[n],&amp;|z|&gt;|p|\\-\dfrac{n(n-1)\cdots(n-m+2)}{(m-1)!}p^{n-m+1}u[-n-1],&amp;|z|&lt;|p|\end{cases}
+\frac{z}{(z-p)^m}\quad\overset{\mathcal Z}{\longleftrightarrow}\quad\begin{cases}\dfrac{n(n-1)\cdots(n-m+2)}{(m-1)!}p^{n-m+1}u[n],&amp;|z|&gt;|p|\\-\dfrac{n(n-1)\cdots(n-m+2)}{(m-1)!}p^{n-m+1}u[-n-1],&amp;|z|&lt;|p|\end{cases}
 \]</div>
 <p>每一项取右边还是左边形式必须由总 ROC 决定。例如</p>
 <div class="arithmatex">\[
@@ -4399,7 +4401,7 @@ x[n]=-2\delta[n]-8\delta[n+1]-16\delta[n+2]-32\delta[n+3]-\cdots
 \]</div>
 <p>这直观体现了 ROC 对幂级数方向的决定作用。</p>
 <h3 id="z_3">Z 变换的性质</h3>
-<p>设 <span class="arithmatex">\(x[n]\xleftrightarrow{\mathcal Z}X(z)\)</span>，常用性质如下：</p>
+<p>设 <span class="arithmatex">\(x[n]\overset{\mathcal Z}{\longleftrightarrow}X(z)\)</span>，常用性质如下：</p>
 <table>
 <thead>
 <tr>
@@ -5387,6 +5389,7 @@ h_{\mathrm{lin}}[m]=\begin{cases}1-|m|/L,&amp;|m|&lt;L\\0,&amp;\text{其他}
 H(e^{j\omega})=\begin{cases}L,&amp;|\omega|\leq\min(\pi/L,\pi/M)\\0,&amp;\text{其他}
 \end{cases}
 \]</div>
+<p><a class="glightbox" data-type="image" href="../assets/dsp_multirate_blocks.png"><img alt="抽取、内插与有理倍采样率转换框图" src="../assets/dsp_multirate_blocks.png" /></a></p>
 <p>升、降采样都是线性时变操作，不能任意交换。以 <span class="arithmatex">\(3/2\)</span> 转换且输入谱铺满 <span class="arithmatex">\([-\pi,\pi]\)</span> 为例，先 <span class="arithmatex">\(\uparrow3\)</span>、滤到 <span class="arithmatex">\(\pi/3\)</span>、再 <span class="arithmatex">\(\downarrow2\)</span>，最终谱可到 <span class="arithmatex">\(2\pi/3\)</span>；若先 <span class="arithmatex">\(\downarrow2\)</span>，为防混叠必须先滤到 <span class="arithmatex">\(\pi/2\)</span>，随后再升采样，最终只到 <span class="arithmatex">\(\pi/3\)</span>，两条链路丢失的信息不同。</p>
 <h3 id="_38">交换恒等式、多级与多相实现</h3>
 <p>延迟与变采样满足</p>
@@ -5404,6 +5407,7 @@ H(z^M)\longrightarrow\downarrow M\quad\equiv\quad\downarrow M\longrightarrow H(z
 H(z)\longrightarrow\uparrow L\quad\equiv\quad\uparrow L\longrightarrow H(z^L)
 \]</div>
 <p>它们把昂贵滤波搬到低采样率一侧。</p>
+<p><a class="glightbox" data-type="image" href="../assets/dsp_noble_identities.png"><img alt="抽取与内插的 Noble 恒等式" src="../assets/dsp_noble_identities.png" /></a></p>
 <p>若总抽取率分解为</p>
 <div class="arithmatex">\[
 M=M_1M_2\cdots M_K
@@ -5430,6 +5434,7 @@ H(z)=\sum_{m=0}^{M-1}z^{-m}H_m(z^M)
 <div class="arithmatex">\[
 \frac{NR}{M}
 \]</div>
+<p><a class="glightbox" data-type="image" href="../assets/dsp_polyphase_decimator.png"><img alt="直接抽取器与多相抽取器" src="../assets/dsp_polyphase_decimator.png" /></a></p>
 <p>整数倍内插也可按同样方式在低速侧计算各个相位，只生成实际需要的非零输出，而不对插入的零作无用乘法。</p>
 <h3 id="_39">过采样量化与噪声成型</h3>
 <p>设模拟信号带宽只占过采样后 Nyquist 带宽的 <span class="arithmatex">\(1/M\)</span>。量化后先用截止 <span class="arithmatex">\(\pi/M\)</span> 的数字低通，再抽取 <span class="arithmatex">\(M\)</span> 倍。对宽平稳信号，采样和无混叠降采样只重新标定 PSD 的频率和幅度，不改变其面积，因而信号功率保持不变。</p>
