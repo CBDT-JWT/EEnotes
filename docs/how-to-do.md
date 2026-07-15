@@ -1,6 +1,6 @@
 # 说明文件
 ## 学推计划报销
-!!! warning "说明"
+!!! tip "说明"
     本文仅适用于2026年电子系学推计划（第一、二批次）报销工作。有任何问题，请向江玮陶（18519135251,微信同号）提出。
 
 !!! danger "注意"
@@ -10,7 +10,7 @@
 !!! warning "重要说明"
     每笔报销都必须填写登记表单，方便统计总花费[https://f.kdocs.cn/g/UzETnfkY/](https://f.kdocs.cn/g/UzETnfkY/)
 
-    
+
 ### 表单链接速查
 
 |用途|链接|
@@ -79,5 +79,11 @@
 
 ![alt text](assets/how-to-do_image-15.png)
 
+![alt text](assets/how-to-do_image-17.png)
+
+![alt text](assets/how-to-do_image-18.png)
+
 提交后，请填写下面链接表单登记： [https://f.kdocs.cn/g/UzETnfkY/](https://f.kdocs.cn/g/UzETnfkY/)后静等报销即可。
 
+!!! warning "重要说明"
+    每笔报销都必须填写登记表单，方便统计总花费[https://f.kdocs.cn/g/UzETnfkY/](https://f.kdocs.cn/g/UzETnfkY/)
