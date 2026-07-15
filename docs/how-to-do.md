@@ -16,6 +16,7 @@
 |用途|链接|
 |---|---|
 |登记报销单|[https://f.kdocs.cn/g/UzETnfkY/](https://f.kdocs.cn/g/UzETnfkY/)|
+|查询限额|[https://365.kdocs.cn/wo/sl/v1311lZV](https://365.kdocs.cn/wo/sl/v1311lZV)|
 
 ### 物品购买类报销（1000元以内）
 #### 开具发票
