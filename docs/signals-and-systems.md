@@ -874,10 +874,113 @@ $$
 
 双边拉氏变换的性质与单边相同，但**没有初值定理**。所以双边变换适合计算非因果信号的响应，单边变换适合计算因果信号激励有起始状态的系统的响应。
 
+## Laplace变换与Fourier变换的关系
+
+![alt text](assets/signals-and-systems_image-18.png)
+
+一般而言，若
+
+$$
+F(s)=F_a(s)+\sum_{n=1}^N \frac{K_n}{s-\mathrm j\omega_n}
+$$
+
+其中$F_a(s)$的极点全部位于左半平面，$\omega_n$是虚轴上的极点。作逆变换得到：
+
+$$
+f(t)=f_a(t)+\sum_{n=1}^N K_n\mathrm e^{\mathrm j\omega_nt}u(t)
+$$
+
+对上述作傅立叶变换，有
+
+$$
+\mathscr F[f(t)]=F_a(\omega)+\mathscr F\left[\sum_{n=1}^N K_n\mathrm e^{\mathrm j\omega_n t}\right]
+$$
+
+其中$\mathscr F[f_a(t)]=F_a(\omega)$
+
+$$
+\begin{aligned}
+\mathscr F[f(t)]&=F_a{\omega}=\sum_{n=1}^NK_n\delta(\omega-\omega_n)\ast \left(\pi\delta(\omega)+\frac{1}{\mathrm j\omega}\right)\\
+&=F_a(\omega)+\sum_{n=1}^N\frac{K_n}{\mathrm j\omega -\mathrm j\omega_n} +\sum_{n=1}^N K_n\pi\delta(\omega-\omega_n)\\
+&=\left.\begin{matrix}F(s)\end{matrix}\right|_{s=\mathrm j\omega}+\sum_{n=1}^N K_n\pi\delta(\omega-\omega_n)
+\end{aligned}
+$$
+
+即若虚轴上有极点，原函数的傅里叶变换中有与之对应的冲激函数;如果虚轴上有多重极点，对应的傅里叶变换中会出现冲激函数的各阶导数项。
+
+|变换|Laplace变换 | Fourier变换|
+|---|---|---|
+|求逆|容易！|困难（可能有$\delta(\cdot)$）|
+|电路应用|$H(s)$好用|$H(\mathrm j\omega)$不方便|
+|意义|零极点概念用于时域分析、频率响应、稳定性、电路分析和反馈系统|主要用来说明信号传输或通信系统的构成原理，而不是求解具体的响应。|
+
+## Laplace变换与Fourier变换的应用
+
+### 无失真传输
+**失真** 包括线性失真和非线性失真。线性失真包括幅度失真和香味失真。
+
+**全通函数**的幅度没有失真，只有相位发生失真。
+
+**线性系统的无失真传输条件**：要求响应和激励的形状相同，幅度可以变化，延时可以增加。
+
+$$
+r(t)=K\cdot e(t-t_0)\,,R(\mathrm j\omega)=K\cdot E(\mathrm j\omega)\mathrm e^{-\mathrm j\omega t_0}=H(\mathrm j\omega)E(\mathrm j\omega)
+$$
+
+从而一定有$H(\mathrm j\omega)=K\cdot\mathrm e^{-\mathrm j\omega t_0}$, 即
+
+$$
+\begin{cases}
+\left|H(\mathrm j\omega)\right|=K\\
+\varphi(\omega)=-\omega t_0
+\end{cases}\,, h(t)=\delta(t-t_0)
+$$
+
+#### 群时延
+
+定义为
+$$
+\tau(\omega)=-\frac{\mathrm d\varphi(\omega)}{\mathrm d\omega}
+$$
+
+意义：
+
+- 若幅频响应和群时延都是常数，则系统无失真，且有延时$\tau$
+- $\tau(\omega)$易测量，$\varphi(\omega)$不易测量，故实际设备指标都用$\tau(\omega)$
+
+#### 利用失真形成特定波形
+
+**模拟法**：设计一个系统让他频率响应$H(\mathrm j\omega)=R(\mathrm j\omega)\mathrm e^{-\mathrm j\omega t_0}$并输入$e(t)=\delta(t)$
+
+**数字法**：使用移位寄存器配合加法器、低通滤波器实现
+
+![alt text](assets/signals-and-systems_image-19.png)
+
+![alt text](assets/signals-and-systems_image-20.png)
+#### 理想低通滤波器
+
+理想低通滤波器：$H(\mathrm j\omega)={H(\mathrm j\omega)\mathrm e^{\mathrm j\varphi(\omega)}}$
+
+其中
+
+$$
+|H(\mathrm j\omega)|=\begin{cases}
+1,|\omega|<\omega_c;\\
+0,\text{elsewhere}
+\end{cases}\,,\varphi(\omega)=-\omega{t_0}
+$$
+
+这系统可以无失真地传输$[-\omega_c,\omega_c]$之间的信号。
+
+$$
+\mathscr F^{-1}\left[H(\mathrm j\omega)\right]=\frac{\omega_c}{\pi}\mathrm{Sa}[\omega_c(t-t_0)]
+$$
+
+因此理想低通滤波器是非因果系统（信号到来之前就有响应出现），因此不可实现。
 
 
-## 通信系统
 ### 系统可实现性、佩里维纳准则
+
 可实现系统要求因果性，因此无法实现理想低通滤波器等非因果系统。可以通过增大阶数（引入更多元件）改善系统性能。
 
 频域角度，可实现性要求 ==幅度函数== $|H(j\omega)|$==满足平方可积==，即

@@ -4,22 +4,22 @@ comments: true
 # 《电子电路与系统基础》学习参考
 !!! info  "说明"
     先开个坑（）放张最喜欢的单管放大器镇楼。后面应该会同步写一下CAD教程
-    ![单管放大器](assets/image.png)
+    ![单管放大器](assets/circuitikz/01-common-emitter.png)
     （很大程度上）参考了\ycgg/的小班辅导讲义，感谢！这篇文章大概会按照元件器件和方法工具两条主线完成，感觉电电确实就是这么个逻辑
 
 !!! tips "建议"
     目前感觉这个课最有效的方法是背背背+直觉，在大脑里建立又大又快的L1-cache。我当时学（2）的时候把所有的PPT都抄了2遍，差不多背下来了，能80%默写正课内容的程度，感觉对于应试还是非常有效的。考试的时候就直接顺着写了，甚至富裕30分钟。当然还是要提倡先做大题（）
 
-![alt text](assets/bb77be64681c6087857fc9125088def1.jpg)
-![alt text](assets/0fb5cd1cb703601e83d0b3480c1540b3.jpg)
+![alt text](assets/circuitikz/02-abstraction.png)
+![alt text](assets/circuitikz/03-complexity.png)
 
 
 ## 前言
 
 参考\ycgg/的小班辅导对电电进行了粗浅的梳理，私以为大致有这样两个主线。其一是从局部变换到模块分析到系统分析的{==分析方法==}线：
-![alt text](assets/分析方法.png)
+![alt text](assets/circuitikz/04-analysis-roadmap.png)
 另一条则是从简单的阻容感到受控源到晶体管再到单元电路的{==元件器件==}线：
-![alt text](assets/元件器件.png)
+![alt text](assets/circuitikz/05-components-roadmap.png)
 【没写完】
 ## 元件与器件
 《电电》涉及的元件器件主要有
@@ -33,19 +33,19 @@ comments: true
 电电课不同于信号与系统的一大关键在于**电路变换**技巧的应用。电路变换本质上是把数学过程形象化了；但我们往往不需要关注背后的数学过程，善于运用相关的变换（“电路直觉”）往往可以给我们的学习和应试带来很大的好处。
 #### 戴维南-诺顿
 戴维南诺顿定理是电电课最常用的电路变换方法之一，也是最简单的之一。我们只要知道一个线性含源的单端口网络可以等效为电压源串电阻和电流源并电阻的形式就可以了。其中电阻的求法是{==独立源置0端口加流求压/加压求流==}，电压源和电流源的大小分别通过开路电压/短路电流求取。
-![alt text](assets/image-27.png)
+![alt text](assets/circuitikz/06-thevenin-norton.png)
 戴维南-诺顿最大的好处是可以在列些KCL/KVL矩阵方程的时候帮我们减少节点数（诺顿）和回路数（戴维南），进而减少方程的阶数。
 #### 组态转换
 以BJT为例。CE组态的管子其小信号模型很好画：
-![alt text](assets/image-28.png)
+![alt text](assets/circuitikz/07-ce-small-signal.png)
 但是对于CB组态，其小信号模型长成这样
-![alt text](assets/image-29.png)
+![alt text](assets/circuitikz/08-cb-small-signal.png)
 不够直观。怎么办呢？这里就要用一些电路变换的技巧，我将其成为组态转换，因为我也不知道叫什么名字好。或许可以叫“借流还流法”？总之，我们将$c\to e$的受控源拆开，拆成$c\to b$和$b\to e$两个，看起来像是从b节点借了$g_mv_be$又还了$g_mv_be$, 不会影响电路的功能。得到
 
-![alt text](assets/image-31.png)
+![alt text](assets/circuitikz/09-cb-source-split.png)
 更进一步观察到左边的受控源的控制电压就是自己的电压，于是这个源就是一个电导$g_m$，从而进一步化简
 
-![alt text](assets/image-33.png)
+![alt text](assets/circuitikz/10-cb-simplified.png)
 
 最后考虑理想晶体管
 
@@ -55,17 +55,17 @@ $$
 
 得到
 
-![alt text](assets/image-34.png)
+![alt text](assets/circuitikz/11-current-buffer.png)
 因此CB组态的BJT为一个电流buffer。对于CC组态而言，也是一样：考虑其小信号模型
 
-![alt text](assets/image-35.png)
+![alt text](assets/circuitikz/12-cc-small-signal.png)
 
 这里采用拆压法，将控制电压$v_{be}$拆成$v_{bc}+v_{ce}$, 电路上意味着将受控源拆开成$g_mv_{bc}+g_mv_{ce}$：
-![alt text](assets/image-36.png)
+![alt text](assets/circuitikz/13-cc-source-split.png)
 这时候右边又变成电阻了。于是
-![alt text](assets/image-37.png)
+![alt text](assets/circuitikz/14-cc-simplified.png)
 进一步理想化得到
-![alt text](assets/image-38.png)
+![alt text](assets/circuitikz/15-voltage-buffer.png)
 得到了一个电压buffer。类似的原理应用很广泛，可以有效处理受控源的控制关系不直观的问题。
 #### 阻抗匹配
 阻抗匹配是通过{==双向无损网络==}实现源和负载之间最大功率传输的方式，方法为共轭匹配
@@ -84,14 +84,14 @@ $$
 
 #### 串并等效与部分接入法
 串并等效是指，当$Q\gg 1$时，近似认为下面的电路等效：
-![alt text](assets/image-39.png)
-![alt text](assets/image-40.png)
+![alt text](assets/circuitikz/16-rl-series-parallel.png)
+![alt text](assets/circuitikz/17-rc-series-parallel.png)
 
 **不论是并联还是串联，都可以通过$\times Q^2$把$R$“翻上去”。**
 
 部分接入法是指，当$Q\gg 1$时，近似认为下面电路等效：
-![alt text](assets/image-41.png)
-![alt text](assets/image-42.png)
+![alt text](assets/circuitikz/18-capacitive-tap.png)
+![alt text](assets/circuitikz/19-inductive-tap.png)
 其中$p=\frac{C_1}{C_1+C_2}=\frac{L_2}{L_1+L_2}$称为**接入系数**，注意电容和电感是反过来的。本质上就是先并转串，然后再整体串转并。
 
 ### 网络参量
@@ -164,7 +164,7 @@ v_2\\
 $$
 
 这里又有一个初学难以理解的点：这个$\textcolor{yellow}{-i_2}$的负号如何理解。
-![alt text](assets/image-3.png)
+![alt text](assets/circuitikz/20-two-port-conventions.png)
 正如这张图所示，zyhg矩阵研究的是$\{v_1\,,v_2\,,i_1\,,i_2\}$之间的关系，而ABCD矩阵研究的则是$\{v_{in}\,,i_{in}\,,v_{out}\,,i_{out}\}$之间的关系。根据图中定义不难发现$i_{out}=\textcolor{yellow}{-i_2}$。也就是说，**ABCD矩阵本质的定义其实是**
 
 $$
@@ -183,7 +183,7 @@ $$
 #### 复合网络的参量矩阵
 这样定义的好处是，如果我们考虑两个级联的系统，那么就有**“级联ABCD相乘”**。
 
-![alt text](assets/image-5.png)
+![alt text](assets/circuitikz/21-abcd-cascade.png)
 
 $$
 \begin{aligned}
@@ -232,7 +232,7 @@ C_2&D_2
 $$
 
 用类似的方法可以推导经典的口诀：**“串串相连z相加，并并相连y相加，串并相连h相加，并串相连g相加”。**
-![alt text](assets/image-6.png)
+![alt text](assets/circuitikz/22-composite-networks.png)
 以h矩阵为例，上图中不难发现
 
 $$
@@ -282,7 +282,7 @@ $$
 进而$h=h_A+h_B\,.$用类似方法不难证明剩下三种情况，在此略过。
 #### 常用网络的参量矩阵
 首先是常用的串臂电阻和并臂电导，也就是挂在嘴边的"1z01, 10y1"。如下图：
-![alt text](assets/image-7.png)
+![alt text](assets/circuitikz/23-series-shunt-arms.png)
 两个电路的ABCD参量分别为
 
 $$
@@ -313,7 +313,7 @@ Y & Y
 $$
 
 然后是同样常见的线性受控源模型。利用戴维南-诺顿定理不难证明下列电路的等价性。
-![alt text](assets/image-13.png)
+![alt text](assets/circuitikz/24-zyhg-equivalents.png)
 #### 网络参量的物理意义
 直接观察矩阵的形式不利于初学者理解网络参量各个元素的物理意义，因此我们不妨把矩阵展开。以h参量为例：
 
@@ -361,7 +361,7 @@ $$
 
 这里$p\in\{z,y,h,g\}$, $w$根据量纲为对应的阻抗或导纳。注意输入输出阻抗的定义如下图：
 
-![alt text](assets/image-15.png)
+![alt text](assets/circuitikz/25-io-impedance.png)
 
 
 
@@ -369,7 +369,7 @@ $$
 
 首先对于单向网络$p_{12}=0$,传递函数是容易写出的。还是以h矩阵为例，考虑这样的电路：
 
-![alt text](assets/image-12.png)
+![alt text](assets/circuitikz/26-h-transfer-models.png)
 
 那么上图中的传递函数可以简单写成
 
@@ -426,7 +426,7 @@ $$
 
     以$X_1\,,X_2\,,Y_1\,,Y_2$为中间变量，对应的信号流图就是
 
-    ![alt text](assets/1.png)
+    ![alt text](assets/circuitikz/27-signal-flow-full.png)
     不难写出其行列式为
 
     $$
@@ -438,7 +438,7 @@ $$
 
     而单向化后的信号流图如下
 
-    ![alt text](assets/image-16.png)
+    ![alt text](assets/circuitikz/28-signal-flow-unilateral.png)
 
     其行列式为
 
@@ -448,7 +448,7 @@ $$
 
     可知，$p_12$带来的贡献就是图中青色的这个回路。
 
-    ![alt text](assets/image-17.png)
+    ![alt text](assets/circuitikz/29-signal-flow-loop.png)
 
     该回路与其余两个回路都接触，和唯一的前向通路也接触，且此边不参与任何前向通路。因此根据Mason公式
 
@@ -494,7 +494,7 @@ $$
 
 !!! question "ABCD参量求传函"
     这里一个小方法就是利用ABCD参量求梯形网络的传递函数，利用上面提到串臂并臂网络的ABCD参数结合电压增益$A_v=\frac 1 A$就可以轻松求得。例如下图中
-    ![alt text](assets/image-14.png)
+    ![alt text](assets/circuitikz/30-ladder-network.png)
 ??? success "Answers"
     可以轻松获得ABCD参量（注意我们只关心A元素）为
 
@@ -592,7 +592,7 @@ $$
 
 !!! question "状态方程列写"
     列出求解下面的电路所用的状态方程。
-    ![alt text](assets/image-18.png)
+    ![alt text](assets/circuitikz/31-state-equation-circuit.png)
     
 ??? success "答案"
     首先利用戴维南-诺顿轻松写出$i_C\,,v_L$关于$v_C\,,i_L$的表达式
@@ -722,7 +722,7 @@ $$
 三要素法和五要素法的公式都是简单的，但用起来最难求的也是最“值钱”的就是**初值和微分初值**，需要在$0-\to 0+$时刻进行精细的分析。例如下面这个例子。
 
 !!! question "三五要素法例题"
-    ![alt text](assets/image-19.png)已知互感变压器的$k<1$, $L_1=1\mu H$, $L_2=4\mu H$, $M=0.8\mu H$, $R_L = 1k\Omega$, $R_S = 100\Omega$, $V_{S0}=5V$.试求$v_0(t)$, 若
+    ![alt text](assets/circuitikz/32-mutual-inductor.png)已知互感变压器的$k<1$, $L_1=1\mu H$, $L_2=4\mu H$, $M=0.8\mu H$, $R_L = 1k\Omega$, $R_S = 100\Omega$, $V_{S0}=5V$.试求$v_0(t)$, 若
 
     1. $t<0$时开关闭合且电路稳定，$t=0$时断开开关。
     2. $t<0$时开关断开且电路稳定，$t=0$时闭合开关。
@@ -731,7 +731,7 @@ $$
 
     由互感变压器的h参量等效模型（漏磁-励磁模型）将电路等效为
 
-    ![alt text](assets/image-20.png)
+    ![alt text](assets/circuitikz/33-mutual-h-equivalent.png)
 
     然后利用阻抗变换将右侧甩到左侧
 
@@ -742,7 +742,7 @@ $$
     \end{cases}
     $$
 
-    ![alt text](assets/image-21.png)
+    ![alt text](assets/circuitikz/34-mutual-reflected.png)
 
     断开开关后实际上有效的只有右侧的$R_L'\,,L_2'$，电路为二阶电路。因此不难得到三要素
 
@@ -763,7 +763,7 @@ $$
 ??? success "**第二问**答案"
 
     强行令两侧共地并带入互感变压器的Z参量模型（T型模型）等效。得到电路为
-    ![alt text](assets/image-23.png)
+    ![alt text](assets/circuitikz/35-mutual-t-model.png)
 
     这时看起来电路为三阶。但由于三个电感的带内容有耦合关系
 
@@ -910,8 +910,8 @@ $$
 
     进而绘制幅频相频特性为
 
-    ![alt text](assets/image-25.png)
-    ![alt text](assets/image-24.png)
+    ![alt text](assets/circuitikz/36-bode-magnitude.png)
+    ![alt text](assets/circuitikz/37-bode-phase.png)
 
 #### 滤波器特性分析
 
@@ -1002,7 +1002,7 @@ $$
 
 #### 信号通路法和开短路时间常数法
 信号通路法是估计零点的方法。当两条不同属性的路径到达输出端时会产生零点，类似于增透增反膜。如下面这个例子
-![alt text](assets/image-26.png)
+![alt text](assets/circuitikz/38-high-frequency-ce.png)
 其中存在两条路径：
 
 1. 输入-$g_m$-$R_L$(主通路)
@@ -1084,27 +1084,27 @@ $$
 
 !!! question "2024年T5"
     已知运放电压放大倍数$A_{v0}$和晶体管T的跨导$g_m$，计算该放大器的输入输出电阻和增益（认为晶体管T理想，$r_{bc}\,,r_{ce}$\to\infty$.）
-    ![alt text](assets/image-43.png)
+    ![alt text](assets/circuitikz/39-feedback-original.png)
 
 ??? success "答案"
     首先分析该电路的连接方式。将其进行变形得到（注意$V_{CC}\,,V_{EE}$都是交流地）
-    ![alt text](assets/image-44.png)
+    ![alt text](assets/circuitikz/40-feedback-transformed.png)
 
     因此这显然是一个**串串连接**，进而建模为**压控流源**。进一步分析开环放大器参数，使用*反馈网络画两边，放大网络画一遍*的方法并将输入侧反馈源置零，输出侧反馈载置零得到
 
-    ![alt text](assets/image-45.png)
+    ![alt text](assets/circuitikz/41-feedback-open-loop.png)
 
     计算输出阻抗时将输入电压置0，输出端加电压$v_{test}$得到
 
-    ![alt text](assets/image-47.png)
+    ![alt text](assets/circuitikz/42-feedback-output-test.png)
 
     此时运放被掐死了，因此电路等效为
 
-    ![alt text](assets/image-48.png)
+    ![alt text](assets/circuitikz/43-feedback-output-simplified.png)
 
     进而$I_{test} = g_m v_{test}$, $r_{out,o}=\frac{1}{g_m}$.分析输入阻抗和跨导放大倍数时，短路输出，输入端加电压得到
 
-    ![alt text](assets/image-49.png)
+    ![alt text](assets/circuitikz/44-feedback-input-test.png)
 
     不难算出$i_{out,o}=-g_mv_{in}A_{v0}$, 且$r_{in,o}=\infty$. 因此开环跨导$G_{m,o}=-g_mA_{v0}$.
 
@@ -1119,4 +1119,3 @@ $$
     G_m = \frac{A_{v0}}{1+T}=-\frac{1}{R_C}
     \end{cases}
     $$
-
