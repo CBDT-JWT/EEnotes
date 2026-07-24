@@ -68,41 +68,158 @@ extra_css:
 
 
 nav:
-  - 主页: https://www.weitao-jiang.cn
-  - 序言: index.md
-  - 数理基础:
-    - 线性代数(1): linear-algebra-1.md
-    - 线性代数(2): linear-algebra-2.md
-    - 大学物理（热学）: thermo-physics.md
-  - 物理-电磁组:  
-    - 电磁场与电磁波: electromagnetic-fields-and-waves.md
-    - 量子与统计: quantum-and-statistics.md
-    - 固体物理: solid-state-physics.md
-  - 电路组:
-    - 电子电路与系统基础: fundamentals-of-electronic-circuits.md
-    - 模拟电路原理: analog-circuits.md
-    - 数字逻辑与处理器基础: digital-logic-and-processors.md
-    - 微波与光波技术基础: microwave-engineering-basics.md
-  - 信号组:
-    - 信号与系统: signals-and-systems.md
-    - 数字信号处理: digital-signal-processing.md
-    - 通信与网络: communication-and-networks.md
-    - 随机过程: stochastic-processes.md
-    - 统计信号处理: statistic-signal-processing.md
-  - 计算机组:
-    - 程设基础: c-and-c++-programming.md
-    - 数据结构与算法: dsa.md
-    - 媒体与认知: media-and-cognition.md
-  - 科研与工具:
-    - Matlab高级编程与工程应用: matlab.md
-    - 高等模拟电路原理: advanced-analog-circuits.md
-    - 模拟数字数据转换器: AD-and-DA-convertors.md
-    - 电源管理芯片: Power-IC-Basics.md
-    - OrCAD使用笔记: orcad-and-allegro.md
-    - Latex基础教程: latex-tutorial.md
-    
-  - 开往: https://www.travellings.cn/go.html
-
+  - '主页': 'https://www.weitao-jiang.cn'
+  - '序言': 'index.md'
+  - '数理基础组':
+      - '线性代数(1)':
+          - '0	前言': '数理基础组/linear-algebra-1/01-0-前言.md'
+          - '1	知识梳理': '数理基础组/linear-algebra-1/02-1-知识梳理.md'
+          - '2	基础例题选讲': '数理基础组/linear-algebra-1/03-2-基础例题选讲.md'
+          - '3	难题选讲': '数理基础组/linear-algebra-1/04-3-难题选讲.md'
+          - '4	后记': '数理基础组/linear-algebra-1/05-4-后记.md'
+      - '线性代数(2)':
+          - '前言': '数理基础组/linear-algebra-2/01-前言.md'
+          - '知识回顾': '数理基础组/linear-algebra-2/02-知识回顾.md'
+          - '例题讲解与备考建议': '数理基础组/linear-algebra-2/03-例题讲解与备考建议.md'
+          - '后记与其他话题': '数理基础组/linear-algebra-2/04-后记与其他话题.md'
+          - '附: 几道高微习题': '数理基础组/linear-algebra-2/05-附-几道高微习题.md'
+      - '大学物理（热学）':
+          - '气体动理论：研究稳态的气体': '数理基础组/thermo-physics/01-气体动理论-研究稳态的气体.md'
+          - '热力学第一定律': '数理基础组/thermo-physics/02-热力学第一定律.md'
+          - '热力学第二定律': '数理基础组/thermo-physics/03-热力学第二定律.md'
+          - '参考资料': '数理基础组/thermo-physics/04-参考资料.md'
+  - '物理-电磁组':
+      - '电磁场与电磁波':
+          - '课程说明': '物理-电磁组/electromagnetic-fields-and-waves/00-课程说明.md'
+          - '坡印廷定理': '物理-电磁组/electromagnetic-fields-and-waves/01-坡印廷定理.md'
+          - '时谐 Maxwell 方程组与波动方程的导出': '物理-电磁组/electromagnetic-fields-and-waves/02-时谐-Maxwell-方程组与波动方程的导出.md'
+          - '时谐场的能流与复数 Poynting 定理': '物理-电磁组/electromagnetic-fields-and-waves/03-时谐场的能流与复数-Poynting-定理.md'
+      - '量子与统计':
+          - '早期量子理论': '物理-电磁组/quantum-and-statistics/01-早期量子理论.md'
+      - '固体物理':
+          - '金属电子论': '物理-电磁组/solid-state-physics/01-金属电子论.md'
+          - '晶体结构': '物理-电磁组/solid-state-physics/02-晶体结构.md'
+          - '倒易点阵和布里渊区': '物理-电磁组/solid-state-physics/03-倒易点阵和布里渊区.md'
+  - '电路组':
+      - '电子电路与系统基础':
+          - '课程说明': '电路组/fundamentals-of-electronic-circuits/00-课程说明.md'
+          - '前言': '电路组/fundamentals-of-electronic-circuits/01-前言.md'
+          - '元件与器件': '电路组/fundamentals-of-electronic-circuits/02-元件与器件.md'
+          - '方法与工具': '电路组/fundamentals-of-electronic-circuits/03-方法与工具.md'
+      - '模拟电路原理':
+          - '课程说明': '电路组/analog-circuits/01-课程说明.md'
+      - '数字逻辑与处理器基础':
+          - '课程说明': '电路组/digital-logic-and-processors/01-课程说明.md'
+      - '微波与光波技术基础':
+          - '课程说明': '电路组/microwave-engineering-basics/01-课程说明.md'
+  - '信号组':
+      - '信号与系统':
+          - '课程说明': '信号组/signals-and-systems/00-课程说明.md'
+          - '常用表格': '信号组/signals-and-systems/01-常用表格.md'
+          - '基本概念': '信号组/signals-and-systems/02-基本概念.md'
+          - 'LTI系统的时域分析': '信号组/signals-and-systems/03-LTI系统的时域分析.md'
+          - 'Fourier 变换': '信号组/signals-and-systems/04-Fourier-变换.md'
+          - 'Laplace变换': '信号组/signals-and-systems/05-Laplace变换.md'
+          - 'Laplace变换与Fourier变换的关系': '信号组/signals-and-systems/06-Laplace变换与Fourier变换的关系.md'
+          - 'Laplace变换与Fourier变换的应用': '信号组/signals-and-systems/07-Laplace变换与Fourier变换的应用.md'
+      - '数字信号处理':
+          - '从连续信号到离散序列': '信号组/digital-signal-processing/01-从连续信号到离散序列.md'
+          - '离散信号与系统的表示': '信号组/digital-signal-processing/02-离散信号与系统的表示.md'
+          - '离散时间傅里叶变换': '信号组/digital-signal-processing/03-离散时间傅里叶变换.md'
+          - '离散傅里叶变换': '信号组/digital-signal-processing/04-离散傅里叶变换.md'
+          - 'DFT 的快速计算': '信号组/digital-signal-processing/05-DFT-的快速计算.md'
+          - 'DFT 的应用': '信号组/digital-signal-processing/06-DFT-的应用.md'
+          - '离散余弦变换': '信号组/digital-signal-processing/07-离散余弦变换.md'
+          - 'LTI 系统的频域与复频域分析': '信号组/digital-signal-processing/08-LTI-系统的频域与复频域分析.md'
+          - 'LTI 滤波器设计': '信号组/digital-signal-processing/09-LTI-滤波器设计.md'
+          - '离散 Hilbert 变换': '信号组/digital-signal-processing/10-离散-Hilbert-变换.md'
+          - '有限字长效应': '信号组/digital-signal-processing/11-有限字长效应.md'
+          - '多采样率信号处理': '信号组/digital-signal-processing/12-多采样率信号处理.md'
+          - '贯穿各部分的关系': '信号组/digital-signal-processing/13-贯穿各部分的关系.md'
+      - '通信与网络':
+          - '信息论基础': '信号组/communication-and-networks/01-信息论基础.md'
+          - '模拟信源的数字化': '信号组/communication-and-networks/02-模拟信源的数字化.md'
+          - '数字基带传输': '信号组/communication-and-networks/03-数字基带传输.md'
+          - '载波传输': '信号组/communication-and-networks/04-载波传输.md'
+          - '差错控制': '信号组/communication-and-networks/05-差错控制.md'
+          - '复用、多址与双工': '信号组/communication-and-networks/06-复用-多址与双工.md'
+          - '交换与路由': '信号组/communication-and-networks/07-交换与路由.md'
+          - '流量管理与控制': '信号组/communication-and-networks/08-流量管理与控制.md'
+      - '随机过程':
+          - '课程说明': '信号组/stochastic-processes/01-课程说明.md'
+      - '统计信号处理':
+          - '课程说明': '信号组/statistic-signal-processing/00-课程说明.md'
+          - '假设检验理论': '信号组/statistic-signal-processing/01-假设检验理论.md'
+          - '参数估计理论': '信号组/statistic-signal-processing/02-参数估计理论.md'
+          - '信号检测理论': '信号组/statistic-signal-processing/03-信号检测理论.md'
+          - '滤波理论': '信号组/statistic-signal-processing/04-滤波理论.md'
+  - '计算机组':
+      - '程设基础':
+          - 'C 部分（计算机程序设计基础（1））': '计算机组/c-and-c++-programming/01-C-部分-计算机程序设计基础-1.md'
+          - '1. 绪论': '计算机组/c-and-c++-programming/02-1-绪论.md'
+          - '2. C 语言的基本数据类型': '计算机组/c-and-c++-programming/03-2-C-语言的基本数据类型.md'
+          - '3. 数据的输入与输出': '计算机组/c-and-c++-programming/04-3-数据的输入与输出.md'
+          - '4. C 表达式与宏定义': '计算机组/c-and-c++-programming/05-4-C-表达式与宏定义.md'
+          - '5. 选择结构': '计算机组/c-and-c++-programming/06-5-选择结构.md'
+          - '6. 编译预处理': '计算机组/c-and-c++-programming/07-6-编译预处理.md'
+          - '7. 循环结构': '计算机组/c-and-c++-programming/08-7-循环结构.md'
+          - '8. 模块设计（函数）': '计算机组/c-and-c++-programming/09-8-模块设计-函数.md'
+          - '9. 数组与字符串': '计算机组/c-and-c++-programming/10-9-数组与字符串.md'
+          - '10. 指针': '计算机组/c-and-c++-programming/11-10-指针.md'
+          - '11. 结构体、联合体、枚举与链表': '计算机组/c-and-c++-programming/12-11-结构体-联合体-枚举与链表.md'
+          - '12. 文件': '计算机组/c-and-c++-programming/13-12-文件.md'
+          - '13. 位运算': '计算机组/c-and-c++-programming/14-13-位运算.md'
+      - '数据结构与算法':
+          - '课程说明': '计算机组/dsa/00-课程说明.md'
+          - '绪论：数据、模型与算法': '计算机组/dsa/01-绪论-数据-模型与算法.md'
+          - '基础数据结构': '计算机组/dsa/02-基础数据结构.md'
+          - '基础非数值算法': '计算机组/dsa/03-基础非数值算法.md'
+          - '基础数值算法': '计算机组/dsa/04-基础数值算法.md'
+          - '算法设计技术': '计算机组/dsa/05-算法设计技术.md'
+          - '算法优化技术': '计算机组/dsa/06-算法优化技术.md'
+          - '计算复杂性理论': '计算机组/dsa/07-计算复杂性理论.md'
+      - '媒体与认知':
+          - '1': '计算机组/media-and-cognition/01-1.md'
+          - '第1讲 媒体与认知概述': '计算机组/media-and-cognition/02-第1讲-媒体与认知概述.md'
+          - '第2讲 机器学习（一）': '计算机组/media-and-cognition/03-第2讲-机器学习-一.md'
+          - '第3讲 机器学习（二）': '计算机组/media-and-cognition/04-第3讲-机器学习-二.md'
+          - '第4讲 深度学习（一）': '计算机组/media-and-cognition/05-第4讲-深度学习-一.md'
+          - '第5讲 深度学习（二）': '计算机组/media-and-cognition/06-第5讲-深度学习-二.md'
+          - '第6讲 深度学习（三）': '计算机组/media-and-cognition/07-第6讲-深度学习-三.md'
+          - '第7讲 深度学习（四）': '计算机组/media-and-cognition/08-第7讲-深度学习-四.md'
+          - '第8讲 深度学习（五）': '计算机组/media-and-cognition/09-第8讲-深度学习-五.md'
+          - '第9讲 深度学习（六）': '计算机组/media-and-cognition/10-第9讲-深度学习-六.md'
+          - '第10讲 概率模型（一）': '计算机组/media-and-cognition/11-第10讲-概率模型-一.md'
+          - '第11讲 概率模型（二）': '计算机组/media-and-cognition/12-第11讲-概率模型-二.md'
+          - '第12讲 认知与计算（一）': '计算机组/media-and-cognition/13-第12讲-认知与计算-一.md'
+          - '第13讲 认知与计算（二）': '计算机组/media-and-cognition/14-第13讲-认知与计算-二.md'
+          - '第14讲 认知与计算（三）': '计算机组/media-and-cognition/15-第14讲-认知与计算-三.md'
+  - '科研与工具组':
+      - 'Matlab高级编程与工程应用':
+          - '课程说明': '科研与工具组/matlab/00-课程说明.md'
+          - '绘图相关': '科研与工具组/matlab/01-绘图相关.md'
+          - '离散系统相关': '科研与工具组/matlab/02-离散系统相关.md'
+      - '高等模拟电路原理':
+          - '晶体管的长沟道模型': '科研与工具组/advanced-analog-circuits/01-晶体管的长沟道模型.md'
+          - '放大器的线性化分析': '科研与工具组/advanced-analog-circuits/02-放大器的线性化分析.md'
+          - '晶体管的基本电路结构': '科研与工具组/advanced-analog-circuits/03-晶体管的基本电路结构.md'
+      - '模拟数字数据转换器':
+          - '数据转换基本概念': '科研与工具组/AD-and-DA-convertors/01-数据转换基本概念.md'
+          - '数据转换器的性能指标': '科研与工具组/AD-and-DA-convertors/02-数据转换器的性能指标.md'
+      - '电源管理芯片':
+          - 'LDO': '科研与工具组/Power-IC-Basics/01-LDO.md'
+          - 'DC-DC': '科研与工具组/Power-IC-Basics/02-DC-DC.md'
+      - 'OrCAD使用笔记':
+          - '课程说明': '科研与工具组/orcad-and-allegro/00-课程说明.md'
+          - '新建项目': '科研与工具组/orcad-and-allegro/01-新建项目.md'
+          - '导入已有库': '科研与工具组/orcad-and-allegro/02-导入已有库.md'
+          - '原理图绘制': '科研与工具组/orcad-and-allegro/03-原理图绘制.md'
+          - '版图绘制': '科研与工具组/orcad-and-allegro/04-版图绘制.md'
+      - 'Latex基础教程':
+          - '课程说明': '科研与工具组/latex-tutorial/01-课程说明.md'
+      - '办事指南':
+          - '学推计划报销': '科研与工具组/how-to-do/01-学推计划报销.md'
+  - '开往': 'https://www.travellings.cn/go.html'
 
 
 theme:
@@ -128,7 +245,6 @@ theme:
     - content.code.annotate
     - navigation.tabs
     - navigation.tabs.sticky
-    - navigation.sections
     - navigation.top
     - navigation.footer
     - search.highlight
@@ -137,6 +253,7 @@ theme:
     # - md_in_html
     - search.suggest
     - content.tabs.link
+    - navigation.path
   icon:
     repo: fontawesome/brands/github
     admonition:
