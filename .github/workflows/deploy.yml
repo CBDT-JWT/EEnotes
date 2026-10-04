@@ -18,6 +18,9 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y rsync sshpass
 
+      - name: Export public chatJWT knowledge and update the companion
+        run: python3 scripts/chatjwt_build.py
+
       - name: Sync repository to remote via rsync
         env:
           REMOTE_HOST: ${{ secrets.REMOTE_HOST }}

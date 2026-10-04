@@ -65,6 +65,7 @@ http://127.0.0.1:8000
 
 ```bash
 mkdocs build
+python scripts/chatjwt_build.py
 ```
 
 生成结果默认位于 `site/` 目录。
@@ -74,3 +75,11 @@ mkdocs build
 - 配置文件为项目根目录下的 `mkdocs.yml`。
 - 文档源文件位于 `docs/` 目录；新增内容时请继续使用“xx组 / 课程文件夹 / 章节 Markdown”结构。
 - `git-revision-date-localized` 插件依赖 Git 历史记录来显示页面更新时间，因此请尽量在完整克隆仓库后再本地构建。
+
+## chatJWT 小精灵
+
+笔记页复用主页的 chatJWT 组件，DeepSeek Token、语气、自动概括和请求额度统一在主页 `/admin_chatjwt` 配置。浏览笔记时会主动概括，并可以继续提问。
+
+每次构建后执行 `python scripts/chatjwt_build.py`，从导航中列出的已构建公开页面提取正文，生成 `site/chatjwt-index.json`，并移除旧聊天组件。部署工作流也会执行该步骤。未列入公开导航的文档不会进入索引。
+
+部署笔记更新后，在主页 chatJWT 设置中点击“同步笔记知识”，即可更新 RAG；同步失败时保留已有索引。前端从主页加载组件，跨域接口只允许本站域名，Token 始终保留在主页后端。
