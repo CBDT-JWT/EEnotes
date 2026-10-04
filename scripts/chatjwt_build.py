@@ -12,7 +12,7 @@ from pathlib import Path
 from urllib.parse import quote
 
 ROOT = Path(__file__).resolve().parents[1]
-SCRIPT_URL = 'https://www.weitao-jiang.cn/static/js/chatjwt.js?v=6'
+SCRIPT_URL = 'https://www.weitao-jiang.cn/static/js/chatjwt.js?v=7'
 ORIGIN = 'https://note.weitao-jiang.cn'
 
 
