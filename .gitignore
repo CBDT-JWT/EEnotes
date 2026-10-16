@@ -1,0 +1,6 @@
+.venv/
+.cache/
+.ui-preview.yml
+.verify-ui/
+__pycache__/
+.DS_Store

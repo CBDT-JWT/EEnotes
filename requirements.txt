@@ -1,0 +1,5 @@
+# Match the Zensical version used by the published site.
+zensical==0.0.46
+neoteroi-mkdocs==1.2.0
+markdown-exec==1.12.5
+mkdocs-material==9.7.7

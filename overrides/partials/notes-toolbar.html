@@ -1,0 +1,19 @@
+  <div class="notes-toolbar">
+    <nav class="notes-toolbar__inner" aria-label="笔记工具栏">
+      <label class="md-icon notes-drawer-toggle" for="__drawer" aria-label="打开课程目录" tabindex="0" role="button">
+        {% include ".icons/material/menu.svg" %}
+      </label>
+      <a class="notes-home" href="{{ nav.homepage.url | url }}">学习笔记</a>
+      <span class="notes-toolbar-divider" aria-hidden="true">/</span>
+      <span class="notes-toolbar-caption">电子工程与学习记录</span>
+      {% if "search" in config.plugins %}
+        {% set search = config.plugins["search"] | attr("config") %}
+        {% if search.enabled %}
+          {% include "partials/search.html" %}
+        {% endif %}
+      {% endif %}
+      <a class="notes-repo md-icon" href="{{ config.repo_url }}" aria-label="在 GitHub 查看笔记源码" title="笔记源码">
+        {% include ".icons/fontawesome/brands/github.svg" %}
+      </a>
+    </nav>
+  </div>

@@ -1,0 +1,6 @@
+{% extends "main.html" %}
+{% block content %}
+  {% include "partials/notes-toolbar.html" %}
+  <h1>404 · 没有找到这篇笔记</h1>
+  <p>可以通过课程目录或搜索查找，也可以<a href="{{ nav.homepage.url | url }}">返回笔记首页</a>。</p>
+{% endblock %}

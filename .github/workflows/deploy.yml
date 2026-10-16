@@ -18,6 +18,17 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y rsync sshpass
 
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      - name: Build the Zensical site
+        run: |
+          python -m pip install -r requirements.txt
+          zensical build
+
       - name: Export public chatJWT knowledge and update the companion
         run: python3 scripts/chatjwt_build.py
 
@@ -45,7 +56,7 @@ jobs:
           sshpass -p "$REMOTE_PASSWORD" ssh $SSH_OPTS $PORT_FLAG ${REMOTE_USER}@${REMOTE_HOST} "mkdir -p \"${REMOTE_DIR}\""
 
           # Exclude common files we don't want to deploy
-          EXCLUDES=(--exclude='.git' --exclude='.github' --exclude='node_modules' --exclude='.venv' --exclude='venv')
+          EXCLUDES=(--exclude='.git' --exclude='.github' --exclude='node_modules' --exclude='.venv' --exclude='venv' --exclude='.cache' --exclude='__pycache__')
 
           echo "Starting rsync..."
           sshpass -p "$REMOTE_PASSWORD" rsync -avz --delete "${EXCLUDES[@]}" -e "ssh $SSH_OPTS $PORT_FLAG" ./ ${REMOTE_USER}@${REMOTE_HOST}:${REMOTE_DIR}

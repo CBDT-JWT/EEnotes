@@ -34,7 +34,7 @@ docs/
 
 ## 本地部署
 
-建议使用 Python 3.10 及以上版本，并确保本机已安装 `git`。本项目当前使用 `MkDocs Material` 主题，以及 `git-revision-date-localized`、`pymdown-extensions`、`neoteroi.timeline` 等插件/扩展。
+建议使用 Python 3.12，并确保本机已安装 `git`。本项目使用 Zensical，继续读取 `mkdocs.yml`，所需版本记录在 `requirements.txt`。
 
 1. 创建并激活虚拟环境
 
@@ -43,16 +43,16 @@ python -m venv .venv
 source .venv/bin/activate
 ```
 
-2. 安装 MkDocs 及所需依赖
+2. 安装 Zensical 及所需依赖
 
 ```bash
-pip install mkdocs mkdocs-material mkdocs-git-revision-date-localized-plugin pymdown-extensions neoteroi-mkdocs
+pip install -r requirements.txt
 ```
 
 3. 在项目根目录启动本地预览
 
 ```bash
-mkdocs serve
+zensical serve
 ```
 
 默认访问地址为：
@@ -64,7 +64,7 @@ http://127.0.0.1:8000
 4. 如需生成静态站点文件，可执行
 
 ```bash
-mkdocs build
+zensical build
 python scripts/chatjwt_build.py
 ```
 
@@ -74,7 +74,21 @@ python scripts/chatjwt_build.py
 
 - 配置文件为项目根目录下的 `mkdocs.yml`。
 - 文档源文件位于 `docs/` 目录；新增内容时请继续使用“xx组 / 课程文件夹 / 章节 Markdown”结构。
-- `git-revision-date-localized` 插件依赖 Git 历史记录来显示页面更新时间，因此请尽量在完整克隆仓库后再本地构建。
+- GitHub Actions 会先构建 Zensical，再生成 chatJWT 索引，最后部署。主题和模板的修改不再依赖手动提交 `site/`。
+
+## 与主站同步 UI
+
+笔记沿用主站的蓝色强调色、浅灰画布、白色内容区、字体和完整站点导航。课程树、页内目录、搜索、代码复制与公式仍由 Zensical 提供。
+
+主站仓库位于相邻的 `homepage/` 时，运行：
+
+```bash
+python scripts/sync_homepage_ui.py
+```
+
+其他位置可以使用 `--homepage-dir /path/to/homepage`。脚本从主站提取 `--ui-*` 设计变量、公共导航 CSS 和导航结构，并把导航链接转换为主站的绝对地址。生成文件已提交到笔记仓库，部署时无需访问主站源码。
+
+同步后执行 `zensical build` 和 `python scripts/chatjwt_build.py`。笔记阅读布局的适配位于 `docs/stylesheets/homepage-palette.css`，Zensical 页眉位于 `overrides/partials/header.html`，阅读工具栏位于 `overrides/partials/notes-toolbar.html`。生成的 `homepage-tokens.css` 同时包含主站首页的布局和导航覆盖规则；它与 `public-header.css`、`site-nav.html` 都通过同步脚本更新。笔记的根字号保持浏览器默认尺寸，避免 Zensical 的宽屏缩放造成跨站尺寸变化。
 
 ## chatJWT 小精灵
 

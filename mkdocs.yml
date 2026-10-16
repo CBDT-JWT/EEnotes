@@ -1,4 +1,6 @@
 site_name: CBDT的资料屋
+site_description: 江玮陶的电子工程学习笔记，按课程整理知识、推导与例题。
+site_author: 江玮陶
 site_url: https://note.weitao-jiang.cn
 docs_dir: docs
 repo_url: https://github.com/CBDT-JWT/EEnotes
@@ -62,7 +64,9 @@ markdown_extensions:
   
 extra_css:
 - css/neoteroi-mkdocs.css
-# - stylesheets/homepage-palette.css
+- stylesheets/public-header.css
+- stylesheets/homepage-tokens.css?v=20261016-scale-2
+- stylesheets/homepage-palette.css?v=20261016-scale-2
 - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css
 
 
@@ -226,24 +230,16 @@ theme:
   logo: https://www.weitao-jiang.cn/images/avatar.jpg
   favicon: https://www.weitao-jiang.cn/images/favicon.ico
   language: zh
+  font: false
   custom_dir: overrides
   palette:
-    - scheme: default
-      primary: deep purple
-      toggle:
-        icon: material/lightbulb
-        name: Switch to dark mode
-    - scheme: slate
-      primary: deep purple
-      toggle:
-        icon: material/lightbulb-outline
-        name: Switch to light mode
+    scheme: default
+    primary: custom
+    accent: custom
   features:
     - content.code.copy
     - content.code.select
     - content.code.annotate
-    - navigation.tabs
-    - navigation.tabs.sticky
     - navigation.top
     - navigation.footer
     - search.highlight
@@ -270,7 +266,7 @@ theme:
       quote: octicons/quote-16
       
 extra_javascript:
-- javascripts/navigation.js
+- javascripts/site-navigation.js
 - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
 - javascripts/tablesort.js
 - https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js

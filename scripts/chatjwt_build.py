@@ -30,7 +30,7 @@ class ArticleText(HTMLParser):
             self.in_article = False
         if tag == 'article':
             self.in_article = True
-        if tag in ('script', 'style', 'svg'):
+        if tag in ('script', 'style', 'svg', 'nav'):
             self.skip += 1
         if self.in_article and tag == 'h1':
             self.in_title = True
@@ -40,7 +40,7 @@ class ArticleText(HTMLParser):
     def handle_endtag(self, tag):
         if tag == 'article':
             self.in_article = False
-        if tag in ('script', 'style', 'svg'):
+        if tag in ('script', 'style', 'svg', 'nav'):
             self.skip = max(0, self.skip - 1)
         if tag == 'h1':
             self.in_title = False
