@@ -65,8 +65,8 @@ markdown_extensions:
 extra_css:
 - css/neoteroi-mkdocs.css
 - stylesheets/public-header.css
-- stylesheets/homepage-tokens.css?v=20261016-scale-2
-- stylesheets/homepage-palette.css?v=20261016-scale-2
+- stylesheets/homepage-palette.css?v=20261016-public-scale-3
+- stylesheets/homepage-tokens.css?v=20261016-public-scale-3
 - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css
 
 

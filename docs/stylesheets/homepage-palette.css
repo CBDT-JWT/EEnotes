@@ -22,17 +22,12 @@
   --md-footer-fg-color: var(--ui-ink);
   --md-footer-fg-color--light: var(--ui-muted);
   --md-footer-fg-color--lighter: var(--ui-muted);
-  --public-nav-paper: var(--ui-surface);
-  --public-nav-ink: var(--ui-ink);
-  --public-nav-accent: var(--ui-accent);
-  --public-nav-line: var(--ui-line);
-  --public-nav-gutter: max(var(--ui-gutter), calc((100vw - var(--ui-width)) / 2));
   color-scheme: light;
 }
 
 /* Zensical scales rem units at each desktop breakpoint; the homepage keeps
    the browser's standard root size at every width. */
-html { font-size: 100%; scrollbar-gutter: auto; background: var(--ui-canvas); scroll-padding-top: 104px; }
+html { background: var(--ui-canvas); scroll-padding-top: 104px; }
 body { font-family: var(--ui-font); font-size: 14px; line-height: 1.8; text-rendering: optimizeLegibility; }
 ::selection { color: var(--ui-accent-dark); background: #d8e7fa; }
 :is(a, button, input, summary, label[tabindex]):focus-visible {
@@ -69,7 +64,7 @@ body { font-family: var(--ui-font); font-size: 14px; line-height: 1.8; text-rend
 
 .md-main__inner {
   gap: 24px; width: min(var(--ui-width), calc(100% - 2 * var(--ui-gutter)));
-  margin-top: 46px; margin-bottom: 44px;
+  margin-top: var(--ui-page-offset); margin-bottom: 44px;
 }
 .md-content { min-width: 0; }
 .md-content__inner {
@@ -165,7 +160,7 @@ body { font-family: var(--ui-font); font-size: 14px; line-height: 1.8; text-rend
   .md-search__button { min-height: 34px; font-size: 12px; }
 }
 @media (max-width: 700px) {
-  .md-main__inner { gap: 0; margin-top: 24px; margin-bottom: 32px; }
+  .md-main__inner { gap: 0; margin-bottom: 32px; }
   .md-content__inner { padding: 22px; border-radius: 10px; }
   .md-typeset { font-size: 14px; line-height: 1.9; }
   .md-typeset h1 { margin-bottom: 24px; font-size: 23px; }

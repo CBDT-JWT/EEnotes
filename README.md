@@ -88,7 +88,7 @@ python scripts/sync_homepage_ui.py
 
 其他位置可以使用 `--homepage-dir /path/to/homepage`。脚本从主站提取 `--ui-*` 设计变量、公共导航 CSS 和导航结构，并把导航链接转换为主站的绝对地址。生成文件已提交到笔记仓库，部署时无需访问主站源码。
 
-同步后执行 `zensical build` 和 `python scripts/chatjwt_build.py`。笔记阅读布局的适配位于 `docs/stylesheets/homepage-palette.css`，Zensical 页眉位于 `overrides/partials/header.html`，阅读工具栏位于 `overrides/partials/notes-toolbar.html`。生成的 `homepage-tokens.css` 同时包含主站首页的布局和导航覆盖规则；它与 `public-header.css`、`site-nav.html` 都通过同步脚本更新。笔记的根字号保持浏览器默认尺寸，避免 Zensical 的宽屏缩放造成跨站尺寸变化。
+同步后执行 `zensical build` 和 `python scripts/chatjwt_build.py`。笔记阅读布局的适配位于 `docs/stylesheets/homepage-palette.css`，Zensical 页眉位于 `overrides/partials/header.html`，阅读工具栏位于 `overrides/partials/notes-toolbar.html`。`homepage-tokens.css` 是主站公共尺寸文件 `static/css/site-layout.css` 的原样副本，在页面样式之后加载；首页、资料等公开页面也使用同一份文件，统一字号、导航边距、容器宽度和页面起始位置。它与 `public-header.css`、`site-nav.html` 都通过同步脚本更新。
 
 ## chatJWT 小精灵
 
