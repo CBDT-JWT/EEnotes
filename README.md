@@ -78,7 +78,7 @@ python scripts/chatjwt_build.py
 
 ## 与主站同步 UI
 
-笔记沿用主站的蓝色强调色、浅灰画布、白色内容区、字体和完整站点导航。课程树、页内目录、搜索、代码复制与公式仍由 Zensical 提供。
+笔记沿用主站的青绿色强调色、浅灰画布、白色内容区、宋体标题、Helvetica 正文字体和完整站点导航。课程树、页内目录、搜索、代码复制与公式仍由 Zensical 提供。
 
 主站仓库位于相邻的 `homepage/` 时，运行：
 
@@ -86,9 +86,9 @@ python scripts/chatjwt_build.py
 python scripts/sync_homepage_ui.py
 ```
 
-其他位置可以使用 `--homepage-dir /path/to/homepage`。脚本从主站提取 `--ui-*` 设计变量、公共导航 CSS 和导航结构，并把导航链接转换为主站的绝对地址。生成文件已提交到笔记仓库，部署时无需访问主站源码。
+其他位置可以使用 `--homepage-dir /path/to/homepage`。脚本从主站同步尺寸变量、完整公共主题、字体 CSS、字体资源和导航结构，并把导航链接转换为主站的绝对地址。字体和样式在笔记站自行托管，部署时无需访问主站源码；更新共享样式时同时更新脚本中的 `ASSET_VERSION`，避免静态缓存命中旧版本。
 
-同步后执行 `zensical build` 和 `python scripts/chatjwt_build.py`。笔记阅读布局的适配位于 `docs/stylesheets/homepage-palette.css`，Zensical 页眉位于 `overrides/partials/header.html`，阅读工具栏位于 `overrides/partials/notes-toolbar.html`。`homepage-tokens.css` 是主站公共尺寸文件 `static/css/site-layout.css` 的原样副本，在页面样式之后加载；首页、资料等公开页面也使用同一份文件，统一字号、导航边距、容器宽度和页面起始位置。它与 `public-header.css`、`site-nav.html` 都通过同步脚本更新。
+同步后执行 `zensical build` 和 `python scripts/chatjwt_build.py`。笔记阅读布局的适配位于 `docs/stylesheets/homepage-palette.css`，Zensical 页眉位于 `overrides/partials/header.html`，阅读工具栏位于 `overrides/partials/notes-toolbar.html`。样式依次加载共享尺寸、基础字体、宋体资源、全站主题和笔记适配；后者只负责课程树、目录、搜索等笔记控件。共享样式、`site-nav.html` 和 ChatJWT 资源版本都通过同步脚本更新。
 
 ## chatJWT 小精灵
 

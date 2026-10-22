@@ -64,10 +64,13 @@ markdown_extensions:
   
 extra_css:
 - css/neoteroi-mkdocs.css
-- stylesheets/public-header.css
-- stylesheets/homepage-palette.css?v=20261016-public-scale-3
-- stylesheets/homepage-tokens.css?v=20261016-public-scale-3
+- stylesheets/public-header.css?v=20261022-unified-2
+- stylesheets/homepage-tokens.css?v=20261022-unified-2
 - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css
+- stylesheets/homepage-typography.css?v=20261022-unified-2
+- stylesheets/editorial-fonts.css?v=20261022-unified-2
+- stylesheets/site-theme.css?v=20261022-unified-2
+- stylesheets/homepage-palette.css?v=20261022-unified-2
 
 
 nav:
@@ -266,7 +269,7 @@ theme:
       quote: octicons/quote-16
       
 extra_javascript:
-- javascripts/site-navigation.js
+- javascripts/site-navigation.js?v=20261022-unified-2
 - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
 - javascripts/tablesort.js
 - https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js
@@ -279,7 +282,7 @@ extra_javascript:
 - https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js
 #- https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js
 #- https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js
-- https://www.weitao-jiang.cn/static/js/chatjwt.js?v=7
+- https://www.weitao-jiang.cn/static/js/chatjwt.js?v=20261022-unified-2
 
 
 extra:

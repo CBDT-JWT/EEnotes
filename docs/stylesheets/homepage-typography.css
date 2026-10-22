@@ -1,0 +1,91 @@
+/* Only formula letters and digits use Helvetica; mathematical symbol fonts
+   retain the glyphs and sizing expected by KaTeX. */
+@font-face {
+    font-family: "SiteMathHelvetica";
+    src: local("Helvetica Bold"), local("Helvetica-Bold"),
+         local("Arial Bold"), local("Arial-BoldMT");
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    unicode-range: U+0030-0039, U+0041-005A, U+0061-007A;
+}
+
+@font-face {
+    font-family: "SiteMathHelvetica";
+    src: local("Helvetica Bold Oblique"), local("Helvetica-BoldOblique"),
+         local("Arial Bold Italic"), local("Arial-BoldItalicMT");
+    font-style: italic;
+    font-weight: 700;
+    font-display: swap;
+    unicode-range: U+0030-0039, U+0041-005A, U+0061-007A;
+}
+
+/* Important declarations in a layer take precedence over the older,
+   unlayered page skins, including their important font declarations. */
+@layer site-typography {
+    :root, :host {
+        --site-font-sans: Helvetica, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+        --ui-font: var(--site-font-sans) !important;
+        --palette-font-sans: var(--site-font-sans) !important;
+        --palette-font-mono: var(--site-font-sans) !important;
+    }
+
+    :where(html, body, body *, :host, :host *):not(:where(.katex, .katex *, mjx-container, mjx-container *, .MathJax, .MathJax *)) {
+        font-family: var(--site-font-sans) !important;
+    }
+
+    :where(.katex, .katex span) {
+        font-weight: 700 !important;
+    }
+
+    .katex,
+    .katex :is(.textrm, .mainrm, .mathbf, .mathit, .texttt, .mathtt) {
+        font-family: "SiteMathHelvetica", KaTeX_Main, "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Microsoft YaHei", sans-serif !important;
+    }
+
+    .katex :is(.mathnormal, .boldsymbol) {
+        font-family: "SiteMathHelvetica", KaTeX_Math, "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Microsoft YaHei", sans-serif !important;
+    }
+
+    .katex :is(.textsf, .mathsf, .mathboldsf, .textboldsf, .mathitsf, .mathsfit, .textitsf) {
+        font-family: "SiteMathHelvetica", KaTeX_SansSerif, "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Microsoft YaHei", sans-serif !important;
+    }
+
+    .math-block {
+        text-align: center !important;
+    }
+
+    .katex-display {
+        display: block !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        text-align: center !important;
+    }
+
+    /* Short expressions fill the reading column and center within it. Long
+       expressions grow from the left edge so every symbol stays scrollable. */
+    .katex-display > .katex {
+        display: block !important;
+        width: max-content !important;
+        min-width: 100% !important;
+        max-width: none !important;
+        text-align: center !important;
+    }
+
+    .katex-display.fleqn > .katex {
+        padding-left: 0 !important;
+    }
+
+    /* Numbered equations reserve equal space on both sides, keeping the
+       expression centered and its number clear of the final symbol. */
+    .katex-display > .katex > .katex-html:has(> :is(.tag, .katex-tag)) {
+        padding-inline: 3em !important;
+    }
+
+    /* Article tag-chip padding must not enlarge equation numbers. */
+    .katex .tag {
+        padding: 0 !important;
+    }
+}

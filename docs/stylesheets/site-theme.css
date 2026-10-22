@@ -1,0 +1,337 @@
+/* Shared editorial theme for the homepage, public pages, workspaces and notes.
+   Structural layouts and meaningful status/game/math colors belong to each UI. */
+@layer site-theme {
+    :root, body, :host {
+        color-scheme: light !important;
+        --site-paper: #f5f5f8 !important;
+        --site-surface: #ffffff !important;
+        --site-ink: #26282c !important;
+        --site-muted: #6d7078 !important;
+        --site-line: #dedee4 !important;
+        --site-accent: #287f7b !important;
+        --site-accent-dark: #206662 !important;
+        --site-accent-soft: #edf5f4 !important;
+        --site-radius: 4px !important;
+        --site-focus-ring: rgb(40 127 123 / 18%) !important;
+        --ui-canvas: var(--site-paper) !important;
+        --ui-surface: var(--site-surface) !important;
+        --ui-ink: var(--site-ink) !important;
+        --ui-muted: var(--site-muted) !important;
+        --ui-line: var(--site-line) !important;
+        --ui-accent: var(--site-accent) !important;
+        --ui-accent-dark: var(--site-accent-dark) !important;
+        --ui-tint: var(--site-accent-soft) !important;
+        --ui-radius: var(--site-radius) !important;
+        --ui-control-radius: var(--site-radius) !important;
+        --ui-width: 1000px !important;
+        --ui-gutter: 24px !important;
+        --ui-shadow: none !important;
+        --ui-page-offset: 70px !important;
+        --public-nav-height: 64px !important;
+        --public-nav-paper: var(--site-surface) !important;
+        --public-nav-panel: var(--site-surface) !important;
+        --public-nav-ink: var(--site-ink) !important;
+        --public-nav-accent: var(--site-accent) !important;
+        --public-nav-line: var(--site-line) !important;
+        --public-nav-gutter: max(28px, calc((100% - 1200px) / 2)) !important;
+        --palette-canvas: var(--site-paper) !important;
+        --palette-surface: var(--site-surface) !important;
+        --palette-surface-strong: var(--site-surface) !important;
+        --palette-ink: var(--site-ink) !important;
+        --palette-muted: var(--site-muted) !important;
+        --palette-faint: var(--site-muted) !important;
+        --palette-line: var(--site-line) !important;
+        --palette-line-strong: #bfc4c8 !important;
+        --palette-shadow: var(--site-ink) !important;
+        --palette-walnut: var(--site-accent-dark) !important;
+        --palette-earth: var(--site-accent) !important;
+        --palette-camel: var(--site-accent) !important;
+        --palette-sand: #d6e9e6 !important;
+        --palette-earth-soft: var(--site-accent-soft) !important;
+        --palette-sand-soft: var(--site-accent-soft) !important;
+        --tools-base: var(--site-paper) !important;
+        --tools-text: var(--site-ink) !important;
+        --tools-muted: var(--site-muted) !important;
+        --tools-faint: var(--site-muted) !important;
+        --tools-line: var(--site-line) !important;
+        --tools-line-strong: #bfc4c8 !important;
+        --tools-accent: var(--site-accent) !important;
+        --tools-accent-soft: var(--site-accent-soft) !important;
+        --tools-accent-line: #b9d7d2 !important;
+        --tools-thumb: var(--site-surface) !important;
+        --links-surface: var(--site-surface) !important;
+        --links-surface-strong: var(--site-surface) !important;
+        --links-text: var(--site-ink) !important;
+        --links-muted: var(--site-muted) !important;
+        --links-faint: var(--site-muted) !important;
+        --links-line: var(--site-line) !important;
+        --links-line-strong: #bfc4c8 !important;
+        --links-accent: var(--site-accent) !important;
+        --links-accent-soft: var(--site-accent-soft) !important;
+        --links-accent-strong: var(--site-accent-dark) !important;
+        --booking-panel: var(--site-surface) !important;
+        --booking-text: var(--site-ink) !important;
+        --booking-muted: var(--site-muted) !important;
+        --booking-line: var(--site-line) !important;
+        --booking-gold: var(--site-accent) !important;
+        --booking-gold-soft: var(--site-accent-soft) !important;
+        --reader-gold: var(--site-accent) !important;
+        --reader-gold-soft: var(--site-accent-soft) !important;
+        --game-panel: var(--site-surface) !important;
+        --game-panel-strong: var(--site-surface) !important;
+        --game-text: var(--site-ink) !important;
+        --game-muted: var(--site-muted) !important;
+        --game-line: var(--site-line) !important;
+        --game-gold: var(--site-accent) !important;
+        --game-gold-soft: var(--site-accent-soft) !important;
+        --status-available: #287f7b !important;
+        --status-pending: #a77524 !important;
+        --status-booked: #516c7d !important;
+        --status-closed: #929292 !important;
+        --admin-success: #287f7b !important;
+        --admin-warning: #916f20 !important;
+        --admin-danger: #a13636 !important;
+        --admin-info: #59666e !important;
+        --admin-bg: var(--site-paper) !important;
+        --admin-bg-deep: var(--site-paper) !important;
+        --admin-surface: var(--site-surface) !important;
+        --admin-surface-strong: var(--site-surface) !important;
+        --admin-surface-soft: var(--site-paper) !important;
+        --admin-surface-hover: var(--site-accent-soft) !important;
+        --admin-border: var(--site-line) !important;
+        --admin-border-strong: #bfc4c8 !important;
+        --admin-text: var(--site-ink) !important;
+        --admin-text-strong: var(--site-ink) !important;
+        --admin-muted: var(--site-muted) !important;
+        --admin-muted-soft: var(--site-muted) !important;
+        --admin-accent: var(--site-accent) !important;
+        --admin-accent-strong: var(--site-accent-dark) !important;
+        --admin-accent-soft: var(--site-accent-soft) !important;
+        --admin-shadow: none !important;
+        --admin-shadow-soft: none !important;
+        --admin-radius-xl: var(--site-radius) !important;
+        --admin-radius-lg: var(--site-radius) !important;
+        --admin-radius-md: var(--site-radius) !important;
+        --admin-radius-sm: var(--site-radius) !important;
+        --blog-paper: var(--site-surface) !important;
+        --blog-ink: var(--site-ink) !important;
+        --blog-muted: var(--site-muted) !important;
+        --blog-line: var(--site-line) !important;
+    }
+
+    html, body { background-color: var(--site-surface) !important; color: var(--site-ink) !important; }
+    body { font-size: 17px !important; font-weight: 400 !important; line-height: 1.85 !important; }
+    .landing-nav, .landing-nav.is-scrolled {
+        min-height: var(--public-nav-height) !important;
+        background: var(--site-surface) !important;
+        border-bottom: 1px solid #eeeef1 !important;
+        box-shadow: none !important;
+        backdrop-filter: none !important;
+    }
+    .landing-nav-links { gap: 24px !important; }
+    .landing-nav-links a, .landing-nav-links a:hover, .landing-nav-links a:visited {
+        color: var(--site-ink) !important; font-size: 16px !important; font-weight: 400 !important;
+    }
+    .landing-nav-links a:hover, .landing-nav-links a[aria-current], .landing-nav-links a.is-active { color: var(--site-accent) !important; }
+    .landing-brand, .landing-brand:hover { color: var(--site-ink) !important; font-size: 18px !important; }
+    a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible, summary:focus-visible {
+        outline: 2px solid var(--site-accent) !important; outline-offset: 4px !important; box-shadow: none !important;
+    }
+
+    /* One title scale and a comfortable minimum for supporting UI text. */
+    .page-title, .blog-title, .article-title, .messages-heading h1, .dashboard-prototype-topline h1 {
+        color: var(--site-ink) !important; font-size: clamp(30px, 3vw, 40px) !important;
+        line-height: 1.4 !important; letter-spacing: -.025em !important;
+    }
+    .page-intro, .page-subtitle, .blog-intro, .login-subtitle, .home-affiliation { color: var(--site-muted) !important; font-size: 17px !important; line-height: 1.85 !important; }
+    .ui-eyebrow, .section-kicker, .login-eyebrow, .login-identity-kicker,
+    .academic-section h2 > span, .visitor-map h2 > span, .admin-brand-copy small { display: none !important; }
+    .article-meta, .post-date, .post-tag, .post-reading, .post-featured-label, .category-count,
+    .directory-count, .archive-meta, .tree-mobile-meta, .tree-description, .tree-kind, .tree-size, .tree-downloads,
+    .tool-domain, .link-desc, .site-detail-row dt, .site-detail-row dd,
+    .messages-card label, .guest-message time, #messageStatus, .toc-sidebar, .toc-title, .toc-toggle-btn,
+    .education-entry p, .education-entry time, .award-list, .award-list time,
+    .publication-authors, .publication-venue, .academic-detail-copy, .resume-form label,
+    .academic-news-list time, .academic-details summary, .academic-footer, .academic-blog-link time,
+    .poll-status, .poll-submit, .poll-result-toggle, .attachment-meta, .home-footer, .site-footer-legal {
+        font-size: 14px !important; line-height: 1.8 !important;
+    }
+    .messages-card button, .copyright-btn { font-size: 16px !important; border-radius: var(--site-radius) !important; background: var(--site-accent) !important; color: #fff !important; }
+    .messages-card label span, .guest-message p, .messages-empty { font-size: 14px !important; }
+    .ui-reserve-page .empty-calendar-slot, .empty-calendar-note, .empty-calendar-day small, .empty-calendar-heading p, .empty-calendar-heading > span { font-size: 14px !important; }
+    .tool-description, .academic-section p, .academic-contact > p, .academic-home .project-card p,
+    .academic-home .project-action, .resume-form p, .academic-blog-link p { font-size: 16px !important; line-height: 1.9 !important; }
+    .education-entry h3, .academic-home .project-card h3, .publication-entry h3 { font-size: 18px !important; line-height: 1.6 !important; }
+
+    /* The same flat white panels and restrained corners throughout the site. */
+    .copyright-modal, .card, .workspace-panel, .form-card, .table-shell, .dashboard-prototype-panel,
+    .account-info-card, .account-password-card, .academic-profile, .academic-section, .academic-blog,
+    .messages-card, .calendar, .aside, .site-details, .exchange-section, .directory-state,
+    .state-panel, .tool-entry, .link-card, .article-extra-card, .login-container {
+        color: var(--site-ink) !important; background-color: var(--site-surface) !important;
+        background-image: none !important; border-color: var(--site-line) !important;
+        border-radius: var(--site-radius) !important; box-shadow: none !important;
+    }
+    .tool-thumbnail, .link-avatar, .link-avatar img, .tool-thumbnail img, .profile-photo, .post-thumbnail {
+        border-radius: var(--site-radius) !important;
+    }
+    .tree-table-header, .tree-state-row, .directory-heading, .empty-calendar-heading,
+    .workspace-panel-head, .dashboard-prototype-panel > header, .admin-page thead {
+        background: var(--site-paper) !important; color: var(--site-muted) !important;
+    }
+    .tool-entry:hover, .link-card:hover, .tree-row:hover, .tree-row:focus-within { background-color: var(--site-accent-soft) !important; border-color: #b9d7d2 !important; }
+    .modal-content, .link-modal-content, .external-link-modal-content {
+        color: var(--site-ink) !important; background: var(--site-surface) !important;
+        border: 1px solid var(--site-line) !important; border-radius: var(--site-radius) !important;
+        box-shadow: 0 18px 60px rgb(38 40 44 / 12%) !important;
+    }
+    .ui-tools-page .tool-entry, .ui-tools-page .tool-item:nth-child(even) .tool-entry, .ui-links-page .link-card { grid-template-columns: 52px minmax(0, 1fr) !important; }
+    .ui-tools-page .tool-name, .ui-links-page .link-name { font-size: 20px !important; line-height: 1.6 !important; }
+    .ui-links-page .link-desc, .ui-tools-page .tool-description { font-size: 16px !important; }
+    .ui-links-page .links-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+
+    /* Controls keep their labels and state, without a separate visual skin. */
+    .button, .btn, .state-action, .apply-btn, .close-btn, .date-nav-btn,
+    .exchange-actions button, .calendar-nav button, .category-nav-item, .poll-choice {
+        border-radius: var(--site-radius) !important; box-shadow: none !important;
+        font-size: 16px !important; letter-spacing: 0 !important;
+    }
+    .button, .btn, .state-action, .apply-btn, .date-nav-btn { min-height: 44px !important; }
+    .button-primary, .btn-primary, .apply-btn, .submit-btn, .login-btn, .poll-submit, #submitBtn {
+        color: #fff !important; background: var(--site-accent) !important;
+        border-color: var(--site-accent) !important;
+    }
+    .button-primary:hover, .btn-primary:hover, .apply-btn:hover, .submit-btn:hover, .login-btn:hover, .poll-submit:hover { background: var(--site-accent-dark) !important; }
+    .btn-danger, .delete-btn, .btn-delete { color: #a13636 !important; border-color: #edd0d0 !important; background: #fff5f5 !important; }
+    body:not(.chat-page) :is(.form-group, .form-row, .resume-form, .messages-card, .search-input-wrap) :is(input:not([type="checkbox"]):not([type="radio"]), textarea, select),
+    .admin-page :is(input:not([type="checkbox"]):not([type="radio"]), textarea, select) {
+        color: var(--site-ink) !important; background: var(--site-surface) !important;
+        border-color: #bfc4c8 !important; border-radius: var(--site-radius) !important;
+        font-size: 16px !important;
+    }
+    :is(input, textarea)::placeholder { color: var(--site-muted) !important; }
+    input[type="checkbox"], input[type="radio"] { accent-color: var(--site-accent) !important; }
+
+    /* Archives and reading keep their useful structures and share the homepage measure. */
+    .blog-index-page .blog-hero, .blog-index-page .blog-layout, .blog-index-page .blog-reference-footer { width: min(1000px, calc(100% - 48px)) !important; }
+    .blog-index-page .post-featured { padding: 28px !important; border: 1px solid var(--site-line) !important; border-radius: var(--site-radius) !important; background: var(--site-paper) !important; }
+    .blog-index-page .post-title { font-size: 23px !important; line-height: 1.6 !important; }
+    .blog-index-page .post-featured .post-title { font-size: 30px !important; }
+    .blog-index-page .category-nav-item.active { color: var(--site-accent-dark) !important; background: var(--site-accent-soft) !important; }
+    .blog-index-page .category-nav-item:hover { background: var(--site-paper) !important; }
+    .blog-viewer-page .markdown-body { color: var(--site-ink) !important; font-size: 18px !important; line-height: 1.9 !important; }
+    .blog-viewer-page .markdown-body :is(h1, h2, h3, h4, h5, h6) { line-height: 1.6 !important; }
+    .blog-viewer-page .markdown-body h1 { font-size: 32px !important; }
+    .blog-viewer-page .markdown-body h2 { font-size: 28px !important; }
+    .blog-viewer-page .markdown-body h3 { font-size: 24px !important; }
+    .blog-viewer-page .markdown-body pre, .blog-viewer-page .article-tags .tag { background: var(--site-paper) !important; border-radius: var(--site-radius) !important; }
+    .blog-viewer-page .markdown-body blockquote { border-color: var(--site-line) !important; }
+    .blog-viewer-page .article-header { margin-bottom: 42px !important; }
+    .blog-viewer-page .container, .blog-viewer-page.has-article-toc .container { margin-top: calc(var(--public-nav-height) + 70px) !important; }
+
+    /* About stays readable at the same width; recent writing follows the profile. */
+    .academic-sidebar { position: static !important; width: auto !important; max-height: none !important; overflow: visible !important; left: auto !important; top: auto !important; }
+    .academic-profile { padding: 22px 16px !important; }
+    .academic-layout { grid-template-columns: 200px minmax(0, 1fr) !important; gap: 28px !important; }
+    .visitor-map { border-radius: var(--site-radius) !important; box-shadow: none !important; }
+    .visitor-map-summary, .visitor-map-figure figcaption, .visitor-map-note, .visitor-map-credit, .visitor-map-retry { font-size: 14px !important; color: var(--site-muted) !important; }
+    .visitor-map-scale { font-size: 12px !important; }
+    .visitor-map-scale i { background: linear-gradient(90deg, #edf5f4, #c7dfdb, #81b6af, #287f7b) !important; }
+    .visitor-map-dot { fill: var(--site-accent) !important; }
+    .academic-background { grid-template-columns: minmax(0, 1fr) !important; gap: 30px !important; }
+    .academic-section { padding: 28px !important; }
+    .academic-section h2 { font-size: 26px !important; }
+    .academic-blog { position: static !important; grid-column: 2; width: auto !important; max-height: none !important; display: block !important; padding: 28px !important; }
+    .academic-blog-heading { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    .academic-blog-heading h2 { font-size: 24px !important; }
+    .academic-blog-heading > a { font-size: 16px !important; }
+    .academic-blog-list { list-style: none; padding: 0; margin-top: 20px; }
+    .academic-blog-list li + li { border-top: 1px solid var(--site-line); }
+    .academic-blog-link { display: block; padding-block: 18px; }
+    .academic-blog-link h3 { font-size: 20px !important; line-height: 1.65 !important; }
+    .academic-news-list li { grid-template-columns: 84px minmax(0, 1fr) !important; }
+
+    /* The workspace retains its navigation rail with the same light site chrome. */
+    .admin-page .admin-topbar { background: var(--site-surface) !important; background-image: none !important; border-color: var(--site-line) !important; box-shadow: none !important; }
+    .admin-page :is(.admin-brand, .admin-brand-copy strong, .admin-brand-copy small, .admin-view-site, .admin-nav a, .admin-topbar .nav-link) { color: var(--site-ink) !important; }
+    .admin-page .admin-nav a { font-size: 16px !important; border-radius: var(--site-radius) !important; }
+    .admin-page .admin-nav a::before { background-color: currentColor !important; }
+    .admin-page .admin-nav a:hover, .admin-page .admin-nav a.is-current { color: var(--site-accent-dark) !important; background: var(--site-accent-soft) !important; }
+    .admin-page .admin-brand-mark { color: var(--site-accent) !important; border-color: var(--site-line) !important; background: var(--site-paper) !important; border-radius: var(--site-radius) !important; }
+    .admin-page .admin-workspace-bar { background: var(--site-surface) !important; border-color: var(--site-line) !important; }
+    .admin-page :is(th, td) { font-size: 14px !important; border-color: var(--site-line) !important; }
+    .admin-page .workspace-header .page-intro { font-size: 16px !important; }
+    .admin-page .workspace-header .page-title { font-size: 34px !important; }
+    .admin-page .login-identity, .admin-page .login-wrapper { background: var(--site-paper) !important; background-image: none !important; }
+    .admin-page .login-identity :is(p, h2, span) { color: var(--site-ink) !important; }
+    .admin-page .login-container { border: 1px solid var(--site-line) !important; }
+    .admin-page .login-container :is(h1, label, .back-link a) { color: var(--site-ink) !important; }
+    .admin-page .login-container .btn { color: #fff !important; background: var(--site-accent) !important; }
+    .admin-page .login-signature { font-size: 34px !important; }
+    .editor-page .button-group .btn { white-space: nowrap !important; padding-inline: 12px !important; }
+    body.pdf-viewer-page { padding-top: 0 !important; }
+    .pdf-viewer-page .header { color: var(--site-ink) !important; background: var(--site-surface) !important; border-color: var(--site-line) !important; box-shadow: none !important; backdrop-filter: none !important; }
+    .pdf-viewer-page .error { color: #a13636 !important; background: #fff5f5 !important; border-color: #edd0d0 !important; border-radius: var(--site-radius) !important; }
+    .pdf-viewer-page .loading { color: var(--site-muted) !important; }
+    .pdf-viewer-page .page-info { color: var(--site-accent) !important; background: var(--site-accent-soft) !important; border-color: var(--site-line) !important; border-radius: var(--site-radius) !important; font-size: 14px !important; }
+    .pdf-viewer-page .btn-icon { filter: brightness(0) saturate(100%) !important; }
+    .pdf-viewer-page .btn-primary .btn-icon { filter: brightness(0) invert(1) !important; }
+
+    .admin-page .admin-nav a.is-current, .admin-page .editor-mobile-tabs button.active {
+        background-image: none !important; box-shadow: none !important;
+    }
+    .admin-page :is(.dashboard-panel-heading a, .homepage-status, .breadcrumb a, .workspace-index, .text-action) { color: var(--site-accent) !important; }
+    .admin-page :is(.file-page-number.is-current, .tab-badge) {
+        color: var(--site-accent-dark) !important; background: var(--site-accent-soft) !important;
+        border-color: var(--site-line) !important; background-image: none !important;
+    }
+    .admin-page :is(.workspace-index, .workspace-count, .blog-sequence, .blog-state, .blog-workspace-topline time,
+        .text-action, .field-help, .homepage-hint, #saveState, .save-state, .editor-mobile-tabs button,
+        .panel-label, .markdown-toolbar button, .analytics-code, .status-badge, .badge, .tab-badge) {
+        font-size: 14px !important; line-height: 1.7 !important;
+    }
+
+
+    .footer, .site-footer, .academic-footer, .blog-reference-footer { color: var(--site-muted) !important; border-color: var(--site-line) !important; background: var(--site-surface) !important; }
+    .footer a, .site-footer a, .academic-footer a, .blog-reference-footer a { color: inherit !important; }
+    .footer-meta, .site-footer-main { white-space: normal !important; flex-wrap: wrap !important; }
+
+    @media (min-width: 821px) and (max-width: 1100px) { .landing-nav-links { gap: 15px !important; } }
+    @media (max-width: 820px) {
+        :root, body, :host { --public-nav-height: 60px !important; --ui-page-offset: 42px !important; }
+        .landing-nav-links { gap: 0 !important; }
+        .landing-nav .landing-nav-links a { font-size: 16px !important; }
+        .blog-viewer-page .container, .blog-viewer-page.has-article-toc .container { margin-top: calc(var(--public-nav-height) + 42px) !important; }
+        .page-title, .blog-title, .article-title, .messages-heading h1 { font-size: 30px !important; }
+    }
+    @media (max-width: 700px) {
+        .academic-sidebar { position: static !important; width: auto !important; max-height: none !important; overflow: visible !important; left: auto !important; top: auto !important; }
+    .academic-profile { padding: 22px 16px !important; }
+    .academic-layout { grid-template-columns: minmax(0, 1fr) !important; }
+        .academic-blog { grid-column: 1; padding: 22px !important; }
+        .academic-section { padding: 22px !important; }
+        .academic-section h2 { font-size: 24px !important; }
+        .ui-links-page .links-grid { grid-template-columns: minmax(0, 1fr) !important; }
+        .blog-index-page .post-featured { padding: 22px !important; }
+        .blog-index-page .post-featured .post-title { font-size: 26px !important; }
+        .blog-viewer-page .markdown-body { font-size: 17px !important; }
+        .ui-tools-page .tool-entry, .ui-tools-page .tool-item:nth-child(even) .tool-entry, .ui-links-page .link-card { grid-template-columns: 44px minmax(0, 1fr) !important; }
+    }
+    @media (max-width: 420px) {
+        .pdf-viewer-page .header { flex-wrap: wrap !important; height: auto !important; gap: 8px !important; padding: max(10px, env(safe-area-inset-top)) 10px 10px !important; }
+        .pdf-viewer-page .header-left { flex: 1 0 100% !important; gap: 12px !important; }
+        .pdf-viewer-page .header h1 { display: block !important; font-size: 18px !important; }
+        .pdf-viewer-page .controls { flex: 1 0 100% !important; width: 100% !important; justify-content: space-between !important; gap: 4px !important; overflow: visible !important; }
+        .pdf-viewer-page .zoom-controls { gap: 4px !important; }
+        .pdf-viewer-page .page-info { flex: 0 0 44px !important; min-width: 44px !important; padding-inline: 0 !important; }
+    }
+
+}
+
+@layer site-typography {
+    body :is(h1, h2, h3, h4, h5, h6, .landing-brand, .page-title, .blog-title, .article-title, .home-date-day, .admin-brand-copy strong),
+    :host :is(h1, h2, h3) {
+        font-family: "Site Editorial", "Songti SC", "Noto Serif SC", "STSong", serif !important;
+        font-weight: 500 !important;
+    }
+}
