@@ -1,5 +1,47 @@
 {% extends "base.html" %}
 {% block content %}
-  {% include "partials/notes-toolbar.html" %}
-  {{ super() }}
+  {% if page.meta.notes_index %}
+    <div class="notes-index">
+      <header class="notes-index-header">
+        <div>
+          <h1 id="__skip" tabindex="-1">学习笔记</h1>
+          <p>电子工程的课程笔记、推导与例题，按学科整理。</p>
+        </div>
+        {% include "partials/notes-toolbar.html" %}
+      </header>
+      <nav class="notes-subject-nav" aria-label="学科分类">
+        {% for group in nav.items %}{% if group.children %}
+          <a href="#subject-{{ loop.index }}">{{ group.title | replace("组", "") }}</a>
+        {% endif %}{% endfor %}
+      </nav>
+      <div class="notes-subjects">
+        {% for group in nav.items %}{% if group.children %}
+          <section class="notes-subject" id="subject-{{ loop.index }}" aria-labelledby="subject-title-{{ loop.index }}">
+            <div class="notes-subject-heading">
+              <h2 id="subject-title-{{ loop.index }}">{{ group.title | replace("组", "") }}</h2>
+              <p>{{ group.children | length }} 门课程</p>
+            </div>
+            <ul class="notes-course-list">
+              {% for course in group.children %}
+                <li><a class="notes-course" href="{{ course.children[0].url | url }}">
+                  <h3>{{ course.title }}</h3>
+                  <span>{{ course.children | length }} 篇笔记</span>
+                </a></li>
+              {% endfor %}
+            </ul>
+          </section>
+        {% endif %}{% endfor %}
+      </div>
+      <aside class="notes-index-about">
+        <p>把学过的东西整理下来，也希望它们能帮到你。</p>
+        <nav aria-label="关于笔记">
+          <a href="{{ 'preface/' | url }}">读一读序言</a>
+          <a href="{{ config.repo_url }}">源码与勘误</a>
+        </nav>
+      </aside>
+    </div>
+  {% else %}
+    {% include "partials/notes-toolbar.html" %}
+    {{ super() }}
+  {% endif %}
 {% endblock %}

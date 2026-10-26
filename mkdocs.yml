@@ -71,11 +71,13 @@ extra_css:
 - stylesheets/editorial-fonts.css?v=20261022-unified-2
 - stylesheets/site-theme.css?v=20261022-unified-2
 - stylesheets/homepage-palette.css?v=20261022-unified-2
+- stylesheets/notes-reading.css?v=20261026-notes-1
 
 
 nav:
   - '主页': 'https://www.weitao-jiang.cn'
-  - '序言': 'index.md'
+  - '学习笔记': 'index.md'
+  - '序言': 'preface.md'
   - '数理基础组':
       - '线性代数(1)':
           - '0	前言': '数理基础组/linear-algebra-1/01-0-前言.md'
@@ -276,8 +278,6 @@ extra_javascript:
 - https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.17.1/flowchart.min.js
 - https://cdnjs.cloudflare.com/ajax/libs/raphael/2.3.0/raphael.min.js
 - https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.13.6/underscore-min.js
-- https://cdn.jsdelivr.net/npm/@mermaid-js/mermaid-mindmap@9.3.0/dist/diagram-definition.0faef4c2.min.js
-- https://cdn.jsdelivr.net/npm/markdown-it-plantuml@1.4.1/index.min.js
 - https://cdnjs.cloudflare.com/ajax/libs/webfont/1.6.28/webfontloader.js
 - https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js
 #- https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js

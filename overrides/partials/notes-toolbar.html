@@ -1,11 +1,9 @@
   <div class="notes-toolbar">
     <nav class="notes-toolbar__inner" aria-label="笔记工具栏">
       <label class="md-icon notes-drawer-toggle" for="__drawer" aria-label="打开课程目录" tabindex="0" role="button">
-        {% include ".icons/material/menu.svg" %}
+        {% include ".icons/material/menu.svg" %}<span class="notes-drawer-label">课程目录</span>
       </label>
       <a class="notes-home" href="{{ nav.homepage.url | url }}">学习笔记</a>
-      <span class="notes-toolbar-divider" aria-hidden="true">/</span>
-      <span class="notes-toolbar-caption">电子工程与学习记录</span>
       {% if "search" in config.plugins %}
         {% set search = config.plugins["search"] | attr("config") %}
         {% if search.enabled %}

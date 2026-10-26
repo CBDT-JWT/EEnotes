@@ -1,0 +1,147 @@
+/* The notes directory and reader share the personal site's reading rhythm. */
+html { scrollbar-gutter: stable; scroll-padding-top: 104px; }
+.md-grid { max-width: 1200px; }
+.md-main__inner { width: min(1200px, calc(100% - 64px)); gap: 36px; margin-top: 52px; }
+.md-content__inner { padding: 0; border: 0; border-radius: 0; background: transparent; }
+.md-content { min-width: 0; }
+.md-main__inner > .md-content > .md-content__inner { padding-top: 0; }
+.md-main__inner:has(.notes-index) { width: min(1000px, calc(100% - 64px)); margin-top: 60px; }
+.md-main__inner:has(.notes-index) .md-sidebar { display: none !important; }
+.md-main__inner:has(.notes-index) .md-content { width: 100%; margin: 0; }
+.md-main__inner:has(.notes-index) .md-path { display: none; }
+.notes-toolbar { margin-bottom: 30px; padding-bottom: 18px; border-bottom: 1px solid #e7ebe9; }
+.notes-toolbar__inner { gap: 12px; min-height: 44px; }
+.notes-home { color: #6b7274 !important; font-size: 13px; }
+.notes-toolbar .md-search { margin-left: auto; }
+.md-search__button { min-height: 44px; border: 0; border-radius: 10px; background: #f3f6f4; }
+.md-search__button:hover { background: #eaf2ef; }
+.notes-repo { padding: 10px; }
+.notes-drawer-toggle { gap: 7px; width: auto; padding: 0 10px; margin: 0; border-radius: 8px; background: #f3f6f4; }
+.notes-drawer-label { white-space: nowrap; font-size: 13px; }
+.md-typeset { font-size: 17px; line-height: 1.95; }
+.md-typeset h1 { margin-bottom: 28px; font-size: 34px; line-height: 1.5; }
+.md-typeset h2 { margin: 2em 0 .8em; padding: 0; border: 0; font-size: 26px; }
+.md-typeset h3 { font-size: 21px; }
+.md-typeset :is(h1, h2, h3, h4) { scroll-margin-top: 100px; }
+.md-typeset p { margin-block: 1em; }
+.md-typeset .admonition { border-radius: 8px; box-shadow: none; }
+.md-typeset img { max-width: 100%; height: auto; }
+.md-typeset .arithmatex { max-width: 100%; }
+.md-typeset table:not([class]) { font-size: 14px; }
+.md-typeset pre { border-radius: 8px; }
+.md-typeset code { font-size: .86em; }
+.md-path { margin-bottom: 18px; font-size: 12px; }
+.md-content:has(> .md-path) { margin-top: 0; }
+.md-sidebar--primary .md-sidebar__scrollwrap { border: 0; border-radius: 0; background: transparent; }
+.md-nav--primary { padding: 0; }
+.md-nav--primary > .md-nav__title { padding: 0 10px 18px; color: #6b7274; font-size: 13px; font-weight: 400; }
+.md-nav--primary .md-nav__link { padding: 8px 10px; border-radius: 7px; font-size: 13px; font-weight: 400; }
+.md-nav--primary .md-nav__link--active { color: #287f7b; background: #edf5f2; }
+.md-nav--primary > .md-nav__list > .md-nav__item { margin-top: 3px; }
+.md-nav--primary > .md-nav__list > .md-nav__item:first-child,
+.md-nav--primary > .md-nav__list > .md-nav__item:last-child { display: none; }
+.md-nav--secondary .md-nav__title { font-size: 12px; font-weight: 400; color: #858b8b; }
+.md-nav--secondary .md-nav__link { padding-block: 5px; font-size: 12px; }
+.md-nav--secondary .md-nav__list { border: 0; }
+.md-sidebar__scrollwrap { scrollbar-width: thin; }
+.md-footer { margin-top: 28px; background: white; }
+.md-footer__inner { gap: 24px; max-width: 1000px; padding-inline: 0; }
+.md-footer-meta { background: white; }
+.md-footer-meta__inner { max-width: 1000px; padding: 24px 0 32px; border-top: 1px solid #dedee4; }
+.md-footer__link { border-radius: 10px; }
+.md-copyright { font-size: 12px; font-weight: 400; }
+body:has(.notes-index) .md-footer__inner { display: none; }
+body:has(#__drawer:checked) #chatjwt-widget, body.nav-open #chatjwt-widget { display: none !important; }
+
+/* Homepage: a calm, useful course index rather than a long preface. */
+.notes-index-header { display: flex; align-items: end; justify-content: space-between; gap: 28px; }
+.notes-index-header h1 { margin: 0 0 12px; font-size: 40px; }
+.notes-index-header p { margin: 0; color: #6b7274; font-size: 15px; line-height: 1.85; }
+.notes-index .notes-toolbar { flex: 0 0 auto; padding: 0; margin: 0 0 3px; border: 0; }
+.notes-index .notes-toolbar :is(.notes-home, .notes-drawer-toggle, .notes-repo) { display: none; }
+.notes-index .md-search__button { min-width: 190px; min-height: 46px; }
+.notes-subject-nav { display: flex; flex-wrap: wrap; gap: 6px 26px; margin: 30px 0 34px; }
+.notes-subject-nav a { min-height: 40px; display: inline-flex; align-items: center; font-size: 14px; color: #6b7274; }
+.notes-subject-nav a:hover { color: #287f7b; text-decoration: none; }
+.notes-subjects { border-top: 1px solid #cbd2cf; }
+.notes-subject { display: grid; grid-template-columns: 144px minmax(0, 1fr); gap: 40px; padding: 34px 0; scroll-margin-top: 96px; }
+.notes-subject + .notes-subject { border-top: 1px solid #edf0ee; }
+.notes-subject-heading h2 { margin: 10px 0 6px; padding: 0; font-size: 23px; line-height: 1.6; border: 0; }
+.notes-subject-heading p { margin: 0; font-size: 12px; color: #858b8b; }
+.md-typeset .notes-index .notes-course-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px 28px; list-style: none; padding: 0; margin: 0; }
+.md-typeset .notes-index .notes-course-list li { padding: 0; margin: 0; min-width: 0; }
+.md-typeset .notes-index a { text-decoration: none; }
+.notes-index .notes-course { display: block; min-height: 96px; padding: 12px; border-radius: 10px; color: var(--site-ink); text-decoration: none; transition: background-color 160ms ease; }
+.notes-course:hover, .notes-course:focus-visible { background: #f3f7f5; text-decoration: none !important; }
+.notes-index .notes-course h3 { margin: 0 0 6px; font-size: 19px; line-height: 1.6; overflow-wrap: anywhere; }
+.notes-course span { font-size: 12px; color: #858b8b; }
+.notes-index-about { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px 24px; margin-top: 12px; padding-top: 24px; border-top: 1px solid #cbd2cf; }
+.notes-index-about p { margin: 0; font-size: 14px; color: #6b7274; }
+.notes-index-about nav { display: flex; gap: 24px; }
+.notes-index-about a { display: inline-flex; align-items: center; min-height: 44px; font-size: 14px; color: #39716d; }
+
+/* Important shared-theme declarations are overridden in their own layer. */
+@layer site-theme {
+  html, body { background: white !important; }
+  .md-content__inner, .md-sidebar--primary .md-sidebar__scrollwrap { border: 0 !important; background: transparent !important; box-shadow: none !important; }
+  .md-header .landing-nav { padding-inline: max(32px, calc((100% - 1000px) / 2)) !important; border: 0 !important; }
+  .landing-nav-links { gap: 22px !important; }
+  .landing-nav-links a::after { display: none !important; }
+  .md-footer, .md-footer-meta { background: white !important; }
+  .md-search__button { border-radius: 10px !important; background: #f3f6f4 !important; }
+  .notes-index .notes-course h3 { font-size: 19px !important; line-height: 1.6 !important; }
+  @media (min-width: 821px) and (max-width: 1100px) { .landing-nav-links { gap: 15px !important; } }
+  @media (max-width: 820px) {
+    .md-header .landing-nav { padding-inline: 24px !important; }
+    .landing-nav-links { gap: 0 !important; }
+    .landing-nav-toggle { width: 44px !important; height: 44px !important; flex-basis: 44px !important; }
+    .landing-nav-toggle span:not(.visually-hidden) { height: 2px !important; }
+    .landing-nav-toggle[aria-expanded="true"] span:first-child { transform: translateY(4px) rotate(45deg) !important; }
+    .landing-nav-toggle[aria-expanded="true"] span:nth-child(2) { transform: translateY(-4px) rotate(-45deg) !important; }
+  }
+  @media (max-width: 580px) { .md-header .landing-nav { padding-inline: 20px !important; } }
+}
+@media (min-width: 76.25em) {
+  .md-sidebar--primary { flex: 0 0 192px; width: 192px; }
+  .md-sidebar--secondary { flex: 0 0 156px; width: 156px; }
+}
+@media (max-width: 76.234375em) {
+  .md-sidebar--primary { border: 0; border-radius: 0 16px 16px 0; background: white; }
+  .md-nav--primary > .md-nav__title { padding: 20px; }
+  .notes-toolbar .notes-home { display: none; }
+}
+@media (max-width: 820px) {
+  .md-main__inner, .md-main__inner:has(.notes-index) { width: calc(100% - 48px); margin-top: 40px; gap: 0; }
+  .notes-index-header { align-items: stretch; flex-direction: column; gap: 22px; }
+  .notes-index-header h1 { font-size: 32px; }
+  .notes-index .notes-toolbar, .notes-index .md-search, .notes-index .md-search__button { width: 100%; }
+  .notes-index .md-search__button { min-height: 48px; }
+  .notes-index .notes-toolbar__inner { display: block; }
+  .notes-subject-nav { gap: 4px 20px; margin-block: 20px 24px; }
+  .notes-subject { grid-template-columns: 112px minmax(0, 1fr); gap: 24px; }
+  .md-typeset .notes-index .notes-course-list { gap: 4px 12px; }
+  .md-footer__inner, .md-footer-meta__inner { width: calc(100% - 48px); }
+}
+@media (max-width: 580px) {
+  .md-main__inner, .md-main__inner:has(.notes-index) { width: calc(100% - 40px); margin-top: 28px; margin-bottom: 32px; }
+  .md-content__inner { padding: 0; }
+  .md-typeset { font-size: 16px; line-height: 1.95; }
+  .md-typeset h1 { font-size: 29px; }
+  .md-typeset h2 { font-size: 24px; }
+  .notes-toolbar { margin-bottom: 24px; padding-bottom: 14px; }
+  .notes-index-header h1 { margin-bottom: 8px; font-size: 30px; }
+  .notes-index-header p { font-size: 14px; }
+  .notes-subject-nav { gap: 0 20px; }
+  .notes-subject-nav a { font-size: 13px; }
+  .notes-subject { grid-template-columns: minmax(0, 1fr); gap: 16px; padding: 26px 0; }
+  .notes-subject-heading { display: flex; align-items: baseline; gap: 14px; }
+  .notes-subject-heading h2 { margin: 0; font-size: 22px; }
+  .md-typeset .notes-index .notes-course-list { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+  .notes-index .notes-course { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; min-height: 56px; padding: 12px 8px; }
+  .notes-index .notes-course h3 { margin: 0; font-size: 18px !important; }
+  .notes-course span { flex-shrink: 0; }
+  .notes-index-about { align-items: start; flex-direction: column; gap: 12px; padding-top: 22px; }
+  .md-footer__inner, .md-footer-meta__inner { width: calc(100% - 40px); }
+  .md-footer-meta__inner { padding-bottom: 96px; }
+}
+@media (prefers-reduced-motion: reduce) { .notes-course { transition: none; } }

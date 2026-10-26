@@ -72,6 +72,7 @@ def sync(homepage):
         f"stylesheets/editorial-fonts.css?v={ASSET_VERSION}",
         f"stylesheets/site-theme.css?v={ASSET_VERSION}",
         f"stylesheets/homepage-palette.css?v={ASSET_VERSION}",
+        "stylesheets/notes-reading.css?v=20261026-notes-1",
     ]
     config, count = re.subn(r'(?ms)^extra_css:\n.*?(?=^nav:)',
                             "extra_css:\n" + "".join(f"- {style}\n" for style in styles) + "\n\n", config)
